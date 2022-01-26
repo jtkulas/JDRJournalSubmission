@@ -1,6 +1,6 @@
 ## Job classifications
 
-data <- read.csv("C:\\Users\\kulasj\\Downloads\\workers.csv")
+data <- read.csv("workers.csv")
 
 library(ggplot2)
 
@@ -36,6 +36,8 @@ data$O.Net.Job.Family.Categories[data$O.Net.Job.Family.Categories == "Healthcare
 data$O.Net.Job.Family.Categories[data$O.Net.Job.Family.Categories == "Arts Design Entertainment Sports Media"] <- "Other"
 data$O.Net.Job.Family.Categories[data$O.Net.Job.Family.Categories == "Military Specific"] <- "Other"
 
+
+#3 in plot all categories, combined and standalone 
 
 ggplot(data, aes(O.Net.Job.Family.Categories))+
   geom_histogram(stat="count") + coord_flip()
