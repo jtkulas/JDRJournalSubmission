@@ -76,7 +76,11 @@ We do acknowledge as well, that demands and resources are not necessarily consis
 
 Originally, the Advisory Panel for the Dictionary of Occupational Titles recommended a system that would “…promote the effective education, training, counseling, and employment of the American workforce. It should accomplish its purpose by providing a database system that identifies, defines, classifies, and describes occupations in the economy in an accessible and flexible manner” (@advisory1993new, p. 6). The result was the now commonly used O\*NET. The Occupational Information Network (O\*NET; onetonline.org) contains a comprehensive description of occupations [@peterson2001understanding]. This widely accessed database houses hundreds of standardized and occupation-specific descriptors most occupations in the US and these descriptions are continually updated. In fact, there was a call to work with experienced I/O psychologists over the summer to update the content for the [Industrial and Organizational Psychologist listing on O\*Net](https://www.onetonline.org/link/summary/19-3032.00). These data, and the tools provided for free on the website (e.g., Career Exploration Tools, “My Next Move for Veterans”, “My Next Move”, Toolkit for Business) are frequently used by counselors, students, human resources departments, and researchers to assist potential applicants discover the skills and training they need for the job of their choice. It is also useful to employers by providing them with information with which to craft job descriptions and help employees determine what skills are needed for promotion. 
 
-## Current Study  
+## Study 1
+
+Look at the [google sheet](https://docs.google.com/spreadsheets/d/1ck-72dQ_c-Pl4Xba9W0r__OYo0znlEnV/edit#gid=1041061499) and document the extent to which job characteristics that have been consistently cited in the literature as demands or resources end up being consistently or variably experienced as demands or resources. Then Study 2 can further extend to other job characteristics that are within the O\*Net system. 
+
+## Study 2  
 
 This paper aims to provide an integration of the theory and practical occupations-focused data on O\*Net. Several broad research questions are examined across jobs:
 
@@ -1713,7 +1717,7 @@ library(irr)
 kappa <- kappam.fleiss(interrater)
 ```
 
-Each free-field job title was placed into one of 14 possible O\*NET job families classifications. 60 of these ratings were performed by all 3 author raters, with a resulting Kappa of `r round(kappa$value,2)` [@landis1977measurement].
+Each free-field job title was placed into one of 14 possible O\*NET job families classifications. 60 of these ratings were performed by all 3 author raters, with a resulting Kappa of `r round(kappa$value,2)` [@landis1977measurement]. We then further collapsed these 14 categories into 8 essentially equal frequency job categories. 
 
 ### Characteristics, Demands, and Resources  
 
