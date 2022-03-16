@@ -55,7 +55,7 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed, echo=FALSE, warning=FALSE,
 ```
 
 
-Given the popularity of the Job Demands-Resources Theory [JD-R; @demerouti2001job] in exploring questions related to everything from motivation to job design, we aim to explore the intersection between perceptions of job demands and resources, and the broad set of job characteristics provided on O\*Net. A series of evaluations were made that used: 1) direct O\*Net terminology (both descriptor and response option), and 2) JD-R influenced ratings of demand, challenge, or hindrance of different types of workers. Prior to a description of results, a brief overview of both the JD-R theory, the stress appraisal process, and O\*Net is provided. 
+Given the popularity of the Job Demands-Resources Theory [JD-R; @demerouti2001job] in exploring questions related to everything from motivation to job design, we aim to explore the intersection between perceptions of job demands and resources, and the broad set of job characteristics provided on O\*Net. Across two studies, a series of evaluations were made that used: 1) direct O\*Net terminology (both descriptor and response option), and 2) JD-R influenced ratings of demand, challenge, or hindrance of different types of workers. Prior to a description of results, a brief overview of both the JD-R theory, the stress appraisal process, and O\*Net is provided. 
 
 ## The Job demands-Resources Theory  
 
@@ -66,9 +66,7 @@ Cognitively, the perception of an element of ones job as a resource or demand ac
   
 @searle2015merits note that the majority of the research on workplace demands is based on apriori classifications of demands. However, the stress experience, or process, described early on by @lazarus1984stress is grounded in the assumption that individual appraisals of stressors/demands vary. Their transactional theory of stress and coping states that people continuously appraise stimuli in their environments. An appraisal is the cognitive process whereby meaning is assigned to a stimulus. If a stimulus is appraised as a stressor (threat, challenge, potentially harmful), emotional distress leads to coping of some kind. This action to cope is also associated with another appraisal about the outcome itself and the process continues if the outcomes is not appraised as favorable [@lazarus1984stress]. The stress appraisal process suggests that classifying a job characteristic or environmental condition as an objective demand or resource might be in error. 
   
-We next consider the (limited) empirical evidence on this topic. First, some relatively recent research suggests that job demands and resources may not be universally appraised or assigned as such. Starting with job demands, @webster2011extending, for example, studied workload, role ambiguity, and role conflict demands, and found that while each could be appraised primarily as a challenge or hindrance demand, they could also simultaneously be perceived as being both a challenge and hindrance to different degrees. While their study did include resources, it nonetheless points to individual differences on how people perceive stressors at work. Although part of a much larger study on retirement, @sonnega_comparison_2018 compared self-reported (subjective) ratings of degree of physical demand, stress, and need for intense concentration from the Health and Retirement Study with objective ratings from O*Net. Correlations physical demand (r = .52), stress (r = .10), and need for intense concentration (r = .14), again suggesting perhaps that our objective ratings of job demands (and resources) may be subject to a greater level of individual difference than assumed. Next considering resources, @schmitz_interpreting_2019 also captured subjective and objective resources in their study of retirement. Correlations of composite variables for the resources of autonomy (r = .12), recognition of work (r = .07), decision freedom (r = .08), and advancement (r = -.01), while significant, certainly do not reflect high levels of overlap. 
-
-**NOTE** is this -0.01 significant? 
+We next consider the (limited) empirical evidence on this topic. First, some relatively recent research suggests that job demands and resources may not be universally appraised or assigned as such. Starting with job demands, @webster2011extending, for example, studied workload, role ambiguity, and role conflict demands, and found that while each could be appraised primarily as a challenge or hindrance demand, they could also simultaneously be perceived as being both a challenge and hindrance to different degrees. While their study did include resources, it nonetheless points to individual differences on how people perceive stressors at work. Although part of a much larger study on retirement, @sonnega_comparison_2018 compared self-reported (subjective) ratings of degree of physical demand, stress, and need for intense concentration from the Health and Retirement Study with objective ratings from O*Net. Correlations physical demand (r = .52), stress (r = .10), and need for intense concentration (r = .14), again suggesting perhaps that our objective ratings of job demands (and resources) may be subject to a greater level of individual difference than assumed. Next considering resources, @schmitz_interpreting_2019 also captured subjective and objective resources in their study of retirement. Correlations of composite variables for the resources of autonomy (r = .12. p > .01), recognition of work (r = .07, p > .01), and decision freedom (r = .08, p > .01), while significant, certainly do not reflect high levels of overlap. 
 
 We do acknowledge as well, that demands and resources are not necessarily consistent across days, or seasons, for many employees. @downes2021incorporating meta-analysis addresses this reality in depth, although it is beyond the scope of this project. 
 
@@ -78,11 +76,7 @@ Originally, the Advisory Panel for the Dictionary of Occupational Titles recomme
 
 ## Study 1
 
-Look at the [google sheet](https://docs.google.com/spreadsheets/d/1ck-72dQ_c-Pl4Xba9W0r__OYo0znlEnV/edit#gid=1041061499) and document the extent to which job characteristics that have been consistently cited in the literature as demands or resources end up being consistently or variably experienced as demands or resources. Then Study 2 can further extend to other job characteristics that are within the O\*Net system. 
-
-## Study 2  
-
-This paper aims to provide an integration of the theory and practical occupations-focused data on O\*Net. Several broad research questions are examined across jobs:
+Look at the [google sheet](https://docs.google.com/spreadsheets/d/1ck-72dQ_c-Pl4Xba9W0r__OYo0znlEnV/edit#gid=1041061499) and document the extent to which job characteristics that have been consistently cited in the literature as demands or resources end up being consistently or variably experienced as demands or resources. Study 1 aims to provide an integration of the theory and practical occupations-focused data on O\*Net. Several broad research questions are examined across jobs:
 
 >*Research Question 1*: Which O\*Net job characteristics are consistently rated as job resources?
 
@@ -90,9 +84,13 @@ This paper aims to provide an integration of the theory and practical occupation
 
 >*Research Question 3*: Which O\*Net job characteristics are consistently rated as hinderance demands?
 
+## Study 2  
+
+While Study 1 explored the above questions across jobs, Study 2 further extends to other job characteristics that are within the O\*Net system, specifically, job classification. 
+
 The other distinct possibility we expect we may observe is wide variability in the assignment of some job characteristics within the JD-R framework depending on *job classification*. In fact, a growing body of evidence suggests people may not universally experience job characteristics as challenges or hinderances (e.g., [@bakker2013weekly]; [cavanaugh2000empirical]; [@gerich2017relevance]; [@podsakoff2007differential]; [@webster2011extending]). 
 
-Thus, a fourth question of interest explores just that possibility: 
+Thus, Study 2 focuses on a fourth question of interest.
 
 >*Research Question 4*: Does the **type of work** reported explain variability in the categorization of work characteristics into challenges, hindrances, and resources?
  
