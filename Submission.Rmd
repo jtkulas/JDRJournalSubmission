@@ -55,7 +55,8 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed, echo=FALSE, warning=FALSE,
 ```
 
 
-Given the popularity of the Job Demands-Resources Theory [JD-R; @demerouti2001job] in exploring questions related to everything from motivation to job design, we aim to explore the intersection between perceptions of job demands and resources, and the broad set of job characteristics provided on O\*Net. Across two studies, a series of evaluations were made that used: 1) direct O\*Net terminology (both descriptor and response option), and 2) JD-R influenced ratings of demand, challenge, or hindrance of different types of workers. Prior to a description of results, a brief overview of both the JD-R theory, the stress appraisal process, and O\*Net is provided. 
+Given the popularity of the Job Demands-Resources Theory [JD-R; @demerouti2001job] in exploring questions related to everything from motivation to job design, we aim to explore the intersection between *perceptions* of job demands and resources, and the broad set of job characteristics provided on O\*Net. We aim to present evidence surrounding whether O\*Net job and task descriptors are simiarly rated as resources, challenge- or hindrance demands, and whether such ratings differ across job catories/classifications. 
+Across two studies, a series of evaluations were made that used: 1) direct O\*Net terminology (both descriptor and response option), and 2) JD-R influenced ratings of demand, challenge, or hindrance of different types of workers. Prior to a description of results, a brief overview of both the JD-R theory, the stress appraisal process, and O\*Net is provided. 
 
 ## The Job demands-Resources Theory  
 
@@ -86,11 +87,7 @@ Look at the [google sheet](https://docs.google.com/spreadsheets/d/1ck-72dQ_c-Pl4
 
 ## Study 2  
 
-While Study 1 explored the above questions across jobs, Study 2 further extends to other job characteristics that are within the O\*Net system, specifically, job classification. 
-
-The other distinct possibility we expect we may observe is wide variability in the assignment of some job characteristics within the JD-R framework depending on *job classification*. In fact, a growing body of evidence suggests people may not universally experience job characteristics as challenges or hinderances (e.g., [@bakker2013weekly]; [cavanaugh2000empirical]; [@gerich2017relevance]; [@podsakoff2007differential]; [@webster2011extending]). 
-
-Thus, Study 2 focuses on a fourth question of interest.
+While Study 1 explored the above questions across jobs, Study 2 considers a potentially important moderator: job classification. There is a distinct possibility we expect we may observe is wide variability in the assignment of some job characteristics within the JD-R framework depending on *job classification*. In fact, a growing body of evidence suggests people may not universally experience job characteristics as challenges or hinderances (e.g., [@bakker2013weekly]; [@cavanaugh2000empirical]; [@gerich2017relevance]; [@podsakoff2007differential]; [@webster2011extending]). Thus, Study 2 focuses on a fourth question of interest.
 
 >*Research Question 4*: Does the **type of work** reported explain variability in the categorization of work characteristics into challenges, hindrances, and resources?
  
