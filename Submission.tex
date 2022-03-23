@@ -5,10 +5,14 @@
 \documentclass[
   english,
   man]{apa6}
+\title{Job Demands-Resources model components through the lens of O*NET classifications}
+\author{Alicia Stachowski\textsuperscript{1}, Renata Garcia Prieto Palacios Roji\textsuperscript{2}, \& John Kulas\textsuperscript{2}}
+\date{}
+
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -70,6 +74,29 @@
   \let\oldsubparagraph\subparagraph
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 % Manuscript styling
 \usepackage{upgreek}
 \captionsetup{font=singlespacing,justification=justified}
@@ -100,20 +127,6 @@
 % \setlength{\parindent}{0.5in}
 % \setlength{\parskip}{0pt plus 0pt minus 0pt}
 
-% Overwrite redefinition of paragraph and subparagraph by the default LaTeX template
-% See https://github.com/crsh/papaja/issues/292
-\makeatletter
-\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
-  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
-  {-1em}%
-  {\normalfont\normalsize\bfseries\itshape\typesectitle}}
-
-\renewcommand{\subparagraph}[1]{\@startsection{subparagraph}{5}{1em}%
-  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
-  {-\z@\relax}%
-  {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
-\makeatother
-
 % \usepackage{etoolbox}
 \makeatletter
 \patchcmd{\HyOrg@maketitle}
@@ -134,7 +147,7 @@
 \renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
 \makeatother
 \usepackage{csquotes}
-\ifxetex
+\ifXeTeX
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
   \setmainlanguage[]{english}
@@ -144,40 +157,10 @@
 \let\LanguageShortHands\languageshorthands
 \def\languageshorthands#1{}
 \fi
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
-  % set entry spacing
-  \ifnum #2 > 0
-  \setlength{\parskip}{#2\baselineskip}
-  \fi
- }%
- {}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
-\title{Job Demands-Resources model components through the lens of O*NET classifications}
-\author{Alicia Stachowski\textsuperscript{1}, Renata Garcia Prieto Palacios Roji\textsuperscript{2}, \& John Kulas\textsuperscript{2}}
-\date{}
-
-
-\authornote{
-
-Correspondence concerning this article should be addressed to Alicia Stachowski, Menomenie, WI. E-mail: \href{mailto:stachowskia@uwstout.edu}{\nolinkurl{stachowskia@uwstout.edu}}
-
-}
 
 \affiliation{\vspace{0.5cm}\textsuperscript{1} University of Wisconsin - Stout\\\textsuperscript{2} Montclair State University}
 
@@ -192,7 +175,8 @@ We want to also group items by O*NET categories so there's not so many (that mak
 \begin{document}
 \maketitle
 
-Given the popularity of the Job Demands-Resources Theory {[}JD-R; Demerouti et al. (2001){]} in exploring questions related to everything from motivation to job design, we aim to explore the intersection between perceptions of job demands and resources, and the broad set of job characteristics provided on O*Net. Across two studies, a series of evaluations were made that used: 1) direct O*Net terminology (both descriptor and response option), and 2) JD-R influenced ratings of demand, challenge, or hindrance of different types of workers. Prior to a description of results, a brief overview of both the JD-R theory, the stress appraisal process, and O*Net is provided.
+Given the popularity of the Job Demands-Resources Theory {[}JD-R; Demerouti et al. (2001){]} in exploring questions related to everything from motivation to job design, we aim to explore the intersection between \emph{perceptions} of job demands and resources, and the broad set of job characteristics provided on O*Net. We aim to present evidence surrounding whether O*Net job and task descriptors are simiarly rated as resources, challenge- or hindrance demands, and whether such ratings differ across job catories/classifications.
+Across two studies, a series of evaluations were made that used: 1) direct O*Net terminology (both descriptor and response option), and 2) JD-R influenced ratings of demand, challenge, or hindrance of different types of workers. Prior to a description of results, a brief overview of both the JD-R theory, the stress appraisal process, and O*Net is provided.
 
 \hypertarget{the-job-demands-resources-theory}{%
 \subsection{The Job demands-Resources Theory}\label{the-job-demands-resources-theory}}
@@ -301,55 +285,55 @@ The below graphs present the resources, challenges, and hindrances that are \emp
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\hypertarget{ref-bakker2014job}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-bakker2014job}{}}%
 Bakker, A. B., \& Demerouti, E. (2014). Job demands--resources theory. \emph{Wellbeing: A Complete Reference Guide}, 1--28.
 
-\leavevmode\hypertarget{ref-bakker2007job}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-bakker2007job}{}}%
 Bakker, A. B., Hakanen, J. J., Demerouti, E., \& Xanthopoulou, D. (2007). Job resources boost work engagement, particularly when job demands are high. \emph{Journal of Educational Psychology}, \emph{99}(2), 274.
 
-\leavevmode\hypertarget{ref-bakker2013weekly}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-bakker2013weekly}{}}%
 Bakker, A. B., \& Sanz-Vergel, A. I. (2013). Weekly work engagement and flourishing: The role of hindrance and challenge job demands. \emph{Journal of Vocational Behavior}, \emph{83}(3), 397--409.
 
-\leavevmode\hypertarget{ref-bakker2003dual}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-bakker2003dual}{}}%
 Bakker, A., Demerouti, E., \& Schaufeli, W. (2003). Dual processes at work in a call centre: An application of the job demands--resources model. \emph{European Journal of Work and Organizational Psychology}, \emph{12}(4), 393--417.
 
-\leavevmode\hypertarget{ref-cavanaugh2000empirical}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-cavanaugh2000empirical}{}}%
 Cavanaugh, M. A., Boswell, W. R., Roehling, M. V., \& Boudreau, J. W. (2000). An empirical examination of self-reported work stress among US managers. \emph{Journal of Applied Psychology}, \emph{85}(1), 65.
 
-\leavevmode\hypertarget{ref-demerouti2001job}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-demerouti2001job}{}}%
 Demerouti, E., Bakker, A. B., Nachreiner, F., \& Schaufeli, W. B. (2001). The job demands-resources model of burnout. \emph{Journal of Applied Psychology}, \emph{86}(3), 499.
 
-\leavevmode\hypertarget{ref-advisory1993new}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-advisory1993new}{}}%
 Dictionary of Occupational Titles (US), A. P. for the, \& Service, U. S. E. (1993). \emph{The new DOT: A database of occupational titles for the twenty-first century}. US Department of Labor, Employment; Training Administration, US~\ldots.
 
-\leavevmode\hypertarget{ref-downes2021incorporating}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-downes2021incorporating}{}}%
 Downes, P. E., Reeves, C. J., McCormick, B. W., Boswell, W. R., \& Butts, M. M. (2021). Incorporating job demand variability into job demands theory: A meta-analysis. \emph{Journal of Management}, \emph{47}(6), 1630--1656.
 
-\leavevmode\hypertarget{ref-gerich2017relevance}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-gerich2017relevance}{}}%
 Gerich, J. (2017). The relevance of challenge and hindrance appraisals of working conditions for employees' health. \emph{International Journal of Stress Management}, \emph{24}(3), 270.
 
-\leavevmode\hypertarget{ref-landis1977measurement}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-landis1977measurement}{}}%
 Landis, J. R., \& Koch, G. G. (1977). The measurement of observer agreement for categorical data. \emph{Biometrics}, 159--174.
 
-\leavevmode\hypertarget{ref-lazarus1984stress}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-lazarus1984stress}{}}%
 Lazarus, R. S., \& Folkman, S. (1984). \emph{Stress, appraisal, and coping}. Springer publishing company.
 
-\leavevmode\hypertarget{ref-peterson2001understanding}{}%
-Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., Fleishman, E. A., Levin, K. Y., Campion, M. A., Mayfield, M. S., Morgeson, F. P., Pearlman, K., \& others. (2001). Understanding work using the occupational information network (o* NET): Implications for practice and research. \emph{Personnel Psychology}, \emph{54}(2), 451--492.
+\leavevmode\vadjust pre{\hypertarget{ref-peterson2001understanding}{}}%
+Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., Fleishman, E. A., Levin, K. Y., Campion, M. A., Mayfield, M. S., Morgeson, F. P., Pearlman, K.others. (2001). Understanding work using the occupational information network (o* NET): Implications for practice and research. \emph{Personnel Psychology}, \emph{54}(2), 451--492.
 
-\leavevmode\hypertarget{ref-podsakoff2007differential}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-podsakoff2007differential}{}}%
 Podsakoff, N. P., LePine, J. A., \& LePine, M. A. (2007). Differential challenge stressor-hindrance stressor relationships with job attitudes, turnover intentions, turnover, and withdrawal behavior: A meta-analysis. \emph{Journal of Applied Psychology}, \emph{92}(2), 438.
 
-\leavevmode\hypertarget{ref-schmitz_interpreting_2019}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-schmitz_interpreting_2019}{}}%
 Schmitz, L. L., McCluney, C. L., Sonnega, A., \& Hicken, M. T. (2019). Interpreting {Subjective} and {Objective} {Measures} of {Job} {Resources}: {The} {Importance} of {Sociodemographic} {Context}. \emph{International Journal of Environmental Research and Public Health}, \emph{16}(17), 3058. \url{https://doi.org/10.3390/ijerph16173058}
 
-\leavevmode\hypertarget{ref-searle2015merits}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-searle2015merits}{}}%
 Searle, B. J., \& Auton, J. C. (2015). The merits of measuring challenge and hindrance appraisals. \emph{Anxiety, Stress, \& Coping}, \emph{28}(2), 121--143.
 
-\leavevmode\hypertarget{ref-sonnega_comparison_2018}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-sonnega_comparison_2018}{}}%
 Sonnega, A., Helppie-McFall, B., Hudomiet, P., Willis, R. J., \& Fisher, G. G. (2018). A {Comparison} of {Subjective} and {Objective} {Job} {Demands} and {Fit} {With} {Personal} {Resources} as {Predictors} of {Retirement} {Timing} in a {National} {U}.{S}. {Sample}. \emph{Work, Aging and Retirement}, \emph{4}(1), 37--51. \url{https://doi.org/10.1093/workar/wax016}
 
-\leavevmode\hypertarget{ref-webster2011extending}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-webster2011extending}{}}%
 Webster, J. R., Beehr, T. A., \& Love, K. (2011). Extending the challenge-hindrance model of occupational stress: The role of appraisal. \emph{Journal of Vocational Behavior}, \emph{79}(2), 505--516.
 
 \end{CSLReferences}
