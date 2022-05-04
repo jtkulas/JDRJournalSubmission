@@ -1565,7 +1565,12 @@ data$item372[data$item372 == 15] <- 5
 
 labels <- read.csv("truncatedlabels.csv")            
 
+data$item124 <- 6 - data$item124        ## job structured for you (autonomy)
+data$item209 <- 6 - data$item209        ## job structured for you (autonomy)
+data$item294 <- 6 - data$item294        ## job structured for you (autonomy)
+
 resource <- as.data.frame(t(data[118:202]))           
+
 
 resource$description <- labels[c(118:202),1]
 resource$mean <- round(rowMeans(resource[1:nrow(data)], na.rm=TRUE),2)
@@ -1574,7 +1579,7 @@ resource$sd   <- round(apply(resource[1:nrow(data)], 1, sd, na.rm=TRUE),2)
 resource <- resource[,-145]   ## attention check
 #resource <- resource[ which(resource$sd > 0), ] 
 
-resource.control <- resource[ which(resource$description=='job structured for you, rather than allowing you to determine tasks, priorities, and goals' | resource$description=='regular work schedules'), ]
+resource.control <- resource[ which(resource$description=='regular work schedules'), ]
 resource.control$category <- "Control"
 
 resource.participation <- resource[ which(resource$description=='responsible for work outcomes and results of other workers' | resource$description=='responsibility for the health and safety of others' | resource$description=='developing specific goals and plans to prioritize, organize, and accomplish your work' | resource$description=='scheduling events, programs, and activities, as well as the work of others' | resource$description=='developing, designing, or creating new applications, ideas, relationships, systems, or products' | resource$description=='providing information to supervisors, co-workers, and subordinates by telephone, in written form, e-mail, or in person'), ]
@@ -1583,7 +1588,7 @@ resource.participation$category <- "Participation"
 resource.sup.support <- resource[ which(resource$description=='providing guidance and expert advice to management or other groups on technical, systems-, or process-related topics' | resource$description=='identifying the educational needs of others, developing formal educational or training programs or classes, and teaching or instructing others'), ]
 resource.sup.support$category <- "Support"
 
-resource.autonomy <- resource[ which(resource$description=='decision making freedom, without supervision'), ]
+resource.autonomy <- resource[ which(resource$description=='job structured for you, rather than allowing you to determine tasks, priorities, and goals' | resource$description=='decision making freedom, without supervision'), ]
 resource.autonomy$category <- "Autonomy"
 
 resource.cohesion <- resource[ which(resource$description=='work with others in a group or team' | resource$description=='getting members of a group to work together to accomplish tasks' | resource$description=='' | resource$description=='' | resource$description=='' | resource$description=='encouraging and building mutual trust, respect, and cooperation among team members'), ]
@@ -1606,7 +1611,7 @@ challenge$sd   <- round(apply(challenge[1:nrow(data)], 1, sd, na.rm=TRUE),2)
 
 challenge <- challenge[,-308]
 
-challenge.control <- challenge[ which(challenge$description=='job structured for you, rather than allowing you to determine tasks, priorities, and goals' | challenge$description=='regular work schedules'), ]
+challenge.control <- challenge[ which(challenge$description=='regular work schedules'), ]
 challenge.control$category <- "Control"
 
 challenge.participation <- challenge[ which(challenge$description=='responsible for work outcomes and results of other workers' | challenge$description=='responsibility for the health and safety of others' | challenge$description=='developing specific goals and plans to prioritize, organize, and accomplish your work' | challenge$description=='scheduling events, programs, and activities, as well as the work of others' | challenge$description=='developing, designing, or creating new applications, ideas, relationships, systems, or products' | challenge$description=='providing information to supervisors, co-workers, and subordinates by telephone, in written form, e-mail, or in person'), ]
@@ -1615,7 +1620,7 @@ challenge.participation$category <- "Participation"
 challenge.sup.support <- challenge[ which(challenge$description=='providing guidance and expert advice to management or other groups on technical, systems-, or process-related topics' | challenge$description=='identifying the educational needs of others, developing formal educational or training programs or classes, and teaching or instructing others'), ]
 challenge.sup.support$category <- "Support"
 
-challenge.autonomy <- challenge[ which(challenge$description=='decision making freedom, without supervision'), ]
+challenge.autonomy <- challenge[ which(challenge$description=='job structured for you, rather than allowing you to determine tasks, priorities, and goals' | challenge$description=='decision making freedom, without supervision'), ]
 challenge.autonomy$category <- "Autonomy"
 
 challenge.cohesion <- challenge[ which(challenge$description=='work with others in a group or team' | challenge$description=='getting members of a group to work together to accomplish tasks' | challenge$description=='' | challenge$description=='' | challenge$description=='' | challenge$description=='encouraging and building mutual trust, respect, and cooperation among team members'), ]
@@ -1631,13 +1636,15 @@ notedchallenge$RD <- "Challenge"
 hindrance <- as.data.frame(t(data[203:287]))           
 
 hindrance$description <- labels[c(203:287),1]
+
+
 hindrance$mean <- round(rowMeans(hindrance[1:nrow(data)], na.rm=TRUE),2)
 hindrance$sd   <- round(apply(hindrance[1:nrow(data)], 1, sd, na.rm=TRUE),2)
 
 hindrance <- hindrance[,-248]   ## attention check
 #hindrance <- hindrance[ which(hindrance$sd > 0), ] 
 
-hindrance.control <- hindrance[ which(hindrance$description=='job structured for you, rather than allowing you to determine tasks, priorities, and goals' | hindrance$description=='regular work schedules'), ]
+hindrance.control <- hindrance[ which(hindrance$description=='regular work schedules'), ]
 hindrance.control$category <- "Control"
 
 hindrance.participation <- hindrance[ which(hindrance$description=='responsible for work outcomes and results of other workers' | hindrance$description=='responsibility for the health and safety of others' | hindrance$description=='developing specific goals and plans to prioritize, organize, and accomplish your work' | hindrance$description=='scheduling events, programs, and activities, as well as the work of others' | hindrance$description=='developing, designing, or creating new applications, ideas, relationships, systems, or products' | hindrance$description=='providing information to supervisors, co-workers, and subordinates by telephone, in written form, e-mail, or in person'), ]
@@ -1646,7 +1653,7 @@ hindrance.participation$category <- "Participation"
 hindrance.sup.support <- hindrance[ which(hindrance$description=='providing guidance and expert advice to management or other groups on technical, systems-, or process-related topics' | hindrance$description=='identifying the educational needs of others, developing formal educational or training programs or classes, and teaching or instructing others'), ]
 hindrance.sup.support$category <- "Support"
 
-hindrance.autonomy <- hindrance[ which(hindrance$description=='decision making freedom, without supervision'), ]
+hindrance.autonomy <- hindrance[ which(hindrance$description=='job structured for you, rather than allowing you to determine tasks, priorities, and goals' | hindrance$description=='decision making freedom, without supervision'), ]
 hindrance.autonomy$category <- "Autonomy"
 
 hindrance.cohesion <- hindrance[ which(hindrance$description=='work with others in a group or team' | hindrance$description=='getting members of a group to work together to accomplish tasks' | hindrance$description=='' | hindrance$description=='' | hindrance$description=='' | hindrance$description=='encouraging and building mutual trust, respect, and cooperation among team members'), ]
@@ -1681,5 +1688,16 @@ together <- rbind(notedchallenge,notedhindrance,notedresource)
 ############################################################
 ############################################################
 
-ggplot(together, aes(x=category, y=mean, fill=RD)) + geom_bar(stat="identity", position=position_dodge()) + theme_bw() + xlab("") + ylab("Average Job Characteristic Rating") + coord_cartesian(ylim=c(1,5)) + scale_fill_brewer(palette="Blues")
+library(ggplot2)
+library(dplyr)
+
+summarized <- together %>%                               # Summary by group using dplyr
+  group_by(category, RD) %>% 
+  summarize(mean = mean(mean),
+            sd = mean(sd))
+
+summarized$RD <- factor(summarized$RD, levels = c("Resource", "Challenge", "Hindrance"))
+
+ggplot(summarized, aes(x=category, y=mean, fill=RD)) + geom_bar(stat="identity", position=position_dodge()) + theme_bw() + xlab("") + ylab("Average Job Characteristic Rating") + coord_cartesian(ylim=c(1,5)) + scale_fill_brewer(palette="Blues") + 
+  geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.5, size=0.8, position=position_dodge(.9))
 

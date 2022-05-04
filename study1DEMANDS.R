@@ -1,99 +1,8 @@
----
-title             : "Job Demands-Resources model components through the lens of O*NET classifications"
-shorttitle        : "O*NET JD-R"
-
-author: 
-  - name          : "Alicia Stachowski"
-    affiliation   : "1"
-    corresponding : yes    # Define only one corresponding author
-    address       : "Menomenie, WI"
-    email         : "stachowskia@uwstout.edu"
-  - name          : "Renata Garcia Prieto Palacios Roji"
-    affiliation   : "2"
-  - name          : "John Kulas"
-    affiliation   : "2"
-
-affiliation:
-  - id            : "1"
-    institution   : "University of Wisconsin - Stout"
-  - id            : "2"
-    institution   : "Montclair State University"
-
-abstract: |
-  O\*NET work characteristics were rated in terms of relevance, perception as a demand, and perception as a resource. All the results of this current study match the stress-appraisal stuff. Next steps: 1) discuss results within stress-appraisal framework (Lazarus & Bookman), 2) different literature on challenge and hindrance demands. Job Demands Resources theory that says resources and demands are relatively universal is NOT consistent with these findings. JDR neglects the other 2 literatures. Analytically pull O*Net descriptors that reflect universal demands/resources (e.g., autonomy) and see how much variability there is on those. Maybe forget about cross-walk thing. May actually want to start with this: https://docs.google.com/spreadsheets/d/1ck-72dQ_c-Pl4Xba9W0r__OYo0znlEnV/edit#gid=1041061499.
-  
-  We want to also group items by O\*NET categories so there's not so many (that makes ANOVAs more viable)
-  
-keywords          : "keywords"
-wordcount         : "X"
-
-bibliography      : ["r-references.bib", "jdr.bib", "jobdemands_resources_bibtex.bib"]
-
-floatsintext      : no
-figurelist        : no
-tablelist         : no
-footnotelist      : no
-linenumbers       : no
-mask              : no
-draft             : no
-
-csl               : apa7.csl
-documentclass     : "apa6"
-classoption       : "man"
-output            : papaja::apa6_pdf
----
-
-```{r setup, include = FALSE}
-library("papaja")
-r_refs("r-references.bib")
-```
-
-```{r analysis-preferences}
-# Seed for random number generation
-set.seed(42)
-knitr::opts_chunk$set(cache.extra = knitr::rand_seed, echo=FALSE, warning=FALSE, message=FALSE)
-```
-
-
-Given the popularity of the Job Demands-Resources Theory [JD-R; @demerouti2001job] in exploring questions related to everything from motivation to job design, we aim to explore the intersection between *perceptions* of job demands and resources, and the broad set of job characteristics provided on O\*Net. This project makes three contributions. We aim to first explore whether ratings of of O\*Net item groupings align with the stated "resources" and "demands" presented in the job demands-resources theory. We then present evidence documenting whether O\*Net job and task descriptors are similarly rated as resources, challenge- or hindrance demands, and lastly, whether such ratings differ across job categories/classifications. 
-Across two studies, a series of evaluations were made that used: 1) direct O\*Net terminology (both descriptor and response option), and 2) JD-R influenced ratings of demand, challenge, or hindrance of different types of workers. Prior to a description of results, a brief overview of both the JD-R theory, the stress appraisal process, and O\*Net is provided. 
-
-## The Job demands-Resources Theory  
-
-The overarching context for this study is that of the job demands-resources theory, which is an expansion of the well-studied job demands-resources model [@demerouti2001job]. One of the major advantages of the job demands-resources theory is that it allows us to model both work environment and job characteristics via job resources and demands. *Resources* include physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development [@demerouti2001job]. In contrast, *demands* include components of a job that require sustained effort, and as such, produce psychological or physiological strain (e.g., high work pressure is frequently cited as a common demand; @demerouti2001job). 
-Cognitively, the perception of an element of ones job as a resource or demand activates one of two distinct processes: either health impairment (resulting from demands) or motivation [resulting from resources; @bakker2014job]. Pertinent to the current study, demanding job characteristics are frequently associated with negative outcomes [e.g., @bakker2003dual], whereas job characteristics deemed resources have been associated with positive organizational outcomes like engagement and motivation [@bakker2007job]. 
-
-## Objective vs. Subjective Nature of Demands and Resources: The Role of Appraisal
-  
-@searle2015merits note that the majority of the research on workplace demands is based on apriori classifications of demands. However, the stress experience, or process, described early on by @lazarus1984stress is grounded in the assumption that individual appraisals of stressors/demands vary. Their transactional theory of stress and coping states that people continuously appraise stimuli in their environments. An appraisal is the cognitive process whereby meaning is assigned to a stimulus. If a stimulus is appraised as a stressor (threat, challenge, potentially harmful), emotional distress leads to coping of some kind. This action to cope is also associated with another appraisal about the outcome itself and the process continues if the outcomes is not appraised as favorable [@lazarus1984stress]. The stress appraisal process suggests that classifying a job characteristic or environmental condition as an objective demand or resource might be in error. 
-  
-We next consider the (limited) empirical evidence on this topic. First, some relatively recent research suggests that job demands and resources may not be universally appraised or assigned as such. Starting with job demands, @webster2011extending, for example, studied workload, role ambiguity, and role conflict demands, and found that while each could be appraised primarily as a challenge or hindrance demand, they could also simultaneously be perceived as being both a challenge and hindrance to different degrees. While their study did include resources, it nonetheless points to individual differences on how people perceive stressors at work. Although part of a much larger study on retirement, @sonnega_comparison_2018 compared self-reported (subjective) ratings of degree of physical demand, stress, and need for intense concentration from the Health and Retirement Study with objective ratings from O*Net. Correlations physical demand (r = .52), stress (r = .10), and need for intense concentration (r = .14), again suggesting perhaps that our objective ratings of job demands (and resources) may be subject to a greater level of individual difference than assumed. Next considering resources, @schmitz_interpreting_2019 also captured subjective and objective resources in their study of retirement. Correlations of composite variables for the resources of autonomy (r = .12. p > .01), recognition of work (r = .07, p > .01), and decision freedom (r = .08, p > .01), while significant, certainly do not reflect high levels of overlap. 
-
-We do acknowledge as well, that demands and resources are not necessarily consistent across days, or seasons, for many employees. @downes2021incorporating meta-analysis addresses this reality in depth, although it is beyond the scope of this project. 
-
-## O\*Net Resource  
-
-Originally, the Advisory Panel for the Dictionary of Occupational Titles recommended a system that would “…promote the effective education, training, counseling, and employment of the American workforce. It should accomplish its purpose by providing a database system that identifies, defines, classifies, and describes occupations in the economy in an accessible and flexible manner” (@advisory1993new, p. 6). The result was the now commonly used O\*NET. The Occupational Information Network (O\*NET; onetonline.org) contains a comprehensive description of occupations [@peterson2001understanding]. This widely accessed database houses hundreds of standardized and occupation-specific descriptors most occupations in the US and these descriptions are continually updated. In fact, there was a call to work with experienced I/O psychologists over the summer to update the content for the [Industrial and Organizational Psychologist listing on O\*Net](https://www.onetonline.org/link/summary/19-3032.00). These data, and the tools provided for free on the website (e.g., Career Exploration Tools, “My Next Move for Veterans”, “My Next Move”, Toolkit for Business) are frequently used by counselors, students, human resources departments, and researchers to assist potential applicants discover the skills and training they need for the job of their choice. It is also useful to employers by providing them with information with which to craft job descriptions and help employees determine what skills are needed for promotion. 
-
-Of greatest interest here are statements taken from O\*NET ["activity" and "context" classifications](https://www.O\*NETonline.org/find/descriptor/result/4.A.1.b.3) (e.g., items related to information input, interacting with others, physical work conditions, structural job characteristics). One of the first and basic questions is whether or not the categorical examples of "resources" and "demands" described in the Job Demands-Resources Theory [@demerouti2001job], for example, are generally deemed resources or demands as we objectively define them. The next logical question surrounds how "universal" such ratings are. For instance, it is quite possible, given the theoretical and empirical evidence presented above, that there is wide variability in individual appraisal of work activities and context such that some people may rate a given activity as a resource and others a hindrance. A second study extends the findings from Study 1 to a potentially key moderator - job categories/classifications, examining whether ratings of resources, challenge- and hindrance demands differ by job classification.
-
-# Study 1
-
-Look at the [google sheet](https://docs.google.com/spreadsheets/d/1ck-72dQ_c-Pl4Xba9W0r__OYo0znlEnV/edit#gid=1041061499) and document the extent to which job characteristics that have been consistently cited in the literature as demands or resources end up being consistently or variably experienced as demands or resources. Study 1 aims to provide an integration of the theory and practical occupations-focused data on O\*Net. Several broad research questions are examined across jobs:
-
->*Research Question 1*: Are literature-implicated resources consistently rated as job resources?
-
->*Research Question 2*: Are literature-implicated challenges consistently rated as job challenges?
-
->*Research Question 3*: Are literature-implicated hiderances consistently rated as job hinderances?
-
-```{r study1}
-
 temp <- read.csv("initial_data_screen.csv", header=FALSE, na.strings="")   ## NOTE: 404 vars (9/28/21) make sure to check indexing used throughout script
 
 x <- paste("item", sep="",1:404)
 y <- t(temp[2,])
-                                        ## decluttering Qualtrics excess
+## decluttering Qualtrics excess
 data <- temp[-c(1:3),]                                           ## Getting rid of all 3 weird Qualtrics rows
 colnames(data) <- x
 
@@ -109,7 +18,8 @@ rm(x, y, temp)
 
 use <- rbind(data,data3)
 
-## STILL NEED FILE WITH BAD RESPONDENTS IDENTIFIED (E.G., Item_18=2, na > 200, longstring > 20, CARELESS CHECKS > 1)
+##########################################
+##########################################
 
 library(careless)
 use$careless_long <- longstring(use[18:399])
@@ -122,47 +32,8 @@ attention <- use[which(use$item61 == 5 & use$item145 == 5 & use$item248 == 2 & u
 data <- data.frame(lapply(attention, function(x) as.numeric(as.character(x))))
 data <- data[,c(1:404)]
 
-numtot <- nrow(use)
-numkicked <- nrow(different)
-numvalid <- nrow(data)
-
-```
-
-```{r demos}
-
-a <- descr::freq(use$item401, plot=FALSE)
-
-use$item402[use$item402 == "Female " | use$item402 == "female" | use$item402 == "FEMALE" | use$item402 == "Woman" | use$item402 == "Mujer" | use$item402 == "feminine" | use$item402 == "fEMALE" | use$item402 == "F" | use$item402 == "Femenale" | use$item402 == "feminino" | use$item402 == "female " | use$item402 == "Fem" | use$item402 == "Feminine" | use$item402 == "feminine" | use$item402 == "WOMAN" | use$item402 == "Femal" | use$item402 == "femenine" | use$item402 == "Femenine" | use$item402 == "femenino" | use$item402 == "woman"]  <- "Female"
-
-use$item402[use$item402 == "gerente" | use$item402 == "M" | use$item402 == "Make" | use$item402 == "Mal" | use$item402 == "male" | use$item402 == "MALE" | use$item402 == "male" | use$item402 == "Male" | use$item402 == "mals" | use$item402 == "man" | use$item402 == "masculine" | use$item402 == "Masculine" | use$item402 == "Man" | use$item402 == "mals " | use$item402 == "male " | use$item402 == "Male "]  <- "Male"
-
-b <- descr::freq(use$item402, plot=FALSE)
-
-##Job title
-library(labourR)
-
-
-#ESCO/ISCO classification using the labourR package
-#ISCO = International Standard Classification of Occupations
-
-attention$id <- 1:nrow(attention) #adds unique identifier to satisfy inane requirement of classify_occupation()
-
-ISCO <- classify_occupation(attention, text_col = 'item400', isco_level = 1) 
-
-m3 <-merge(attention, ISCO, by.x = "id", by.y = "id", all.x = TRUE)
-
-c <- descr::freq(m3$preferredLabel, plot=FALSE)
-
-knowledge <- data[ which(m3$iscoGroup == "1" | m3$iscoGroup == "2"), ]
-service <- data[ which(m3$iscoGroup == "3" | m3$iscoGroup == "4" | m3$iscoGroup == "5" | m3$iscoGroup == "6" | m3$iscoGroup == "7" | m3$iscoGroup == "8" | m3$iscoGroup == "9"), ]
-
-data$item403[data$item403 == 2000]  <- 20
-
-```
-
-
-```{r generalrecodes}
-## Qualtrics data all messed up
+###########################################
+###########################################
 
 data$item82[data$item82 == 8]  <- 1
 data$item82[data$item82 == 9]  <- 2
@@ -1688,20 +1559,9 @@ data$item372[data$item372 == 13] <- 3
 data$item372[data$item372 == 14] <- 4
 data$item372[data$item372 == 15] <- 5
 
-write.csv(psych::describe(data[18:372]), "checkingrecodes.csv")
-
-```
-
-## Participants
-
-Of the `r nrow(use)` Prolific panel individuals who initially accessed the survey link, `r nrow(different)` indicated that they were not interested, had more than 200 missing responses, or had 20 or more identical consecutive sequential responses [@R-careless]. Applying a further screen regarding attention checks (there were four attention checks embedded throughout, asking respondents to indicate a specific answer) resulted in the retention of `r nrow(data)` respondents who constitute the current SIOP sample. `r round(a[1,3],2)`% had been in their referent job less than 6 months, `r round(a[2,3],1)`% between 6 months and a year, `r round(a[3,3],2)`% between one and five years, `r round(a[4,3],2)`% between 5 and 10 years, and `r round(a[5,3],2)`% more than 10 years.  
-
-Ages ranged from 18 to 65 with an average of `r round(mean(data[,403], na.rm=TRUE),2)` years old (SD = `r round(sd(data[,403], na.rm=TRUE),2)`). The survey offered a free-field gender identity category, although the sample predominantly self-identified as female (`r round(b[2,3],2)`%) or male (`r round(b[5,3],2)`%). 
-
-```{r litresources, fig.cap="Average and standard deviation of O*Net characteristics retained as indicators of Autonomy, Cohesion, Control, Participation, and Supervisor Support."}
-
 ###############################################
 ###############################################
+
 
 
 labels <- read.csv("truncatedlabels.csv")            
@@ -1715,19 +1575,19 @@ resource$sd   <- round(apply(resource[1:nrow(data)], 1, sd, na.rm=TRUE),2)
 resource <- resource[,-145]   ## attention check
 #resource <- resource[ which(resource$sd > 0), ] 
 
-resource.control <- resource[ which(resource$description=='job structured for you, rather than allowing you to determine tasks, priorities, and goals' | resource$description=='regular work schedules'), ]
+resource.control <- resource[ which(resource$description=='pace is determined by the speed of equipment or machinery' | resource$description==), ]
 resource.control$category <- "Control"
 
-resource.participation <- resource[ which(resource$description=='responsible for work outcomes and results of other workers' | resource$description=='responsibility for the health and safety of others' | resource$description=='developing specific goals and plans to prioritize, organize, and accomplish your work' | resource$description=='scheduling events, programs, and activities, as well as the work of others' | resource$description=='developing, designing, or creating new applications, ideas, relationships, systems, or products' | resource$description=='providing information to supervisors, co-workers, and subordinates by telephone, in written form, e-mail, or in person'), ]
+resource.participation <- resource[ which(resource$description==), ]
 resource.participation$category <- "Participation"
 
-resource.sup.support <- resource[ which(resource$description=='providing guidance and expert advice to management or other groups on technical, systems-, or process-related topics' | resource$description=='identifying the educational needs of others, developing formal educational or training programs or classes, and teaching or instructing others'), ]
+resource.sup.support <- resource[ which(resource$description==), ]
 resource.sup.support$category <- "Support"
 
-resource.autonomy <- resource[ which(resource$description=='decision making freedom, without supervision'), ]
+resource.autonomy <- resource[ which(resource$description==), ]
 resource.autonomy$category <- "Autonomy"
 
-resource.cohesion <- resource[ which(resource$description=='work with others in a group or team' | resource$description=='getting members of a group to work together to accomplish tasks' | resource$description=='' | resource$description=='' | resource$description=='' | resource$description=='encouraging and building mutual trust, respect, and cooperation among team members'), ]
+resource.cohesion <- resource[ which(resource$description==), ]
 resource.cohesion$category <- "Cohesion"
 
 notedresource <- rbind(resource.control, resource.participation, resource.sup.support, resource.autonomy, resource.cohesion)
@@ -1796,6 +1656,20 @@ hindrance.cohesion$category <- "Cohesion"
 notedhindrance <- rbind(hindrance.control, hindrance.participation, hindrance.sup.support, hindrance.autonomy, hindrance.cohesion)
 notedhindrance$RD <- "Hindrance"
 
+## together <- rbind(notedchallenge,notedhindrance,notedresource)
+
+############################################################
+############################################################
+
+library(ggplot2)
+
+ggplot(notedresource, aes(x=category, y=mean)) + geom_bar(stat="identity", position=position_dodge()) + theme_bw() + xlab("") + ylab("Average Resource Rating") + coord_cartesian(ylim=c(1,5))
+
+ggplot(notedchallenge, aes(x=category, y=mean)) + geom_bar(stat="identity", position=position_dodge()) + theme_bw() + xlab("") + ylab("Average Challenge Rating") + coord_cartesian(ylim=c(1,5))
+
+ggplot(notedhindrance, aes(x=category, y=mean)) + geom_bar(stat="identity", position=position_dodge()) + theme_bw() + xlab("") + ylab("Average Hindrance Rating") + coord_cartesian(ylim=c(1,5))
+
+
 ###########################################################
 ###########################################################  Name issue somehow above 
 
@@ -1821,221 +1695,4 @@ summarized$RD <- factor(summarized$RD, levels = c("Resource", "Challenge", "Hind
 ggplot(summarized, aes(x=category, y=mean, fill=RD)) + geom_bar(stat="identity", position=position_dodge()) + theme_bw() + xlab("") + ylab("Average Job Characteristic Rating") + coord_cartesian(ylim=c(1,5)) + scale_fill_brewer(palette="Blues") + 
   geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.5, size=0.8, position=position_dodge(.9))
 
-```
 
-## Materials
-
-Looked through
-
-# Study 2  
-
-While Study 1 explored the above questions across jobs, Study 2 considers a potentially important moderator: job classification. There is a distinct possibility we expect we may observe is wide variability in the assignment of some job characteristics within the JD-R framework depending on *job classification*. In fact, a growing body of evidence suggests people may not universally experience job characteristics as challenges or hinderances (e.g., [@bakker2013weekly]; [@cavanaugh2000empirical]; [@gerich2017relevance]; [@podsakoff2007differential]; [@webster2011extending]). Thus, Study 2 focuses on a fourth question of interest.
-
->*Research Question 4*: Does the **type of work** reported explain variability in the categorization of work characteristics into challenges, hindrances, and resources?
-
-
-## Materials  
-
-```{r interrater}
-interrater <- read.csv("interrater.csv")
-
-library(irr)
-
-kappa <- kappam.fleiss(interrater)
-```
-
-Each free-field job title was placed into one of 14 possible O\*NET job families classifications. 60 of these ratings were performed by all 3 author raters, with a resulting Kappa of `r round(kappa$value,2)` [@landis1977measurement]. We then further collapsed these 14 categories into 8 essentially equal frequency job categories. 
-
-### Characteristics, Demands, and Resources  
-
-We used 98 statements taken from O\*NET ["activity" and "context" classifications](https://www.O\*NETonline.org/find/descriptor/result/4.A.1.b.3). We retained 41 "work activity" classifications which O\*NET groups into categories of "Information Input" (5 statements), "Interacting with Others" (17 statements), "Mental Processes" (10 statements) and "Work Output" (9 statements). 57 "work context" statements grouped into "Interpersonal Relationships" (14 statements), "Physical Work Conditions" (30 statements), and "Structural Job Characteristics" (13 statements).  
-
-These "descriptors" often have unique response categories ([see here for example](https://www.O\*NETonline.org/find/descriptor/result/4.C.1.c.2)). We retained the O\*NET wording to capture characteristics of relevance for each respondent. Subsequent to these self evaluations, each respondent who agreed that the element had *at least some relevance* to their job was also asked to rate that element in terms of, 1) ...this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) ...this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) ...this aspect of your job is a hinderance that can inhibit personal growth, learning, and work goal attainment. 
-
-# Results  
-
-## Low Variability Demands and Resources
-
-The below graphs present the resources, challenges, and hindrances that are *largely agreed on* as indexed by (relatively) low standard deviations. 
-
-> Note. The "zero" standard deviations are likely one person, *n*'s should also go on these graphs if they're retained.
-
-```{r resourceslowsd}
-
-labels <- read.csv("truncatedlabels.csv")            
-
-resource <- as.data.frame(t(data[118:202]))           
-
-resource$description <- labels[c(118:202),1]
-resource$mean <- round(rowMeans(resource[1:nrow(data)], na.rm=TRUE),2)
-resource$sd   <- round(apply(resource[1:nrow(data)], 1, sd, na.rm=TRUE),2)
-
-resource <- resource[,-145]   ## attention check
-#resource <- resource[ which(resource$sd > 0), ] 
-
-sortresource <- resource[order(resource$sd),]
-
-topresource <- head(sortresource, 10)
-
-topresource <- topresource[tail(names(topresource),3)]        
-
-library(ggplot2)
-
-ggplot(topresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="blue", position=position_dodge()) + theme_bw() +
-  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Most Agreed Upon as a Resource") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,6)) 
-
-```
-
-```{r challengesagree}
-
-labels <- read.csv("truncatedlabels.csv")            
-
-challenge <- as.data.frame(t(data[288:372]))           
-
-challenge$description <- labels[c(288:372),1]
-challenge$mean <- round(rowMeans(challenge[1:nrow(data)], na.rm=TRUE),2)
-challenge$sd   <- round(apply(challenge[1:nrow(data)], 1, sd, na.rm=TRUE),2)
-
-
-challenge <- challenge[,-308]   ## attention check
-#challenge <- challenge[ which(challenge$sd > 0), ] 
-
-sortchallenge <- challenge[order(challenge$sd),]
-
-topchallenge <- head(sortchallenge, 10)
-
-topchallenge <- topchallenge[tail(names(topchallenge),3)]        
-
-library(ggplot2)
-
-ggplot(topchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="yellow", position=position_dodge()) + theme_bw() +
-  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Most Agreed Upon as a Challenge") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,6)) 
-
-
-```
-
-```{r hindrancesagree}
-
-labels <- read.csv("truncatedlabels.csv")            
-
-hindrance <- as.data.frame(t(data[203:287]))           
-
-hindrance$description <- labels[c(203:287),1]
-hindrance$mean <- round(rowMeans(hindrance[1:nrow(data)], na.rm=TRUE),2)
-hindrance$sd   <- round(apply(hindrance[1:nrow(data)], 1, sd, na.rm=TRUE),2)
-
-hindrance <- hindrance[,-248]   ## attention check
-#hindrance <- hindrance[ which(hindrance$sd > 0), ] 
-
-sorthindrance <- hindrance[order(hindrance$sd),]
-
-tophindrance <- head(sorthindrance, 10)
-
-tophindrance <- tophindrance[tail(names(tophindrance),3)]        
-
-library(ggplot2)
-
-ggplot(tophindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="red", position=position_dodge()) + theme_bw() +
-  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Most Agreed upon as a Hindrance") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5))
-
-```
-
-As can be seen by the graphs, there is considerable disagreement regarding the degree to which job elements are considered *hindrances*, with the 10 elements showing the greatest agreement still ranging in standard deviations from `r min(tophindrance$sd)` to `r max(tophindrance$sd)`. What is widely seen as a resource and challenge tends to be more universally agreed upon (range of lowest 10 resource standard deviations is `r min(topresource$sd)` to `r max(topresource$sd)` and the range of lowest 10 challenge standard deviations is `r min(topchallenge$sd)` to `r max(topchallenge$sd)`.
-
-## High Variability Demands and Resources
-
-The below graphs present the resources, challenges, and hindrances that are *largely disagreed on* as indexed by (relatively) high standard deviations (these are the 10 characteristics with the greatest variability in rating).
-
-```{r resourceshisd}
-
-labels <- read.csv("truncatedlabels.csv")            
-
-resource <- as.data.frame(t(data[118:202]))           
-
-resource$description <- labels[c(118:202),1]
-resource$mean <- round(rowMeans(resource[1:nrow(data)], na.rm=TRUE),2)
-resource$sd   <- round(apply(resource[1:nrow(data)], 1, sd, na.rm=TRUE),2)
-
-resource <- resource[,-145]   ## attention check
-resource <- resource[ which(resource$sd > 0), ] 
-
-sortresource <- resource[order(-resource$sd),]
-
-topresource <- head(sortresource, 10)
-
-topresource <- topresource[tail(names(topresource),3)]        
-
-library(ggplot2)
-
-ggplot(topresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="blue", position=position_dodge()) + theme_bw() +
-  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Least Agreed Upon as a Resource") + 
-  geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5)) 
-
-```
-
-```{r challengeshighsd}
-
-labels <- read.csv("truncatedlabels.csv")            
-
-challenge <- as.data.frame(t(data[288:372]))           
-
-challenge$description <- labels[c(288:372),1]
-challenge$mean <- round(rowMeans(challenge[1:nrow(data)], na.rm=TRUE),2)
-challenge$sd   <- round(apply(challenge[1:nrow(data)], 1, sd, na.rm=TRUE),2)
-
-
-challenge <- challenge[,-308]   ## attention check
-challenge <- challenge[ which(challenge$sd > 0), ] 
-
-sortchallenge <- challenge[order(-challenge$sd),]
-
-topchallenge <- head(sortchallenge, 10)
-
-topchallenge <- topchallenge[tail(names(topchallenge),3)]        
-
-library(ggplot2)
-
-ggplot(topchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="yellow", position=position_dodge()) + theme_bw() +
-  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Least Agreed Upon as a Challenge") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5)) 
-
-
-```
-
-```{r hindranceshighsd}
-
-labels <- read.csv("truncatedlabels.csv")            
-
-hindrance <- as.data.frame(t(data[203:287]))           
-
-hindrance$description <- labels[c(203:287),1]
-hindrance$mean <- round(rowMeans(hindrance[1:nrow(data)], na.rm=TRUE),2)
-hindrance$sd   <- round(apply(hindrance[1:nrow(data)], 1, sd, na.rm=TRUE),2)
-
-hindrance <- hindrance[,-248]   ## attention check
-hindrance <- hindrance[ which(hindrance$sd > 0), ] 
-
-sorthindrance <- hindrance[order(-hindrance$sd),]
-
-tophindrance <- head(sorthindrance, 10)
-
-tophindrance <- tophindrance[tail(names(tophindrance),3)]        
-
-library(ggplot2)
-
-ggplot(tophindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="red", position=position_dodge()) + theme_bw() +
-  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Least Agreed upon as a Hindrance") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5))
-
-```
-
-
-
-\newpage
-
-# References
-
-\begingroup
-\setlength{\parindent}{-0.5in}
-\setlength{\leftskip}{0.5in}
-
-<div id="refs" custom-style="Bibliography"></div>
-\endgroup
