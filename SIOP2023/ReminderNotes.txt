@@ -1,1 +1,5 @@
 Study 1 (from this repository) will also be the basis for a SIOP 2023 poster submission.
+
+2) Looking at DV associations across tenure and maybe gender (possible SIOP submission)
+
+3) do a factor analysis/cluster analysis
