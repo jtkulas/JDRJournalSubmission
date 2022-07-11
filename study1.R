@@ -1701,3 +1701,55 @@ summarized$RD <- factor(summarized$RD, levels = c("Resource", "Challenge", "Hind
 ggplot(summarized, aes(x=category, y=mean, fill=RD)) + geom_bar(stat="identity", position=position_dodge()) + theme_bw() + xlab("") + ylab("Average Job Characteristic Rating") + coord_cartesian(ylim=c(1,5)) + scale_fill_brewer(palette="Blues") + 
   geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.5, size=0.8, position=position_dodge(.9))
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+############################################################
+############################################################  ## Trendlines 7/11/22 (possible SIOP idea)
+
+hist(data$item401)  ## 1 = less than 6 months
+                    ## 2 = between 6 months and a year
+                    ## 3 = between 1 and 5 years
+                    ## 4 = between 5 and 10 years
+                    ## 5 = more than 10 years
+
+
+data$resource <- rowMeans(data[118:202], na.rm=TRUE)    # resource
+data$challenge <- rowMeans(data[288:372], na.rm=TRUE)   # challenge
+data$hindrance <- rowMeans(data[203:287], na.rm=TRUE)   # hindrance
+# hist(data$hindrance)
+
+library(tidyr)
+toplot <- gather(data, type, rating, resource:hindrance, factor_key=TRUE)
+
+toplot.summ <- toplot %>%                               # Summary by group using dplyr
+  group_by(type, item401) %>% 
+  summarize(mean = mean(rating),
+            sd = mean(rating))
+
+ggplot(data=toplot.summ, aes(x=item401, y=mean, colour=type)) +
+         geom_line()
+
+### might be something there - next step is to group subscales (double check 1-5 consistency) - use O*NET categories (3 as well as "11"): https://www.onetonline.org/find/descriptor/browse/4.C
