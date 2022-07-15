@@ -1753,3 +1753,7 @@ ggplot(data=toplot.summ, aes(x=item401, y=mean, colour=type)) +
          geom_line()
 
 ### might be something there - next step is to group subscales (double check 1-5 consistency) - use O*NET categories (3 as well as "11"): https://www.onetonline.org/find/descriptor/browse/4.C
+
+############## four: https://www.onetonline.org/find/descriptor/browse/4.A/4.A.1
+
+data$information.input <- rowMeans(, na.rm=TRUE)
