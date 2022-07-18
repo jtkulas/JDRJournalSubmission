@@ -1756,4 +1756,180 @@ ggplot(data=toplot.summ, aes(x=item401, y=mean, colour=type)) +
 
 ############## four: https://www.onetonline.org/find/descriptor/browse/4.A/4.A.1
 
-data$information.input <- rowMeans(, na.rm=TRUE)
+data$Structural.Resource <-      rowMeans(data[118:127], na.rm=TRUE)
+data$Physical.Resource <-        rowMeans(data[c(128:144,145:148)], na.rm=TRUE)
+data$Interpersonal.Resource <-   rowMeans(data[149:161], na.rm=TRUE)
+data$Information.I.Resource <-   rowMeans(data[162:166], na.rm=TRUE)
+data$Mental.P.Resource <-        rowMeans(data[167:176], na.rm=TRUE)
+data$WorkOutput.Resource <-      rowMeans(data[177:185], na.rm=TRUE)
+data$Interact.Others.Resource <- rowMeans(data[186:202], na.rm=TRUE)
+
+data$Structural.Hindrance <-      rowMeans(data[203:212], na.rm=TRUE)
+data$Physical.Hindrance <-        rowMeans(data[213:232], na.rm=TRUE)
+data$Interpersonal.Hindrance <-   rowMeans(data[233:245], na.rm=TRUE)
+data$Information.I.Hindrance <-   rowMeans(data[c(246:247,249:251)], na.rm=TRUE)
+data$Mental.P.Hindrance <-        rowMeans(data[252:261], na.rm=TRUE)
+data$WorkOutput.Hindrance <-      rowMeans(data[262:270], na.rm=TRUE)
+data$Interact.Others.Hindrance <- rowMeans(data[271:287], na.rm=TRUE)
+
+data$Structural.Challenge <-      rowMeans(data[288:297], na.rm=TRUE)
+data$Physical.Challenge <-        rowMeans(data[c(298:307,309:318)], na.rm=TRUE)
+data$Interpersonal.Challenge <-   rowMeans(data[319:331], na.rm=TRUE)
+data$Information.I.Challenge <-   rowMeans(data[332:336], na.rm=TRUE)
+data$Mental.P.Challenge <-        rowMeans(data[337:346], na.rm=TRUE)
+data$WorkOutput.Challenge <-      rowMeans(data[347:355], na.rm=TRUE)
+data$Interact.Others.Challenge <- rowMeans(data[356:372], na.rm=TRUE)
+
+#############################################################################
+#############################################################################
+#############################################################################
+#############################################################################  Tenure (5 levels)
+
+toplot <- gather(data, subscale, rating, Structural.Resource:Interact.Others.Resource, factor_key=TRUE)
+
+toplot.summ <- toplot %>%                               # Summary by group using dplyr
+  group_by(subscale, item401) %>% 
+  summarize(mean = mean(rating),
+            sd = mean(rating))
+
+ggplot(data=toplot.summ, aes(x=item401, y=mean, colour=subscale, size=2)) +
+  geom_line()  + 
+  scale_color_brewer(palette="Paired") + ylim(1,5)
+
+######################################################
+
+toplot <- gather(data, subscale, rating, Structural.Hindrance:Interact.Others.Hindrance, factor_key=TRUE)
+
+toplot.summ <- toplot %>%                               # Summary by group using dplyr
+  group_by(subscale, item401) %>% 
+  summarize(mean = mean(rating),
+            sd = mean(rating))
+
+ggplot(data=toplot.summ, aes(x=item401, y=mean, colour=subscale, size=2)) +
+  geom_line()  + 
+  scale_color_brewer(palette="Paired") + ylim(1,5)
+
+
+######################################################
+
+toplot <- gather(data, subscale, rating, Structural.Resource:Interact.Others.Resource, factor_key=TRUE)
+
+toplot.summ <- toplot %>%                               # Summary by group using dplyr
+  group_by(subscale, item401) %>% 
+  summarize(mean = mean(rating),
+            sd = mean(rating))
+
+ggplot(data=toplot.summ, aes(x=item401, y=mean, colour=subscale, size=2)) +
+  geom_line()  + 
+  scale_color_brewer(palette="Paired") + ylim(1,5)
+
+#############################################################  looking within dimension
+############################################################# 
+############################################################# 
+############################################################# 
+############################################################# 
+
+toplot <- gather(data, subscale, rating, c(Structural.Resource, Structural.Hindrance, Structural.Challenge), factor_key=TRUE)
+
+toplot.summ <- toplot %>%                               # Summary by group using dplyr
+  group_by(subscale, item401) %>% 
+  summarize(mean = mean(rating),
+            sd = mean(rating))
+
+ggplot(data=toplot.summ, aes(x=item401, y=mean, colour=subscale, size=2)) +
+  geom_line()  + 
+  scale_color_brewer(palette="Paired") + ylim(1,5)
+
+###################################################################
+
+toplot <- gather(data, subscale, rating, c(Physical.Resource, Physical.Hindrance, Physical.Challenge), factor_key=TRUE)
+
+toplot.summ <- toplot %>%                               # Summary by group using dplyr
+  group_by(subscale, item401) %>% 
+  summarize(mean = mean(rating),
+            sd = mean(rating))
+
+ggplot(data=toplot.summ, aes(x=item401, y=mean, colour=subscale, size=2)) +
+  geom_line()  + 
+  scale_color_brewer(palette="Paired") + ylim(1,5)
+
+
+###################################################################
+
+toplot <- gather(data, subscale, rating, c(Interpersonal.Resource, Interpersonal.Hindrance, Interpersonal.Challenge), factor_key=TRUE)
+
+toplot.summ <- toplot %>%                               # Summary by group using dplyr
+  group_by(subscale, item401) %>% 
+  summarize(mean = mean(rating),
+            sd = mean(rating))
+
+ggplot(data=toplot.summ, aes(x=item401, y=mean, colour=subscale, size=2)) +
+  geom_line()  + 
+  scale_color_brewer(palette="Paired") + ylim(1,5)
+
+
+###################################################################
+
+toplot <- gather(data, subscale, rating, c(Information.I.Resource, Information.I.Hindrance, Information.I.Challenge), factor_key=TRUE)
+
+toplot.summ <- toplot %>%                               # Summary by group using dplyr
+  group_by(subscale, item401) %>% 
+  summarize(mean = mean(rating),
+            sd = mean(rating))
+
+ggplot(data=toplot.summ, aes(x=item401, y=mean, colour=subscale, size=2)) +
+  geom_line()  + 
+  scale_color_brewer(palette="Paired") + ylim(1,5)
+
+
+###################################################################
+
+toplot <- gather(data, subscale, rating, c(Mental.P.Resource, Mental.P.Hindrance, Mental.P.Challenge), factor_key=TRUE)
+
+toplot.summ <- toplot %>%                               # Summary by group using dplyr
+  group_by(subscale, item401) %>% 
+  summarize(mean = mean(rating),
+            sd = mean(rating))
+
+ggplot(data=toplot.summ, aes(x=item401, y=mean, colour=subscale, size=2)) +
+  geom_line()  + 
+  scale_color_brewer(palette="Paired") + ylim(1,5)
+
+
+###################################################################
+
+toplot <- gather(data, subscale, rating, c(WorkOutput.Resource, WorkOutput.Hindrance, WorkOutput.Challenge), factor_key=TRUE)
+
+toplot.summ <- toplot %>%                               # Summary by group using dplyr
+  group_by(subscale, item401) %>% 
+  summarize(mean = mean(rating),
+            sd = mean(rating))
+
+ggplot(data=toplot.summ, aes(x=item401, y=mean, colour=subscale, size=2)) +
+  geom_line()  + 
+  scale_color_brewer(palette="Paired") + ylim(1,5)
+
+
+###################################################################
+
+toplot <- gather(data, subscale, rating, c(Interact.Others.Resource, Interact.Others.Hindrance, Interact.Others.Challenge), factor_key=TRUE)
+
+toplot.summ <- toplot %>%                               # Summary by group using dplyr
+  group_by(subscale, item401) %>% 
+  summarize(mean = mean(rating),
+            sd = mean(rating))
+
+ggplot(data=toplot.summ, aes(x=item401, y=mean, colour=subscale, size=2)) +
+  geom_line()  + 
+  scale_color_brewer(palette="Paired") + ylim(1,5)
+
+new <- cor(data[c(408:428)], use="pairwise.complete.obs")
+
+library(corrr)
+
+res.cor <- correlate(data[c(408:428)], use="pairwise.complete.obs")
+res.cor %>% fashion()
+res.cor %>% rearrange(method="MDS", absolute=FALSE) %>% shave(upper=FALSE) %>% rplot()
+res.cor %>% network_plot(min_cor = .4)
+
+corrplot(new, type="upper", order="hclust", tl.col="black", tl.srt=45, diag=FALSE)
