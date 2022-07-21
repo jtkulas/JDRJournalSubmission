@@ -1559,6 +1559,8 @@ data$item372[data$item372 == 13] <- 3
 data$item372[data$item372 == 14] <- 4
 data$item372[data$item372 == 15] <- 5
 
+forsiop <- write.csv(data, "recodedforsiop.csv")       ## saving above recodes so future scripts can be less dense (7/21/22 in Anoka)
+
 ###############################################
 ###############################################
 
