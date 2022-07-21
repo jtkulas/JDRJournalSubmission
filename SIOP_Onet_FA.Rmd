@@ -1,0 +1,144 @@
+---
+title             : "O*Net Factor Analysis Project"
+shorttitle        : "SIOP_FA"
+
+author: 
+  - name          : "First Author"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : "Postal address"
+    email         : "my@email.com"
+    role:         # Contributorship roles (e.g., CRediT, https://casrai.org/credit/)
+      - Conceptualization
+      - Writing - Original Draft Preparation
+      - Writing - Review & Editing
+  - name          : "Ernst-August Doelle"
+    affiliation   : "1,2"
+    role:
+      - Writing - Review & Editing
+
+affiliation:
+  - id            : "1"
+    institution   : "Wilhelm-Wundt-University"
+  - id            : "2"
+    institution   : "Konstanz Business School"
+
+authornote: |
+  Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
+
+  Enter author note here.
+  
+  <!-- https://tinyurl.com/ybremelq -->
+  
+keywords          : "keywords"
+wordcount         : "X"
+
+bibliography      : ["r-references.bib"]
+
+floatsintext      : no
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : yes
+mask              : no
+draft             : no
+
+documentclass     : "apa6"
+classoption       : "man"
+output            : papaja::apa6_pdf
+---
+
+```{r setup, include = FALSE}
+library("papaja")
+r_refs("r-references.bib")
+```
+
+# Methods
+
+## Participants
+
+## Material
+
+## Procedure
+
+# Results
+
+Maybe try hierarchical which 2 overaching factors with the "dimensions" under each). 
+
+We are working on a factor analysis of the characteristics themselves. This is based on the larger number of items (97?) with an n of now 568. 
+
+We tried different numbers of factors based on a scree plot suggesting we start at 8 factors. We printed only those loadings at .3 or higher to begin. Very few items loaded on more than 1 factor, and most loaded at .3+ on one factor. A few were negative. Need to think carefully about interpretation by exploring what the items themselves are.
+
+Next - tried a 2 factor solution, wondering if items in the "context" and "activity" categories loaded as expected based on Onet categories. Again, most items loaded at .3+. The physical items generally loaded on factor 1.
+
+```{r scree plot}
+
+data <- read.csv("recodedforsiop.csv")[,-1] ## line 1562 of "study1.R" script
+
+data$Structural <-      rowMeans(data[19:31], na.rm=TRUE)
+data$Physical <-        rowMeans(data[c(32:60,62)], na.rm=TRUE)
+data$Interpersonal <-   rowMeans(data[63:76], na.rm=TRUE)
+data$Information.I <-   rowMeans(data[77:81], na.rm=TRUE)
+data$Mental.P <-        rowMeans(data[82:91], na.rm=TRUE)
+data$WorkOutput <-      rowMeans(data[92:100], na.rm=TRUE)
+data$Interact.Others <- rowMeans(data[101:117], na.rm=TRUE)
+
+library(psych)
+forfa <- cor(data[c(19:60,62:117)], use="pairwise.complete.obs")
+fa.parallel(forfa, n.obs=568)
+```
+
+```{r eight_factorFA}
+##Here's where we started - it appears that based on scree plot, 8 factors might be appropriate.
+efa <- fa(data[c(19:60,62:117)], rotate="oblimin", nfactors=8, n.obs=568, scores=TRUE, alpha=.1) ## changed to data so can get factor scores
+summary(efa)
+
+together <- cbind(data, efa$scores)
+
+#res.cor <- correlate(together[c(405:413)], use="pairwise.complete.obs")
+#res.cor %>% fashion()
+#res.cor %>% shave(upper=FALSE) %>% rplot()
+
+efa$loadings
+print(efa$loadings,cut=.3,digits=2)
+```
+
+```{r two_factorFA}
+##Next, trying the 2 overarching factors we noted first:
+efa <- fa(forfa, rotate="oblimin", nfactors=2, n.obs=568, scores=TRUE, alpha=.1)
+summary(efa)
+
+efa$loadings
+print(efa$loadings,cut=.3,digits=2)
+```
+
+```{r seven_factorFA}
+## Try 7 factor solution next. 
+efa <- fa(forfa, rotate="oblimin", nfactors=7, n.obs=568, scores=TRUE, alpha=.1)
+summary(efa)
+
+efa$loadings
+print(efa$loadings,cut=.3,digits=2)
+```
+
+```{r nine_factorFA}
+## Try 9 factor solution next. 
+efa <- fa(forfa, rotate="oblimin", nfactors=9, n.obs=568, scores=TRUE, alpha=.1)
+summary(efa)
+
+efa$loadings
+print(efa$loadings,cut=.3,digits=2)
+```
+# Discussion
+
+
+\newpage
+
+# References
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id="refs" custom-style="Bibliography"></div>
+\endgroup

@@ -21,5 +21,38 @@ library(psych)
 forfa <- cor(data[c(19:60,62:117)], use="pairwise.complete.obs")
 fa.parallel(forfa, n.obs=568)
 
-efa <- fa(forfa, rotate="oblimin", nfactors=8, n.obs=568, scores=TRUE, alpha=.1)
+##Here's where we started - it appears that based on scree plot, 8 factors might be appropriate.
+##Figure out how many factors - an option
+efa <- fa(data[c(19:60,62:117)], rotate="oblimin", nfactors=8, n.obs=568, scores=TRUE, alpha=.1) ## changed to data so can get factor scores
 summary(efa)
+
+together <- cbind(data, efa$scores)
+
+res.cor <- correlate(together[c(405:413)], use="pairwise.complete.obs")
+res.cor %>% fashion()
+res.cor %>% shave(upper=FALSE) %>% rplot()
+
+efa$loadings
+print(efa$loadings,cut=.3,digits=2)
+
+##Next, trying the 2 overarching factors we noted first:
+efa <- fa(forfa, rotate="oblimin", nfactors=2, n.obs=568, scores=TRUE, alpha=.1)
+summary(efa)
+
+efa$loadings
+print(efa$loadings,cut=.3,digits=2)
+
+## Try 7 factor solution next. 
+efa <- fa(forfa, rotate="oblimin", nfactors=7, n.obs=568, scores=TRUE, alpha=.1)
+summary(efa)
+
+efa$loadings
+print(efa$loadings,cut=.3,digits=2)
+
+## Try 9 factor solution next. 
+efa <- fa(forfa, rotate="oblimin", nfactors=9, n.obs=568, scores=TRUE, alpha=.1)
+summary(efa)
+
+efa$loadings
+print(efa$loadings,cut=.3,digits=2)
+
