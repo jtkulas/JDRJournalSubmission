@@ -27,6 +27,24 @@ authornote: |
   Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
 
   Enter author note here.
+<<<<<<< HEAD
+=======
+
+abstract: |
+  One or two sentences providing a **basic introduction** to the field,  comprehensible to a scientist in any discipline.
+  
+  Two to three sentences of **more detailed background**, comprehensible  to scientists in related disciplines.
+  
+  One sentence clearly stating the **general problem** being addressed by  this particular study.
+  
+  One sentence summarizing the main result (with the words "**here we show**" or their equivalent).
+  
+  Two or three sentences explaining what the **main result** reveals in direct comparison to what was thought to be the case previously, or how the  main result adds to previous knowledge.
+  
+  One or two sentences to put the results into a more **general context**.
+  
+  Two or three sentences to provide a **broader perspective**, readily comprehensible to a scientist in any discipline.
+>>>>>>> 69cdeaa28fdbafc29b5f0f9f68326640db2736a4
   
   <!-- https://tinyurl.com/ybremelq -->
   
@@ -88,6 +106,7 @@ forfa <- cor(data[c(19:60,62:117)], use="pairwise.complete.obs")
 fa.parallel(forfa, n.obs=568)
 ```
 
+<<<<<<< HEAD
 ```{r eight_factorFA}
 ##Here's where we started - it appears that based on scree plot, 8 factors might be appropriate.
 efa <- fa(data[c(19:60,62:117)], rotate="oblimin", nfactors=8, n.obs=568, scores=TRUE, alpha=.1) ## changed to data so can get factor scores
@@ -129,6 +148,8 @@ summary(efa)
 efa$loadings
 print(efa$loadings,cut=.3,digits=2)
 ```
+=======
+>>>>>>> 69cdeaa28fdbafc29b5f0f9f68326640db2736a4
 # Discussion
 
 
