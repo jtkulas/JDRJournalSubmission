@@ -27,25 +27,7 @@ authornote: |
   Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
 
   Enter author note here.
-<<<<<<< HEAD
-=======
 
-abstract: |
-  One or two sentences providing a **basic introduction** to the field,  comprehensible to a scientist in any discipline.
-  
-  Two to three sentences of **more detailed background**, comprehensible  to scientists in related disciplines.
-  
-  One sentence clearly stating the **general problem** being addressed by  this particular study.
-  
-  One sentence summarizing the main result (with the words "**here we show**" or their equivalent).
-  
-  Two or three sentences explaining what the **main result** reveals in direct comparison to what was thought to be the case previously, or how the  main result adds to previous knowledge.
-  
-  One or two sentences to put the results into a more **general context**.
-  
-  Two or three sentences to provide a **broader perspective**, readily comprehensible to a scientist in any discipline.
->>>>>>> 69cdeaa28fdbafc29b5f0f9f68326640db2736a4
-  
   <!-- https://tinyurl.com/ybremelq -->
   
 keywords          : "keywords"
@@ -122,8 +104,10 @@ efa$loadings
 print(efa$loadings,cut=.3,digits=2)
 ```
 
+Two factors generally seem to reflect physical or work environment items, and the other factor seems to represent cognitive or mental tasks. 
+
 ```{r two_factorFA}
-##Next, trying the 2 overarching factors we noted first:
+##Next, trying the 2 overarching factors we noted first. 
 efa <- fa(forfa, rotate="oblimin", nfactors=2, n.obs=568, scores=TRUE, alpha=.1)
 summary(efa)
 

@@ -28,7 +28,7 @@ efa <- fa(data[c(19:60,62:117)], rotate="oblimin", nfactors=8, n.obs=568, scores
 =======
 ##Here's where we started - it appears that based on scree plot, 8 factors migth be appropriate.
 ##Figure out how many factors - an option
-efa <- fa(data[c(19:60,62:117)], rotate="oblimin", nfactors=2, n.obs=568, scores=TRUE, alpha=.1) ## changed to data so can get factor scores
+efa <- fa(data[c(19:60,62:117)], rotate="oblimin", nfactors=8, n.obs=568, scores=TRUE, alpha=.1) ## changed to data so can get factor scores
 >>>>>>> 69cdeaa28fdbafc29b5f0f9f68326640db2736a4
 summary(efa)
 
