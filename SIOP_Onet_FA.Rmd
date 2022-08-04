@@ -65,13 +65,13 @@ r_refs("r-references.bib")
 
 @hadden2004descriptive conducted a factor analysis and obtained a 2-factor solution for the work content. Similar investigations have been done since the 1980's. We're continuing this tradition here. 
 
-Current Onet is 26.3. Hadden was version 4. **Add the names of two Hadden factors here also. 
+Current Onet is 26.3. Hadden was version 4. **Add the names of two Hadden factors here also. The Hadden paper had 79 items in it, whereas 94 items.
 
 We captured: 
 Work Activities (sub dimensions: info input, inacting with others, mental processes, work output)
 Work Context (physical, structural, interpersonal relationships)
 
-Comparison Model 1: two factors with work activies and work context, and then under that, the 7 sub-dimensions
+Comparison Model 1: two factors with work activities and work context, and then under that, the 7 sub-dimensions
 
 Our comparison will use the other half of the sample to run an EFA and look at a scree plot to determine how many factors. 
 
