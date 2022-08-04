@@ -23,9 +23,64 @@ res.cor <- correlate(data[c(405:411)], use="pairwise.complete.obs")
 res.cor %>% fashion()
 res.cor %>% rearrange(method="MDS", absolute=FALSE) %>% shave(upper=FALSE) %>% rplot()
 
+###############################
+## trying some cluster analyses
+cluster1 <- kmeans(data[,405:411], 2, nstart=20)
+cluster1
+
+cluster1$cluster <- as.factor(cluster1$cluster)
+
+library(ggplot2)
+ggplot(data, aes(Interact.Others, Interpersonal, color=cluster1$cluster)) + geom_point(size=5, alpha=.5)
+
+ggplot(data, aes(Structural, Interpersonal, color=cluster1$cluster)) + geom_point(size=5, alpha=.5)
+
+################################################################
+################################################################
+
+cluster2 <- kmeans(data[,c(19:60, 62:117)], 2, nstart=20)    ## item responses
+
+cluster2$cluster <- as.factor(cluster2$cluster)
+
+## Physical
+
+a <- ggplot(data, aes(Physical, Structural, color=cluster2$cluster)) + geom_point(size=5, alpha=.5) + theme(legend.position="none")
+
+b <- ggplot(data, aes(Physical, Interpersonal, color=cluster2$cluster)) + geom_point(size=5, alpha=.5) + theme(legend.position="none")
+
+c <- ggplot(data, aes(Physical, Information.I, color=cluster2$cluster)) + geom_point(size=5, alpha=.5) + theme(legend.position="none")
+
+d <- ggplot(data, aes(Physical, Mental.P, color=cluster2$cluster)) + geom_point(size=5, alpha=.5) + theme(legend.position="none")
+
+e <- ggplot(data, aes(Physical, WorkOutput, color=cluster2$cluster)) + geom_point(size=5, alpha=.5) + theme(legend.position="none")
+
+f <- ggplot(data, aes(Physical, Interact.Others, color=cluster2$cluster)) + geom_point(size=5, alpha=.5) + theme(legend.position="none")
+
+library(cowplot)
+plot_grid(a,b,c,d,e,f)
+
+## Interact.Others
+
+a <- ggplot(data, aes(Interact.Others, Structural, color=cluster2$cluster)) + geom_point(size=5, alpha=.5) + theme(legend.position="none")
+
+b <- ggplot(data, aes(Interact.Others, Interpersonal, color=cluster2$cluster)) + geom_point(size=5, alpha=.5) + theme(legend.position="none")
+
+c <- ggplot(data, aes(Interact.Others, Information.I, color=cluster2$cluster)) + geom_point(size=5, alpha=.5) + theme(legend.position="none")
+
+d <- ggplot(data, aes(Interact.Others, Mental.P, color=cluster2$cluster)) + geom_point(size=5, alpha=.5) + theme(legend.position="none")
+
+e <- ggplot(data, aes(Interact.Others, WorkOutput, color=cluster2$cluster)) + geom_point(size=5, alpha=.5) + theme(legend.position="none")
+
+f <- ggplot(data, aes(Interact.Others, Physical, color=cluster2$cluster)) + geom_point(size=5, alpha=.5) + theme(legend.position="none")
+
+plot_grid(a,b,c,d,e,f)
+
+############################### Neat looking but not really anything meaningful - 8/4/22 with Alicia at Monticello Caribou
+###############################
+
 library(psych)
 forfa <- cor(data[c(19:60,62:117)], use="pairwise.complete.obs")
-fa.parallel(forfa, n.obs=568)
+fa.parallel(forfa, n.obs=284)
 
 ##Here's where we started - it appears that based on scree plot, 8 factors might be appropriate.
 ##Figure out how many factors - an option
