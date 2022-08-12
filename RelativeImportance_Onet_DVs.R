@@ -5726,6 +5726,6 @@ plot(y=y,x=x,cex=1.2,pch=wmarker,xlab="Resources (W)",
 legend.txt<-c("Low Resources","Medium Resources", "High Resources")
 legend("topleft", legend = legend.txt,cex=1,lty=c(1,3,6),lwd=c(2,3,2),
        pch=c(15,16,17))
-lines(x[w==3.2983],y[w==3.2983],lwd=2,col="red")
-lines(x[w==3.7402],y[w==3.7402],lwd=3,lty=3,col="orange")
-lines(x[w==4.2063],y[w==4.2063],lwd=2,lty=6,col="green")
+lines(x[w==3.2983],y[w==3.2983],lwd=2,col="black")
+lines(x[w==3.7402],y[w==3.7402],lwd=3,lty=3,col="black")
+lines(x[w==4.2063],y[w==4.2063],lwd=2,lty=6,col="black")
