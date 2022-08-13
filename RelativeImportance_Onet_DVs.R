@@ -5706,6 +5706,7 @@ process<-function(data,y="xxxxx",x="xxxxx",m="xxxxx",w="xxxxx",z="xxxxx",cov="xx
   invisible(resultms)
 }  
 process(activate=1)
+process(data=data, y="stress", x="overall.hindrance", w="overall.resource", model=1, jn=1, plot=1)
 
 #Do resources moderate the relationship between hindrances and stress such 
 #that more total resources weaken the relationship between
@@ -5713,7 +5714,6 @@ process(activate=1)
 data$overall.hindrance <- overall.hindrance
 data$overall.resource <- overall.resource
 data$overall.challenge <- overall.challenge
-process(data=data, y="stress", x="overall.hindrance", w="overall.resource", model=1, jn=1, plot=1)
 
 #Plot the interaction
 x<-c(1.6667, 2.2894, 3.2416, 1.6667, 2.2894, 3.2416, 1.6667, 2.2894, 3.2416)
@@ -5729,3 +5729,14 @@ legend("topleft", legend = legend.txt,cex=1,lty=c(1,3,6),lwd=c(2,3,2),
 lines(x[w==3.2983],y[w==3.2983],lwd=2,col="black")
 lines(x[w==3.7402],y[w==3.7402],lwd=3,lty=3,col="black")
 lines(x[w==4.2063],y[w==4.2063],lwd=2,lty=6,col="black")
+
+#explore the individual kinds of resources
+process(data=data, y="stress", x="overall.hindrance", w="onet.resource.ii", model=1, jn=1, plot=1)
+process(data=data, y="stress", x="overall.hindrance", w="onet.resource.mp", model=1, jn=1, plot=1)
+process(data=data, y="stress", x="overall.hindrance", w="onet.resource.ii", model=1, jn=1, plot=1)
+process(data=data, y="stress", x="overall.hindrance", w="onet.resource.wo", model=1, jn=1, plot=1)
+process(data=data, y="stress", x="overall.hindrance", w="onet.resource.io", model=1, jn=1, plot=1)
+process(data=data, y="stress", x="overall.hindrance", w="onet.resource.ir", model=1, jn=1, plot=1)
+process(data=data, y="stress", x="overall.hindrance", w="onet.resource.pc", model=1, jn=1, plot=1)
+process(data=data, y="stress", x="overall.hindrance", w="onet.resource.sc", model=1, jn=1, plot=1)
+
