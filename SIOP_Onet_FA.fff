@@ -1,0 +1,7 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{SIOP_Onet_FA_files/figure-latex/analyses-1.pdf}
+\caption{\label{fig:analyses}Interaction between hindrances and resources as predictors of stress}
+\end{figure*}

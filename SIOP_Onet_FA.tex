@@ -3,12 +3,11 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  english,
   man]{apa6}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -34,16 +33,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={O*Net Factor Analysis Project},
-  pdfauthor={First Author1 \& Ernst-August Doelle1,2},
-  pdflang={en-EN},
-  pdfkeywords={keywords},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -70,6 +59,38 @@
   \let\oldsubparagraph\subparagraph
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{english}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 % Manuscript styling
 \usepackage{upgreek}
 \captionsetup{font=singlespacing,justification=justified}
@@ -85,9 +106,9 @@
 
 % Create new environments so endfloat can handle them
 % \newenvironment{ltable}
-%   {\begin{landscape}\begin{center}\begin{threeparttable}}
-%   {\end{threeparttable}\end{center}\end{landscape}}
-\newenvironment{lltable}{\begin{landscape}\begin{center}\begin{ThreePartTable}}{\end{ThreePartTable}\end{center}\end{landscape}}
+%   {\begin{landscape}\centering\begin{threeparttable}}
+%   {\end{threeparttable}\end{landscape}}
+\newenvironment{lltable}{\begin{landscape}\centering\begin{ThreePartTable}}{\end{ThreePartTable}\end{landscape}}
 
 % Enables adjusting longtable caption width to table width
 % Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
@@ -125,7 +146,15 @@
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
 \makeatother
-\shorttitle{SIOP\_FA}
+
+\usepackage{xpatch}
+\makeatletter
+\xapptocmd\appendix
+  {\xapptocmd\section
+    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
+    {}{\InnerPatchFailed}%
+  }
+{}{\PatchFailed}
 \keywords{keywords\newline\indent Word count: X}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
@@ -137,44 +166,26 @@
 
 \linenumbers
 \usepackage{csquotes}
-\ifxetex
-  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
-  \usepackage{polyglossia}
-  \setmainlanguage[]{english}
-\else
-  \usepackage[main=english]{babel}
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
-\fi
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
-  % set entry spacing
-  \ifnum #2 > 0
-  \setlength{\parskip}{#2\baselineskip}
-  \fi
- }%
- {}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={O*Net Factor Analysis Project},
+  pdfauthor={First Author1 \& Ernst-August Doelle1,2},
+  pdflang={en-EN},
+  pdfkeywords={keywords},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{O*Net Factor Analysis Project}
 \author{First Author\textsuperscript{1} \& Ernst-August Doelle\textsuperscript{1,2}}
 \date{}
 
+
+\shorttitle{SIOP\_FA}
 
 \authornote{
 
@@ -193,1018 +204,187 @@ Correspondence concerning this article should be addressed to First Author, Post
 \begin{document}
 \maketitle
 
+Given the popularity of the Job Demands-Resources Theory {[}JD-R; Demerouti et al. (2001){]} in exploring questions related to everything from motivation to job design, we aim to explore the intersection between \emph{perceptions} of job demands and resources, and the broad set of job characteristics provided on O*Net. This project makes three contributions. We aim to first explore whether ratings of of O*Net item groupings align with the stated ``resources'' and ``demands'' presented in the job demands-resources theory. We then present evidence documenting whether O*Net job and task descriptors are similarly rated as resources, challenge- or hindrance demands, and lastly, whether such ratings differ across job categories/classifications.
+Across two studies, a series of evaluations were made that used: 1) direct O*Net terminology (both descriptor and response option), and 2) JD-R influenced ratings of demand, challenge, or hindrance of different types of workers. Prior to a description of results, a brief overview of both the JD-R theory, the stress appraisal process, and O*Net is provided.
+
+\hypertarget{the-job-demands-resources-theory}{%
+\subsection{The Job demands-Resources Theory}\label{the-job-demands-resources-theory}}
+
+The overarching context for this study is that of the job demands-resources theory, which is an expansion of the well-studied job demands-resources model (Demerouti et al., 2001). One of the major advantages of the job demands-resources theory is that it allows us to model both work environment and job characteristics via job resources and demands. \emph{Resources} include physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development (Demerouti et al., 2001). In contrast, \emph{demands} include components of a job that require sustained effort, and as such, produce psychological or physiological strain (e.g., high work pressure is frequently cited as a common demand; Demerouti et al. (2001)).
+Cognitively, the perception of an element of ones job as a resource or demand activates one of two distinct processes: either health impairment (resulting from demands) or motivation {[}resulting from resources; A. B. Bakker and Demerouti (2014){]}. Pertinent to the current study, demanding job characteristics are frequently associated with negative outcomes (e.g., A. Bakker et al., 2003), whereas job characteristics deemed resources have been associated with positive organizational outcomes like engagement and motivation (A. B. Bakker et al., 2007).
+
+\hypertarget{objective-vs.-subjective-nature-of-demands-and-resources-the-role-of-appraisal}{%
+\subsection{Objective vs.~Subjective Nature of Demands and Resources: The Role of Appraisal}\label{objective-vs.-subjective-nature-of-demands-and-resources-the-role-of-appraisal}}
+
+Searle and Auton (2015) note that the majority of the research on workplace demands is based on apriori classifications of demands. However, the stress experience, or process, described early on by Lazarus and Folkman (1984) is grounded in the assumption that individual appraisals of stressors/demands vary. Their transactional theory of stress and coping states that people continuously appraise stimuli in their environments. An appraisal is the cognitive process whereby meaning is assigned to a stimulus. If a stimulus is appraised as a stressor (threat, challenge, potentially harmful), emotional distress leads to coping of some kind. This action to cope is also associated with another appraisal about the outcome itself and the process continues if the outcomes is not appraised as favorable (Lazarus \& Folkman, 1984). The stress appraisal process suggests that classifying a job characteristic or environmental condition as an objective demand or resource might be in error.
+
+We next consider the (limited) empirical evidence on this topic. First, some relatively recent research suggests that job demands and resources may not be universally appraised or assigned as such. Starting with job demands, Webster et al. (2011), for example, studied workload, role ambiguity, and role conflict demands, and found that while each could be appraised primarily as a challenge or hindrance demand, they could also simultaneously be perceived as being both a challenge and hindrance to different degrees. While their study did include resources, it nonetheless points to individual differences on how people perceive stressors at work. Although part of a much larger study on retirement, Sonnega et al. (2018) compared self-reported (subjective) ratings of degree of physical demand, stress, and need for intense concentration from the Health and Retirement Study with objective ratings from O*Net. Correlations physical demand (r = .52), stress (r = .10), and need for intense concentration (r = .14), again suggesting perhaps that our objective ratings of job demands (and resources) may be subject to a greater level of individual difference than assumed. Next considering resources, Schmitz et al. (2019) also captured subjective and objective resources in their study of retirement. Correlations of composite variables for the resources of autonomy (r = .12. p \textgreater{} .01), recognition of work (r = .07, p \textgreater{} .01), and decision freedom (r = .08, p \textgreater{} .01), while significant, certainly do not reflect high levels of overlap.
+
+We do acknowledge as well, that demands and resources are not necessarily consistent across days, or seasons, for many employees. Downes et al. (2021) meta-analysis addresses this reality in depth, although it is beyond the scope of this project.
+
+\hypertarget{onet-resource}{%
+\subsection{O*Net Resource}\label{onet-resource}}
+
+Originally, the Advisory Panel for the Dictionary of Occupational Titles recommended a system that would ``\ldots promote the effective education, training, counseling, and employment of the American workforce. It should accomplish its purpose by providing a database system that identifies, defines, classifies, and describes occupations in the economy in an accessible and flexible manner'' (Dictionary of Occupational Titles (US) and Service (1993), p.~6). The result was the now commonly used O*NET. The Occupational Information Network (O*NET; onetonline.org) contains a comprehensive description of occupations (Peterson et al., 2001). This widely accessed database houses hundreds of standardized and occupation-specific descriptors most occupations in the US and these descriptions are continually updated. In fact, there was a call to work with experienced I/O psychologists over the summer to update the content for the \href{https://www.onetonline.org/link/summary/19-3032.00}{Industrial and Organizational Psychologist listing on O*Net}. These data, and the tools provided for free on the website (e.g., Career Exploration Tools, ``My Next Move for Veterans'', ``My Next Move'', Toolkit for Business) are frequently used by counselors, students, human resources departments, and researchers to assist potential applicants discover the skills and training they need for the job of their choice. It is also useful to employers by providing them with information with which to craft job descriptions and help employees determine what skills are needed for promotion.
+
+Of greatest interest here are statements taken from O*NET \href{https://www.O*NETonline.org/find/descriptor/result/4.A.1.b.3}{``activity'' and ``context'' classifications} (e.g., items related to information input, interacting with others, physical work conditions, structural job characteristics). One of the first and basic questions is whether or not the categorical examples of ``resources'' and ``demands'' described in the Job Demands-Resources Theory (Demerouti et al., 2001), for example, are generally deemed resources or demands as we objectively define them. The next logical question surrounds how ``universal'' such ratings are. For instance, it is quite possible, given the theoretical and empirical evidence presented above, that there is wide variability in individual appraisal of work activities and context such that some people may rate a given activity as a resource and others a hindrance. A second study extends the findings from Study 1 to a potentially key moderator - job categories/classifications, examining whether ratings of resources, challenge- and hindrance demands differ by job classification.
+
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
 
 \hypertarget{participants}{%
 \subsection{Participants}\label{participants}}
 
-\hypertarget{material}{%
-\subsection{Material}\label{material}}
+There were 568 respondents.
+
+\hypertarget{participants-1}{%
+\subsubsection{Participants}\label{participants-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  568 respondents, 13.57\% had been in their referent job less than 6 months, 19.20\% between 6 months and a year, 49.12\% between one and five years, 13.27\% between 5 and 10 years, and 4.87\% more than 10 years.
+\item
+  Ages ranged from 18 to 65 with an average of 28.18 years old (SD = 7.53).
+\item
+  Gender: female (52.58\%) or male (46.83\%).
+\item
+  Job classifications: International Standard Classification of Occupations (ISCO) via the package \texttt{labourR} (\textbf{R-labourR?}), and further categorized into ``knowledge'' (n = 320) versus ``skilled'' (n = 214) occupations with knowledge workers being identified via ISCO classifications of: 1) professionals, and 2) managers.
+\end{itemize}
+
+The data for this study were collected through Prolific sample,18 or older and holding a full-time or part-time job. Participants were asked to think about their primary job while answering the survey, and upon completion each participant was compensated in the amount of six US dollars.
+
+\hypertarget{materials}{%
+\section{Materials}\label{materials}}
+
+We used 98 statements taken directly from O\(^{*}\)Net's ``activity'' and ``context'' classifications. Each of the 98 descriptors has potentially unique response categories, but scaling was consistently 1 (low) to 5 (high). Subsequent to these self-evaluations, respondents were asked to rate elements in terms of 1) \ldots this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) \ldots this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) \ldots this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment.
 
 \hypertarget{procedure}{%
 \subsection{Procedure}\label{procedure}}
 
+We used PROCESS for R Version 4.1.1 (Hayes, 2022) to assess the extent to which the relationship between demands and stress are moderated by resources.
+
 \hypertarget{results}{%
 \section{Results}\label{results}}
 
-Hadden, Kravets, and Muntaner (2004) conducted a factor analysis and obtained a 2-factor solution for the work content. Similar investigations have been done since the 1980's. We're continuing this tradition here.
-
-Maybe try hierarchical which 2 overaching factors with the ``dimensions'' under each).
-
-We are working on a factor analysis of the characteristics themselves. This is based on the larger number of items (97?) with an n of now 568.
-
-We tried different numbers of factors based on a scree plot suggesting we start at 8 factors. We printed only those loadings at .3 or higher to begin. Very few items loaded on more than 1 factor, and most loaded at .3+ on one factor. A few were negative. Need to think carefully about interpretation by exploring what the items themselves are.
-
-Next - tried a 2 factor solution, wondering if items in the ``context'' and ``activity'' categories loaded as expected based on Onet categories. Again, most items loaded at .3+. The physical items generally loaded on factor 1.
-
-\includegraphics{SIOP_Onet_FA_files/figure-latex/scree plot-1.pdf}
-
-\begin{verbatim}
-## Parallel analysis suggests that the number of factors =  12  and the number of components =  9
-\end{verbatim}
-
-\textless\textless\textless\textless\textless\textless\textless{} HEAD
-
 \begin{verbatim}
 ## 
-## Factor analysis with Call: fa(r = data[c(19:60, 62:117)], nfactors = 8, n.obs = 568, rotate = "oblimin", 
-##     scores = TRUE, alpha = 0.1)
+## ********************* PROCESS for R Version 4.1.1 ********************* 
+##  
+##            Written by Andrew F. Hayes, Ph.D.  www.afhayes.com              
+##    Documentation available in Hayes (2022). www.guilford.com/p/hayes3   
+##  
+## *********************************************************************** 
+##  
+## PROCESS is now ready for use.
+## Copyright 2022 by Andrew F. Hayes ALL RIGHTS RESERVED
+## Workshop schedule at http://haskayne.ucalgary.ca/CCRAM
 ## 
-## Test of the hypothesis that 8 factors are sufficient.
-## The degrees of freedom for the model is 3997  and the objective function was  14.37 
-## The number of observations was  568  with Chi Square =  7590.09  with prob <  2.4e-226 
-## 
-## The root mean square of the residuals (RMSA) is  0.03 
-## The df corrected root mean square of the residuals is  0.04 
-## 
-## Tucker Lewis Index of factoring reliability =  0.796
-## RMSEA index =  0.04  and the 10 % confidence intervals are  0.038 0.041
-## BIC =  -17759.37
-##  With factor correlations of 
-##       MR1   MR2  MR7   MR6  MR5  MR3   MR8  MR4
-## MR1  1.00 -0.11 0.02  0.39 0.33 0.10 -0.11 0.05
-## MR2 -0.11  1.00 0.44  0.09 0.17 0.13  0.16 0.15
-## MR7  0.02  0.44 1.00  0.09 0.12 0.28  0.21 0.23
-## MR6  0.39  0.09 0.09  1.00 0.35 0.02 -0.11 0.02
-## MR5  0.33  0.17 0.12  0.35 1.00 0.04  0.04 0.06
-## MR3  0.10  0.13 0.28  0.02 0.04 1.00  0.15 0.04
-## MR8 -0.11  0.16 0.21 -0.11 0.04 0.15  1.00 0.19
-## MR4  0.05  0.15 0.23  0.02 0.06 0.04  0.19 1.00
 \end{verbatim}
 
 \begin{verbatim}
 ## 
-## Loadings:
-##         MR1    MR2    MR7    MR6    MR5    MR3    MR8    MR4   
-## item19  -0.166  0.163         0.246         0.190        -0.203
-## item20          0.230        -0.105  0.120               -0.255
-## item21  -0.287         0.218  0.161                      -0.216
-## item22                                     -0.210  0.589  0.159
-## item23          0.134  0.146                0.171  0.440       
-## item24          0.124  0.185  0.103         0.177  0.500 -0.130
-## item25          0.199  0.190  0.131         0.140        -0.262
-## item26   0.126  0.256                       0.235 -0.113 -0.356
-## item27          0.246                0.107         0.211       
-## item28  -0.144                             -0.188  0.572  0.168
-## item29          0.305                                    -0.341
-## item30  -0.204  0.183  0.242         0.131  0.124        -0.187
-## item31                -0.163         0.121         0.161       
-## item32   0.276  0.115         0.261  0.144  0.145              
-## item33                        0.604  0.188                     
-## item34   0.153        -0.130  0.512 -0.188  0.325         0.109
-## item35                        0.752                            
-## item36                        0.674  0.102                     
-## item37                        0.115  0.499 -0.122              
-## item38   0.326         0.124  0.393  0.101        -0.154       
-## item39                        0.550         0.119              
-## item40                        0.275  0.483 -0.132 -0.135       
-## item41                        0.161  0.320  0.133 -0.104       
-## item42                -0.174         0.579  0.216  0.221       
-## item43                        0.204  0.615 -0.110              
-## item44          0.163  0.112        -0.153  0.140 -0.114       
-## item45                        0.119  0.379                     
-## item46   0.123 -0.110                0.586  0.121  0.126       
-## item47   0.103                       0.497  0.107              
-## item48   0.391         0.136  0.138         0.302              
-## item49   0.213                0.256  0.141                     
-## item50   0.583                0.105  0.195                     
-## item51   0.179         0.114         0.497        -0.158       
-## item52   0.306         0.106  0.135  0.317        -0.187  0.106
-## item53   0.388         0.119  0.115  0.242                0.105
-## item54   0.442  0.228                       0.115 -0.195 -0.220
-## item55  -0.670  0.158        -0.126                      -0.133
-## item56   0.700 -0.125  0.111                                   
-## item57   0.336  0.240                                    -0.261
-## item58   0.603                       0.161  0.141              
-## item59   0.146                0.252  0.401                     
-## item60   0.149         0.132  0.633        -0.114              
-## item62                        0.549                            
-## item63   0.170 -0.202  0.375                0.366              
-## item64                 0.642                       0.202       
-## item65   0.119         0.257 -0.180         0.453  0.202 -0.219
-## item66                        0.220         0.452         0.145
-## item67                        0.161         0.719              
-## item68  -0.613  0.145  0.141                0.131              
-## item69  -0.130         0.339  0.158         0.127              
-## item70  -0.111         0.161  0.161         0.500              
-## item71  -0.325         0.139  0.163         0.269              
-## item72                 0.223 -0.127                0.111  0.265
-## item73                 0.421                       0.330       
-## item74   0.247         0.203  0.301         0.125  0.114       
-## item75  -0.427         0.285         0.246  0.305              
-## item76                 0.788                                   
-## item77   0.218  0.305                0.160         0.226       
-## item78  -0.107  0.452  0.118                       0.117 -0.113
-## item79  -0.114  0.607                                          
-## item80   0.232  0.413         0.266  0.143                     
-## item81          0.558         0.190                            
-## item82  -0.223  0.589                                          
-## item83          0.385  0.196                       0.190  0.230
-## item84          0.325         0.129         0.352  0.155       
-## item85   0.183  0.462                       0.176  0.179  0.122
-## item86          0.511  0.166                       0.176  0.113
-## item87          0.243  0.172                       0.232  0.146
-## item88  -0.192  0.544        -0.130                            
-## item89          0.137  0.276 -0.123  0.177         0.197  0.235
-## item90          0.321        -0.205  0.188 -0.219  0.196  0.219
-## item91          0.404  0.118                       0.107  0.162
-## item92   0.307  0.236         0.191  0.189 -0.128              
-## item93  -0.236  0.339                       0.255 -0.155       
-## item94          0.386  0.150         0.201 -0.136              
-## item95   0.628  0.255         0.116                            
-## item96  -0.261  0.369        -0.234               -0.105       
-## item97   0.108                       0.655                     
-## item98   0.582                       0.287                     
-## item99   0.149  0.367         0.139  0.256 -0.147 -0.141       
-## item100  0.164  0.213         0.156  0.426 -0.187 -0.157       
-## item101  0.106  0.107         0.216         0.396         0.357
-## item102  0.122  0.191  0.230                0.148         0.465
-## item103 -0.238               -0.159  0.200  0.454  0.144       
-## item104 -0.282         0.516                      -0.119       
-## item105                0.639                                   
-## item106                0.722                                   
-## item107                0.643                                   
-## item108         0.195  0.445                       0.208  0.151
-## item109         0.337  0.234        -0.165                0.315
-## item110         0.272        -0.203  0.263  0.115  0.244       
-## item111 -0.315  0.148  0.168 -0.104  0.126  0.346              
-## item112  0.412 -0.122        -0.173         0.505         0.108
-## item113         0.376  0.225 -0.166  0.185                0.127
-## item114         0.113        -0.101  0.122  0.601              
-## item115  0.146               -0.197  0.230  0.344  0.145       
-## item116                              0.188  0.148  0.197  0.183
-## item117                                     0.116         0.549
+## ********************* PROCESS for R Version 4.1.1 ********************* 
+##  
+##            Written by Andrew F. Hayes, Ph.D.  www.afhayes.com              
+##    Documentation available in Hayes (2022). www.guilford.com/p/hayes3   
+##  
+## *********************************************************************** 
+##                          
+## Model : 1                
+##     Y : stress           
+##     X : overall.hindrance
+##     W : overall.resource 
 ## 
-##                  MR1   MR2   MR7   MR6   MR5   MR3   MR8   MR4
-## SS loadings    5.528 4.849 4.534 4.337 4.314 4.034 2.443 2.125
-## Proportion Var 0.056 0.049 0.046 0.044 0.044 0.041 0.025 0.022
-## Cumulative Var 0.056 0.106 0.152 0.196 0.240 0.282 0.307 0.328
+## Sample size: 568
+## 
+## 
+## *********************************************************************** 
+## Outcome Variable: stress
+## 
+## Model Summary: 
+##           R      R-sq       MSE         F       df1       df2         p
+##      0.1311    0.0172    0.7790    3.2876    3.0000  564.0000    0.0205
+## 
+## Model: 
+##                       coeff        se         t         p      LLCI      ULCI
+## constant             1.2688    1.0055    1.2618    0.2075   -0.7063    3.2439
+## overall.hindrance    0.8336    0.4031    2.0677    0.0391    0.0417    1.6254
+## overall.resource     0.3319    0.2518    1.3181    0.1880   -0.1627    0.8264
+## Int_1               -0.1918    0.1024   -1.8725    0.0616   -0.3929    0.0094
+## 
+## Product terms key:
+## Int_1  :  overall.hindrance  x  overall.resource      
+## 
+## Test(s) of highest order unconditional interaction(s):
+##       R2-chng         F       df1       df2         p
+## X*W    0.0061    3.5064    1.0000  564.0000    0.0616
+## ----------
+## Focal predictor: overall.hindrance (X)
+##       Moderator: overall.resource (W)
+## 
+## Conditional effects of the focal predictor at values of the moderator(s):
+##   overall.resource    effect        se         t         p      LLCI      ULCI
+##             3.2983    0.2010    0.0802    2.5065    0.0125    0.0435    0.3586
+##             3.7402    0.1163    0.0534    2.1759    0.0300    0.0113    0.2213
+##             4.2063    0.0269    0.0594    0.4535    0.6503   -0.0897    0.1435
+## 
+## Moderator value(s) defining Johnson-Neyman significance region(s):
+##       Value   % below   % above
+##      3.8196   55.6338   44.3662
+## 
+## Conditional effect of focal predictor at values of the moderator:
+##   overall.resource    effect        se         t         p      LLCI      ULCI
+##             1.0149    0.6389    0.3003    2.1276    0.0338    0.0491    1.2288
+##             1.2078    0.6020    0.2809    2.1433    0.0325    0.0503    1.1536
+##             1.4006    0.5650    0.2615    2.1608    0.0311    0.0514    1.0785
+##             1.5935    0.5280    0.2421    2.1807    0.0296    0.0524    1.0035
+##             1.7863    0.4910    0.2228    2.2034    0.0280    0.0533    0.9287
+##             1.9791    0.4540    0.2037    2.2293    0.0262    0.0540    0.8540
+##             2.1720    0.4170    0.1846    2.2592    0.0243    0.0545    0.7796
+##             2.3648    0.3801    0.1657    2.2937    0.0222    0.0546    0.7055
+##             2.5577    0.3431    0.1470    2.3336    0.0200    0.0543    0.6318
+##             2.7505    0.3061    0.1287    2.3791    0.0177    0.0534    0.5588
+##             2.9434    0.2691    0.1108    2.4292    0.0154    0.0515    0.4867
+##             3.1362    0.2321    0.0937    2.4784    0.0135    0.0482    0.4161
+##             3.3290    0.1951    0.0778    2.5085    0.0124    0.0423    0.3479
+##             3.5219    0.1582    0.0641    2.4667    0.0139    0.0322    0.2841
+##             3.7147    0.1212    0.0543    2.2306    0.0261    0.0145    0.2279
+##             3.8196    0.1011    0.0515    1.9642    0.0500    0.0000    0.2021
+##             3.9076    0.0842    0.0507    1.6605    0.0974   -0.0154    0.1838
+##             4.1004    0.0472    0.0545    0.8662    0.3867   -0.0599    0.1543
+##             4.2933    0.0102    0.0644    0.1589    0.8738   -0.1163    0.1368
+##             4.4861   -0.0267    0.0782   -0.3421    0.7324   -0.1803    0.1268
+##             4.6790   -0.0637    0.0941   -0.6773    0.4985   -0.2485    0.1211
+##             4.8718   -0.1007    0.1112   -0.9054    0.3656   -0.3192    0.1178
+## 
+## Data for visualizing the conditional effect of the focal predictor:
+##   overall.hindrance overall.resource    stress
+##              1.6667           3.2983    2.6985
+##              2.2894           3.2983    2.8237
+##              3.2416           3.2983    3.0151
+##              1.6667           3.7402    2.7039
+##              2.2894           3.7402    2.7763
+##              3.2416           3.7402    2.8871
+##              1.6667           4.2063    2.7096
+##              2.2894           4.2063    2.7264
+##              3.2416           4.2063    2.7520
+## 
+## ******************** ANALYSIS NOTES AND ERRORS ************************ 
+## 
+## Level of confidence for all confidence intervals in output: 95
+## 
+## W values in conditional tables are the 16th, 50th, and 84th percentiles.
 \end{verbatim}
 
-\begin{verbatim}
-## 
-## Loadings:
-##         MR1   MR2   MR7   MR6   MR5   MR3   MR8   MR4  
-## item19                                                 
-## item20                                                 
-## item21                                                 
-## item22                                       0.59      
-## item23                                       0.44      
-## item24                                       0.50      
-## item25                                                 
-## item26                                            -0.36
-## item27                                                 
-## item28                                       0.57      
-## item29         0.31                               -0.34
-## item30                                                 
-## item31                                                 
-## item32                                                 
-## item33                     0.60                        
-## item34                     0.51        0.33            
-## item35                     0.75                        
-## item36                     0.67                        
-## item37                           0.50                  
-## item38   0.33              0.39                        
-## item39                     0.55                        
-## item40                           0.48                  
-## item41                           0.32                  
-## item42                           0.58                  
-## item43                           0.61                  
-## item44                                                 
-## item45                           0.38                  
-## item46                           0.59                  
-## item47                           0.50                  
-## item48   0.39                          0.30            
-## item49                                                 
-## item50   0.58                                          
-## item51                           0.50                  
-## item52   0.31                    0.32                  
-## item53   0.39                                          
-## item54   0.44                                          
-## item55  -0.67                                          
-## item56   0.70                                          
-## item57   0.34                                          
-## item58   0.60                                          
-## item59                           0.40                  
-## item60                     0.63                        
-## item62                     0.55                        
-## item63               0.37              0.37            
-## item64               0.64                              
-## item65                                 0.45            
-## item66                                 0.45            
-## item67                                 0.72            
-## item68  -0.61                                          
-## item69               0.34                              
-## item70                                 0.50            
-## item71  -0.33                                          
-## item72                                                 
-## item73               0.42                    0.33      
-## item74                     0.30                        
-## item75  -0.43                          0.30            
-## item76               0.79                              
-## item77         0.31                                    
-## item78         0.45                                    
-## item79         0.61                                    
-## item80         0.41                                    
-## item81         0.56                                    
-## item82         0.59                                    
-## item83         0.38                                    
-## item84         0.33                    0.35            
-## item85         0.46                                    
-## item86         0.51                                    
-## item87                                                 
-## item88         0.54                                    
-## item89                                                 
-## item90         0.32                                    
-## item91         0.40                                    
-## item92   0.31                                          
-## item93         0.34                                    
-## item94         0.39                                    
-## item95   0.63                                          
-## item96         0.37                                    
-## item97                           0.66                  
-## item98   0.58                                          
-## item99         0.37                                    
-## item100                          0.43                  
-## item101                                0.40        0.36
-## item102                                            0.46
-## item103                                0.45            
-## item104              0.52                              
-## item105              0.64                              
-## item106              0.72                              
-## item107              0.64                              
-## item108              0.44                              
-## item109        0.34                                0.32
-## item110                                                
-## item111 -0.31                          0.35            
-## item112  0.41                          0.51            
-## item113        0.38                                    
-## item114                                0.60            
-## item115                                0.34            
-## item116                                                
-## item117                                            0.55
-## 
-##                 MR1  MR2  MR7  MR6  MR5  MR3  MR8  MR4
-## SS loadings    5.53 4.85 4.53 4.34 4.31 4.03 2.44 2.12
-## Proportion Var 0.06 0.05 0.05 0.04 0.04 0.04 0.02 0.02
-## Cumulative Var 0.06 0.11 0.15 0.20 0.24 0.28 0.31 0.33
-\end{verbatim}
+\begin{figure}
+\centering
+\includegraphics{SIOP_Onet_FA_files/figure-latex/analyses-1.pdf}
+\caption{\label{fig:analyses}Interaction between hindrances and resources as predictors of stress}
+\end{figure}
 
-Two factors generally seem to reflect physical or work environment items, and the other factor seems to represent cognitive or mental tasks.
-
-\begin{verbatim}
-## 
-## Factor analysis with Call: fa(r = forfa, nfactors = 2, n.obs = 568, rotate = "oblimin", 
-##     scores = TRUE, alpha = 0.1)
-## 
-## Test of the hypothesis that 2 factors are sufficient.
-## The degrees of freedom for the model is 4558  and the objective function was  25.32 
-## The number of observations was  568  with Chi Square =  13476.92  with prob <  0 
-## 
-## The root mean square of the residuals (RMSA) is  0.07 
-## The df corrected root mean square of the residuals is  0.07 
-## 
-## Tucker Lewis Index of factoring reliability =  0.56
-## RMSEA index =  0.059  and the 10 % confidence intervals are  0.058 0.06
-## BIC =  -15430.47
-##  With factor correlations of 
-##      MR1  MR2
-## MR1 1.00 0.07
-## MR2 0.07 1.00
-\end{verbatim}
-
-\begin{verbatim}
-## 
-## Loadings:
-##         MR1    MR2   
-## item19          0.272
-## item20               
-## item21          0.258
-## item22          0.247
-## item23          0.459
-## item24          0.490
-## item25          0.291
-## item26   0.120  0.110
-## item27          0.363
-## item28  -0.152  0.206
-## item29          0.202
-## item30          0.409
-## item31               
-## item32   0.547  0.121
-## item33   0.618       
-## item34   0.389       
-## item35   0.555       
-## item36   0.620       
-## item37   0.458       
-## item38   0.668       
-## item39   0.408  0.100
-## item40   0.518       
-## item41   0.442  0.116
-## item42   0.329  0.101
-## item43   0.534       
-## item44          0.170
-## item45   0.337       
-## item46   0.524       
-## item47   0.487  0.119
-## item48   0.428       
-## item49   0.485       
-## item50   0.713       
-## item51   0.562       
-## item52   0.619       
-## item53   0.598       
-## item54   0.409       
-## item55  -0.690  0.143
-## item56   0.688       
-## item57   0.281       
-## item58   0.649       
-## item59   0.597       
-## item60   0.653       
-## item62   0.468       
-## item63   0.141  0.272
-## item64          0.623
-## item65          0.345
-## item66   0.325  0.212
-## item67   0.165  0.253
-## item68  -0.495  0.444
-## item69   0.118  0.361
-## item70          0.381
-## item71          0.381
-## item72          0.366
-## item73   0.116  0.532
-## item74   0.435  0.290
-## item75  -0.160  0.509
-## item76          0.511
-## item77   0.302  0.329
-## item78          0.505
-## item79          0.563
-## item80   0.483  0.278
-## item81   0.232  0.455
-## item82  -0.164  0.521
-## item83          0.605
-## item84          0.533
-## item85   0.165  0.600
-## item86          0.664
-## item87          0.534
-## item88  -0.229  0.459
-## item89          0.553
-## item90          0.387
-## item91          0.485
-## item92   0.537  0.101
-## item93  -0.187  0.342
-## item94   0.169  0.398
-## item95   0.666       
-## item96  -0.379  0.379
-## item97   0.512       
-## item98   0.745       
-## item99   0.422  0.202
-## item100  0.559  0.104
-## item101  0.270  0.319
-## item102  0.121  0.548
-## item103 -0.141  0.475
-## item104 -0.154  0.440
-## item105  0.120  0.571
-## item106         0.584
-## item107         0.519
-## item108  0.118  0.663
-## item109 -0.145  0.573
-## item110         0.444
-## item111 -0.177  0.472
-## item112  0.265  0.111
-## item113         0.565
-## item114  0.123  0.442
-## item115  0.140  0.257
-## item116         0.390
-## item117         0.395
-## 
-##                   MR1    MR2
-## SS loadings    12.257 11.852
-## Proportion Var  0.125  0.121
-## Cumulative Var  0.125  0.246
-\end{verbatim}
-
-\begin{verbatim}
-## 
-## Loadings:
-##         MR1   MR2  
-## item19             
-## item20             
-## item21             
-## item22             
-## item23         0.46
-## item24         0.49
-## item25             
-## item26             
-## item27         0.36
-## item28             
-## item29             
-## item30         0.41
-## item31             
-## item32   0.55      
-## item33   0.62      
-## item34   0.39      
-## item35   0.56      
-## item36   0.62      
-## item37   0.46      
-## item38   0.67      
-## item39   0.41      
-## item40   0.52      
-## item41   0.44      
-## item42   0.33      
-## item43   0.53      
-## item44             
-## item45   0.34      
-## item46   0.52      
-## item47   0.49      
-## item48   0.43      
-## item49   0.48      
-## item50   0.71      
-## item51   0.56      
-## item52   0.62      
-## item53   0.60      
-## item54   0.41      
-## item55  -0.69      
-## item56   0.69      
-## item57             
-## item58   0.65      
-## item59   0.60      
-## item60   0.65      
-## item62   0.47      
-## item63             
-## item64         0.62
-## item65         0.34
-## item66   0.32      
-## item67             
-## item68  -0.49  0.44
-## item69         0.36
-## item70         0.38
-## item71         0.38
-## item72         0.37
-## item73         0.53
-## item74   0.44      
-## item75         0.51
-## item76         0.51
-## item77   0.30  0.33
-## item78         0.50
-## item79         0.56
-## item80   0.48      
-## item81         0.46
-## item82         0.52
-## item83         0.61
-## item84         0.53
-## item85         0.60
-## item86         0.66
-## item87         0.53
-## item88         0.46
-## item89         0.55
-## item90         0.39
-## item91         0.48
-## item92   0.54      
-## item93         0.34
-## item94         0.40
-## item95   0.67      
-## item96  -0.38  0.38
-## item97   0.51      
-## item98   0.74      
-## item99   0.42      
-## item100  0.56      
-## item101        0.32
-## item102        0.55
-## item103        0.47
-## item104        0.44
-## item105        0.57
-## item106        0.58
-## item107        0.52
-## item108        0.66
-## item109        0.57
-## item110        0.44
-## item111        0.47
-## item112            
-## item113        0.57
-## item114        0.44
-## item115            
-## item116        0.39
-## item117        0.40
-## 
-##                  MR1   MR2
-## SS loadings    12.26 11.85
-## Proportion Var  0.13  0.12
-## Cumulative Var  0.13  0.25
-\end{verbatim}
-
-\begin{verbatim}
-## 
-## Factor analysis with Call: fa(r = forfa, nfactors = 7, n.obs = 568, rotate = "oblimin", 
-##     scores = TRUE, alpha = 0.1)
-## 
-## Test of the hypothesis that 7 factors are sufficient.
-## The degrees of freedom for the model is 4088  and the objective function was  15.32 
-## The number of observations was  568  with Chi Square =  8102.23  with prob <  3.4e-267 
-## 
-## The root mean square of the residuals (RMSA) is  0.04 
-## The df corrected root mean square of the residuals is  0.04 
-## 
-## Tucker Lewis Index of factoring reliability =  0.778
-## RMSEA index =  0.042  and the 10 % confidence intervals are  0.04 0.043
-## BIC =  -17824.36
-##  With factor correlations of 
-##       MR1   MR2  MR7   MR6  MR3  MR5   MR4
-## MR1  1.00 -0.08 0.04  0.40 0.08 0.32 -0.08
-## MR2 -0.08  1.00 0.45  0.10 0.14 0.17  0.18
-## MR7  0.04  0.45 1.00  0.10 0.27 0.11  0.21
-## MR6  0.40  0.10 0.10  1.00 0.01 0.35 -0.12
-## MR3  0.08  0.14 0.27  0.01 1.00 0.02  0.11
-## MR5  0.32  0.17 0.11  0.35 0.02 1.00  0.01
-## MR4 -0.08  0.18 0.21 -0.12 0.11 0.01  1.00
-\end{verbatim}
-
-\begin{verbatim}
-## 
-## Loadings:
-##         MR1    MR2    MR7    MR6    MR3    MR5    MR4   
-## item19  -0.227  0.167         0.242  0.226        -0.112
-## item20  -0.127  0.221        -0.114         0.148 -0.248
-## item21  -0.346         0.177  0.153               -0.137
-## item22          0.117                              0.576
-## item23          0.176                0.280         0.259
-## item24          0.172  0.104         0.303         0.262
-## item25  -0.152  0.200  0.130  0.121  0.184        -0.185
-## item26          0.247                0.256        -0.383
-## item27          0.268                0.139  0.131       
-## item28  -0.154                                     0.589
-## item29          0.299                0.137        -0.303
-## item30  -0.257  0.186  0.203         0.164  0.156       
-## item31                -0.192                0.137       
-## item32   0.266  0.120         0.268  0.137  0.138       
-## item33                        0.617         0.170       
-## item34   0.170        -0.119  0.528  0.313 -0.206  0.102
-## item35                        0.764                     
-## item36                        0.685                     
-## item37                 0.107  0.118 -0.148  0.485       
-## item38   0.332         0.130  0.397               -0.150
-## item39                        0.557                     
-## item40                        0.281 -0.180  0.453       
-## item41   0.108                0.171         0.296       
-## item42                -0.187         0.258  0.587  0.159
-## item43                        0.211 -0.146  0.592       
-## item44          0.156  0.112         0.123 -0.154 -0.157
-## item45                        0.126         0.366       
-## item46   0.127                       0.143  0.586       
-## item47   0.132                0.100  0.105  0.480  0.114
-## item48   0.392         0.128  0.144  0.295        -0.106
-## item49   0.227                0.263         0.124       
-## item50   0.596                0.110         0.182       
-## item51   0.219         0.147        -0.112  0.466       
-## item52   0.356         0.146  0.144         0.278       
-## item53   0.426         0.146  0.120         0.216       
-## item54   0.392  0.218                0.100        -0.361
-## item55  -0.697  0.140        -0.135                     
-## item56   0.707 -0.108                                   
-## item57   0.257  0.236                             -0.272
-## item58   0.609                       0.152  0.157       
-## item59   0.153                0.261         0.389       
-## item60   0.117         0.107  0.632 -0.113              
-## item62                        0.553                     
-## item63   0.177 -0.195  0.369         0.382              
-## item64                 0.593         0.118         0.117
-## item65                 0.186 -0.174  0.533              
-## item66   0.148                0.236  0.407              
-## item67                        0.177  0.685        -0.127
-## item68  -0.579  0.139  0.177         0.117              
-## item69  -0.102         0.361  0.166  0.117              
-## item70  -0.106         0.166  0.173  0.495              
-## item71  -0.295         0.167  0.173  0.256              
-## item72   0.161         0.263 -0.113                0.257
-## item73          0.124  0.370                       0.240
-## item74   0.246         0.195  0.309  0.141         0.102
-## item75  -0.413         0.298         0.314  0.241       
-## item76                 0.771                            
-## item77   0.157  0.330                       0.186       
-## item78  -0.160  0.465                0.133              
-## item79  -0.144  0.618                0.110              
-## item80   0.208  0.425         0.268         0.141       
-## item81          0.571         0.194 -0.101              
-## item82  -0.209  0.589                                   
-## item83          0.409  0.221                       0.293
-## item84  -0.112  0.345         0.139  0.378              
-## item85   0.191  0.492                0.196         0.170
-## item86          0.536  0.166               -0.104  0.172
-## item87          0.269  0.178                       0.267
-## item88  -0.209  0.545        -0.131                     
-## item89          0.160  0.306 -0.110         0.157  0.312
-## item90          0.344        -0.198 -0.205  0.171  0.312
-## item91          0.420  0.139                       0.178
-## item92   0.294  0.235         0.190 -0.145  0.183 -0.122
-## item93  -0.191  0.321                0.191 -0.106       
-## item94          0.389  0.168        -0.155  0.183       
-## item95   0.605  0.260         0.117               -0.172
-## item96  -0.238  0.356        -0.232                     
-## item97                -0.108                0.663       
-## item98   0.599                              0.273       
-## item99   0.172  0.359         0.141 -0.198  0.228       
-## item100  0.191  0.202  0.100  0.160 -0.238  0.397       
-## item101  0.211  0.106  0.113  0.232  0.306 -0.137  0.121
-## item102  0.233  0.206  0.320                       0.319
-## item103 -0.229  0.113        -0.147  0.480  0.202       
-## item104 -0.272         0.533                      -0.107
-## item105                0.640                            
-## item106                0.726                            
-## item107                0.657                            
-## item108         0.222  0.446                       0.238
-## item109         0.344  0.295               -0.204  0.198
-## item110         0.301        -0.193  0.160  0.268  0.212
-## item111 -0.272  0.142  0.206         0.313  0.101       
-## item112  0.452 -0.107        -0.157  0.499              
-## item113         0.383  0.253 -0.160         0.166       
-## item114         0.122                0.585  0.102       
-## item115  0.159  0.118        -0.184  0.366  0.228  0.111
-## item116                0.113         0.166  0.173  0.273
-## item117  0.176         0.192                       0.420
-## 
-##                  MR1   MR2   MR7   MR6   MR3   MR5   MR4
-## SS loadings    5.706 5.099 4.627 4.451 4.175 4.120 2.891
-## Proportion Var 0.058 0.052 0.047 0.045 0.043 0.042 0.030
-## Cumulative Var 0.058 0.110 0.157 0.203 0.245 0.288 0.317
-\end{verbatim}
-
-\begin{verbatim}
-## 
-## Loadings:
-##         MR1   MR2   MR7   MR6   MR3   MR5   MR4  
-## item19                                           
-## item20                                           
-## item21  -0.35                                    
-## item22                                       0.58
-## item23                                           
-## item24                           0.30            
-## item25                                           
-## item26                                      -0.38
-## item27                                           
-## item28                                       0.59
-## item29                                      -0.30
-## item30                                           
-## item31                                           
-## item32                                           
-## item33                     0.62                  
-## item34                     0.53  0.31            
-## item35                     0.76                  
-## item36                     0.69                  
-## item37                                 0.49      
-## item38   0.33              0.40                  
-## item39                     0.56                  
-## item40                                 0.45      
-## item41                                           
-## item42                                 0.59      
-## item43                                 0.59      
-## item44                                           
-## item45                                 0.37      
-## item46                                 0.59      
-## item47                                 0.48      
-## item48   0.39                                    
-## item49                                           
-## item50   0.60                                    
-## item51                                 0.47      
-## item52   0.36                                    
-## item53   0.43                                    
-## item54   0.39                               -0.36
-## item55  -0.70                                    
-## item56   0.71                                    
-## item57                                           
-## item58   0.61                                    
-## item59                                 0.39      
-## item60                     0.63                  
-## item62                     0.55                  
-## item63               0.37        0.38            
-## item64               0.59                        
-## item65                           0.53            
-## item66                           0.41            
-## item67                           0.69            
-## item68  -0.58                                    
-## item69               0.36                        
-## item70                           0.50            
-## item71                                           
-## item72                                           
-## item73               0.37                        
-## item74                     0.31                  
-## item75  -0.41                    0.31            
-## item76               0.77                        
-## item77         0.33                              
-## item78         0.47                              
-## item79         0.62                              
-## item80         0.43                              
-## item81         0.57                              
-## item82         0.59                              
-## item83         0.41                              
-## item84         0.34              0.38            
-## item85         0.49                              
-## item86         0.54                              
-## item87                                           
-## item88         0.55                              
-## item89               0.31                    0.31
-## item90         0.34                          0.31
-## item91         0.42                              
-## item92                                           
-## item93         0.32                              
-## item94         0.39                              
-## item95   0.60                                    
-## item96         0.36                              
-## item97                                 0.66      
-## item98   0.60                                    
-## item99         0.36                              
-## item100                                0.40      
-## item101                          0.31            
-## item102              0.32                    0.32
-## item103                          0.48            
-## item104              0.53                        
-## item105              0.64                        
-## item106              0.73                        
-## item107              0.66                        
-## item108              0.45                        
-## item109        0.34                              
-## item110        0.30                              
-## item111                          0.31            
-## item112  0.45                    0.50            
-## item113        0.38                              
-## item114                          0.59            
-## item115                          0.37            
-## item116                                          
-## item117                                      0.42
-## 
-##                 MR1  MR2  MR7  MR6  MR3  MR5  MR4
-## SS loadings    5.71 5.10 4.63 4.45 4.17 4.12 2.89
-## Proportion Var 0.06 0.05 0.05 0.05 0.04 0.04 0.03
-## Cumulative Var 0.06 0.11 0.16 0.20 0.25 0.29 0.32
-\end{verbatim}
-
-\begin{verbatim}
-## 
-## Factor analysis with Call: fa(r = forfa, nfactors = 9, n.obs = 568, rotate = "oblimin", 
-##     scores = TRUE, alpha = 0.1)
-## 
-## Test of the hypothesis that 9 factors are sufficient.
-## The degrees of freedom for the model is 3907  and the objective function was  13.53 
-## The number of observations was  568  with Chi Square =  7135.92  with prob <  8.6e-193 
-## 
-## The root mean square of the residuals (RMSA) is  0.03 
-## The df corrected root mean square of the residuals is  0.04 
-## 
-## Tucker Lewis Index of factoring reliability =  0.812
-## RMSEA index =  0.038  and the 10 % confidence intervals are  0.037 0.04
-## BIC =  -17642.75
-##  With factor correlations of 
-##       MR1   MR6   MR2  MR7  MR5  MR3  MR9   MR8   MR4
-## MR1  1.00  0.41 -0.18 0.01 0.28 0.09 0.08 -0.08  0.16
-## MR6  0.41  1.00  0.06 0.08 0.33 0.00 0.06 -0.11  0.20
-## MR2 -0.18  0.06  1.00 0.44 0.11 0.12 0.29  0.17  0.22
-## MR7  0.01  0.08  0.44 1.00 0.10 0.22 0.32  0.18  0.18
-## MR5  0.28  0.33  0.11 0.10 1.00 0.00 0.13  0.04  0.23
-## MR3  0.09  0.00  0.12 0.22 0.00 1.00 0.08  0.13  0.09
-## MR9  0.08  0.06  0.29 0.32 0.13 0.08 1.00  0.21  0.09
-## MR8 -0.08 -0.11  0.17 0.18 0.04 0.13 0.21  1.00 -0.02
-## MR4  0.16  0.20  0.22 0.18 0.23 0.09 0.09 -0.02  1.00
-\end{verbatim}
-
-\begin{verbatim}
-## 
-## Loadings:
-##         MR1    MR6    MR2    MR7    MR5    MR3    MR9    MR8    MR4   
-## item19  -0.180  0.243  0.161                0.190 -0.165         0.113
-## item20  -0.204                                                   0.352
-## item21  -0.286  0.157  0.112  0.215               -0.199              
-## item22                 0.189               -0.216  0.101  0.557 -0.179
-## item23                 0.117  0.130         0.161         0.431  0.109
-## item24          0.116         0.170         0.171         0.494  0.138
-## item25          0.123  0.186  0.177         0.138 -0.215         0.164
-## item26                                      0.220 -0.193         0.416
-## item27                 0.148                              0.207  0.201
-## item28                                     -0.182  0.115  0.543 -0.209
-## item29  -0.112                                    -0.144         0.464
-## item30  -0.175         0.225  0.230  0.146  0.124 -0.173              
-## item31                       -0.165  0.113                0.156       
-## item32   0.191  0.298                       0.124                0.234
-## item33          0.628                0.158                            
-## item34   0.169  0.508        -0.133 -0.188  0.309                     
-## item35          0.775                                                 
-## item36          0.697                                                 
-## item37          0.124                0.475 -0.130        -0.103       
-## item38   0.307  0.402         0.116                      -0.145       
-## item39          0.561                       0.111        -0.102       
-## item40          0.295                0.452 -0.138        -0.138       
-## item41          0.180                0.289  0.116        -0.104  0.102
-## item42                       -0.170  0.563  0.211         0.216       
-## item43          0.218                0.588 -0.111        -0.100       
-## item44                 0.147        -0.150  0.124        -0.115       
-## item45          0.119                0.371                            
-## item46   0.206                       0.581  0.118         0.122       
-## item47   0.145                       0.474                            
-## item48   0.451  0.107         0.123         0.289                     
-## item49   0.215  0.261                0.120                            
-## item50   0.632                       0.178                            
-## item51   0.253                0.109  0.488               -0.167       
-## item52   0.372  0.119                0.305               -0.198       
-## item53   0.472                0.109  0.239               -0.110       
-## item54   0.343                                    -0.114 -0.177  0.339
-## item55  -0.704 -0.113  0.114                                          
-## item56   0.747                                                        
-## item57   0.241         0.103                      -0.159         0.325
-## item58   0.676                       0.152  0.118                     
-## item59   0.139  0.271                0.366                            
-## item60   0.161  0.629         0.127        -0.110 -0.112              
-## item62          0.550                                                 
-## item63   0.232                0.367         0.370                     
-## item64                        0.617                       0.200       
-## item65   0.116 -0.186         0.248         0.453 -0.165  0.217  0.129
-## item66   0.137  0.217                       0.433  0.138              
-## item67          0.157                       0.703                     
-## item68  -0.566         0.192  0.143         0.138               -0.111
-## item69          0.135         0.333  0.107  0.132               -0.152
-## item70          0.159         0.153         0.493                     
-## item71  -0.270  0.158  0.120  0.137         0.270               -0.100
-## item72   0.122 -0.117         0.208                0.286              
-## item73          0.111         0.410                0.133  0.338  0.182
-## item74   0.224  0.314         0.187         0.108  0.115  0.109       
-## item75  -0.323         0.142  0.284  0.280  0.315               -0.121
-## item76                        0.770                                   
-## item77   0.208         0.284         0.146 -0.101         0.211  0.160
-## item78                 0.640                      -0.196              
-## item79                 0.762                                          
-## item80   0.158  0.290  0.269         0.101 -0.124                0.256
-## item81          0.187  0.504               -0.137  0.113         0.142
-## item82  -0.162         0.639                                          
-## item83                 0.435  0.169        -0.101  0.224  0.145       
-## item84          0.115  0.372                0.325         0.130       
-## item85   0.192         0.440                0.125  0.185  0.146  0.118
-## item86                 0.579  0.129                0.113  0.132       
-## item87                 0.346  0.151                0.116  0.197       
-## item88  -0.237 -0.120  0.440                                     0.200
-## item89                        0.261  0.154         0.322  0.181       
-## item90         -0.180  0.226         0.168 -0.250  0.296  0.168       
-## item91                 0.419               -0.110  0.171              
-## item92   0.158  0.250                0.111 -0.158  0.129         0.353
-## item93  -0.201         0.351                0.228  0.105 -0.178       
-## item94                 0.201  0.131  0.157 -0.168  0.211         0.227
-## item95   0.520  0.143                                            0.337
-## item96  -0.279 -0.228  0.303                       0.114 -0.121       
-## item97   0.140                       0.630                            
-## item98   0.619                       0.260                            
-## item99          0.178  0.172         0.204 -0.184  0.185 -0.151  0.245
-## item100         0.196                0.370 -0.212  0.147 -0.159  0.205
-## item101  0.176  0.208  0.164                0.362  0.327 -0.117 -0.130
-## item102  0.135         0.148  0.207         0.108  0.512              
-## item103 -0.210 -0.154  0.118         0.204  0.442         0.135       
-## item104 -0.212                0.509                      -0.123       
-## item105                       0.616                                   
-## item106                       0.700                                   
-## item107        -0.104         0.621                                   
-## item108                       0.424                0.300  0.203  0.173
-## item109                0.282  0.208 -0.169         0.373              
-## item110        -0.149                0.210         0.254  0.243  0.275
-## item111 -0.308         0.115  0.162  0.125  0.335  0.129              
-## item112  0.427 -0.174 -0.107                0.481  0.134              
-## item113 -0.119 -0.121  0.183  0.202  0.142         0.291         0.230
-## item114                                     0.573  0.191         0.136
-## item115        -0.168                0.195  0.317  0.155  0.147  0.163
-## item116 -0.189        -0.154         0.133  0.134  0.380  0.205  0.181
-## item117                                            0.659              
-## 
-##                  MR1   MR6   MR2   MR7   MR5   MR3   MR9   MR8   MR4
-## SS loadings    5.480 4.468 4.189 4.157 3.810 3.803 2.534 2.258 2.056
-## Proportion Var 0.056 0.046 0.043 0.042 0.039 0.039 0.026 0.023 0.021
-## Cumulative Var 0.056 0.102 0.144 0.187 0.226 0.264 0.290 0.313 0.334
-\end{verbatim}
-
-\begin{verbatim}
-## 
-## Loadings:
-##         MR1   MR6   MR2   MR7   MR5   MR3   MR9   MR8   MR4  
-## item19                                                       
-## item20                                                   0.35
-## item21                                                       
-## item22                                             0.56      
-## item23                                             0.43      
-## item24                                             0.49      
-## item25                                                       
-## item26                                                   0.42
-## item27                                                       
-## item28                                             0.54      
-## item29                                                   0.46
-## item30                                                       
-## item31                                                       
-## item32                                                       
-## item33         0.63                                          
-## item34         0.51                    0.31                  
-## item35         0.78                                          
-## item36         0.70                                          
-## item37                           0.48                        
-## item38   0.31  0.40                                          
-## item39         0.56                                          
-## item40                           0.45                        
-## item41                                                       
-## item42                           0.56                        
-## item43                           0.59                        
-## item44                                                       
-## item45                           0.37                        
-## item46                           0.58                        
-## item47                           0.47                        
-## item48   0.45                                                
-## item49                                                       
-## item50   0.63                                                
-## item51                           0.49                        
-## item52   0.37                    0.30                        
-## item53   0.47                                                
-## item54   0.34                                            0.34
-## item55  -0.70                                                
-## item56   0.75                                                
-## item57                                                   0.32
-## item58   0.68                                                
-## item59                           0.37                        
-## item60         0.63                                          
-## item62         0.55                                          
-## item63                     0.37        0.37                  
-## item64                     0.62                              
-## item65                                 0.45                  
-## item66                                 0.43                  
-## item67                                 0.70                  
-## item68  -0.57                                                
-## item69                     0.33                              
-## item70                                 0.49                  
-## item71                                                       
-## item72                                                       
-## item73                     0.41                    0.34      
-## item74         0.31                                          
-## item75  -0.32                          0.31                  
-## item76                     0.77                              
-## item77                                                       
-## item78               0.64                                    
-## item79               0.76                                    
-## item80                                                       
-## item81               0.50                                    
-## item82               0.64                                    
-## item83               0.44                                    
-## item84               0.37              0.32                  
-## item85               0.44                                    
-## item86               0.58                                    
-## item87               0.35                                    
-## item88               0.44                                    
-## item89                                       0.32            
-## item90                                                       
-## item91               0.42                                    
-## item92                                                   0.35
-## item93               0.35                                    
-## item94                                                       
-## item95   0.52                                            0.34
-## item96               0.30                                    
-## item97                           0.63                        
-## item98   0.62                                                
-## item99                                                       
-## item100                          0.37                        
-## item101                                0.36  0.33            
-## item102                                      0.51            
-## item103                                0.44                  
-## item104                    0.51                              
-## item105                    0.62                              
-## item106                    0.70                              
-## item107                    0.62                              
-## item108                    0.42              0.30            
-## item109                                      0.37            
-## item110                                                      
-## item111 -0.31                          0.34                  
-## item112  0.43                          0.48                  
-## item113                                                      
-## item114                                0.57                  
-## item115                                0.32                  
-## item116                                      0.38            
-## item117                                      0.66            
-## 
-##                 MR1  MR6  MR2  MR7  MR5  MR3  MR9  MR8  MR4
-## SS loadings    5.48 4.47 4.19 4.16 3.81 3.80 2.53 2.26 2.06
-## Proportion Var 0.06 0.05 0.04 0.04 0.04 0.04 0.03 0.02 0.02
-## Cumulative Var 0.06 0.10 0.14 0.19 0.23 0.26 0.29 0.31 0.33
-\end{verbatim}
-
-=======
-\textgreater\textgreater\textgreater\textgreater\textgreater\textgreater\textgreater{} 69cdeaa28fdbafc29b5f0f9f68326640db2736a4
-\# Discussion
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
 
 \newpage
 
@@ -1217,8 +397,44 @@ Two factors generally seem to reflect physical or work environment items, and th
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\hypertarget{ref-hadden2004descriptive}{}%
-Hadden, W. C., Kravets, N., \& Muntaner, C. (2004). Descriptive dimensions of US occupations with data from the o* NET. \emph{Social Science Research}, \emph{33}(1), 64--78.
+\leavevmode\vadjust pre{\hypertarget{ref-bakker2014job}{}}%
+Bakker, A. B., \& Demerouti, E. (2014). Job demands--resources theory. \emph{Wellbeing: A Complete Reference Guide}, 1--28.
+
+\leavevmode\vadjust pre{\hypertarget{ref-bakker2007job}{}}%
+Bakker, A. B., Hakanen, J. J., Demerouti, E., \& Xanthopoulou, D. (2007). Job resources boost work engagement, particularly when job demands are high. \emph{Journal of Educational Psychology}, \emph{99}(2), 274.
+
+\leavevmode\vadjust pre{\hypertarget{ref-bakker2003dual}{}}%
+Bakker, A., Demerouti, E., \& Schaufeli, W. (2003). Dual processes at work in a call centre: An application of the job demands--resources model. \emph{European Journal of Work and Organizational Psychology}, \emph{12}(4), 393--417.
+
+\leavevmode\vadjust pre{\hypertarget{ref-demerouti2001job}{}}%
+Demerouti, E., Bakker, A. B., Nachreiner, F., \& Schaufeli, W. B. (2001). The job demands-resources model of burnout. \emph{Journal of Applied Psychology}, \emph{86}(3), 499.
+
+\leavevmode\vadjust pre{\hypertarget{ref-advisory1993new}{}}%
+Dictionary of Occupational Titles (US), A. P. for the, \& Service, U. S. E. (1993). \emph{The new DOT: A database of occupational titles for the twenty-first century}. US Department of Labor, Employment; Training Administration, US~\ldots.
+
+\leavevmode\vadjust pre{\hypertarget{ref-downes2021incorporating}{}}%
+Downes, P. E., Reeves, C. J., McCormick, B. W., Boswell, W. R., \& Butts, M. M. (2021). Incorporating job demand variability into job demands theory: A meta-analysis. \emph{Journal of Management}, \emph{47}(6), 1630--1656.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hayes2022}{}}%
+Hayes, A. F. (2022). \emph{Introduction to mediation, moderation, and conditional process analysis: A regression-based approach} (3rd ed.). The Guilford Press.
+
+\leavevmode\vadjust pre{\hypertarget{ref-lazarus1984stress}{}}%
+Lazarus, R. S., \& Folkman, S. (1984). \emph{Stress, appraisal, and coping}. Springer publishing company.
+
+\leavevmode\vadjust pre{\hypertarget{ref-peterson2001understanding}{}}%
+Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., Fleishman, E. A., Levin, K. Y., Campion, M. A., Mayfield, M. S., Morgeson, F. P., Pearlman, K., et al. (2001). Understanding work using the occupational information network (o* NET): Implications for practice and research. \emph{Personnel Psychology}, \emph{54}(2), 451--492.
+
+\leavevmode\vadjust pre{\hypertarget{ref-schmitz_interpreting_2019}{}}%
+Schmitz, L. L., McCluney, C. L., Sonnega, A., \& Hicken, M. T. (2019). Interpreting {Subjective} and {Objective} {Measures} of {Job} {Resources}: {The} {Importance} of {Sociodemographic} {Context}. \emph{International Journal of Environmental Research and Public Health}, \emph{16}(17), 3058. \url{https://doi.org/10.3390/ijerph16173058}
+
+\leavevmode\vadjust pre{\hypertarget{ref-searle2015merits}{}}%
+Searle, B. J., \& Auton, J. C. (2015). The merits of measuring challenge and hindrance appraisals. \emph{Anxiety, Stress, \& Coping}, \emph{28}(2), 121--143.
+
+\leavevmode\vadjust pre{\hypertarget{ref-sonnega_comparison_2018}{}}%
+Sonnega, A., Helppie-McFall, B., Hudomiet, P., Willis, R. J., \& Fisher, G. G. (2018). A {Comparison} of {Subjective} and {Objective} {Job} {Demands} and {Fit} {With} {Personal} {Resources} as {Predictors} of {Retirement} {Timing} in a {National} {U}.{S}. {Sample}. \emph{Work, Aging and Retirement}, \emph{4}(1), 37--51. \url{https://doi.org/10.1093/workar/wax016}
+
+\leavevmode\vadjust pre{\hypertarget{ref-webster2011extending}{}}%
+Webster, J. R., Beehr, T. A., \& Love, K. (2011). Extending the challenge-hindrance model of occupational stress: The role of appraisal. \emph{Journal of Vocational Behavior}, \emph{79}(2), 505--516.
 
 \end{CSLReferences}
 
