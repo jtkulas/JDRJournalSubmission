@@ -184,10 +184,10 @@ A moderated regression including hindrances, resources, and the interaction betw
 ```{r table}
 
 Component <- c("Constant", "Hindrance (X)", "Resource (W)", "Hindrance x Resource")
-coeff <- round(results[c(2:5),1],2)
-SE    <- round(results[c(2:5),2],2)
-t     <- round(results[c(2:5),3],2)
-p     <- round(results[c(2:5),4],2)
+coeff <- format(round(results[c(2:5),1],2), nsmall=2)
+SE    <- format(round(results[c(2:5),2],2), nsmall=2)
+t     <- format(round(results[c(2:5),3],2), nsmall=2)
+p     <- format(round(results[c(2:5),4],2), nsmall=2)
 
 table <- as.data.frame(cbind(Component, coeff, SE, t, p))
 
@@ -198,6 +198,7 @@ papaja::apa_table(table,
                   escape = TRUE) 
 
 ```
+
 
 Next steps:
 1)	Make a prettier graph using ggplot. Note the percentiles that we graphed. 
