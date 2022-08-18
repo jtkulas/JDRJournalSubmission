@@ -33,7 +33,7 @@ authornote: |
 keywords          : "keywords"
 wordcount         : "X"
 
-bibliography      : ["r-references.bib", "SIOP_Onet_FA.bib", "jdr.bib", "jobdemands_resources_bibtex.bib"]
+bibliography      : ["r-references.bib", "SIOP_PROCESS.bib", "jdr.bib", "jobdemands_resources_bibtex.bib"]
 
 floatsintext      : no
 figurelist        : no
