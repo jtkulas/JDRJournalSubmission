@@ -1756,13 +1756,13 @@ challenge.participation$category <- "Participation"
 challenge.sup.support <- challenge[ which(challenge$description=='providing guidance and expert advice to management or other groups on technical, systems-, or process-related topics' | challenge$description=='identifying the educational needs of others, developing formal educational or training programs or classes, and teaching or instructing others'), ]
 challenge.sup.support$category <- "Support"
 
-challenge.autonomy <- challenge[ which(challenge$description=='decision making freedom, without supervision'), ]
-challenge.autonomy$category <- "Autonomy"
+#challenge.autonomy <- challenge[ which(challenge$description=='decision making freedom, without supervision'), ]
+#challenge.autonomy$category <- "Autonomy"
 
 challenge.cohesion <- challenge[ which(challenge$description=='work with others in a group or team' | challenge$description=='getting members of a group to work together to accomplish tasks' | challenge$description=='' | challenge$description=='' | challenge$description=='' | challenge$description=='encouraging and building mutual trust, respect, and cooperation among team members'), ]
 challenge.cohesion$category <- "Cohesion"
 
-notedchallenge <- rbind(challenge.control, challenge.participation, challenge.sup.support, challenge.autonomy, challenge.cohesion)
+notedchallenge <- rbind(challenge.control, challenge.participation, challenge.sup.support,  challenge.cohesion)     ## removed challenge.autonomy 8/24/22
 notedchallenge$RD <- "Challenge"
 
 ############################################################

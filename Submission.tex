@@ -3,12 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  english,
   man]{apa6}
-\title{Job Demands-Resources model components through the lens of O*NET classifications}
-\author{Alicia Stachowski\textsuperscript{1}, Renata Garcia Prieto Palacios Roji\textsuperscript{2}, \& John Kulas\textsuperscript{2}}
-\date{}
-
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -97,6 +92,15 @@
 \newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{english}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 % Manuscript styling
 \usepackage{upgreek}
 \captionsetup{font=singlespacing,justification=justified}
@@ -112,9 +116,9 @@
 
 % Create new environments so endfloat can handle them
 % \newenvironment{ltable}
-%   {\begin{landscape}\begin{center}\begin{threeparttable}}
-%   {\end{threeparttable}\end{center}\end{landscape}}
-\newenvironment{lltable}{\begin{landscape}\begin{center}\begin{ThreePartTable}}{\end{ThreePartTable}\end{center}\end{landscape}}
+%   {\begin{landscape}\centering\begin{threeparttable}}
+%   {\end{threeparttable}\end{landscape}}
+\newenvironment{lltable}{\begin{landscape}\centering\begin{ThreePartTable}}{\end{ThreePartTable}\end{landscape}}
 
 % Enables adjusting longtable caption width to table width
 % Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
@@ -127,6 +131,20 @@
 % \setlength{\parindent}{0.5in}
 % \setlength{\parskip}{0pt plus 0pt minus 0pt}
 
+% Overwrite redefinition of paragraph and subparagraph by the default LaTeX template
+% See https://github.com/crsh/papaja/issues/292
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries\itshape\typesectitle}}
+
+\renewcommand{\subparagraph}[1]{\@startsection{subparagraph}{5}{1em}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-\z@\relax}%
+  {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
+\makeatother
+
 % \usepackage{etoolbox}
 \makeatletter
 \patchcmd{\HyOrg@maketitle}
@@ -138,7 +156,15 @@
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
 \makeatother
-\shorttitle{O*NET JD-R}
+
+\usepackage{xpatch}
+\makeatletter
+\xapptocmd\appendix
+  {\xapptocmd\section
+    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
+    {}{\InnerPatchFailed}%
+  }
+{}{\PatchFailed}
 \keywords{keywords\newline\indent Word count: X}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
@@ -147,24 +173,26 @@
 \renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
 \makeatother
 \usepackage{csquotes}
-\ifXeTeX
-  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
-  \usepackage{polyglossia}
-  \setmainlanguage[]{english}
-\else
-  \usepackage[main=english]{babel}
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
-\fi
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 
+\title{Job Demands-Resources model components through the lens of O*NET classifications}
+\author{Alicia Stachowski\textsuperscript{1}, Renata Garcia Prieto Palacios Roji\textsuperscript{2}, \& John Kulas\textsuperscript{2}}
+\date{}
+
+
+\shorttitle{O*NET JD-R}
+
+\authornote{
+
+Correspondence concerning this article should be addressed to Alicia Stachowski, Menomenie, WI. E-mail: \href{mailto:stachowskia@uwstout.edu}{\nolinkurl{stachowskia@uwstout.edu}}
+
+}
 
 \affiliation{\vspace{0.5cm}\textsuperscript{1} University of Wisconsin - Stout\\\textsuperscript{2} Montclair State University}
 
-\abstract{
+\abstract{%
 O*NET work characteristics were rated in terms of relevance, perception as a demand, and perception as a resource. All the results of this current study match the stress-appraisal stuff. Next steps: 1) discuss results within stress-appraisal framework (Lazarus \& Bookman), 2) different literature on challenge and hindrance demands. Job Demands Resources theory that says resources and demands are relatively universal is NOT consistent with these findings. JDR neglects the other 2 literatures. Analytically pull O*Net descriptors that reflect universal demands/resources (e.g., autonomy) and see how much variability there is on those. Maybe forget about cross-walk thing. May actually want to start with this: \url{https://docs.google.com/spreadsheets/d/1ck-72dQ_c-Pl4Xba9W0r__OYo0znlEnV/edit\#gid=1041061499}.
 
 We want to also group items by O*NET categories so there's not so many (that makes ANOVAs more viable)
@@ -175,7 +203,7 @@ We want to also group items by O*NET categories so there's not so many (that mak
 \begin{document}
 \maketitle
 
-Given the popularity of the Job Demands-Resources Theory {[}JD-R; Demerouti et al. (2001){]} in exploring questions related to everything from motivation to job design, we aim to explore the intersection between \emph{perceptions} of job demands and resources, and the broad set of job characteristics provided on O*Net. We aim to present evidence surrounding whether O*Net job and task descriptors are simiarly rated as resources, challenge- or hindrance demands, and whether such ratings differ across job catories/classifications.
+Given the popularity of the Job Demands-Resources Theory {[}JD-R; Demerouti et al. (2001){]} in exploring questions related to everything from motivation to job design, we aim to explore the intersection between \emph{perceptions} of job demands and resources, and the broad set of job characteristics provided on O*Net. This project makes three contributions. We aim to first explore whether ratings of of O*Net item groupings align with the stated ``resources'' and ``demands'' presented in the job demands-resources theory. We then present evidence documenting whether O*Net job and task descriptors are similarly rated as resources, challenge- or hindrance demands, and lastly, whether such ratings differ across job categories/classifications.
 Across two studies, a series of evaluations were made that used: 1) direct O*Net terminology (both descriptor and response option), and 2) JD-R influenced ratings of demand, challenge, or hindrance of different types of workers. Prior to a description of results, a brief overview of both the JD-R theory, the stress appraisal process, and O*Net is provided.
 
 \hypertarget{the-job-demands-resources-theory}{%
@@ -196,32 +224,25 @@ We do acknowledge as well, that demands and resources are not necessarily consis
 \hypertarget{onet-resource}{%
 \subsection{O*Net Resource}\label{onet-resource}}
 
-Originally, the Advisory Panel for the Dictionary of Occupational Titles recommended a system that would ``\ldots promote the effective education, training, counseling, and employment of the American workforce. It should accomplish its purpose by providing a database system that identifies, defines, classifies, and describes occupations in the economy in an accessible and flexible manner'' (Dictionary of Occupational Titles (US) and Service (1993), p.~6). The result was the now commonly used O*NET. The Occupational Information Network (O*NET; onetonline.org) contains a comprehensive description of occupations (Peterson et al., 2001). This widely accessed database houses hundreds of standardized and occupation-specific descriptors most occupations in the US and these descriptions are continually updated. In fact, there was a call to work with experienced I/O psychologists over the summer to update the content for the \href{https://www.onetonline.org/link/summary/19-3032.00}{Industrial and Organizational Psychologist listing on O*Net}. These data, and the tools provided for free on the website (e.g., Career Exploration Tools, ``My Next Move for Veterans,'' ``My Next Move,'' Toolkit for Business) are frequently used by counselors, students, human resources departments, and researchers to assist potential applicants discover the skills and training they need for the job of their choice. It is also useful to employers by providing them with information with which to craft job descriptions and help employees determine what skills are needed for promotion.
+Originally, the Advisory Panel for the Dictionary of Occupational Titles recommended a system that would ``\ldots promote the effective education, training, counseling, and employment of the American workforce. It should accomplish its purpose by providing a database system that identifies, defines, classifies, and describes occupations in the economy in an accessible and flexible manner'' (Dictionary of Occupational Titles (US) and Service (1993), p.~6). The result was the now commonly used O*NET. The Occupational Information Network (O*NET; onetonline.org) contains a comprehensive description of occupations (Peterson et al., 2001). This widely accessed database houses hundreds of standardized and occupation-specific descriptors most occupations in the US and these descriptions are continually updated. In fact, there was a call to work with experienced I/O psychologists over the summer to update the content for the \href{https://www.onetonline.org/link/summary/19-3032.00}{Industrial and Organizational Psychologist listing on O*Net}. These data, and the tools provided for free on the website (e.g., Career Exploration Tools, ``My Next Move for Veterans'', ``My Next Move'', Toolkit for Business) are frequently used by counselors, students, human resources departments, and researchers to assist potential applicants discover the skills and training they need for the job of their choice. It is also useful to employers by providing them with information with which to craft job descriptions and help employees determine what skills are needed for promotion.
+
+Of greatest interest here are statements taken from O*NET \href{https://www.O*NETonline.org/find/descriptor/result/4.A.1.b.3}{``activity'' and ``context'' classifications} (e.g., items related to information input, interacting with others, physical work conditions, structural job characteristics). One of the first and basic questions is whether or not the categorical examples of ``resources'' and ``demands'' described in the Job Demands-Resources Theory (Demerouti et al., 2001), for example, are generally deemed resources or demands as we objectively define them. The next logical question surrounds how ``universal'' such ratings are. For instance, it is quite possible, given the theoretical and empirical evidence presented above, that there is wide variability in individual appraisal of work activities and context such that some people may rate a given activity as a resource and others a hindrance. A second study extends the findings from Study 1 to a potentially key moderator - job categories/classifications, examining whether ratings of resources, challenge- and hindrance demands differ by job classification.
 
 \hypertarget{study-1}{%
-\subsection{Study 1}\label{study-1}}
+\section{Study 1}\label{study-1}}
 
 Look at the \href{https://docs.google.com/spreadsheets/d/1ck-72dQ_c-Pl4Xba9W0r__OYo0znlEnV/edit\#gid=1041061499}{google sheet} and document the extent to which job characteristics that have been consistently cited in the literature as demands or resources end up being consistently or variably experienced as demands or resources. Study 1 aims to provide an integration of the theory and practical occupations-focused data on O*Net. Several broad research questions are examined across jobs:
 
 \begin{quote}
-\emph{Research Question 1}: Which O*Net job characteristics are consistently rated as job resources?
+\emph{Research Question 1}: Are literature-implicated resources consistently rated as job resources?
 \end{quote}
 
 \begin{quote}
-\emph{Research Question 2}: Which O*Net job characteristics are consistently rated as challenge demands?
+\emph{Research Question 2}: Are literature-implicated challenges consistently rated as job challenges?
 \end{quote}
 
 \begin{quote}
-\emph{Research Question 3}: Which O*Net job characteristics are consistently rated as hinderance demands?
-\end{quote}
-
-\hypertarget{study-2}{%
-\subsection{Study 2}\label{study-2}}
-
-While Study 1 explored the above questions across jobs, Study 2 considers a potentially important moderator: job classification. There is a distinct possibility we expect we may observe is wide variability in the assignment of some job characteristics within the JD-R framework depending on \emph{job classification}. In fact, a growing body of evidence suggests people may not universally experience job characteristics as challenges or hinderances (e.g., (A. B. Bakker \& Sanz-Vergel, 2013); (Cavanaugh et al., 2000); (Gerich, 2017); (Podsakoff et al., 2007); (Webster et al., 2011)). Thus, Study 2 focuses on a fourth question of interest.
-
-\begin{quote}
-\emph{Research Question 4}: Does the \textbf{type of work} reported explain variability in the categorization of work characteristics into challenges, hindrances, and resources?
+\emph{Research Question 3}: Are literature-implicated hiderances consistently rated as job hinderances?
 \end{quote}
 
 \hypertarget{participants}{%
@@ -231,8 +252,28 @@ Of the 785 Prolific panel individuals who initially accessed the survey link, 11
 
 Ages ranged from 18 to 65 with an average of 28.18 years old (SD = 7.53). The survey offered a free-field gender identity category, although the sample predominantly self-identified as female (52.58\%) or male (46.83\%).
 
+\begin{figure}
+\centering
+\includegraphics{Submission_files/figure-latex/litresources-1.pdf}
+\caption{\label{fig:litresources}Average and standard deviation of O*Net characteristics retained as indicators of Autonomy, Cohesion, Control, Participation, and Supervisor Support.}
+\end{figure}
+
 \hypertarget{materials}{%
 \subsection{Materials}\label{materials}}
+
+Looked through
+
+\hypertarget{study-2}{%
+\section{Study 2}\label{study-2}}
+
+While Study 1 explored the above questions across jobs, Study 2 considers a potentially important moderator: job classification. There is a distinct possibility we expect we may observe is wide variability in the assignment of some job characteristics within the JD-R framework depending on \emph{job classification}. In fact, a growing body of evidence suggests people may not universally experience job characteristics as challenges or hinderances (e.g., (A. B. Bakker \& Sanz-Vergel, 2013); (Cavanaugh et al., 2000); (Gerich, 2017); (Podsakoff et al., 2007); (Webster et al., 2011)). Thus, Study 2 focuses on a fourth question of interest.
+
+\begin{quote}
+\emph{Research Question 4}: Does the \textbf{type of work} reported explain variability in the categorization of work characteristics into challenges, hindrances, and resources?
+\end{quote}
+
+\hypertarget{materials-1}{%
+\subsection{Materials}\label{materials-1}}
 
 Each free-field job title was placed into one of 14 possible O*NET job families classifications. 60 of these ratings were performed by all 3 author raters, with a resulting Kappa of 0.53 (Landis \& Koch, 1977). We then further collapsed these 14 categories into 8 essentially equal frequency job categories.
 
