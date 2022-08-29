@@ -1,0 +1,26 @@
+---
+title: "Submission_ResourceCount"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Next steps (thoughts from 8/24):
+Want this to be a more traditional project: DVs engagement, burnout, stress. 
+How to operationalize IVs of resources, challenges, hindrances. May want to only count it if they somewhat agree or strongly agree. Could do a count or a sum of these values. The moderator of job type may work well in this idea. 
+
+Want to include idea of item level things in terms of agreement. decreasing bar graphs relative to SD. Maybe we just present SD or SE. Thinking on SD, but ensure we have sufficient numbers of people responding to the item. 
+Want to get a total count.
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
