@@ -16,6 +16,8 @@ How to operationalize IVs of resources, challenges, hindrances. May want to only
 Want to include idea of item level things in terms of agreement. decreasing bar graphs relative to SD. Maybe we just present SD or SE. Thinking on SD, but ensure we have sufficient numbers of people responding to the item. 
 Want to get a total count.
 
+Alicia reflection 9/1/22: It actually appears that there may be more here with the engagement variable when reviewing the correlations. Knit and reflect more on the paper with that outcome being of focus.
+
 
 ```{r study1}
 
