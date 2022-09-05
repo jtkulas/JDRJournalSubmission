@@ -1,6 +1,8 @@
 ---
 title: "Submission_ResourceCount"
-output: pdf_document
+output:
+  pdf_document: 
+    latex_engine: xelatex
 ---
 
 ```{r analysis-preferences, echo=FALSE}
@@ -17,6 +19,9 @@ Want to include idea of item level things in terms of agreement. decreasing bar 
 Want to get a total count.
 
 Alicia reflection 9/1/22: It actually appears that there may be more here with the engagement variable when reviewing the correlations. Knit and reflect more on the paper with that outcome being of focus.
+
+John-o:
+maybe use this as basis for another SIOP - extent to which resources and challenges are viewed similarly and also associations with engagement, burnout, etc... this operationalization is different than previous SIOP so could submit anew. Also would need a different approach to "similarity" - would need to look at item level
 
 
 ```{r study1}
@@ -126,11 +131,24 @@ data22$challenge <- rowSums(data22[c(288:307,309:372)], na.rm=TRUE)
 
 cor(data22[405:407], use="all.obs")   ## something to be told with resources and challenges
 
-
+data22$item387 <- 7-data22$item387
 data22$burnout      <- rowMeans(data22[c(373:376)], na.rm=TRUE)
 data22$stress       <- rowMeans(data22[c(377:379)], na.rm=TRUE)
 data22$engagement   <- rowMeans(data22[c(380:399)], na.rm=TRUE)        ## probably need to recode some
 
-cor(data22[405:410], use="all.obs")   ## something to be told with resources and challenges
+```
+
+```{r correlation_table}
+r <- corx::corx(data22[,c(405:410)],                    
+                triangle = "lower",
+                stars = c(0.05, 0.01, 0.001),
+                describe = c(`$M$` = mean, `$SD$` = sd))
+
+papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table,
+                  landscape = TRUE,
+                  escape = FALSE)
+
+#cor(data22[405:410], use="all.obs")   ## something to be told with resources and challenges
 
 ```
+
