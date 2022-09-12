@@ -184,4 +184,5 @@ str <- lm(stress ~ hindrance + challenge + resource, data22)
 summary(eng)
 summary(bur)
 summary(str)
+
 ```
