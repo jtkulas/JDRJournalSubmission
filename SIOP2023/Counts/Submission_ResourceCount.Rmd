@@ -145,6 +145,7 @@ cor(data22[405:410], use="all.obs")   ## something to be told with resources and
 ## Trying to figure out which characteristics have agreement
 
 ## 145 & 248 (attention checks)
+## maybe % match
 
 data22$rh1  <- data22$item118 + data22$item203
 data22$rh2  <- data22$item119 + data22$item204
@@ -156,6 +157,268 @@ data22$rh7  <- data22$item124 + data22$item209
 data22$rh8  <- data22$item125 + data22$item210
 data22$rh9  <- data22$item126 + data22$item211
 data22$rh10 <- data22$item127 + data22$item212
+data22$rh11  <- data22$item128 + data22$item213
+data22$rh12  <- data22$item129 + data22$item214
+data22$rh13  <- data22$item130 + data22$item215
+data22$rh14  <- data22$item131 + data22$item216
+data22$rh15  <- data22$item132 + data22$item217
+data22$rh16  <- data22$item133 + data22$item218
+data22$rh17  <- data22$item134 + data22$item219
+data22$rh18  <- data22$item135 + data22$item220
+data22$rh19  <- data22$item136 + data22$item221
+data22$rh20  <- data22$item137 + data22$item222
+data22$rh21  <- data22$item138 + data22$item223
+data22$rh22  <- data22$item139 + data22$item224
+data22$rh23  <- data22$item140 + data22$item225
+data22$rh24  <- data22$item141 + data22$item226
+data22$rh25  <- data22$item142 + data22$item227
+data22$rh26  <- data22$item143 + data22$item228
+data22$rh27  <- data22$item144 + data22$item229
+
+data22$rh28  <- data22$item146 + data22$item230
+
+data22$rh29  <- data22$item147 + data22$item231
+data22$rh30  <- data22$item148 + data22$item232
+data22$rh31  <- data22$item149 + data22$item233
+data22$rh32  <- data22$item150 + data22$item234
+data22$rh33  <- data22$item151 + data22$item235
+data22$rh34  <- data22$item152 + data22$item236
+data22$rh35  <- data22$item153 + data22$item237
+data22$rh36  <- data22$item154 + data22$item238
+data22$rh37  <- data22$item155 + data22$item239
+data22$rh38  <- data22$item156 + data22$item240
+data22$rh39  <- data22$item157 + data22$item241
+data22$rh40  <- data22$item158 + data22$item242
+data22$rh41  <- data22$item159 + data22$item243
+data22$rh42  <- data22$item160 + data22$item244
+data22$rh43  <- data22$item161 + data22$item245
+data22$rh44  <- data22$item162 + data22$item246
+data22$rh45  <- data22$item163 + data22$item247
+
+data22$rh46  <- data22$item164 + data22$item249
+
+data22$rh47  <- data22$item165 + data22$item250
+data22$rh48  <- data22$item166 + data22$item251
+data22$rh49  <- data22$item167 + data22$item252
+data22$rh50  <- data22$item168 + data22$item253
+data22$rh51  <- data22$item169 + data22$item254
+data22$rh52  <- data22$item170 + data22$item255
+data22$rh53  <- data22$item171 + data22$item256
+data22$rh54  <- data22$item172 + data22$item257
+data22$rh55  <- data22$item173 + data22$item258
+data22$rh56  <- data22$item174 + data22$item259
+data22$rh57  <- data22$item175 + data22$item260
+data22$rh58  <- data22$item176 + data22$item261
+data22$rh59  <- data22$item177 + data22$item262
+data22$rh60  <- data22$item178 + data22$item263
+data22$rh61  <- data22$item179 + data22$item264
+data22$rh62  <- data22$item180 + data22$item265
+data22$rh63  <- data22$item181 + data22$item266
+data22$rh64  <- data22$item182 + data22$item267
+data22$rh65  <- data22$item183 + data22$item268
+data22$rh66  <- data22$item184 + data22$item269
+data22$rh67  <- data22$item185 + data22$item270
+data22$rh68  <- data22$item186 + data22$item271
+data22$rh69  <- data22$item187 + data22$item272
+data22$rh70  <- data22$item188 + data22$item273
+data22$rh71  <- data22$item189 + data22$item274
+data22$rh72  <- data22$item190 + data22$item275
+data22$rh73  <- data22$item191 + data22$item276
+data22$rh74  <- data22$item192 + data22$item277
+data22$rh75  <- data22$item193 + data22$item278
+data22$rh76  <- data22$item194 + data22$item279
+data22$rh77  <- data22$item195 + data22$item280
+data22$rh78  <- data22$item196 + data22$item281
+data22$rh79  <- data22$item197 + data22$item282
+data22$rh80  <- data22$item198 + data22$item283
+data22$rh81  <- data22$item199 + data22$item284
+data22$rh82  <- data22$item200 + data22$item285
+data22$rh83  <- data22$item201 + data22$item286
+data22$rh84  <- data22$item202 + data22$item287
+
+###### Resource-Challenge:
+
+data22$rc1  <- data22$item118 + data22$item288
+data22$rc2  <- data22$item119 + data22$item289
+data22$rc3  <- data22$item120 + data22$item290
+data22$rc4  <- data22$item121 + data22$item291
+data22$rc5  <- data22$item122 + data22$item292
+data22$rc6  <- data22$item123 + data22$item293
+data22$rc7  <- data22$item124 + data22$item294
+data22$rc8  <- data22$item125 + data22$item295
+data22$rc9  <- data22$item126 + data22$item296
+data22$rc10 <- data22$item127 + data22$item297
+data22$rc11  <- data22$item128 + data22$item298
+data22$rc12  <- data22$item129 + data22$item299
+data22$rc13  <- data22$item130 + data22$item300
+data22$rc14  <- data22$item131 + data22$item301
+data22$rc15  <- data22$item132 + data22$item302
+data22$rc16  <- data22$item133 + data22$item303
+data22$rc17  <- data22$item134 + data22$item304
+data22$rc18  <- data22$item135 + data22$item305
+data22$rc19  <- data22$item136 + data22$item306
+data22$rc20  <- data22$item137 + data22$item307
+
+data22$rc21  <- data22$item138 + data22$item309
+
+data22$rc22  <- data22$item139 + data22$item310
+data22$rc23  <- data22$item140 + data22$item311
+data22$rc24  <- data22$item141 + data22$item312
+data22$rc25  <- data22$item142 + data22$item313
+data22$rc26  <- data22$item143 + data22$item314
+data22$rc27  <- data22$item144 + data22$item315
+
+data22$rc28  <- data22$item146 + data22$item316
+
+data22$rc29  <- data22$item147 + data22$item317
+data22$rc30  <- data22$item148 + data22$item318
+data22$rc31  <- data22$item149 + data22$item319
+data22$rc32  <- data22$item150 + data22$item320
+data22$rc33  <- data22$item151 + data22$item321
+data22$rc34  <- data22$item152 + data22$item322
+data22$rc35  <- data22$item153 + data22$item323
+data22$rc36  <- data22$item154 + data22$item324
+data22$rc37  <- data22$item155 + data22$item325
+data22$rc38  <- data22$item156 + data22$item326
+data22$rc39  <- data22$item157 + data22$item327
+data22$rc40  <- data22$item158 + data22$item328
+data22$rc41  <- data22$item159 + data22$item329
+data22$rc42  <- data22$item160 + data22$item330
+data22$rc43  <- data22$item161 + data22$item331
+data22$rc44  <- data22$item162 + data22$item332
+data22$rc45  <- data22$item163 + data22$item333
+data22$rc46  <- data22$item164 + data22$item334
+data22$rc47  <- data22$item165 + data22$item335
+data22$rc48  <- data22$item166 + data22$item336
+data22$rc49  <- data22$item167 + data22$item337
+data22$rc50  <- data22$item168 + data22$item338
+data22$rc51  <- data22$item169 + data22$item339
+data22$rc52  <- data22$item170 + data22$item340
+data22$rc53  <- data22$item171 + data22$item341
+data22$rc54  <- data22$item172 + data22$item342
+data22$rc55  <- data22$item173 + data22$item343
+data22$rc56  <- data22$item174 + data22$item344
+data22$rc57  <- data22$item175 + data22$item345
+data22$rc58  <- data22$item176 + data22$item346
+data22$rc59  <- data22$item177 + data22$item347
+data22$rc60  <- data22$item178 + data22$item348
+data22$rc61  <- data22$item179 + data22$item349
+data22$rc62  <- data22$item180 + data22$item350
+data22$rc63  <- data22$item181 + data22$item351
+data22$rc64  <- data22$item182 + data22$item352
+data22$rc65  <- data22$item183 + data22$item353
+data22$rc66  <- data22$item184 + data22$item354
+data22$rc67  <- data22$item185 + data22$item355
+data22$rc68  <- data22$item186 + data22$item356
+data22$rc69  <- data22$item187 + data22$item357
+data22$rc70  <- data22$item188 + data22$item358
+data22$rc71  <- data22$item189 + data22$item359
+data22$rc72  <- data22$item190 + data22$item360
+data22$rc73  <- data22$item191 + data22$item361
+data22$rc74  <- data22$item192 + data22$item362
+data22$rc75  <- data22$item193 + data22$item363
+data22$rc76  <- data22$item194 + data22$item364
+data22$rc77  <- data22$item195 + data22$item365
+data22$rc78  <- data22$item196 + data22$item366
+data22$rc79  <- data22$item197 + data22$item367
+data22$rc80  <- data22$item198 + data22$item368
+data22$rc81  <- data22$item199 + data22$item369
+data22$rc82  <- data22$item200 + data22$item370
+data22$rc83  <- data22$item201 + data22$item371
+data22$rc84  <- data22$item202 + data22$item372
+
+####### Hindrance-Challenge
+
+data22$hc1  <- data22$item203 + data22$item288
+data22$hc2  <- data22$item204 + data22$item289
+data22$hc3  <- data22$item205 + data22$item290
+data22$hc4  <- data22$item206 + data22$item291
+data22$hc5  <- data22$item207 + data22$item292
+data22$hc6  <- data22$item208 + data22$item293
+data22$hc7  <- data22$item209 + data22$item294
+data22$hc8  <- data22$item210 + data22$item295
+data22$hc9  <- data22$item211 + data22$item296
+data22$hc10 <- data22$item212 + data22$item297
+data22$hc11  <- data22$item213 + data22$item298
+data22$hc12  <- data22$item214 + data22$item299
+data22$hc13  <- data22$item215 + data22$item300
+data22$hc14  <- data22$item216 + data22$item301
+data22$hc15  <- data22$item217 + data22$item302
+data22$hc16  <- data22$item218 + data22$item303
+data22$hc17  <- data22$item219 + data22$item304
+data22$hc18  <- data22$item220 + data22$item305
+data22$hc19  <- data22$item221 + data22$item306
+data22$hc20  <- data22$item222 + data22$item307
+
+data22$hc21  <- data22$item223 + data22$item309
+
+data22$hc22  <- data22$item224 + data22$item310
+data22$hc23  <- data22$item225 + data22$item311
+data22$hc24  <- data22$item226 + data22$item312
+data22$hc25  <- data22$item227 + data22$item313
+data22$hc26  <- data22$item228 + data22$item314
+data22$hc27  <- data22$item229 + data22$item315
+data22$hc28  <- data22$item230 + data22$item316
+data22$hc29  <- data22$item231 + data22$item317
+data22$hc30  <- data22$item232 + data22$item318
+data22$hc31  <- data22$item233 + data22$item319
+data22$hc32  <- data22$item234 + data22$item320
+data22$hc33  <- data22$item235 + data22$item321
+data22$hc34  <- data22$item236 + data22$item322
+data22$hc35  <- data22$item237 + data22$item323
+data22$hc36  <- data22$item238 + data22$item324
+data22$hc37  <- data22$item239 + data22$item325
+data22$hc38  <- data22$item240 + data22$item326
+data22$hc39  <- data22$item241 + data22$item327
+data22$hc40  <- data22$item242 + data22$item328
+data22$hc41  <- data22$item243 + data22$item329
+data22$hc42  <- data22$item244 + data22$item330
+data22$hc43  <- data22$item245 + data22$item331
+data22$hc44  <- data22$item246 + data22$item332
+data22$hc45  <- data22$item247 + data22$item333
+
+data22$hc46  <- data22$item249 + data22$item334
+
+data22$hc47  <- data22$item250 + data22$item335
+data22$hc48  <- data22$item251 + data22$item336
+data22$hc49  <- data22$item252 + data22$item337
+data22$hc50  <- data22$item253 + data22$item338
+data22$hc51  <- data22$item254 + data22$item339
+data22$hc52  <- data22$item255 + data22$item340
+data22$hc53  <- data22$item256 + data22$item341
+data22$hc54  <- data22$item257 + data22$item342
+data22$hc55  <- data22$item258 + data22$item343
+data22$hc56  <- data22$item259 + data22$item344
+data22$hc57  <- data22$item260 + data22$item345
+data22$hc58  <- data22$item261 + data22$item346
+data22$hc59  <- data22$item262 + data22$item347
+data22$hc60  <- data22$item263 + data22$item348
+data22$hc61  <- data22$item264 + data22$item349
+data22$hc62  <- data22$item265 + data22$item350
+data22$hc63  <- data22$item266 + data22$item351
+data22$hc64  <- data22$item267 + data22$item352
+data22$hc65  <- data22$item268 + data22$item353
+data22$hc66  <- data22$item269 + data22$item354
+data22$hc67  <- data22$item270 + data22$item355
+data22$hc68  <- data22$item271 + data22$item356
+data22$hc69  <- data22$item272 + data22$item357
+data22$hc70  <- data22$item273 + data22$item358
+data22$hc71  <- data22$item274 + data22$item359
+data22$hc72  <- data22$item275 + data22$item360
+data22$hc73  <- data22$item276 + data22$item361
+data22$hc74  <- data22$item277 + data22$item362
+data22$hc75  <- data22$item278 + data22$item363
+data22$hc76  <- data22$item279 + data22$item364
+data22$hc77  <- data22$item280 + data22$item365
+data22$hc78  <- data22$item281 + data22$item366
+data22$hc79  <- data22$item282 + data22$item367
+data22$hc80  <- data22$item283 + data22$item368
+data22$hc81  <- data22$item284 + data22$item369
+data22$hc82  <- data22$item285 + data22$item370
+data22$hc83  <- data22$item286 + data22$item371
+data22$hc84  <- data22$item287 + data22$item372
+
+isolated <- data22[,c(22:32, 42:50, 52:60, 62:65, 67:117,411:662)]  ## characteristic ratings scattered because we didn't ask for resource/demand ratings for characteristics such as "exposure to radiation" - 9/12/22
 
 ```
 
