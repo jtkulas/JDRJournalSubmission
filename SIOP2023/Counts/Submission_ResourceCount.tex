@@ -33,6 +33,16 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={The title},
+  pdfauthor={First Author1 \& Ernst-August Doelle1,2},
+  pdflang={en-EN},
+  pdfkeywords={keywords},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -132,34 +142,27 @@
     {}{\InnerPatchFailed}%
   }
 {}{\PatchFailed}
-\keywords{Engagement, engagement\newline\indent Word count: X}
+\keywords{keywords\newline\indent Word count: X}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
 \DeclareDelayedFloatFlavor*{longtable}{table}
 \makeatletter
 \renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
 \makeatother
+\usepackage{lineno}
+
+\linenumbers
 \usepackage{csquotes}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
-\hypersetup{
-  pdftitle={Perception of Work Demands and Resources: Does Volume Relate to Engagement, Stress, or Burnout?},
-  pdfauthor={John Kulas1, Renata Garcia Prieto Palacios Roji1, Casey Osorio-Duffoo2, \& Morgan Russell1},
-  pdflang={en-EN},
-  pdfkeywords={Engagement, engagement},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
 
-\title{Perception of Work Demands and Resources: Does Volume Relate to Engagement, Stress, or Burnout?}
-\author{John Kulas\textsuperscript{1}, Renata Garcia Prieto Palacios Roji\textsuperscript{1}, Casey Osorio-Duffoo\textsuperscript{2}, \& Morgan Russell\textsuperscript{1}}
+\title{The title}
+\author{First Author\textsuperscript{1} \& Ernst-August Doelle\textsuperscript{1,2}}
 \date{}
 
 
-\shorttitle{BiFactor Engagement}
+\shorttitle{Title}
 
 \authornote{
 
@@ -167,14 +170,28 @@ Add complete departmental affiliations for each author here. Each new line herei
 
 Enter author note here.
 
-Correspondence concerning this article should be addressed to John Kulas, 1 Normal Ave, Montclair, NJ 07043. E-mail: \href{mailto:kulasj@montclair.edu}{\nolinkurl{kulasj@montclair.edu}}
+The authors made the following contributions. First Author: Conceptualization, Writing - Original Draft Preparation, Writing - Review \& Editing; Ernst-August Doelle: Writing - Review \& Editing, Supervision.
+
+Correspondence concerning this article should be addressed to First Author, Postal address. E-mail: \href{mailto:my@email.com}{\nolinkurl{my@email.com}}
 
 }
 
-\affiliation{\vspace{0.5cm}\textsuperscript{1} Montclair State University\\\textsuperscript{2} Harver}
+\affiliation{\vspace{0.5cm}\textsuperscript{1} Wilhelm-Wundt-University\\\textsuperscript{2} Konstanz Business School}
 
 \abstract{%
-The most commonly referenced definition of attitudinal engagement implicates sub-dimensions of vigor, dedication, and absorption. The tripartite model of attitudes specifies cognitive, behavioral, and affective components. The current study documents the development and initial validation of a new measure of engagement that intentionally crosses the substantive and attitudinal elements.
+One or two sentences providing a \textbf{basic introduction} to the field, comprehensible to a scientist in any discipline.
+
+Two to three sentences of \textbf{more detailed background}, comprehensible to scientists in related disciplines.
+
+One sentence clearly stating the \textbf{general problem} being addressed by this particular study.
+
+One sentence summarizing the main result (with the words ``\textbf{here we show}'' or their equivalent).
+
+Two or three sentences explaining what the \textbf{main result} reveals in direct comparison to what was thought to be the case previously, or how the main result adds to previous knowledge.
+
+One or two sentences to put the results into a more \textbf{general context}.
+
+Two or three sentences to provide a \textbf{broader perspective}, readily comprehensible to a scientist in any discipline.
 }
 
 
@@ -265,6 +282,31 @@ There were 568 retained respondents.
 ## stress     0.08895664 0.1418173 0.10674017  0.69654076  1.00000000 -0.2953456
 ## engagement 0.36590613 0.0501684 0.33583266 -0.35496125 -0.29534556  1.0000000
 \end{verbatim}
+
+\begin{table}[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:correlation_table}Focal variable correlations (counts data).}
+
+\begin{tabular}{llllllll}
+\toprule
+ & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} & \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$SD$}\\
+\midrule
+1. resource & - &  &  &  &  & 203.85 & 56.73\\
+2. hindrance & .47*** & - &  &  &  & 129.50 & 55.80\\
+3. challenge & .95*** & .46*** & - &  &  & 203.12 & 57.57\\
+4. burnout & .07 & .10* & .08 & - &  & 3.04 & 0.87\\
+5. stress & .09* & .14*** & .11* & .70*** & - & 2.59 & 0.97\\
+6. engagement & .37*** & .05 & .34*** & -.35*** & -.30*** & 4.04 & 0.83\\
+\bottomrule
+\end{tabular}
+
+\end{threeparttable}
+\end{center}
+
+\end{table}
 
 \begin{verbatim}
 ## 

@@ -1,0 +1,26 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:correlation_table}Focal variable correlations (counts data).}
+
+\begin{tabular}{llllllll}
+\toprule
+ & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} & \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$SD$}\\
+\midrule
+1. resource & - &  &  &  &  & 203.85 & 56.73\\
+2. hindrance & .47*** & - &  &  &  & 129.50 & 55.80\\
+3. challenge & .95*** & .46*** & - &  &  & 203.12 & 57.57\\
+4. burnout & .07 & .10* & .08 & - &  & 3.04 & 0.87\\
+5. stress & .09* & .14*** & .11* & .70*** & - & 2.59 & 0.97\\
+6. engagement & .37*** & .05 & .34*** & -.35*** & -.30*** & 4.04 & 0.83\\
+\bottomrule
+\end{tabular}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}

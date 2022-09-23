@@ -1,25 +1,28 @@
 ---
-title             : "Perception of Work Demands and Resources: Does Volume Relate to Engagement, Stress, or Burnout?"
-shorttitle        : "BiFactor Engagement"
+title             : "The title"
+shorttitle        : "Title"
 
 author: 
-  - name          : "John Kulas"
+  - name          : "First Author"
     affiliation   : "1"
     corresponding : yes    # Define only one corresponding author
-    address       : "1 Normal Ave, Montclair, NJ 07043"
-    email         : "kulasj@montclair.edu"
-  - name          : "Renata Garcia Prieto Palacios Roji"
-    affiliation   : "1"
-  - name          : "Casey Osorio-Duffoo"
-    affiliation   : "2"
-  - name          : "Morgan Russell"
-    affiliation   : "1"
+    address       : "Postal address"
+    email         : "my@email.com"
+    role:         # Contributorship roles (e.g., CRediT, https://casrai.org/credit/)
+      - "Conceptualization"
+      - "Writing - Original Draft Preparation"
+      - "Writing - Review & Editing"
+  - name          : "Ernst-August Doelle"
+    affiliation   : "1,2"
+    role:
+      - "Writing - Review & Editing"
+      - "Supervision"
 
 affiliation:
   - id            : "1"
-    institution   : "Montclair State University"
+    institution   : "Wilhelm-Wundt-University"
   - id            : "2"
-    institution   : "Harver"
+    institution   : "Konstanz Business School"
 
 authornote: |
   Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
@@ -27,26 +30,41 @@ authornote: |
   Enter author note here.
 
 abstract: |
-  The most commonly referenced definition of attitudinal engagement implicates sub-dimensions of vigor, dedication, and absorption. The tripartite model of attitudes specifies cognitive, behavioral, and affective components. The current study documents the development and initial validation of a new measure of engagement that intentionally crosses the substantive and attitudinal elements.  
-
-keywords          : "Engagement, engagement"
+  One or two sentences providing a **basic introduction** to the field,  comprehensible to a scientist in any discipline.
+  
+  Two to three sentences of **more detailed background**, comprehensible  to scientists in related disciplines.
+  
+  One sentence clearly stating the **general problem** being addressed by  this particular study.
+  
+  One sentence summarizing the main result (with the words "**here we show**" or their equivalent).
+  
+  Two or three sentences explaining what the **main result** reveals in direct comparison to what was thought to be the case previously, or how the  main result adds to previous knowledge.
+  
+  One or two sentences to put the results into a more **general context**.
+  
+  Two or three sentences to provide a **broader perspective**, readily comprehensible to a scientist in any discipline.
+  
+  <!-- https://tinyurl.com/ybremelq -->
+  
+keywords          : "keywords"
 wordcount         : "X"
 
-bibliography      : ["r-references.bib"]
+bibliography      : "r-references.bib"
 
-floatsintext      : no #change to yes if we want all tables to be put in-line rather than pushed to end of paper
+floatsintext      : no
+linenumbers       : yes
+draft             : no
+mask              : no
+
 figurelist        : no
 tablelist         : no
 footnotelist      : no
-linenumbers       : no
-mask              : no
-draft             : no
 
-documentclass     : "apa6"
 classoption       : "man"
-output            : papaja::apa6_pdf
+output            :
+  papaja::apa6_pdf:
+    latex_engine: xelatex
 ---
-
 
 ```{r setup, echo=FALSE}
 
@@ -241,17 +259,21 @@ cor(data[405:410], use="all.obs")   ## something to be told with resources and c
 
 ```{r matching, include=FALSE}
 
-source("matching.R", local = knitr::knit_global())  ## adds 252 variables (count matches) to data object
+source("..\\JDRJournalSubmission\\SIOP2023\\Counts\\matching.R", local = knitr::knit_global())  ## adds 252 variables (count matches) to data object
 
 ```
 
 ```{r rankings}
 
-write.csv(psych::describe(data[410:662]), "percents.csv")
+write.csv(psych::describe(data[411:662]), "..\\JDRJournalSubmission\\SIOP2023\\Counts\\percents.csv")   ## all together
+
+write.csv(psych::describe(data[411:494]), "..\\JDRJournalSubmission\\SIOP2023\\Counts\\resource_hind.csv")   ## 
+write.csv(psych::describe(data[495:578]), "..\\JDRJournalSubmission\\SIOP2023\\Counts\\resource_challenge.csv")
+write.csv(psych::describe(data[579:662]), "..\\JDRJournalSubmission\\SIOP2023\\Counts\\hind_challenge.csv")
 
 ```
 
-```{r correlation_table, eval=FALSE}
+```{r correlation_table, eval=TRUE}
 
 r <- corx::corx(data[,c(405:410)],                    
                 triangle = "lower",
@@ -259,6 +281,7 @@ r <- corx::corx(data[,c(405:410)],
                 describe = c(`$M$` = mean, `$SD$` = sd))
 
 papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table,
+                  caption = "Focal variable correlations (counts data).",
                   escape = FALSE)
 
 #cor(data[405:410], use="all.obs")   ## something to be told with resources and challenges
