@@ -322,7 +322,7 @@ hist(data$percent_match_total_person)
   
 ## Kulas graphs
 
-```{r percagree, fig.cap="Percent convergence (characteristic rated consistently as, for example, both a resource and a hindrance."}
+```{r percagree, fig.cap="Percent convergence (characteristic rated consistently as, for example, both a resource and a hindrance.", fig.height=10}
 
 rc <- read.csv("resource_challenge.csv")
 rh <- read.csv("resource_hind.csv")
@@ -349,7 +349,7 @@ p + facet_wrap(~type, nrow=3)
 
 Figure \@ref(fig:percagree) shows that there was not much mutual agreement regarding characteristics viewed as both hindrances and resources or as challenges and hindrances. Alternatively, whether a characteristic was viewed as both a resource and a challenge had quite a bit of variability.
 
-```{r recchall, fig.cap="Resource and challenge agreement across ONet characteristic groupings (e.g., scales)."}
+```{r recchall, fig.cap="Resource and challenge agreement across ONet characteristic groupings (e.g., scales).", fig.height=10}
 
 rc$scale <- c(rep("Structural",10), rep("Physical", 20), rep("Interpersonal",13), rep("Information Input", 5), rep("Mental Processes", 10), rep("Work Output", 9), rep("Interact with Others", 17)) 
 
