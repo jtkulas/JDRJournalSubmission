@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.19)  24 SEP 2022 13:40
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.19)  24 SEP 2022 13:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -925,44 +925,37 @@ Overfull \hbox (6.10484pt too wide) in paragraph at lines 344--344
  []
 
 [11] [12]
-File: Submission_ResourceCount_files/figure-latex/matchpercentsbyperson-1.pdf Graphic file (type pdf)
-<use Submission_ResourceCount_files/figure-latex/matchpercentsbyperson-1.pdf>
-
-Overfull \hbox (28.90639pt too wide) in paragraph at lines 399--400
-[][]  
- []
-
-[13]
-
-LaTeX Warning: Reference `fig:matchpercentsbyperson' on page 14 undefined on input line 401.
-
 \openout4 = `Submission_ResourceCount.fff'.
 
-(Submission_ResourceCount.fff) [14] [15] AED endfloat: Processing end Figures and Tables [16] (./Submission_ResourceCount.ttt) [17
+(Submission_ResourceCount.fff)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[13] [14] AED endfloat: Processing end Figures and Tables [15] (./Submission_ResourceCount.ttt) [16
 
 
 ] (./Submission_ResourceCount.fff
+File: Submission_ResourceCount_files/figure-latex/matchpercentsbyperson-1.pdf Graphic file (type pdf)
+<use Submission_ResourceCount_files/figure-latex/matchpercentsbyperson-1.pdf>
 File: Submission_ResourceCount_files/figure-latex/percagree-1.pdf Graphic file (type pdf)
 <use Submission_ResourceCount_files/figure-latex/percagree-1.pdf>
 
-LaTeX Warning: Float too large for page by 57.99997pt on input line 7.
+LaTeX Warning: Float too large for page by 57.99997pt on input line 14.
 
 File: Submission_ResourceCount_files/figure-latex/recchall-1.pdf Graphic file (type pdf)
 <use Submission_ResourceCount_files/figure-latex/recchall-1.pdf>
 
-LaTeX Warning: Float too large for page by 57.99997pt on input line 14.
+LaTeX Warning: Float too large for page by 57.99997pt on input line 21.
 
-) [18] [19] (./Submission_ResourceCount.aux)
+) [17
 
-LaTeX Warning: There were undefined references.
-
+] [18] [19] (./Submission_ResourceCount.aux)
 Package rerunfilecheck Info: File `Submission_ResourceCount.out' has not changed.
 (rerunfilecheck)             Checksum: 649F052ED639B745A6E8A480B52F07A3;875.
  ) 
 Here is how much of TeX's memory you used:
  21606 strings out of 477747
  401032 string characters out of 5842280
- 908802 words of memory out of 5000000
+ 908887 words of memory out of 5000000
  42339 multiletter control sequences out of 15000+600000
  487410 words of font info for 70 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191

@@ -2,6 +2,13 @@
 \ifnextchar[{\eatarg}{}
 
 \centering
+\includegraphics{Submission_ResourceCount_files/figure-latex/matchpercentsbyperson-1.pdf}
+\caption{\label{fig:matchpercentsbyperson}Distribution of the proportion of matches by person.}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
 \includegraphics{Submission_ResourceCount_files/figure-latex/percagree-1.pdf}
 \caption{\label{fig:percagree}Percent convergence (characteristic rated consistently as, for example, both a resource and a hindrance.}
 \end{figure*}
