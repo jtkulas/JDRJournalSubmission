@@ -233,28 +233,37 @@ There were `r nrow(data)` retained respondents.
 
 library(dplyr)
 
-# data22 <- data %>% 
-# mutate_at(vars(118:372),
-# function(x) recode(x,
-# 1==NA, 
-# 2==NA,
-# 3==NA,
-# 4==4,
-# 5==5))
+ data22 <- data %>% 
+ mutate_at(vars(118:372),
+ function(x) recode(x,
+ 1==NA, 
+ 2==NA,
+ 3==NA,
+ 4==4,
+ 5==5))
 
 ## attention checks: 145, 248, 308
 
-data$resource <- rowSums(data[c(118:144,146:202)], na.rm=TRUE)
-data$hindrance <- rowSums(data[c(203:247,249:287)], na.rm=TRUE)
-data$challenge <- rowSums(data[c(288:307,309:372)], na.rm=TRUE)
+data22$resource <- rowSums(data22[c(118:144,146:202)], na.rm=TRUE)
+data22$hindrance <- rowSums(data22[c(203:247,249:287)], na.rm=TRUE)
+data22$challenge <- rowSums(data22[c(288:307,309:372)], na.rm=TRUE)
 
-data$item387 <- 7-data$item387
-data$burnout      <- rowMeans(data[c(373:376)], na.rm=TRUE)
-data$stress       <- rowMeans(data[c(377:379)], na.rm=TRUE)
-data$engagement   <- rowMeans(data[c(380:399)], na.rm=TRUE)        ## probably need to recode some
+data22$item387 <- 7-data22$item387
+data22$burnout      <- rowMeans(data22[c(373:376)], na.rm=TRUE)
+data22$stress       <- rowMeans(data22[c(377:379)], na.rm=TRUE)
+data22$engagement   <- rowMeans(data22[c(380:399)], na.rm=TRUE)        ## probably need to recode some
 
-cor(data[405:410], use="all.obs")   ## something to be told with resources and challenges
+cor(data22[405:410], use="all.obs")   ## something to be told with resources and challenges
 
+## Peculiar, but repeating for normal datafile so column identifiers line-up
+
+data$resource <- rowSums(data22[c(118:144,146:202)], na.rm=TRUE)
+data$hindrance <- rowSums(data22[c(203:247,249:287)], na.rm=TRUE)
+data$challenge <- rowSums(data22[c(288:307,309:372)], na.rm=TRUE)
+
+data$burnout      <- rowMeans(data22[c(373:376)], na.rm=TRUE)
+data$stress       <- rowMeans(data22[c(377:379)], na.rm=TRUE)
+data$engagement   <- rowMeans(data22[c(380:399)], na.rm=TRUE)        ## probably need to recode some
 
 ```
 
@@ -276,7 +285,7 @@ write.csv(psych::describe(data[579:662]), "..\\JDRJournalSubmission\\SIOP2023\\C
 
 ```{r correlation_table, eval=TRUE}
 
-r <- corx::corx(data[,c(405:410)],                    
+r <- corx::corx(data22[,c(405:410)],                    
                 triangle = "lower",
                 stars = c(0.05, 0.01, 0.001),
                 describe = c(`$M$` = mean, `$SD$` = sd))
@@ -292,9 +301,9 @@ papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table,
 
 ```{r regressions}
 
-eng <- lm(engagement ~ hindrance + challenge + resource, data)
-bur <- lm(burnout ~ hindrance + challenge + resource, data)
-str <- lm(stress ~ hindrance + challenge + resource, data)
+eng <- lm(engagement ~ hindrance + challenge + resource, data22)
+bur <- lm(burnout ~ hindrance + challenge + resource, data22)
+str <- lm(stress ~ hindrance + challenge + resource, data22)
 
 summary(eng)
 summary(bur)

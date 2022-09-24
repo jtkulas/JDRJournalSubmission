@@ -279,13 +279,20 @@ In an exploratory fashion, we also considered whether or not the pattern of corr
 There were 568 retained respondents.
 
 \begin{verbatim}
-##              resource hindrance  challenge     burnout      stress engagement
-## resource   1.00000000 0.4671740 0.94633436  0.07026188  0.08895664  0.3659061
-## hindrance  0.46717398 1.0000000 0.46316538  0.10217550  0.14181731  0.0501684
-## challenge  0.94633436 0.4631654 1.00000000  0.07838108  0.10674017  0.3358327
-## burnout    0.07026188 0.1021755 0.07838108  1.00000000  0.69654076 -0.3549613
-## stress     0.08895664 0.1418173 0.10674017  0.69654076  1.00000000 -0.2953456
-## engagement 0.36590613 0.0501684 0.33583266 -0.35496125 -0.29534556  1.0000000
+##              resource   hindrance  challenge     burnout      stress
+## resource   1.00000000 0.225550803 0.86225195  0.04841544  0.05583466
+## hindrance  0.22555080 1.000000000 0.22047517  0.04101639  0.08980526
+## challenge  0.86225195 0.220475168 1.00000000  0.06790884  0.08057171
+## burnout    0.04841544 0.041016388 0.06790884  1.00000000  0.69654076
+## stress     0.05583466 0.089805265 0.08057171  0.69654076  1.00000000
+## engagement 0.34225837 0.009629535 0.31087164 -0.35496125 -0.29534556
+##              engagement
+## resource    0.342258369
+## hindrance   0.009629535
+## challenge   0.310871641
+## burnout    -0.354961254
+## stress     -0.295345559
+## engagement  1.000000000
 \end{verbatim}
 
 \begin{table}[tbp]
@@ -299,12 +306,12 @@ There were 568 retained respondents.
 \toprule
  & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} & \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$SD$}\\
 \midrule
-1. resource & - &  &  &  &  & 203.85 & 56.73\\
-2. hindrance & .47*** & - &  &  &  & 129.50 & 55.80\\
-3. challenge & .95*** & .46*** & - &  &  & 203.12 & 57.57\\
-4. burnout & .07 & .10* & .08 & - &  & 3.04 & 0.87\\
-5. stress & .09* & .14*** & .11* & .70*** & - & 2.59 & 0.97\\
-6. engagement & .37*** & .05 & .34*** & -.35*** & -.30*** & 4.04 & 0.83\\
+1. resource & - &  &  &  &  & 36.02 & 13.26\\
+2. hindrance & .23*** & - &  &  &  & 13.09 & 13.62\\
+3. challenge & .86*** & .22*** & - &  &  & 35.64 & 13.63\\
+4. burnout & .05 & .04 & .07 & - &  & 3.04 & 0.87\\
+5. stress & .06 & .09* & .08 & .70*** & - & 2.59 & 0.97\\
+6. engagement & .34*** & .01 & .31*** & -.35*** & -.30*** & 4.04 & 0.83\\
 \bottomrule
 \end{tabular}
 
@@ -316,70 +323,70 @@ There were 568 retained respondents.
 \begin{verbatim}
 ## 
 ## Call:
-## lm(formula = engagement ~ hindrance + challenge + resource, data = data)
+## lm(formula = engagement ~ hindrance + challenge + resource, data = data22)
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -2.28900 -0.48821  0.05198  0.53450  2.07255 
+## -2.40431 -0.50713  0.02842  0.55010  2.05201 
 ## 
 ## Coefficients:
-##               Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)  3.0408396  0.1222467  24.875  < 2e-16 ***
-## hindrance   -0.0022616  0.0006512  -3.473 0.000554 ***
-## challenge   -0.0009931  0.0017269  -0.575 0.565461    
-## resource     0.0073264  0.0017566   4.171 3.52e-05 ***
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  3.276423   0.096574  33.926  < 2e-16 ***
+## hindrance   -0.004436   0.002460  -1.803 0.071918 .  
+## challenge    0.004175   0.004728   0.883 0.377613    
+## resource     0.018672   0.004868   3.836 0.000139 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 0.763 on 564 degrees of freedom
-## Multiple R-squared:  0.153,  Adjusted R-squared:  0.1485 
-## F-statistic: 33.97 on 3 and 564 DF,  p-value: < 2.2e-16
+## Residual standard error: 0.7763 on 564 degrees of freedom
+## Multiple R-squared:  0.1232, Adjusted R-squared:  0.1185 
+## F-statistic: 26.41 on 3 and 564 DF,  p-value: 5.394e-16
 \end{verbatim}
 
 \begin{verbatim}
 ## 
 ## Call:
-## lm(formula = burnout ~ hindrance + challenge + resource, data = data)
+## lm(formula = burnout ~ hindrance + challenge + resource, data = data22)
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -2.33223 -0.67843 -0.03482  0.63254  2.10197 
+## -2.23967 -0.64759 -0.04747  0.65173  2.10310 
 ## 
 ## Coefficients:
-##               Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)  2.7638017  0.1382398  19.993   <2e-16 ***
-## hindrance    0.0013360  0.0007364   1.814   0.0702 .  
-## challenge    0.0014508  0.0019529   0.743   0.4579    
-## resource    -0.0009349  0.0019865  -0.471   0.6381    
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  2.895053   0.107671  26.888   <2e-16 ***
+## hindrance    0.001843   0.002743   0.672    0.502    
+## challenge    0.006290   0.005271   1.193    0.233    
+## resource    -0.002843   0.005427  -0.524    0.601    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 0.8628 on 564 degrees of freedom
-## Multiple R-squared:  0.01206,    Adjusted R-squared:  0.006801 
-## F-statistic: 2.294 on 3 and 564 DF,  p-value: 0.07694
+## Residual standard error: 0.8655 on 564 degrees of freedom
+## Multiple R-squared:  0.005808,   Adjusted R-squared:  0.0005199 
+## F-statistic: 1.098 on 3 and 564 DF,  p-value: 0.3493
 \end{verbatim}
 
 \begin{verbatim}
 ## 
 ## Call:
-## lm(formula = stress ~ hindrance + challenge + resource, data = data)
+## lm(formula = stress ~ hindrance + challenge + resource, data = data22)
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -1.8922 -0.7552 -0.1147  0.6988  2.6438 
+## -1.8841 -0.8038 -0.1523  0.7164  2.5693 
 ## 
 ## Coefficients:
-##               Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)  2.1772197  0.1541487  14.124  < 2e-16 ***
-## hindrance    0.0021433  0.0008212   2.610  0.00929 ** 
-## challenge    0.0032258  0.0021776   1.481  0.13907    
-## resource    -0.0025593  0.0022151  -1.155  0.24842    
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  2.383299   0.120392  19.796   <2e-16 ***
+## hindrance    0.005571   0.003067   1.816   0.0698 .  
+## challenge    0.008445   0.005894   1.433   0.1525    
+## resource    -0.004687   0.006068  -0.772   0.4402    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 0.9621 on 564 degrees of freedom
-## Multiple R-squared:  0.02457,    Adjusted R-squared:  0.01938 
-## F-statistic: 4.735 on 3 and 564 DF,  p-value: 0.00285
+## Residual standard error: 0.9678 on 564 degrees of freedom
+## Multiple R-squared:  0.01299,    Adjusted R-squared:  0.007741 
+## F-statistic: 2.474 on 3 and 564 DF,  p-value: 0.06069
 \end{verbatim}
 
 \hypertarget{alicia-graphs}{%

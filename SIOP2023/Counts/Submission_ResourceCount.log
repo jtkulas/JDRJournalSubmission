@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.19)  24 SEP 2022 13:33
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.19)  24 SEP 2022 13:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -917,56 +917,24 @@ Underfull \vbox (badness 1838) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [9] [10]
-Overfull \hbox (24.64476pt too wide) in paragraph at lines 289--289
-[]\TU/lmtt/m/n/12 ##              resource hindrance  challenge     burnout      stress engagement[] 
- []
-
-
-Overfull \hbox (24.51291pt too wide) in paragraph at lines 289--289
-[]\TU/lmtt/m/n/12 ## resource   1.00000000 0.4671740 0.94633436  0.07026188  0.08895664  0.3659061[] 
- []
-
-
-Overfull \hbox (24.5849pt too wide) in paragraph at lines 289--289
-[]\TU/lmtt/m/n/12 ## hindrance  0.46717398 1.0000000 0.46316538  0.10217550  0.14181731  0.0501684[] 
- []
-
-
-Overfull \hbox (24.5729pt too wide) in paragraph at lines 289--289
-[]\TU/lmtt/m/n/12 ## challenge  0.94633436 0.4631654 1.00000000  0.07838108  0.10674017  0.3358327[] 
- []
-
-
-Overfull \hbox (24.56088pt too wide) in paragraph at lines 289--289
-[]\TU/lmtt/m/n/12 ## burnout    0.07026188 0.1021755 0.07838108  1.00000000  0.69654076 -0.3549613[] 
- []
-
-
-Overfull \hbox (24.52489pt too wide) in paragraph at lines 289--289
-[]\TU/lmtt/m/n/12 ## stress     0.08895664 0.1418173 0.10674017  0.69654076  1.00000000 -0.2953456[] 
- []
-
-
-Overfull \hbox (24.52495pt too wide) in paragraph at lines 289--289
-[]\TU/lmtt/m/n/12 ## engagement 0.36590613 0.0501684 0.33583266 -0.35496125 -0.29534556  1.0000000[] 
- []
-
 \openout3 = `Submission_ResourceCount.ttt'.
 
-(Submission_ResourceCount.ttt) [11] [12]
+(Submission_ResourceCount.ttt)
+Overfull \hbox (6.10484pt too wide) in paragraph at lines 344--344
+[]\TU/lmtt/m/n/12 ## lm(formula = engagement ~ hindrance + challenge + resource, data = data22)[] 
+ []
+
+[11] [12]
 File: Submission_ResourceCount_files/figure-latex/matchpercentsbyperson-1.pdf Graphic file (type pdf)
 <use Submission_ResourceCount_files/figure-latex/matchpercentsbyperson-1.pdf>
 
-Overfull \hbox (28.90639pt too wide) in paragraph at lines 392--393
+Overfull \hbox (28.90639pt too wide) in paragraph at lines 399--400
 [][]  
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 [13]
 
-LaTeX Warning: Reference `fig:matchpercentsbyperson' on page 14 undefined on input line 394.
+LaTeX Warning: Reference `fig:matchpercentsbyperson' on page 14 undefined on input line 401.
 
 \openout4 = `Submission_ResourceCount.fff'.
 
