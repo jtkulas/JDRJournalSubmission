@@ -1,29 +1,25 @@
 ---
-title             : "The title"
-shorttitle        : "Title"
+title             : "O*Net Category Demands and Resources: Integrative Characteristics"
+shorttitle        : "O*Net JDR"
 
 author: 
-  - name          : "First Author"
+  - name          : "John Kulas"
     affiliation   : "1"
     corresponding : yes    # Define only one corresponding author
-    address       : "Postal address"
-    email         : "my@email.com"
-    role:         # Contributorship roles (e.g., CRediT, https://casrai.org/credit/)
-      - "Conceptualization"
-      - "Writing - Original Draft Preparation"
-      - "Writing - Review & Editing"
-  - name          : "Ernst-August Doelle"
-    affiliation   : "1,2"
-    role:
-      - "Writing - Review & Editing"
-      - "Supervision"
+    email         : "jtkulas@ergreports.com"
+  - name          : "Alicia Stachowski"
+    affiliation   : "2"
+  - name          : "Renata Garcia Prieto Palacios Roji"
+    affiliation   : "3"
 
 affiliation:
   - id            : "1"
-    institution   : "Wilhelm-Wundt-University"
+    institution   : "eRg"
   - id            : "2"
-    institution   : "Konstanz Business School"
-
+    institution   : "University of Wisconsin - Stout"
+  - id            : "3"
+    institution   : "PepsiCo"
+    
 authornote: |
   Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
 
@@ -372,7 +368,17 @@ ggplot(rc, aes(x=mean)) + geom_histogram() + facet_wrap(~scale, nrow=7)
 
 Figure \@ref(fig:recchall) explores the possibility of moderation by *type of characteristic rated* for the resource-challenge convergence. We categorized each characteristic by its ONet "scale" (one of seven), and the graph shows consistency across certain characteristics (for example, ) and non-convergence across other *types* of characteristics (for example, "Physical" characteristics). 
 
+```{r anova}
+
+## probably need to do with actual data (not summaries)
+
+oneway <- aov(mean ~ scale, rc)
+
+```
+
 >Note. If we keep this, we should also look at type of job as a moderator (swap it in for/instead of ONet scale).
+
+F ratio from psych describe object is $F_(6, 76)$ = `r summary(oneway)[[1]][1,4]`, *p* = `r summary(oneway)[[1]][1,5]`, although these should ideally be estimated from larger datafile instead of summary object.
 
 # Discussion
 
