@@ -370,15 +370,33 @@ Figure \@ref(fig:recchall) explores the possibility of moderation by *type of ch
 
 ```{r anova}
 
-## probably need to do with actual data (not summaries)
 
-oneway <- aov(mean ~ scale, rc)
+## Repeated measures ANOVA for resource_challenge
+
+anova <- data[,c(495:578)]
+
+anova$Structural <- rowSums(anova[1:10], na.rm=TRUE)
+anova$Physical <- rowSums(anova[11:30], na.rm=TRUE)
+anova$Interpersonal <- rowSums(anova[31:43], na.rm=TRUE)
+anova$Information <- rowSums(anova[44:48], na.rm=TRUE)
+anova$Mental <- rowSums(anova[49:58], na.rm=TRUE)
+anova$Output <- rowSums(anova[59:67], na.rm=TRUE)
+anova$Interact <- rowSums(anova[68:84], na.rm=TRUE)
+
+library(tidyr)
+
+anova <- cbind(person = 1:nrow(anova), anova)  ## creating person identifier for ANOVA
+
+analysis <- gather(anova, scale, value, Structural:Interact)
+
+repmeas <- aov(value ~ factor(scale) + Error(factor(person)), data=analysis)
+
 
 ```
 
 >Note. If we keep this, we should also look at type of job as a moderator (swap it in for/instead of ONet scale).
 
-F ratio from psych describe object is $F_(6, 76)$ = `r summary(oneway)[[1]][1,4]`, *p* = `r summary(oneway)[[1]][1,5]`, although these should ideally be estimated from larger datafile instead of summary object.
+F ratio from a repeated measures ANOVA is $F_(6, 3,402)$ = 613.5, *p* < .001 (the subjects' effect was $F_{(567, 3402)}$ = 6.13, *p* < .001.
 
 # Discussion
 
