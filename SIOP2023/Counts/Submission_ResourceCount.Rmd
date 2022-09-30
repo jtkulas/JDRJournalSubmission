@@ -21,12 +21,15 @@ affiliation:
     institution   : "PepsiCo"
     
 authornote: |
+
+abstract: |
   The relationships among sum of perceived job resources, challenge- and hindrance demands and outcomes of organizational outcomes of engagement, stress, and burnout are explored. 568 workers rated O\*Net job characteristics in terms of relevance and perceptions as challenges, hindrances and resources. The findings are generally aligned with the job demands resource theory regarding associations between perceived resources, demands, and organizational outcomes of engagement, stress, and burnout.
-  
+
 keywords          : "keywords"
 wordcount         : "X"
 
-bibliography      : "r-references.bib"
+bibliography      : ["r-references.bib", "jdr.bib", "jobdemands_resources_bibtex.bib"]
+
 
 floatsintext      : no
 linenumbers       : yes
@@ -52,11 +55,11 @@ papaja::r_refs("r-references.bib")
 
 ```
 
-  A plethora of research applying the job demands-resources model (Demerouti et al., 2001) and job demands-resources theory (Bakker & Demerouti, 2017) underscore the importance of work characteristics on the experience of motivation and strain. However, much of our existing research on this topic assumes that certain characteristics are resources and others are generally considered demands. This study explores how individual perceptions of these work characteristics relate to engagement, stress, and burnout by asking respondents to indicate (of the characteristics that apply to their jobs) how much each is a resource, challenge, or hindrance demand. Amount of perceived resources, challenges, and hindrances can then be associated with engagement, stress, and burnout.
+  A plethora of research applying the job demands-resources model (@demerouti2001job) and job demands-resources theory (Bakker & Demerouti, 2017) underscore the importance of work characteristics on the experience of motivation and strain. However, much of our existing research on this topic assumes that certain characteristics are resources and others are generally considered demands. This study explores how individual perceptions of these work characteristics relate to engagement, stress, and burnout by asking respondents to indicate (of the characteristics that apply to their jobs) how much each is a resource, challenge, or hindrance demand. Amount of perceived resources, challenges, and hindrances can then be associated with engagement, stress, and burnout.
 
 ## The Job Demands-Resources Theory
 
-  The theoretical foundation for this study is the job demands-resources theory (Demerouti et al., 2001). Using this theory, we can model both work environment and job characteristics via job resources and demands. Resources include physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development (Demerouti et al., 2001). In contrast, demands include components of a job that require sustained effort, and as such, produce psychological or physiological strain (e.g., high work pressure; Demerouti et al., 2001).
+  The theoretical foundation for this study is the job demands-resources theory (@demerouti2001job). Using this theory, we can model both work environment and job characteristics via job resources and demands. Resources include physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development (@demerouti2001job). In contrast, demands include components of a job that require sustained effort, and as such, produce psychological or physiological strain (e.g., high work pressure; @demerouti2001job).
   
   The perception of a characteristic of one’s job as a resource or demand activates one of two unique processes: either health impairment or motivation Bakker & Demerouti, 2014). Demanding job characteristics are frequently associated with negative outcomes (e.g., health impairment process; Bakker et al., 2003), whereas job characteristics considered resources have been associated with positive organizational outcomes like engagement and motivation (Bakker et al., 2007).
 
@@ -84,22 +87,23 @@ papaja::r_refs("r-references.bib")
 
 # Method
  
-  We evaluate relationships between the predictors and proximal outcomes of the Job Demands-Resources model (Bakker & Demerouti, 2017; Bakker et al., 2003; Demerouti et al., 2001), but from within the unifying framework of O\*Net. Here, we focus on the relationship between O\*Net delineated job components and employee levels of job engagement, job stress, and burnout with a U.S. workforce representative sample.
+  We evaluate relationships between the predictors and proximal outcomes of the Job Demands-Resources model (Bakker & Demerouti, 2017; Bakker et al., 2003; @demerouti2001job), but from within the unifying framework of O\*Net. Here, we focus on the relationship between O\*Net delineated job components and employee levels of job engagement, job stress, and burnout with a U.S. workforce representative sample.
 
 ## Participants
 
-  A sample using a Prolific panel resulted in 785 individuals who initially accessed the survey link. Of those,112 indicated that they were not interested, had more than 200 missing responses, or had 20 or more identical consecutive sequential responses (Yentes & Wilhelm, 2021). Additional screening using four embedded attention checks resulted in the retention of 568 respondents. A total of 13.57% had been in their job less than 6 months, 19.20% between 6 months and a year, 49.12% between one and five years, 13.27% between 5 and 10 years, and 4.87% more than 10 years. Reported ages ranged from 18 to 65 with an average of 28.18 years old (SD = 7.53). Gender was captured via a free-field gender identity category, although the sample predominantly self-identified as female (52.58%) or male (46.83%). Jobs were classified into the International Standard Classification of Occupations (ISCO) via the package labourR (Kouretsis et al., 2020). Modify or omit? 
+  A sample using a Prolific panel resulted in 785 individuals who initially accessed the survey link. Of those,112 indicated that they were not interested, had more than 200 missing responses, or had 20 or more identical consecutive sequential responses (Yentes & Wilhelm, 2021). Additional screening using four embedded attention checks resulted in the retention of 568 respondents. A total of 13.57% had been in their job less than 6 months, 19.20% between 6 months and a year, 49.12% between one and five years, 13.27% between 5 and 10 years, and 4.87% more than 10 years. Reported ages ranged from 18 to 65 with an average of 28.18 years old (SD = 7.53). Gender was captured via a free-field gender identity category, although the sample predominantly self-identified as female (52.58%) or male (46.83%). 
 
 ## Materials
 
-  Characteristics, Demands, and Resources. Our analyses included items within O*Net’s classifications of “work activity”: 1) Information Input (5 statements), 2) Interacting with Others (17 statements), 3) Mental Processes (10 statements), and 4) Work Output (9 statements) and “work context”: 5) Interpersonal Relationships (14 statements), 6) Physical Work Conditions (30 statements)1, and 7) Structural Job Characteristics (13 statements).
-  Other than minor grammatical editing (for example, changing “the” to “you”), we retained the O\*Net wording for our item stems. We used O\*Net’s response scales, several of which were unique across items, but all shared the same 1 to 5 scale options. Subsequent to providing ratings of whether or not an O*Net characteristic was relevant for the respondent’s work, each respondent who agreed that an element had at least some relevance to their job was also asked to rate that element in terms of, 1) . . . this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) . . . this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) . . . this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment. 
+  Characteristics, Demands, and Resources. Our analyses included items within O\*Net’s classifications of “work activity”: 1) Information Input (5 statements), 2) Interacting with Others (17 statements), 3) Mental Processes (10 statements), and 4) Work Output (9 statements) and “work context”: 5) Interpersonal Relationships (14 statements), 6) Physical Work Conditions (30 statements)1, and 7) Structural Job Characteristics (13 statements).
   
-#### *Stress*. Three items taken from the Copenhagen Psychosocial Questionnaire (Burr et al., 2019). Obtained alpha was .85 in this sample.
+  Other than minor grammatical editing (for example, changing “the” to “you”), we retained the O\*Net wording for our item stems. We used O\*Net’s response scales, several of which were unique across items, but all shared the same 1 to 5 scale options. Subsequent to providing ratings of whether or not an O\*Net characteristic was relevant for the respondent’s work, each respondent who agreed that an element had at least some relevance to their job was also asked to rate that element in terms of, 1) . . . this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) . . . this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) . . . this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment. 
+  
+> *Stress*. Three items taken from the Copenhagen Psychosocial Questionnaire (Burr et al., 2019). Obtained alpha was .85 in this sample.
 
-#### *Burnout*. Four items were taken from the Copenhagen Psychosocial Questionnaire (Burr et al., 2019). Alpha was 0.85 in this sample.
+> *Burnout*. Four items were taken from the Copenhagen Psychosocial Questionnaire (Burr et al., 2019). Alpha was 0.85 in this sample.
 
-#### *Engagement*. The 18-item engagement measure was recently developed (Russell et al., 2022), with the authors specifying three subscales which yielded current sample α’s of 0.68 (Absorption) and 0.80 (Vigor), and 0.90 (Dedication). For the purposes of the current study, we focused on an overall engagement score (18 item aggregate, α = 0.91).
+>*Engagement*. The 18-item engagement measure was recently developed (Russell et al., 2022), with the authors specifying three subscales which yielded current sample α’s of 0.68 (Absorption) and 0.80 (Vigor), and 0.90 (Dedication). For the purposes of the current study, we focused on an overall engagement score (18 item aggregate, α = 0.91).
 
 ## Procedure
 
@@ -108,11 +112,9 @@ papaja::r_refs("r-references.bib")
 # Results
   
   We used R (Version 4.0.3; R Core Team, 2020) and the R-packages careless (Version 1.1.3; Yentes & Wilhelm, 2021), labourR (Version 1.0.0; Kouretsis et al., 2020), papaja (Version 0.1.0.9997; Aust & Barth, 2020), and tinylabels (Barth, 2021) for all analyses. Our analyses are presented by characteristics of work that are rated in terms of being resources, challenge demands, and hindrance demands. Pearson correlation coefficients between characteristics classified as resources, challenges, and hindrances were obtained to investigate the associations among these characteristics.
-Correlations, means and standard deviations among all study variables are presented in Table 1. Results reveal a positive association between resources and engagement (r = .34; H1a), but a lack of meaningful association between engagement and stress and burnout (H1b and H1c, respectively). Challenge demands were positively associated with engagement (r = .31; H2a), but were unrelated to stress or burnout (H2b and H2c). Total hindrance stressors were not significantly associated with our outcomes (H3a-H3c). To further explore H1-H3, we conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. First, regarding engagement (F(3, 564) = 26.41, p < .001), the total resources (beta = ??) was predictive of engagement, but total challenge nor hindrance demands predicted engagement (see Table 2). Next, stress was not predicted by total resources, challenge, or hindrance demands, F(3, 564) = 2.47, p = .060 (see Table 3). Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, F(3, 564) = 1.10, p = .349. See Table 4. 
+  Correlations, means and standard deviations among all study variables are presented in Table 1. Results reveal a positive association between resources and engagement (*r* = .34; H1a), but a lack of meaningful association between engagement and stress and burnout (H1b and H1c, respectively). Challenge demands were positively associated with engagement (*r* = .31; H2a), but were unrelated to stress or burnout (H2b and H2c). Total hindrance stressors were not significantly associated with our outcomes (H3a-H3c). To further explore H1-H3, we conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. First, regarding engagement (F(3, 564) = 26.41, p < .001), the total resources (beta = ??) was predictive of engagement, but total challenge nor hindrance demands predicted engagement (see Table 2). Next, stress was not predicted by total resources, challenge, or hindrance demands, F(3, 564) = 2.47, *p* = .060 (see Table 3). Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, F(3, 564) = 1.10, *p* = .349. See Table 4. 
 
-  In an exploratory fashion, we also considered whether or not the pattern of correlations described above was similar across job types.
-
-```{r study1}
+```{r study1, include=FALSE}
 
 temp <- read.csv("..//JDRJournalSubmission//initial_data_screen.csv", header=FALSE, na.strings="")   ## NOTE: 404 vars (9/28/21) make sure to check indexing used throughout script
 
@@ -185,14 +187,11 @@ data$item403[data$item403 == 2000]  <- 20
 
 ```
 
-
 ```{r generalrecodes, include=FALSE}
 
 source("..//JDRJournalSubmission//recodescript.R", local = knitr::knit_global())
 
 ```
-
-There were `r nrow(data)` retained respondents.
 
 ```{r keeping45}
 
@@ -252,7 +251,7 @@ write.csv(psych::describe(data[579:662]), "..\\JDRJournalSubmission\\SIOP2023\\C
 
 ```
 
-```{r correlation_table, eval=TRUE}
+```{r correlation_table, eval=TRUE, include=FALSE}
 
 r <- corx::corx(data22[,c(405:410)],                    
                 triangle = "lower",
@@ -268,7 +267,7 @@ papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table,
 ```
 
 
-```{r regressions}
+```{r regressions, include=FALSE}
 
 eng <- lm(engagement ~ hindrance + challenge + resource, data22)
 bur <- lm(burnout ~ hindrance + challenge + resource, data22)
@@ -282,9 +281,19 @@ summary(str)
 
 # Discussion
 
-The major goal of this paper was to further explore the relationships among total perceived challenge demands, hindrance demands, and resources and outcomes of engagement, stress, and burnout. Additionally, we considered whether resources and challenge demands were perceived as distinct, and finally, whether the patterns were similar across job categories/types of work. The results suggest a positive relationship between both resources and engagement (H1a), and challenge demands and engagement (H2a). Employers would benefit from understanding that at leas the perception of having “more” resources and more challenge demands in a job is highly associated with reported engagement. While not a causal relationship, it points to the potential value of these kinds of employee support nonetheless. The other relationships with outcomes of stress and burnout were not supported, suggesting that the sheer number of resources, challenges, and hindrances are not significantly related to these negative outcomes. It is possible that rather than volume, categorically some demands are more related to these outcomes than others.
- Further, total resources were highly associated challenge demands (supporting H4). We could even argue, given the magnitude of the correlation, that they are capturing the same thing (74% overlap with a correlation of .86). Need to also talk about our exploratory findings regarding patterns across job type
+The major goal of this paper was to further explore the relationships among total perceived challenge demands, hindrance demands, and resources and outcomes of engagement, stress, and burnout.  The results suggest a positive relationship between both resources and engagement (H1a), and challenge demands and engagement (H2a). Employers would benefit from understanding that at least the perception of having “more” resources and more challenge demands in a job is highly associated with reported engagement. While not a causal relationship, it points to the potential value of these kinds of employee support nonetheless. The other relationships with outcomes of stress and burnout were not supported, suggesting that the sheer number of resources, challenges, and hindrances are not significantly related to these negative outcomes. It is possible that rather than volume, categorically some demands are more related to these outcomes than others.
 
 ## Limitations and Future Directions
 
 As with any piece of research, the process and results have limitations, but also provide a variety of additional directions to pursue in the future. First, while a strength of this project, arguably, is the use of O\*Net items, practical considerations limited the number of job characteristics we could include in our survey. Future study could consider additional or other O\*Net items. We conceptualized resources and demands in terms of perceived total amounts. It may be the case that certain kinds of resources or challenges are more strongly associated with engagement than others, and such, future research could explore the importance of resources/challenges categorically. Further, our study was limited to three outcomes of interest. It would be especially interesting to explore additional outcomes (e.g., job satisfaction) as well, or whether volume of resources and demands operationalized in this way are related to other behaviors (e.g., turnover intention, perceived organizational support, commitment). 
+
+\newpage
+
+# References
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id="refs" custom-style="Bibliography"></div>
+\endgroup
