@@ -55,29 +55,29 @@ papaja::r_refs("r-references.bib")
 
 ```
 
-  A plethora of research applying the job demands-resources model (@demerouti2001job) and job demands-resources theory (Bakker & Demerouti, 2017) underscore the importance of work characteristics on the experience of motivation and strain. However, much of our existing research on this topic assumes that certain characteristics are resources and others are generally considered demands. This study explores how individual perceptions of these work characteristics relate to engagement, stress, and burnout by asking respondents to indicate (of the characteristics that apply to their jobs) how much each is a resource, challenge, or hindrance demand. Amount of perceived resources, challenges, and hindrances can then be associated with engagement, stress, and burnout.
+  A plethora of research applying the job demands-resources model (@demerouti2001job) and job demands-resources theory (@bakker2017job) underscore the importance of work characteristics on the experience of motivation and strain. However, much of our existing research on this topic assumes that certain characteristics are resources and others are generally considered demands. This study explores how individual perceptions of these work characteristics relate to engagement, stress, and burnout by asking respondents to indicate (of the characteristics that apply to their jobs) how much each is a resource, challenge, or hindrance demand. Amount of perceived resources, challenges, and hindrances can then be associated with engagement, stress, and burnout.
 
 ## The Job Demands-Resources Theory
 
   The theoretical foundation for this study is the job demands-resources theory (@demerouti2001job). Using this theory, we can model both work environment and job characteristics via job resources and demands. Resources include physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development (@demerouti2001job). In contrast, demands include components of a job that require sustained effort, and as such, produce psychological or physiological strain (e.g., high work pressure; @demerouti2001job).
   
-  The perception of a characteristic of one’s job as a resource or demand activates one of two unique processes: either health impairment or motivation Bakker & Demerouti, 2014). Demanding job characteristics are frequently associated with negative outcomes (e.g., health impairment process; Bakker et al., 2003), whereas job characteristics considered resources have been associated with positive organizational outcomes like engagement and motivation (Bakker et al., 2007).
+  The perception of a characteristic of one’s job as a resource or demand activates one of two unique processes: either health impairment or motivation @bakker2014job. Demanding job characteristics are frequently associated with negative outcomes (e.g., health impairment process; @bakker2003dual), whereas job characteristics considered resources have been associated with positive organizational outcomes like engagement and motivation (@bakker2007job).
 
 ## An Added Complexity: Perception (Appraisal) of Work Characteristics Might Matter
  
-  The above description speaks to one of two distinct processes being activated, presumably based on one’s assessment of how a work characteristics makes them feel (e.g., consider the different reactions employees may have to being nominated to give a speech at an upcoming company event). Thus, although some research on job demands in particular is based on a priori classifications of demands (Searle & Auton, 2015), the appraisal of any work characteristic as a demand or resource is quite subjective. The literature on the experience of stress explains how such individual differences in appraisal are possible. Specifically, the transactional theory of stress and coping states that people cognitively appraise stimuli in their environments on a continuous basis (Lazarus & Folkman, 1984). During this process, meaning is assigned to stimuli.  If the above employee appraised the upcoming speech as threatening, challenging, or possibly harmful, the resulting emotional distress initiates coping (e.g., attempting to decline, asking for help in writing the speech). From that point, the cycle of appraisal continues based on the action to cope with the stressor (Lazarus & Folkman, 1984).
+  The above description speaks to one of two distinct processes being activated, presumably based on one’s assessment of how a work characteristics makes them feel (e.g., consider the different reactions employees may have to being nominated to give a speech at an upcoming company event). Thus, although some research on job demands in particular is based on a priori classifications of demands (@searle2015merits), the appraisal of any work characteristic as a demand or resource is quite subjective. The literature on the experience of stress explains how such individual differences in appraisal are possible. Specifically, the transactional theory of stress and coping states that people cognitively appraise stimuli in their environments on a continuous basis (@lazarus1984stress). During this process, meaning is assigned to stimuli.  If the above employee appraised the upcoming speech as threatening, challenging, or possibly harmful, the resulting emotional distress initiates coping (e.g., attempting to decline, asking for help in writing the speech). From that point, the cycle of appraisal continues based on the action to cope with the stressor (@lazarus1984stress).
 
 ## Could a Work Demand be Appraised Positively?: The Challenge-Hindrance Framework
  
-  Although the word “stress” often connotes something negative, Selye (1936) defined stress generically as a response to change. For instance, the example above describes an employee who appraises being nominated to give a speech as a negative stressor. However, another employee may appraise the nomination to do so as an opportunity to share their experiences with more of their coworkers, or one in which they may receive recognition they have desired. The terms associated with the two different appraisals of the stressor described here are challenge and hindrance demands (Cavanaugh et al., 2000) Specifically, challenge demands promote mastery, personal growth, and future gains. Hindrance demands, in contrast, inhibit growth, learning and goal achievement. Perhaps not surprisingly, challenge stressors are typically associated with positive outcomes, whereas hindrance stressors are associated with more negative outcomes (e.g., Cavanaugh et al., 2000). We will explore their associations with both positive and negative outcomes in this study.  
+  Although the word “stress” often connotes something negative,@selye1936syndrome defined stress generically as a response to change. For instance, the example above describes an employee who appraises being nominated to give a speech as a negative stressor. However, another employee may appraise the nomination to do so as an opportunity to share their experiences with more of their coworkers, or one in which they may receive recognition they have desired. The terms associated with the two different appraisals of the stressor described here are challenge and hindrance demands (@cavanaugh2000empirical) Specifically, challenge demands promote mastery, personal growth, and future gains. Hindrance demands, in contrast, inhibit growth, learning and goal achievement. Perhaps not surprisingly, challenge stressors are typically associated with positive outcomes, whereas hindrance stressors are associated with more negative outcomes (e.g., @cavanaugh2000empirical). We will explore their associations with both positive and negative outcomes in this study.  
 
-  Prior to proposing specific predictions, the empirical evidence on challenge and hindrance demands is very briefly shared below. To begin, the first logical question is whether employees actually distinguish between challenge and hindrance stressors, and research suggests that they can and do. For example, Bakker and Sanz-Vergel (2013) found that perceived work pressure can be classified as a hindrance demand, and emotional demands as a challenge demand. Webster et al. (2011) considered three common workplace demands including workload, role ambiguity, and role conflict. Interestingly, they found that while each could be appraised primarily as challenges or hindrances, employees could also simultaneously be perceived as being both a challenge and hindrance.
+  Prior to proposing specific predictions, the empirical evidence on challenge and hindrance demands is very briefly shared below. To begin, the first logical question is whether employees actually distinguish between challenge and hindrance stressors, and research suggests that they can and do. For example, @bakker2013weekly found that perceived work pressure can be classified as a hindrance demand, and emotional demands as a challenge demand. @webster2011extending considered three common workplace demands including workload, role ambiguity, and role conflict. Interestingly, they found that while each could be appraised primarily as challenges or hindrances, employees could also simultaneously be perceived as being both a challenge and hindrance.
 
-  Having established that there can be individual differences in the appraisal of demands as challenges or resources, we next turn our attention to their association with organizational outcomes ranging from affective variables like job satisfaction, to motivation, performance, and well-being. For example, Cavanaugh et al. (2000) found that challenge demands were positively related to job satisfaction and negatively related to job search behaviors, while hindrance demands demonstrated the opposite pattern with job satisfaction and job search behaviors in a sample of managers. However, Abbas and Raja (2019) found that challenge and hindrance stressors were both positively related to strain and turnover intentions. We also have some evidence that challenge-hinderance appraisals are related to engagement in the expected direction whereby hindrance appraisals are negatively associated with engagement and challenge appraisals are positively associated with engagement (Crawford et al., 2010). The appraisal process also suggests theoretically that the perception of a job characteristic as a challenge or hindrance is a mediator. Gerich (2017), for instance, found that employee well-being was, in part, explained by appraised challenge or hindrance demands such that working conditions of time pressure, qualitative demands, responsibility, and interruptions, were partially mediated by challenge and hindrance demands. To provide further evidence of the distinction between challenge and hindrance appraisals on work-related outcomes, Podsakoff et al.’s (2007) meta-analysis supported the original assertion of Cavanaugh et al. (2000) such that challenge stressors were positively related to job satisfaction and organizational commitment, and negatively related to both turnover intentions and actual turnover, while hindrance stressors produced the opposite pattern of relationships.
+  Having established that there can be individual differences in the appraisal of demands as challenges or resources, we next turn our attention to their association with organizational outcomes ranging from affective variables like job satisfaction, to motivation, performance, and well-being. For example, @cavanaugh2000empirical found that challenge demands were positively related to job satisfaction and negatively related to job search behaviors, while hindrance demands demonstrated the opposite pattern with job satisfaction and job search behaviors in a sample of managers. However, @abbas2019challenge found that challenge and hindrance stressors were both positively related to strain and turnover intentions. We also have some evidence that challenge-hinderance appraisals are related to engagement in the expected direction whereby hindrance appraisals are negatively associated with engagement and challenge appraisals are positively associated with engagement (@crawford2010linking). The appraisal process also suggests theoretically that the perception of a job characteristic as a challenge or hindrance is a mediator. @gerich2017relevance, for instance, found that employee well-being was, in part, explained by appraised challenge or hindrance demands such that working conditions of time pressure, qualitative demands, responsibility, and interruptions, were partially mediated by challenge and hindrance demands. To provide further evidence of the distinction between challenge and hindrance appraisals on work-related outcomes, @podsakoff2007differential meta-analysis supported the original assertion of @cavanaugh2000empirical such that challenge stressors were positively related to job satisfaction and organizational commitment, and negatively related to both turnover intentions and actual turnover, while hindrance stressors produced the opposite pattern of relationships.
 
 ## Current Study and Hypotheses
   
-  The brief review above provides theoretical and empirical support for the connection between resources and positive organizational outcomes, and between demands and negative outcomes. Here, we explored whether the amount or volume of perceived resources and demands (in the form of challenges and hindrances) would be related differently to three organizational outcomes: engagement (“a positive affective experience defined as a fulfilling, work-related state of mind characterized by vigor, dedication, and absorption”, Schaufeli et al., 2002), workplace stress (“an individual state characterized by a combination of high arousal and displeasure”, p. 15, Pejtersen et al., 2010) and burnout (“the degree of physical and psychological fatigue and exhaustion that is perceived by the person as related to his/her work”, p. 197; Kristensen et al., 2005). Utilizing the job demands-resources theory, transactional theory of stress, and the challenge-hindrance framework, we propose that the number of job characteristics appraised as “challenge demands” (i.e., promote mastery, personal growth, and future gains) would activate a positive state – that of engagement. In contrast, number of characteristics of one’s job appraised as a hindrance demand (i.e., inhibit growth, learning and goal achievement) would activate a negative state – here, stress.
+  The brief review above provides theoretical and empirical support for the connection between resources and positive organizational outcomes, and between demands and negative outcomes. Here, we explored whether the amount or volume of perceived resources and demands (in the form of challenges and hindrances) would be related differently to three organizational outcomes: engagement (“a positive affective experience defined as a fulfilling, work-related state of mind characterized by vigor, dedication, and absorption”, @schaufeli2002measurement), workplace stress (“an individual state characterized by a combination of high arousal and displeasure”, p. 15, @pejtersen2010second) and burnout (“the degree of physical and psychological fatigue and exhaustion that is perceived by the person as related to his/her work”, p. 197; @kristensen2005copenhagen). Utilizing the job demands-resources theory, transactional theory of stress, and the challenge-hindrance framework, we propose that the number of job characteristics appraised as “challenge demands” (i.e., promote mastery, personal growth, and future gains) would activate a positive state – that of engagement. In contrast, number of characteristics of one’s job appraised as a hindrance demand (i.e., inhibit growth, learning and goal achievement) would activate a negative state – here, stress.
 
 > *Hypothesis 1a-1c*: Total number of resources are positively associated with engagement (1a), and negatively associated with stress (1b) and burnout (1c).
 
@@ -87,7 +87,7 @@ papaja::r_refs("r-references.bib")
 
 # Method
  
-  We evaluate relationships between the predictors and proximal outcomes of the Job Demands-Resources model (Bakker & Demerouti, 2017; Bakker et al., 2003; @demerouti2001job), but from within the unifying framework of O\*Net. Here, we focus on the relationship between O\*Net delineated job components and employee levels of job engagement, job stress, and burnout with a U.S. workforce representative sample.
+  We evaluate relationships between the predictors and proximal outcomes of the Job Demands-Resources model (@bakker2017job; @bakker2003dual; @demerouti2001job), but from within the unifying framework of O\*Net. Here, we focus on the relationship between O\*Net delineated job components and employee levels of job engagement, job stress, and burnout with a U.S. workforce representative sample.
 
 ## Participants
 
@@ -99,20 +99,15 @@ papaja::r_refs("r-references.bib")
   
   Other than minor grammatical editing (for example, changing “the” to “you”), we retained the O\*Net wording for our item stems. We used O\*Net’s response scales, several of which were unique across items, but all shared the same 1 to 5 scale options. Subsequent to providing ratings of whether or not an O\*Net characteristic was relevant for the respondent’s work, each respondent who agreed that an element had at least some relevance to their job was also asked to rate that element in terms of, 1) . . . this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) . . . this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) . . . this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment. 
   
-> *Stress*. Three items taken from the Copenhagen Psychosocial Questionnaire (Burr et al., 2019). Obtained alpha was .85 in this sample.
+> *Stress*. Three items taken from the Copenhagen Psychosocial Questionnaire (@burr_third_2019). Obtained alpha was .85 in this sample.
 
-> *Burnout*. Four items were taken from the Copenhagen Psychosocial Questionnaire (Burr et al., 2019). Alpha was 0.85 in this sample.
+> *Burnout*. Four items were taken from the Copenhagen Psychosocial Questionnaire (@burr_third_2019). Alpha was 0.85 in this sample.
 
->*Engagement*. The 18-item engagement measure was recently developed (Russell et al., 2022), with the authors specifying three subscales which yielded current sample α’s of 0.68 (Absorption) and 0.80 (Vigor), and 0.90 (Dedication). For the purposes of the current study, we focused on an overall engagement score (18 item aggregate, α = 0.91).
+>*Engagement*. The 18-item engagement measure was recently developed (@engage_2022), with the authors specifying three subscales which yielded current sample α’s of 0.68 (absorption) and 0.80 (vigor), and 0.90 (dedication). For the purposes of the current study, we focused on an overall engagement score (18 item aggregate, alpha = 0.91).
 
 ## Procedure
 
   Data were collected through Prolific, a data collection platform. An email was sent to a random subset of all eligible participants in the Prolific respondent pool, notifying them about their eligibility for the study based on demographic information. Eligibility requirements included being 18+ and holding either a full-time or part-time job. Participants then voluntarily chose to respond to the survey. The survey was conducted online via Qualtrics with an estimated completion time of 40-45 minutes. Participants were asked to think about their primary job while answering the survey, and the items they were presented with depended on the specific job characteristics they initially specified. Thus, if a respondent indicated that 5 of the characteristics were not part of their job, they were not subsequently asked to rate the level of resource, challenge, or hindrance a given item presented to them. For items that were a part of their jobs, they were then asked to report how much a characteristic was a resource, and then how much each characteristic was a hindrance, and finally, how much each item was a challenge. Participants were compensated for their participation in this study in the amount of six dollars through Prolific.
-
-# Results
-  
-  We used R (Version 4.0.3; R Core Team, 2020) and the R-packages careless (Version 1.1.3; Yentes & Wilhelm, 2021), labourR (Version 1.0.0; Kouretsis et al., 2020), papaja (Version 0.1.0.9997; Aust & Barth, 2020), and tinylabels (Barth, 2021) for all analyses. Our analyses are presented by characteristics of work that are rated in terms of being resources, challenge demands, and hindrance demands. Pearson correlation coefficients between characteristics classified as resources, challenges, and hindrances were obtained to investigate the associations among these characteristics.
-  Correlations, means and standard deviations among all study variables are presented in Table 1. Results reveal a positive association between resources and engagement (*r* = .34; H1a), but a lack of meaningful association between engagement and stress and burnout (H1b and H1c, respectively). Challenge demands were positively associated with engagement (*r* = .31; H2a), but were unrelated to stress or burnout (H2b and H2c). Total hindrance stressors were not significantly associated with our outcomes (H3a-H3c). To further explore H1-H3, we conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. First, regarding engagement (F(3, 564) = 26.41, p < .001), the total resources (beta = ??) was predictive of engagement, but total challenge nor hindrance demands predicted engagement (see Table 2). Next, stress was not predicted by total resources, challenge, or hindrance demands, F(3, 564) = 2.47, *p* = .060 (see Table 3). Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, F(3, 564) = 1.10, *p* = .349. See Table 4. 
 
 ```{r study1, include=FALSE}
 
@@ -193,7 +188,7 @@ source("..//JDRJournalSubmission//recodescript.R", local = knitr::knit_global())
 
 ```
 
-```{r keeping45}
+```{r keeping45, include=FALSE}
 
 ## need to run "recodescript.R" prior to this if running chunk-by-chunk
 
@@ -251,7 +246,7 @@ write.csv(psych::describe(data[579:662]), "..\\JDRJournalSubmission\\SIOP2023\\C
 
 ```
 
-```{r correlation_table, eval=TRUE, include=FALSE}
+```{r correlation_table, eval=TRUE}
 
 r <- corx::corx(data22[,c(405:410)],                    
                 triangle = "lower",
@@ -278,6 +273,38 @@ summary(bur)
 summary(str)
 
 ```
+
+```{r regression_table_eng}
+library(papaja)
+apa_lm <- apa_print(eng)
+apa_table(
+  apa_lm$table
+  , caption = "Regression Predicting Engagement."
+)
+```
+
+```{r regression_table_str}
+library(papaja)
+apa_lm <- apa_print(str)
+apa_table(
+  apa_lm$table
+  , caption = "Regression Predicting Stress."
+)
+```
+
+```{r regression_table_bur}
+library(papaja)
+apa_lm <- apa_print(bur)
+apa_table(
+  apa_lm$table
+  , caption = "Regression Predicting Burnout."
+)
+```
+
+# Results
+  
+  We used R (Version 4.0.3; @R-base) and the R-packages careless (Version 1.1.3; Yentes & Wilhelm, 2021), labourR (Version 1.0.0; Kouretsis et al., 2020), papaja (Version 0.1.0.9997; Aust & Barth, 2020), and tinylabels (Barth, 2021) for all analyses. Our analyses are presented by characteristics of work that are rated in terms of being resources, challenge demands, and hindrance demands. Pearson correlation coefficients between characteristics classified as resources, challenges, and hindrances were obtained to investigate the associations among these characteristics.
+  Correlations, means and standard deviations among all study variables are presented in Table \ref{tab:correlation_table}. Results reveal a positive association between resources and engagement (*r* = .34; H1a), but a lack of meaningful association between engagement and stress and burnout (H1b and H1c, respectively). Challenge demands were positively associated with engagement (*r* = .31; H2a), but were unrelated to stress or burnout (H2b and H2c). Total hindrance stressors were not significantly associated with our outcomes (H3a-H3c). To further explore H1-H3, we conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. First, regarding engagement (F(3, 564) = 26.41, p < .001), the total resources was predictive of engagement, but total challenge nor hindrance demands predicted engagement (see Table \ref{tab:regression_table_eng}). Next, stress was not predicted by total resources, challenge, or hindrance demands, F(3, 564) = 2.47, *p* = .060 (see Table \ref{tab:regression_table_str}). Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, F(3, 564) = 1.10, *p* = .349. See Table \ref{tab:regression_table_bur}. 
 
 # Discussion
 
