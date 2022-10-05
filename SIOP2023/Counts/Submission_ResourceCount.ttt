@@ -33,14 +33,14 @@
 
 \caption{\label{tab:regression_table_eng}Regression Predicting Engagement.}
 
-\begin{tabular}{lllll}
+\begin{tabular}{llllll}
 \toprule
-Predictor & \multicolumn{1}{c}{$b$} & \multicolumn{1}{c}{95\% CI} & \multicolumn{1}{c}{$t(564)$} & \multicolumn{1}{c}{$p$}\\
+Predictor & \multicolumn{1}{c}{$b$} & \multicolumn{1}{c}{95\% CI} & \multicolumn{1}{c}{$t$} & \multicolumn{1}{c}{$\mathit{df}$} & \multicolumn{1}{c}{$p$}\\
 \midrule
-Intercept & 3.28 & {}[3.09, 3.47] & 33.93 & < .001\\
-Hindrance & 0.00 & {}[-0.01, 0.00] & -1.80 & .072\\
-Challenge & 0.00 & {}[-0.01, 0.01] & 0.88 & .378\\
-Resource & 0.02 & {}[0.01, 0.03] & 3.84 & < .001\\
+Intercept & 3.28 & {}[3.09, 3.47] & 33.93 & 564 & < .001\\
+Hindrance & 0.00 & {}[-0.01, 0.00] & -1.80 & 564 & .072\\
+Challenge & 0.00 & {}[-0.01, 0.01] & 0.88 & 564 & .378\\
+Resource & 0.02 & {}[0.01, 0.03] & 3.84 & 564 & < .001\\
 \bottomrule
 \end{tabular}
 
@@ -57,14 +57,14 @@ Resource & 0.02 & {}[0.01, 0.03] & 3.84 & < .001\\
 
 \caption{\label{tab:regression_table_str}Regression Predicting Stress.}
 
-\begin{tabular}{lllll}
+\begin{tabular}{llllll}
 \toprule
-Predictor & \multicolumn{1}{c}{$b$} & \multicolumn{1}{c}{95\% CI} & \multicolumn{1}{c}{$t(564)$} & \multicolumn{1}{c}{$p$}\\
+Predictor & \multicolumn{1}{c}{$b$} & \multicolumn{1}{c}{95\% CI} & \multicolumn{1}{c}{$t$} & \multicolumn{1}{c}{$\mathit{df}$} & \multicolumn{1}{c}{$p$}\\
 \midrule
-Intercept & 2.38 & {}[2.15, 2.62] & 19.80 & < .001\\
-Hindrance & 0.01 & {}[0.00, 0.01] & 1.82 & .070\\
-Challenge & 0.01 & {}[0.00, 0.02] & 1.43 & .152\\
-Resource & 0.00 & {}[-0.02, 0.01] & -0.77 & .440\\
+Intercept & 2.38 & {}[2.15, 2.62] & 19.80 & 564 & < .001\\
+Hindrance & 0.01 & {}[0.00, 0.01] & 1.82 & 564 & .070\\
+Challenge & 0.01 & {}[0.00, 0.02] & 1.43 & 564 & .152\\
+Resource & 0.00 & {}[-0.02, 0.01] & -0.77 & 564 & .440\\
 \bottomrule
 \end{tabular}
 
@@ -81,14 +81,14 @@ Resource & 0.00 & {}[-0.02, 0.01] & -0.77 & .440\\
 
 \caption{\label{tab:regression_table_bur}Regression Predicting Burnout.}
 
-\begin{tabular}{lllll}
+\begin{tabular}{llllll}
 \toprule
-Predictor & \multicolumn{1}{c}{$b$} & \multicolumn{1}{c}{95\% CI} & \multicolumn{1}{c}{$t(564)$} & \multicolumn{1}{c}{$p$}\\
+Predictor & \multicolumn{1}{c}{$b$} & \multicolumn{1}{c}{95\% CI} & \multicolumn{1}{c}{$t$} & \multicolumn{1}{c}{$\mathit{df}$} & \multicolumn{1}{c}{$p$}\\
 \midrule
-Intercept & 2.90 & {}[2.68, 3.11] & 26.89 & < .001\\
-Hindrance & 0.00 & {}[0.00, 0.01] & 0.67 & .502\\
-Challenge & 0.01 & {}[0.00, 0.02] & 1.19 & .233\\
-Resource & 0.00 & {}[-0.01, 0.01] & -0.52 & .601\\
+Intercept & 2.90 & {}[2.68, 3.11] & 26.89 & 564 & < .001\\
+Hindrance & 0.00 & {}[0.00, 0.01] & 0.67 & 564 & .502\\
+Challenge & 0.01 & {}[0.00, 0.02] & 1.19 & 564 & .233\\
+Resource & 0.00 & {}[-0.01, 0.01] & -0.52 & 564 & .601\\
 \bottomrule
 \end{tabular}
 
