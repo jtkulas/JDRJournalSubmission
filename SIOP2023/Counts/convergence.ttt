@@ -1,0 +1,23 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:cortab}Resource, challenge, and hindrance correlations (counts data).}
+
+\begin{tabular}{lllll}
+\toprule
+ & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2} & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$SD$}\\
+\midrule
+1. resource & - &  & 36.02 & 13.26\\
+2. hindrance & .23*** & - & 13.09 & 13.62\\
+3. challenge & .86*** & .22*** & 35.64 & 13.63\\
+\bottomrule
+\end{tabular}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
