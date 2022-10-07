@@ -9,17 +9,13 @@ author:
     email         : "jtkulas@ergreports.com"
   - name          : "Alicia Stachowski"
     affiliation   : "2"
-  - name          : "Renata Garcia Prieto Palacios Roji"
-    affiliation   : "3"
 
 affiliation:
   - id            : "1"
     institution   : "eRg"
   - id            : "2"
     institution   : "University of Wisconsin - Stout"
-  - id            : "3"
-    institution   : "PepsiCo"
-    
+
 authornote: |
   Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
 
@@ -59,8 +55,8 @@ knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 
 library(papaja)
 
-#r_refs("r-references.bib")
-knitr::write_bib("r-references.bib")
+r_refs("r-references.bib")
+#knitr::write_bib("r-references.bib")
 
 ```
 
@@ -112,7 +108,7 @@ Eligibility requirements included being 18+ and holding either a full-time or pa
 
 # Results
   
-All analyses are focused on characteristics of work that are rated as being "relevant". Upon confirming that a work characteristic was relevant, respondents then also rated the extent to which that characteristic was percieved as a resources, challenge, and hindrance. 
+All analyses are focused on characteristics of work that were rated as being "relevant" to the respondents' job. Upon confirming that a work characteristic was relevant, respondents then also rated the extent to which that characteristic was percieved as a resources, challenge, and hindrance. 
 
 ```{r study1}
 
@@ -343,7 +339,7 @@ repmeas <- aov(value ~ factor(scale) + Error(factor(person)), data=analysis)
 
 # Discussion
 
-Important to look not only at demands, but also the nature of the demand. Similar to the eustress/distress distinction, it would seem as though demands should be thought of in a valenced manner (e.g., is it a "good" demand or a "bad" demand)[^bootsie]. 
+Our findings highlight the importance of dissociating the *nature* of job demands. Similar to the eustress/distress distinction [e.g., @selye1974stress], it would seem as though demands should be thought of in a valenced manner (e.g., is it a "good" demand or a "bad" demand)[^bootsie]. 
 
 [^bootsie]: Beyond this SIOP presentation, we have further investigated differential associations of challenges and hindrances with "good" and "bad" outcomes, but have not confirmed meaningful differential associations within this current dataset. 
 
