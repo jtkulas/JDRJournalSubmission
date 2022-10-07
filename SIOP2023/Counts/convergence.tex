@@ -3,11 +3,12 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
+  english,
   man]{apa6}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{iftex}
-\ifPDFTeX
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -33,6 +34,16 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Demanding resources: Agreement of perceptions for challenge and resource characteristics},
+  pdfauthor={John Kulas1 \& Alicia Stachowski2},
+  pdflang={en-EN},
+  pdfkeywords={keywords},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -59,38 +70,6 @@
   \let\oldsubparagraph\subparagraph
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
-  \fi
-  % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
-\ifLuaTeX
-\usepackage[bidi=basic]{babel}
-\else
-\usepackage[bidi=default]{babel}
-\fi
-\babelprovide[main,import]{english}
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
 % Manuscript styling
 \usepackage{upgreek}
 \captionsetup{font=singlespacing,justification=justified}
@@ -106,9 +85,9 @@
 
 % Create new environments so endfloat can handle them
 % \newenvironment{ltable}
-%   {\begin{landscape}\centering\begin{threeparttable}}
-%   {\end{threeparttable}\end{landscape}}
-\newenvironment{lltable}{\begin{landscape}\centering\begin{ThreePartTable}}{\end{ThreePartTable}\end{landscape}}
+%   {\begin{landscape}\begin{center}\begin{threeparttable}}
+%   {\end{threeparttable}\end{center}\end{landscape}}
+\newenvironment{lltable}{\begin{landscape}\begin{center}\begin{ThreePartTable}}{\end{ThreePartTable}\end{center}\end{landscape}}
 
 % Enables adjusting longtable caption width to table width
 % Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
@@ -146,15 +125,7 @@
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
 \makeatother
-
-\usepackage{xpatch}
-\makeatletter
-\xapptocmd\appendix
-  {\xapptocmd\section
-    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
-    {}{\InnerPatchFailed}%
-  }
-{}{\PatchFailed}
+\shorttitle{Demanding Resources}
 \keywords{keywords\newline\indent Word count: X}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
@@ -166,26 +137,44 @@
 
 \linenumbers
 \usepackage{csquotes}
-\ifLuaTeX
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[]{english}
+\else
+  \usepackage[main=english]{babel}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\fi
+\ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
-\hypersetup{
-  pdftitle={Demanding resources: Agreement of perceptions for challenge and resource characteristics},
-  pdfauthor={John Kulas1 \& Alicia Stachowski2},
-  pdflang={en-EN},
-  pdfkeywords={keywords},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \title{Demanding resources: Agreement of perceptions for challenge and resource characteristics}
 \author{John Kulas\textsuperscript{1} \& Alicia Stachowski\textsuperscript{2}}
 \date{}
 
-
-\shorttitle{Demanding Resources}
 
 \authornote{
 
@@ -199,8 +188,8 @@ Correspondence concerning this article should be addressed to John Kulas. E-mail
 
 \affiliation{\vspace{0.5cm}\textsuperscript{1} eRg\\\textsuperscript{2} University of Wisconsin - Stout}
 
-\abstract{%
-568 workers rated job characteristics in terms of relevance as well as perceptions as challenges, hindrances and resources. We find strong associations between characteristics such that what is viewed as a ``resource'' is also very often considered a ``challenge''. This agreement was moderated by the nature of the job characteristic.
+\abstract{
+568 workers rated job characteristics in terms of relevance as well as perceptions as challenges, hindrances and resources. We find strong associations between characteristics such that what is viewed as a ``resource'' is also very often considered a ``challenge.'' This agreement was moderated by the nature of the job characteristic.
 }
 
 
@@ -238,7 +227,7 @@ We explored the agreement of perceptions of job characteristics as resources as 
 
 \emph{Hypothesis 1}: Characteristics perceived as challenges are also commonly viewed as resources.
 
-Although the same job characteristic may be percieved as both a challenge and a resource, it is also likely that some characteristics are less likely to be viewed as mutually complementary as others. For example, a physically strenuous job requirement such as ``carrying heavy objects'' would be less likely to be viewed both as a challenge and a resource whereas a structural characteristic such as ``negotiating work schedules'' may very well be viewed (likely in different circumstances) to be both a control-oriented resource as well as a challenge. O*Net has different levels of abstraction with regard to the nature of job characteristic, we will be exploring a mid-level abstraction with seven different characteristic ``scales''.
+Although the same job characteristic may be percieved as both a challenge and a resource, it is also likely that some characteristics are less likely to be viewed as mutually complementary as others. For example, a physically strenuous job requirement such as ``carrying heavy objects'' would be less likely to be viewed both as a challenge and a resource whereas a structural characteristic such as ``negotiating work schedules'' may very well be viewed (likely in different circumstances) to be both a control-oriented resource as well as a challenge. O*Net has different levels of abstraction with regard to the nature of job characteristic, we will be exploring a mid-level abstraction with seven different characteristic ``scales.''
 
 \emph{Hypothesis 2}: The association between challenging and resourceful characteristics is moderated by type of characteristic.
 
@@ -252,7 +241,7 @@ We evaluate agreement across perceptions of present job characteristics regardin
 
 Our survey consisted of 98 items crafted from job characteristic descriptors located within O*Net's classification of ``work activities'': 1) Information Input (5 statements), 2) Interacting with Others (17 statements), 3) Mental Processes (10 statements), and 4) Work Output (9 statements) and ``work context'' groupings: 1) Interpersonal Relationships (14 statements), 2) Physical Work Conditions (30 statements), and 3) Structural Job Characteristics (13 statements).
 
-The O*Net descriptors are written in a similar manner to a task statement presented within a job analysis. For example, the descriptor for ``level of competition'', which is an element of the ``structural job characteristics'' grouping, is \emph{\ldots to what extent does this job require the worker to compete or to be aware of competitive pressures?}. Other than minor grammatical editing (for example, changing ``the worker'' to ``you''), we retained the O*Net wording for our item stems. We also retained O*Net's response scales, several of which were unique across items, but all shared the same 1 to 5 scale options. Subsequent to providing ratings of whether or not each of the 98 O*Net characteristics were relevant for the respondent's work, each respondent who agreed that an element had at least some relevance to their job was then also asked to rate that element in terms of, 1) . . . this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) . . . this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) . . . this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment.
+The O*Net descriptors are written in a similar manner to a task statement presented within a job analysis. For example, the descriptor for ``level of competition,'' which is an element of the ``structural job characteristics'' grouping, is \emph{\ldots to what extent does this job require the worker to compete or to be aware of competitive pressures?}. Other than minor grammatical editing (for example, changing ``the worker'' to ``you''), we retained the O*Net wording for our item stems. We also retained O*Net's response scales, several of which were unique across items, but all shared the same 1 to 5 scale options. Subsequent to providing ratings of whether or not each of the 98 O*Net characteristics were relevant for the respondent's work, each respondent who agreed that an element had at least some relevance to their job was then also asked to rate that element in terms of, 1) . . . this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) . . . this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) . . . this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment.
 
 The total number of items on the survey was less than 392 (98 characteristics x 4 administrations), because we did not ask for demand and resource evaluations for 14 O*Net characteristics that we projected would have very little variance across respondents (one excluded characteristic, for example, was \emph{\ldots the extent to which thr worker is exposed to radiation on the job}).
 
@@ -333,52 +322,52 @@ As with any piece of research, the process and results have limitations, but als
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-abbas2019challenge}{}}%
+\leavevmode\hypertarget{ref-abbas2019challenge}{}%
 Abbas, M., \& Raja, U. (2019). Challenge-hindrance stressors and job outcomes: The moderating role of conscientiousness. \emph{Journal of Business and Psychology}, \emph{34}(2), 189--201.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2014job}{}}%
+\leavevmode\hypertarget{ref-bakker2014job}{}%
 Bakker, A. B., \& Demerouti, E. (2014). Job demands--resources theory. \emph{Wellbeing: A Complete Reference Guide}, 1--28.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2017job}{}}%
+\leavevmode\hypertarget{ref-bakker2017job}{}%
 Bakker, A. B., \& Demerouti, E. (2017). Job demands--resources theory: Taking stock and looking forward. \emph{Journal of Occupational Health Psychology}, \emph{22}(3), 273.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2007job}{}}%
+\leavevmode\hypertarget{ref-bakker2007job}{}%
 Bakker, A. B., Hakanen, J. J., Demerouti, E., \& Xanthopoulou, D. (2007). Job resources boost work engagement, particularly when job demands are high. \emph{Journal of Educational Psychology}, \emph{99}(2), 274.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2013weekly}{}}%
+\leavevmode\hypertarget{ref-bakker2013weekly}{}%
 Bakker, A. B., \& Sanz-Vergel, A. I. (2013). Weekly work engagement and flourishing: The role of hindrance and challenge job demands. \emph{Journal of Vocational Behavior}, \emph{83}(3), 397--409.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2003dual}{}}%
+\leavevmode\hypertarget{ref-bakker2003dual}{}%
 Bakker, A., Demerouti, E., \& Schaufeli, W. (2003). Dual processes at work in a call centre: An application of the job demands--resources model. \emph{European Journal of Work and Organizational Psychology}, \emph{12}(4), 393--417.
 
-\leavevmode\vadjust pre{\hypertarget{ref-cavanaugh2000empirical}{}}%
+\leavevmode\hypertarget{ref-cavanaugh2000empirical}{}%
 Cavanaugh, M. A., Boswell, W. R., Roehling, M. V., \& Boudreau, J. W. (2000). An empirical examination of self-reported work stress among US managers. \emph{Journal of Applied Psychology}, \emph{85}(1), 65.
 
-\leavevmode\vadjust pre{\hypertarget{ref-crawford2010linking}{}}%
+\leavevmode\hypertarget{ref-crawford2010linking}{}%
 Crawford, E. R., LePine, J. A., \& Rich, B. L. (2010). Linking job demands and resources to employee engagement and burnout: A theoretical extension and meta-analytic test. \emph{Journal of Applied Psychology}, \emph{95}(5), 834.
 
-\leavevmode\vadjust pre{\hypertarget{ref-demerouti2001job}{}}%
+\leavevmode\hypertarget{ref-demerouti2001job}{}%
 Demerouti, E., Bakker, A. B., Nachreiner, F., \& Schaufeli, W. B. (2001). The job demands-resources model of burnout. \emph{Journal of Applied Psychology}, \emph{86}(3), 499.
 
-\leavevmode\vadjust pre{\hypertarget{ref-gerich2017relevance}{}}%
+\leavevmode\hypertarget{ref-gerich2017relevance}{}%
 Gerich, J. (2017). The relevance of challenge and hindrance appraisals of working conditions for employees' health. \emph{International Journal of Stress Management}, \emph{24}(3), 270.
 
-\leavevmode\vadjust pre{\hypertarget{ref-lazarus1984stress}{}}%
+\leavevmode\hypertarget{ref-lazarus1984stress}{}%
 Lazarus, R. S., \& Folkman, S. (1984). \emph{Stress, appraisal, and coping}. Springer publishing company.
 
-\leavevmode\vadjust pre{\hypertarget{ref-podsakoff2007differential}{}}%
+\leavevmode\hypertarget{ref-podsakoff2007differential}{}%
 Podsakoff, N. P., LePine, J. A., \& LePine, M. A. (2007). Differential challenge stressor-hindrance stressor relationships with job attitudes, turnover intentions, turnover, and withdrawal behavior: A meta-analysis. \emph{Journal of Applied Psychology}, \emph{92}(2), 438.
 
-\leavevmode\vadjust pre{\hypertarget{ref-searle2015merits}{}}%
+\leavevmode\hypertarget{ref-searle2015merits}{}%
 Searle, B. J., \& Auton, J. C. (2015). The merits of measuring challenge and hindrance appraisals. \emph{Anxiety, Stress, \& Coping}, \emph{28}(2), 121--143.
 
-\leavevmode\vadjust pre{\hypertarget{ref-selye1936syndrome}{}}%
+\leavevmode\hypertarget{ref-selye1936syndrome}{}%
 Selye, H. (1936). A syndrome produced by diverse nocuous agents. \emph{Nature}, \emph{138}(3479), 32--32.
 
-\leavevmode\vadjust pre{\hypertarget{ref-selye1974stress}{}}%
+\leavevmode\hypertarget{ref-selye1974stress}{}%
 Selye, H. (1974). \emph{Stress without distress}. Lippincott Williams \& Wilkins.
 
-\leavevmode\vadjust pre{\hypertarget{ref-webster2011extending}{}}%
+\leavevmode\hypertarget{ref-webster2011extending}{}%
 Webster, J. R., Beehr, T. A., \& Love, K. (2011). Extending the challenge-hindrance model of occupational stress: The role of appraisal. \emph{Journal of Vocational Behavior}, \emph{79}(2), 505--516.
 
 \end{CSLReferences}

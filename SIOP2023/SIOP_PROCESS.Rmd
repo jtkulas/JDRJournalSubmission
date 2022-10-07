@@ -136,7 +136,7 @@ source("process.R", local = knitr::knit_global())
 
 ### Participants
 
-There were a total of 568 respondents, of which 13.57% had been in their referent job less than 6 months, 19.20% between 6 months and a year, 49.12% between one and five years, 13.27% between 5 and 10 years, and 4.87% more than 10 years.Their ages ranged from 18 to 65 with an average of 28.18 years old (*SD* = 7.53). Over half, 52.58% identified as female, and 46.83% identified as male. 
+We sampled from a Prolific panel, resulting in 785 individuals who initially 166 accessed the survey link. Of those, 112 indicated that they were not interested, had more 167 than 200 missing responses, or had 20 or more identical consecutive sequential responses 168 (Yentes & Wilhelm, 2021). There were a total of 568 respondents, of which 13.57% had been in their referent job less than 6 months, 19.20% between 6 months and a year, 49.12% between one and five years, 13.27% between 5 and 10 years, and 4.87% more than 10 years.Their ages ranged from 18 to 65 with an average of 28.18 years old (*SD* = 7.53). Over half, 52.58% identified as female, and 46.83% identified as male. 
 
 # Materials
 
