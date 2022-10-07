@@ -1,25 +1,21 @@
 ---
-title             : "Perception of Work Demands and Resources: Does Volume Relate to Engagement, Stress, or Burnout?"
-shorttitle        : "O*Net JDR"
+title             : "Perception of Work Demands and Resources: Does Volume Matter?"
+shorttitle        : "JDR Volume"
 
 author: 
-  - name          : "John Kulas"
+  - name          : "Alicia Stachowski"
     affiliation   : "1"
     corresponding : yes    # Define only one corresponding author
-    email         : "jtkulas@ergreports.com"
-  - name          : "Alicia Stachowski"
+    email         : "stachowskia@uwstout.edu"
+  - name          : "John Kulas"
     affiliation   : "2"
-  - name          : "Renata Garcia Prieto Palacios Roji"
-    affiliation   : "3"
 
 affiliation:
   - id            : "1"
-    institution   : "eRg"
-  - id            : "2"
     institution   : "University of Wisconsin - Stout"
-  - id            : "3"
-    institution   : "PepsiCo"
-    
+  - id            : "2"
+    institution   : "eRg"
+
 authornote: |
 
 abstract: |
@@ -56,7 +52,7 @@ papaja::r_refs("r-references.bib")
 
 ```
 
-  A plethora of research applying the job demands-resources model [@demerouti2001job] and job demands-resources theory [@bakker2017job] underscore the importance of work characteristics on the experience of motivation and strain. However, much of our existing research on this topic assumes that certain characteristics are resources and others are generally considered demands. This study explores how individual perceptions of these work characteristics relate to engagement, stress, and burnout by asking respondents to indicate (of the characteristics that apply to their jobs) how much each is a resource, challenge, or hindrance demand. Amount of perceived resources, challenges, and hindrances can then be associated with engagement, stress, and burnout.
+  A plethora of research applying the job demands-resources model [@demerouti2001job] and job demands-resources theory [@bakker2017job] underscores the importance of work characteristics on the experience of motivation and strain. However, much of our existing research on this topic assumes that certain characteristics are resources and others are generally considered demands. This study explores how individual perceptions of these work characteristics relate to engagement, stress, and burnout by asking respondents to indicate (of the characteristics that apply to their jobs) how much each is a resource, challenge, or hindrance demand. Amount of perceived resources, challenges, and hindrances can then be associated with engagement, stress, and burnout.
 
 ## The Job Demands-Resources Theory
 
