@@ -5,6 +5,30 @@
 \begin{center}
 \begin{threeparttable}
 
+\caption{\label{tab:cortab}Challenge, hindrance, and resource bivariate correlations with stress.}
+
+\begin{tabular}{llllll}
+\toprule
+ & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$SD$}\\
+\midrule
+1. Stress & - &  &  & 2.81 & 0.89\\
+2. Challenge & -.05 & - &  & 3.73 & 0.48\\
+3. Hindrance & .09* & -.19*** & - & 2.40 & 0.75\\
+4. Resource & -.08 & .75*** & -.24*** & 3.73 & 0.47\\
+\bottomrule
+\end{tabular}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
 \caption{\label{tab:table}Results from a regression analysis examining the moderation of resources on the relationship between hindrance demands and stress}
 
 \begin{tabular}{lllll}

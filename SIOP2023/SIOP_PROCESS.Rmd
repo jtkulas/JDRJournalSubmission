@@ -46,7 +46,7 @@ draft             : no
 csl               : apa7.csl
 documentclass     : "apa6"
 classoption       : "man"
-output            : papaja::apa6_word
+output            : papaja::apa6_pdf
 ---
 
 ```{r setup, include = FALSE}
@@ -142,9 +142,13 @@ We sampled from a Prolific panel, resulting in 785 individuals who initially 166
 
 # Materials
 
-> *Resources and Hindrances*. To guage resources and hindrances, we used 98 statements taken directly from O\*Net’s “activity” and “context” classifications. Each of the 98 descriptors has potentially unique response categories, but scaling was consistently 1 (low) to 5 (high). Subsequent to these self-evaluations, respondents were asked to rate elements in terms of resources ("…this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development"), challenges, (…this aspect of your job is a challenge that can promote mastery, personal growth, or future gains") and hindrances ("…this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment"). For each category (e.g., resources), a means was computed across items that applied to one's role, and thus, mean scores could range from 1 to 5. 
+### Resources and Hindrances. 
+
+To guage resources and hindrances, we used 98 statements taken directly from O\*Net’s “activity” and “context” classifications. Each of the 98 descriptors has potentially unique response categories, but scaling was consistently 1 (low) to 5 (high). Subsequent to these self-evaluations, respondents were asked to rate elements in terms of resources ("…this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development"), challenges, (…this aspect of your job is a challenge that can promote mastery, personal growth, or future gains") and hindrances ("…this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment"). For each category (e.g., resources), a means was computed across items that applied to one's role, and thus, mean scores could range from 1 to 5. 
   
-> *Stress*. Three items taken from the Copenhagen Psychosocial Questionnaire (@burr_third_2019) captured stress (e.g., "How often have you had problems relaxing because of your job?"). Responses were made on a 5-point scale ranging from "not at all" to "all the time". Alpha was .85 in this sample.
+### Stress. 
+
+Three items taken from the Copenhagen Psychosocial Questionnaire (@burr_third_2019) captured stress (e.g., "How often have you had problems relaxing because of your job?"). Responses were made on a 5-point scale ranging from "not at all" to "all the time". Alpha was .85 in this sample.
 
 ## Procedure
 
@@ -181,9 +185,26 @@ lines(x[w==4.2063],y[w==4.2063],lwd=2,lty=6,col="black")
 
 ```
 
-Following data cleaning and preparation, we computed correlations among the study variables. See Table 1. With regard to H1, which predicted a positive association between perceived hindrance stressors and stress, a positive relationship was observed, *r* = , *p* = . Thus, support was found for H1. 
+```{r cortab}
 
-Next, to explore H2, a moderated regression including hindrances, resources, and the interaction between them was done using PROCESS, version 4.1.1 [@hayes2022]. First, the overall regression model including mean hindrances, mean resources, and the interaction between the two variables was significant, F(3, 564) = 3.29, *p* = .020. The interaction between hindrance and resources (uncentered) revealed that the relationship between hindrances and stress was conditional on resources, F(3, 564) = 3.51, *p* = .061, providing tentative support for H2. As can be seen in Figure 1, those with fewer resources show a much stronger positive relationship between hindrances and stress than those with more resources. As such, these results provide some evidence that the resources do moderate the relationship between hindrance stressors.
+data_new <- data
+
+names(data_new)[names(data_new) == "stress"] <- "Stress"
+names(data_new)[names(data_new) == "overall.challenge"] <- "Challenge"
+names(data_new)[names(data_new) == "overall.hindrance"] <- "Hindrance"
+names(data_new)[names(data_new) == "overall.resource"] <- "Resource"
+
+r <- corx::corx(data_new, x =c("Stress", "Challenge", "Hindrance", "Resource"), y =c("Stress", "Challenge", "Hindrance", "Resource"),            
+                triangle = "lower",
+                stars = c(0.05, 0.01, 0.001),
+                describe = c(`$M$` = mean, `$SD$` = sd))
+
+papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table,
+                  caption = "Challenge, hindrance, and resource bivariate correlations with stress.",
+                  escape = FALSE)
+```
+
+Following data cleaning and preparation, we computed correlations among the study variables. See Table \@ref(tab:cortab). With regard to H1, which predicted a positive association between perceived hindrance stressors and stress, a small positive relationship was observed, *r* = .09, *p* < .05. Thus, "weak" support was found for H1.
 
 ```{r table}
 
@@ -202,6 +223,8 @@ papaja::apa_table(table,
                   escape = TRUE) 
 
 ```
+
+Next, to explore H2, a moderated regression including hindrances, resources, and the interaction between them was done using PROCESS, version 4.1.1 [@hayes2022, see Table \@ref(tab:table)]. First, the overall regression model including mean hindrances, mean resources, and the interaction between the two variables was significant, F(3, 564) = 3.29, *p* = .020. The interaction between hindrance and resources (uncentered) revealed that the relationship between hindrances and stress was conditional on resources, F(3, 564) = 3.51, *p* = .061, providing tentative support for H2. As can be seen in Figure 1, those with fewer resources show a much stronger positive relationship between hindrances and stress than those with more resources. As such, these results provide some evidence that the resources do moderate the relationship between hindrance stressors.
 
 # Discussion
 
