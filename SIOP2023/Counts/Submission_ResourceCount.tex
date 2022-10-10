@@ -3,11 +3,12 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
+  english,
   man]{apa6}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{iftex}
-\ifPDFTeX
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -69,38 +70,6 @@
   \let\oldsubparagraph\subparagraph
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
-  \fi
-  % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
-\ifLuaTeX
-\usepackage[bidi=basic]{babel}
-\else
-\usepackage[bidi=default]{babel}
-\fi
-\babelprovide[main,import]{english}
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
 % Manuscript styling
 \usepackage{upgreek}
 \captionsetup{font=singlespacing,justification=justified}
@@ -116,9 +85,9 @@
 
 % Create new environments so endfloat can handle them
 % \newenvironment{ltable}
-%   {\begin{landscape}\centering\begin{threeparttable}}
-%   {\end{threeparttable}\end{landscape}}
-\newenvironment{lltable}{\begin{landscape}\centering\begin{ThreePartTable}}{\end{ThreePartTable}\end{landscape}}
+%   {\begin{landscape}\begin{center}\begin{threeparttable}}
+%   {\end{threeparttable}\end{center}\end{landscape}}
+\newenvironment{lltable}{\begin{landscape}\begin{center}\begin{ThreePartTable}}{\end{ThreePartTable}\end{center}\end{landscape}}
 
 % Enables adjusting longtable caption width to table width
 % Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
@@ -156,15 +125,7 @@
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
 \makeatother
-
-\usepackage{xpatch}
-\makeatletter
-\xapptocmd\appendix
-  {\xapptocmd\section
-    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
-    {}{\InnerPatchFailed}%
-  }
-{}{\PatchFailed}
+\shorttitle{JDR Volume}
 \keywords{keywords\newline\indent Word count: X}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
@@ -172,20 +133,45 @@
 \makeatletter
 \renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
 \makeatother
-\usepackage{lineno}
-
-\linenumbers
 \usepackage{csquotes}
-\ifLuaTeX
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[]{english}
+\else
+  \usepackage[main=english]{babel}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\fi
+\ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \title{Perception of Work Demands and Resources: Does Sheer Volume Matter?}
 \author{Alicia Stachowski\textsuperscript{1} \& John Kulas\textsuperscript{2}}
 \date{}
 
-
-\shorttitle{JDR Volume}
 
 \authornote{
 
@@ -195,8 +181,8 @@ Correspondence concerning this article should be addressed to Alicia Stachowski,
 
 \affiliation{\vspace{0.5cm}\textsuperscript{1} University of Wisconsin - Stout\\\textsuperscript{2} eRg}
 
-\abstract{%
-The relationships among sum of perceived job resources, challenge- and hindrance demands and outcomes of organizational outcomes of engagement, stress, and burnout are explored. 568 workers rated O*Net job characteristics in terms of relevance and perceptions as challenges, hindrances and resources. The findings are generally aligned with the job demands resource theory regarding associations between perceived resources, demands, and organizational outcomes of engagement, stress, and burnout.
+\abstract{
+The relationships among sum of perceived job resources, challenge- and hindrance demands and outcomes of organizational outcomes of engagement, stress, and burnout are explored. 568 workers rated O*Net job characteristics in terms of relevance and perceptions as challenges, hindrances and resources. The findings showed a clear connection between resources, challenge demands, and job engagement, but the other associations did not suggest meaningful connections.
 }
 
 
@@ -214,7 +200,7 @@ The theoretical foundation for this study is the job demands-resources theory (D
 \hypertarget{an-added-complexity-perception-appraisal-of-work-characteristics-might-matter}{%
 \subsubsection{An Added Complexity: Perception (Appraisal) of Work Characteristics Might Matter}\label{an-added-complexity-perception-appraisal-of-work-characteristics-might-matter}}
 
-The above description speaks to one of two distinct processes being activated, presumably based on one's appraisal of how a work characteristics makes them feel (e.g., consider the different reactions two different employees may have to being nominated to give a speech at an upcoming company event). Thus, although some research on job demands in particular is based on \emph{a priori} classifications of demands (Searle \& Auton, 2015), the appraisal of any work characteristic as a demand or resource is actually subjective. The literature on the experience of stress explains how such individual differences in appraisal are possible. Specifically, the transactional theory of stress and coping states that people cognitively appraise stimuli in their environments on a continual basis (Lazarus \& Folkman, 1984). During this process, meaning is assigned to stimuli. If our example fictional employee appraised the upcoming speech as threatening, challenging, or possibly harmful, the resulting emotional distress initiates coping (e.g., attempting to decline, asking for help in writing the speech). From that point, the cycle of appraisal continues based on the action to cope with the stressor (Lazarus \& Folkman, 1984). \footnote{This sentence needs clarification - comprehension is ocluded.}
+The above description speaks to one of two distinct processes being activated, presumably based on one's appraisal of how a work characteristics makes them feel (e.g., consider the different reactions two different employees may have to being nominated to give a speech at an upcoming company event). Thus, although some research on job demands in particular is based on \emph{a priori} classifications of demands (Searle \& Auton, 2015), the appraisal of any work characteristic as a demand or resource is actually subjective. The literature on the experience of stress explains how such individual differences in appraisal are possible. Specifically, the transactional theory of stress and coping states that people cognitively appraise stimuli in their environments on a continual basis (Lazarus \& Folkman, 1984). During this process, meaning is assigned to stimuli. If our example fictional employee appraised the upcoming speech as threatening, challenging, or possibly harmful (in contrast to positive or irrelevant), the resulting emotional distress initiates coping (e.g., attempting to decline, asking for help in writing the speech). From that point, a reassessment of the situation happens, and the cycle of appraisal continues based on the action to cope with the stressor (Lazarus \& Folkman, 1984). This theory of stress and coping speaks to the importance of how work demands are assessed by individuals, and it is not only possible, but quite likely that demands and resources do not fit cleanly into objective categories of ``demands'' and ``resources.''
 
 \hypertarget{could-a-work-demand-be-appraised-positively-the-challenge-hindrance-framework}{%
 \subsubsection{Could a Work Demand be Appraised Positively?: The Challenge-Hindrance Framework}\label{could-a-work-demand-be-appraised-positively-the-challenge-hindrance-framework}}
@@ -228,7 +214,7 @@ Having established that there can be individual differences in the appraisal of 
 \hypertarget{current-study-and-hypotheses}{%
 \subsection{Current Study and Hypotheses}\label{current-study-and-hypotheses}}
 
-The brief review above provides theoretical and empirical support for the connection between resources and positive organizational outcomes, and between demands and negative outcomes. Here, we explored whether the amount or volume of perceived resources and demands (in the form of challenges and hindrances) would be related differently to three organizational outcomes: engagement (``a positive affective experience defined as a fulfilling, work-related state of mind characterized by vigor, dedication, and absorption,'' Schaufeli et al., 2002), workplace stress (``an individual state characterized by a combination of high arousal and displeasure,'' p.~15, Pejtersen et al., 2010) and burnout (``the degree of physical and psychological fatigue and exhaustion that is perceived by the person as related to his/her work,'' p.~197, Kristensen et al., 2005). Utilizing the job demands-resources theory, the transactional theory of stress, and the challenge-hindrance framework, we propose that the number of job characteristics appraised as ``challenge demands'' (i.e., promote mastery, personal growth, and future gains) would activate a positive state -- that of engagement. In contrast, number of characteristics of one's job appraised as a hindrance demand (i.e., inhibit growth, learning and goal achievement) would activate a negative state -- here, resulting in stress and/or burnout.
+The brief review above provides theoretical and empirical support for the connection between resources and positive organizational outcomes, and between demands and negative outcomes. Here, we explored whether the amount or volume of perceived resources and demands (in the form of challenges and hindrances) would be related differently to three organizational outcomes: engagement ({``a positive affective experience defined as a fulfilling, work-related state of mind characterized by vigor, dedication, and absorption,''} Schaufeli et al., 2002), workplace stress ({``an individual state characterized by a combination of high arousal and displeasure,''} p.~15, Pejtersen et al., 2010) and burnout ({``the degree of physical and psychological fatigue and exhaustion that is perceived by the person as related to his/her work,''} p.~197, Kristensen et al., 2005). Utilizing the job demands-resources theory, the transactional theory of stress, and the challenge-hindrance framework, we propose that the number of job characteristics appraised as ``challenge demands'' (i.e., promote mastery, personal growth, and future gains) would activate a positive state -- that of engagement. In contrast, number of characteristics of one's job appraised as a hindrance demand (i.e., inhibit growth, learning and goal achievement) would activate a negative state -- here, resulting in stress and/or burnout.
 
 \begin{quote}
 \emph{Hypothesis 1a-1c}: A greater overall quantity of resources is positively associated with engagement (1a), and negatively associated with stress (1b) and burnout (1c)
@@ -314,14 +300,14 @@ An email was sent to a random subset of all eligible participants in the Prolifi
 
 \caption{\label{tab:regression_table_eng}Regression Predicting Engagement.}
 
-\begin{tabular}{llllll}
+\begin{tabular}{lllll}
 \toprule
-Predictor & \multicolumn{1}{c}{$b$} & \multicolumn{1}{c}{95\% CI} & \multicolumn{1}{c}{$t$} & \multicolumn{1}{c}{$\mathit{df}$} & \multicolumn{1}{c}{$p$}\\
+Predictor & \multicolumn{1}{c}{$b$} & \multicolumn{1}{c}{95\% CI} & \multicolumn{1}{c}{$t(564)$} & \multicolumn{1}{c}{$p$}\\
 \midrule
-Intercept & 3.28 & {}[3.09, 3.47] & 33.93 & 564 & < .001\\
-Hindrance & 0.00 & {}[-0.01, 0.00] & -1.80 & 564 & .072\\
-Challenge & 0.00 & {}[-0.01, 0.01] & 0.88 & 564 & .378\\
-Resource & 0.02 & {}[0.01, 0.03] & 3.84 & 564 & < .001\\
+Intercept & 3.28 & {}[3.09, 3.47] & 33.93 & < .001\\
+Hindrance & 0.00 & {}[-0.01, 0.00] & -1.80 & .072\\
+Challenge & 0.00 & {}[-0.01, 0.01] & 0.88 & .378\\
+Resource & 0.02 & {}[0.01, 0.03] & 3.84 & < .001\\
 \bottomrule
 \end{tabular}
 
@@ -337,14 +323,14 @@ Resource & 0.02 & {}[0.01, 0.03] & 3.84 & 564 & < .001\\
 
 \caption{\label{tab:regression_table_str}Regression Predicting Stress.}
 
-\begin{tabular}{llllll}
+\begin{tabular}{lllll}
 \toprule
-Predictor & \multicolumn{1}{c}{$b$} & \multicolumn{1}{c}{95\% CI} & \multicolumn{1}{c}{$t$} & \multicolumn{1}{c}{$\mathit{df}$} & \multicolumn{1}{c}{$p$}\\
+Predictor & \multicolumn{1}{c}{$b$} & \multicolumn{1}{c}{95\% CI} & \multicolumn{1}{c}{$t(564)$} & \multicolumn{1}{c}{$p$}\\
 \midrule
-Intercept & 2.38 & {}[2.15, 2.62] & 19.80 & 564 & < .001\\
-Hindrance & 0.01 & {}[0.00, 0.01] & 1.82 & 564 & .070\\
-Challenge & 0.01 & {}[0.00, 0.02] & 1.43 & 564 & .152\\
-Resource & 0.00 & {}[-0.02, 0.01] & -0.77 & 564 & .440\\
+Intercept & 2.38 & {}[2.15, 2.62] & 19.80 & < .001\\
+Hindrance & 0.01 & {}[0.00, 0.01] & 1.82 & .070\\
+Challenge & 0.01 & {}[0.00, 0.02] & 1.43 & .152\\
+Resource & 0.00 & {}[-0.02, 0.01] & -0.77 & .440\\
 \bottomrule
 \end{tabular}
 
@@ -360,14 +346,14 @@ Resource & 0.00 & {}[-0.02, 0.01] & -0.77 & 564 & .440\\
 
 \caption{\label{tab:regression_table_bur}Regression Predicting Burnout.}
 
-\begin{tabular}{llllll}
+\begin{tabular}{lllll}
 \toprule
-Predictor & \multicolumn{1}{c}{$b$} & \multicolumn{1}{c}{95\% CI} & \multicolumn{1}{c}{$t$} & \multicolumn{1}{c}{$\mathit{df}$} & \multicolumn{1}{c}{$p$}\\
+Predictor & \multicolumn{1}{c}{$b$} & \multicolumn{1}{c}{95\% CI} & \multicolumn{1}{c}{$t(564)$} & \multicolumn{1}{c}{$p$}\\
 \midrule
-Intercept & 2.90 & {}[2.68, 3.11] & 26.89 & 564 & < .001\\
-Hindrance & 0.00 & {}[0.00, 0.01] & 0.67 & 564 & .502\\
-Challenge & 0.01 & {}[0.00, 0.02] & 1.19 & 564 & .233\\
-Resource & 0.00 & {}[-0.01, 0.01] & -0.52 & 564 & .601\\
+Intercept & 2.90 & {}[2.68, 3.11] & 26.89 & < .001\\
+Hindrance & 0.00 & {}[0.00, 0.01] & 0.67 & .502\\
+Challenge & 0.01 & {}[0.00, 0.02] & 1.19 & .233\\
+Resource & 0.00 & {}[-0.01, 0.01] & -0.52 & .601\\
 \bottomrule
 \end{tabular}
 
@@ -380,17 +366,23 @@ Resource & 0.00 & {}[-0.01, 0.01] & -0.52 & 564 & .601\\
 \section{Results}\label{results}}
 
 We used R (Version 4.0.3; R Core Team (2022)) and the R-packages careless (Version 1.1.3; Yentes \& Wilhelm, 2021), labourR (Version 1.0.0; Kouretsis et al., 2020), papaja (Version 0.1.0.9997; Aust \& Barth, 2020), and tinylabels (Barth, 2021) for all analyses. Our analyses are presented by characteristics of work that are rated in terms of being resources, challenge demands, and hindrance demands. Pearson correlation coefficients between characteristics classified as resources, challenges, and hindrances were obtained to investigate the associations among these characteristics.
-Correlations, means and standard deviations among all study variables are presented in Table \ref{tab:correlation_table}. Results reveal a positive association between resources and engagement (\emph{r} = .34; H1a), but a lack of meaningful association between engagement and stress and burnout (H1b and H1c, respectively). Challenge demands were positively associated with engagement (\emph{r} = .31; H2a), but were unrelated to stress or burnout (H2b and H2c). Total hindrance stressors were not significantly associated with our outcomes (H3a-H3c). To further explore H1-H3, we conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. First, regarding engagement (\(F_{(3, 564)}\) = 26.41, p \textless{} .001), the total resources was predictive of engagement, but total challenge nor hindrance demands predicted engagement (see Table \ref{tab:regression_table_eng}). Next, stress was not predicted by total resources, challenge, or hindrance demands, \(F_{(3, 564)}\) = 2.47, \emph{p} = .060 (see Table \ref{tab:regression_table_str}). Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, \(F_{(3, 564)}\)= 1.10, \emph{p} = .349. See Table \ref{tab:regression_table_bur}.
+
+Correlations, means and standard deviations among all study variables are presented in Table \ref{tab:correlation_table}. The results reveal a positive association between resources and engagement (\emph{r} = .34; H1a), but a lack of meaningful association between engagement and stress and burnout (H1b and H1c, respectively), although there is a very small, significant relationship between hindrance demands and stress (\emph{r} = .09). Challenge demands were positively associated with engagement (\emph{r} = .31; H2a), but were unrelated to stress or burnout (H2b and H2c). Total hindrance stressors were not significantly associated with our outcomes (H3a-H3c). To further explore H1-H3, we conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. First, regarding engagement (\(F_{(3, 564)}\) = 26.41, p \textless{} .001), the total resources was predictive of engagement, but total challenge nor hindrance demands predicted engagement (see Table \ref{tab:regression_table_eng}). Next, stress was not predicted by total resources, challenge, or hindrance demands, \(F_{(3, 564)}\) = 2.47, \emph{p} = .060 (see Table \ref{tab:regression_table_str}). Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, \(F_{(3, 564)}\)= 1.10, \emph{p} = .349. See Table \ref{tab:regression_table_bur}.
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
-The major goal of this paper was to further explore the relationships among total perceived challenge demands, hindrance demands, and resources and outcomes of engagement, stress, and burnout. The results suggest a positive relationship between both resources and engagement (H1a), and challenge demands and engagement (H2a). Employers would benefit from understanding that at least the perception of having ``more'' resources and more challenge demands in a job is highly associated with reported engagement. While not a causal relationship, it points to the potential value of these kinds of employee support nonetheless. The other relationships with outcomes of stress and burnout were not supported, suggesting that the sheer number of resources, challenges, and hindrances are not significantly related to these negative outcomes. It is possible that rather than volume, categorically some demands are more related to these outcomes than others. The moderate association between hindrances and challenges (\emph{r} = .22) also hints that some of these relationships may be driven by \emph{job complexity} - that is, some jobs simply have more elements. With more job elements come increased opportunities for those elements to be percieved as resources, challenges, or hindrances.
+The major goal of this paper was to further explore the relationships among \emph{total} perceived challenge demands, hindrance demands, and resources and outcomes of engagement, stress, and burnout. The results suggest a positive relationship between both resources and engagement (H1a), and challenge demands and engagement (H2a). Employers would benefit from understanding that at least the perception of having ``more'' resources and more challenge demands in a job is highly associated with reported engagement. While not a causal relationship, it points to the potential value of these kinds of employee support nonetheless. The other relationships with outcomes of stress and burnout were not supported, suggesting that the sheer number of resources, challenges, and hindrances are not significantly related to these negative outcomes. It is possible that rather than volume, categorically some demands are more related to these outcomes than others. The moderate association between hindrances and challenges (\emph{r} = .22) also hints that some of these relationships may be driven by \emph{job complexity} - that is, some jobs simply have more elements. With more job elements come increased opportunities for those elements to be perceived as resources, challenges, or hindrances.
 
 \hypertarget{limitations-and-future-directions}{%
 \subsection{Limitations and Future Directions}\label{limitations-and-future-directions}}
 
-As with any piece of research, the process and results have limitations, but also provide a variety of additional directions to pursue in the future. First, while a strength of this project, arguably, is the use of O*Net items, practical considerations limited the number of job characteristics we could include in our survey. Future study could consider additional or other O*Net items. We conceptualized resources and demands in terms of perceived total amounts. It may be the case that certain kinds of resources or challenges are more strongly associated with engagement than others, and such, future research could explore the importance of resources/challenges categorically. Further, our study was limited to three outcomes of interest. It would be especially interesting to explore additional outcomes (e.g., job satisfaction) as well, or whether volume of resources and demands operationalized in this way are related to other behaviors (e.g., turnover intention, perceived organizational support, commitment).
+As with any piece of research, the process and results have limitations, but also provide a variety of additional directions to pursue in the future. First, while a strength of this project, arguably, is the use of O*Net items, practical considerations limited the number of job characteristics we could include in our survey. Future study could consider additional or other O*Net items. We intentionally conceptualized resources and demands in terms of perceived total amounts. It may be the case that certain kinds of resources or challenges are more strongly associated with engagement than others, and such, future research could explore the importance of resources/challenges categorically. Further, our study was limited to three outcomes of interest. It would be especially interesting to explore additional outcomes (e.g., job satisfaction) as well, or whether volume of resources and demands operationalized in this way are related to other behaviors (e.g., turnover intention, perceived organizational support, commitment). Furthermore, while we found support for the prediction that resources and challenge demands would be positively related to engagement, it would be interesting to consider moderators of this relationship. For example, the Job Characteristics Theory (\textbf{hackman1976motivation?}) includes the key component of growth need strength in the connections between job characteristics (e.g., autonomy, skill variety) and critical states (e.g., experienced meaningfulness), and between critical states and personal and work outcomes. Perhaps this connection between engagement and challenge demands, for instance, is stronger for those with greater growth need strength.
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+In sum, the major contribution of this project shows that number of O*Net job characteristics rated as resources, challenge- and hindrance demands are associated with engagement, but not stress, and burnout. The findings showed a clear connection between resources, challenge demands, and job engagement, but the other associations did not suggest meaningful connections.
 
 \newpage
 
@@ -403,67 +395,67 @@ As with any piece of research, the process and results have limitations, but als
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-abbas2019challenge}{}}%
+\leavevmode\hypertarget{ref-abbas2019challenge}{}%
 Abbas, M., \& Raja, U. (2019). Challenge-hindrance stressors and job outcomes: The moderating role of conscientiousness. \emph{Journal of Business and Psychology}, \emph{34}(2), 189--201.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2014job}{}}%
+\leavevmode\hypertarget{ref-bakker2014job}{}%
 Bakker, A. B., \& Demerouti, E. (2014). Job demands--resources theory. \emph{Wellbeing: A Complete Reference Guide}, 1--28.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2017job}{}}%
+\leavevmode\hypertarget{ref-bakker2017job}{}%
 Bakker, A. B., \& Demerouti, E. (2017). Job demands--resources theory: Taking stock and looking forward. \emph{Journal of Occupational Health Psychology}, \emph{22}(3), 273.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2003dual}{}}%
+\leavevmode\hypertarget{ref-bakker2003dual}{}%
 Bakker, A. B., Demerouti, E., \& Schaufeli, W. (2003). Dual processes at work in a call centre: An application of the job demands--resources model. \emph{European Journal of Work and Organizational Psychology}, \emph{12}(4), 393--417.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2007job}{}}%
+\leavevmode\hypertarget{ref-bakker2007job}{}%
 Bakker, A. B., Hakanen, J. J., Demerouti, E., \& Xanthopoulou, D. (2007). Job resources boost work engagement, particularly when job demands are high. \emph{Journal of Educational Psychology}, \emph{99}(2), 274.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2013weekly}{}}%
+\leavevmode\hypertarget{ref-bakker2013weekly}{}%
 Bakker, A. B., \& Sanz-Vergel, A. I. (2013). Weekly work engagement and flourishing: The role of hindrance and challenge job demands. \emph{Journal of Vocational Behavior}, \emph{83}(3), 397--409.
 
-\leavevmode\vadjust pre{\hypertarget{ref-burr_third_2019}{}}%
+\leavevmode\hypertarget{ref-burr_third_2019}{}%
 Burr, H., Berthelsen, H., Moncada, S., Nübling, M., Dupret, E., Demiral, Y., Oudyk, J., Kristensen, T. S., Llorens, C., Navarro, A., Lincke, H.-J., Bocéréan, C., Sahan, C., Smith, P., \& Pohrt, A. (2019). The {Third} {Version} of the {Copenhagen} {Psychosocial} {Questionnaire}. \emph{Safety and Health at Work}, \emph{10}(4), 482--503. \url{https://doi.org/10.1016/j.shaw.2019.10.002}
 
-\leavevmode\vadjust pre{\hypertarget{ref-cavanaugh2000empirical}{}}%
+\leavevmode\hypertarget{ref-cavanaugh2000empirical}{}%
 Cavanaugh, M. A., Boswell, W. R., Roehling, M. V., \& Boudreau, J. W. (2000). An empirical examination of self-reported work stress among US managers. \emph{Journal of Applied Psychology}, \emph{85}(1), 65.
 
-\leavevmode\vadjust pre{\hypertarget{ref-crawford2010linking}{}}%
+\leavevmode\hypertarget{ref-crawford2010linking}{}%
 Crawford, E. R., LePine, J. A., \& Rich, B. L. (2010). Linking job demands and resources to employee engagement and burnout: A theoretical extension and meta-analytic test. \emph{Journal of Applied Psychology}, \emph{95}(5), 834.
 
-\leavevmode\vadjust pre{\hypertarget{ref-demerouti2001job}{}}%
+\leavevmode\hypertarget{ref-demerouti2001job}{}%
 Demerouti, E., Bakker, A. B., Nachreiner, F., \& Schaufeli, W. B. (2001). The job demands-resources model of burnout. \emph{Journal of Applied Psychology}, \emph{86}(3), 499.
 
-\leavevmode\vadjust pre{\hypertarget{ref-gerich2017relevance}{}}%
+\leavevmode\hypertarget{ref-gerich2017relevance}{}%
 Gerich, J. (2017). The relevance of challenge and hindrance appraisals of working conditions for employees' health. \emph{International Journal of Stress Management}, \emph{24}(3), 270.
 
-\leavevmode\vadjust pre{\hypertarget{ref-kristensen2005copenhagen}{}}%
+\leavevmode\hypertarget{ref-kristensen2005copenhagen}{}%
 Kristensen, T. S., Borritz, M., Villadsen, E., \& Christensen, K. B. (2005). The copenhagen burnout inventory: A new tool for the assessment of burnout. \emph{Work \& Stress}, \emph{19}(3), 192--207.
 
-\leavevmode\vadjust pre{\hypertarget{ref-lazarus1984stress}{}}%
+\leavevmode\hypertarget{ref-lazarus1984stress}{}%
 Lazarus, R. S., \& Folkman, S. (1984). \emph{Stress, appraisal, and coping}. Springer publishing company.
 
-\leavevmode\vadjust pre{\hypertarget{ref-pejtersen2010second}{}}%
+\leavevmode\hypertarget{ref-pejtersen2010second}{}%
 Pejtersen, J. H., Kristensen, T. S., Borg, V., \& Bjorner, J. B. (2010). The second version of the copenhagen psychosocial questionnaire. \emph{Scandinavian Journal of Public Health}, \emph{38}(3\_suppl), 8--24.
 
-\leavevmode\vadjust pre{\hypertarget{ref-podsakoff2007differential}{}}%
+\leavevmode\hypertarget{ref-podsakoff2007differential}{}%
 Podsakoff, N. P., LePine, J. A., \& LePine, M. A. (2007). Differential challenge stressor-hindrance stressor relationships with job attitudes, turnover intentions, turnover, and withdrawal behavior: A meta-analysis. \emph{Journal of Applied Psychology}, \emph{92}(2), 438.
 
-\leavevmode\vadjust pre{\hypertarget{ref-R-base}{}}%
+\leavevmode\hypertarget{ref-R-base}{}%
 R Core Team. (2022). \emph{R: A language and environment for statistical computing}. R Foundation for Statistical Computing. \url{https://www.R-project.org/}
 
-\leavevmode\vadjust pre{\hypertarget{ref-engage_2022}{}}%
+\leavevmode\hypertarget{ref-engage_2022}{}%
 Russell, M., Ossorio Duffoo, C., Garcia Prieto Palacios Roji, R., \& Kulas, J. (2022). Development of an intentional bifactor measure of engagement. \emph{The Seattle Edition of SIOP}, 1--14.
 
-\leavevmode\vadjust pre{\hypertarget{ref-schaufeli2002measurement}{}}%
+\leavevmode\hypertarget{ref-schaufeli2002measurement}{}%
 Schaufeli, W. B., Salanova, M., González-Romá, V., \& Bakker, A. B. (2002). The measurement of engagement and burnout: A two sample confirmatory factor analytic approach. \emph{Journal of Happiness Studies}, \emph{3}(1), 71--92.
 
-\leavevmode\vadjust pre{\hypertarget{ref-searle2015merits}{}}%
+\leavevmode\hypertarget{ref-searle2015merits}{}%
 Searle, B. J., \& Auton, J. C. (2015). The merits of measuring challenge and hindrance appraisals. \emph{Anxiety, Stress, \& Coping}, \emph{28}(2), 121--143.
 
-\leavevmode\vadjust pre{\hypertarget{ref-selye1936syndrome}{}}%
+\leavevmode\hypertarget{ref-selye1936syndrome}{}%
 Selye, H. (1936). A syndrome produced by diverse nocuous agents. \emph{Nature}, \emph{138}(3479), 32--32.
 
-\leavevmode\vadjust pre{\hypertarget{ref-webster2011extending}{}}%
+\leavevmode\hypertarget{ref-webster2011extending}{}%
 Webster, J. R., Beehr, T. A., \& Love, K. (2011). Extending the challenge-hindrance model of occupational stress: The role of appraisal. \emph{Journal of Vocational Behavior}, \emph{79}(2), 505--516.
 
 \end{CSLReferences}

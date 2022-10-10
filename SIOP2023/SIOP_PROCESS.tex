@@ -3,11 +3,12 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
+  english,
   man]{apa6}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{iftex}
-\ifPDFTeX
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -69,38 +70,6 @@
   \let\oldsubparagraph\subparagraph
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
-  \fi
-  % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
-\ifLuaTeX
-\usepackage[bidi=basic]{babel}
-\else
-\usepackage[bidi=default]{babel}
-\fi
-\babelprovide[main,import]{english}
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
 % Manuscript styling
 \usepackage{upgreek}
 \captionsetup{font=singlespacing,justification=justified}
@@ -116,9 +85,9 @@
 
 % Create new environments so endfloat can handle them
 % \newenvironment{ltable}
-%   {\begin{landscape}\centering\begin{threeparttable}}
-%   {\end{threeparttable}\end{landscape}}
-\newenvironment{lltable}{\begin{landscape}\centering\begin{ThreePartTable}}{\end{ThreePartTable}\end{landscape}}
+%   {\begin{landscape}\begin{center}\begin{threeparttable}}
+%   {\end{threeparttable}\end{center}\end{landscape}}
+\newenvironment{lltable}{\begin{landscape}\begin{center}\begin{ThreePartTable}}{\end{ThreePartTable}\end{center}\end{landscape}}
 
 % Enables adjusting longtable caption width to table width
 % Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
@@ -156,15 +125,7 @@
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
 \makeatother
-
-\usepackage{xpatch}
-\makeatletter
-\xapptocmd\appendix
-  {\xapptocmd\section
-    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
-    {}{\InnerPatchFailed}%
-  }
-{}{\PatchFailed}
+\shorttitle{SIOP\_Hindrances-Resources Interaction}
 \keywords{keywords\newline\indent Word count: X}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
@@ -172,20 +133,45 @@
 \makeatletter
 \renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
 \makeatother
-\usepackage{lineno}
-
-\linenumbers
 \usepackage{csquotes}
-\ifLuaTeX
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[]{english}
+\else
+  \usepackage[main=english]{babel}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\fi
+\ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \title{Testing the JD-R Theory: Using the Content of the O*Net}
 \author{Alicia A. Stachowski\textsuperscript{1} \& John T. Kulas\textsuperscript{2}}
 \date{}
 
-
-\shorttitle{SIOP\_Hindrances-Resources Interaction}
 
 \authornote{
 
@@ -227,7 +213,7 @@ Thus, while it is cleaner to be able to categorize job characteristics as \emph{
 \hypertarget{value-of-exploring-the-onet-resource}{%
 \subsection{Value of exploring the O*Net Resource}\label{value-of-exploring-the-onet-resource}}
 
-First, the Occupational Information Network (O*NET; onetonline.org) contains a comprehensive description of occupations (Peterson et al., 2001). This widely accessed database houses hundreds of standardized and occupation-specific descriptors most occupations in the US and these descriptions are continually updated. These data, and the tools provided for free on the website (e.g., Career Exploration Tools, ``My Next Move'', Toolkit for Business) are frequently used by counselors, students, human resources departments, and researchers to assist potential applicants discover the skills and training they need for the job of their choice. It is also useful to employers by providing them with information with which to craft job descriptions and help employees determine what skills are needed for promotion. We utilized statements taken from O*NET \href{https://www.O*NETonline.org/find/descriptor/result/4.A.1.b.3}{``activity'' and ``context'' classifications} (e.g., items related to information input, interacting with others, physical work conditions, structural job characteristics).
+First, the Occupational Information Network (O*NET; onetonline.org) contains a comprehensive description of occupations (Peterson et al., 2001). This widely accessed database houses hundreds of standardized and occupation-specific descriptors most occupations in the US and these descriptions are continually updated. These data, and the tools provided for free on the website (e.g., Career Exploration Tools, ``My Next Move,'' Toolkit for Business) are frequently used by counselors, students, human resources departments, and researchers to assist potential applicants discover the skills and training they need for the job of their choice. It is also useful to employers by providing them with information with which to craft job descriptions and help employees determine what skills are needed for promotion. We utilized statements taken from O*NET \href{https://www.O*NETonline.org/find/descriptor/result/4.A.1.b.3}{``activity'' and ``context'' classifications} (e.g., items related to information input, interacting with others, physical work conditions, structural job characteristics).
 
 \hypertarget{current-study-and-hypotheses}{%
 \section{Current Study and Hypotheses}\label{current-study-and-hypotheses}}
@@ -254,12 +240,12 @@ We sampled from a Prolific panel, resulting in 785 individuals who initially 166
 \hypertarget{resources-and-hindrances.}{%
 \subsubsection{Resources and Hindrances.}\label{resources-and-hindrances.}}
 
-To guage resources and hindrances, we used 98 statements taken directly from O*Net's ``activity'' and ``context'' classifications. Each of the 98 descriptors has potentially unique response categories, but scaling was consistently 1 (low) to 5 (high). Subsequent to these self-evaluations, respondents were asked to rate elements in terms of resources (``\ldots this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development''), challenges, (\ldots this aspect of your job is a challenge that can promote mastery, personal growth, or future gains'') and hindrances (``\ldots this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment''). For each category (e.g., resources), a means was computed across items that applied to one's role, and thus, mean scores could range from 1 to 5.
+To guage resources and hindrances, we used 98 statements taken directly from O*Net's ``activity'' and ``context'' classifications. Each of the 98 descriptors has potentially unique response categories, but scaling was consistently 1 (low) to 5 (high). Subsequent to these self-evaluations, respondents were asked to rate elements in terms of resources (``\ldots this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development''), challenges, (\ldots this aspect of your job is a challenge that can promote mastery, personal growth, or future gains``) and hindrances (''\ldots this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment"). For each category (e.g., resources), a means was computed across items that applied to one's role, and thus, mean scores could range from 1 to 5.
 
 \hypertarget{stress.}{%
 \subsubsection{Stress.}\label{stress.}}
 
-Three items taken from the Copenhagen Psychosocial Questionnaire (Burr et al. (2019)) captured stress (e.g., ``How often have you had problems relaxing because of your job?''). Responses were made on a 5-point scale ranging from ``not at all'' to ``all the time''. Alpha was .85 in this sample.
+Three items taken from the Copenhagen Psychosocial Questionnaire (Burr et al. (2019)) captured stress (e.g., ``How often have you had problems relaxing because of your job?''). Responses were made on a 5-point scale ranging from ``not at all'' to ``all the time.'' Alpha was .85 in this sample.
 
 \hypertarget{procedure}{%
 \subsection{Procedure}\label{procedure}}
@@ -353,61 +339,61 @@ Here, we note a number of limitations, but also provide additional directions fo
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2014job}{}}%
+\leavevmode\hypertarget{ref-bakker2014job}{}%
 Bakker, A. B., \& Demerouti, E. (2014). Job demands--resources theory. \emph{Wellbeing: A Complete Reference Guide}, 1--28.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2017job}{}}%
+\leavevmode\hypertarget{ref-bakker2017job}{}%
 Bakker, A. B., \& Demerouti, E. (2017). Job demands--resources theory: Taking stock and looking forward. \emph{Journal of Occupational Health Psychology}, \emph{22}(3), 273.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2005job}{}}%
+\leavevmode\hypertarget{ref-bakker2005job}{}%
 Bakker, A. B., Demerouti, E., \& Euwema, M. C. (2005). Job resources buffer the impact of job demands on burnout. \emph{Journal of Occupational Health Psychology}, \emph{10}(2), 170.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2003dual}{}}%
+\leavevmode\hypertarget{ref-bakker2003dual}{}%
 Bakker, A. B., Demerouti, E., \& Schaufeli, W. (2003). Dual processes at work in a call centre: An application of the job demands--resources model. \emph{European Journal of Work and Organizational Psychology}, \emph{12}(4), 393--417.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2007job}{}}%
+\leavevmode\hypertarget{ref-bakker2007job}{}%
 Bakker, A. B., Hakanen, J. J., Demerouti, E., \& Xanthopoulou, D. (2007). Job resources boost work engagement, particularly when job demands are high. \emph{Journal of Educational Psychology}, \emph{99}(2), 274.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2010beyond}{}}%
+\leavevmode\hypertarget{ref-bakker2010beyond}{}%
 Bakker, A. B., Van Veldhoven, M., \& Xanthopoulou, D. (2010). Beyond the demand-control model: Thriving on high job demands and resources. \emph{Journal of Personnel Psychology}, \emph{9}(1), 3.
 
-\leavevmode\vadjust pre{\hypertarget{ref-burr_third_2019}{}}%
+\leavevmode\hypertarget{ref-burr_third_2019}{}%
 Burr, H., Berthelsen, H., Moncada, S., Nübling, M., Dupret, E., Demiral, Y., Oudyk, J., Kristensen, T. S., Llorens, C., Navarro, A., Lincke, H.-J., Bocéréan, C., Sahan, C., Smith, P., \& Pohrt, A. (2019). The {Third} {Version} of the {Copenhagen} {Psychosocial} {Questionnaire}. \emph{Safety and Health at Work}, \emph{10}(4), 482--503. \url{https://doi.org/10.1016/j.shaw.2019.10.002}
 
-\leavevmode\vadjust pre{\hypertarget{ref-cavanaugh2000empirical}{}}%
+\leavevmode\hypertarget{ref-cavanaugh2000empirical}{}%
 Cavanaugh, M. A., Boswell, W. R., Roehling, M. V., \& Boudreau, J. W. (2000). An empirical examination of self-reported work stress among US managers. \emph{Journal of Applied Psychology}, \emph{85}(1), 65.
 
-\leavevmode\vadjust pre{\hypertarget{ref-demerouti2001job}{}}%
+\leavevmode\hypertarget{ref-demerouti2001job}{}%
 Demerouti, E., Bakker, A. B., Nachreiner, F., \& Schaufeli, W. B. (2001). The job demands-resources model of burnout. \emph{Journal of Applied Psychology}, \emph{86}(3), 499.
 
-\leavevmode\vadjust pre{\hypertarget{ref-downes2021incorporating}{}}%
+\leavevmode\hypertarget{ref-downes2021incorporating}{}%
 Downes, P. E., Reeves, C. J., McCormick, B. W., Boswell, W. R., \& Butts, M. M. (2021). Incorporating job demand variability into job demands theory: A meta-analysis. \emph{Journal of Management}, \emph{47}(6), 1630--1656.
 
-\leavevmode\vadjust pre{\hypertarget{ref-hayes2022}{}}%
+\leavevmode\hypertarget{ref-hayes2022}{}%
 Hayes, A. F. (2022). \emph{Introduction to mediation, moderation, and conditional process analysis: A regression-based approach} (3rd ed.). The Guilford Press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-lazarus1984stress}{}}%
+\leavevmode\hypertarget{ref-lazarus1984stress}{}%
 Lazarus, R. S., \& Folkman, S. (1984). \emph{Stress, appraisal, and coping}. Springer publishing company.
 
-\leavevmode\vadjust pre{\hypertarget{ref-peterson2001understanding}{}}%
-Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., Fleishman, E. A., Levin, K. Y., Campion, M. A., Mayfield, M. S., Morgeson, F. P., Pearlman, K.others. (2001). Understanding work using the occupational information network (o* NET): Implications for practice and research. \emph{Personnel Psychology}, \emph{54}(2), 451--492.
+\leavevmode\hypertarget{ref-peterson2001understanding}{}%
+Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., Fleishman, E. A., Levin, K. Y., Campion, M. A., Mayfield, M. S., Morgeson, F. P., Pearlman, K., \& others. (2001). Understanding work using the occupational information network (o* NET): Implications for practice and research. \emph{Personnel Psychology}, \emph{54}(2), 451--492.
 
-\leavevmode\vadjust pre{\hypertarget{ref-schmitz_interpreting_2019}{}}%
+\leavevmode\hypertarget{ref-schmitz_interpreting_2019}{}%
 Schmitz, L. L., McCluney, C. L., Sonnega, A., \& Hicken, M. T. (2019). Interpreting {Subjective} and {Objective} {Measures} of {Job} {Resources}: {The} {Importance} of {Sociodemographic} {Context}. \emph{International Journal of Environmental Research and Public Health}, \emph{16}(17), 3058. \url{https://doi.org/10.3390/ijerph16173058}
 
-\leavevmode\vadjust pre{\hypertarget{ref-searle2015merits}{}}%
+\leavevmode\hypertarget{ref-searle2015merits}{}%
 Searle, B. J., \& Auton, J. C. (2015). The merits of measuring challenge and hindrance appraisals. \emph{Anxiety, Stress, \& Coping}, \emph{28}(2), 121--143.
 
-\leavevmode\vadjust pre{\hypertarget{ref-sonnega_comparison_2018}{}}%
+\leavevmode\hypertarget{ref-sonnega_comparison_2018}{}%
 Sonnega, A., Helppie-McFall, B., Hudomiet, P., Willis, R. J., \& Fisher, G. G. (2018). A {Comparison} of {Subjective} and {Objective} {Job} {Demands} and {Fit} {With} {Personal} {Resources} as {Predictors} of {Retirement} {Timing} in a {National} {U}.{S}. {Sample}. \emph{Work, Aging and Retirement}, \emph{4}(1), 37--51. \url{https://doi.org/10.1093/workar/wax016}
 
-\leavevmode\vadjust pre{\hypertarget{ref-tadic2015challenge}{}}%
+\leavevmode\hypertarget{ref-tadic2015challenge}{}%
 Tadić, M., Bakker, A. B., \& Oerlemans, W. G. (2015). Challenge versus hindrance job demands and well-being: A diary study on the moderating role of job resources. \emph{Journal of Occupational and Organizational Psychology}, \emph{88}(4), 702--725.
 
-\leavevmode\vadjust pre{\hypertarget{ref-webster2011extending}{}}%
+\leavevmode\hypertarget{ref-webster2011extending}{}%
 Webster, J. R., Beehr, T. A., \& Love, K. (2011). Extending the challenge-hindrance model of occupational stress: The role of appraisal. \emph{Journal of Vocational Behavior}, \emph{79}(2), 505--516.
 
-\leavevmode\vadjust pre{\hypertarget{ref-xanthopoulou2007job}{}}%
+\leavevmode\hypertarget{ref-xanthopoulou2007job}{}%
 Xanthopoulou, D., Bakker, A. B., Dollard, M. F., Demerouti, E., Schaufeli, W. B., Taris, T. W., \& Schreurs, P. J. (2007). When do job demands particularly predict burnout? The moderating role of job resources. \emph{Journal of Managerial Psychology}.
 
 \end{CSLReferences}
