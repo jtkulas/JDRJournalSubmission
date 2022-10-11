@@ -44,7 +44,7 @@ Hindrance x Resource & -0.19 & 0.10 & -1.87 & 0.06\\
 \end{tabular}
 
 \begin{tablenotes}[para]
-\normalsize{\textit{Note.} R\textasciicircum{}2 etc here}
+\normalsize{\textit{Note.} $R^2$ here}
 \end{tablenotes}
 
 \end{threeparttable}
