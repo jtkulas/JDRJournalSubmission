@@ -1,5 +1,5 @@
 ---
-title             : "Demanding resources: Agreement across characteristics seen as both challenges and resources"
+title             : "Demanding resources: Converging characteristics of challenge and resource"
 shorttitle        : "Demanding Resources"
 
 author: 

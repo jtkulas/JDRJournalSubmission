@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.19)  12 OCT 2022 14:20
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.19)  12 OCT 2022 14:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -895,7 +895,10 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 207.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] [2] [3] [4] [5] [6] [7]
+] [2] [3]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[4] [5] [6] [7]
 \openout3 = `convergence.ttt'.
 
 (convergence.ttt) [8]
@@ -923,12 +926,12 @@ LaTeX Warning: Float too large for page by 57.99997pt on input line 14.
 
 ) [14] [15] (./convergence.aux)
 Package rerunfilecheck Info: File `convergence.out' has not changed.
-(rerunfilecheck)             Checksum: EEFDBB771D4D5ADDD46C12ADF8A7D1A8;2605.
+(rerunfilecheck)             Checksum: 60F2821B402DB2D0AB47A36A897375D3;2506.
  ) 
 Here is how much of TeX's memory you used:
  21475 strings out of 477747
  397994 string characters out of 5842280
- 903428 words of memory out of 5000000
+ 903275 words of memory out of 5000000
  42214 multiletter control sequences out of 15000+600000
  487394 words of font info for 68 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
