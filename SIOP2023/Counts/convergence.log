@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.19)  11 OCT 2022 18:39
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.19)  11 OCT 2022 19:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -913,32 +913,32 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 210.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] [2] [3] [4] [5] [6]
+] [2] [3] [4] [5] [6] [7]
 \openout3 = `convergence.ttt'.
 
-(convergence.ttt) [7]
+(convergence.ttt)
 \openout4 = `convergence.fff'.
 
 (convergence.fff) [8]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 306.
+(Font)              scaled to size 10.0pt on input line 315.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 306.
+(Font)              scaled to size 7.0pt on input line 315.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 306.
+(Font)              scaled to size 5.0pt on input line 315.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 306.
+(Font)              scaled to size 10.00092pt on input line 315.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 306.
+(Font)              scaled to size 7.00064pt on input line 315.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 306.
+(Font)              scaled to size 5.00046pt on input line 315.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 306.
+(Font)              scaled to size 9.99893pt on input line 315.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 306.
+(Font)              scaled to size 6.99925pt on input line 315.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 306.
-[9] [10] AED endfloat: Processing end Figures and Tables [11] (./convergence.ttt) [12
+(Font)              scaled to size 4.99947pt on input line 315.
+[9] [10] [11] AED endfloat: Processing end Figures and Tables [12] (./convergence.ttt) [13
 
 
 ] (./convergence.fff
@@ -952,17 +952,17 @@ File: convergence_files/figure-latex/recchall-1.pdf Graphic file (type pdf)
 
 LaTeX Warning: Float too large for page by 57.99997pt on input line 14.
 
-) [13] [14] (./convergence.aux)
+) [14] [15] (./convergence.aux)
 Package rerunfilecheck Info: File `convergence.out' has not changed.
-(rerunfilecheck)             Checksum: 6C1005DACA636A8E9E78D93278E4A7CC;2171.
+(rerunfilecheck)             Checksum: DD4B71BB810642CE253176583A70EF59;2409.
  ) 
 Here is how much of TeX's memory you used:
- 21752 strings out of 477747
- 402965 string characters out of 5842280
- 906881 words of memory out of 5000000
- 42461 multiletter control sequences out of 15000+600000
+ 21754 strings out of 477747
+ 403011 string characters out of 5842280
+ 906939 words of memory out of 5000000
+ 42463 multiletter control sequences out of 15000+600000
  501958 words of font info for 101 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 86i,11n,121p,1703b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 86i,11n,121p,1702b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on convergence.pdf (14 pages).
+Output written on convergence.pdf (15 pages).
