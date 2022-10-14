@@ -1,6 +1,6 @@
 ## Job classifications
 
-data <- read.csv("workers.csv")
+data <- read.csv("workers.csv")             ## Probably need to revisit our coding - 10/14/22
 
 library(ggplot2)
 
