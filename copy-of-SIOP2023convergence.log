@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.23)  14 OCT 2022 12:56
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.23)  14 OCT 2022 13:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -897,21 +897,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout3 = `copy-of-SIOP2023convergence.ttt'.
 
 (copy-of-SIOP2023convergence.ttt) [8]
-File: copy-of-SIOP2023convergence_files/figure-latex/workcat-1.pdf Graphic file (type pdf)
-<use copy-of-SIOP2023convergence_files/figure-latex/workcat-1.pdf>
-File: copy-of-SIOP2023convergence_files/figure-latex/workcat-2.pdf Graphic file (type pdf)
-<use copy-of-SIOP2023convergence_files/figure-latex/workcat-2.pdf>
-
-Overfull \hbox (28.90639pt too wide) in paragraph at lines 293--294
-[][] 
- []
-
 \openout4 = `copy-of-SIOP2023convergence.fff'.
 
-(copy-of-SIOP2023convergence.fff)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[9] [10] [11] AED endfloat: Processing end Figures and Tables [12] (./copy-of-SIOP2023convergence.ttt) [13
+(copy-of-SIOP2023convergence.fff) [9] [10] AED endfloat: Processing end Figures and Tables [11] (./copy-of-SIOP2023convergence.ttt) [12
 
 
 ] (./copy-of-SIOP2023convergence.fff
@@ -925,15 +913,20 @@ File: copy-of-SIOP2023convergence_files/figure-latex/recchall-1.pdf Graphic file
 
 LaTeX Warning: Float too large for page by 57.99997pt on input line 14.
 
-) [14] [15] (./copy-of-SIOP2023convergence.aux)
+File: copy-of-SIOP2023convergence_files/figure-latex/workcat-1.pdf Graphic file (type pdf)
+<use copy-of-SIOP2023convergence_files/figure-latex/workcat-1.pdf>
+
+LaTeX Warning: Float too large for page by 57.99997pt on input line 21.
+
+) [13] [14] [15] (./copy-of-SIOP2023convergence.aux)
 Package rerunfilecheck Info: File `copy-of-SIOP2023convergence.out' has not changed.
 (rerunfilecheck)             Checksum: 01E2A640A11D52A27B8909F21C673437;1970.
  ) 
 Here is how much of TeX's memory you used:
- 21496 strings out of 477747
- 398930 string characters out of 5842523
- 901597 words of memory out of 5000000
- 42231 multiletter control sequences out of 15000+600000
+ 21489 strings out of 477747
+ 398459 string characters out of 5842523
+ 901752 words of memory out of 5000000
+ 42225 multiletter control sequences out of 15000+600000
  487402 words of font info for 69 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,12n,121p,2266b,617s stack positions out of 10000i,1000n,20000p,200000b,200000s

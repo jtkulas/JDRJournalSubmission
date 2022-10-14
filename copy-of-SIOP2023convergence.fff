@@ -12,3 +12,10 @@
 \includegraphics{copy-of-SIOP2023convergence_files/figure-latex/recchall-1.pdf}
 \caption{\label{fig:recchall}Resource and challenge agreement across ONet characteristic groupings (e.g., scales).}
 \end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{copy-of-SIOP2023convergence_files/figure-latex/workcat-1.pdf}
+\caption{\label{fig:workcat}Percent agreement (resource and challenge) across O*Net occupational categories (probably need to revisit original coding).}
+\end{figure*}

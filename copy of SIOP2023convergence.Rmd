@@ -264,56 +264,6 @@ papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table,
 
 Hypothesis 1 predicted a positive association between total resources and total challenge demands. Table \@ref(tab:cortab) shows a very high association between resources and challenges (*r* = .86). These associations, however, are only capturing the relationships between these demands and resources in *sheer volume*. That is, table \@ref(tab:cortab) operationalized each variable as the sheer number of resources, hindrances, or challenges that a respondent indicated were present within their job. This correlational analysis simply implies that workers who experience more resources also perceive greater challenges. The associations between resources and hindrances (*r* = .23) and challenges and hindrances (*r* = .22) were also significantly positive with moderate magnitude associations, suggesting that some of this "sheer volume" may be capturing job complexity (that is, the more complex the job, the more characteristics are relevant, and therefore the more likely it is to have *more* challenges as well as *more* hindrances as well as *more* resources). Although we did not address job complexity as a moderator in the current paper, we do plan to do so in future investigations. Also, take note of the average numbers of resources, challenges, and hindrances cited by our sample, where these respondents generally experienced fewer hindrances in their jobs (*M* = 13.09) than both resources and challenges.
 
-```{r workcat}
-## Job classifications
-
-workers <- read.csv("workers.csv")             ## Probably need to revisit our coding - 10/14/22
-
-library(ggplot2)
-
-ggplot(workers, aes(O.Net.Job.Family.Categories))+
-  geom_histogram(stat="count") + coord_flip()
-
-
-## Combining categories
-
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Transportation and Material Moving"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Protective Service"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Production"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Personal Care and Service"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Installation Maintenance and Repair"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Food Preparation and Serving Related"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Farming Fishing and Forestry"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Construction and Extraction"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Building and Grounds Cleaning and Maintenance"] <- "Physical Labor"
-
-## with Alicia 12/1
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Architecture and Engineering"] <- "Computer & Engineering"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Computer and Mathematical"] <- "Computer & Engineering"
-
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Life Physical and Social Science"] <- "Education, Science & Health"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Educational Instruction and Library"] <- "Education, Science & Health"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Healthcare Practitioner and Technical"] <- "Education, Science & Health"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Community and Social Service"] <- "Education, Science & Health"
-
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Office and Administrative Support"] <- "Admin, Healthcare & Legal"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Legal"] <- "Admin, Healthcare & Legal"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Healthcare Support"] <- "Admin, Healthcare & Legal"
-
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Arts Design Entertainment Sports Media"] <- "Other"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Military Specific"] <- "Other"
-
-
-#3 in plot all categories, combined and standalone 
-
-ggplot(workers, aes(O.Net.Job.Family.Categories)) +
-  geom_histogram(stat="count") + coord_flip()
-
-dataworker <- cbind(data,workers)    ## to repeat O*Net analyses
-                                     ## This gets worker info into convergence file
-
-```
-
 ```{r percagree, fig.cap="Percent convergence (characteristic rated consistently as, for example, both a resource and a hindrance).", fig.height=10}
 
 rc <- read.csv("resource_challenge.csv")
@@ -380,6 +330,61 @@ anova <- cbind(person = 1:nrow(anova), anova)  ## creating person identifier for
 analysis <- gather(anova, scale, value, Structural:Interact)
 
 repmeas <- aov(value ~ factor(scale) + Error(factor(person)), data=analysis)
+
+
+```
+
+
+```{r workcat, fig.cap="Percent agreement (resource and challenge) across O*Net occupational categories (probably need to revisit original coding).", fig.height=10}
+
+## Job classifications
+
+workers <- read.csv("workers.csv")             ## Probably need to revisit our coding - 10/14/22
+
+# ggplot(workers, aes(O.Net.Job.Family.Categories))+
+#   geom_histogram(stat="count") + coord_flip()
+
+
+## Combining categories
+
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Transportation and Material Moving"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Protective Service"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Production"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Personal Care and Service"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Installation Maintenance and Repair"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Food Preparation and Serving Related"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Farming Fishing and Forestry"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Construction and Extraction"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Building and Grounds Cleaning and Maintenance"] <- "Physical Labor"
+
+## with Alicia 12/1
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Architecture and Engineering"] <- "Computer & Engineering"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Computer and Mathematical"] <- "Computer & Engineering"
+
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Life Physical and Social Science"] <- "Education, Science & Health"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Educational Instruction and Library"] <- "Education, Science & Health"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Healthcare Practitioner and Technical"] <- "Education, Science & Health"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Community and Social Service"] <- "Education, Science & Health"
+
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Office and Administrative Support"] <- "Admin, Healthcare & Legal"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Legal"] <- "Admin, Healthcare & Legal"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Healthcare Support"] <- "Admin, Healthcare & Legal"
+
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Arts Design Entertainment Sports Media"] <- "Other"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Military Specific"] <- "Other"
+
+
+#3 in plot all categories, combined and standalone 
+
+#ggplot(workers, aes(O.Net.Job.Family.Categories)) +
+#  geom_histogram(stat="count") + coord_flip()
+
+dataworker <- cbind(anova,workers)    ## to repeat O*Net analyses
+                                     ## This gets worker info into convergence file
+
+dataworker$overall <- rowMeans(dataworker[1:84], na.rm=TRUE)
+
+ggplot(dataworker, aes(x=overall)) + geom_histogram() + facet_wrap(~O.Net.Job.Family.Categories, nrow=8)
 
 
 ```
