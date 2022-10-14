@@ -29,7 +29,7 @@
 \begin{center}
 \begin{threeparttable}
 
-\caption{\label{tab:table}Results from a regression analysis examining the moderation of resources on the relationship between hindrance demands and stress}
+\caption{\label{tab:table}Results from a regression analysis examining the moderation of resources on the relationship between hindrance demands and strain}
 
 \begin{tabular}{lllll}
 \toprule
@@ -40,12 +40,7 @@ Hindrance (X) & 0.83 & 0.40 & 2.07 & 0.04\\
 Resource (W) & 0.33 & 0.25 & 1.32 & 0.19\\
 Hindrance x Resource & -0.19 & 0.10 & -1.87 & 0.06\\
 \bottomrule
-\addlinespace
 \end{tabular}
-
-\begin{tablenotes}[para]
-\normalsize{\textit{Note.} $R^2$ here}
-\end{tablenotes}
 
 \end{threeparttable}
 \end{center}
