@@ -33,6 +33,16 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Demanding resources: Converging characteristics of challenge and resource},
+  pdfauthor={John Kulas1, Alicia Stachowski2, \& Renata García Prieto Palacios Roji3},
+  pdflang={en-EN},
+  pdfkeywords={keywords},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -166,16 +176,6 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
-\hypersetup{
-  pdftitle={Demanding resources: Converging characteristics of challenge and resource},
-  pdfauthor={John Kulas1, Alicia Stachowski2, \& Renata García Prieto Palacios Roji3},
-  pdflang={en-EN},
-  pdfkeywords={keywords},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
 
 \title{Demanding resources: Converging characteristics of challenge and resource}
 \author{John Kulas\textsuperscript{1}, Alicia Stachowski\textsuperscript{2}, \& Renata García Prieto Palacios Roji\textsuperscript{3}}
@@ -204,6 +204,10 @@ Correspondence concerning this article should be addressed to John Kulas. E-mail
 
 \begin{document}
 \maketitle
+
+\begin{verbatim}
+## Warning: package 'tinylabels' was built under R version 4.1.3
+\end{verbatim}
 
 An abundance of research applying the job demands-resources model (Demerouti et al., 2001) and job demands-resources theory (Bakker \& Demerouti, 2017) underscores the importance of job characteristics on the experience of work. Resources are defined as physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development (Demerouti et al., 2001). Demands, on the other hand, include components of a job that require sustained effort, and as such, produce psychological or physiological strain (e.g., high work pressure, Demerouti et al., 2001). These two categories of outcomes (e.g., ``good'' and ``bad'') are thought to occur via one of two different mechanisms: motivational (resulting from resources) or health impairment (resulting from demands, \textbf{bakker2014job?}). Much of our existing research on the JD-R assumes that certain characteristics (for example, autonomy) are resources and others (for example, time constraints) are generally considered demands. This study searches instead for circumstances that provide exception to this mutually exclusive dichotomy of job characteristics.
 
@@ -309,8 +313,10 @@ Figure \ref{fig:recchall} explores the possibility of moderation by \emph{type o
 \begin{figure}
 \centering
 \includegraphics{copy-of-SIOP2023convergence_files/figure-latex/workcat-1.pdf}
-\caption{\label{fig:workcat}Percent agreement (resource and challenge) across O*Net occupational categories (probably need to revisit original coding).}
+\caption{\label{fig:workcat}Percent agreement (resource and challenge) across O\emph{Net occupational categories (previous was across 84 O/}Net items - this is across 568 individual workers).}
 \end{figure}
+
+As can be seen in Figure \ref{fig:workcat}, the moderation seen across O*Net dimension was not paralleled across \emph{job classification}. Here, there was wide variability in convergence, regardless of \emph{type} of job. The omnibus ANOVA did breach statistical significance (\(F_{(7, 560)}\) = 2.06, \emph{p} = 0.05), however, the practical effect was very small (\(\eta^2\) = 0.03). The only contrast approaching statistical significance via Tukey's HSD specification (\emph{p} = .09) was the contrast between Physical Labor (\emph{M} = 0.49) and Business and Financial Operations (\emph{M} = 0.58). Additionally, a Levene's test for homogeneity of variance was non-significant (Levene's = 0.65, \emph{p} = 0.71). {[}should be .6539 and .7112{]}
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}

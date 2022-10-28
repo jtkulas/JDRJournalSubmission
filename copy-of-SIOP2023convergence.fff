@@ -17,5 +17,5 @@
 
 \centering
 \includegraphics{copy-of-SIOP2023convergence_files/figure-latex/workcat-1.pdf}
-\caption{\label{fig:workcat}Percent agreement (resource and challenge) across O*Net occupational categories (probably need to revisit original coding).}
+\caption{\label{fig:workcat}Percent agreement (resource and challenge) across O\emph{Net occupational categories (previous was across 84 O/}Net items - this is across 568 individual workers).}
 \end{figure*}
