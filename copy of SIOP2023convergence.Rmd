@@ -9,12 +9,16 @@ author:
     email         : "jtkulas@ergreports.com"
   - name          : "Alicia Stachowski"
     affiliation   : "2"
+  - name          : "Renata García Prieto Palacios Roji"
+    affiliation   : "3"
 
 affiliation:
   - id            : "1"
     institution   : "eRg"
   - id            : "2"
     institution   : "University of Wisconsin - Stout"
+  - id            : "3"
+    institution   : "PepsiCo"
 
 authornote: |
   Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
