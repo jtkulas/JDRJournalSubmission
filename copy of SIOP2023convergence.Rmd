@@ -293,7 +293,7 @@ p + facet_wrap(~type, nrow=3)
 
 ```
 
-### Convergence (same characteristic).
+## Convergence (same characteristic).
 
 We next looked for convergence of perception at the level of each individual job characteristic. Here, we calculated the *percent of affirmative correspondence* between individual characteristic perceptions. That is, a respondent needed to agree that *...being in contact with others* was both a resource as well as a challenge in order to be implicated as affirmatively agreeing. We did this for each of the 84 individual characteristics that were rated as a resource, challenge, or demand and then computed an aggregate level of affirmative correspondence for each person. Figure \@ref(fig:percagree) presents the results of these correspondences, showing that there was not much mutual agreement regarding characteristics being viewed as both hindrances and resources (*M* = `r round(mean(rh$mean, na.rm=TRUE),2)`) or as challenges and hindrances 
 (*M* = `r round(mean(ch$mean, na.rm=TRUE),2)`). However, when a characteristic was viewed a resource, it was more likely to also be percieved as a challenge (although the correspondence also exhibited quite a bit of variability; *M* = `r round(mean(rc$mean, na.rm=TRUE),2)`, *sd* = `r round(sd(rc$mean, na.rm=TRUE),2)`).
@@ -309,8 +309,6 @@ ggplot(rc, aes(x=mean)) + geom_histogram() + facet_wrap(~scale, nrow=7)
 #  xlab("Percent Agreement") + labs(fill = "ONET grouping") 
 
 ```
-
-Figure \@ref(fig:recchall) explores the possibility of moderation by *type of characteristic rated* for the resource-challenge convergence. Here we categorized each characteristic by its O\*Net "scale" (one of seven), and the graph shows greater consistency across certain characteristics (for example, *Mental Processes* or *Interacting with Others*) and less convergence across other *types* of job activities (for example, *Physical* characteristics). A repeated-measures ANOVA retaining these scales as 7 different levels of a within-subjects' independent variables yielded a treatment effect of $F_{(6, 3,402)}$ = 613.5, *p* < .001 (the subjects' effect was $F_{(567, 3402)}$ = 6.13, *p* < .001.
 
 ```{r anova}
 
@@ -338,6 +336,9 @@ repmeas <- aov(value ~ factor(scale) + Error(factor(person)), data=analysis)
 
 ```
 
+### Moderating effects
+
+Figure \@ref(fig:recchall) explores the possibility of moderation by *type of characteristic rated* for the resource-challenge convergence. Here we categorized each characteristic by its O\*Net "scale" (one of seven), and the graph shows greater consistency across certain characteristics (for example, *Mental Processes* or *Interacting with Others*) and less convergence across other *types* of job activities (for example, *Physical* characteristics). A repeated-measures ANOVA retaining these scales as 7 different levels of a within-subjects' independent variables yielded a treatment effect of $F_{(6, 3,402)}$ = 613.5, *p* < .001 (the subjects' effect was $F_{(567, 3402)}$ = 6.13, *p* < .001.
 
 ```{r workcat, fig.cap="Percent agreement (resource and challenge) across O*Net occupational categories (previous was across 84 O/*Net items - this is across 568 individual workers).", fig.height=10}
 
@@ -413,7 +414,7 @@ levenes <- leveneTest(overall ~ JobFamily, data=dataworker)
 
 As can be seen in Figure \@ref(fig:workcat), the moderation seen across O\*Net dimension was not paralleled across *job classification*. Here, there was wide variability in convergence, regardless of *type* of job. The omnibus ANOVA did breach statistical significance ($F_{(7, 560)}$ = `r summary(workeraov)[[1]][1,4]`, *p* = `r summary(workeraov)[[1]][1,5]`), however, the practical effect was very small ($\eta^2$ = `r effect.size[1,1]`). The only contrast approaching statistical significance via Tukey's HSD specification (*p* = .09) was the contrast between Physical Labor (*M* = 0.49) and Business and Financial Operations (*M* = 0.58). Additionally, a Levene's test for homogeneity of variance was non-significant (Levene's = `r levenes[1,2]`, *p* = `r levenes[1,3]`). [should be .6539 and .7112] 
 
-## Maybe do third moderator
+#### Maybe do third moderator
 
 We also have ratings of "...the extent to which this characteristic is present in your job". Currently we're just taking a binary yes/no approach, but it does make sense to look for moderation based on *the degree to which the characteristic is present*. This is probably a better/more appropriate moderator than either of the above two...
 
