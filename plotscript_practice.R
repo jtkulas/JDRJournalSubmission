@@ -1,5 +1,5 @@
 #Open the Submission .rmd
-#Run chunks up to the source recodes chunk and then use the data object
+#Run chunks up to the source recodes chunk (named, `generalrecodes`), and then use the data object
 #to create the ggplot
 
 #Demands (resources ratings)
@@ -88,4 +88,32 @@ data$hindrance_participation <- rowMeans(subset(data, select = c(item242, item24
                                                                  item260,	item274,	item278,
                                                                  item287)), na.rm = TRUE)
 data$hindrance_teamcohesion <- rowMeans(subset(data, select = c(item245, item275, item276)), na.rm = TRUE)
-data$challenge_autonomy <- rowMeans(subset(data, select = c(item203, item257)), na.rm = TRUE)
+data$hindrance_autonomy <- rowMeans(subset(data, select = c(item203, item257)), na.rm = TRUE)
+
+library(tidyr)
+
+toplot <- gather(data, scale, value, resources_workpressure:hindrance_teamcohesion, factor_key=TRUE)
+
+library(stringr)
+toplot$type <- str_sub(toplot$scale, 1,6)
+toplot$onet <- str_sub(toplot$scale, 10,-1)
+
+toplot$type[toplot$type == "challe"] <- "Challenge"
+toplot$type[toplot$type == "hindra"] <- "Hindrance"
+toplot$type[toplot$type == "resour"] <- "Resource"       ## change `onet` later if want to keep graphs
+
+toplot$onet[toplot$onet == "teamcohesion"] <- "Team Cohesion"       
+toplot$onet[toplot$onet == "_teamcohesion"] <- "Team Cohesion"  
+toplot$onet[toplot$onet == "participation"] <- "Participation"       
+toplot$onet[toplot$onet == "_participation"] <- "Participation"  
+toplot$onet[toplot$onet == "jobcontrol"] <- "Job Control"       
+toplot$onet[toplot$onet == "_jobcontrol"] <- "Job Control"  
+toplot$onet[toplot$onet == "autonomy"] <- "Autonomy"       
+toplot$onet[toplot$onet == "_autonomy"] <- "Autonomy"  
+
+toplotgg <- ddply(toplot, c("type", "onet"), summarise, average = mean(value, na.rm=TRUE))
+
+ggplot(data=toplotgg, aes(x=onet, y=average, fill=type)) + 
+  geom_bar(stat="identity", position=position_dodge()) + coord_flip()
+
+## Probably want to change this to a facet: 3 different grids grouped by literature-described 1) resource, 2) hindrances, and 3) challenge
