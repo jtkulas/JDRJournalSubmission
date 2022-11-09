@@ -90,6 +90,9 @@ data$hindrance_participation <- rowMeans(subset(data, select = c(item242, item24
 data$hindrance_teamcohesion <- rowMeans(subset(data, select = c(item245, item275, item276)), na.rm = TRUE)
 data$hindrance_autonomy <- rowMeans(subset(data, select = c(item203, item257)), na.rm = TRUE)
 
+#check the autonomy variables
+summary(data$hindrance_autonomy)
+
 library(tidyr)
 
 toplot <- gather(data, scale, value, resources_workpressure:hindrance_teamcohesion, factor_key=TRUE)
