@@ -1,5 +1,5 @@
 ---
-title             : "Demanding resources: Converging characteristics of challenge and resource"
+title             : "Demanding resources: Converging perceptions of challenge and resource characteristics"
 shorttitle        : "Demanding Resources"
 
 author: 
@@ -65,6 +65,18 @@ r_refs("r-references.bib")
 ```
 
 An abundance of research applying the job demands-resources model [@demerouti2001job] and job demands-resources theory [@bakker2017job] underscores the importance of job characteristics on the experience of work. Resources are defined as physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development [@demerouti2001job]. Demands, on the other hand, include components of a job that require sustained effort, and as such, produce psychological or physiological strain [e.g., high work pressure, @demerouti2001job]. These two categories of outcomes (e.g., "good" and "bad") are thought to occur via one of two different mechanisms: motivational (resulting from resources) or health impairment [resulting from demands, @bakker2014job]. Much of our existing research on the JD-R assumes that certain characteristics (for example, autonomy) are resources and others (for example, time constraints) are generally considered demands. This study searches instead for circumstances that provide exception to this mutually exclusive dichotomy of job characteristics. 
+
+```{r uhoh, fig.cap="Maybe put a hold on this paper as wording of resource and challenge seems very similar"}
+
+library(grid) 
+library(magick)
+figure <- image_read("uhoh.png")
+
+grid.raster(figure)
+
+```
+
+see Figure \ref{fig:uhoh}
 
 ## Could a Work Demand be Appraised "Positively"?: The Challenge-Hindrance Framework
  
