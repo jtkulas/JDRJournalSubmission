@@ -2,6 +2,13 @@
 \ifnextchar[{\eatarg}{}
 
 \centering
+\includegraphics{copy-of-SIOP2023convergence_files/figure-latex/uhoh-1.pdf}
+\caption{\label{fig:uhoh}Maybe put a hold on this paper as wording of resource and challenge seems very similar}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
 \includegraphics{copy-of-SIOP2023convergence_files/figure-latex/percagree-1.pdf}
 \caption{\label{fig:percagree}Percent convergence (characteristic rated consistently as, for example, both a resource and a hindrance).}
 \end{figure*}
