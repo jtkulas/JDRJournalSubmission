@@ -118,10 +118,10 @@ ggplot(data=toplotgg, aes(x=onet, y=average, fill=type)) +
 
 ## Probably want to change this to a facet: 3 different grids grouped by literature-described 1) resource, 2) hindrances, and 3) challenge
 
-library(dplyr)
-toplotgg %>% filter(row(toplotgg) == 8 & row(toplotgg)
-                    == 8 & row(toplotgg) == 27)
-
 toplotgg$facet <- c("d", "d", "d", "d", "d", "d", "r", "r", "r", "r",
                     "d", "d", "d", "d", "d", "d", "r", "r", "r", "r",
                     "d", "d", "d", "d", "d", "d", "r", "r", "r", "r")
+
+ggplot(data=toplotgg, aes(x=onet, y=average, fill=type)) + 
+  geom_bar(stat="identity", position=position_dodge()) + coord_flip() +
+  facet_wrap(~facet)
