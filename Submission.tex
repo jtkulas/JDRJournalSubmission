@@ -3,12 +3,11 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  english,
   man]{apa6}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -70,6 +69,38 @@
   \let\oldsubparagraph\subparagraph
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{english}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 % Manuscript styling
 \usepackage{upgreek}
 \captionsetup{font=singlespacing,justification=justified}
@@ -85,9 +116,9 @@
 
 % Create new environments so endfloat can handle them
 % \newenvironment{ltable}
-%   {\begin{landscape}\begin{center}\begin{threeparttable}}
-%   {\end{threeparttable}\end{center}\end{landscape}}
-\newenvironment{lltable}{\begin{landscape}\begin{center}\begin{ThreePartTable}}{\end{ThreePartTable}\end{center}\end{landscape}}
+%   {\begin{landscape}\centering\begin{threeparttable}}
+%   {\end{threeparttable}\end{landscape}}
+\newenvironment{lltable}{\begin{landscape}\centering\begin{ThreePartTable}}{\end{ThreePartTable}\end{landscape}}
 
 % Enables adjusting longtable caption width to table width
 % Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
@@ -125,7 +156,15 @@
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
 \makeatother
-\shorttitle{O*NET JD-R}
+
+\usepackage{xpatch}
+\makeatletter
+\xapptocmd\appendix
+  {\xapptocmd\section
+    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
+    {}{\InnerPatchFailed}%
+  }
+{}{\PatchFailed}
 \keywords{keywords\newline\indent Word count: X}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
@@ -134,44 +173,16 @@
 \renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
 \makeatother
 \usepackage{csquotes}
-\ifxetex
-  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
-  \usepackage{polyglossia}
-  \setmainlanguage[]{english}
-\else
-  \usepackage[main=english]{babel}
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
-\fi
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
-  % set entry spacing
-  \ifnum #2 > 0
-  \setlength{\parskip}{#2\baselineskip}
-  \fi
- }%
- {}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \title{Job Demands-Resources model components through the lens of O*NET classifications}
 \author{Alicia Stachowski\textsuperscript{1}, Renata Garcia Prieto Palacios Roji\textsuperscript{2}, \& John Kulas\textsuperscript{2}}
 \date{}
 
+
+\shorttitle{O*NET JD-R}
 
 \authornote{
 
@@ -181,8 +192,8 @@ Correspondence concerning this article should be addressed to Alicia Stachowski,
 
 \affiliation{\vspace{0.5cm}\textsuperscript{1} University of Wisconsin - Stout\\\textsuperscript{2} Montclair State University}
 
-\abstract{
-O*NET work characteristics were rated in terms of relevance, perception as a demand, and perception as a resource. All the results of this current study match the stress-appraisal stuff. Next steps: 1) discuss results within stress-appraisal framework (Lazarus \& Bookman), 2) different literature on challenge and hindrance demands. Job Demands Resources theory that says resources and demands are relatively universal is NOT consistent with these findings. JDR neglects the other 2 literatures. Analytically pull O*Net descriptors that reflect universal demands/resources (e.g., autonomy) and see how much variability there is on those. Maybe forget about cross-walk thing. May actually want to start with this: \url{https://docs.google.com/spreadsheets/d/1ck-72dQ_c-Pl4Xba9W0r__OYo0znlEnV/edit\#gid=1041061499}.
+\abstract{%
+O*NET work characteristics were rated in terms of relevance, perception as a demand, and perception as a resource. All the results of this current study match the stress-appraisal stuff. Next steps: 1) discuss results within stress-appraisal framework (Lazarus \& Bookman), 2) different literature on challenge and hindrance demands. Job Demands Resources theory that says resources and demands are relatively universal is NOT consistent with these findings. JDR neglects the other 2 literatures. Analytically pull O*Net descriptors that reflect universal demands/resources (e.g., autonomy) and see how much variability there is on those. Maybe forget about cross-walk thing. May actually want to start with this: \url{https://docs.google.com/spreadsheets/d/1ck-72dQ_c-Pl4Xba9W0r__OYo0znlEnV/edit\#gid=1041061499}.\footnote{Need to rewrite}
 
 We want to also group items by O*NET categories so there's not so many (that makes ANOVAs more viable)
 }
@@ -193,16 +204,20 @@ We want to also group items by O*NET categories so there's not so many (that mak
 \maketitle
 
 Given the popularity of the Job Demands-Resources Theory {[}JD-R; Demerouti et al. (2001){]} in exploring questions related to everything from motivation to job design, we aim to explore the intersection between \emph{perceptions} of job demands and resources, and the broad set of job characteristics provided on O*Net. This project makes three contributions. We aim to first explore whether ratings of of O*Net item groupings align with the stated ``resources'' and ``demands'' presented in the job demands-resources theory. We then present evidence documenting whether O*Net job and task descriptors are similarly rated as resources, challenge- or hindrance demands, and lastly, whether such ratings differ across job categories/classifications.
+
 Across two studies, a series of evaluations were made that used: 1) direct O*Net terminology (both descriptor and response option), and 2) JD-R influenced ratings of demand, challenge, or hindrance of different types of workers. Prior to a description of results, a brief overview of both the JD-R theory, the stress appraisal process, and O*Net is provided.
 
-\hypertarget{the-job-demands-resources-theory}{%
-\subsection{The Job demands-Resources Theory}\label{the-job-demands-resources-theory}}
+\hypertarget{the-job-demands-resources-theoryfoot2}{%
+\subsection[The Job demands-Resources Theory]{\texorpdfstring{The Job demands-Resources Theory\footnote{Need to expand this section}}{The Job demands-Resources Theory}}\label{the-job-demands-resources-theoryfoot2}}
 
 The overarching context for this study is that of the job demands-resources theory, which is an expansion of the well-studied job demands-resources model (Demerouti et al., 2001). One of the major advantages of the job demands-resources theory is that it allows us to model both work environment and job characteristics via job resources and demands. \emph{Resources} include physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development (Demerouti et al., 2001). In contrast, \emph{demands} include components of a job that require sustained effort, and as such, produce psychological or physiological strain (e.g., high work pressure is frequently cited as a common demand; Demerouti et al. (2001)).
+
 Cognitively, the perception of an element of ones job as a resource or demand activates one of two distinct processes: either health impairment (resulting from demands) or motivation {[}resulting from resources; A. B. Bakker and Demerouti (2014){]}. Pertinent to the current study, demanding job characteristics are frequently associated with negative outcomes (e.g., A. Bakker et al., 2003), whereas job characteristics deemed resources have been associated with positive organizational outcomes like engagement and motivation (A. B. Bakker et al., 2007).
 
-\hypertarget{objective-vs.-subjective-nature-of-demands-and-resources-the-role-of-appraisal}{%
-\subsection{Objective vs.~Subjective Nature of Demands and Resources: The Role of Appraisal}\label{objective-vs.-subjective-nature-of-demands-and-resources-the-role-of-appraisal}}
+\textbf{Add information on Challenge-Hindrance stuff - it's in the SIOP submission so should be able to copy/paste}
+
+\hypertarget{objective-vs.-subjective-nature-of-demands-and-resources-the-role-of-appraisalfoot3}{%
+\subsection[Objective vs.~Subjective Nature of Demands and Resources: The Role of Appraisal]{\texorpdfstring{Objective vs.~Subjective Nature of Demands and Resources: The Role of Appraisal\footnote{Look for more recent literature - this is currently a bit dated}}{Objective vs.~Subjective Nature of Demands and Resources: The Role of Appraisal}}\label{objective-vs.-subjective-nature-of-demands-and-resources-the-role-of-appraisalfoot3}}
 
 Searle and Auton (2015) note that the majority of the research on workplace demands is based on apriori classifications of demands. However, the stress experience, or process, described early on by Lazarus and Folkman (1984) is grounded in the assumption that individual appraisals of stressors/demands vary. Their transactional theory of stress and coping states that people continuously appraise stimuli in their environments. An appraisal is the cognitive process whereby meaning is assigned to a stimulus. If a stimulus is appraised as a stressor (threat, challenge, potentially harmful), emotional distress leads to coping of some kind. This action to cope is also associated with another appraisal about the outcome itself and the process continues if the outcomes is not appraised as favorable (Lazarus \& Folkman, 1984). The stress appraisal process suggests that classifying a job characteristic or environmental condition as an objective demand or resource might be in error.
 
@@ -213,14 +228,24 @@ We do acknowledge as well, that demands and resources are not necessarily consis
 \hypertarget{onet-resource}{%
 \subsection{O*Net Resource}\label{onet-resource}}
 
-Originally, the Advisory Panel for the Dictionary of Occupational Titles recommended a system that would ``\ldots promote the effective education, training, counseling, and employment of the American workforce. It should accomplish its purpose by providing a database system that identifies, defines, classifies, and describes occupations in the economy in an accessible and flexible manner'' (Dictionary of Occupational Titles (US) and Service (1993), p.~6). The result was the now commonly used O*NET. The Occupational Information Network (O*NET; onetonline.org) contains a comprehensive description of occupations (Peterson et al., 2001). This widely accessed database houses hundreds of standardized and occupation-specific descriptors most occupations in the US and these descriptions are continually updated. In fact, there was a call to work with experienced I/O psychologists over the summer to update the content for the \href{https://www.onetonline.org/link/summary/19-3032.00}{Industrial and Organizational Psychologist listing on O*Net}. These data, and the tools provided for free on the website (e.g., Career Exploration Tools, ``My Next Move for Veterans,'' ``My Next Move,'' Toolkit for Business) are frequently used by counselors, students, human resources departments, and researchers to assist potential applicants discover the skills and training they need for the job of their choice. It is also useful to employers by providing them with information with which to craft job descriptions and help employees determine what skills are needed for promotion.
+Originally, the Advisory Panel for the Dictionary of Occupational Titles recommended a system that would ``\ldots promote the effective education, training, counseling, and employment of the American workforce. It should accomplish its purpose by providing a database system that identifies, defines, classifies, and describes occupations in the economy in an accessible and flexible manner'' (Dictionary of Occupational Titles (US) and Service (1993), p.~6). The result was the now commonly used O*NET. The Occupational Information Network (O*NET; onetonline.org) contains a comprehensive description of occupations (Peterson et al., 2001). This widely accessed database houses hundreds of standardized and occupation-specific descriptors most occupations in the US and these descriptions are continually updated. In fact, there was a call to work with experienced I/O psychologists over the summer to update the content for the \href{https://www.onetonline.org/link/summary/19-3032.00}{Industrial and Organizational Psychologist listing on O*Net}. These data, and the tools provided for free on the website (e.g., Career Exploration Tools, ``My Next Move for Veterans'', ``My Next Move'', Toolkit for Business) are frequently used by counselors, students, human resources departments, and researchers to assist potential applicants discover the skills and training they need for the job of their choice. It is also useful to employers by providing them with information with which to craft job descriptions and help employees determine what skills are needed for promotion.
 
 Of greatest interest here are statements taken from O*NET \href{https://www.O*NETonline.org/find/descriptor/result/4.A.1.b.3}{``activity'' and ``context'' classifications} (e.g., items related to information input, interacting with others, physical work conditions, structural job characteristics). One of the first and basic questions is whether or not the categorical examples of ``resources'' and ``demands'' described in the Job Demands-Resources Theory (Demerouti et al., 2001), for example, are generally deemed resources or demands as we objectively define them. The next logical question surrounds how ``universal'' such ratings are. For instance, it is quite possible, given the theoretical and empirical evidence presented above, that there is wide variability in individual appraisal of work activities and context such that some people may rate a given activity as a resource and others a hindrance. A second study extends the findings from Study 1 to a potentially key moderator - job categories/classifications, examining whether ratings of resources, challenge- and hindrance demands differ by job classification.
 
-\hypertarget{study-1}{%
-\section{Study 1}\label{study-1}}
+\hypertarget{study-1foot4}{%
+\section[Study 1]{\texorpdfstring{Study 1\footnote{Need to delete all references to Study 1 and Study 2}}{Study 1}}\label{study-1foot4}}
 
 Look at the \href{https://docs.google.com/spreadsheets/d/1ck-72dQ_c-Pl4Xba9W0r__OYo0znlEnV/edit\#gid=1041061499}{google sheet} and document the extent to which job characteristics that have been consistently cited in the literature as demands or resources end up being consistently or variably experienced as demands or resources. Study 1 aims to provide an integration of the theory and practical occupations-focused data on O*Net. Several broad research questions are examined across jobs:
+
+\begin{quote}
+Hypothesis 1: Job characteristics differ in variability/stability regarding subjective worker perception as a demand or resource.
+\end{quote}
+
+\begin{quote}
+Hypothesis 2: Job characteristics are not uniquely categorized as a resource or demand, but rather, some job characteristics are rated highly as both a resource and a demand.
+\end{quote}
+
+Add a description here of the exploratory stuff.
 
 \begin{quote}
 \emph{Research Question 1}: Are literature-implicated resources consistently rated as job resources?
@@ -247,22 +272,11 @@ Ages ranged from 18 to 65 with an average of 28.18 years old (SD = 7.53). The su
 \caption{\label{fig:litresources}Average and standard deviation of O*Net characteristics retained as indicators of Autonomy, Cohesion, Control, Participation, and Supervisor Support.}
 \end{figure}
 
-\hypertarget{materials}{%
-\subsection{Materials}\label{materials}}
-
-Looked through
-
 \hypertarget{study-2}{%
 \section{Study 2}\label{study-2}}
 
-While Study 1 explored the above questions across jobs, Study 2 considers a potentially important moderator: job classification. There is a distinct possibility we expect we may observe is wide variability in the assignment of some job characteristics within the JD-R framework depending on \emph{job classification}. In fact, a growing body of evidence suggests people may not universally experience job characteristics as challenges or hinderances (e.g., (A. B. Bakker \& Sanz-Vergel, 2013); (Cavanaugh et al., 2000); (Gerich, 2017); (Podsakoff et al., 2007); (Webster et al., 2011)). Thus, Study 2 focuses on a fourth question of interest.
-
-\begin{quote}
-\emph{Research Question 4}: Does the \textbf{type of work} reported explain variability in the categorization of work characteristics into challenges, hindrances, and resources?
-\end{quote}
-
-\hypertarget{materials-1}{%
-\subsection{Materials}\label{materials-1}}
+\hypertarget{materials}{%
+\subsection{Materials}\label{materials}}
 
 Each free-field job title was placed into one of 14 possible O*NET job families classifications. 60 of these ratings were performed by all 3 author raters, with a resulting Kappa of 0.53 (Landis \& Koch, 1977). We then further collapsed these 14 categories into 8 essentially equal frequency job categories.
 
@@ -315,58 +329,46 @@ The below graphs present the resources, challenges, and hindrances that are \emp
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\hypertarget{ref-bakker2014job}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-bakker2014job}{}}%
 Bakker, A. B., \& Demerouti, E. (2014). Job demands--resources theory. \emph{Wellbeing: A Complete Reference Guide}, 1--28.
 
-\leavevmode\hypertarget{ref-bakker2007job}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-bakker2007job}{}}%
 Bakker, A. B., Hakanen, J. J., Demerouti, E., \& Xanthopoulou, D. (2007). Job resources boost work engagement, particularly when job demands are high. \emph{Journal of Educational Psychology}, \emph{99}(2), 274.
 
-\leavevmode\hypertarget{ref-bakker2013weekly}{}%
-Bakker, A. B., \& Sanz-Vergel, A. I. (2013). Weekly work engagement and flourishing: The role of hindrance and challenge job demands. \emph{Journal of Vocational Behavior}, \emph{83}(3), 397--409.
-
-\leavevmode\hypertarget{ref-bakker2003dual}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-bakker2003dual}{}}%
 Bakker, A., Demerouti, E., \& Schaufeli, W. (2003). Dual processes at work in a call centre: An application of the job demands--resources model. \emph{European Journal of Work and Organizational Psychology}, \emph{12}(4), 393--417.
 
-\leavevmode\hypertarget{ref-cavanaugh2000empirical}{}%
-Cavanaugh, M. A., Boswell, W. R., Roehling, M. V., \& Boudreau, J. W. (2000). An empirical examination of self-reported work stress among US managers. \emph{Journal of Applied Psychology}, \emph{85}(1), 65.
-
-\leavevmode\hypertarget{ref-demerouti2001job}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-demerouti2001job}{}}%
 Demerouti, E., Bakker, A. B., Nachreiner, F., \& Schaufeli, W. B. (2001). The job demands-resources model of burnout. \emph{Journal of Applied Psychology}, \emph{86}(3), 499.
 
-\leavevmode\hypertarget{ref-advisory1993new}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-advisory1993new}{}}%
 Dictionary of Occupational Titles (US), A. P. for the, \& Service, U. S. E. (1993). \emph{The new DOT: A database of occupational titles for the twenty-first century}. US Department of Labor, Employment; Training Administration, US~\ldots.
 
-\leavevmode\hypertarget{ref-downes2021incorporating}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-downes2021incorporating}{}}%
 Downes, P. E., Reeves, C. J., McCormick, B. W., Boswell, W. R., \& Butts, M. M. (2021). Incorporating job demand variability into job demands theory: A meta-analysis. \emph{Journal of Management}, \emph{47}(6), 1630--1656.
 
-\leavevmode\hypertarget{ref-gerich2017relevance}{}%
-Gerich, J. (2017). The relevance of challenge and hindrance appraisals of working conditions for employees' health. \emph{International Journal of Stress Management}, \emph{24}(3), 270.
-
-\leavevmode\hypertarget{ref-landis1977measurement}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-landis1977measurement}{}}%
 Landis, J. R., \& Koch, G. G. (1977). The measurement of observer agreement for categorical data. \emph{Biometrics}, 159--174.
 
-\leavevmode\hypertarget{ref-lazarus1984stress}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-lazarus1984stress}{}}%
 Lazarus, R. S., \& Folkman, S. (1984). \emph{Stress, appraisal, and coping}. Springer publishing company.
 
-\leavevmode\hypertarget{ref-peterson2001understanding}{}%
-Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., Fleishman, E. A., Levin, K. Y., Campion, M. A., Mayfield, M. S., Morgeson, F. P., Pearlman, K., \& others. (2001). Understanding work using the occupational information network (o* NET): Implications for practice and research. \emph{Personnel Psychology}, \emph{54}(2), 451--492.
+\leavevmode\vadjust pre{\hypertarget{ref-peterson2001understanding}{}}%
+Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., Fleishman, E. A., Levin, K. Y., Campion, M. A., Mayfield, M. S., Morgeson, F. P., Pearlman, K.others. (2001). Understanding work using the occupational information network (o* NET): Implications for practice and research. \emph{Personnel Psychology}, \emph{54}(2), 451--492.
 
-\leavevmode\hypertarget{ref-podsakoff2007differential}{}%
-Podsakoff, N. P., LePine, J. A., \& LePine, M. A. (2007). Differential challenge stressor-hindrance stressor relationships with job attitudes, turnover intentions, turnover, and withdrawal behavior: A meta-analysis. \emph{Journal of Applied Psychology}, \emph{92}(2), 438.
-
-\leavevmode\hypertarget{ref-schmitz_interpreting_2019}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-schmitz_interpreting_2019}{}}%
 Schmitz, L. L., McCluney, C. L., Sonnega, A., \& Hicken, M. T. (2019). Interpreting {Subjective} and {Objective} {Measures} of {Job} {Resources}: {The} {Importance} of {Sociodemographic} {Context}. \emph{International Journal of Environmental Research and Public Health}, \emph{16}(17), 3058. \url{https://doi.org/10.3390/ijerph16173058}
 
-\leavevmode\hypertarget{ref-searle2015merits}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-searle2015merits}{}}%
 Searle, B. J., \& Auton, J. C. (2015). The merits of measuring challenge and hindrance appraisals. \emph{Anxiety, Stress, \& Coping}, \emph{28}(2), 121--143.
 
-\leavevmode\hypertarget{ref-sonnega_comparison_2018}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-sonnega_comparison_2018}{}}%
 Sonnega, A., Helppie-McFall, B., Hudomiet, P., Willis, R. J., \& Fisher, G. G. (2018). A {Comparison} of {Subjective} and {Objective} {Job} {Demands} and {Fit} {With} {Personal} {Resources} as {Predictors} of {Retirement} {Timing} in a {National} {U}.{S}. {Sample}. \emph{Work, Aging and Retirement}, \emph{4}(1), 37--51. \url{https://doi.org/10.1093/workar/wax016}
 
-\leavevmode\hypertarget{ref-webster2011extending}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-webster2011extending}{}}%
 Webster, J. R., Beehr, T. A., \& Love, K. (2011). Extending the challenge-hindrance model of occupational stress: The role of appraisal. \emph{Journal of Vocational Behavior}, \emph{79}(2), 505--516.
 
-\leavevmode\hypertarget{ref-R-careless}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-R-careless}{}}%
 Yentes, R. D., \& Wilhelm, F. (2021). \emph{Careless: Procedures for computing indices of careless responding}.
 
 \end{CSLReferences}
