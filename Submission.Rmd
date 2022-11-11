@@ -81,6 +81,12 @@ Of greatest interest here are statements taken from O\*NET ["activity" and "cont
 
 Look at the [google sheet](https://docs.google.com/spreadsheets/d/1ck-72dQ_c-Pl4Xba9W0r__OYo0znlEnV/edit#gid=1041061499) and document the extent to which job characteristics that have been consistently cited in the literature as demands or resources end up being consistently or variably experienced as demands or resources. Study 1 aims to provide an integration of the theory and practical occupations-focused data on O\*Net. Several broad research questions are examined across jobs:
 
+>Hypothesis 1: Job characteristics differ in variability/stability regarding subjective worker perception as a demand or resource.
+
+>Hypothesis 2: Job characteristics are not uniquely categorized as a resource or demand, but rather, some job characteristics are rated highly as both a resource and a demand.
+
+Add a description here of the exploratory stuff. 
+
 >*Research Question 1*: Are literature-implicated resources consistently rated as job resources?
 
 >*Research Question 2*: Are literature-implicated challenges consistently rated as job challenges?
@@ -299,15 +305,7 @@ ggplot(summarized, aes(x=category, y=mean, fill=RD)) + geom_bar(stat="identity",
 
 ```
 
-## Materials
-
-Looked through
-
 # Study 2  
-
-While Study 1 explored the above questions across jobs, Study 2 considers a potentially important moderator: job classification. There is a distinct possibility we expect we may observe is wide variability in the assignment of some job characteristics within the JD-R framework depending on *job classification*. In fact, a growing body of evidence suggests people may not universally experience job characteristics as challenges or hinderances (e.g., [@bakker2013weekly]; [@cavanaugh2000empirical]; [@gerich2017relevance]; [@podsakoff2007differential]; [@webster2011extending]). Thus, Study 2 focuses on a fourth question of interest.
-
->*Research Question 4*: Does the **type of work** reported explain variability in the categorization of work characteristics into challenges, hindrances, and resources?
 
 
 ## Materials  
@@ -501,6 +499,10 @@ library(ggplot2)
 ggplot(tophindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="red", position=position_dodge()) + theme_bw() +
   scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Least Agreed upon as a Hindrance") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5))
 
+```
+
+```{r scale-level-graphs eval = FALSE}
+#this is a placeholder for the scale level faceted graph found in plotscript_practice script file. 
 ```
 
 
