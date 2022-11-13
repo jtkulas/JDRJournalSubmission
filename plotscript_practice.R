@@ -4,6 +4,7 @@
 
 library(ggplot2)
 library(plyr)
+library(dplyr)
 
 #Demands (resources ratings)
 #These are the literature-based categories, and composites - means - of Onet item ratings
@@ -125,3 +126,12 @@ toplotgg$facet <- c("d", "d", "d", "d", "d", "d", "r", "r", "r", "r",
 ggplot(data=toplotgg, aes(x=onet, y=average, fill=type)) + 
   geom_bar(stat="identity", position=position_dodge()) + coord_flip() +
   facet_wrap(~facet)
+
+demandsplot <- filter(toplotgg, facet == "d")
+resourcesplot <- filter(toplotgg, facet == "r")
+
+ggplot(data=demandsplot, aes(x=onet, y=average, fill=type)) + 
+  geom_bar(stat="identity", position=position_dodge()) + coord_flip() 
+
+ggplot(data=resourcesplot, aes(x=onet, y=average, fill=type)) + 
+  geom_bar(stat="identity", position=position_dodge()) + coord_flip()
