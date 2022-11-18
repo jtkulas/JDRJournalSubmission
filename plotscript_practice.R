@@ -110,28 +110,53 @@ toplot$onet[toplot$onet == "_jobcontrol"] <- "Job Control"
 toplot$onet[toplot$onet == "autonomy"] <- "Autonomy"       
 toplot$onet[toplot$onet == "_autonomy"] <- "Autonomy"  
 
+toplot$onet[toplot$onet == "_emotionaldemands"] <- "Emotional Demands"          ## added 11/18/22 (Hudson)  
+toplot$onet[toplot$onet == "_phyenvironment"] <- "Physical Environment"  
+toplot$onet[toplot$onet == "_phyworkload_wkover"] <- "Overwork"  
+toplot$onet[toplot$onet == "_recipientcontact"] <- "Recipient Contact"  
+toplot$onet[toplot$onet == "_timepressure"] <- "Time Pressure"  
+toplot$onet[toplot$onet == "_workpressure"] <- "Work Pressure"  
+
 toplotgg <- ddply(toplot, c("type", "onet"), summarise, average = mean(value, na.rm=TRUE))
 
 table(toplot$onet)
 
-ggplot(data=toplotgg, aes(x=onet, y=average, fill=type)) + 
-  geom_bar(stat="identity", position=position_dodge()) + coord_flip()
-
 ## Probably want to change this to a facet: 3 different grids grouped by literature-described 1) resource, 2) hindrances, and 3) challenge
 
-toplotgg$facet <- c("d", "d", "d", "d", "d", "d", "r", "r", "r", "r",
-                    "d", "d", "d", "d", "d", "d", "r", "r", "r", "r",
-                    "d", "d", "d", "d", "d", "d", "r", "r", "r", "r")
+toplotgg$facet <- c("Lit Resource", "Lit Demand", "Lit Resource", "Lit Demand", "Lit Resource", "Lit Demand", "Lit Demand", "Lit Resource", "Lit Demand", "Lit Demand",
+                    "Lit Resource", "Lit Demand", "Lit Resource", "Lit Demand", "Lit Resource", "Lit Demand", "Lit Demand", "Lit Resource", "Lit Demand", "Lit Demand",
+                    "Lit Resource", "Lit Demand", "Lit Resource", "Lit Demand", "Lit Resource", "Lit Demand", "Lit Demand", "Lit Resource", "Lit Demand", "Lit Demand")
 
-ggplot(data=toplotgg, aes(x=onet, y=average, fill=type)) + 
-  geom_bar(stat="identity", position=position_dodge()) + coord_flip() +
-  facet_wrap(~facet)
 
-demandsplot <- filter(toplotgg, facet == "d")
-resourcesplot <- filter(toplotgg, facet == "r")
+##############################################################
+##############################################################
+################    Plots
 
-ggplot(data=demandsplot, aes(x=onet, y=average, fill=type)) + 
-  geom_bar(stat="identity", position=position_dodge()) + coord_flip() 
+demandsplot <- filter(toplotgg, facet == "Lit Demand")
+resourcesplot <- filter(toplotgg, facet == "Lit Resource")
 
-ggplot(data=resourcesplot, aes(x=onet, y=average, fill=type)) + 
-  geom_bar(stat="identity", position=position_dodge()) + coord_flip()
+
+## Demands
+
+demandsplot$onet <- factor(demandsplot$onet, levels=c("Work Pressure", "Recipient Contact", "Emotional Demands", "Time Pressure", "Physical Environment", "Overwork"))
+
+a <- ggplot(data=demandsplot, aes(x=onet, y=average, fill=type)) + 
+  geom_bar(stat="identity", position=position_dodge(), color="black") + coord_flip(ylim=c(1,5)) + scale_fill_manual(values=c("#000000","#cccccc","#ffffff")) +
+  scale_x_discrete(labels=function(x){sub("\\s", "\n", x)}) +
+  theme(legend.title=element_blank(), legend.position="none",  panel.border = element_rect(colour = "black", fill=NA, size=.5), axis.title.x = element_blank(), axis.title.y = element_blank())
+
+## Resources
+
+resourcesplot$onet <- factor(resourcesplot$onet, levels=c("Team Cohesion", "Autonomy", "Participation", "Job Control"))
+
+b <- ggplot(data=resourcesplot, aes(x=onet, y=average, fill=type)) + 
+  geom_bar(stat="identity", position=position_dodge(), color="black") + coord_flip(ylim=c(1,5)) + scale_fill_manual(values=c("#000000","#cccccc","#ffffff")) +
+  scale_x_discrete(labels=function(x){sub("\\s", "\n", x)}) +
+  theme(legend.title=element_blank(), legend.position="bottom",  panel.border = element_rect(colour = "black", fill=NA, size=.5), axis.title.x = element_blank(), axis.title.y = element_blank())
+
+################################################################
+################################################################
+################################################################
+
+library("gridExtra")
+grid.arrange(a, b, ncol = 2, nrow = 1)

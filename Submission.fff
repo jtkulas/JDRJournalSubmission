@@ -5,3 +5,10 @@
 \includegraphics{Submission_files/figure-latex/litresources-1.pdf}
 \caption{\label{fig:litresources}Average and standard deviation of O*Net characteristics retained as indicators of Autonomy, Cohesion, Control, Participation, and Supervisor Support.}
 \end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{Submission_files/figure-latex/scalelevelgraphs-1.pdf}
+\caption{\label{fig:scalelevelgraphs}Average characteristic rating grouped by literature-implicated categorizations.}
+\end{figure*}
