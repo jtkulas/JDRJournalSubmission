@@ -18,7 +18,7 @@ affiliation:
     institution   : "University of Wisconsin - Stout"
   - id            : "2"
     institution   : "eRg"
-   - id            : "3"
+  - id            : "3"
     institution   : "PepsiCo"
 
 abstract: |
