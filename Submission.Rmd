@@ -326,19 +326,15 @@ Each free-field job title was placed into one of 14 possible O\*NET job families
 
 ### Characteristics, Demands, and Resources  
 
-We used 98 statements taken from O\*NET ["activity" and "context" classifications](https://www.O\*NETonline.org/find/descriptor/result/4.A.1.b.3). We retained 41 "work activity" classifications which O\*NET groups into categories of "Information Input" (5 statements), "Interacting with Others" (17 statements), "Mental Processes" (10 statements) and "Work Output" (9 statements). 57 "work context" statements grouped into "Interpersonal Relationships" (14 statements), "Physical Work Conditions" (30 statements), and "Structural Job Characteristics" (13 statements).  
+We used 98 statements taken from O\*NET ["activity" and "context" classifications](https://www.ONETonline.org/find/descriptor/result/4.A.1.b.3). We retained 41 "work activity" classifications which O\*NET groups into categories of "Information Input" (5 statements), "Interacting with Others" (17 statements), "Mental Processes" (10 statements) and "Work Output" (9 statements). 57 "work context" statements grouped into "Interpersonal Relationships" (14 statements), "Physical Work Conditions" (30 statements), and "Structural Job Characteristics" (13 statements).  
 
-These "descriptors" often have unique response categories ([see here for example](https://www.O\*NETonline.org/find/descriptor/result/4.C.1.c.2)). We retained the O\*NET wording to capture characteristics of relevance for each respondent. Subsequent to these self evaluations, each respondent who agreed that the element had *at least some relevance* to their job was also asked to rate that element in terms of, 1) ...this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) ...this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) ...this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment. 
+These "descriptors" often have unique response categories ([see here for example](https://www.ONETonline.org/find/descriptor/result/4.C.1.c.2)). We retained the O\*NET wording to capture characteristics of relevance for each respondent. Subsequent to these self evaluations, each respondent who agreed that the element had *at least some relevance* to their job was also asked to rate that element in terms of, 1) ...this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) ...this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) ...this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment. 
 
 # Results  
 
 ## Low Variability Demands and Resources
 
-The below graphs present the resources, challenges, and hindrances that are *largely agreed on* as indexed by (relatively) low standard deviations. 
-
-> Note. The "zero" standard deviations are likely one person, *n*'s should also go on these graphs if they're retained.
-
-```{r resourceslowsd}
+```{r resourcesagree, fig.cap="Characteristics most similarly viewed as resources (lowest standard deviations)."}
 
 labels <- read.csv("truncatedlabels.csv")            
 
@@ -364,7 +360,7 @@ ggplot(topresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="id
 
 ```
 
-```{r challengesagree}
+```{r challengesagree, fig.cap="Characteristics most similarly viewed as challenges (lowest standard deviations)."}
 
 labels <- read.csv("truncatedlabels.csv")            
 
@@ -392,9 +388,9 @@ ggplot(topchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="i
 
 ```
 
-```{r hindrancesagree}
+```{r hindrancesagree, fig.cap="Characteristics most similarly viewed as hindrances (lowest standard deviations)."}
 
-labels <- read.csv("truncatedlabels.csv")            
+labels <- read.csv("truncatedlabels.csv")    
 
 hindrance <- as.data.frame(t(data[203:287]))           
 
@@ -418,13 +414,15 @@ ggplot(tophindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="i
 
 ```
 
+Figures \@ref(fig:resourcesagree), \@ref(fig:challengesagree), and \@ref(fig:hindrancesagree) present the resources, challenges, and hindrances that are *largely agreed on* as indexed by (relatively) low standard deviations.[^caveat]
+
+[^caveat]: There were a few characteristics with standard deviations of "zero" but these were excluded from presenation as they were likely representing only one person (*n*'s should also go on these graphs if they're retained - Alicia's idea 12/2 was to use initial ratings as indicators of counts).
+
 As can be seen by the graphs, there is considerable disagreement regarding the degree to which job elements are considered *hindrances*, with the 10 elements showing the greatest agreement still ranging in standard deviations from `r min(tophindrance$sd)` to `r max(tophindrance$sd)`. What is widely seen as a resource and challenge tends to be more universally agreed upon (range of lowest 10 resource standard deviations is `r min(topresource$sd)` to `r max(topresource$sd)` and the range of lowest 10 challenge standard deviations is `r min(topchallenge$sd)` to `r max(topchallenge$sd)`.
 
 ## High Variability Demands and Resources
 
-The below graphs present the resources, challenges, and hindrances that are *largely disagreed on* as indexed by (relatively) high standard deviations (these are the 10 characteristics with the greatest variability in rating).
-
-```{r resourceshisd}
+```{r resourcesdisagree, fig.cap="Characteristics most *dis*similarly viewed as resources (highest standard deviations)."}
 
 labels <- read.csv("truncatedlabels.csv")            
 
@@ -451,7 +449,7 @@ ggplot(topresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="id
 
 ```
 
-```{r challengeshighsd}
+```{r challengesdisagree, fig.cap="Characteristics most *dis*similarly viewed as challenges (highest standard deviations)."}
 
 labels <- read.csv("truncatedlabels.csv")            
 
@@ -479,7 +477,7 @@ ggplot(topchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="i
 
 ```
 
-```{r hindranceshighsd}
+```{r hindrancesdisagree, fig.cap="Characteristics most *dis*similarly viewed as hindrances (highest standard deviations)."}
 
 labels <- read.csv("truncatedlabels.csv")            
 
@@ -504,6 +502,8 @@ ggplot(tophindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="i
   scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Least Agreed upon as a Hindrance") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5))
 
 ```
+
+Figures \@ref(fig:resourcesdisagree), \@ref(fig:challengesdisagree), and \@ref(fig:hindrancesdisagree) present the resources, challenges, and hindrances that are *largely disagreed on* as indexed by (relatively) high standard deviations (these are the 10 characteristics with the greatest variability in rating).
 
 ```{r scalelevelgraphs, fig.cap="Average characteristic rating grouped by literature-implicated categorizations."}
 
@@ -596,9 +596,10 @@ data$hindrance_teamcohesion <- rowMeans(subset(data, select = c(item245, item275
 data$hindrance_autonomy <- rowMeans(subset(data, select = c(item203, item257)), na.rm = TRUE)
 
 #check the autonomy variables
-summary(data$hindrance_autonomy)
-summary(data$challenge_autonomy)
-summary(data$resource_autonomy)
+#summary(data$hindrance_autonomy)
+#summary(data$challenge_autonomy)
+#summary(data$resource_autonomy)
+
 library(tidyr)
 
 toplot <- gather(data, scale, value, resources_workpressure:hindrance_autonomy, factor_key=TRUE)
@@ -629,7 +630,7 @@ toplot$onet[toplot$onet == "_workpressure"] <- "Work Pressure"
 
 toplotgg <- ddply(toplot, c("type", "onet"), summarise, average = mean(value, na.rm=TRUE))
 
-table(toplot$onet)
+#table(toplot$onet)
 
 ## Probably want to change this to a facet: 3 different grids grouped by literature-described 1) resource, 2) hindrances, and 3) challenge
 
@@ -675,6 +676,16 @@ grid.arrange(a, b, ncol = 2, nrow = 1)
 ```
 
 see Figure \@ref(fig:scalelevelgraphs)
+
+\newpage
+
+# Discussion
+
+## Future directions
+
+There may be some practical utility to pursue training interventions aimed at *how* characteristics are appraised. Perhaps the clinical literature may be informative - for example, within cognitive behavioral therapeutic applications, the way in which situations are appraised can be a mechanism to help battle affective disorders such as depression.[^check] Given the current findings, where the same characteristic may be viewed similarly as both a demand and resource, it is possible that framing interventions may ameliorate negative outcomes of demands such as, for example, stress or strain.
+
+[^check]: Check on this - this is just speculative place-holding from 12/2 Hudson coffee discussion
 
 \newpage
 

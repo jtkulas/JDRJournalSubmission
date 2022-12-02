@@ -9,6 +9,48 @@
 \ifnextchar[{\eatarg}{}
 
 \centering
+\includegraphics{Submission_files/figure-latex/resourcesagree-1.pdf}
+\caption{\label{fig:resourcesagree}Characteristics most similarly viewed as resources (lowest standard deviations).}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{Submission_files/figure-latex/challengesagree-1.pdf}
+\caption{\label{fig:challengesagree}Characteristics most similarly viewed as challenges (lowest standard deviations).}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{Submission_files/figure-latex/hindrancesagree-1.pdf}
+\caption{\label{fig:hindrancesagree}Characteristics most similarly viewed as hindrances (lowest standard deviations).}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{Submission_files/figure-latex/resourcesdisagree-1.pdf}
+\caption{\label{fig:resourcesdisagree}Characteristics most \emph{dis}similarly viewed as resources (highest standard deviations).}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{Submission_files/figure-latex/challengesdisagree-1.pdf}
+\caption{\label{fig:challengesdisagree}Characteristics most \emph{dis}similarly viewed as challenges (highest standard deviations).}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{Submission_files/figure-latex/hindrancesdisagree-1.pdf}
+\caption{\label{fig:hindrancesdisagree}Characteristics most \emph{dis}similarly viewed as hindrances (highest standard deviations).}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
 \includegraphics{Submission_files/figure-latex/scalelevelgraphs-1.pdf}
 \caption{\label{fig:scalelevelgraphs}Average characteristic rating grouped by literature-implicated categorizations.}
 \end{figure*}
