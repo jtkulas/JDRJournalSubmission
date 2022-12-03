@@ -160,3 +160,8 @@ b <- ggplot(data=resourcesplot, aes(x=onet, y=average, fill=type)) +
 
 library("gridExtra")
 grid.arrange(a, b, ncol = 2, nrow = 1)
+
+#I am still thinking about which variables we want n's for, but
+#this might work.
+library(Hmisc)
+describe(data)
