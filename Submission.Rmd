@@ -338,7 +338,7 @@ These "descriptors" often have unique response categories ([see here for example
 
 ```{r resourcesagree, fig.cap="Characteristics most similarly viewed as resources (lowest standard deviations)."}
 
-labels <- read.csv("truncatedlabels.csv")            
+labels <- read.csv("truncatedlabels.csv")   
 
 resource <- as.data.frame(t(data[118:202]))           
 
@@ -348,7 +348,19 @@ resource$sd   <- round(apply(resource[1:nrow(data)], 1, sd, na.rm=TRUE),2)
 
 resource <- resource[,-145]   ## attention check
 #resource <- resource[ which(resource$sd > 0), ] 
+########################################################
+########################################################
+##Need to triple check all of this. 
+########################################################
+########################################################
+##checking the ns
+library(psych)
+resource_ns <- describe(data[c(118:144, 146:202)])
+#resource_ns
+#table(data$item161) # check one item to confirm ns - it is functioning correctly.
 
+resource <- cbind(resource, resource_ns$n)
+resource
 sortresource <- resource[order(resource$sd),]
 
 topresource <- head(sortresource, 10)
