@@ -186,16 +186,6 @@ source("recodescript.R", local = knitr::knit_global())
  
 Data were collected through Prolific, a data collection platform. An email was sent to a random subset of all eligible participants in the Prolific respondent pool, notifying them about their eligibility for the study based on demographic information. Eligibility requirements included being 18+ and holding either a full-time or part-time job. Participants then voluntarily chose to respond to the survey. The survey was conducted online via Qualtrics with an estimated completion time of 40-45 minutes. Participants were asked to think about their primary job while answering the survey, and the items they were presented with depended on the specific job characteristics they initially specified. Thus, if a respondent indicated that a characteristic was not part of their job, they were not subsequently asked to rate the level of resource, challenge, or hindrance for that characteristic. For characteristics that *were* implicated as being relevent for their job, they were then asked to report how much a characteristic was a resource, and then how much each characteristic was a hindrance, and finally, how much each item was a challenge. Participants were compensated for their participation in this study in the amount of six dollars through Prolific.
 
-We evaluate agreement across perceptions of job characteristics regarding their characterization as resource, challenge, and hindrance (Bakker & Demerouti, 2017; Bakker et al., 2003; Demerouti et al., 2001). To capture an effectively exhaustive list of characteristics that apply to, theoretically, *every* possible job, we consult the  unifying framework of O\*Net. 
-
-## Materials
-
-Our survey was informed by 98 statements taken from job characteristic descriptors located within O\*Net’s classification of “work activities”: 1) Information Input (5 statements), 2) Interacting with Others (17 statements), 3) Mental Processes (10 statements), and 4) Work Output (9 statements) and “work context” groupings: 1) Interpersonal Relationships (14 statements), 2) Physical Work Conditions (30 statements), and 3) Structural Job Characteristics (13 statements).
-  
-The O\*Net descriptors are written in a similar manner to a task statement presented within a job analysis, but the level of abstraction is closer to "responsibility" than task. For example, the descriptor for "level of competition", which is an element of the "structural job characteristics" grouping, is *...to what extent does this job require the worker to compete or to be aware of competitive pressures?* Other than minor grammatical editing (for example, changing “the worker” to “you”), we retained the O\*Net wording for our item stems. We also retained O\*Net’s response scales, several of which were semantically unique across items, but all shared the same 5-point scale. It would likely NOT be considered controversial to referred to these as "effectively" Likert-type response scales. 
-
-The total number of items on the survey was less than 392 (98 characteristics x 4 administrations) because we did not ask for demand and resource evaluations for 14 O\*Net characteristics that we projected would have very low frequency of endorsement across respondents (one excluded characteristic, for example, was *...the extent to which the worker is exposed to radiation on the job*). 
-
 ## Participants
 
 Of the `r nrow(use)` Prolific panel individuals who initially accessed the survey link, `r nrow(different)` indicated that they were not interested, had more than 200 missing responses, or had 20 or more identical consecutive sequential responses [@R-careless]. Applying a further screen regarding attention checks (there were four attention checks embedded throughout, asking respondents to indicate a specific answer) resulted in the retention of `r nrow(data)` respondents who constitute the current sample. Regarding tenure, `r round(a[1,3],2)`% had been in their referent job less than 6 months, `r round(a[2,3],1)`% between 6 months and a year, `r round(a[3,3],2)`% between one and five years, `r round(a[4,3],2)`% between 5 and 10 years, and `r round(a[5,3],2)`% more than 10 years. Respondent ages ranged from 18 to 65 with an average of `r round(mean(data[,403], na.rm=TRUE),2)` years old (*SD* = `r round(sd(data[,403], na.rm=TRUE),2)`). The survey offered a free-field gender identity category, although the sample predominantly self-identified as female (`r round(b[2,3],2)`%) or male (`r round(b[5,3],2)`%). 
@@ -325,24 +315,31 @@ ggplot(summarized, aes(x=category, y=mean, fill=RD)) + geom_bar(stat="identity",
 
 ```
 
-## Materials  
+## Materials
 
-```{r interrater}
-interrater <- read.csv("interrater.csv")
+Our survey was informed by 98 statements taken from job characteristic descriptors located within O\*Net’s classification of “work activities”: 1) Information Input (5 statements), 2) Interacting with Others (17 statements), 3) Mental Processes (10 statements), and 4) Work Output (9 statements) and “work context” groupings: 1) Interpersonal Relationships (14 statements), 2) Physical Work Conditions (30 statements), and 3) Structural Job Characteristics (13 statements).
+  
+The O\*Net descriptors are written in a similar manner to a task statement presented within a job analysis, but the level of abstraction is closer to "responsibility" than task. For example, the descriptor for "level of competition", which is an element of the "structural job characteristics" grouping, is *...to what extent does this job require the worker to compete or to be aware of competitive pressures?* Other than minor grammatical editing (for example, changing “the worker” to “you”), we retained the O\*Net wording for our item stems. We also retained O\*Net’s response scales, several of which were semantically unique across items, but all shared the same 5-point scale. It would likely NOT be considered controversial to referred to these as "effectively" Likert-type response scales. 
 
-library(irr)
-
-kappa <- kappam.fleiss(interrater)
-```
-Subsequent to providing ratings of whether or not each of the 98 O\*Net characteristics were relevant for the respondent’s work, each respondent who agreed that an element had at least some relevance to their job was then also asked to rate that element in terms of, 1) . . . this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) . . . this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) . . . this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment. 
-
-### Characteristics, Demands, and Resources  
+The total number of items on the survey was less than 392 (98 characteristics x 4 administrations) because we did not ask for demand and resource evaluations for 14 O\*Net characteristics that we projected would have very low frequency of endorsement across respondents (one excluded characteristic, for example, was *...the extent to which the worker is exposed to radiation on the job*). 
 
 We used 98 statements taken from O\*NET [activity and context classifications](https://www.ONETonline.org/find/descriptor/result/4.A.1.b.3). We retained 41 work activity classifications which O\*NET groups into categories of information input (5 statements), interacting with others (17 statements), mental processes (10 statements) and work output (9 statements). Fifty-seven work context statements grouped into interpersonal relationships (14 statements), physical work conditions (30 statements), and structural job characteristics (13 statements).  
 
 These descriptors often have [unique response categories](https://www.ONETonline.org/find/descriptor/result/4.C.1.c.2). For example, the statement "How responsible is the worker for work outcomes and results of other workers?" has response options ranging from *No responsibility* to *Very high responsibility*, while the statement, "How often do you use electronic mail in this job?" has options ranging from *Never* to *Every day*. We retained the essence of each O\*NET descriptor to capture characteristics of relevance for each respondent. Subsequent to these self evaluations, each respondent who agreed that the element had *at least some relevance* to their job was also asked to rate that element in terms of, 1) ...this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) ...this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) ...this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment. 
 
 # Results  
+
+Outline:
+
+1. Hypothesis 1: Job characteristics differ in variability/stability regarding subjective worker perception as a demand or resource.
+
+2. Hypothesis 2: Job characteristics are not uniquely categorized as a resource or demand, but rather, some job characteristics are rated highly as both a resource and a demand.
+
+3. *Research Question 1*: Are literature-implicated resources consistently rated as job resources?
+
+4. *Research Question 2*: Are literature-implicated challenges consistently rated as job challenges?
+
+5. *Research Question 3*: Are literature-implicated hiderances consistently rated as job hindrances?
 
 ## Low Variability Demands and Resources
 
