@@ -381,6 +381,32 @@ ggplot(topresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="id
 
 ```
 
+```{r ncheck}
+
+## Use this chunk to figure out n issue - 12/16/22 w/ Alicia on Zoom
+
+## 12/16 looks like these sd's are non-zero but graphs have zeros - triple checking should be applied to graphs prior to this chunk
+
+resource <- resource[ which(resource$sd > 0), ] 
+########################################################
+########################################################
+##Need to triple check all of this. 
+########################################################
+########################################################
+##checking the ns
+#library(psych)
+resource_ns <- psych::describe(data[c(118:144, 146:202)])
+#resource_ns
+#table(data$item161) # check one item to confirm ns - it is functioning correctly.
+
+resource <- cbind(resource, resource_ns$n)
+resource
+
+
+```
+
+
+
 ```{r challengesagree, fig.cap="Characteristics most similarly viewed as challenges (lowest standard deviations)."}
 
 labels <- read.csv("truncatedlabels.csv")            
