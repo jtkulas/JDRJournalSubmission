@@ -333,13 +333,19 @@ Outline:
 
 1. Hypothesis 1: Job characteristics differ in variability/stability regarding subjective worker perception as a demand or resource.
 
+> Maybe just do a histogram of standard deviations (overall) or perhaps also by O\*Net dimensions (aim to do this 12/21 in St. Cloud)
+
 2. Hypothesis 2: Job characteristics are not uniquely categorized as a resource or demand, but rather, some job characteristics are rated highly as both a resource and a demand.
+
+> Maybe just put correlations in here - SIOP matrix (challenge, hindrance, resource) - would be most interesting by O\*Net dimension.
 
 3. *Research Question 1*: Are literature-implicated resources consistently rated as job resources?
 
 4. *Research Question 2*: Are literature-implicated challenges consistently rated as job challenges?
 
-5. *Research Question 3*: Are literature-implicated hiderances consistently rated as job hindrances?
+5. *Research Question 3*: Are literature-implicated hindrances consistently rated as job hindrances?
+
+> New graph presents these but need an inferential - maybe ANOVAs
 
 ## Low Variability Demands and Resources
 
