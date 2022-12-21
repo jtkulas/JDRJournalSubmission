@@ -9,6 +9,13 @@
 \ifnextchar[{\eatarg}{}
 
 \centering
+\includegraphics{Submission_files/figure-latex/overallhist-1.pdf}
+\caption{\label{fig:overallhist}Frequency distribution of standard deviations across characteristics deemed resources, challenges, and demands.}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
 \includegraphics{Submission_files/figure-latex/resourcesagree-1.pdf}
 \caption{\label{fig:resourcesagree}Characteristics most similarly viewed as resources (lowest standard deviations).}
 \end{figure*}

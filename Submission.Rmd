@@ -347,6 +347,32 @@ Outline:
 
 > New graph presents these but need an inferential - maybe ANOVAs
 
+## Standard deviations of perceptions
+
+```{r overallhist, fig.cap="Frequency distribution of standard deviations across characteristics deemed resources, challenges, and demands."}
+
+## resource$sd
+
+toplotresource <- resource
+toplotchallenge <- challenge
+toplothindrance <- hindrance
+
+toplotresource$RD <- "Resource"
+toplotchallenge$RD <- "Challenge"
+toplothindrance$RD <- "Hindrance"
+
+toplottogether <- rbind(toplotresource,toplotchallenge,toplothindrance)
+
+library(ggplot2)
+#ggplot(resource, aes(x=sd)) + geom_histogram()
+ggplot(toplottogether, aes(x=sd)) + geom_histogram() + facet_grid(RD ~ .)
+
+lookie <- stats::bartlett.test(sd ~ RD, toplottogether)
+
+```
+
+Figure \@ref(fig:overallhist) presents standard deviations of characteristic perceptions, grouped by whether that characteristic was rated as a resource, challenge, or demand. As can be seen in the figure, there was a wide range of agreement versus disagreement with resources and challenges, but hindrances were almost universally associated with disagreement (Bartlett's $K^2$ = `r lookie$statistic[[1]]`, *p* = `r lookie$p.value` ). 
+
 ## Low Variability Demands and Resources
 
 ```{r resourcesagree, fig.cap="Characteristics most similarly viewed as resources (lowest standard deviations)."}
