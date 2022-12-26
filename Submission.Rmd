@@ -481,6 +481,68 @@ ggplot(tophindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="i
 
 Figures \@ref(fig:resourcesdisagree), \@ref(fig:challengesdisagree), and \@ref(fig:hindrancesdisagree) present the resources, challenges, and hindrances that are *largely disagreed on* as indexed by (relatively) high standard deviations (these are the 10 characteristics with the greatest variability in rating).
 
+## Correlations
+
+```{r cortab}
+
+data_new <- data
+
+## O*NET categories
+
+data_new$onet.resource.ii <- rowMeans(data_new[c(162:166)], na.rm=TRUE)
+data_new$onet.resource.mp <- rowMeans(data_new[c(167:176)], na.rm=TRUE)
+data_new$onet.resource.wo <- rowMeans(data_new[c(177:185)], na.rm=TRUE)
+data_new$onet.resource.io <- rowMeans(data_new[c(186:202)], na.rm=TRUE)
+data_new$onet.resource.ir <- rowMeans(data_new[c(149:161)], na.rm=TRUE)
+data_new$onet.resource.pc <- rowMeans(data_new[c(128:144,146:148)], na.rm=TRUE)
+data_new$onet.resource.sc <- rowMeans(data_new[c(118:127)], na.rm=TRUE)
+
+data_new$overall.resource <- rowMeans(data_new[c(118:144,146:202)], na.rm=TRUE)
+
+data_new$onet.hindrance.ii <- rowMeans(data_new[c(246:247,249:252)], na.rm=TRUE)
+data_new$onet.hindrance.mp <- rowMeans(data_new[c(252:261)], na.rm=TRUE)
+data_new$onet.hindrance.wo <- rowMeans(data_new[c(262:270)], na.rm=TRUE)
+data_new$onet.hindrance.io <- rowMeans(data_new[c(271:287)], na.rm=TRUE)
+data_new$onet.hindrance.ir <- rowMeans(data_new[c(233:245)], na.rm=TRUE)
+data_new$onet.hindrance.pc <- rowMeans(data_new[c(213:232)], na.rm=TRUE)
+data_new$onet.hindrance.sc <- rowMeans(data_new[c(203:212)], na.rm=TRUE)
+
+data_new$overall.hindrance <- rowMeans(data_new[c(203:247,249:287)], na.rm=TRUE)
+
+data_new$onet.challenge.ii <- rowMeans(data_new[c(332:336)], na.rm=TRUE)
+data_new$onet.challenge.mp <- rowMeans(data_new[c(337:346)], na.rm=TRUE)
+data_new$onet.challenge.wo <- rowMeans(data_new[c(347:355)], na.rm=TRUE)
+data_new$onet.challenge.io <- rowMeans(data_new[c(356:372)], na.rm=TRUE)
+data_new$onet.challenge.ir <- rowMeans(data_new[c(319:331)], na.rm=TRUE)
+data_new$onet.challenge.pc <- rowMeans(data_new[c(298:307,309:318)], na.rm=TRUE)
+data_new$onet.challenge.sc <- rowMeans(data_new[c(288:297)], na.rm=TRUE)
+
+data_new$overall.challenge <- rowMeans(data_new[c(288:307,309:372)], na.rm=TRUE)
+
+data_new$burnout      <- rowMeans(data_new[c(373:376)], na.rm=TRUE)
+data_new$stress       <- rowMeans(data_new[c(377:379)], na.rm=TRUE)
+data_new$engagement   <- rowMeans(data_new[c(380:399)], na.rm=TRUE)        ## added 10/12 because analyses too wonky with 3 subscales
+
+names(data_new)[names(data_new) == "stress"] <- "Stress"
+names(data_new)[names(data_new) == "overall.challenge"] <- "Challenge"
+names(data_new)[names(data_new) == "overall.hindrance"] <- "Hindrance"
+names(data_new)[names(data_new) == "overall.resource"] <- "Resource"
+
+## Was originally overall: "Challenge", "Hindrance", "Resource"
+
+r <- corx::corx(data_new, x =c("onet.resource.ii", "onet.resource.mp", "onet.resource.wo",  "onet.resource.io", "onet.resource.ir", "onet.resource.pc", "onet.resource.sc", "onet.challenge.ii", "onet.challenge.mp", "onet.challenge.wo",  "onet.challenge.io", "onet.challenge.ir", "onet.challenge.pc", "onet.challenge.sc","onet.hindrance.ii", "onet.hindrance.mp", "onet.hindrance.wo", "onet.hindrance.io", "onet.hindrance.ir", "onet.hindrance.pc", "onet.hindrance.sc"), y =c("onet.resource.ii", "onet.resource.mp", "onet.resource.wo",  "onet.resource.io", "onet.resource.ir", "onet.resource.pc", "onet.resource.sc", "onet.challenge.ii", "onet.challenge.mp", "onet.challenge.wo", "onet.challenge.io", "onet.challenge.ir", "onet.challenge.pc", "onet.challenge.sc","onet.hindrance.ii", "onet.hindrance.mp", "onet.hindrance.wo", "onet.hindrance.io", "onet.hindrance.ir", "onet.hindrance.pc", "onet.hindrance.sc"),            
+                triangle = "lower",
+                stars = c(0.05, 0.01, 0.001),
+                describe = c(`$M$` = mean, `$SD$` = sd))
+
+papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table,
+                  caption = "Challenge, hindrance, and resource bivariate correlations.",
+                  escape = FALSE, 
+                  font_size = "small", 
+                  landscape = TRUE)
+```
+
+
 ```{r scalelevelgraphs, fig.cap="Average characteristic rating grouped by literature-implicated categorizations."}
 
 #this is a placeholder for the scale level faceted graph found in plotscript_practice script file. 
