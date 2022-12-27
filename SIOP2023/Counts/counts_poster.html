@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+
+
+
+<title>Perception of Work Demands and Resources: Does Sheer Volume Matter?</title>
+
+
+
+
+
+
+<style>
+@page {
+size: 45in 38in;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0;
+font-size: 45px;
+width: 45in;
+height: 38in;
+padding: 0;
+text-align: justify;
+font-family: Palatino;
+}
+.poster_wrap {
+width: 45in;
+height: 38in;
+padding: 0cm;
+}
+.title_container {
+width: 45in;
+height: calc(38in * 0.15);
+overflow: hidden;
+background-color: #0b4545;
+border: 0 solid #0b4545;
+}
+.logo_left {
+float: left;
+width: 10%;
+height: 100%;
+background-color: #0b4545;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.logo_right {
+float: right;
+width: 10%;
+height: 100%;
+background-color: #0b4545;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.poster_title {
+text-align: center;
+position: relative;
+float: left;
+width: 80%;
+height: 100%;
+color: #FFFFFF;
+top: 50%;
+transform: translateY(-50%);
+-webkit-transform: translateY(-50%);
+}
+#title {
+font-family: Palatino;
+}
+/* unvisited link */
+a:link {
+color: #cc0000;
+}
+.mybreak {
+  break-before: column;
+}
+/* visited link */
+a:visited {
+color: #cc0000;
+}
+
+/* mouse over link */
+a:hover {
+color: #cc0000;
+}
+
+/* selected link */
+a:active {
+color: #cc0000;
+}
+.poster_body {
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+-moz-column-count: 3; /* Firefox */
+column-count: 3;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+-webkit-column-rule-width: 1mm;
+-moz-column-rule-width: 1mm;
+column-rule-width: 1mm;
+-webkit-column-rule-style: dashed;
+-moz-column-rule-style: dashed;
+column-rule-style: dashed;
+-webkit-column-rule-color: #0b4545;
+-moz-column-rule-color: #0b4545;
+column-rule-color: #0b4545;
+column-gap: 1em;
+padding-left: 0.5em;
+padding-right: 0.5em;
+height: 100%;
+color: #000000
+background-color: #ffffff;
+}
+.poster_title h1 {
+font-size: 75pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_body_wrap{
+width: calc(45in + 0 + 0);
+height: calc(38in * 0.83);
+padding-top: calc(38in * 0.005);
+padding-bottom: calc(38in * 0.01);
+background-color: #ffffff;
+}
+.poster_title h3 {
+color: #ffffff;
+font-size: 50pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_title h3 > sup {
+  font-size: 35pt;
+  margin-left: 0.02em;
+}
+.poster_title h5 {
+color: #FFFFFF;
+font-size: 35pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+img {
+margin-top: 2cm;
+margin-bottom: 0;
+}
+.section {
+  padding: 0.2em;
+}
+.poster_body h1 {
+text-align: center;
+color: #FFFFFF;
+font-size: 65pt;
+border: 2mm solid #0b4545;
+background-color: #0b4545;
+border-radius: 4mm 0mm;
+margin-top: 2mm;
+margin-bottom: 2mm;
+font-weight: normal;
+}
+.poster_body h2 {
+color: #000000;
+font-size: 40pt;
+padding-left: 4mm;
+font-weight: normal;
+}
+.span {
+width: 200%;
+}
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r {
+background-color: #dddddd40;
+border-radius: 4mm;
+padding: 4mm;
+width: 75%;
+/* align-items: center; */
+margin: auto;
+padding-left: 2cm;
+}
+code.sourceCode.r{
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+.caption {
+font-size: 25pt;
+}
+.table caption {
+font-size: 25pt;
+padding-bottom: 3mm;
+
+}
+code {
+font-size: 1em;
+font-family: monospace;
+background-color: #00808024;
+color: #0b4545;
+padding: 1.2mm;
+border-radius: 2mm;
+}
+.poster_title code {
+font-size: 1em;
+}
+table {
+font-size: 40px;
+margin: auto;
+border-top: 3px solid #666;
+border-bottom: 3px solid #666;
+}
+table thead th {
+border-bottom: 3px solid #ddd;
+}
+td {
+padding: 8px;
+}
+th {
+padding: 15px;
+}
+caption {
+margin-bottom: 10px;
+}
+.poster_body p {
+margin-right: 4mm;
+margin-left: 4mm;
+margin-top: 6mm;
+margin-bottom: 10mm;
+}
+.poster_body ol {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+#ul {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+.references p {
+font-size: 20pt;
+}
+.orcid img {
+  width: 1em;
+}
+</style>
+</head>
+<body>
+
+
+<div class="poster_wrap">
+<div class="title_container">
+<!-- Left Logo  -->
+<div class="logo_left">
+</div>
+<!-- Poster Title -->
+<div class= "poster_title">
+<h1 id="title">Perception of Work Demands and Resources: Does Sheer Volume Matter?</h1>
+<h3 id="author">Alicia Stachowski<sup>1</sup>, John Kulas<sup>2</sup></h3><br>
+<h5 id="affiliation"><sup>1</sup> University of Wisconsin - Stout<br> <sup>2</sup> eRg</h5>
+</div>
+<!-- Right Logo  -->
+<div class="logo_right">
+</div>
+</div>
+
+<div class='poster_body_wrap'>
+<div class='poster_body'>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>A plethora of research applying the job demands-resources model <span class="citation">(Demerouti et al. 2001)</span> and theory <span class="citation">(Bakker and Demerouti 2017)</span> underscores the importance of work characteristics on the experience of motivation and strain. However, much of our existing research on this topic assumes that certain characteristics are resources (for example, autonomy) while others (such as deadlines) are generally considered demands. This study explores how individual perceptions of work characteristics relate to work-related outcomes by asking respondents to indicate (of the characteristics that apply to their jobs) how much each is experienced to be a resource, challenge, or hindrance. That is, we allow for the circumstance that the same characteristic may be perceived by some to be a resource as well as a demand. We then evaluate associations between resources and demands as well as probing for subsequent associations with engagement, stress, and burnout.</p>
+<div id="the-job-demands-resources-theory" class="section level2">
+<h2>The Job Demands-Resources Theory</h2>
+<p>The theoretical foundation for this study is the job demands-resources theory <span class="citation">(Demerouti et al. 2001)</span>. This theory posits that the perception of a characteristic of one’s job as a resource or demand activates one of two unique processes: either health impairment or motivation <span class="citation">(Bakker and Demerouti 2014)</span>. Demanding job characteristics are frequently associated with negative outcomes <span class="citation">(Bakker, Demerouti, and Schaufeli 2003)</span>, whereas resources have been associated with positive organizational outcomes such as engagement <span class="citation">(Bakker et al. 2007)</span>. Resources are commonly defined as physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development <span class="citation">(Demerouti et al. 2001)</span>. In contrast, demands include components of a job that require sustained effort, and as such, produce psychological or physiological strain <span class="citation">(e.g., high work pressure, Demerouti et al. 2001)</span>.</p>
+<div id="an-added-complexity-perception-appraisal-of-work-characteristics-might-matter" class="section level3">
+<h3>An Added Complexity: Perception (Appraisal) of Work Characteristics Might Matter</h3>
+<p>The above description speaks to one of two distinct processes being activated, presumably based on one’s appraisal of how a work characteristics makes them feel (e.g., consider the different reactions two different employees may have to being nominated to give a speech at an upcoming company event). Thus, although some research on job demands in particular is based on <em>a priori</em> classifications of demands <span class="citation">(Searle and Auton 2015)</span>, the appraisal of any work characteristic as a demand or resource is actually subjective.</p>
+<p>The literature on the experience of stress explains how such individual differences in appraisal are possible. Specifically, the transactional theory of stress and coping states that people cognitively appraise stimuli in their environments on a continual basis <span class="citation">(Lazarus and Folkman 1984)</span>. During this process, meaning is assigned to stimuli. If our example fictional employee appraised the upcoming speech as threatening, challenging, or possibly harmful (in contrast to positive or irrelevant), the resulting emotional distress initiates coping (e.g., attempting to decline, asking for help in writing the speech). From that point, a reassessment of the situation happens, and the cycle of appraisal continues based on the action to cope with the stressor <span class="citation">(Lazarus and Folkman 1984)</span>. This theory of stress and coping speaks to the importance of how work demands are assessed by individuals, and it is not only possible, but quite likely that demands and resources do not fit cleanly into objective categories of “demands” and “resources”.</p>
+</div>
+<div id="could-a-work-demand-be-appraised-positively-the-challenge-hindrance-framework" class="section level3">
+<h3>Could a Work Demand be Appraised Positively?: The Challenge-Hindrance Framework</h3>
+<p>Although the concept of <em>stress</em> often carries a negative connotation, the progenitor of this concept <span class="citation">(Selye 1936)</span> took a less valenced perspective, defining stress less perjoratively as a simple response to change. For instance, the example given in the previous paragraph describes an employee who may appraise being nominated to give a speech as a negative stressor. However, another employee may appraise the nomination to do so as an exciting opportunity to share their experiences with their coworkers, or one in which they may be able to further prove their capabilities on a more visible platform. The terms associated with the two different appraisals of the stressor described here can be accomodated within the context of the JDR theory as “challenge” and “hindrance” demands <span class="citation">(Cavanaugh et al. 2000)</span> Specifically, challenge demands promote mastery, personal growth, and future gains. Hindrance demands, in contrast, inhibit growth, learning and goal achievement. Perhaps not surprisingly, challenge stressors are typically associated with positive outcomes, whereas hindrance stressors are associated with more negative outcomes <span class="citation">(e.g., Cavanaugh et al. 2000)</span>. We will explore their associations with both positive and negative outcomes in this study.</p>
+<p>Prior to proposing specific predictions, the empirical evidence on challenge and hindrance demands is very briefly shared below. To begin, the first logical question is whether employees actually distinguish between challenge and hindrance stressors, and research suggests that they can and do. For example, <span class="citation">Bakker and Sanz-Vergel (2013)</span> found that perceived work pressure can be classified as a hindrance demand, and emotional demands as a challenge demand. <span class="citation">Webster, Beehr, and Love (2011)</span> considered three common workplace demands including workload, role ambiguity, and role conflict. Interestingly, they found that while each could be appraised primarily as challenges or hindrances, employees could also simultaneously be perceived as being both a challenge and hindrance.</p>
+<p>Having established that there can be individual differences in the appraisal of demands as challenges or resources, we next turn our attention to their association with organizational outcomes ranging from affective variables like job satisfaction, to motivation, performance, and well-being. For example, <span class="citation">Cavanaugh et al. (2000)</span> found that challenge demands were positively related to job satisfaction and negatively related to job search behaviors, while hindrance demands demonstrated the opposite pattern with job satisfaction and job search behaviors in a sample of managers. However, <span class="citation">Abbas and Raja (2019)</span> found that challenge and hindrance stressors were both positively related to strain and turnover intentions. We also have some evidence that challenge-hinderance appraisals are related to engagement in the expected direction whereby hindrance appraisals are negatively associated with engagement and challenge appraisals are positively associated with engagement <span class="citation">(Crawford, LePine, and Rich 2010)</span>. The appraisal process also suggests theoretically that the perception of a job characteristic as a challenge or hindrance is a mediator. <span class="citation">Gerich (2017)</span>, for instance, found that employee well-being was, in part, explained by appraised challenge or hindrance demands such that working conditions of time pressure, qualitative demands, responsibility, and interruptions, were partially mediated by challenge and hindrance demands. To provide further evidence of the distinction between challenge and hindrance appraisals on work-related outcomes, <span class="citation">Podsakoff, LePine, and LePine (2007)</span>’s meta-analysis supported the original assertion of <span class="citation">Cavanaugh et al. (2000)</span> such that challenge stressors were positively related to job satisfaction and organizational commitment, and negatively related to both turnover intentions and actual turnover, while hindrance stressors produced the opposite pattern of relationships.</p>
+</div>
+</div>
+<div id="current-study-and-hypotheses" class="section level2">
+<h2>Current Study and Hypotheses</h2>
+<p>The brief review above provides theoretical and empirical support for the connection between resources and positive organizational outcomes, and between demands and negative outcomes. For this current study, we explored whether the amount or volume of perceived resources and demands (in the form of challenges and hindrances) would be related to three organizational outcomes: engagement <span class="citation">(“a positive affective experience defined as a fulfilling, work-related state of mind characterized by vigor, dedication, and absorption,” Schaufeli et al. 2002)</span>, workplace stress <span class="citation">(“an individual state characterized by a combination of high arousal and displeasure,” p. 15, Pejtersen et al. 2010)</span> and burnout <span class="citation">(“the degree of physical and psychological fatigue and exhaustion that is perceived by the person as related to his/her work,” p. 197, Kristensen et al. 2005)</span>. Utilizing the job demands-resources theory, the transactional theory of stress, and the challenge-hindrance framework, we propose that the number of job characteristics appraised as “challenge demands” (i.e., promote mastery, personal growth, and future gains) would activate a positive state – that of engagement. In contrast, number of characteristics of one’s job appraised as a hindrance demand (i.e., inhibit growth, learning and goal achievement) would activate a negative state – here, resulting in stress and/or burnout.</p>
+<blockquote>
+<p><em>Hypothesis 1a-1c</em>: A greater overall quantity of resources is positively associated with engagement (1a), and negatively associated with stress (1b) and burnout (1c)</p>
+</blockquote>
+<blockquote>
+<p><em>Hypothesis 2a-2c</em>: A greater overall quantity of challenge demands is positively associated with engagement (2a), and negatively associated with stress (2b) and burnout (2c).</p>
+</blockquote>
+<blockquote>
+<p><em>Hypothesis 3a-3c</em>: A greater overall quantity of hindrance demands is negatively associated with engagement (3a), and positively associated with stress (3b) and burnout (3c).</p>
+</blockquote>
+</div>
+</div>
+<div id="methods" class="section level1">
+<h1>Methods</h1>
+<p>We evaluate relationships between the predictors and proximal outcomes of the Job Demands-Resources model <span class="citation">(Bakker and Demerouti 2017; Bakker, Demerouti, and Schaufeli 2003; Demerouti et al. 2001)</span>, but from within the comprehensive framework of O*Net. Here, we focus on the relationship between O*Net delineated job components and employee levels of job engagement, job stress, and burnout within a workforce representative sample.</p>
+<div id="participants" class="section level2">
+<h2>Participants</h2>
+<p>A sample using a Prolific panel resulted in 785 individuals who initially accessed the survey link. Of those,112 indicated that they were not interested, had more than 200 missing responses, or had 20 or more identical consecutive sequential responses (Yentes &amp; Wilhelm, 2021). Additional screening using four embedded attention checks resulted in the retention of 568 respondents. A total of 13.57% had been in their job less than 6 months, 19.20% between 6 months and a year, 49.12% between one and five years, 13.27% between 5 and 10 years, and 4.87% more than 10 years. Reported ages ranged from 18 to 65 with an average of 28.18 years old (SD = 7.53). Gender was captured via a free-field gender identity category, although the sample predominantly self-identified as female (52.58%) or male (46.83%).</p>
+</div>
+<div id="materials" class="section level2">
+<h2>Materials</h2>
+<div id="characteristics-demands-and-resources." class="section level3">
+<h3>Characteristics, Demands, and Resources.</h3>
+<p>Our analyses included items within O*Net’s classifications of “work activity”: 1) Information Input (5 statements), 2) Interacting with Others (17 statements), 3) Mental Processes (10 statements), and 4) Work Output (9 statements) and “work context”: 5) Interpersonal Relationships (14 statements), 6) Physical Work Conditions (30 statements)1, and 7) Structural Job Characteristics (13 statements).</p>
+<p>Other than minor grammatical editing (for example, changing “the” to “you”), we retained the O*Net wording for our item stems. We used O*Net’s response scales, several of which were unique across items, but all shared the same 1 to 5 scale options. Subsequent to providing ratings of whether or not an O*Net characteristic was relevant for the respondent’s work, each respondent who agreed that an element had at least some relevance to their job was also asked to rate that element in terms of, 1) . . . this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) . . . this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) . . . this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment.</p>
+</div>
+<div id="stress." class="section level3">
+<h3>Stress.</h3>
+<p>Three items taken from the Copenhagen Psychosocial Questionnaire <span class="citation">(Burr et al. 2019)</span>. Obtained alpha was .85 in this sample.</p>
+</div>
+<div id="burnout." class="section level3">
+<h3>Burnout.</h3>
+<p>Four items were taken from the Copenhagen Psychosocial Questionnaire <span class="citation">(Burr et al. 2019)</span>. Alpha was 0.85 in this sample.</p>
+</div>
+<div id="engagement." class="section level3">
+<h3>Engagement.</h3>
+<p>The 18-item engagement measure was recently developed <span class="citation">(Russell et al. 2022)</span>, with the authors specifying three subscales which yielded current sample <span class="math inline">\(\alpha\)</span>’s of 0.68 (absorption) and 0.80 (vigor), and 0.90 (dedication). For the purposes of the current study, we focused on an overall engagement score (18 item aggregate, alpha = 0.91).</p>
+</div>
+</div>
+<div id="procedure" class="section level2">
+<h2>Procedure</h2>
+<p>An email was sent to a random subset of all eligible participants in the Prolific respondent pool, notifying them about their eligibility for the study based on demographic information. Eligibility requirements included being 18+ and holding either a full-time or part-time job. Participants then voluntarily chose to respond to the survey. The survey was conducted online via Qualtrics with an estimated completion time of 40-45 minutes. Participants were asked to think about their primary job while answering the survey, and the items they were presented with depended on the specific job characteristics they initially specified. Thus, if a respondent indicated that 5 of the characteristics were not part of their job, they were not subsequently asked to rate the level of resource, challenge, or hindrance a given item presented to them. For items that were a part of their jobs, they were then asked to report how much a characteristic was a resource, and then how much each characteristic was a hindrance, and finally, how much each item was a challenge. Participants were compensated for their participation in this study in the amount of six dollars through Prolific.</p>
+</div>
+</div>
+<div id="results" class="section level1">
+<h1>Results</h1>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf
+
+## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning Inf</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning -Inf</code></pre>
+<caption>
+(#tab:correlation_table)
+</caption>
+<div custom-style="Table Caption">
+<em>Focal variable correlations (counts data).</em>
+</div>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left">1</th>
+<th align="left">2</th>
+<th align="left">3</th>
+<th align="left">4</th>
+<th align="left">5</th>
+<th align="left"><span class="math inline">\(M\)</span></th>
+<th align="left"><span class="math inline">\(SD\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. resource</td>
+<td align="left">-</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">36.02</td>
+<td align="left">13.26</td>
+</tr>
+<tr class="even">
+<td>2. hindrance</td>
+<td align="left">.23***</td>
+<td align="left">-</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">13.09</td>
+<td align="left">13.62</td>
+</tr>
+<tr class="odd">
+<td>3. challenge</td>
+<td align="left">.86***</td>
+<td align="left">.22***</td>
+<td align="left">-</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">35.64</td>
+<td align="left">13.63</td>
+</tr>
+<tr class="even">
+<td>4. burnout</td>
+<td align="left">.05</td>
+<td align="left">.04</td>
+<td align="left">.07</td>
+<td align="left">-</td>
+<td align="left"></td>
+<td align="left">3.04</td>
+<td align="left">0.87</td>
+</tr>
+<tr class="odd">
+<td>5. stress</td>
+<td align="left">.06</td>
+<td align="left">.09*</td>
+<td align="left">.08</td>
+<td align="left">.70***</td>
+<td align="left">-</td>
+<td align="left">2.59</td>
+<td align="left">0.97</td>
+</tr>
+<tr class="even">
+<td>6. engagement</td>
+<td align="left">.34***</td>
+<td align="left">.01</td>
+<td align="left">.31***</td>
+<td align="left">-.35***</td>
+<td align="left">-.30***</td>
+<td align="left">4.04</td>
+<td align="left">0.83</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## Loading required package: tinylabels</code></pre>
+<caption>
+(#tab:regression_table_eng)
+</caption>
+<div custom-style="Table Caption">
+<em>Regression Predicting Engagement.</em>
+</div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Predictor</th>
+<th align="left"><span class="math inline">\(b\)</span></th>
+<th align="left">95% CI</th>
+<th align="left"><span class="math inline">\(t\)</span></th>
+<th align="left"><span class="math inline">\(\mathit{df}\)</span></th>
+<th align="left"><span class="math inline">\(p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Intercept</td>
+<td align="left">3.28</td>
+<td align="left">[3.09, 3.47]</td>
+<td align="left">33.93</td>
+<td align="left">564</td>
+<td align="left">&lt; .001</td>
+</tr>
+<tr class="even">
+<td align="left">Hindrance</td>
+<td align="left">0.00</td>
+<td align="left">[-0.01, 0.00]</td>
+<td align="left">-1.80</td>
+<td align="left">564</td>
+<td align="left">.072</td>
+</tr>
+<tr class="odd">
+<td align="left">Challenge</td>
+<td align="left">0.00</td>
+<td align="left">[-0.01, 0.01]</td>
+<td align="left">0.88</td>
+<td align="left">564</td>
+<td align="left">.378</td>
+</tr>
+<tr class="even">
+<td align="left">Resource</td>
+<td align="left">0.02</td>
+<td align="left">[0.01, 0.03]</td>
+<td align="left">3.84</td>
+<td align="left">564</td>
+<td align="left">&lt; .001</td>
+</tr>
+</tbody>
+</table>
+<caption>
+(#tab:regression_table_str)
+</caption>
+<div custom-style="Table Caption">
+<em>Regression Predicting Stress.</em>
+</div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Predictor</th>
+<th align="left"><span class="math inline">\(b\)</span></th>
+<th align="left">95% CI</th>
+<th align="left"><span class="math inline">\(t\)</span></th>
+<th align="left"><span class="math inline">\(\mathit{df}\)</span></th>
+<th align="left"><span class="math inline">\(p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Intercept</td>
+<td align="left">2.38</td>
+<td align="left">[2.15, 2.62]</td>
+<td align="left">19.80</td>
+<td align="left">564</td>
+<td align="left">&lt; .001</td>
+</tr>
+<tr class="even">
+<td align="left">Hindrance</td>
+<td align="left">0.01</td>
+<td align="left">[0.00, 0.01]</td>
+<td align="left">1.82</td>
+<td align="left">564</td>
+<td align="left">.070</td>
+</tr>
+<tr class="odd">
+<td align="left">Challenge</td>
+<td align="left">0.01</td>
+<td align="left">[0.00, 0.02]</td>
+<td align="left">1.43</td>
+<td align="left">564</td>
+<td align="left">.152</td>
+</tr>
+<tr class="even">
+<td align="left">Resource</td>
+<td align="left">0.00</td>
+<td align="left">[-0.02, 0.01]</td>
+<td align="left">-0.77</td>
+<td align="left">564</td>
+<td align="left">.440</td>
+</tr>
+</tbody>
+</table>
+<caption>
+(#tab:regression_table_bur)
+</caption>
+<div custom-style="Table Caption">
+<em>Regression Predicting Burnout.</em>
+</div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Predictor</th>
+<th align="left"><span class="math inline">\(b\)</span></th>
+<th align="left">95% CI</th>
+<th align="left"><span class="math inline">\(t\)</span></th>
+<th align="left"><span class="math inline">\(\mathit{df}\)</span></th>
+<th align="left"><span class="math inline">\(p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Intercept</td>
+<td align="left">2.90</td>
+<td align="left">[2.68, 3.11]</td>
+<td align="left">26.89</td>
+<td align="left">564</td>
+<td align="left">&lt; .001</td>
+</tr>
+<tr class="even">
+<td align="left">Hindrance</td>
+<td align="left">0.00</td>
+<td align="left">[0.00, 0.01]</td>
+<td align="left">0.67</td>
+<td align="left">564</td>
+<td align="left">.502</td>
+</tr>
+<tr class="odd">
+<td align="left">Challenge</td>
+<td align="left">0.01</td>
+<td align="left">[0.00, 0.02]</td>
+<td align="left">1.19</td>
+<td align="left">564</td>
+<td align="left">.233</td>
+</tr>
+<tr class="even">
+<td align="left">Resource</td>
+<td align="left">0.00</td>
+<td align="left">[-0.01, 0.01]</td>
+<td align="left">-0.52</td>
+<td align="left">564</td>
+<td align="left">.601</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="results-1" class="section level1">
+<h1>Results</h1>
+<p>We used R (Version 4.0.3; <span class="citation">R Core Team (2022)</span>) and the R-packages careless (Version 1.1.3; Yentes &amp; Wilhelm, 2021), labourR (Version 1.0.0; Kouretsis et al., 2020), papaja (Version 0.1.0.9997; Aust &amp; Barth, 2020), and tinylabels (Barth, 2021) for all analyses.</p>
+<p>Correlations, means and standard deviations among all study variables are presented in Table <span class="math inline">\(\ref{tab:correlation_table}\)</span>. The results reveal a positive association between resources and engagement (<em>r</em> = .34; H1a), but a lack of meaningful association between resources and stress and burnout (H1b and H1c, respectively). Challenge demands were positively associated with engagement (<em>r</em> = .31; H2a), but were similarly unrelated to stress or burnout (H2b and H2c). Total hindrance stressors were largely not significantly associated with our outcomes, although there was a small-moderate association with stress (H3b; <em>r</em> = .09).</p>
+<p>To explore possible associations more comprehensively, we conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. First, regarding engagement (<span class="math inline">\(F_{(3, 564)}\)</span> = 26.41, p &lt; .001), the total resources were predictive of engagement, but neither challenge nor hindrance demands predicted engagement (see Table <span class="math inline">\(\ref{tab:regression_table_eng}\)</span>). Next, stress was not predicted by total resources, challenge, or hindrance demands, <span class="math inline">\(F_{(3, 564)}\)</span> = 2.47, <em>p</em> = .060 (see Table <span class="math inline">\(\ref{tab:regression_table_str}\)</span>). Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, <span class="math inline">\(F_{(3, 564)}\)</span>= 1.10, <em>p</em> = .349. See Table <span class="math inline">\(\ref{tab:regression_table_bur}\)</span>.</p>
+</div>
+<div id="discussion" class="section level1">
+<h1>Discussion</h1>
+<p>The major goal of this paper was to further explore the relationships among <em>total</em> perceived challenge demands, hindrance demands, and resources and outcomes of engagement, stress, and burnout. The results suggest a positive relationship between both resources and engagement (H1a) and challenge demands and engagement (H2a). Employers would benefit from understanding that at least the perception of having “more” resources and more challenge demands in a job is highly associated with reported engagement. While not a causal relationship, it points to the potential value of these kinds of employee support nonetheless. The other relationships with outcomes of stress and burnout were largely not supported, suggesting that the sheer number of resources, challenges, and hindrances are not significantly related to these negative outcomes. The caveat here is stress, which does exhibit a small significant association with the presence of hindrances. Note here that the total average number of hindrances implicated by our sample was low, so it is possible that a stronger association is hidden by a restriction of range.</p>
+<div id="limitations-and-future-directions" class="section level2">
+<h2>Limitations and Future Directions</h2>
+<p>As with any piece of research, this project has limitations, but also provide a variety of additional directions to pursue in the future. First, while a strength of this project, arguably, is the use of O*Net items, practical considerations limited the number of job characteristics we could include in our survey. Future study could consider additional or other O*Net items. We intentionally conceptualized resources and demands in terms of perceived total amounts. It may be the case that certain kinds of resources or challenges are more strongly associated with engagement than others, and such, future research could explore the importance of resources/challenges categorically.</p>
+<p>Our study was limited to three outcomes of interest. It would be especially interesting to explore additional outcomes (e.g., job satisfaction) as well, or whether volume of resources and demands operationalized in this way are related to other behaviors (e.g., turnover intention, perceived organizational support, commitment). Furthermore, while we found support for the prediction that resources and challenge demands would be positively related to engagement, it would be interesting to consider moderators of this relationship. For example, the Job Characteristics Theory <span class="citation">(Hackman and Oldham 1976)</span> includes the key component of growth need strength in the connections between job characteristics (e.g., autonomy, skill variety) and critical states (e.g., experienced meaningfulness), and between critical states and personal and work outcomes. Perhaps this connection between engagement and challenge demands, for instance, is stronger for those with greater growth need strength.</p>
+<p>It is also possible that rather than volume, categorically some demands are more related to these outcomes than others. The moderate association between hindrances and challenges (<em>r</em> = .22) also hints that some of these relationships may be driven by <em>job complexity</em> - that is, some jobs simply have more elements. With more job elements come increased opportunities for those elements to be perceived as resources, challenges, or hindrances.</p>
+</div>
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<p>Add one!</p>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-abbas2019challenge" class="csl-entry">
+Abbas, Muhammad, and Usman Raja. 2019. <span>“Challenge-Hindrance Stressors and Job Outcomes: The Moderating Role of Conscientiousness.”</span> <em>Journal of Business and Psychology</em> 34 (2): 189–201.
+</div>
+<div id="ref-bakker2014job" class="csl-entry">
+Bakker, Arnold B, and Evangelia Demerouti. 2014. <span>“Job Demands–Resources Theory.”</span> <em>Wellbeing: A Complete Reference Guide</em>, 1–28.
+</div>
+<div id="ref-bakker2017job" class="csl-entry">
+———. 2017. <span>“Job Demands–Resources Theory: Taking Stock and Looking Forward.”</span> <em>Journal of Occupational Health Psychology</em> 22 (3): 273.
+</div>
+<div id="ref-bakker2003dual" class="csl-entry">
+Bakker, Arnold B, Evangelia Demerouti, and Wilmar Schaufeli. 2003. <span>“Dual Processes at Work in a Call Centre: An Application of the Job Demands–Resources Model.”</span> <em>European Journal of Work and Organizational Psychology</em> 12 (4): 393–417.
+</div>
+<div id="ref-bakker2007job" class="csl-entry">
+Bakker, Arnold B, Jari J Hakanen, Evangelia Demerouti, and Despoina Xanthopoulou. 2007. <span>“Job Resources Boost Work Engagement, Particularly When Job Demands Are High.”</span> <em>Journal of Educational Psychology</em> 99 (2): 274.
+</div>
+<div id="ref-bakker2013weekly" class="csl-entry">
+Bakker, Arnold B, and Ana Isabel Sanz-Vergel. 2013. <span>“Weekly Work Engagement and Flourishing: The Role of Hindrance and Challenge Job Demands.”</span> <em>Journal of Vocational Behavior</em> 83 (3): 397–409.
+</div>
+<div id="ref-burr_third_2019" class="csl-entry">
+Burr, Hermann, Hanne Berthelsen, Salvador Moncada, Matthias Nübling, Emilie Dupret, Yucel Demiral, John Oudyk, et al. 2019. <span>“The <span>Third</span> <span>Version</span> of the <span>Copenhagen</span> <span>Psychosocial</span> <span>Questionnaire</span>.”</span> <em>Safety and Health at Work</em> 10 (4): 482–503. <a href="https://doi.org/10.1016/j.shaw.2019.10.002">https://doi.org/10.1016/j.shaw.2019.10.002</a>.
+</div>
+<div id="ref-cavanaugh2000empirical" class="csl-entry">
+Cavanaugh, Marcie A, Wendy R Boswell, Mark V Roehling, and John W Boudreau. 2000. <span>“An Empirical Examination of Self-Reported Work Stress Among US Managers.”</span> <em>Journal of Applied Psychology</em> 85 (1): 65.
+</div>
+<div id="ref-crawford2010linking" class="csl-entry">
+Crawford, Eean R, Jeffery A LePine, and Bruce Louis Rich. 2010. <span>“Linking Job Demands and Resources to Employee Engagement and Burnout: A Theoretical Extension and Meta-Analytic Test.”</span> <em>Journal of Applied Psychology</em> 95 (5): 834.
+</div>
+<div id="ref-demerouti2001job" class="csl-entry">
+Demerouti, Evangelia, Arnold B Bakker, Friedhelm Nachreiner, and Wilmar B Schaufeli. 2001. <span>“The Job Demands-Resources Model of Burnout.”</span> <em>Journal of Applied Psychology</em> 86 (3): 499.
+</div>
+<div id="ref-gerich2017relevance" class="csl-entry">
+Gerich, Joachim. 2017. <span>“The Relevance of Challenge and Hindrance Appraisals of Working Conditions for Employees’ Health.”</span> <em>International Journal of Stress Management</em> 24 (3): 270.
+</div>
+<div id="ref-hackman1976motivation" class="csl-entry">
+Hackman, J Richard, and Greg R Oldham. 1976. <span>“Motivation Through the Design of Work: Test of a Theory.”</span> <em>Organizational Behavior and Human Performance</em> 16 (2): 250–79.
+</div>
+<div id="ref-kristensen2005copenhagen" class="csl-entry">
+Kristensen, Tage S, Marianne Borritz, Ebbe Villadsen, and Karl B Christensen. 2005. <span>“The Copenhagen Burnout Inventory: A New Tool for the Assessment of Burnout.”</span> <em>Work &amp; Stress</em> 19 (3): 192–207.
+</div>
+<div id="ref-lazarus1984stress" class="csl-entry">
+Lazarus, Richard S, and Susan Folkman. 1984. <em>Stress, Appraisal, and Coping</em>. Springer publishing company.
+</div>
+<div id="ref-pejtersen2010second" class="csl-entry">
+Pejtersen, Jan Hyld, Tage Søndergård Kristensen, Vilhelm Borg, and Jakob Bue Bjorner. 2010. <span>“The Second Version of the Copenhagen Psychosocial Questionnaire.”</span> <em>Scandinavian Journal of Public Health</em> 38 (3_suppl): 8–24.
+</div>
+<div id="ref-podsakoff2007differential" class="csl-entry">
+Podsakoff, Nathan P, Jeffery A LePine, and Marcie A LePine. 2007. <span>“Differential Challenge Stressor-Hindrance Stressor Relationships with Job Attitudes, Turnover Intentions, Turnover, and Withdrawal Behavior: A Meta-Analysis.”</span> <em>Journal of Applied Psychology</em> 92 (2): 438.
+</div>
+<div id="ref-R-base" class="csl-entry">
+R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-engage_2022" class="csl-entry">
+Russell, Morgan, Casey Ossorio Duffoo, Renata Garcia Prieto Palacios Roji, and John Kulas. 2022. <span>“Development of an Intentional Bifactor Measure of Engagement.”</span> In <em>The Seattle Edition of SIOP</em>, 1–14. SIOP.
+</div>
+<div id="ref-schaufeli2002measurement" class="csl-entry">
+Schaufeli, Wilmar B, Marisa Salanova, Vicente González-Romá, and Arnold B Bakker. 2002. <span>“The Measurement of Engagement and Burnout: A Two Sample Confirmatory Factor Analytic Approach.”</span> <em>Journal of Happiness Studies</em> 3 (1): 71–92.
+</div>
+<div id="ref-searle2015merits" class="csl-entry">
+Searle, Ben J, and Jaime C Auton. 2015. <span>“The Merits of Measuring Challenge and Hindrance Appraisals.”</span> <em>Anxiety, Stress, &amp; Coping</em> 28 (2): 121–43.
+</div>
+<div id="ref-selye1936syndrome" class="csl-entry">
+Selye, Hans. 1936. <span>“A Syndrome Produced by Diverse Nocuous Agents.”</span> <em>Nature</em> 138 (3479): 32–32.
+</div>
+<div id="ref-webster2011extending" class="csl-entry">
+Webster, Jennica R, Terry A Beehr, and Kevin Love. 2011. <span>“Extending the Challenge-Hindrance Model of Occupational Stress: The Role of Appraisal.”</span> <em>Journal of Vocational Behavior</em> 79 (2): 505–16.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+var script = document.createElement("script");
+script.type = "text/javascript";
+var src = "true";
+if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+if (location.protocol !== "file:" && /^https?:/.test(src))
+src = src.replace(/^https?:/, '');
+script.src = src;
+document.getElementsByTagName("head")[0].appendChild(script);
+})();
+</script>
+
+
+</body>
+</html>
