@@ -1,0 +1,311 @@
+---
+title: 'Perception of Work Demands and Resources: Does Sheer Volume Matter?'
+author:
+  - name: Alicia Stachowski
+    affil: 1
+  - name: John Kulas
+    affil: 2
+affiliation:
+  - num: 1
+    address: University of Wisconsin - Stout
+  - num: 2
+    address: eRg
+column_numbers: 3
+#logoright_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
+#logoleft_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
+output: 
+  posterdown::posterdown_html:
+    self_contained: false
+bibliography: jobdemands_resources_bibtex.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Introduction
+A plethora of research applying the job demands-resources model [@demerouti2001job] and theory [@bakker2017job] underscores the importance of work characteristics on the experience of motivation and strain. However, much of our existing research on this topic assumes that certain characteristics are resources (for example, autonomy) while others (such as deadlines) are generally considered demands. This study explores how individual perceptions of work characteristics relate to work-related outcomes by asking respondents to indicate (of the characteristics that apply to their jobs) how much each is experienced to be a resource, challenge, or hindrance. That is, we allow for the circumstance that the same characteristic may be perceived by some to be a resource as well as a demand. We then evaluate associations between resources and demands as well as probing for subsequent associations with engagement, stress, and burnout.
+
+## The Job Demands-Resources Theory
+
+The theoretical foundation for this study is the job demands-resources theory [@demerouti2001job]. This theory posits that the perception of a characteristic of one’s job as a resource or demand activates one of two unique processes: either health impairment or motivation [@bakker2014job]. Demanding job characteristics are frequently associated with negative outcomes [@bakker2003dual], whereas resources have been associated with positive organizational outcomes such as engagement [@bakker2007job]. Resources are commonly defined as physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development [@demerouti2001job]. In contrast, demands include components of a job that require sustained effort, and as such, produce psychological or physiological strain [e.g., high work pressure, @demerouti2001job]. 
+
+### An Added Complexity: Perception (Appraisal) of Work Characteristics Might Matter
+ 
+The above description speaks to one of two distinct processes being activated, presumably based on one’s appraisal of how a work characteristics makes them feel (e.g., consider the different reactions two different employees may have to being nominated to give a speech at an upcoming company event). Thus, although some research on job demands in particular is based on *a priori* classifications of demands [@searle2015merits], the appraisal of any work characteristic as a demand or resource is actually subjective. 
+
+The literature on the experience of stress explains how such individual differences in appraisal are possible. Specifically, the transactional theory of stress and coping states that people cognitively appraise stimuli in their environments on a continual basis [@lazarus1984stress]. During this process, meaning is assigned to stimuli.  If our example fictional employee appraised the upcoming speech as threatening, challenging, or possibly harmful (in contrast to positive or irrelevant), the resulting emotional distress initiates coping (e.g., attempting to decline, asking for help in writing the speech). From that point, a reassessment of the situation happens, and the cycle of appraisal continues based on the action to cope with the stressor [@lazarus1984stress]. This theory of stress and coping speaks to the importance of how work demands are assessed by individuals, and it is not only possible, but quite likely that demands and resources do not fit cleanly into objective categories of "demands" and "resources". 
+
+### Could a Work Demand be Appraised Positively?: The Challenge-Hindrance Framework
+ 
+Although the concept of *stress* often carries a negative connotation, the progenitor of this concept [@selye1936syndrome] took a less valenced perspective, defining stress less perjoratively as a simple response to change. For instance, the example given in the previous paragraph describes an employee who may appraise being nominated to give a speech as a negative stressor. However, another employee may appraise the nomination to do so as an exciting opportunity to share their experiences with their coworkers, or one in which they may be able to further prove their capabilities on a more visible platform. The terms associated with the two different appraisals of the stressor described here can be accomodated within the context of the JDR theory as "challenge" and "hindrance" demands [@cavanaugh2000empirical] Specifically, challenge demands promote mastery, personal growth, and future gains. Hindrance demands, in contrast, inhibit growth, learning and goal achievement. Perhaps not surprisingly, challenge stressors are typically associated with positive outcomes, whereas hindrance stressors are associated with more negative outcomes [e.g., @cavanaugh2000empirical]. We will explore their associations with both positive and negative outcomes in this study.  
+
+Prior to proposing specific predictions, the empirical evidence on challenge and hindrance demands is very briefly shared below. To begin, the first logical question is whether employees actually distinguish between challenge and hindrance stressors, and research suggests that they can and do. For example, @bakker2013weekly found that perceived work pressure can be classified as a hindrance demand, and emotional demands as a challenge demand. @webster2011extending considered three common workplace demands including workload, role ambiguity, and role conflict. Interestingly, they found that while each could be appraised primarily as challenges or hindrances, employees could also simultaneously be perceived as being both a challenge and hindrance.
+
+Having established that there can be individual differences in the appraisal of demands as challenges or resources, we next turn our attention to their association with organizational outcomes ranging from affective variables like job satisfaction, to motivation, performance, and well-being. For example, @cavanaugh2000empirical found that challenge demands were positively related to job satisfaction and negatively related to job search behaviors, while hindrance demands demonstrated the opposite pattern with job satisfaction and job search behaviors in a sample of managers. However, @abbas2019challenge found that challenge and hindrance stressors were both positively related to strain and turnover intentions. We also have some evidence that challenge-hinderance appraisals are related to engagement in the expected direction whereby hindrance appraisals are negatively associated with engagement and challenge appraisals are positively associated with engagement [@crawford2010linking]. The appraisal process also suggests theoretically that the perception of a job characteristic as a challenge or hindrance is a mediator. @gerich2017relevance, for instance, found that employee well-being was, in part, explained by appraised challenge or hindrance demands such that working conditions of time pressure, qualitative demands, responsibility, and interruptions, were partially mediated by challenge and hindrance demands. To provide further evidence of the distinction between challenge and hindrance appraisals on work-related outcomes, @podsakoff2007differential's meta-analysis supported the original assertion of @cavanaugh2000empirical such that challenge stressors were positively related to job satisfaction and organizational commitment, and negatively related to both turnover intentions and actual turnover, while hindrance stressors produced the opposite pattern of relationships.
+
+## Current Study and Hypotheses
+  
+The brief review above provides theoretical and empirical support for the connection between resources and positive organizational outcomes, and between demands and negative outcomes. For this current study, we explored whether the amount or volume of perceived resources and demands (in the form of challenges and hindrances) would be related to three organizational outcomes: engagement [“a positive affective experience defined as a fulfilling, work-related state of mind characterized by vigor, dedication, and absorption”, @schaufeli2002measurement], workplace stress [“an individual state characterized by a combination of high arousal and displeasure”, p. 15, @pejtersen2010second] and burnout [“the degree of physical and psychological fatigue and exhaustion that is perceived by the person as related to his/her work”, p. 197, @kristensen2005copenhagen]. Utilizing the job demands-resources theory, the transactional theory of stress, and the challenge-hindrance framework, we propose that the number of job characteristics appraised as “challenge demands” (i.e., promote mastery, personal growth, and future gains) would activate a positive state – that of engagement. In contrast, number of characteristics of one’s job appraised as a hindrance demand (i.e., inhibit growth, learning and goal achievement) would activate a negative state – here, resulting in stress and/or burnout.
+
+> *Hypothesis 1a-1c*: A greater overall quantity of resources is positively associated with engagement (1a), and negatively associated with stress (1b) and burnout (1c)
+
+> *Hypothesis 2a-2c*: A greater overall quantity of challenge demands is positively associated with engagement (2a), and negatively associated with stress (2b) and burnout (2c).
+
+> *Hypothesis 3a-3c*: A greater overall quantity of hindrance demands is negatively associated with engagement (3a), and positively associated with stress (3b) and burnout (3c).
+
+# Methods
+
+We evaluate relationships between the predictors and proximal outcomes of the Job Demands-Resources model [@bakker2017job; @bakker2003dual; @demerouti2001job], but from within the comprehensive framework of O\*Net. Here, we focus on the relationship between O\*Net delineated job components and employee levels of job engagement, job stress, and burnout within a workforce representative sample.
+
+## Participants
+
+  A sample using a Prolific panel resulted in 785 individuals who initially accessed the survey link. Of those,112 indicated that they were not interested, had more than 200 missing responses, or had 20 or more identical consecutive sequential responses (Yentes & Wilhelm, 2021). Additional screening using four embedded attention checks resulted in the retention of 568 respondents. A total of 13.57% had been in their job less than 6 months, 19.20% between 6 months and a year, 49.12% between one and five years, 13.27% between 5 and 10 years, and 4.87% more than 10 years. Reported ages ranged from 18 to 65 with an average of 28.18 years old (SD = 7.53). Gender was captured via a free-field gender identity category, although the sample predominantly self-identified as female (52.58%) or male (46.83%). 
+
+## Materials
+
+### Characteristics, Demands, and Resources. 
+
+Our analyses included items within O\*Net’s classifications of “work activity”: 1) Information Input (5 statements), 2) Interacting with Others (17 statements), 3) Mental Processes (10 statements), and 4) Work Output (9 statements) and “work context”: 5) Interpersonal Relationships (14 statements), 6) Physical Work Conditions (30 statements)1, and 7) Structural Job Characteristics (13 statements).
+  
+Other than minor grammatical editing (for example, changing “the” to “you”), we retained the O\*Net wording for our item stems. We used O\*Net’s response scales, several of which were unique across items, but all shared the same 1 to 5 scale options. Subsequent to providing ratings of whether or not an O\*Net characteristic was relevant for the respondent’s work, each respondent who agreed that an element had at least some relevance to their job was also asked to rate that element in terms of, 1) . . . this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) . . . this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) . . . this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment. 
+  
+### Stress.
+
+Three items taken from the Copenhagen Psychosocial Questionnaire [@burr_third_2019]. Obtained alpha was .85 in this sample.
+
+### Burnout. 
+
+Four items were taken from the Copenhagen Psychosocial Questionnaire [@burr_third_2019]. Alpha was 0.85 in this sample.
+
+### Engagement. 
+
+The 18-item engagement measure was recently developed [@engage_2022], with the authors specifying three subscales which yielded current sample $\alpha$’s of 0.68 (absorption) and 0.80 (vigor), and 0.90 (dedication). For the purposes of the current study, we focused on an overall engagement score (18 item aggregate, alpha = 0.91).
+
+## Procedure
+
+An email was sent to a random subset of all eligible participants in the Prolific respondent pool, notifying them about their eligibility for the study based on demographic information. Eligibility requirements included being 18+ and holding either a full-time or part-time job. Participants then voluntarily chose to respond to the survey. The survey was conducted online via Qualtrics with an estimated completion time of 40-45 minutes. Participants were asked to think about their primary job while answering the survey, and the items they were presented with depended on the specific job characteristics they initially specified. Thus, if a respondent indicated that 5 of the characteristics were not part of their job, they were not subsequently asked to rate the level of resource, challenge, or hindrance a given item presented to them. For items that were a part of their jobs, they were then asked to report how much a characteristic was a resource, and then how much each characteristic was a hindrance, and finally, how much each item was a challenge. Participants were compensated for their participation in this study in the amount of six dollars through Prolific.
+
+# Results
+
+
+```{r study1, include=FALSE}
+temp <- read.csv("..//JDRJournalSubmission//initial_data_screen.csv", header=FALSE, na.strings="")   ## NOTE: 404 vars (9/28/21) make sure to check indexing used throughout script
+
+x <- paste("item", sep="",1:404)
+y <- t(temp[2,])
+                                        ## decluttering Qualtrics excess
+data <- temp[-c(1:3),]                                           ## Getting rid of all 3 weird Qualtrics rows
+colnames(data) <- x
+
+incomplete <- read.csv("..//JDRJournalSubmission//inprogress.csv", header=FALSE, na.strings="")   ## NOTE: 404 vars (9/28/21) make sure to check indexing used throughout script
+
+data2 <- incomplete[-c(1:2),-c(10,12,16,113,199,285,371,379,400, 406:411)]                                          
+
+data3 <- as.data.frame(cbind(data2$V8,data2$V9,data2$V1,data2$V1,data2$V1,data2$V1,data2$V1,data2$V1,data2))
+
+colnames(data3) <- x
+
+rm(x, y, temp)       
+
+use <- rbind(data,data3)
+
+## STILL NEED FILE WITH BAD RESPONDENTS IDENTIFIED (E.G., Item_18=2, na > 200, longstring > 20, CARELESS CHECKS > 1)
+
+library(careless)
+use$careless_long <- longstring(use[18:399])
+use$missing <- rowSums(is.na(use[18:404])) 
+
+different <- use[ which(use$item18 == 2 | use$careless_long > 20 | use$missing > 200), ]
+
+attention <- use[which(use$item61 == 5 & use$item145 == 5 & use$item248 == 2 & use$item308 == 3), ]
+
+data <- data.frame(lapply(attention, function(x) as.numeric(as.character(x))))
+data <- data[,c(1:404)]
+
+numtot <- nrow(use)
+numkicked <- nrow(different)
+numvalid <- nrow(data)
+
+```
+
+```{r demos}
+
+a <- descr::freq(use$item401, plot=FALSE)
+
+use$item402[use$item402 == "Female " | use$item402 == "female" | use$item402 == "FEMALE" | use$item402 == "Woman" | use$item402 == "Mujer" | use$item402 == "feminine" | use$item402 == "fEMALE" | use$item402 == "F" | use$item402 == "Femenale" | use$item402 == "feminino" | use$item402 == "female " | use$item402 == "Fem" | use$item402 == "Feminine" | use$item402 == "feminine" | use$item402 == "WOMAN" | use$item402 == "Femal" | use$item402 == "femenine" | use$item402 == "Femenine" | use$item402 == "femenino" | use$item402 == "woman"]  <- "Female"
+
+use$item402[use$item402 == "gerente" | use$item402 == "M" | use$item402 == "Make" | use$item402 == "Mal" | use$item402 == "male" | use$item402 == "MALE" | use$item402 == "male" | use$item402 == "Male" | use$item402 == "mals" | use$item402 == "man" | use$item402 == "masculine" | use$item402 == "Masculine" | use$item402 == "Man" | use$item402 == "mals " | use$item402 == "male " | use$item402 == "Male "]  <- "Male"
+
+b <- descr::freq(use$item402, plot=FALSE)
+
+##Job title
+library(labourR)
+
+
+#ESCO/ISCO classification using the labourR package
+#ISCO = International Standard Classification of Occupations
+
+attention$id <- 1:nrow(attention) #adds unique identifier to satisfy inane requirement of classify_occupation()
+
+ISCO <- classify_occupation(attention, text_col = 'item400', isco_level = 1) 
+
+m3 <-merge(attention, ISCO, by.x = "id", by.y = "id", all.x = TRUE)
+
+c <- descr::freq(m3$preferredLabel, plot=FALSE)
+
+knowledge <- data[ which(m3$iscoGroup == "1" | m3$iscoGroup == "2"), ]
+service <- data[ which(m3$iscoGroup == "3" | m3$iscoGroup == "4" | m3$iscoGroup == "5" | m3$iscoGroup == "6" | m3$iscoGroup == "7" | m3$iscoGroup == "8" | m3$iscoGroup == "9"), ]
+
+data$item403[data$item403 == 2000]  <- 20
+
+```
+
+```{r generalrecodes, include=FALSE}
+
+source("..//JDRJournalSubmission//recodescript.R", local = knitr::knit_global())
+
+```
+
+```{r keeping45, include=FALSE}
+
+## need to run "recodescript.R" prior to this if running chunk-by-chunk
+
+## variables of interest (resource, challenge, hindrance): 118:372
+
+library(dplyr)
+
+ data22 <- data %>% 
+ mutate_at(vars(118:372),
+ function(x) recode(x,
+ 1==NA, 
+ 2==NA,
+ 3==NA,
+ 4==4,
+ 5==5))
+
+## attention checks: 145, 248, 308
+
+data22$resource <- rowSums(data22[c(118:144,146:202)], na.rm=TRUE)
+data22$hindrance <- rowSums(data22[c(203:247,249:287)], na.rm=TRUE)
+data22$challenge <- rowSums(data22[c(288:307,309:372)], na.rm=TRUE)
+
+data22$item387 <- 7-data22$item387
+data22$burnout      <- rowMeans(data22[c(373:376)], na.rm=TRUE)
+data22$stress       <- rowMeans(data22[c(377:379)], na.rm=TRUE)
+data22$engagement   <- rowMeans(data22[c(380:399)], na.rm=TRUE)        ## probably need to recode some
+
+cor(data22[405:410], use="all.obs")   ## something to be told with resources and challenges
+
+## Peculiar, but repeating for normal datafile so column identifiers line-up
+
+data$resource <- rowSums(data22[c(118:144,146:202)], na.rm=TRUE)
+data$hindrance <- rowSums(data22[c(203:247,249:287)], na.rm=TRUE)
+data$challenge <- rowSums(data22[c(288:307,309:372)], na.rm=TRUE)
+
+data$burnout      <- rowMeans(data22[c(373:376)], na.rm=TRUE)
+data$stress       <- rowMeans(data22[c(377:379)], na.rm=TRUE)
+data$engagement   <- rowMeans(data22[c(380:399)], na.rm=TRUE)        ## probably need to recode some
+
+```
+
+```{r matching, include=FALSE}
+
+source("..\\JDRJournalSubmission\\SIOP2023\\Counts\\matching.R", local = knitr::knit_global())  ## adds 252 variables (count matches) to data object
+
+```
+
+```{r rankings}
+
+write.csv(psych::describe(data[411:662]), "..\\JDRJournalSubmission\\SIOP2023\\Counts\\percents.csv")   ## all together
+
+write.csv(psych::describe(data[411:494]), "..\\JDRJournalSubmission\\SIOP2023\\Counts\\resource_hind.csv")   ## 
+write.csv(psych::describe(data[495:578]), "..\\JDRJournalSubmission\\SIOP2023\\Counts\\resource_challenge.csv")
+write.csv(psych::describe(data[579:662]), "..\\JDRJournalSubmission\\SIOP2023\\Counts\\hind_challenge.csv")
+
+```
+
+```{r correlation_table, eval=TRUE}
+
+r <- corx::corx(data22[,c(405:410)],                    
+                triangle = "lower",
+                stars = c(0.05, 0.01, 0.001),
+                describe = c(`$M$` = mean, `$SD$` = sd))
+
+papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table,
+                  caption = "Focal variable correlations (counts data).",
+                  escape = FALSE)
+
+#cor(data[405:410], use="all.obs")   ## something to be told with resources and challenges
+
+```
+
+
+```{r regressions, include=FALSE}
+
+eng <- lm(engagement ~ hindrance + challenge + resource, data22)
+bur <- lm(burnout ~ hindrance + challenge + resource, data22)
+str <- lm(stress ~ hindrance + challenge + resource, data22)
+
+summary(eng)
+summary(bur)
+summary(str)
+
+```
+
+```{r regression_table_eng}
+library(papaja)
+apa_lm <- apa_print(eng)
+apa_table(
+  apa_lm$table
+  , caption = "Regression Predicting Engagement."
+)
+```
+
+```{r regression_table_str}
+library(papaja)
+apa_lm <- apa_print(str)
+apa_table(
+  apa_lm$table
+  , caption = "Regression Predicting Stress."
+)
+```
+
+```{r regression_table_bur}
+library(papaja)
+apa_lm <- apa_print(bur)
+apa_table(
+  apa_lm$table
+  , caption = "Regression Predicting Burnout."
+)
+```
+
+# Results
+  
+We used R (Version 4.0.3; @R-base) and the R-packages careless (Version 1.1.3; Yentes & Wilhelm, 2021), labourR (Version 1.0.0; Kouretsis et al., 2020), papaja (Version 0.1.0.9997; Aust & Barth, 2020), and tinylabels (Barth, 2021) for all analyses. 
+
+Correlations, means and standard deviations among all study variables are presented in Table \ref{tab:correlation_table}. The results reveal a positive association between resources and engagement (*r* = .34; H1a), but a lack of meaningful association between resources and stress and burnout (H1b and H1c, respectively). Challenge demands were positively associated with engagement (*r* = .31; H2a), but were similarly unrelated to stress or burnout (H2b and H2c). Total hindrance stressors were largely not significantly associated with our outcomes, although there was a small-moderate association with stress (H3b; *r* = .09). 
+
+To explore possible associations more comprehensively, we conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. First, regarding engagement ($F_{(3, 564)}$ = 26.41, p < .001), the total resources were predictive of engagement, but neither challenge nor hindrance demands predicted engagement (see Table \ref{tab:regression_table_eng}). Next, stress was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$ = 2.47, *p* = .060 (see Table \ref{tab:regression_table_str}). Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$= 1.10, *p* = .349. See Table \ref{tab:regression_table_bur}. 
+
+# Discussion
+
+The major goal of this paper was to further explore the relationships among *total* perceived challenge demands, hindrance demands, and resources and outcomes of engagement, stress, and burnout. The results suggest a positive relationship between both resources and engagement (H1a) and challenge demands and engagement (H2a). Employers would benefit from understanding that at least the perception of having “more” resources and more challenge demands in a job is highly associated with reported engagement. While not a causal relationship, it points to the potential value of these kinds of employee support nonetheless. The other relationships with outcomes of stress and burnout were largely not supported, suggesting that the sheer number of resources, challenges, and hindrances are not significantly related to these negative outcomes. The caveat here is stress, which does exhibit a small significant association with the presence of hindrances. Note here that the total average number of hindrances implicated by our sample was low, so it is possible that a stronger association is hidden by a restriction of range. 
+
+## Limitations and Future Directions
+
+As with any piece of research, this project has limitations, but also provide a variety of additional directions to pursue in the future. First, while a strength of this project, arguably, is the use of O\*Net items, practical considerations limited the number of job characteristics we could include in our survey. Future study could consider additional or other O\*Net items. We intentionally conceptualized resources and demands in terms of perceived total amounts. It may be the case that certain kinds of resources or challenges are more strongly associated with engagement than others, and such, future research could explore the importance of resources/challenges categorically. 
+
+Our study was limited to three outcomes of interest. It would be especially interesting to explore additional outcomes (e.g., job satisfaction) as well, or whether volume of resources and demands operationalized in this way are related to other behaviors (e.g., turnover intention, perceived organizational support, commitment). Furthermore, while we found support for the prediction that resources and challenge demands would be positively related to engagement, it would be interesting to consider moderators of this relationship. For example, the Job Characteristics Theory [@hackman1976motivation] includes the key component of growth need strength in the connections between job characteristics (e.g., autonomy, skill variety) and critical states (e.g., experienced meaningfulness), and between critical states and personal and work outcomes. Perhaps this connection between engagement and challenge demands, for instance, is stronger for those with greater growth need strength. 
+
+It is also possible that rather than volume, categorically some demands are more related to these outcomes than others. The moderate association between hindrances and challenges (*r* = .22) also hints that some of these relationships may be driven by *job complexity* - that is, some jobs simply have more elements. With more job elements come increased opportunities for those elements to be perceived as resources, challenges, or hindrances.
+
+# Conclusion
+
+Add one!
+
+```{r, include=FALSE}
+knitr::write_bib(c('knitr','rmarkdown','posterdown','pagedown'), 'packages.bib')
+```
+
+# References
