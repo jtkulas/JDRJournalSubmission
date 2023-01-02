@@ -11,17 +11,26 @@ affiliation:
   - num: 2
     address: eRg
 column_numbers: 3
+primary_colour: "#313ab3"
+secondary_colour: "#B4B5B4"
+accent_colour: "#111c2c"
 #logoright_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
 #logoleft_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
 output: 
   posterdown::posterdown_html:
     self_contained: false
+csl               : "apa7.csl"
 bibliography: jobdemands_resources_bibtex.bib
+suppress-bibliography: true 
+link-citations: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+
+library(tinylabels) ## because of warning on later chunk
+
 ```
 
 # Introduction
@@ -49,10 +58,10 @@ A Prolific panel sample initially resulted in 785 respondents, of which 568 were
 
 An email was sent to eligible participants in the Prolific respondent pool (those 18+ holding either a full-time or part-time job). The 40-45 minute survey was conducted via Qualtrics and asked to think about their primary job. The items they were presented with depended on the job characteristics they initially specified. They were asked to report how much a characteristic was a resource, and then how much each characteristic was a hindrance, and finally, how much each item was a challenge. Participants were compensated six dollars. 
 
-### Characteristics, Demands, and Resources. 
+## Characteristics, Demands, and Resources. 
 Our analyses included items within O\*Net’s classifications of “work activity” and "work context" items. We used O\*Net’s response scales, several of which were unique across items, but all shared the same 1 to 5 scale options. Subsequent to providing ratings of whether or not a characteristic was relevant, each respondent was also asked to rate that element in terms of, 1) . . . this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) . . . this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) . . . this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment. 
   
-### Outcomes of Stress, Burnout, and Engagement. 
+## Outcomes of Stress, Burnout, and Engagement. 
 Three items taken from the Copenhagen Psychosocial Questionnaire [@burr_third_2019] to capture stress. Obtained alpha was .85 in this sample. Four items were taken from the Copenhagen Psychosocial Questionnaire [@burr_third_2019] to capture burnout. Alpha was 0.85 in this sample. The 18-item engagement measure was recently developed [@engage_2022] to capture engagement. For the purposes of the current study, we focused on an overall engagement score (18 item aggregate, alpha = 0.91).
 
 # Results
@@ -192,7 +201,7 @@ write.csv(psych::describe(data[579:662]), "..\\JDRJournalSubmission\\SIOP2023\\C
 
 ```
 
-```{r correlation_table, eval=TRUE}
+```{r correlationtable, warning=FALSE}
 
 r <- corx::corx(data22[,c(405:410)],                    
                 triangle = "lower",
@@ -200,13 +209,12 @@ r <- corx::corx(data22[,c(405:410)],
                 describe = c(`$M$` = mean, `$SD$` = sd))
 
 papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table,
-                  caption = "Focal variable correlations (counts data).",
-                  escape = FALSE)
+                 caption = "Focal variable correlations (counts data).",
+                 escape = FALSE)
 
-#cor(data[405:410], use="all.obs")   ## something to be told with resources and challenges
+# cor(data[405:410], use="all.obs")   ## something to be told with resources and challenges
 
 ```
-
 
 ```{r regressions, include=FALSE}
 
@@ -220,7 +228,7 @@ summary(str)
 
 ```
 
-```{r regression_table_eng}
+```{r regressiontableeng}
 library(papaja)
 apa_lm <- apa_print(eng)
 apa_table(
@@ -229,7 +237,7 @@ apa_table(
 )
 ```
 
-```{r regression_table_str}
+```{r regressiontablestr}
 library(papaja)
 apa_lm <- apa_print(str)
 apa_table(
@@ -238,7 +246,7 @@ apa_table(
 )
 ```
 
-```{r regression_table_bur}
+```{r regressiontablebur}
 library(papaja)
 apa_lm <- apa_print(bur)
 apa_table(
@@ -247,9 +255,9 @@ apa_table(
 )
 ```
 
-Correlations, means and standard deviations among all study variables are presented in Table \ref{tab:correlation_table}. The results reveal a positive association between resources and engagement (*r* = .34; H1a), but a lack of meaningful association between resources and stress and burnout (H1b and H1c, respectively). Challenge demands were positively associated with engagement (*r* = .31; H2a), but were similarly unrelated to stress or burnout (H2b and H2c). Total hindrance stressors were largely not significantly associated with our outcomes, although there was a small-moderate association with stress (H3b; *r* = .09). 
+Correlations, means and standard deviations among all study variables are presented in Table \@ref(tab:correlationtable). The results reveal a positive association between resources and engagement (*r* = .34; H1a), but a lack of meaningful association between resources and stress and burnout (H1b and H1c, respectively). Challenge demands were positively associated with engagement (*r* = .31; H2a), but were similarly unrelated to stress or burnout (H2b and H2c). Total hindrance stressors were largely not significantly associated with our outcomes, although there was a small-moderate association with stress (H3b; *r* = .09). 
 
-We also conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. First, regarding engagement ($F_{(3, 564)}$ = 26.41, p < .001), the total resources were predictive of engagement, but neither challenge nor hindrance demands predicted engagement (see Table \ref{tab:regression_table_eng}). Next, stress was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$ = 2.47, *p* = .060 (see Table \ref{tab:regression_table_str}). Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$= 1.10, *p* = .349. See Table \ref{tab:regression_table_bur}. 
+We also conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. First, regarding engagement ($F_{(3, 564)}$ = 26.41, p < .001), the total resources were predictive of engagement, but neither challenge nor hindrance demands predicted engagement (see Table \@ref(tab:regressiontableeng). Next, stress was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$ = 2.47, *p* = .060 [see Table \@ref(tab:regressiontablestr)]. Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$= 1.10, *p* = .349. See Table \@ref(tab:regressiontablebur). 
 
 # Discussion
 
