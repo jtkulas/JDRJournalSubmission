@@ -21,7 +21,6 @@ Google fonts api stuff
 
 <title>Perception of Work Demands and Resources: Does Sheer Volume Matter?</title>
 
-<script src="counts_poster_files/header-attrs-2.10/header-attrs.js"></script>
 
 
 
@@ -88,24 +87,24 @@ font-family: Palatino;
 }
 /* unvisited link */
 a:link {
-color: #111c2c;
+color: #FF0000;
 }
 .mybreak {
   break-before: column;
 }
 /* visited link */
 a:visited {
-color: #111c2c;
+color: #FF0000;
 }
 
 /* mouse over link */
 a:hover {
-color: #111c2c;
+color: #FF0000;
 }
 
 /* selected link */
 a:active {
-color: #111c2c;
+color: #FF0000;
 }
 .poster_body {
 -webkit-column-count: 3; /* Chrome, Safari, Opera */
@@ -280,6 +279,7 @@ font-size: 20pt;
 <div class="title_container">
 <!-- Left Logo  -->
 <div class="logo_left">
+<img src= 'http://career.iresearchnet.com/wp-content/uploads/2015/01/Occupational-Information-Network-300x300.png' style="width: 80%">
 </div>
 <!-- Poster Title -->
 <div class= "poster_title">
@@ -294,9 +294,36 @@ font-size: 20pt;
 
 <div class='poster_body_wrap'>
 <div class='poster_body'>
+<style type="text/css">
+
+/*                         https://www.w3schools.com/css/css3_images.asp                  */
+
+.logo_left {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 550px;         
+  height: 540px;
+}
+
+
+.logo_right {
+  position: absolute;
+  top: 20px;
+  left: 3250px;
+  width: 700px;          
+  height: 440px;
+}
+
+p.caption {
+  font-size: 0.8em;         /* This sets figure caption font size */
+  text-align: left
+}
+
+</style>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>Using the the job demands-resources theory <span class="citation">(<a href="#ref-demerouti2001job" role="doc-biblioref">Demerouti et al., 2001</a>)</span>, transactional theory of stress and coping <span class="citation">(<a href="#ref-lazarus1984stress" role="doc-biblioref">Lazarus &amp; Folkman, 1984</a>)</span>, and the challenge-hindrance framework <span class="citation">(<a href="#ref-cavanaugh2000empirical" role="doc-biblioref">Cavanaugh et al., 2000</a>)</span>, we explored whether the amount or volume of perceived resources and demands would be related to three organizational outcomes: engagement <span class="citation">(<span>“a positive affective experience defined as a fulfilling, work-related state of mind characterized by vigor, dedication, and absorption,”</span> <a href="#ref-schaufeli2002measurement" role="doc-biblioref">Schaufeli et al., 2002</a>)</span>, workplace stress <span class="citation">(<span>“an individual state characterized by a combination of high arousal and displeasure,”</span> p. 15, <a href="#ref-pejtersen2010second" role="doc-biblioref">Pejtersen et al., 2010</a>)</span> and burnout <span class="citation">(<span>“the degree of physical and psychological fatigue and exhaustion that is perceived by the person as related to his/her work,”</span> p. 197, <a href="#ref-kristensen2005copenhagen" role="doc-biblioref">Kristensen et al., 2005</a>)</span>.</p>
+<p>Using the the job demands-resources theory <span class="citation">(<a href="#ref-demerouti2001job" role="doc-biblioref">Demerouti et al., 2001</a>)</span>, transactional theory of stress and coping <span class="citation">(<a href="#ref-lazarus1984stress" role="doc-biblioref">Lazarus &amp; Folkman, 1984</a>)</span>, and the challenge-hindrance framework <span class="citation">(<a href="#ref-cavanaugh2000empirical" role="doc-biblioref">Cavanaugh et al., 2000</a>)</span>, we explored whether the amount or volume of perceived resources and demands would be related to three organizational outcomes: engagement <span class="citation">(“a positive affective experience defined as a fulfilling, work-related state of mind characterized by vigor, dedication, and absorption,” <a href="#ref-schaufeli2002measurement" role="doc-biblioref">Schaufeli et al., 2002</a>)</span>, workplace stress <span class="citation">(“an individual state characterized by a combination of high arousal and displeasure,” p. 15, <a href="#ref-pejtersen2010second" role="doc-biblioref">Pejtersen et al., 2010</a>)</span> and burnout <span class="citation">(“the degree of physical and psychological fatigue and exhaustion that is perceived by the person as related to his/her work,” p. 197, <a href="#ref-kristensen2005copenhagen" role="doc-biblioref">Kristensen et al., 2005</a>)</span>.</p>
 <p>Perhaps not surprisingly, challenge stressors are typically associated with positive outcomes, whereas hindrance stressors are associated with more negative outcomes <span class="citation">(e.g., <a href="#ref-cavanaugh2000empirical" role="doc-biblioref">Cavanaugh et al., 2000</a>)</span>. Thus:</p>
 <blockquote>
 <p><em>Hypothesis 1a-1c</em>: A greater overall quantity of resources is positively associated with engagement (1a), and negatively associated with stress (1b) and burnout (1c)</p>
@@ -414,7 +441,8 @@ font-size: 20pt;
 <th align="left">Predictor</th>
 <th align="left"><span class="math inline">\(b\)</span></th>
 <th align="left">95% CI</th>
-<th align="left"><span class="math inline">\(t(564)\)</span></th>
+<th align="left"><span class="math inline">\(t\)</span></th>
+<th align="left"><span class="math inline">\(\mathit{df}\)</span></th>
 <th align="left"><span class="math inline">\(p\)</span></th>
 </tr>
 </thead>
@@ -424,6 +452,7 @@ font-size: 20pt;
 <td align="left">3.28</td>
 <td align="left">[3.09, 3.47]</td>
 <td align="left">33.93</td>
+<td align="left">564</td>
 <td align="left">&lt; .001</td>
 </tr>
 <tr class="even">
@@ -431,6 +460,7 @@ font-size: 20pt;
 <td align="left">0.00</td>
 <td align="left">[-0.01, 0.00]</td>
 <td align="left">-1.80</td>
+<td align="left">564</td>
 <td align="left">.072</td>
 </tr>
 <tr class="odd">
@@ -438,6 +468,7 @@ font-size: 20pt;
 <td align="left">0.00</td>
 <td align="left">[-0.01, 0.01]</td>
 <td align="left">0.88</td>
+<td align="left">564</td>
 <td align="left">.378</td>
 </tr>
 <tr class="even">
@@ -445,6 +476,7 @@ font-size: 20pt;
 <td align="left">0.02</td>
 <td align="left">[0.01, 0.03]</td>
 <td align="left">3.84</td>
+<td align="left">564</td>
 <td align="left">&lt; .001</td>
 </tr>
 </tbody>
@@ -461,7 +493,8 @@ font-size: 20pt;
 <th align="left">Predictor</th>
 <th align="left"><span class="math inline">\(b\)</span></th>
 <th align="left">95% CI</th>
-<th align="left"><span class="math inline">\(t(564)\)</span></th>
+<th align="left"><span class="math inline">\(t\)</span></th>
+<th align="left"><span class="math inline">\(\mathit{df}\)</span></th>
 <th align="left"><span class="math inline">\(p\)</span></th>
 </tr>
 </thead>
@@ -471,6 +504,7 @@ font-size: 20pt;
 <td align="left">2.38</td>
 <td align="left">[2.15, 2.62]</td>
 <td align="left">19.80</td>
+<td align="left">564</td>
 <td align="left">&lt; .001</td>
 </tr>
 <tr class="even">
@@ -478,6 +512,7 @@ font-size: 20pt;
 <td align="left">0.01</td>
 <td align="left">[0.00, 0.01]</td>
 <td align="left">1.82</td>
+<td align="left">564</td>
 <td align="left">.070</td>
 </tr>
 <tr class="odd">
@@ -485,6 +520,7 @@ font-size: 20pt;
 <td align="left">0.01</td>
 <td align="left">[0.00, 0.02]</td>
 <td align="left">1.43</td>
+<td align="left">564</td>
 <td align="left">.152</td>
 </tr>
 <tr class="even">
@@ -492,6 +528,7 @@ font-size: 20pt;
 <td align="left">0.00</td>
 <td align="left">[-0.02, 0.01]</td>
 <td align="left">-0.77</td>
+<td align="left">564</td>
 <td align="left">.440</td>
 </tr>
 </tbody>
@@ -508,7 +545,8 @@ font-size: 20pt;
 <th align="left">Predictor</th>
 <th align="left"><span class="math inline">\(b\)</span></th>
 <th align="left">95% CI</th>
-<th align="left"><span class="math inline">\(t(564)\)</span></th>
+<th align="left"><span class="math inline">\(t\)</span></th>
+<th align="left"><span class="math inline">\(\mathit{df}\)</span></th>
 <th align="left"><span class="math inline">\(p\)</span></th>
 </tr>
 </thead>
@@ -518,6 +556,7 @@ font-size: 20pt;
 <td align="left">2.90</td>
 <td align="left">[2.68, 3.11]</td>
 <td align="left">26.89</td>
+<td align="left">564</td>
 <td align="left">&lt; .001</td>
 </tr>
 <tr class="even">
@@ -525,6 +564,7 @@ font-size: 20pt;
 <td align="left">0.00</td>
 <td align="left">[0.00, 0.01]</td>
 <td align="left">0.67</td>
+<td align="left">564</td>
 <td align="left">.502</td>
 </tr>
 <tr class="odd">
@@ -532,6 +572,7 @@ font-size: 20pt;
 <td align="left">0.01</td>
 <td align="left">[0.00, 0.02]</td>
 <td align="left">1.19</td>
+<td align="left">564</td>
 <td align="left">.233</td>
 </tr>
 <tr class="even">
@@ -539,6 +580,7 @@ font-size: 20pt;
 <td align="left">0.00</td>
 <td align="left">[-0.01, 0.01]</td>
 <td align="left">-0.52</td>
+<td align="left">564</td>
 <td align="left">.601</td>
 </tr>
 </tbody>

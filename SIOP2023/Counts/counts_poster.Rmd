@@ -13,9 +13,9 @@ affiliation:
 column_numbers: 3
 primary_colour: "#313ab3"
 secondary_colour: "#B4B5B4"
-accent_colour: "#111c2c"
+accent_colour: "#FF0000"
 #logoright_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
-#logoleft_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
+logoleft_name: http&#58;//career.iresearchnet.com/wp-content/uploads/2015/01/Occupational-Information-Network-300x300.png
 output: 
   posterdown::posterdown_html:
     self_contained: false
@@ -38,6 +38,36 @@ knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 library(tinylabels) ## because of warning on later chunk
 
 ```
+
+
+```{css, echo=FALSE}
+
+/*                         https://www.w3schools.com/css/css3_images.asp                  */
+
+.logo_left {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 550px;         
+  height: 540px;
+}
+
+
+.logo_right {
+  position: absolute;
+  top: 20px;
+  left: 3250px;
+  width: 700px;          
+  height: 440px;
+}
+
+p.caption {
+  font-size: 0.8em;         /* This sets figure caption font size */
+  text-align: left
+}
+
+```
+
 
 # Introduction
 
