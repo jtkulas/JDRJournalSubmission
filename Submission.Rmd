@@ -190,10 +190,12 @@ Data were collected through Prolific, a data collection platform. An email was s
 
 Of the `r nrow(use)` Prolific panel individuals who initially accessed the survey link, `r nrow(different)` indicated that they were not interested, had more than 200 missing responses, or had 20 or more identical consecutive sequential responses [@R-careless]. Applying a further screen regarding attention checks (there were four attention checks embedded throughout, asking respondents to indicate a specific answer) resulted in the retention of `r nrow(data)` respondents who constitute the current sample. Regarding tenure, `r round(a[1,3],2)`% had been in their referent job less than 6 months, `r round(a[2,3],1)`% between 6 months and a year, `r round(a[3,3],2)`% between one and five years, `r round(a[4,3],2)`% between 5 and 10 years, and `r round(a[5,3],2)`% more than 10 years. Respondent ages ranged from 18 to 65 with an average of `r round(mean(data[,403], na.rm=TRUE),2)` years old (*SD* = `r round(sd(data[,403], na.rm=TRUE),2)`). The survey offered a free-field gender identity category, although the sample predominantly self-identified as female (`r round(b[2,3],2)`%) or male (`r round(b[5,3],2)`%). 
 
-```{r litresources, fig.cap="Average and standard deviation of O*Net characteristics retained as indicators of Autonomy, Cohesion, Control, Participation, and Supervisor Support."}
+```{r litresources}
 
 ###############################################
-###############################################
+############################################### include & eval=FALSE on 1/16/23 because of new figure which replaced this older attempt
+
+### ACTUALLY, just commented out the graph because other code chunks needed for subsequent commands - 1/17/23 , fig.cap="Average and standard deviation of O*Net characteristics retained as indicators of Autonomy, Cohesion, Control, Participation, and Supervisor Support."
 
 
 labels <- read.csv("truncatedlabels.csv", header=FALSE)  ## Changed on 12/19 to fix zero sd issues       
@@ -310,8 +312,8 @@ summarized <- together %>%                               # Summary by group usin
 
 summarized$RD <- factor(summarized$RD, levels = c("Resource", "Challenge", "Hindrance"))
 
-ggplot(summarized, aes(x=category, y=mean, fill=RD)) + geom_bar(stat="identity", position=position_dodge()) + theme_bw() + xlab("") + ylab("Average Job Characteristic Rating") + coord_cartesian(ylim=c(1,5)) + scale_fill_brewer(palette="Blues") + 
-  geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.5, size=0.8, position=position_dodge(.9))
+#ggplot(summarized, aes(x=category, y=mean, fill=RD)) + geom_bar(stat="identity", position=position_dodge()) + theme_bw() + xlab("") + ylab("Average Job Characteristic Rating") + coord_cartesian(ylim=c(1,5)) + scale_fill_brewer(palette="Blues") + 
+#  geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.5, size=0.8, position=position_dodge(.9))
 
 ```
 
@@ -323,7 +325,7 @@ The O\*Net descriptors are written in a similar manner to a task statement prese
 
 The total number of items on the survey was less than 392 (98 characteristics x 4 administrations) because we did not ask for demand and resource evaluations for 14 O\*Net characteristics that we projected would have very low frequency of endorsement across respondents (one excluded characteristic, for example, was *...the extent to which the worker is exposed to radiation on the job*). 
 
-We used 98 statements taken from O\*NET [activity and context classifications](https://www.ONETonline.org/find/descriptor/result/4.A.1.b.3). We retained 41 work activity classifications which O\*NET groups into categories of information input (5 statements), interacting with others (17 statements), mental processes (10 statements) and work output (9 statements). Fifty-seven work context statements grouped into interpersonal relationships (14 statements), physical work conditions (30 statements), and structural job characteristics (13 statements).  
+We used 98 statements taken from O\*NET [activity and context classifications](https://www.ONETonline.org/find/descriptor/result/4.A.1.b.3). We retained 41 work activity classifications which O\*NET groups into categories of information input (5 statements; Where and how are the information and data gained that are needed to perform this job?), interacting with others (17 statements; What interactions with other persons or supervisory activities occur while performing this job?), mental processes (10 statements; What processing, planning, problem-solving, decision-making, and innovating activities are performed with job-relevant information?) and work output (9 statements; What physical activities are performed, what equipment and vehicles are operated/controlled, and what complex/technical activities are accomplished as job outputs?). Fifty-seven work context statements grouped into interpersonal relationships (14 statements; This category describes the context of the job in terms of human interaction processes), physical work conditions (30 statements; This category describes the work context as it relates to the interactions between the worker and the physical job environment), and structural job characteristics (13 statements; This category involves the relationships or interactions between the worker and the structural characteristics of the job). 
 
 These descriptors often have [unique response categories](https://www.ONETonline.org/find/descriptor/result/4.C.1.c.2). For example, the statement "How responsible is the worker for work outcomes and results of other workers?" has response options ranging from *No responsibility* to *Very high responsibility*, while the statement, "How often do you use electronic mail in this job?" has options ranging from *Never* to *Every day*. We retained the essence of each O\*NET descriptor to capture characteristics of relevance for each respondent. Subsequent to these self evaluations, each respondent who agreed that the element had *at least some relevance* to their job was also asked to rate that element in terms of, 1) ...this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) ...this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) ...this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment. 
 
@@ -333,11 +335,13 @@ Outline:
 
 1. Hypothesis 1: Job characteristics differ in variability/stability regarding subjective worker perception as a demand or resource.
 
-> Maybe just do a histogram of standard deviations (overall) or perhaps also by O\*Net dimensions (aim to do this 12/21 in St. Cloud)
+> Done - Figure \@ref(fig:overallhist)
+
+> NOT DONE: Combine current graphs 2 $\rightarrow$ 8 into only 2 graphs (put resources, challenges, and demands on same graph; Kulas do this)
 
 2. Hypothesis 2: Job characteristics are not uniquely categorized as a resource or demand, but rather, some job characteristics are rated highly as both a resource and a demand.
 
-> Maybe just put correlations in here - SIOP matrix (challenge, hindrance, resource) - would be most interesting by O\*Net dimension.
+> Done (at O\*Net dimension level) - Table \@ref(tab:cortab).
 
 3. *Research Question 1*: Are literature-implicated resources consistently rated as job resources?
 
@@ -345,7 +349,7 @@ Outline:
 
 5. *Research Question 3*: Are literature-implicated hindrances consistently rated as job hindrances?
 
-> New graph presents these but need an inferential - maybe ANOVAs
+> Alicia can you present "what this means" and what is being presented in Figure \@ref(fig:scalelevelgraphs) more clearly - also possibly add ANOVAs
 
 ## Standard deviations of perceptions
 
@@ -539,7 +543,8 @@ papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table,
                   caption = "Challenge, hindrance, and resource bivariate correlations.",
                   escape = FALSE, 
                   font_size = "small", 
-                  landscape = TRUE)
+                  landscape = TRUE,
+                  note = "The seven O*Net grouping categories represented here are: Information Input (ii), Mental Processes (mp), Work Output (wo), Interacting with Others (io), Interpersonal Relationships (ir), Physical Work Conditions (pc), and Structural Job Characteristics (sc)")
 ```
 
 
