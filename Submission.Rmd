@@ -383,13 +383,13 @@ Figure \@ref(fig:overallhist) presents standard deviations of characteristic per
 
 sortresource <- resource[order(resource$sd),]
 
-topresource <- head(sortresource, 10)
+topresource <- head(sortresource, 8)    ## changed for combined plot (1/28/23)
 
 topresource <- topresource[tail(names(topresource),3)]        
 
 library(ggplot2)
 
-ggplot(topresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="blue", position=position_dodge()) + theme_bw() +
+a <- ggplot(topresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="blue", position=position_dodge()) + theme_bw() +
   scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Most Agreed Upon as a Resource") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,6)) 
 
 ```
@@ -398,13 +398,11 @@ ggplot(topresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="id
 
 sortchallenge <- challenge[order(challenge$sd),]
 
-topchallenge <- head(sortchallenge, 10)
+topchallenge <- head(sortchallenge, 8)    ## changed for combined plot (1/28/23)
 
 topchallenge <- topchallenge[tail(names(topchallenge),3)]        
 
-library(ggplot2)
-
-ggplot(topchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="yellow", position=position_dodge()) + theme_bw() +
+b <- ggplot(topchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="yellow", position=position_dodge()) + theme_bw() +
   scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Most Agreed Upon as a Challenge") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,6)) 
 
 
@@ -414,22 +412,27 @@ ggplot(topchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="i
 
 sorthindrance <- hindrance[order(hindrance$sd),]
 
-tophindrance <- head(sorthindrance, 10)
+tophindrance <- head(sorthindrance, 8)  ## changed for combined plot (1/28/23)
 
 tophindrance <- tophindrance[tail(names(tophindrance),3)]        
 
-library(ggplot2)
-
-ggplot(tophindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="red", position=position_dodge()) + theme_bw() +
-  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Most Agreed upon as a Hindrance") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5))
+c <- ggplot(tophindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="red", position=position_dodge()) + theme_bw() +
+  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Most Agreed upon as a Hindrance") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,6))
 
 ```
 
-Figures \@ref(fig:resourcesagree), \@ref(fig:challengesagree), and \@ref(fig:hindrancesagree) present the resources, challenges, and hindrances that are *largely agreed on* as indexed by (relatively) low standard deviations.[^caveat]
+Figure \@ref(fig:combinegraphs) presents resources, challenges, and hindrances that are *largely agreed on* as indexed by (relatively) low standard deviations.[^caveat] There are only 8 characteristics presented per perceived category because of limited space. All sortable ratings are available in the online resources.
 
 [^caveat]: There were a few characteristics with standard deviations of "zero" but these were excluded from presenation as they were likely representing only one person (*n*'s should also go on these graphs if they're retained - Alicia's idea 12/2 was to use initial ratings as indicators of counts).
 
-As can be seen by the graphs, there is considerable disagreement regarding the degree to which job elements are considered *hindrances*, with the 10 elements showing the greatest agreement still ranging in standard deviations from `r min(tophindrance$sd)` to `r max(tophindrance$sd)`. What is widely seen as a resource and challenge tends to be more universally agreed upon (range of lowest 10 resource standard deviations is `r min(topresource$sd)` to `r max(topresource$sd)` and the range of lowest 10 challenge standard deviations is `r min(topchallenge$sd)` to `r max(topchallenge$sd)`.
+```{r combinegraphs, fig.cap="Characteristics percieved most similarly (lowest standard deviations).", fig.height=10}
+
+library(gridExtra)
+grid.arrange(a, b, c, nrow = 3)
+
+```
+
+As can be seen by the graphs, there is considerable disagreement regarding the degree to which job elements are considered *hindrances*, with the 8 elements showing the greatest agreement still ranging in standard deviations from `r min(tophindrance$sd)` to `r max(tophindrance$sd)`. What is widely seen as a resource and challenge tends to be more universally agreed upon (range of lowest 8 resource standard deviations is `r min(topresource$sd)` to `r max(topresource$sd)` and the range of lowest 8 challenge standard deviations is `r min(topchallenge$sd)` to `r max(topchallenge$sd)`.
 
 ## High Variability Demands and Resources
 
@@ -439,13 +442,11 @@ resource <- resource[ which(resource$sd > 0), ]
 
 sortresource <- resource[order(-resource$sd),]
 
-topresource <- head(sortresource, 10)
+topresource <- head(sortresource, 8)
 
 topresource <- topresource[tail(names(topresource),3)]        
 
-library(ggplot2)
-
-ggplot(topresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="blue", position=position_dodge()) + theme_bw() +
+d <- ggplot(topresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="blue", position=position_dodge()) + theme_bw() +
   scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Least Agreed Upon as a Resource") + 
   geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5)) 
 
@@ -455,13 +456,11 @@ ggplot(topresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="id
 
 sortchallenge <- challenge[order(-challenge$sd),]
 
-topchallenge <- head(sortchallenge, 10)
+topchallenge <- head(sortchallenge, 8)
 
 topchallenge <- topchallenge[tail(names(topchallenge),3)]        
 
-library(ggplot2)
-
-ggplot(topchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="yellow", position=position_dodge()) + theme_bw() +
+e <- ggplot(topchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="yellow", position=position_dodge()) + theme_bw() +
   scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Least Agreed Upon as a Challenge") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5)) 
 
 
@@ -472,18 +471,23 @@ ggplot(topchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="i
 
 sorthindrance <- hindrance[order(-hindrance$sd),]
 
-tophindrance <- head(sorthindrance, 10)
+tophindrance <- head(sorthindrance, 8)
 
 tophindrance <- tophindrance[tail(names(tophindrance),3)]        
 
-library(ggplot2)
-
-ggplot(tophindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="red", position=position_dodge()) + theme_bw() +
+f <- ggplot(tophindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="red", position=position_dodge()) + theme_bw() +
   scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Least Agreed upon as a Hindrance") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5))
 
 ```
 
-Figures \@ref(fig:resourcesdisagree), \@ref(fig:challengesdisagree), and \@ref(fig:hindrancesdisagree) present the resources, challenges, and hindrances that are *largely disagreed on* as indexed by (relatively) high standard deviations (these are the 10 characteristics with the greatest variability in rating).
+```{r combinegraphs2, fig.cap="Characteristics percieved most *DIS*similarly (lowest standard deviations).", fig.height=10}
+
+library(gridExtra)
+grid.arrange(d, e, f, nrow = 3)
+
+```
+
+Figure \@ref(fig:combinegraphs2) presents the resources, challenges, and hindrances that are *largely disagreed on* as indexed by (relatively) high standard deviations (these are the 8 characteristics with the greatest variability in rating).
 
 ## Correlations
 
