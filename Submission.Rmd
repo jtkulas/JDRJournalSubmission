@@ -707,9 +707,47 @@ challenges
 
 see Figure \@ref(fig:scalelevelgraphs)
 
+```{r ANOVAs}
+
+library(tidyr)
+
+foranova <- data
+foranova$subject <- 1:nrow(foranova) 
+  
+anova1 <- gather(foranova,type,score,resources_workpressure:hindrance_autonomy, factor_key=TRUE)
+
+## now need to isolate rows with targeted characteristics
+
+overwork <- anova1[ which(anova1$type=='resources_phyworkload_wkover' | anova1$type=='challenge_phyworkload_wkover' | anova1$type=='hindrance_phyworkload_wkover'), ]
+
+rstatix::anova_test(data=overwork,dv=score,wid=subject,within=type) 
+
+## pairwise_t_test( value~time,paired=TRUE, p.adjust.method = "bonferroni" ) 
+
+# check <- overwork[,c(406:407)]
+# psych::describe.by(check, group=check$type)
+
+```
+
+
+
 \newpage
 
 # Discussion
+NOTE: Add a table of the items (probably the full list and those we included in challenge, hindrance specifically). Could also have a column showing which items were used for Figure 4 categories. 
+Summary
+The major aim and contribution of this paper was to examine whether there was variability in subjective ratings of job characteristics with respect to how much they serve as resources and demands, and also whether or not there is a match between the literature-implicated resources/demands and subjective ratings of these characteristics using a sample of items from O*Net. The findings broadly revealed that there was relatively more consistency in ratings resources and challenges characteristics, and far more variability in job characteristics rated as hindrance stressors. This finding lends additional evidence to Horan et al.’s (2020) conclusion that “...stressors are only challenge or hindrance stressors to the extent that they are perceived as such by employees” (p. 3). The research questions regarding the match between literature-implicated demand and resource categories and empirical ratings aligns with the consistency/variability we observed in H1. Interestingly, we consistently observed that job characteristics rated as resources were also rated highly as challenge stressors, which are not inherently negative in the way that hindrance stressors are. Lastly, we also found support for the prediction that job characteristics are not uniquely categorized as a resource or demand, but rather, some job  characteristics are rated highly as both a resource and a demand.
+Practical Implications
+The reality that there is more individual difference in what employees perceive to be a hindrance and less in what is perceived to be a resource or challenge stressor is in some ways encouraging. These findings provide comforting support for the idea that managers and supervisors can predict which characteristics are perceived as supportive to employees’ performance. Somewhat surprisingly, hindrances are rated more variably. As such, one important implication is that of frequent communication with employees regarding their perceptions of characteristics that limit their performance. ADD MORE
+Limitations and Future Directions
+•	Captured only a small number of job characteristics
+•	Part of that means we captured minimal “social” resources or interactions with one’s supervisor
+•	Should expand on the kinds of resources employees experience, as well as stressors
+•	Definition of resource, challenge, hindrance – question of distinction between resource and challenge (think about this one a little bit)
+
+Conclusion
+In sum, this endeavor explored the job-demands-resources literature from a unique lens, showing that there are far more individual differences in how employees perceive demands and resources than much of our current research suggests. While resources and challenges are more similarly experienced, hindrance demands show a wide amount of variability. 
+
 
 ## Future directions
 
