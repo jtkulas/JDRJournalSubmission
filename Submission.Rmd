@@ -94,13 +94,11 @@ Of greatest interest here are statements taken from O\*NET ["activity" and "cont
 
 >Hypothesis 2: Job characteristics are not uniquely categorized as a resource or demand, but rather, some job characteristics are rated highly as both a resource and a demand.
 
-Lastly, we propose three research that explicitly address a topic hinted at in the literature review above. Although challenge stressors tend to be appraised more so as challenges, and hindrance stressors tend to be appraised more as hindrances than challenges, there remains variability in these appraisals [@lepine2022challenge]. @lepine2022challenge, in fact, argues that the challenge-hindrance stressor framework acknowledges that these appraisals are not universal. We explore whether literature-implicated job characteristics (e.g., autonomy) are consistently rated as our research models suggest across the job-demands resources theory [@bakker2017job]and challenge-hindrance stressor framework [@cavanaugh2000empirical].
+Lastly, we propose three research questions that explicitly address a topic discussed above. Although challenge stressors tend to be appraised more so as challenges, and hindrance stressors tend to be appraised more as hindrances than challenges, there remains variability in these appraisals [@lepine2022challenge]. @lepine2022challenge, in fact, argues that the challenge-hindrance stressor framework acknowledges that these appraisals are not universal. We explore whether literature-implicated job characteristics (e.g., autonomy) are consistently rated as our research models suggest across the job-demands resources theory [@bakker2017job] and challenge-hindrance stressor framework [@cavanaugh2000empirical].
 
 >*Research Question 1*: Are literature-implicated resources consistently rated as job resources?
 
->*Research Question 2*: Are literature-implicated challenges consistently rated as job challenges?
-
->*Research Question 3*: Are literature-implicated hiderances consistently rated as job hindrances?
+>*Research Question 2*: Are literature-implicated demands consistently rated as job demands?
 
 ```{r study1}
 
@@ -188,7 +186,7 @@ Data were collected through Prolific, a data collection platform. An email was s
 
 ## Participants
 
-Of the `r nrow(use)` Prolific panel individuals who initially accessed the survey link, `r nrow(different)` indicated that they were not interested, had more than 200 missing responses, or had 20 or more identical consecutive sequential responses [@R-careless]. Applying a further screen regarding attention checks (there were four attention checks embedded throughout, asking respondents to indicate a specific answer) resulted in the retention of `r nrow(data)` respondents who constitute the current sample. Regarding tenure, `r round(a[1,3],2)`% had been in their referent job less than 6 months, `r round(a[2,3],1)`% between 6 months and a year, `r round(a[3,3],2)`% between one and five years, `r round(a[4,3],2)`% between 5 and 10 years, and `r round(a[5,3],2)`% more than 10 years. Respondent ages ranged from 18 to 65 with an average of `r round(mean(data[,403], na.rm=TRUE),2)` years old (*SD* = `r round(sd(data[,403], na.rm=TRUE),2)`). The survey offered a free-field gender identity category, although the sample predominantly self-identified as female (`r round(b[2,3],2)`%) or male (`r round(b[5,3],2)`%). 
+Of the `r nrow(use)` individuals who initially accessed the survey link, `r nrow(different)` indicated that they were not interested, had more than 200 missing responses, or had 20 or more identical consecutive sequential responses [@R-careless]. Applying a further screen regarding attention checks (there were four attention checks embedded throughout, asking respondents to indicate a specific answer) resulted in the retention of `r nrow(data)` respondents who constitute the current sample. Regarding tenure, `r round(a[1,3],2)`% had been in their referent job less than 6 months, `r round(a[2,3],1)`% between 6 months and a year, `r round(a[3,3],2)`% between one and five years, `r round(a[4,3],2)`% between 5 and 10 years, and `r round(a[5,3],2)`% more than 10 years. Respondent ages ranged from 18 to 65 with an average of `r round(mean(data[,403], na.rm=TRUE),2)` years old (*SD* = `r round(sd(data[,403], na.rm=TRUE),2)`). The survey offered a free-field gender identity category, although the sample predominantly self-identified as female (`r round(b[2,3],2)`%) or male (`r round(b[5,3],2)`%). 
 
 ```{r litresources}
 
@@ -319,37 +317,15 @@ summarized$RD <- factor(summarized$RD, levels = c("Resource", "Challenge", "Hind
 
 ## Materials
 
-Our survey was informed by 98 statements taken from job characteristic descriptors located within O\*Net’s classification of “work activities”: 1) Information Input (5 statements), 2) Interacting with Others (17 statements), 3) Mental Processes (10 statements), and 4) Work Output (9 statements) and “work context” groupings: 1) Interpersonal Relationships (14 statements), 2) Physical Work Conditions (30 statements), and 3) Structural Job Characteristics (13 statements).
-  
-The O\*Net descriptors are written in a similar manner to a task statement presented within a job analysis, but the level of abstraction is closer to "responsibility" than task. For example, the descriptor for "level of competition", which is an element of the "structural job characteristics" grouping, is *...to what extent does this job require the worker to compete or to be aware of competitive pressures?* Other than minor grammatical editing (for example, changing “the worker” to “you”), we retained the O\*Net wording for our item stems. We also retained O\*Net’s response scales, several of which were semantically unique across items, but all shared the same 5-point scale. It would likely NOT be considered controversial to referred to these as "effectively" Likert-type response scales. 
+We used 98 statements taken from O\*NET [activity and context classifications](https://www.ONETonline.org/find/descriptor/result/4.A.1.b.3). We retained 41 work activity classifications which O\*NET groups into categories of information input (5 statements; Where and how are the information and data gained that are needed to perform this job?), interacting with others (17 statements; What interactions with other persons or supervisory activities occur while performing this job?), mental processes (10 statements; What processing, planning, problem-solving, decision-making, and innovating activities are performed with job-relevant information?) and work output (9 statements; What physical activities are performed, what equipment and vehicles are operated/controlled, and what complex/technical activities are accomplished as job outputs?). Fifty-seven work context statements grouped into interpersonal relationships (14 statements; This category describes the context of the job in terms of human interaction processes), physical work conditions (30 statements; This category describes the work context as it relates to the interactions between the worker and the physical job environment), and structural job characteristics (13 statements; This category involves the relationships or interactions between the worker and the structural characteristics of the job). 
+
+These descriptors often have [unique response categories](https://www.ONETonline.org/find/descriptor/result/4.C.1.c.2). For example, the statement "How responsible is the worker for work outcomes and results of other workers?" has response options ranging from *No responsibility* to *Very high responsibility*, while the statement, "How often do you use electronic mail in this job?" has options ranging from *Never* to *Every day*. The O\*Net descriptors are written in a similar manner to a task statement presented within a job analysis, but the level of abstraction is closer to "responsibility" than task. For example, the descriptor for "level of competition", which is an element of the "structural job characteristics" grouping, is *...to what extent does this job require the worker to compete or to be aware of competitive pressures?* Other than minor grammatical editing (for example, changing “the worker” to “you”), we retained the O\*Net wording for our item stems. We also retained O\*Net’s response scales, several of which were semantically unique across items, but all shared the same 5-point scale. It would likely NOT be considered controversial to referred to these as "effectively" Likert-type response scales. 
+
+We retained the essence of each O\*NET descriptor to capture characteristics of relevance for each respondent. Subsequent to these self evaluations, each respondent who agreed that the element had *at least some relevance* to their job was also asked to rate that element in terms of, 1) ...this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) ...this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) ...this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment.
 
 The total number of items on the survey was less than 392 (98 characteristics x 4 administrations) because we did not ask for demand and resource evaluations for 14 O\*Net characteristics that we projected would have very low frequency of endorsement across respondents (one excluded characteristic, for example, was *...the extent to which the worker is exposed to radiation on the job*). 
 
-We used 98 statements taken from O\*NET [activity and context classifications](https://www.ONETonline.org/find/descriptor/result/4.A.1.b.3). We retained 41 work activity classifications which O\*NET groups into categories of information input (5 statements; Where and how are the information and data gained that are needed to perform this job?), interacting with others (17 statements; What interactions with other persons or supervisory activities occur while performing this job?), mental processes (10 statements; What processing, planning, problem-solving, decision-making, and innovating activities are performed with job-relevant information?) and work output (9 statements; What physical activities are performed, what equipment and vehicles are operated/controlled, and what complex/technical activities are accomplished as job outputs?). Fifty-seven work context statements grouped into interpersonal relationships (14 statements; This category describes the context of the job in terms of human interaction processes), physical work conditions (30 statements; This category describes the work context as it relates to the interactions between the worker and the physical job environment), and structural job characteristics (13 statements; This category involves the relationships or interactions between the worker and the structural characteristics of the job). 
-
-These descriptors often have [unique response categories](https://www.ONETonline.org/find/descriptor/result/4.C.1.c.2). For example, the statement "How responsible is the worker for work outcomes and results of other workers?" has response options ranging from *No responsibility* to *Very high responsibility*, while the statement, "How often do you use electronic mail in this job?" has options ranging from *Never* to *Every day*. We retained the essence of each O\*NET descriptor to capture characteristics of relevance for each respondent. Subsequent to these self evaluations, each respondent who agreed that the element had *at least some relevance* to their job was also asked to rate that element in terms of, 1) ...this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) ...this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) ...this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment. 
-
 # Results  
-
-Outline:
-
-1. Hypothesis 1: Job characteristics differ in variability/stability regarding subjective worker perception as a demand or resource.
-
-> Done - Figure \@ref(fig:overallhist)
-
-> NOT DONE: Combine current graphs 2 $\rightarrow$ 8 into only 2 graphs (put resources, challenges, and demands on same graph; Kulas do this)
-
-2. Hypothesis 2: Job characteristics are not uniquely categorized as a resource or demand, but rather, some job characteristics are rated highly as both a resource and a demand.
-
-> Done (at O\*Net dimension level) - Table \@ref(tab:cortab).
-
-3. *Research Question 1*: Are literature-implicated resources consistently rated as job resources?
-
-4. *Research Question 2*: Are literature-implicated challenges consistently rated as job challenges?
-
-5. *Research Question 3*: Are literature-implicated hindrances consistently rated as job hindrances?
-
-> Alicia can you present "what this means" and what is being presented in Figure \@ref(fig:scalelevelgraphs) more clearly - also possibly add ANOVAs
 
 ## Standard deviations of perceptions
 
@@ -375,7 +351,8 @@ lookie <- stats::bartlett.test(sd ~ RD, toplottogether)
 
 ```
 
-Figure \@ref(fig:overallhist) presents standard deviations of characteristic perceptions, grouped by whether that characteristic was rated as a resource, challenge, or demand. As can be seen in the figure, there was a wide range of agreement versus disagreement with resources and challenges, but hindrances were almost universally associated with disagreement (Bartlett's $K^2$ = `r lookie$statistic[[1]]`, *p* = `r lookie$p.value` ). 
+The first prediction asks whether job characteristics differ in variability/stability regarding
+subjective worker perception as a demand or resource. Figure \@ref(fig:overallhist) presents standard deviations of characteristic perceptions, grouped by whether that characteristic was rated as a resource, challenge, or demand. As can be seen in the figure, there was a wide range of agreement versus disagreement with resources and challenges, but hindrances were almost universally associated with disagreement (Bartlett's $K^2$ = `r lookie$statistic[[1]]`, *p* = `r lookie$p.value` ). 
 
 ## Low Variability Demands and Resources
 
@@ -423,12 +400,12 @@ c <- ggplot(tophindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(st
 
 Figure \@ref(fig:combinegraphs) presents resources, challenges, and hindrances that are *largely agreed on* as indexed by (relatively) low standard deviations.[^caveat] There are only 8 characteristics presented per perceived category because of limited space. All sortable ratings are available in the online resources.
 
-[^caveat]: There were a few characteristics with standard deviations of "zero" but these were excluded from presenation as they were likely representing only one person (*n*'s should also go on these graphs if they're retained - Alicia's idea 12/2 was to use initial ratings as indicators of counts).
+[^caveat]: There were a few characteristics with standard deviations of "zero" but these were excluded from presentation as they were likely representing only one person (*n*'s should also go on these graphs if they're retained - Alicia's idea 12/2 was to use initial ratings as indicators of counts).
 
 ```{r combinegraphs, fig.cap="Characteristics percieved most similarly (lowest standard deviations).", fig.height=10}
 
 library(gridExtra)
-grid.arrange(a, b, c, nrow = 3)
+grid.arrange(b, c, a, nrow = 3)
 
 ```
 
@@ -483,13 +460,15 @@ f <- ggplot(tophindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(st
 ```{r combinegraphs2, fig.cap="Characteristics percieved most *DIS*similarly (lowest standard deviations).", fig.height=10}
 
 library(gridExtra)
-grid.arrange(d, e, f, nrow = 3)
+grid.arrange(e, f, d, nrow = 3)
 
 ```
 
-Figure \@ref(fig:combinegraphs2) presents the resources, challenges, and hindrances that are *largely disagreed on* as indexed by (relatively) high standard deviations (these are the 8 characteristics with the greatest variability in rating).
+Figure \@ref(fig:combinegraphs2) presents the resources, challenges, and hindrances that are *largely disagreed on* as indexed by (relatively) high standard deviations (these are the 8 characteristics with the greatest variability in rating). In sum, these results provide some support for H1, particularly for hindrances, which are consistently viewed as "different". 
 
 ## Correlations
+
+ADD THIS!
 
 ```{r cortab}
 
@@ -721,6 +700,10 @@ grid.arrange(a, b, ncol = 2, nrow = 1)
 
 
 ```
+
+Figure 4 highs the average characteristic rating grouped by the literature implicated categories shown on the right. These categories are frequently presented in descriptions of the JD-R model and theory (cite). To answer these research questions, authors categorized items into the categories listed in the literature. For example, autonomy is frequently described as a resource. An O*Net item in the “autonomy” category is “How much decision making freedom, without supervision, does your job offer?”. Means for respondent-rated resources, challenges, and hindrances were then computed to explore whether literature-implicated resources and demands were consistently rated as such. The left side of Figure 8 shows literature-derived demands (e.g., work pressure). We do not see a clear pattern of high ratings as hindrances for these demands. In alignment with what we observed regarding variability in ratings of hindrance stressors in H1, there is much more variability in how employees rated what should objectively be "hindrances" at work. However, in contrast, there is a clearer pattern of the highest level ratings being that of resources on the right side of Figure 4 showing literature-derived resources (e.g., job control) and the corresponding average category ratings. Here, the white bars representing resources are consistently higher. ADD ANOVAS HERE - one way repeated measures for each category (total of 10 analyses). describe pattern. In sum, these results provide ___ support for RQ 1 and 2.
+
+challenges
 
 see Figure \@ref(fig:scalelevelgraphs)
 
