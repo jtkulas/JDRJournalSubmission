@@ -722,6 +722,11 @@ overwork <- anova1[ which(anova1$type=='resources_phyworkload_wkover' | anova1$t
 
 rstatix::anova_test(data=overwork,dv=score,wid=subject,within=type) 
 
+## trying to replicate - doesn't work 1/31/23
+
+trying <- aov(formula = score ~ type + Error(subject/type), data=overwork)
+summary(trying)
+
 ## pairwise_t_test( value~time,paired=TRUE, p.adjust.method = "bonferroni" ) 
 
 # check <- overwork[,c(406:407)]
