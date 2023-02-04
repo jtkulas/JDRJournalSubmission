@@ -46,14 +46,17 @@ output            : papaja::apa6_pdf
 ---
 
 ```{r setup, include = FALSE}
+
 library("papaja")
-r_refs("r-references.bib")
+
 ```
 
 ```{r analysis-preferences}
+
 # Seed for random number generation
 set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed, echo=FALSE, warning=FALSE, message=FALSE)
+
 ```
 
 Research on the job demands-resources model [@demerouti2001job] and later job demands-resources theory [@bakker2017job] highlight the importance of work characteristics on the experience of motivation and strain, which subsequently have an impact on job performance. However, much of our existing knowledge of the way this model functions is grounded in the assumption that characteristics are generally considered resources or generally considered demands. We build on the research of a small, but growing number of researchers who argue that the characteristics of work may be appraised simultaneously as resources and demands [@webster2011extending] or that appraisals may change over time [@rosen2020challenges]. We extend this critical research to that of the subjective distinction between challenge and hindrance demands (and resource) in the workplace, which a primary aims of exploring 1) whether there is variability in subjective ratings of job characteristics with respect to how much they serve as resources and demands, and 2) whether or not there is a match between the literature-implicated resources/demands and subjective ratings of these characteristics. Prior to presenting the current study in detail, we provide a brief overview of the relevant theories and relevant empirical work on this topic. 
@@ -727,6 +730,8 @@ rstatix::anova_test(data=overwork,dv=score,wid=subject,within=type)
 trying <- aov(formula = score ~ type + Error(subject/type), data=overwork)
 summary(trying)
 
+##write.csv(overwork, "checkingANOVAs.csv")
+
 ## pairwise_t_test( value~time,paired=TRUE, p.adjust.method = "bonferroni" ) 
 
 # check <- overwork[,c(406:407)]
@@ -739,18 +744,26 @@ summary(trying)
 \newpage
 
 # Discussion
-NOTE: Add a table of the items (probably the full list and those we included in challenge, hindrance specifically). Could also have a column showing which items were used for Figure 4 categories. 
-Summary
-The major aim and contribution of this paper was to examine whether there was variability in subjective ratings of job characteristics with respect to how much they serve as resources and demands, and also whether or not there is a match between the literature-implicated resources/demands and subjective ratings of these characteristics using a sample of items from O*Net. The findings broadly revealed that there was relatively more consistency in ratings resources and challenges characteristics, and far more variability in job characteristics rated as hindrance stressors. This finding lends additional evidence to Horan et al.’s (2020) conclusion that “...stressors are only challenge or hindrance stressors to the extent that they are perceived as such by employees” (p. 3). The research questions regarding the match between literature-implicated demand and resource categories and empirical ratings aligns with the consistency/variability we observed in H1. Interestingly, we consistently observed that job characteristics rated as resources were also rated highly as challenge stressors, which are not inherently negative in the way that hindrance stressors are. Lastly, we also found support for the prediction that job characteristics are not uniquely categorized as a resource or demand, but rather, some job  characteristics are rated highly as both a resource and a demand.
-Practical Implications
-The reality that there is more individual difference in what employees perceive to be a hindrance and less in what is perceived to be a resource or challenge stressor is in some ways encouraging. These findings provide comforting support for the idea that managers and supervisors can predict which characteristics are perceived as supportive to employees’ performance. Somewhat surprisingly, hindrances are rated more variably. As such, one important implication is that of frequent communication with employees regarding their perceptions of characteristics that limit their performance. ADD MORE
-Limitations and Future Directions
-•	Captured only a small number of job characteristics
-•	Part of that means we captured minimal “social” resources or interactions with one’s supervisor
-•	Should expand on the kinds of resources employees experience, as well as stressors
-•	Definition of resource, challenge, hindrance – question of distinction between resource and challenge (think about this one a little bit)
 
-Conclusion
+NOTE: Add a table of the items (probably the full list and those we included in challenge, hindrance specifically). Could also have a column showing which items were used for Figure 4 categories. 
+
+## Summary  
+
+The major aim and contribution of this paper was to examine whether there was variability in subjective ratings of job characteristics with respect to how much they serve as resources and demands, and also whether or not there is a match between the literature-implicated resources/demands and subjective ratings of these characteristics using a sample of items from O*Net. The findings broadly revealed that there was relatively more consistency in ratings resources and challenges characteristics, and far more variability in job characteristics rated as hindrance stressors. This finding lends additional evidence to Horan et al.’s (2020) conclusion that “...stressors are only challenge or hindrance stressors to the extent that they are perceived as such by employees” (p. 3). The research questions regarding the match between literature-implicated demand and resource categories and empirical ratings aligns with the consistency/variability we observed in H1. Interestingly, we consistently observed that job characteristics rated as resources were also rated highly as challenge stressors, which are not inherently negative in the way that hindrance stressors are. Lastly, we also found support for the prediction that job characteristics are not uniquely categorized as a resource or demand, but rather, some job  characteristics are rated highly as both a resource and a demand.
+
+## Practical Implications  
+
+The reality that there is more individual difference in what employees perceive to be a hindrance and less in what is perceived to be a resource or challenge stressor is in some ways encouraging. These findings provide comforting support for the idea that managers and supervisors can predict which characteristics are perceived as supportive to employees’ performance. Somewhat surprisingly, hindrances are rated more variably. As such, one important implication is that of frequent communication with employees regarding their perceptions of characteristics that limit their performance. ADD MORE
+
+## Limitations and Future Directions  
+
++	Captured only a small number of job characteristics
++	Part of that means we captured minimal “social” resources or interactions with one’s supervisor
++	Should expand on the kinds of resources employees experience, as well as stressors
++	Definition of resource, challenge, hindrance – question of distinction between resource and challenge (think about this one a little bit)
+
+## Conclusion  
+
 In sum, this endeavor explored the job-demands-resources literature from a unique lens, showing that there are far more individual differences in how employees perceive demands and resources than much of our current research suggests. While resources and challenges are more similarly experienced, hindrance demands show a wide amount of variability. 
 
 
@@ -761,6 +774,12 @@ So, what can be done about the findings that people experience both? @lepine2005
 There may be some practical utility to pursue training interventions aimed at *how* characteristics are appraised. Perhaps the clinical literature may be informative - for example, within cognitive behavioral therapeutic applications, the way in which situations are appraised can be a mechanism to help battle affective disorders such as depression.[^check] Given the current findings, where the same characteristic may be viewed similarly as both a demand and resource, it is possible that framing interventions may ameliorate negative outcomes of demands such as, for example, stress or strain.
 
 [^check]: Check on this - this is just speculative place-holding from 12/2 Hudson coffee discussion
+
+```{r}
+
+r_refs("r-references.bib")
+
+```
 
 \newpage
 
