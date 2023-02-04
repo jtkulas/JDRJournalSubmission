@@ -471,7 +471,7 @@ Figure \@ref(fig:combinegraphs2) presents the resources, challenges, and hindran
 
 ## Correlations
 
-ADD THIS!
+Table \@ref(tab:cortab) highlights hypothesis 2. A large number of correlations are moderate. Challenge and hindrance demands are smaller in relationship but mostly negative. Challenge and resource are typically large. Only some are small (for example information input and physical challenges). For the most part there are strong associations between challenges and resources.  
 
 ```{r cortab}
 
@@ -723,22 +723,33 @@ anova1 <- gather(foranova,type,score,resources_workpressure:hindrance_autonomy, 
 
 overwork <- anova1[ which(anova1$type=='resources_phyworkload_wkover' | anova1$type=='challenge_phyworkload_wkover' | anova1$type=='hindrance_phyworkload_wkover'), ]
 
-rstatix::anova_test(data=overwork,dv=score,wid=subject,within=type) 
+phyenvir <- anova1[ which(anova1$type=='resources_phyenvironment' | anova1$type=='challenge_phyenvironment' | anova1$type=='hindrance_phyenvironment'), ]
 
-## trying to replicate - doesn't work 1/31/23
+timepress <- anova1[ which(anova1$type=='resources_timepressure' | anova1$type=='challenge_timepressure' | anova1$type=='hindrance_timepressure'), ]
 
-trying <- aov(formula = score ~ type + Error(subject/type), data=overwork)
-summary(trying)
+emodemand <- anova1[ which(anova1$type=='resources_emotionaldemands' | anova1$type=='challenge_emotionaldemands' | anova1$type=='hindrance_emotionaldemands'), ]
+
+recipcon <- anova1[ which(anova1$type=='resources_recipientcontact' | anova1$type=='challenge_recipientcontact' | anova1$type=='hindrance_recipientcontact'), ]
+
+workpress <- anova1[ which(anova1$type=='resources_workpressure' | anova1$type=='challenge_workpressure' | anova1$type=='hindrance_workpressure'), ]
+
+report1 <- rstatix::anova_test(data=overwork,dv=score,wid=subject,within=type, effect.size="pes") 
+report2 <- rstatix::anova_test(data=phyenvir,dv=score,wid=subject,within=type, effect.size="pes") 
+report3 <- rstatix::anova_test(data=timepress,dv=score,wid=subject,within=type, effect.size="pes") 
+report4 <- rstatix::anova_test(data=emodemand,dv=score,wid=subject,within=type, effect.size="pes") 
+report5 <- rstatix::anova_test(data=recipcon,dv=score,wid=subject,within=type, effect.size="pes") 
+report6 <- rstatix::anova_test(data=workpress,dv=score,wid=subject,within=type, effect.size="pes") 
 
 ##write.csv(overwork, "checkingANOVAs.csv")
 
-## pairwise_t_test( value~time,paired=TRUE, p.adjust.method = "bonferroni" ) 
-
-# check <- overwork[,c(406:407)]
-# psych::describe.by(check, group=check$type)
-
 ```
 
+The effect for `Overwork` was `r report1$ANOVA$F`, partial eta squared was `r report1$ANOVA$pes`
+The effect for `Physical Environment` was `r report2$ANOVA$F`, partial eta squared was `r report2$ANOVA$pes`
+The effect for `Time Pressure` was `r report3$ANOVA$F`, partial eta squared was `r report3$ANOVA$pes`
+The effect for `Emotional Demands` was `r report4$ANOVA$F`, partial eta squared was `r report4$ANOVA$pes`
+The effect for `Recipient Contact` was `r report5$ANOVA$F`, partial eta squared was `r report5$ANOVA$pes`
+The effect for `Work Pressure` was `r report6$ANOVA$F`, partial eta squared was `r report6$ANOVA$pes`
 
 
 \newpage
