@@ -388,6 +388,16 @@ tophindrance <- tophindrance[tail(names(tophindrance),3)]
 c <- ggplot(tophindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="red", position=position_dodge()) + theme_bw() +
   scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Most Agreed upon as a Hindrance") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,6))
 
+## added 2/7/23 for online supplement materials
+
+resourcetemp <- sortresource[,c(569:571)]
+challengetemp <- sortchallenge[,c(569:571)]
+hindrancetemp <- sorthindrance[,c(569:571)]
+
+write.csv(resourcetemp, "sortresource.csv")
+write.csv(challengetemp, "sortchallenge.csv")
+write.csv(hindrancetemp, "sorthindrance.csv")
+
 ```
 
 Figure \@ref(fig:combinegraphs) presents resources, challenges, and hindrances that are *largely agreed on* as indexed by (relatively) low standard deviations.[^caveat] There are only 8 characteristics presented per perceived category because of limited space. All sortable ratings are available in the online resources.
@@ -725,15 +735,38 @@ report6 <- rstatix::anova_test(data=workpress,dv=score,wid=subject,within=type, 
 
 ##write.csv(overwork, "checkingANOVAs.csv")
 
+control <- anova1[ which(anova1$type=='resource_jobcontrol' | anova1$type=='challenge_jobcontrol' | anova1$type=='hindrance_jobcontrol'), ]
+
+particip <- anova1[ which(anova1$type=='resource_participation' | anova1$type=='challenge_participation' | anova1$type=='hindrance_participation'), ]
+
+teamcohe <- anova1[ which(anova1$type=='resource_teamcohesion' | anova1$type=='challenge_teamcohesion' | anova1$type=='hindrance_teamcohesion'), ]
+
+autonomy <- anova1[ which(anova1$type=='resource_autonomy' | anova1$type=='challenge_autonomy' | anova1$type=='hindrance_autonomy'), ]
+
+report7 <- rstatix::anova_test(data=control,dv=score,wid=subject,within=type, effect.size="pes") 
+report8 <- rstatix::anova_test(data=particip,dv=score,wid=subject,within=type, effect.size="pes") 
+report9 <- rstatix::anova_test(data=teamcohe,dv=score,wid=subject,within=type, effect.size="pes") 
+report10 <- rstatix::anova_test(data=autonomy,dv=score,wid=subject,within=type, effect.size="pes")
+
 ```
 
-The effect for `Overwork` was `r report1$ANOVA$F`, partial eta squared was `r report1$ANOVA$pes`
-The effect for `Physical Environment` was `r report2$ANOVA$F`, partial eta squared was `r report2$ANOVA$pes`
-The effect for `Time Pressure` was `r report3$ANOVA$F`, partial eta squared was `r report3$ANOVA$pes`
-The effect for `Emotional Demands` was `r report4$ANOVA$F`, partial eta squared was `r report4$ANOVA$pes`
-The effect for `Recipient Contact` was `r report5$ANOVA$F`, partial eta squared was `r report5$ANOVA$pes`
-The effect for `Work Pressure` was `r report6$ANOVA$F`, partial eta squared was `r report6$ANOVA$pes`
+Separate repeated-measures ANOVAs were conducted for each of these comparisons. 
 
+## Literature-implicated demands
+
+The effect for `Overwork` was $F_{(`r report1$ANOVA$DFn`, `r report1$ANOVA$DFd`)}$ = `r report1$ANOVA$F`, partial eta squared $(\eta^2)$ was `r report1$ANOVA$pes`.
+The effect for `Physical Environment` was $F_{(`r report2$ANOVA$DFn`, `r report2$ANOVA$DFd`)}$ = `r report2$ANOVA$F` ($\eta^2$ = `r report2$ANOVA$pes`).
+The effect for `Time Pressure` was $F_{(`r report3$ANOVA$DFn`, `r report3$ANOVA$DFd`)}$ = `r report3$ANOVA$F` ($\eta^2$ = `r report3$ANOVA$pes`).
+The effect for `Emotional Demands` was $F_{(`r report4$ANOVA$DFn`, `r report4$ANOVA$DFd`)}$ = `r report4$ANOVA$F` ($\eta^2$ = `r report4$ANOVA$pes`).
+The effect for `Recipient Contact` was $F_{(`r report5$ANOVA$DFn`, `r report5$ANOVA$DFd`)}$ = `r report5$ANOVA$F` ($\eta^2$ = `r report5$ANOVA$pes`).
+The effect for `Work Pressure` was $F_{(`r report6$ANOVA$DFn`, `r report6$ANOVA$DFd`)}$ = `r report6$ANOVA$F` ($\eta^2$ = `r report6$ANOVA$pes`).
+
+## Literature-implicated resources
+
+The effect for `Job Control` was $F_{(`r report7$ANOVA$DFn`, `r report7$ANOVA$DFd`)}$ = `r report7$ANOVA$F` ($\eta^2$ = `r report7$ANOVA$pes`).
+The effect for `Participation` was $F_{(`r report8$ANOVA$DFn`, `r report8$ANOVA$DFd`)}$ = `r report8$ANOVA$F` ($\eta^2$ = `r report8$ANOVA$pes`).
+The effect for `Autonomy` was $F_{(`r report9$ANOVA$DFn`, `r report9$ANOVA$DFd`)}$ = `r report9$ANOVA$F` ($\eta^2$ = `r report9$ANOVA$pes`).
+The effect for `Team Cohesion` was $F_{(`r report10$ANOVA$DFn`, `r report10$ANOVA$DFd`)}$ = `r report10$ANOVA$F` ($\eta^2$ = `r report10$ANOVA$pes`).
 
 \newpage
 
