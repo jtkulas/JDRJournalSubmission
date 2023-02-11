@@ -754,19 +754,19 @@ Separate repeated-measures ANOVAs were conducted for each of these comparisons.
 
 ## Literature-implicated demands
 
-The effect for `Overwork` was $F_{(`r report1$ANOVA$DFn`, `r report1$ANOVA$DFd`)}$ = `r report1$ANOVA$F`, partial eta squared $(\eta^2)$ was `r report1$ANOVA$pes`.
+Repeated-measures ANOVAs were run for the group of literture-implicated demands first.  The effect for `Overwork` was $F_{(`r report1$ANOVA$DFn`, `r report1$ANOVA$DFd`)}$ = `r report1$ANOVA$F`, partial eta squared $(\eta^2)$ was `r report1$ANOVA$pes`.
 The effect for `Physical Environment` was $F_{(`r report2$ANOVA$DFn`, `r report2$ANOVA$DFd`)}$ = `r report2$ANOVA$F` ($\eta^2$ = `r report2$ANOVA$pes`).
 The effect for `Time Pressure` was $F_{(`r report3$ANOVA$DFn`, `r report3$ANOVA$DFd`)}$ = `r report3$ANOVA$F` ($\eta^2$ = `r report3$ANOVA$pes`).
 The effect for `Emotional Demands` was $F_{(`r report4$ANOVA$DFn`, `r report4$ANOVA$DFd`)}$ = `r report4$ANOVA$F` ($\eta^2$ = `r report4$ANOVA$pes`).
 The effect for `Recipient Contact` was $F_{(`r report5$ANOVA$DFn`, `r report5$ANOVA$DFd`)}$ = `r report5$ANOVA$F` ($\eta^2$ = `r report5$ANOVA$pes`).
-The effect for `Work Pressure` was $F_{(`r report6$ANOVA$DFn`, `r report6$ANOVA$DFd`)}$ = `r report6$ANOVA$F` ($\eta^2$ = `r report6$ANOVA$pes`).
+The effect for `Work Pressure` was $F_{(`r report6$ANOVA$DFn`, `r report6$ANOVA$DFd`)}$ = `r report6$ANOVA$F` ($\eta^2$ = `r report6$ANOVA$pes`).In all cases, statistical significance was less then .001, indicating in all cases, what the literature implicates is a demand was rated as a resource (all means are above the midpoint). See the patten of white resource bars on the lefthand side of Figure 4. This is contrary to the expectation that ratings would match our assumption of what a resource constitutes. Looking at demands, there is a large difference between whether a characteristic is viewed as a challenge or hindrance.
 
 ## Literature-implicated resources
 
-The effect for `Job Control` was $F_{(`r report7$ANOVA$DFn`, `r report7$ANOVA$DFd`)}$ = `r report7$ANOVA$F` ($\eta^2$ = `r report7$ANOVA$pes`).
+Next, Repeated-measures ANOVAs were run for the group of literture-implicated resources (the right hand set of analyses presented in Figure 4). The effect for `Job Control` was $F_{(`r report7$ANOVA$DFn`, `r report7$ANOVA$DFd`)}$ = `r report7$ANOVA$F` ($\eta^2$ = `r report7$ANOVA$pes`).
 The effect for `Participation` was $F_{(`r report8$ANOVA$DFn`, `r report8$ANOVA$DFd`)}$ = `r report8$ANOVA$F` ($\eta^2$ = `r report8$ANOVA$pes`).
 The effect for `Autonomy` was $F_{(`r report9$ANOVA$DFn`, `r report9$ANOVA$DFd`)}$ = `r report9$ANOVA$F` ($\eta^2$ = `r report9$ANOVA$pes`).
-The effect for `Team Cohesion` was $F_{(`r report10$ANOVA$DFn`, `r report10$ANOVA$DFd`)}$ = `r report10$ANOVA$F` ($\eta^2$ = `r report10$ANOVA$pes`).
+The effect for `Team Cohesion` was $F_{(`r report10$ANOVA$DFn`, `r report10$ANOVA$DFd`)}$ = `r report10$ANOVA$F` ($\eta^2$ = `r report10$ANOVA$pes`).Similar to the demands analyses, statistical significance was less then .001 for all four category comparisons. Here, the pattern was as expected. Across categories, resources were rated the highest (see white bars representing resources in Figure 4).
 
 \newpage
 
