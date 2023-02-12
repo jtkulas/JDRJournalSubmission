@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.29)  11 FEB 2023 13:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.29)  12 FEB 2023 04:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -653,30 +653,30 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 195.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11]
+] [2] [3] [4] [5] [6] [7] [8] [9]
+Underfull \vbox (badness 1838) has occurred while \output is active []
+
+[10] [11]
 \openout4 = `Submission.fff'.
 
 (Submission.fff)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 280.
+(Font)              <10> on input line 281.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 280.
+(Font)              <7> on input line 281.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 280.
+(Font)              <5> on input line 281.
 [12]
 \openout3 = `Submission.ttt'.
 
 (Submission.ttt)
-Underfull \vbox (badness 3977) has occurred while \output is active []
-
-[13]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 364.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 360.
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \vbox (badness 6608) has occurred while \output is active []
+Underfull \vbox (badness 3977) has occurred while \output is active []
 
-[14] [15] [16] [17] [18] [19] [20] AED endfloat: Processing end Figures and Tables [21] (./Submission.ttt
+[13] [14] [15] [16] [17] [18] [19] AED endfloat: Processing end Figures and Tables [20] (./Submission.ttt
 Overfull \hbox (213.99506pt too wide) in paragraph at lines 10--10
 [] [] 
  []
@@ -703,17 +703,17 @@ Overfull \hbox (427.9901pt too wide) in alignment at lines 19--44
  [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[22
+[21
 
 
 
-] [23]) (./Submission.fff
-<Submission_files/figure-latex/overallhist-1.pdf, id=232, 469.755pt x 325.215pt>
+] [22]) (./Submission.fff
+<Submission_files/figure-latex/overallhist-1.pdf, id=221, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/overallhist-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/overallhist-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/overallhist-1.pdf  used on input line 5.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-<Submission_files/figure-latex/combinegraphs-1.pdf, id=233, 469.755pt x 722.7pt>
+<Submission_files/figure-latex/combinegraphs-1.pdf, id=222, 469.755pt x 722.7pt>
 File: Submission_files/figure-latex/combinegraphs-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/combinegraphs-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/combinegraphs-1.pdf  used on input line 12.
@@ -721,7 +721,7 @@ Package pdftex.def Info: Submission_files/figure-latex/combinegraphs-1.pdf  used
 
 LaTeX Warning: Float too large for page by 34.00247pt on input line 14.
 
-<Submission_files/figure-latex/combinegraphs2-1.pdf, id=234, 469.755pt x 722.7pt>
+<Submission_files/figure-latex/combinegraphs2-1.pdf, id=223, 469.755pt x 722.7pt>
 File: Submission_files/figure-latex/combinegraphs2-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/combinegraphs2-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/combinegraphs2-1.pdf  used on input line 19.
@@ -729,31 +729,31 @@ Package pdftex.def Info: Submission_files/figure-latex/combinegraphs2-1.pdf  use
 
 LaTeX Warning: Float too large for page by 34.00247pt on input line 21.
 
-<Submission_files/figure-latex/scalelevelgraphs-1.pdf, id=235, 469.755pt x 325.215pt>
+<Submission_files/figure-latex/scalelevelgraphs-1.pdf, id=224, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/scalelevelgraphs-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/scalelevelgraphs-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/scalelevelgraphs-1.pdf  used on input line 26.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-) [24
+) [23
 
 
- <./Submission_files/figure-latex/overallhist-1.pdf>] [25 <./Submission_files/figure-latex/combinegraphs-1.pdf>] [26 <./Submission_files/figure-latex/combinegraphs2-1.pdf>] [27 <./Submission_files/figure-latex/scalelevelgraphs-1.pdf>] (./Submission.aux)
+ <./Submission_files/figure-latex/overallhist-1.pdf>] [24 <./Submission_files/figure-latex/combinegraphs-1.pdf>] [25 <./Submission_files/figure-latex/combinegraphs2-1.pdf>] [26 <./Submission_files/figure-latex/scalelevelgraphs-1.pdf>] (./Submission.aux)
 Package rerunfilecheck Info: File `Submission.out' has not changed.
-(rerunfilecheck)             Checksum: D62AB3E8F21BCDB4EA4676C92805C3C6;2280.
+(rerunfilecheck)             Checksum: 7CBC00C09D2C2E1AC9FF01ACE422949E;1983.
  ) 
 Here is how much of TeX's memory you used:
- 15853 strings out of 477035
- 261757 string characters out of 5826234
- 646540 words of memory out of 5000000
- 36599 multiletter control sequences out of 15000+600000
+ 15848 strings out of 477035
+ 261622 string characters out of 5826234
+ 646520 words of memory out of 5000000
+ 36597 multiletter control sequences out of 15000+600000
  557601 words of font info for 104 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  72i,11n,77p,2249b,840s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Submission.pdf (27 pages, 293696 bytes).
+Output written on Submission.pdf (26 pages, 290305 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
- 287 compressed objects within 3 object streams
- 90 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 343 PDF objects out of 1000 (max. 8388607)
+ 278 compressed objects within 3 object streams
+ 87 named destinations out of 1000 (max. 500000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
