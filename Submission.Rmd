@@ -346,7 +346,7 @@ lookie <- stats::bartlett.test(sd ~ RD, toplottogether)
 
 ```
 
-The first hypothesis asks whether job characteristics differ in variability/stability regarding subjective worker perception as a demand or resource. Figure \@ref(fig:overallhist) presents frequency distributions standard deviations of characteristic perceptions, grouped by whether that characteristic was rated as a resource, challenge, or demand. As can be seen in the figure, there was a wide range of agreement versus disagreement with resources and challenges, but hindrances were almost universally associated with disagreement (Bartlett's $K^2$ = `r lookie$statistic[[1]]`, *p* = `r lookie$p.value` ). 
+The first hypothesis asks whether job characteristics differ in variability/stability regarding subjective worker perception as a demand or resource. Figure \@ref(fig:overallhist) presents frequency distributions standard deviations of characteristic perceptions, grouped by whether that characteristic was rated as a resource, challenge, or demand. As can be seen in the figure, there was a wide range of agreement versus disagreement with resources and challenges, but hindrances were almost universally associated with disagreement (Bartlett's $\chi^2_{`r lookie$df`}$ = `r lookie$statistic[[1]]`, *p* = `r lookie$p.value` ). 
 
 ```{r resourcesagree, fig.cap="Characteristics most similarly viewed as resources (lowest standard deviations)."}
 
