@@ -292,10 +292,15 @@ apa_table(
 
 # Discussion
 
-The major goal of this paper was to further explore the relationships among *total* perceived challenge demands, hindrance demands, and resources and outcomes of engagement, stress, and burnout. The results suggest a positive relationship between both resources and engagement (H1a) and challenge demands and engagement (H2a). Employers would benefit from understanding that at least the perception of having “more” resources and more challenge demands in a job is highly associated with reported engagement. While not a causal relationship, it points to the potential value of these kinds of employee support nonetheless. Future study could consider additional or other O\*Net items, *kinds* of resources or challenges, additional outcomes (e.g., job satisfaction), or whether volume of resources and demands operationalized in this way are related to other behaviors.
+The major goal of this paper was to further explore the relationships among *total* perceived challenge demands, hindrance demands, and resources and outcomes of engagement, stress, and burnout. The results suggest a positive relationship between both resources and engagement (H1a) and challenge demands and engagement (H2a). Employers would benefit from understanding that at least the perception of having “more” resources and more challenge demands in a job is highly associated with reported engagement. While not a causal relationship, it points to the potential value of these kinds of employee support nonetheless.
 
-![](SIOP.png){height=480px width=1340px}
+## Limitations & Future Directions 
 
+Future study could consider additional or other O\*Net items, *kinds* of resources or challenges, additional outcomes (e.g., job satisfaction), or whether volume of resources and demands operationalized in this way are related to other behaviors. Finally, there was a moderate relationship between challenges and hindrances, which may be driven by job complexity – that is, some jobs simply have more elements. With more job elements come increased opportunities for those elements to be perceived as resources, challenges, or hindrances.
+
+<center>
+![](SIOP.png){height=350px width=1080px}
+<center>
 ```{r bib, eval=FALSE}
 knitr::write_bib(c('knitr','rmarkdown','posterdown','pagedown'), 'packages.bib')
 ```
