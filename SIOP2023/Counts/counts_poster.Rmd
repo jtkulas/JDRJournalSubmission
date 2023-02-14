@@ -44,10 +44,14 @@ library(tinylabels) ## because of warning on later chunk
 
 <style>
 .logo_left {
- width: 10%;
+ width: 15%;
 }
 .logo_right {
- width: 10%;
+ width: 15%;
+}
+.poster_title{
+  padding-top: 5%;
+  width: 70%;
 }
 </style>
 
