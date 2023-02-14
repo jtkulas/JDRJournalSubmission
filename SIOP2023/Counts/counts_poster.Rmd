@@ -14,8 +14,8 @@ column_numbers: 3
 primary_colour: "#313ab3"
 secondary_colour: "#B4B5B4"
 accent_colour: "#FF0000"
-#logoright_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
-logoleft_name: http&#58;//career.iresearchnet.com/wp-content/uploads/2015/01/Occupational-Information-Network-300x300.png
+logoright_name: 'Stoutlogo_2023.png'
+logoleft_name: "erg.png"
 output: 
   posterdown::posterdown_html:
     self_contained: false
@@ -23,10 +23,13 @@ csl               : "apa7.csl"
 bibliography: jobdemands_resources_bibtex.bib
 suppress-bibliography: true 
 link-citations: true
+floatsintext: yes
 affiliation_textsize: "50pt"
 body_textsize: "50px"
 title_textsize:	"75pt"	
 author_textsize:	"50pt"
+font_family: 'Helvetica'
+main_fontfamily: "Helvetica"
 #logoleft_name	"Figures/posterdownlogo.png"	Location of the image to use.
 #logoright_name	"Figures/posterdownlogo.png"	Location of the image to use.
 ---
@@ -39,35 +42,14 @@ library(tinylabels) ## because of warning on later chunk
 
 ```
 
-
-```{css, echo=FALSE}
-
-/*                         https://www.w3schools.com/css/css3_images.asp                  */
-
+<style>
 .logo_left {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 550px;         
-  height: 540px;
+ width: 10%;
 }
-
-
 .logo_right {
-  position: absolute;
-  top: 20px;
-  left: 3250px;
-  width: 700px;          
-  height: 440px;
+ width: 10%;
 }
-
-p.caption {
-  font-size: 0.8em;         /* This sets figure caption font size */
-  text-align: left
-}
-
-```
-
+</style>
 
 # Introduction
 
@@ -234,6 +216,8 @@ write.csv(psych::describe(data[579:662]), "..\\JDRJournalSubmission\\SIOP2023\\C
 
 ```
 
+Correlations, means and standard deviations are presented in Table \@ref(tab:correlationtable). The results reveal a positive association between resources and engagement (*r* = .34; H1a), but a lack of meaningful association between resources and stress (H1b) and burnout (H1c). Challenge demands were positively associated with engagement (*r* = .31; H2a), but were unrelated to stress or burnout (H2b and H2c). Total hindrance stressors were largely not significantly associated with our outcomes, although there was a small-moderate association with stress (H3b; *r* = .09). 
+
 ```{r correlationtable, warning=FALSE}
 
 r <- corx::corx(data22[,c(405:410)],                    
@@ -243,6 +227,8 @@ r <- corx::corx(data22[,c(405:410)],
 
 papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table,
                  caption = "Focal variable correlations (counts data).",
+                 placement = "H",
+                 align = c('l','l','l','l','l','l','r','r'),
                  escape = FALSE)
 
 # cor(data[405:410], use="all.obs")   ## something to be told with resources and challenges
@@ -261,40 +247,50 @@ summary(str)
 
 ```
 
+We also conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. The total resources were predictive of engagement ($F_{(3, 564)}$ = 26.41, p < .001), but neither challenge nor hindrance demands predicted engagement; see Table \@ref(tab:regressiontableeng). 
+
 ```{r regressiontableeng}
 library(papaja)
 apa_lm <- apa_print(eng)
 apa_table(
-  apa_lm$table
-  , caption = "Regression Predicting Engagement."
+  apa_lm$table, 
+  caption = "Regression Predicting Engagement.",
+  align = c('l','r','r','r','r','r'),
+  placement = "H"
 )
 ```
+
+Stress was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$ = 2.47, *p* = .060; see Table \@ref(tab:regressiontablestr). 
 
 ```{r regressiontablestr}
 library(papaja)
 apa_lm <- apa_print(str)
 apa_table(
-  apa_lm$table
-  , caption = "Regression Predicting Stress."
+  apa_lm$table, 
+  placement = "H",
+  align = c('l','r','r','r','r','r'),
+  caption = "Regression Predicting Stress."
 )
 ```
+
+Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$= 1.10, *p* = .349. See Table \@ref(tab:regressiontablebur). 
 
 ```{r regressiontablebur}
 library(papaja)
 apa_lm <- apa_print(bur)
 apa_table(
-  apa_lm$table
-  , caption = "Regression Predicting Burnout."
+  apa_lm$table, 
+  placement = "H",
+  align = c('l','r','r','r','r','r'),
+  caption = "Regression Predicting Burnout."
 )
 ```
-
-Correlations, means and standard deviations are presented in Table \@ref(tab:correlationtable). The results reveal a positive association between resources and engagement (*r* = .34; H1a), but a lack of meaningful association between resources and stress (H1b) and burnout (H1c). Challenge demands were positively associated with engagement (*r* = .31; H2a), but were unrelated to stress or burnout (H2b and H2c). Total hindrance stressors were largely not significantly associated with our outcomes, although there was a small-moderate association with stress (H3b; *r* = .09). 
-
-We also conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. The total resources were predictive of engagement ($F_{(3, 564)}$ = 26.41, p < .001), but neither challenge nor hindrance demands predicted engagement (see Table \@ref(tab:regressiontableeng). Stress was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$ = 2.47, *p* = .060 [see Table \@ref(tab:regressiontablestr)]. Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$= 1.10, *p* = .349. See Table \@ref(tab:regressiontablebur). 
 
 # Discussion
 
 The major goal of this paper was to further explore the relationships among *total* perceived challenge demands, hindrance demands, and resources and outcomes of engagement, stress, and burnout. The results suggest a positive relationship between both resources and engagement (H1a) and challenge demands and engagement (H2a). Employers would benefit from understanding that at least the perception of having “more” resources and more challenge demands in a job is highly associated with reported engagement. While not a causal relationship, it points to the potential value of these kinds of employee support nonetheless. Future study could consider additional or other O\*Net items, *kinds* of resources or challenges, additional outcomes (e.g., job satisfaction), or whether volume of resources and demands operationalized in this way are related to other behaviors.
+
+![](SIOP.png){height=480px width=1340px}
 
 ```{r bib, eval=FALSE}
 knitr::write_bib(c('knitr','rmarkdown','posterdown','pagedown'), 'packages.bib')

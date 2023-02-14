@@ -16,6 +16,7 @@ Font-awesome icons ie github or twitter
 <!--
 Google fonts api stuff
 -->
+<link href='https://fonts.googleapis.com/css?family=Helvetica' rel='stylesheet'>
 
 
 
@@ -39,7 +40,7 @@ width: 45in;
 height: 38in;
 padding: 0;
 text-align: justify;
-font-family: Palatino;
+font-family: Helvetica;
 }
 .poster_wrap {
 width: 45in;
@@ -47,11 +48,12 @@ height: 38in;
 padding: 0cm;
 }
 .title_container {
-width: 45in;
-height: calc(38in * 0.15);
+width: 100%;
+height: 15%;
 overflow: hidden;
 background-color: #313ab3;
-border: 0 solid #B4B5B4;
+border: 0 solid #313ab3
+;
 }
 .logo_left {
 float: left;
@@ -83,11 +85,12 @@ transform: translateY(-50%);
 -webkit-transform: translateY(-50%);
 }
 #title {
-font-family: Palatino;
+font-family: Helvetica;
 }
 /* unvisited link */
 a:link {
 color: #FF0000;
+text-decoration: none;
 }
 .mybreak {
   break-before: column;
@@ -95,16 +98,19 @@ color: #FF0000;
 /* visited link */
 a:visited {
 color: #FF0000;
+text-decoration: none;
 }
 
 /* mouse over link */
 a:hover {
 color: #FF0000;
+text-decoration: none;
 }
 
 /* selected link */
 a:active {
 color: #FF0000;
+text-decoration: none;
 }
 .poster_body {
 -webkit-column-count: 3; /* Chrome, Safari, Opera */
@@ -136,9 +142,9 @@ border: 0;
 font-weight: normal;
 }
 .poster_body_wrap{
-width: calc(45in + 0 + 0);
-height: calc(38in * 0.83);
-padding-top: calc(38in * 0.005);
+width: 45in;
+height: calc(100% - 17%);
+padding-top: calc(38in * 0.01);
 padding-bottom: calc(38in * 0.01);
 background-color: #ffffff;
 }
@@ -161,7 +167,7 @@ border: 0;
 font-weight: normal;
 }
 img {
-margin-top: 2cm;
+margin-top: 0;
 margin-bottom: 0;
 }
 .section {
@@ -199,25 +205,41 @@ margin-bottom: 2cm;
 position: sticky;
 width: 100%;
 }
-pre.sourceCode.r {
-background-color: #dddddd40;
-border-radius: 4mm;
+pre.sourceCode.r, pre.sourceCode.python {
+background-color: #ffffff20;
+border: solid #B4B5B4 1mm;
+border-radius: 0.5em;
 padding: 4mm;
-width: 75%;
-/* align-items: center; */
 margin: auto;
-padding-left: 2cm;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
 }
-code.sourceCode.r{
+div.sourceCode {
+background-color: transparent;
+width: 85%;
+margin-left: auto;
+margin-right: auto;
+}
+code.sourceCode.r, code.sourceCode.python {
 background-color: transparent;
 font-size: 20pt;
 border-radius: 2mm;
 }
-.caption {
+code {
 font-size: 25pt;
+font-family: monospace;
+background-color: #B4B5B424;
+color: #B4B5B4;
+padding: 1.2mm;
+line-height: 1;
+border-radius: 2mm;
+}
+.caption {
+font-size: 20pt;
 }
 .table caption {
-font-size: 25pt;
+font-size: 20pt;
 padding-bottom: 3mm;
 
 }
@@ -255,6 +277,7 @@ margin-right: 4mm;
 margin-left: 4mm;
 margin-top: 6mm;
 margin-bottom: 10mm;
+color: #000000
 }
 .poster_body ol {
 margin-right: 4mm;
@@ -279,47 +302,29 @@ font-size: 20pt;
 <div class="title_container">
 <!-- Left Logo  -->
 <div class="logo_left">
-<img src= 'http://career.iresearchnet.com/wp-content/uploads/2015/01/Occupational-Information-Network-300x300.png' style="width: 80%">
+<img src=erg.png style="width: 80%">
 </div>
 <!-- Poster Title -->
 <div class= "poster_title">
 <h1 id="title">Perception of Work Demands and Resources: Does Sheer Volume Matter?</h1>
-<h3 id="author">Alicia Stachowski<sup>1</sup>, John Kulas<sup>2</sup></h3><br>
-<h5 id="affiliation"><sup>1</sup> University of Wisconsin - Stout<br> <sup>2</sup> eRg</h5>
+<h3 id="author">Alicia Stachowski<sup>1</sup>, John Kulas<sup>2</sup></h3>
+<h5 id="affiliation"><sup>1</sup> University of Wisconsin - Stout; <sup>2</sup> eRg</h5>
 </div>
 <!-- Right Logo  -->
 <div class="logo_right">
+<img src=Stoutlogo_2023.png style="width: 80%">
 </div>
 </div>
 
 <div class='poster_body_wrap'>
 <div class='poster_body'>
-<style type="text/css">
-
-/*                         https://www.w3schools.com/css/css3_images.asp                  */
-
+<style>
 .logo_left {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 550px;         
-  height: 540px;
+ width: 10%;
 }
-
-
 .logo_right {
-  position: absolute;
-  top: 20px;
-  left: 3250px;
-  width: 700px;          
-  height: 440px;
+ width: 10%;
 }
-
-p.caption {
-  font-size: 0.8em;         /* This sets figure caption font size */
-  text-align: left
-}
-
 </style>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
@@ -347,6 +352,7 @@ p.caption {
 </div>
 <div id="results" class="section level1">
 <h1>Results</h1>
+<p>Correlations, means and standard deviations are presented in Table <a href="#tab:correlationtable">1</a>. The results reveal a positive association between resources and engagement (<em>r</em> = .34; H1a), but a lack of meaningful association between resources and stress (H1b) and burnout (H1c). Challenge demands were positively associated with engagement (<em>r</em> = .31; H2a), but were unrelated to stress or burnout (H2b and H2c). Total hindrance stressors were largely not significantly associated with our outcomes, although there was a small-moderate association with stress (H3b; <em>r</em> = .09).</p>
 <caption>
 <span id="tab:correlationtable">Table 1: </span>
 </caption>
@@ -362,8 +368,8 @@ p.caption {
 <th align="left">3</th>
 <th align="left">4</th>
 <th align="left">5</th>
-<th align="left"><span class="math inline">\(M\)</span></th>
-<th align="left"><span class="math inline">\(SD\)</span></th>
+<th align="right"><span class="math inline">\(M\)</span></th>
+<th align="right"><span class="math inline">\(SD\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -374,8 +380,8 @@ p.caption {
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">36.02</td>
-<td align="left">13.26</td>
+<td align="right">36.02</td>
+<td align="right">13.26</td>
 </tr>
 <tr class="even">
 <td>2. hindrance</td>
@@ -384,8 +390,8 @@ p.caption {
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">13.09</td>
-<td align="left">13.62</td>
+<td align="right">13.09</td>
+<td align="right">13.62</td>
 </tr>
 <tr class="odd">
 <td>3. challenge</td>
@@ -394,8 +400,8 @@ p.caption {
 <td align="left">-</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">35.64</td>
-<td align="left">13.63</td>
+<td align="right">35.64</td>
+<td align="right">13.63</td>
 </tr>
 <tr class="even">
 <td>4. burnout</td>
@@ -404,8 +410,8 @@ p.caption {
 <td align="left">.07</td>
 <td align="left">-</td>
 <td align="left"></td>
-<td align="left">3.04</td>
-<td align="left">0.87</td>
+<td align="right">3.04</td>
+<td align="right">0.87</td>
 </tr>
 <tr class="odd">
 <td>5. stress</td>
@@ -414,8 +420,8 @@ p.caption {
 <td align="left">.08</td>
 <td align="left">.70***</td>
 <td align="left">-</td>
-<td align="left">2.59</td>
-<td align="left">0.97</td>
+<td align="right">2.59</td>
+<td align="right">0.97</td>
 </tr>
 <tr class="even">
 <td>6. engagement</td>
@@ -424,11 +430,12 @@ p.caption {
 <td align="left">.31***</td>
 <td align="left">-.35***</td>
 <td align="left">-.30***</td>
-<td align="left">4.04</td>
-<td align="left">0.83</td>
+<td align="right">4.04</td>
+<td align="right">0.83</td>
 </tr>
 </tbody>
 </table>
+<p>We also conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. The total resources were predictive of engagement (<span class="math inline">\(F_{(3, 564)}\)</span> = 26.41, p &lt; .001), but neither challenge nor hindrance demands predicted engagement; see Table <a href="#tab:regressiontableeng">2</a>.</p>
 <caption>
 <span id="tab:regressiontableeng">Table 2: </span>
 </caption>
@@ -439,48 +446,49 @@ p.caption {
 <thead>
 <tr class="header">
 <th align="left">Predictor</th>
-<th align="left"><span class="math inline">\(b\)</span></th>
-<th align="left">95% CI</th>
-<th align="left"><span class="math inline">\(t\)</span></th>
-<th align="left"><span class="math inline">\(\mathit{df}\)</span></th>
-<th align="left"><span class="math inline">\(p\)</span></th>
+<th align="right"><span class="math inline">\(b\)</span></th>
+<th align="right">95% CI</th>
+<th align="right"><span class="math inline">\(t\)</span></th>
+<th align="right"><span class="math inline">\(\mathit{df}\)</span></th>
+<th align="right"><span class="math inline">\(p\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">Intercept</td>
-<td align="left">3.28</td>
-<td align="left">[3.09, 3.47]</td>
-<td align="left">33.93</td>
-<td align="left">564</td>
-<td align="left">&lt; .001</td>
+<td align="right">3.28</td>
+<td align="right">[3.09, 3.47]</td>
+<td align="right">33.93</td>
+<td align="right">564</td>
+<td align="right">&lt; .001</td>
 </tr>
 <tr class="even">
 <td align="left">Hindrance</td>
-<td align="left">0.00</td>
-<td align="left">[-0.01, 0.00]</td>
-<td align="left">-1.80</td>
-<td align="left">564</td>
-<td align="left">.072</td>
+<td align="right">0.00</td>
+<td align="right">[-0.01, 0.00]</td>
+<td align="right">-1.80</td>
+<td align="right">564</td>
+<td align="right">.072</td>
 </tr>
 <tr class="odd">
 <td align="left">Challenge</td>
-<td align="left">0.00</td>
-<td align="left">[-0.01, 0.01]</td>
-<td align="left">0.88</td>
-<td align="left">564</td>
-<td align="left">.378</td>
+<td align="right">0.00</td>
+<td align="right">[-0.01, 0.01]</td>
+<td align="right">0.88</td>
+<td align="right">564</td>
+<td align="right">.378</td>
 </tr>
 <tr class="even">
 <td align="left">Resource</td>
-<td align="left">0.02</td>
-<td align="left">[0.01, 0.03]</td>
-<td align="left">3.84</td>
-<td align="left">564</td>
-<td align="left">&lt; .001</td>
+<td align="right">0.02</td>
+<td align="right">[0.01, 0.03]</td>
+<td align="right">3.84</td>
+<td align="right">564</td>
+<td align="right">&lt; .001</td>
 </tr>
 </tbody>
 </table>
+<p>Stress was not predicted by total resources, challenge, or hindrance demands, <span class="math inline">\(F_{(3, 564)}\)</span> = 2.47, <em>p</em> = .060; see Table <a href="#tab:regressiontablestr">3</a>.</p>
 <caption>
 <span id="tab:regressiontablestr">Table 3: </span>
 </caption>
@@ -491,48 +499,49 @@ p.caption {
 <thead>
 <tr class="header">
 <th align="left">Predictor</th>
-<th align="left"><span class="math inline">\(b\)</span></th>
-<th align="left">95% CI</th>
-<th align="left"><span class="math inline">\(t\)</span></th>
-<th align="left"><span class="math inline">\(\mathit{df}\)</span></th>
-<th align="left"><span class="math inline">\(p\)</span></th>
+<th align="right"><span class="math inline">\(b\)</span></th>
+<th align="right">95% CI</th>
+<th align="right"><span class="math inline">\(t\)</span></th>
+<th align="right"><span class="math inline">\(\mathit{df}\)</span></th>
+<th align="right"><span class="math inline">\(p\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">Intercept</td>
-<td align="left">2.38</td>
-<td align="left">[2.15, 2.62]</td>
-<td align="left">19.80</td>
-<td align="left">564</td>
-<td align="left">&lt; .001</td>
+<td align="right">2.38</td>
+<td align="right">[2.15, 2.62]</td>
+<td align="right">19.80</td>
+<td align="right">564</td>
+<td align="right">&lt; .001</td>
 </tr>
 <tr class="even">
 <td align="left">Hindrance</td>
-<td align="left">0.01</td>
-<td align="left">[0.00, 0.01]</td>
-<td align="left">1.82</td>
-<td align="left">564</td>
-<td align="left">.070</td>
+<td align="right">0.01</td>
+<td align="right">[0.00, 0.01]</td>
+<td align="right">1.82</td>
+<td align="right">564</td>
+<td align="right">.070</td>
 </tr>
 <tr class="odd">
 <td align="left">Challenge</td>
-<td align="left">0.01</td>
-<td align="left">[0.00, 0.02]</td>
-<td align="left">1.43</td>
-<td align="left">564</td>
-<td align="left">.152</td>
+<td align="right">0.01</td>
+<td align="right">[0.00, 0.02]</td>
+<td align="right">1.43</td>
+<td align="right">564</td>
+<td align="right">.152</td>
 </tr>
 <tr class="even">
 <td align="left">Resource</td>
-<td align="left">0.00</td>
-<td align="left">[-0.02, 0.01]</td>
-<td align="left">-0.77</td>
-<td align="left">564</td>
-<td align="left">.440</td>
+<td align="right">0.00</td>
+<td align="right">[-0.02, 0.01]</td>
+<td align="right">-0.77</td>
+<td align="right">564</td>
+<td align="right">.440</td>
 </tr>
 </tbody>
 </table>
+<p>Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, <span class="math inline">\(F_{(3, 564)}\)</span>= 1.10, <em>p</em> = .349. See Table <a href="#tab:regressiontablebur">4</a>.</p>
 <caption>
 <span id="tab:regressiontablebur">Table 4: </span>
 </caption>
@@ -543,54 +552,53 @@ p.caption {
 <thead>
 <tr class="header">
 <th align="left">Predictor</th>
-<th align="left"><span class="math inline">\(b\)</span></th>
-<th align="left">95% CI</th>
-<th align="left"><span class="math inline">\(t\)</span></th>
-<th align="left"><span class="math inline">\(\mathit{df}\)</span></th>
-<th align="left"><span class="math inline">\(p\)</span></th>
+<th align="right"><span class="math inline">\(b\)</span></th>
+<th align="right">95% CI</th>
+<th align="right"><span class="math inline">\(t\)</span></th>
+<th align="right"><span class="math inline">\(\mathit{df}\)</span></th>
+<th align="right"><span class="math inline">\(p\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">Intercept</td>
-<td align="left">2.90</td>
-<td align="left">[2.68, 3.11]</td>
-<td align="left">26.89</td>
-<td align="left">564</td>
-<td align="left">&lt; .001</td>
+<td align="right">2.90</td>
+<td align="right">[2.68, 3.11]</td>
+<td align="right">26.89</td>
+<td align="right">564</td>
+<td align="right">&lt; .001</td>
 </tr>
 <tr class="even">
 <td align="left">Hindrance</td>
-<td align="left">0.00</td>
-<td align="left">[0.00, 0.01]</td>
-<td align="left">0.67</td>
-<td align="left">564</td>
-<td align="left">.502</td>
+<td align="right">0.00</td>
+<td align="right">[0.00, 0.01]</td>
+<td align="right">0.67</td>
+<td align="right">564</td>
+<td align="right">.502</td>
 </tr>
 <tr class="odd">
 <td align="left">Challenge</td>
-<td align="left">0.01</td>
-<td align="left">[0.00, 0.02]</td>
-<td align="left">1.19</td>
-<td align="left">564</td>
-<td align="left">.233</td>
+<td align="right">0.01</td>
+<td align="right">[0.00, 0.02]</td>
+<td align="right">1.19</td>
+<td align="right">564</td>
+<td align="right">.233</td>
 </tr>
 <tr class="even">
 <td align="left">Resource</td>
-<td align="left">0.00</td>
-<td align="left">[-0.01, 0.01]</td>
-<td align="left">-0.52</td>
-<td align="left">564</td>
-<td align="left">.601</td>
+<td align="right">0.00</td>
+<td align="right">[-0.01, 0.01]</td>
+<td align="right">-0.52</td>
+<td align="right">564</td>
+<td align="right">.601</td>
 </tr>
 </tbody>
 </table>
-<p>Correlations, means and standard deviations are presented in Table <a href="#tab:correlationtable">1</a>. The results reveal a positive association between resources and engagement (<em>r</em> = .34; H1a), but a lack of meaningful association between resources and stress (H1b) and burnout (H1c). Challenge demands were positively associated with engagement (<em>r</em> = .31; H2a), but were unrelated to stress or burnout (H2b and H2c). Total hindrance stressors were largely not significantly associated with our outcomes, although there was a small-moderate association with stress (H3b; <em>r</em> = .09).</p>
-<p>We also conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. The total resources were predictive of engagement (<span class="math inline">\(F_{(3, 564)}\)</span> = 26.41, p &lt; .001), but neither challenge nor hindrance demands predicted engagement (see Table <a href="#tab:regressiontableeng">2</a>. Stress was not predicted by total resources, challenge, or hindrance demands, <span class="math inline">\(F_{(3, 564)}\)</span> = 2.47, <em>p</em> = .060 [see Table <a href="#tab:regressiontablestr">3</a>]. Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, <span class="math inline">\(F_{(3, 564)}\)</span>= 1.10, <em>p</em> = .349. See Table <a href="#tab:regressiontablebur">4</a>.</p>
 </div>
 <div id="discussion" class="section level1">
 <h1>Discussion</h1>
 <p>The major goal of this paper was to further explore the relationships among <em>total</em> perceived challenge demands, hindrance demands, and resources and outcomes of engagement, stress, and burnout. The results suggest a positive relationship between both resources and engagement (H1a) and challenge demands and engagement (H2a). Employers would benefit from understanding that at least the perception of having “more” resources and more challenge demands in a job is highly associated with reported engagement. While not a causal relationship, it points to the potential value of these kinds of employee support nonetheless. Future study could consider additional or other O*Net items, <em>kinds</em> of resources or challenges, additional outcomes (e.g., job satisfaction), or whether volume of resources and demands operationalized in this way are related to other behaviors.</p>
+<p><img src="SIOP.png" width="1340" height="480" /></p>
 </div>
 </div>
 </div>
