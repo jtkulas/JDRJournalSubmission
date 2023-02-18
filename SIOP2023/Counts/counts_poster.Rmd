@@ -18,7 +18,8 @@ logoright_name: 'Stoutlogo_2023.png'
 logoleft_name: "erg.png"
 output: 
   posterdown::posterdown_html:
-    self_contained: false
+    self_contained: TRUE
+knit: pagedown::chrome_print
 csl               : "apa7.csl"
 bibliography: jobdemands_resources_bibtex.bib
 suppress-bibliography: true 
@@ -263,8 +264,7 @@ apa_table(
   placement = "H"
 )
 ```
-
-Stress was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$ = 2.47, *p* = .060; see Table \@ref(tab:regressiontablestr). 
+Stress was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$ = 2.47, *p* = .060; see Table \@ref(tab:regressiontablestr).
 
 ```{r regressiontablestr}
 library(papaja)
