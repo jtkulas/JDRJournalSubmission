@@ -344,8 +344,6 @@ lookie <- stats::bartlett.test(sd ~ RD, toplottogether)
 
 ```
 
-The first hypothesis asks whether job characteristics differ in constancy regarding subjective worker perception as a demand or resource. 
-
 ```{r resourcesagree, fig.cap="Characteristics most similarly viewed as resources (lowest standard deviations)."}
 
 sortresource <- resource[order(resource$sd),]
@@ -398,7 +396,7 @@ write.csv(hindrancetemp, "sorthindrance.csv")
 
 ```
 
-Figure \@ref(fig:combinegraphs) presents resources, challenges, and hindrances that are *largely agreed on* as indexed by (relatively) low standard deviations.[^caveat] There are only 8 characteristics presented per perceived category because of limited space. All sortable ratings are available in the online resources.
+H1 proposes that job characteristics differ in constancy regarding subjective worker perception as a demand or resource. We explore this hypothesis first by item, and then present a more holistic picture. First considering item-level characteristics, we present means and standard deviations visually, focusing on the items highest and lowest in variability. Figure \@ref(fig:combinegraphs) presents the top 8 resources, challenges, and hindrances characteristics that are *largely agreed on* as indexed by (relatively) low standard deviations.[^caveat] Note that the presentation is limited to 8 characteristics per perceived category only because of limited space. All sortable ratings are available in the online resources.
 
 Figures 2 and 3 present only a snapshot - full list available in online resources. 
 [^caveat]: There were a few characteristics with standard deviations of "zero" but these were excluded from presentation as they were likely representing only one person (*n*'s should also go on these graphs if they're retained - Alicia's idea 12/2 was to use initial ratings as indicators of counts).
@@ -410,7 +408,7 @@ grid.arrange(b, c, a, nrow = 3)
 
 ```
 
-As can be seen by the graphs, there is considerable disagreement regarding the degree to which job elements are considered *hindrances*, with the 8 elements showing the greatest agreement still ranging in standard deviations from `r min(tophindrance$sd)` to `r max(tophindrance$sd)`. What is widely seen as a resource and challenge tends to be more universally agreed upon (range of lowest 8 resource standard deviations is `r min(topresource$sd)` to `r max(topresource$sd)` and the range of lowest 8 challenge standard deviations is `r min(topchallenge$sd)` to `r max(topchallenge$sd)`.
+As can be seen in the figures, what is widely seen as a resource and challenge tends to be somewhat agreed upon (range of lowest 8 resource standard deviations is `r min(topresource$sd)` to `r max(topresource$sd)` and the range of lowest 8 challenge standard deviations is `r min(topchallenge$sd)` to `r max(topchallenge$sd)`. However, there is considerable disagreement regarding the degree to which job elements are considered *hindrances*, with the 8 elements showing the greatest agreement still ranging in standard deviations from `r min(tophindrance$sd)` to `r max(tophindrance$sd)`.
 
 ```{r resourcesdisagree, fig.cap="Characteristics most *dis*similarly viewed as resources (highest standard deviations)."}
 
@@ -463,9 +461,9 @@ grid.arrange(e, f, d, nrow = 3)
 
 ```
 
-Figure \@ref(fig:combinegraphs2) presents the resources, challenges, and hindrances that are *largely disagreed on* as indexed by (relatively) high standard deviations (these are the 8 characteristics with the greatest variability in rating). In sum, these results provide some support for H1, particularly for hindrances, which are consistently viewed as "different". 
+Next, we explore the items with the highest variability in perceptions as resources, challenges, and hindrances. Figure \@ref(fig:combinegraphs2) presents the resources, challenges, and hindrances that are *largely disagreed on* as indexed by (relatively) high standard deviations. Stated another way, these are the 8 characteristics with the greatest variability in rating. In sum, these results provide some support for H1, particularly for hindrances, which are consistently viewed as "different". 
 
-Figure \@ref(fig:overallhist) shows that hindrances tend to exhibit similar levels of variability across items. Challenges and resources, however, exhibit items that are rated more similary across people (note the spread of the challenge and resource histograms relative to the hindrance histogram). A Bartlett's test for homogeneity of variance confirms this difference ($\chi^2_{`r lookie$df`}$ = `r lookie$statistic[[1]]`, *p* = `r lookie$p.value` ). 
+In addition to highlighting specific items, we also look at the pattern more holistically. Figure \@ref(fig:overallhist) shows that hindrances tend to exhibit similar levels of variability across items. Challenges and resources, however, exhibit items that are rated more similary across people (note the spread of the challenge and resource histograms relative to the hindrance histogram). A Bartlett's test for homogeneity of variance confirms this difference ($\chi^2_{`r lookie$df`}$ = `r lookie$statistic[[1]]`, *p* = `r lookie$p.value` ). 
 
 The second hypothesis stated that job characteristics would not be uniquely categorized as a resource or demand. Table \@ref(tab:cortab) provides the correlations among the O\*Net item groupings by resource, challenge and hindrance demand. A large proportion of correlations are moderate. Challenge and hindrance demands are smaller in relationship, but mostly negative. Challenge and resource are strongly and positively related. These results provide support for H2 suggesting that there is overlap in how employees perceive job characteristics. Stated another way, job characteristics are not uniquely categorized as a resource or as a demand.
 
