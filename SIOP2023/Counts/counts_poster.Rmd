@@ -26,7 +26,7 @@ suppress-bibliography: true
 link-citations: true
 floatsintext: yes
 affiliation_textsize: "50pt"
-body_textsize: "48px"
+body_textsize: "50px"
 title_textsize:	"75pt"	
 author_textsize:	"50pt"
 font_family: 'Helvetica'
@@ -252,7 +252,7 @@ summary(str)
 
 ```
 
-We also conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. The total resources were predictive of engagement ($F_{(3, 564)}$ = 26.41, p < .001), but neither challenge nor hindrance demands predicted engagement; see Table \@ref(tab:regressiontableeng). 
+<br />In addition to the above correlations, we also conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. The total resources were predictive of engagement ($F_{(3, 564)}$ = 26.41, p < .001), but neither challenge nor hindrance demands predicted engagement; see Table \@ref(tab:regressiontableeng). 
 
 ```{r regressiontableeng}
 library(papaja)
@@ -264,6 +264,8 @@ apa_table(
   placement = "H"
 )
 ```
+
+
 Stress was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$ = 2.47, *p* = .060; see Table \@ref(tab:regressiontablestr).
 
 ```{r regressiontablestr}
