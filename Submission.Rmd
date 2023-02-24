@@ -396,10 +396,9 @@ write.csv(hindrancetemp, "sorthindrance.csv")
 
 ```
 
-H1 proposes that job characteristics differ in constancy regarding subjective worker perception as a demand or resource. We explore this hypothesis first by item, and then present a more holistic picture. First considering item-level characteristics, we present means and standard deviations visually, focusing on the items highest and lowest in variability. Figure \@ref(fig:combinegraphs) presents the top 8 resources, challenges, and hindrances characteristics that are *largely agreed on* as indexed by (relatively) low standard deviations.[^caveat] Note that the presentation is limited to 8 characteristics per perceived category only because of limited space. All sortable ratings are available in the online resources.
+H1 proposes that job characteristics differ in constancy regarding subjective worker perception as a demand or resource. We explore this hypothesis first by item, and then present a more holistic picture. First considering item-level characteristics, we present means and standard deviations visually, focusing on the items highest and lowest in variability. Figure \@ref(fig:combinegraphs) presents the top 8 resources, challenges, and hindrances characteristics that are *largely agreed on* as indexed by (relatively) low standard deviations. Note that the presentation is limited to 8 characteristics per perceived category only because of limited space. All sortable ratings are available in the online resources.
 
 Figures 2 and 3 present only a snapshot - full list available in online resources. 
-[^caveat]: There were a few characteristics with standard deviations of "zero" but these were excluded from presentation as they were likely representing only one person (*n*'s should also go on these graphs if they're retained - Alicia's idea 12/2 was to use initial ratings as indicators of counts).
 
 ```{r combinegraphs, fig.cap="Characteristics percieved most similarly (lowest standard deviations).", fig.height=10}
 
