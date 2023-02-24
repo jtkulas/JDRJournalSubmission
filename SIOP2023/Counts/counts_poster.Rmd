@@ -62,11 +62,11 @@ library(tinylabels) ## because of warning on later chunk
 
 Using the the job demands-resources theory [@demerouti2001job], transactional theory of stress and coping [@lazarus1984stress], and  the challenge-hindrance framework [@cavanaugh2000empirical], we explored whether the amount or volume of perceived resources and demands would be related to three organizational outcomes: engagement [“a positive affective experience defined as a fulfilling, work-related state of mind characterized by vigor, dedication, and absorption”, @schaufeli2002measurement], workplace stress [“an individual state characterized by a combination of high arousal and displeasure”, p. 15, @pejtersen2010second] and burnout [“the degree of physical and psychological fatigue and exhaustion that is perceived by the person as related to his/her work”, p. 197, @kristensen2005copenhagen]. 
 
-> *Hypothesis 1a-1c*: Quantity of resources is positively associated with engagement (1a), and negatively associated with stress (1b) and burnout (1c)
+> *Hypotheses 1a-1c*: Quantity of resources is positively associated with engagement (1a), and negatively associated with stress (1b) and burnout (1c)
 
-> *Hypothesis 2a-2c*: Quantity of challenge demands is positively associated with engagement (2a), and negatively associated with stress (2b) and burnout (2c).
+> *Hypotheses 2a-2c*: Quantity of challenge demands is positively associated with engagement (2a), and negatively associated with stress (2b) and burnout (2c).
 
-> *Hypothesis 3a-3c*: Quantity of hindrance demands is negatively associated with engagement (3a), and positively associated with stress (3b) and burnout (3c).
+> *Hypotheses 3a-3c*: Quantity of hindrance demands is negatively associated with engagement (3a), and positively associated with stress (3b) and burnout (3c).
 
 # Methods
 
@@ -82,7 +82,7 @@ Items within O\*Net’s classifications of “work activity” and "work context
   
 **Outcomes of Stress, Burnout, and Engagement**.
 
-Three items taken from the Copenhagen Psychosocial Questionnaire [@burr_third_2019] to capture stress. Obtained alpha was .85 in this sample. Four items were taken from the Copenhagen Psychosocial Questionnaire [@burr_third_2019] to capture burnout. Alpha was 0.85 in this sample. The 18-item engagement measure was recently developed [@engage_2022] to capture engagement. For the purposes of the current study, we focused on an overall engagement score (18 item aggregate, alpha = 0.91).
+Three items taken from the Copenhagen Psychosocial Questionnaire [@burr_third_2019] capture stress. The obtained alpha was .85 in this sample. Four items were taken from the Copenhagen Psychosocial Questionnaire [@burr_third_2019] to capture burnout. Alpha was 0.85 in this sample. The 18-item engagement measure was recently developed [@engage_2022] to capture engagement. For the purposes of the current study, we focused on an overall engagement score (18 item aggregate, alpha = 0.91).
 
 # Results
 ```{r study1, include=FALSE, message = FALSE, warning = FALSE}
@@ -252,7 +252,7 @@ summary(str)
 
 ```
 
-<br />In addition to the above correlations, we also conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. The total resources were predictive of engagement ($F_{(3, 564)}$ = 26.41, p < .001), but neither challenge nor hindrance demands predicted engagement; see Table \@ref(tab:regressiontableeng). 
+<br />In addition to the above correlations, we also conducted three regression analyses: regressing a) engagement, b) stress, and c) burnout separately onto total resources, challenge and hindrance demands. The total resources were predictive of engagement ($F_{(3, 564)}$ = 26.41, p < .001, $R^2$ = .12), but neither challenge nor hindrance demands predicted engagement; see Table \@ref(tab:regressiontableeng). 
 
 ```{r regressiontableeng}
 library(papaja)
@@ -266,7 +266,7 @@ apa_table(
 ```
 
 
-Stress was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$ = 2.47, *p* = .060; see Table \@ref(tab:regressiontablestr).
+Stress was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$ = 2.47, *p* = .060, $R^2$ = .01; see Table \@ref(tab:regressiontablestr).
 
 ```{r regressiontablestr}
 library(papaja)
@@ -279,7 +279,7 @@ apa_table(
 )
 ```
 
-Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$= 1.10, *p* = .349. See Table \@ref(tab:regressiontablebur). 
+Similarly, burnout was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$= 1.10, *p* = .349, $R^2$ = .01; See Table \@ref(tab:regressiontablebur). 
 
 ```{r regressiontablebur}
 library(papaja)
