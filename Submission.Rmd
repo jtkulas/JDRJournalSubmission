@@ -322,28 +322,6 @@ Data were collected through Prolific, a data collection platform. An email was s
 
 # Results  
 
-```{r overallhist, fig.cap="Frequency distribution of standard deviations across characteristics deemed resources, challenges, and demands."}
-
-## resource$sd
-
-toplotresource <- resource
-toplotchallenge <- challenge
-toplothindrance <- hindrance
-
-toplotresource$RD <- "Resource"
-toplotchallenge$RD <- "Challenge"
-toplothindrance$RD <- "Hindrance"
-
-toplottogether <- rbind(toplotresource,toplotchallenge,toplothindrance)
-
-library(ggplot2)
-#ggplot(resource, aes(x=sd)) + geom_histogram()
-ggplot(toplottogether, aes(x=sd)) + geom_histogram() + facet_grid(RD ~ .)
-
-lookie <- stats::bartlett.test(sd ~ RD, toplottogether)
-
-```
-
 ```{r resourcesagree, fig.cap="Characteristics most similarly viewed as resources (lowest standard deviations)."}
 
 sortresource <- resource[order(resource$sd),]
@@ -396,10 +374,6 @@ write.csv(hindrancetemp, "sorthindrance.csv")
 
 ```
 
-H1 proposes that job characteristics differ in consistancy regarding subjective worker perception as a demand or resource. We explore this hypothesis first by item, and then present a more holistic picture. First considering item-level characteristics, we present means and standard deviations visually, focusing on the items highest and lowest in variability. Figure \@ref(fig:combinegraphs) presents the top 8 resources, challenges, and hindrances characteristics that are *largely agreed on* as indexed by (relatively) low standard deviations. Note that the presentation is limited to 8 characteristics per perceived category only because of limited space. All sortable ratings are available in the online resources.
-
-Figures 2 and 3 present only a snapshot - full list available in online resources. 
-
 ```{r combinegraphs, fig.cap="Characteristics percieved most similarly (lowest standard deviations).", fig.height=10}
 
 library(gridExtra)
@@ -407,19 +381,17 @@ grid.arrange(b, c, a, nrow = 3)
 
 ```
 
-As can be seen in the figures, what is widely seen as a resource and challenge tends to be somewhat agreed upon (range of lowest 8 resource standard deviations is `r min(topresource$sd)` to `r max(topresource$sd)` and the range of lowest 8 challenge standard deviations is `r min(topchallenge$sd)` to `r max(topchallenge$sd)`. However, there is considerable disagreement regarding the degree to which job elements are considered *hindrances*, with the 8 elements showing the greatest agreement still ranging in standard deviations from `r min(tophindrance$sd)` to `r max(tophindrance$sd)`.
-
 ```{r resourcesdisagree, fig.cap="Characteristics most *dis*similarly viewed as resources (highest standard deviations)."}
 
 resource <- resource[ which(resource$sd > 0), ] 
 
 sortresource <- resource[order(-resource$sd),]
 
-topresource <- head(sortresource, 8)
+bottomresource <- head(sortresource, 8)
 
-topresource <- topresource[tail(names(topresource),3)]        
+bottomresource <- bottomresource[tail(names(bottomresource),3)]        
 
-d <- ggplot(topresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="blue", position=position_dodge()) + theme_bw() +
+d <- ggplot(bottomresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="blue", position=position_dodge()) + theme_bw() +
   scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Least Agreed Upon as a Resource") + 
   geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5)) 
 
@@ -429,11 +401,11 @@ d <- ggplot(topresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(sta
 
 sortchallenge <- challenge[order(-challenge$sd),]
 
-topchallenge <- head(sortchallenge, 8)
+bottomchallenge <- head(sortchallenge, 8)
 
-topchallenge <- topchallenge[tail(names(topchallenge),3)]        
+bottomchallenge <- bottomchallenge[tail(names(bottomchallenge),3)]        
 
-e <- ggplot(topchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="yellow", position=position_dodge()) + theme_bw() +
+e <- ggplot(bottomchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="yellow", position=position_dodge()) + theme_bw() +
   scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Least Agreed Upon as a Challenge") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5)) 
 
 
@@ -444,11 +416,11 @@ e <- ggplot(topchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(st
 
 sorthindrance <- hindrance[order(-hindrance$sd),]
 
-tophindrance <- head(sorthindrance, 8)
+bottomhindrance <- head(sorthindrance, 8)
 
-tophindrance <- tophindrance[tail(names(tophindrance),3)]        
+bottomhindrance <- bottomhindrance[tail(names(bottomhindrance),3)]        
 
-f <- ggplot(tophindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="red", position=position_dodge()) + theme_bw() +
+f <- ggplot(bottomhindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="red", position=position_dodge()) + theme_bw() +
   scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Least Agreed upon as a Hindrance") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5))
 
 ```
@@ -460,13 +432,41 @@ grid.arrange(e, f, d, nrow = 3)
 
 ```
 
+```{r overallhist, fig.cap="Frequency distribution of standard deviations across characteristics deemed resources, challenges, and demands."}
+
+## resource$sd
+
+toplotresource <- resource
+toplotchallenge <- challenge
+toplothindrance <- hindrance
+
+toplotresource$RD <- "Resource"
+toplotchallenge$RD <- "Challenge"
+toplothindrance$RD <- "Hindrance"
+
+toplottogether <- rbind(toplotresource,toplotchallenge,toplothindrance)
+
+library(ggplot2)
+#ggplot(resource, aes(x=sd)) + geom_histogram()
+ggplot(toplottogether, aes(x=sd)) + geom_histogram() + facet_grid(RD ~ .)
+
+lookie <- stats::bartlett.test(sd ~ RD, toplottogether)
+
+```
+
+H1 proposes that job characteristics differ in consistancy regarding subjective worker perception as a demand or resource. We explore this hypothesis first by item, and then present a more holistic picture. First considering item-level characteristics, we present means and standard deviations visually, focusing on the items highest and lowest in variability. Figure \@ref(fig:combinegraphs) presents the top 8 resources, challenges, and hindrances characteristics that are *largely agreed on* as indexed by (relatively) low standard deviations. Note that the presentation is limited to 8 characteristics per perceived category only because of limited space. All sortable ratings are available in the online resources.
+
+Figures \@ref(fig:combinegraphs) and \@ref(fig:combinegraphs2) present only a snapshot - full list available in online resources. 
+
+As can be seen in the figures, what is widely seen as a resource and challenge tends to be somewhat agreed upon (range of lowest 8 resource standard deviations is `r min(topresource$sd)` to `r max(topresource$sd)` and the range of lowest 8 challenge standard deviations is `r min(topchallenge$sd)` to `r max(topchallenge$sd)`. However, there is considerable disagreement regarding the degree to which job elements are considered hindrances, with the 8 elements showing the *greatest agreement* still ranging in standard deviations from `r min(tophindrance$sd)` to `r max(tophindrance$sd)`.
+
 Next, we explore the items with the highest variability in perceptions as resources, challenges, and hindrances. Figure \@ref(fig:combinegraphs2) presents the resources, challenges, and hindrances that are *largely disagreed on* as indexed by (relatively) high standard deviations. Stated another way, these are the 8 characteristics with the greatest variability in rating. In sum, these results provide some support for H1, particularly for hindrances, which are consistently viewed as "different". 
 
 In addition to highlighting specific items, we also look at the pattern more holistically. Figure \@ref(fig:overallhist) shows that hindrances tend to exhibit similar levels of variability across items. Challenges and resources, however, exhibit items that are rated more similary across people (note the spread of the challenge and resource histograms relative to the hindrance histogram). A Bartlett's test for homogeneity of variance confirms this difference ($\chi^2_{`r lookie$df`}$ = `r lookie$statistic[[1]]`, *p* = `r lookie$p.value` ). 
 
 The second hypothesis stated that job characteristics would not be uniquely categorized as a resource or demand. Table \@ref(tab:cortab) provides the correlations among the O\*Net item groupings by resource, challenge and hindrance demand. A large proportion of correlations are moderate. Challenge and hindrance demands are smaller in relationship, but mostly negative. Challenge and resource are strongly and positively related. These results provide support for H2 suggesting that there is overlap in how employees perceive job characteristics - particularly regarding what is percieved as a *resource* being also percieved as a *challenge*. Stated another way, job characteristics are not uniquely categorized as a resource or as a demand.
 
-```{r cortab}
+```{r cortab, results="asis"}
 
 data_new <- data
 
@@ -521,8 +521,10 @@ r <- corx::corx(data_new, x =c("onet.resource.ii", "onet.resource.mp", "onet.res
 papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table,
                   caption = "Challenge, hindrance, and resource bivariate correlations.",
                   escape = FALSE, 
-                  font_size = "small", 
+                  font_size = "small",  ## "tiny" smallest
+                  longtable = TRUE,
                   landscape = TRUE,
+#                  stub_indents = list(a=1:10, b = 11:21),
                   note = "The seven O*Net grouping categories represented here are: Information Input (ii), Mental Processes (mp), Work Output (wo), Interacting with Others (io), Interpersonal Relationships (ir), Physical Work Conditions (pc), and Structural Job Characteristics (sc)")
 ```
 
@@ -762,11 +764,12 @@ The effect for `Team Cohesion` was $F_{(`r report10$ANOVA$DFn`, `r report10$ANOV
 
 # Discussion 
 
-The major aim and contribution of this paper was to examine whether there was variability in subjective ratings of job characteristics with respect to how much they serve as resources and demands (both challenge and hindrance), and also whether or not there is a match between the literature-implicated resources/demands and subjective ratings of these characteristics using a sample of items from O\*Net. The findings broadly revealed that there was relatively more consistency in ratings of resources and challenges characteristics, and far more variability in job characteristics rated as hindrance stressors. This finding lends additional evidence to Horan et al.’s (2020) conclusion that “...stressors are only challenge or hindrance stressors to the extent that they are perceived as such by employees” (p. 3). The research questions regarding the match between literature-implicated demand and resource categories and empirical ratings aligns with the consistency/variability we observed in H1. Interestingly, we consistently observed that job characteristics rated as resources were also rated highly as challenge stressors, which are not inherently negative in the way that hindrance stressors are. Lastly, we also found support for the hypothesis that job characteristics are not uniquely categorized as a resource or demand, but rather, some job  characteristics are rated highly as both a resource and a demand (H2).
+The major aim and contribution of this paper was to examine whether there was variability in subjective ratings of job characteristics with respect to how much they serve as resources and demands (both challenge and hindrance), and also whether or not there is a match between the literature-implicated resources/demands and subjective ratings of these characteristics using a sample of items from O\*Net. The findings broadly revealed that there was relatively more consistency in ratings of resources and challenges characteristics, and far more variability in job characteristics rated as hindrance stressors. This finding lends additional evidence to @horan2020review’s conclusion that “...stressors are only challenge or hindrance stressors to the extent that they are perceived as such by employees” (p. 3). The research questions regarding the match between literature-implicated demand and resource categories and empirical ratings aligns with the consistency/variability we observed in H1. Interestingly, we consistently observed that job characteristics rated as resources were also rated highly as challenge stressors, which are not inherently negative in the way that hindrance stressors are. Lastly, we also found support for the hypothesis that job characteristics are not uniquely categorized as a resource or demand, but rather, some job  characteristics are rated highly as both a resource and a demand (H2).
 
 ## Implications
 
 Theoretically, these findings support growing body of literature suggesting that perceptions of resources and demands, broadly, are not universal. There is individual difference in how employees experience the characteristics of their jobs. Much of our existing research on job demands and resources has been done from the perspective that job characteristics could be classified in advance as a “resource” or “demand”. 
+
 These results have implications for managers as well. The reality that there is more individual difference in what employees perceive to be a hindrance and less in what is perceived to be a resource or challenge stressor is in some ways encouraging. These findings provide comforting support for the idea that managers and supervisors can predict which characteristics are perceived as supportive to employees’ performance. Somewhat surprisingly, hindrances are rated more variably. As such, one important implication is that of frequent communication with employees regarding their perceptions of characteristics that limit their performance. @lepine2005meta and @podsakoff2007differential encourage organizations to incorporate strain-reducing activities like train and support to offset the negative effects of challenging job demands.
 
 ## Limitations and Future Directions
