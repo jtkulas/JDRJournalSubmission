@@ -25,8 +25,10 @@ bibliography: jobdemands_resources_bibtex.bib
 suppress-bibliography: true 
 link-citations: true
 floatsintext: yes
+poster_height: "36in"
+poster_width: "48in"
 affiliation_textsize: "50pt"
-body_textsize: "50px"
+body_textsize: "49px"
 title_textsize:	"75pt"	
 author_textsize:	"50pt"
 font_family: 'Helvetica'
@@ -266,7 +268,7 @@ apa_table(
 ```
 
 
-Stress was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$ = 2.47, *p* = .060, $R^2$ = .01; see Table \@ref(tab:regressiontablestr).
+Stress was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$ = 2.47, *p* = .060, $R^2$ = .01; Table \@ref(tab:regressiontablestr).
 
 ```{r regressiontablestr}
 library(papaja)
