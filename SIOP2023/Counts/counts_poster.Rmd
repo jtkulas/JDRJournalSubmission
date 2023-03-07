@@ -9,7 +9,7 @@ affiliation:
   - num: 1
     address: University of Wisconsin - Stout
   - num: 2
-    address: eRg
+    address: e`r fontawesome::fa("r-project")`g
 column_numbers: 3
 primary_colour: "#313ab3"
 secondary_colour: "#B4B5B4"
@@ -267,7 +267,8 @@ apa_table(
 )
 ```
 
-
+<br />
+<br />
 Stress was not predicted by total resources, challenge, or hindrance demands, $F_{(3, 564)}$ = 2.47, *p* = .060, $R^2$ = .01; Table \@ref(tab:regressiontablestr).
 
 ```{r regressiontablestr}
