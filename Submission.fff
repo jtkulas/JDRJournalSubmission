@@ -10,7 +10,7 @@
 
 \centering
 \includegraphics{Submission_files/figure-latex/combinegraphs2-1.pdf}
-\caption{\label{fig:combinegraphs2}Characteristics percieved most \emph{DIS}similarly (lowest standard deviations).}
+\caption{\label{fig:combinegraphs2}Characteristics percieved most \emph{DIS}similarly (largest standard deviations).}
 \end{figure*}
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
