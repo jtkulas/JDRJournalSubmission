@@ -39,7 +39,7 @@ figurelist        : no
 tablelist         : no
 footnotelist      : no
 linenumbers       : no
-mask              : no
+mask              : yes
 draft             : no
 
 csl               : apa7.csl
