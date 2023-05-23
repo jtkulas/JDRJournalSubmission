@@ -30,7 +30,7 @@ abstract: |
   Much of our understanding of job demands and resources rests on the assumption that some aspects and components of one's job are resources and some are demands. We build on a small but growing literature suggesting that individual differences may matter in our perceptions of characteristics as demands and resources. The primary aims were to explore 1) whether there is variability in subjective ratings of job characteristics with respect to how much they served as resources and demands, and 2) whether or not there was a match between the literature-implicated resources/demands and subjective ratings of these characteristics. O*NET work characteristics were rated by 568 employed respondents in terms of relevance, perception as a demand, and perception as a resource. The results suggest that job characteristics differ in variability/stability regarding subjective worker perceptions, particularly for hindrance demands which showed the most variability. Job characteristics were not uniquely categorized as a resource or demand, and literature-implicated resources were also implicated as being challenge, but not hindrance demands.
   
 keywords         : "O*Net, challenge-hindrance framework, job demands-resources, job characteristics"
-wordcount        : "X"
+wordcount        : "4,942"
 
 bibliography     : ["r-references.bib", "jdr.bib", "jobdemands_resources_bibtex.bib"]
 
@@ -39,7 +39,7 @@ figurelist        : no
 tablelist         : no
 footnotelist      : no
 linenumbers       : no
-mask              : yes
+mask              : no
 draft             : no
 
 csl               : apa7.csl

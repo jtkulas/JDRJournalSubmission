@@ -3,11 +3,12 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  man,mask]{apa6}
+  english,
+  man]{apa6}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{iftex}
-\ifPDFTeX
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -37,6 +38,7 @@
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
   pdftitle={Job Demands-Resources Model Components through the Lens of O*NET Classifications},
+  pdfauthor={Alicia Stachowski1, John Kulas2, \& Renata Garcia Prieto Palacios Roji3},
   pdflang={en-EN},
   pdfkeywords={O*Net, challenge-hindrance framework, job demands-resources, job characteristics},
   hidelinks,
@@ -68,38 +70,6 @@
   \let\oldsubparagraph\subparagraph
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
-  \fi
-  % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
-\ifLuaTeX
-\usepackage[bidi=basic]{babel}
-\else
-\usepackage[bidi=default]{babel}
-\fi
-\babelprovide[main,import]{english}
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
 % Manuscript styling
 \usepackage{upgreek}
 \captionsetup{font=singlespacing,justification=justified}
@@ -115,9 +85,9 @@
 
 % Create new environments so endfloat can handle them
 % \newenvironment{ltable}
-%   {\begin{landscape}\centering\begin{threeparttable}}
-%   {\end{threeparttable}\end{landscape}}
-\newenvironment{lltable}{\begin{landscape}\centering\begin{ThreePartTable}}{\end{ThreePartTable}\end{landscape}}
+%   {\begin{landscape}\begin{center}\begin{threeparttable}}
+%   {\end{threeparttable}\end{center}\end{landscape}}
+\newenvironment{lltable}{\begin{landscape}\begin{center}\begin{ThreePartTable}}{\end{ThreePartTable}\end{center}\end{landscape}}
 
 % Enables adjusting longtable caption width to table width
 % Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
@@ -155,16 +125,8 @@
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
 \makeatother
-
-\usepackage{xpatch}
-\makeatletter
-\xapptocmd\appendix
-  {\xapptocmd\section
-    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
-    {}{\InnerPatchFailed}%
-  }
-{}{\PatchFailed}
-\keywords{O*Net, challenge-hindrance framework, job demands-resources, job characteristics\newline\indent Word count: X}
+\shorttitle{O*NET JD-R}
+\keywords{O*Net, challenge-hindrance framework, job demands-resources, job characteristics\newline\indent Word count: 4,942}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
 \DeclareDelayedFloatFlavor*{longtable}{table}
@@ -172,16 +134,44 @@
 \renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
 \makeatother
 \usepackage{csquotes}
-\ifLuaTeX
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[]{english}
+\else
+  \usepackage[main=english]{babel}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\fi
+\ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \title{Job Demands-Resources Model Components through the Lens of O*NET Classifications}
 \author{Alicia Stachowski\textsuperscript{1}, John Kulas\textsuperscript{2}, \& Renata Garcia Prieto Palacios Roji\textsuperscript{3}}
 \date{}
 
-
-\shorttitle{O*NET JD-R}
 
 \authornote{
 
@@ -193,7 +183,7 @@ Correspondence concerning this article should be addressed to Alicia Stachowski,
 
 \affiliation{\vspace{0.5cm}\textsuperscript{1} University of Wisconsin-Stout\\\textsuperscript{2} eRg\\\textsuperscript{3} PepsiCo}
 
-\abstract{%
+\abstract{
 Much of our understanding of job demands and resources rests on the assumption that some aspects and components of one's job are resources and some are demands. We build on a small but growing literature suggesting that individual differences may matter in our perceptions of characteristics as demands and resources. The primary aims were to explore 1) whether there is variability in subjective ratings of job characteristics with respect to how much they served as resources and demands, and 2) whether or not there was a match between the literature-implicated resources/demands and subjective ratings of these characteristics. O*NET work characteristics were rated by 568 employed respondents in terms of relevance, perception as a demand, and perception as a resource. The results suggest that job characteristics differ in variability/stability regarding subjective worker perceptions, particularly for hindrance demands which showed the most variability. Job characteristics were not uniquely categorized as a resource or demand, and literature-implicated resources were also implicated as being challenge, but not hindrance demands.
 }
 
@@ -207,7 +197,7 @@ Research on the job demands-resources model (Demerouti et al., 2001) and later j
 \hypertarget{the-job-demands-resources-theory}{%
 \subsection{The Job demands-Resources Theory}\label{the-job-demands-resources-theory}}
 
-The overarching context for this study is that of the job demands-resources theory, which is an expansion of the well-studied job demands-resources model (Demerouti et al., 2001). One of the major advantages of the job demands-resources theory is that it allows us to model both work environment and job characteristics via job resources and demands. \emph{Resources} include physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development (Demerouti et al., 2001). In contrast, demands include components of a job that require sustained effort, and as such, produce psychological or physiological strain {[}e.g., high work pressure is frequently cited as a common demand; Demerouti et al. (2001){]}. Cognitively, the perception of an element of one's job as a resource or demand activates one of two distinct processes: either health impairment (resulting from demands) or motivation {[}resulting from resources; Bakker and Demerouti (2014){]}. Of particular importance here is that it is the perception of a characteristic or situation determines which process an employee will experience despite the typical \emph{a priori} assignment of a characteristic as objectively a ``demand'' or ``resource''. We explore this further below.
+The overarching context for this study is that of the job demands-resources theory, which is an expansion of the well-studied job demands-resources model (Demerouti et al., 2001). One of the major advantages of the job demands-resources theory is that it allows us to model both work environment and job characteristics via job resources and demands. \emph{Resources} include physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development (Demerouti et al., 2001). In contrast, demands include components of a job that require sustained effort, and as such, produce psychological or physiological strain {[}e.g., high work pressure is frequently cited as a common demand; Demerouti et al. (2001){]}. Cognitively, the perception of an element of one's job as a resource or demand activates one of two distinct processes: either health impairment (resulting from demands) or motivation {[}resulting from resources; Bakker and Demerouti (2014){]}. Of particular importance here is that it is the perception of a characteristic or situation determines which process an employee will experience despite the typical \emph{a priori} assignment of a characteristic as objectively a ``demand'' or ``resource.'' We explore this further below.
 
 \hypertarget{the-essential-role-of-appraisal}{%
 \subsection{The Essential Role of Appraisal}\label{the-essential-role-of-appraisal}}
@@ -217,7 +207,7 @@ As described above, job context and characteristics are assigned or appraised as
 \hypertarget{the-challenge-hindrance-stressor-framework}{%
 \subsection{The Challenge-hindrance Stressor Framework}\label{the-challenge-hindrance-stressor-framework}}
 
-Although there is a tendency to attach a negative connotation to the word ``stress'', Selye (1936) defined stress as simple a response to change. We return to the public figure for this next section. Consider two employees be called upon to serve as spokespeople for their organization. One may appraise the circumstance as an opportunity to positively influence others, while the other may feel daunted by the task.
+Although there is a tendency to attach a negative connotation to the word ``stress,'' Selye (1936) defined stress as simple a response to change. We return to the public figure for this next section. Consider two employees be called upon to serve as spokespeople for their organization. One may appraise the circumstance as an opportunity to positively influence others, while the other may feel daunted by the task.
 
 The challenge-hindrance stressor framework suggests that the way we understand reactions to stressors requires consideration of how people feel about a given stressor (Cavanaugh et al., 2000), in line with Lazarus and Folkman (1984). Cavanaugh et al. (2000) delineated between two forms of demands -- that of \emph{challenge} and \emph{hindrance} demands. Challenge demands promote mastery, personal growth, and future gains -- these stressors should lead to coping strategies that facilitate achievement. Stressors like time pressure and responsibility are considered challenge stressors/demands. Hindrance demands, in contrast, inhibit growth, learning and goal achievement. Hindrance stressors (e.g., role conflict, role ambiguity, politics) are associated with negative job behaviors and attitudes. This distinction between challenges and hindrances has been of value in determining which demands are related to various outcomes. The original work on this topic suggests that challenge stressors are typically associated with positive outcomes and hindrance stressors are associated with negative outcomes (e.g., Cavanaugh et al., 2000).
 
@@ -358,7 +348,7 @@ The mean resource to challenge correlations within the same dimension ranged fro
 \caption{\label{fig:scalelevelgraphs}Average characteristic rating grouped by literature-implicated categorizations.}
 \end{figure}
 
-In addition to the two hypotheses, two related research questions were proposed: 1) do literature-implicated resources materialize as perceived resources and 2) do literature-implicated demands materialize as perceived demands? To answer these questions, authors first categorized O*Net items into the elements listed in the JD-R literature. For example, autonomy is frequently described as a resource. An O*Net item is, ``How much decision making freedom, without supervision, does your job offer?''. This O*Net item was retained within the ``autonomy'' category. Mean ratings of the O*Net items were then computed by element (e.g., all of the items representing autonomy) to explore whether literature-implicated resources and demands were evaluated as such.
+In addition to the two hypotheses, two related research questions were proposed: 1) do literature-implicated resources materialize as perceived resources and 2) do literature-implicated demands materialize as perceived demands? To answer these questions, authors first categorized O*Net items into the elements listed in the JD-R literature. For example, autonomy is frequently described as a resource. An O*Net item is, ``How much decision making freedom, without supervision, does your job offer?'' This O*Net item was retained within the ``autonomy'' category. Mean ratings of the O*Net items were then computed by element (e.g., all of the items representing autonomy) to explore whether literature-implicated resources and demands were evaluated as such.
 
 Figure 4 presents these comparisons visually, where the bar lengths represent mean ratings within element category (e.g., the white bar represents mean O*Net resource ratings for a given JD-R element). First exploring the right side of Figure 4, there is a pattern of the highest level ratings being those of literature-derived resources (e.g., job control). As described above, the left side of Figure 4 shows literature-derived demand categories (e.g., work pressure). However, in contrast, we do not see a clear demarcation of resource and challenge, as would be expected if the job characteristics evidenced consistency (the literature-driven consistency would manifest as ``high'' gray and black bars and ``low'' white bars). In alignment with what we observed regarding variability in ratings of hindrance stressors in H1, there is much less consistency in how employees rated what should objectively be ``hindrances'' at work.
 
@@ -404,73 +394,73 @@ In sum, this endeavor explored the job-demands-resources literature from a uniqu
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-abbas2019challenge}{}}%
+\leavevmode\hypertarget{ref-abbas2019challenge}{}%
 Abbas, M., \& Raja, U. (2019). Challenge-hindrance stressors and job outcomes: The moderating role of conscientiousness. \emph{Journal of Business and Psychology}, \emph{34}(2), 189--201.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2014job}{}}%
+\leavevmode\hypertarget{ref-bakker2014job}{}%
 Bakker, A. B., \& Demerouti, E. (2014). Job demands--resources theory. \emph{Wellbeing: A Complete Reference Guide}, 1--28.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2017job}{}}%
+\leavevmode\hypertarget{ref-bakker2017job}{}%
 Bakker, A. B., \& Demerouti, E. (2017). Job demands--resources theory: Taking stock and looking forward. \emph{Journal of Occupational Health Psychology}, \emph{22}(3), 273.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2013weekly}{}}%
+\leavevmode\hypertarget{ref-bakker2013weekly}{}%
 Bakker, A. B., \& Sanz-Vergel, A. I. (2013). Weekly work engagement and flourishing: The role of hindrance and challenge job demands. \emph{Journal of Vocational Behavior}, \emph{83}(3), 397--409.
 
-\leavevmode\vadjust pre{\hypertarget{ref-cavanaugh2000empirical}{}}%
+\leavevmode\hypertarget{ref-cavanaugh2000empirical}{}%
 Cavanaugh, M. A., Boswell, W. R., Roehling, M. V., \& Boudreau, J. W. (2000). An empirical examination of self-reported work stress among US managers. \emph{Journal of Applied Psychology}, \emph{85}(1), 65.
 
-\leavevmode\vadjust pre{\hypertarget{ref-chen2021daily}{}}%
+\leavevmode\hypertarget{ref-chen2021daily}{}%
 Chen, H., Wang, H., Yuan, M., \& Xu, S. (2021). Daily challenge/hindrance demands and cognitive wellbeing: A multilevel moderated mediation model. \emph{Frontiers in Psychology}, \emph{12}, 616002.
 
-\leavevmode\vadjust pre{\hypertarget{ref-crawford2010linking}{}}%
+\leavevmode\hypertarget{ref-crawford2010linking}{}%
 Crawford, E. R., LePine, J. A., \& Rich, B. L. (2010). Linking job demands and resources to employee engagement and burnout: A theoretical extension and meta-analytic test. \emph{Journal of Applied Psychology}, \emph{95}(5), 834.
 
-\leavevmode\vadjust pre{\hypertarget{ref-demerouti2001job}{}}%
+\leavevmode\hypertarget{ref-demerouti2001job}{}%
 Demerouti, E., Bakker, A. B., Nachreiner, F., \& Schaufeli, W. B. (2001). The job demands-resources model of burnout. \emph{Journal of Applied Psychology}, \emph{86}(3), 499.
 
-\leavevmode\vadjust pre{\hypertarget{ref-gerich2017relevance}{}}%
+\leavevmode\hypertarget{ref-gerich2017relevance}{}%
 Gerich, J. (2017). The relevance of challenge and hindrance appraisals of working conditions for employees' health. \emph{International Journal of Stress Management}, \emph{24}(3), 270.
 
-\leavevmode\vadjust pre{\hypertarget{ref-horan2020review}{}}%
+\leavevmode\hypertarget{ref-horan2020review}{}%
 Horan, K. A., Nakahara, W. H., DiStaso, M. J., \& Jex, S. M. (2020). A review of the challenge-hindrance stress model: Recent advances, expanded paradigms, and recommendations for future research. \emph{Frontiers in Psychology}, \emph{11}, 560346.
 
-\leavevmode\vadjust pre{\hypertarget{ref-kim2020thriving}{}}%
+\leavevmode\hypertarget{ref-kim2020thriving}{}%
 Kim, M., \& Beehr, T. A. (2020). Thriving on demand: Challenging work results in employee flourishing through appraisals and resources. \emph{International Journal of Stress Management}, \emph{27}(2), 111.
 
-\leavevmode\vadjust pre{\hypertarget{ref-lazarus1984stress}{}}%
+\leavevmode\hypertarget{ref-lazarus1984stress}{}%
 Lazarus, R. S., \& Folkman, S. (1984). \emph{Stress, appraisal, and coping}. Springer publishing company.
 
-\leavevmode\vadjust pre{\hypertarget{ref-lepine2005meta}{}}%
+\leavevmode\hypertarget{ref-lepine2005meta}{}%
 LePine, J. A., Podsakoff, N. P., \& LePine, M. A. (2005). A meta-analytic test of the challenge stressor--hindrance stressor framework: An explanation for inconsistent relationships among stressors and performance. \emph{Academy of Management Journal}, \emph{48}(5), 764--775.
 
-\leavevmode\vadjust pre{\hypertarget{ref-lepine2022challenge}{}}%
+\leavevmode\hypertarget{ref-lepine2022challenge}{}%
 LePine, M. A. (2022). The challenge-hindrance stressor framework: An integrative conceptual review and path forward. \emph{Group \& Organization Management}, \emph{47}(2), 223--254.
 
-\leavevmode\vadjust pre{\hypertarget{ref-peterson2001understanding}{}}%
-Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., Fleishman, E. A., Levin, K. Y., Campion, M. A., Mayfield, M. S., Morgeson, F. P., Pearlman, K.others. (2001). Understanding work using the occupational information network (o* NET): Implications for practice and research. \emph{Personnel Psychology}, \emph{54}(2), 451--492.
+\leavevmode\hypertarget{ref-peterson2001understanding}{}%
+Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., Fleishman, E. A., Levin, K. Y., Campion, M. A., Mayfield, M. S., Morgeson, F. P., Pearlman, K., \& others. (2001). Understanding work using the occupational information network (o* NET): Implications for practice and research. \emph{Personnel Psychology}, \emph{54}(2), 451--492.
 
-\leavevmode\vadjust pre{\hypertarget{ref-podsakoff2007differential}{}}%
+\leavevmode\hypertarget{ref-podsakoff2007differential}{}%
 Podsakoff, N. P., LePine, J. A., \& LePine, M. A. (2007). Differential challenge stressor-hindrance stressor relationships with job attitudes, turnover intentions, turnover, and withdrawal behavior: A meta-analysis. \emph{Journal of Applied Psychology}, \emph{92}(2), 438.
 
-\leavevmode\vadjust pre{\hypertarget{ref-rodell2009can}{}}%
+\leavevmode\hypertarget{ref-rodell2009can}{}%
 Rodell, J. B., \& Judge, T. A. (2009). Can {``good''} stressors spark {``bad''} behaviors? The mediating role of emotions in links of challenge and hindrance stressors with citizenship and counterproductive behaviors. \emph{Journal of Applied Psychology}, \emph{94}(6), 1438.
 
-\leavevmode\vadjust pre{\hypertarget{ref-rosen2020challenges}{}}%
+\leavevmode\hypertarget{ref-rosen2020challenges}{}%
 Rosen, C. C., Dimotakis, N., Cole, M. S., Taylor, S. G., Simon, L. S., Smith, T. A., \& Reina, C. S. (2020). When challenges hinder: An investigation of when and how challenge stressors impact employee outcomes. \emph{Journal of Applied Psychology}, \emph{105}(10), 1181.
 
-\leavevmode\vadjust pre{\hypertarget{ref-searle2015merits}{}}%
+\leavevmode\hypertarget{ref-searle2015merits}{}%
 Searle, B. J., \& Auton, J. C. (2015). The merits of measuring challenge and hindrance appraisals. \emph{Anxiety, Stress, \& Coping}, \emph{28}(2), 121--143.
 
-\leavevmode\vadjust pre{\hypertarget{ref-selye1936syndrome}{}}%
+\leavevmode\hypertarget{ref-selye1936syndrome}{}%
 Selye, H. (1936). A syndrome produced by diverse nocuous agents. \emph{Nature}, \emph{138}(3479), 32--32.
 
-\leavevmode\vadjust pre{\hypertarget{ref-webster2010toward}{}}%
+\leavevmode\hypertarget{ref-webster2010toward}{}%
 Webster, J. R., Beehr, T. A., \& Christiansen, N. D. (2010). Toward a better understanding of the effects of hindrance and challenge stressors on work behavior. \emph{Journal of Vocational Behavior}, \emph{76}(1), 68--77.
 
-\leavevmode\vadjust pre{\hypertarget{ref-webster2011extending}{}}%
+\leavevmode\hypertarget{ref-webster2011extending}{}%
 Webster, J. R., Beehr, T. A., \& Love, K. (2011). Extending the challenge-hindrance model of occupational stress: The role of appraisal. \emph{Journal of Vocational Behavior}, \emph{79}(2), 505--516.
 
-\leavevmode\vadjust pre{\hypertarget{ref-R-careless}{}}%
+\leavevmode\hypertarget{ref-R-careless}{}%
 Yentes, R. D., \& Wilhelm, F. (2021). \emph{Careless: Procedures for computing indices of careless responding}.
 
 \end{CSLReferences}
