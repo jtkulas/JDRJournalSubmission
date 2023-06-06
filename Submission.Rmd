@@ -43,8 +43,8 @@ mask              : no
 draft             : no
 
 csl               : apa7.csl
-documentclass     : "apa6"
-classoption       : "man"
+documentclass     : "interact"
+#classoption       : "man"
 output            : papaja::apa6_pdf
 ---
 
@@ -323,7 +323,7 @@ O\*Net collects information about these categories by periodically asking worker
 
 ## Procedure  
 
-Data were collected through Prolific, an online data collection platform. An email was sent to a random subset of all eligible participants in the Prolific respondent pool, notifying them about their eligibility for the study based on demographic information. Eligibility requirements included being 18 or older and holding either a full-time or part-time job. Participants then voluntarily chose to respond to the online survey. Participants were asked to think about their primary job, and the items they were presented with depended on the specific job characteristics they initially specified. Thus, if a respondent indicated that a characteristic was not part of their job, they were not subsequently asked to rate the level of resource (...this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development), challenge (...this aspect of your job is a challenge that can promote mastery, personal growth, or future gains), or hindrance (...this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment) in randomized order. The total number of items on the survey was less than 392 (98 characteristics x 4 repeated measurements) because we did not ask for demand and resource evaluations for 14 O\*Net characteristics that we projected would have very low frequency of endorsement across respondents (one excluded characteristic, for example, was *...the extent to which the worker is exposed to radiation on the job*). Participants were compensated for their participation in this study estimated to require 45 minutes' time in the amount of six dollars through Prolific.
+Data were collected through Prolific, an online data collection platform. An email was sent to a random subset of all eligible participants in the Prolific respondent pool, notifying them about their eligibility for the study based on demographic information. Eligibility requirements included being 18 or older and holding either a full-time or part-time job. Participants then voluntarily chose to respond to the online survey after reading an informed consent. Participants were asked to think about their primary job, and the items they were presented with depended on the specific job characteristics they initially specified. Thus, if a respondent indicated that a characteristic was not part of their job, they were not subsequently asked to rate the level of resource (...this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development), challenge (...this aspect of your job is a challenge that can promote mastery, personal growth, or future gains), or hindrance (...this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment) in randomized order. The total number of items on the survey was less than 392 (98 characteristics x 4 repeated measurements) because we did not ask for demand and resource evaluations for 14 O\*Net characteristics that we projected would have very low frequency of endorsement across respondents (one excluded characteristic, for example, was *...the extent to which the worker is exposed to radiation on the job*). Participants were compensated for their participation in this study estimated to require 45 minutes' time in the amount of six dollars through Prolific.
 
 # Results  
 
