@@ -81,6 +81,7 @@ Although the word “stress” often carries a negative connotation, the "father
 
 At the most broad level, we can question whether employees actually distinguish between challenges and hindrances as the theory describes. Research suggests that people can and do perceive them differently. For example, @bakker2013weekly found that perceived work pressure can be classified as a hindrance demand, while the requirement to express emotions is a challenge demand. @webster2011extending also considered three common work characteristics including workload, role ambiguity, and role conflict. Interestingly, they found that while each could be identified *primarily* as a challenge or hindrance, employees could also appraise that a characteristic is simultaneously both a challenge and hindrance. However, this list of demands (workload, role ambiguity, and role conflict) is somewhat narrow. Using a very wide range of O\*Net job characteristics regarding job context and activities, we explore this question: 
 
+*RQ1 is a good idea for A DIFFERENT PAPER. Do ICC(1,1)*
 *RQ1*: Do people distinguish between challenge and hindrance stressors?
 
 *Paired samples t-tests for challenge/hindrance by item?* - I like this first idea. could present it by the 7 different categories.
@@ -90,11 +91,10 @@ At the most broad level, we can question whether employees actually distinguish 
 
 The next question focuses on whether challenges (positive stressors per the definition above) might actually be positively related to resources. Per the job demands-resources theory [@bakker2017job] resources are defined as physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development [@demerouti2001job]. It stands to reason that a challenging demand may be considered a resource.
 
-*RQ2*: Characteristics perceived as challenges are also commonly viewed as resources.  
-
+*RQ1*: Are job characteristics perceived as challenges are also commonly viewed as resources?  
 Although we argue that the same job characteristic may be perceived as both a challenge and a resource, it is also likely that some characteristics are less likely to be viewed as mutually complementary as others. For example, a physically strenuous job requirement such as "carrying heavy objects" would be less likely to be viewed both as a challenge and a resource whereas a structural characteristic such as "negotiating work schedules" may very well be viewed (likely in different circumstances) to be both a control-oriented resource as well as a challenge. O\*Net has different levels of abstraction with regard to the nature of job characteristics. We will be exploring a mid-level abstraction with seven different characteristic scales. 
 
-*RQ3*: The association between challenging and resourceful characteristics is moderated by type of characteristic. 
+*RQ2*: Is the association between challenge and resource characteristics moderated by type of characteristic?
 
 #### Maybe do third moderator
 
