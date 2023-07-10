@@ -5,19 +5,16 @@
 \documentclass[
   man]{apa6}
 \usepackage{amsmath,amssymb}
+\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
+  \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-\usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -36,6 +33,16 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Demanding resources: Converging perceptions of challenge and resource characteristics},
+  pdfauthor={John Kulas1, Alicia Stachowski2, \& Renata García Prieto Palacios Roji3},
+  pdflang={en-EN},
+  pdfkeywords={keywords},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -169,16 +176,6 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
-\hypersetup{
-  pdftitle={Demanding resources: Converging perceptions of challenge and resource characteristics},
-  pdfauthor={John Kulas1, Alicia Stachowski2, \& Renata García Prieto Palacios Roji3},
-  pdflang={en-EN},
-  pdfkeywords={keywords},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
 
 \title{Demanding resources: Converging perceptions of challenge and resource characteristics}
 \author{John Kulas\textsuperscript{1}, Alicia Stachowski\textsuperscript{2}, \& Renata García Prieto Palacios Roji\textsuperscript{3}}
@@ -208,20 +205,22 @@ Correspondence concerning this article should be addressed to John Kulas. E-mail
 \begin{document}
 \maketitle
 
-The Occupational Information Network (O*NET; onetonline.org) contains a reasonably comprehensive description of occupations (Peterson et al., 2001) which subject matter experts inform via surveys. We utilize a set of O*Net job context and activity statements contained in these surveys to explore a series of research questions about how people perceive resources, challenges, and hindrances within their jobs. There are a number of advantage to using this standard set of statements, but the primary one here lies in our ability to consider a wide range of job characteristics, with a focus on individual perceptions of each rather than limiting ourselves to a more generic set of demands or those of a limited scope.
+\begin{verbatim}
+## Warning: package 'tinylabels' was built under R version 4.1.3
+\end{verbatim}
+
+The Occupational Information Network (O*NET; onetonline.org) contains a reasonably comprehensive description of occupations (Peterson et al., 2001) which subject matter experts inform via surveys. We utilize a set of O*NET job context and activity statements contained in these surveys to explore a series of research questions about how people perceive resources, challenges, and hindrances within their jobs. There are a number of advantage to using this standard set of statements, but the primary one here lies in our ability to consider a wide range of job characteristics, with a focus on individual perceptions of each rather than limiting ourselves to a more generic set of demands or those of a limited scope.
 
 \hypertarget{not-all-stressors-are-equal-the-challenge-hindrance-framework}{%
 \subsection{Not all Stressors are Equal: The Challenge-hindrance Framework}\label{not-all-stressors-are-equal-the-challenge-hindrance-framework}}
 
 Although the word ``stress'' often carries a negative connotation, the ``father'' of the current concept, Selye (1936), conceptualized stress much less pejoratively - rather thinking of it as a \emph{response to change}. For instance, consider the different reactions two different employees may have to being nominated to give a speech at an upcoming company event. One may appraise the nomination as a negative stressor. However, another employee may appraise the nomination to do so as an opportunity to share their experiences with more of their coworkers, or one in which they may receive recognition they have desired. Selye the physician would likely have labeled the two responses as subjective manifestations of ``distress'', and ``eustress'' (Selye, 1974). In modern I-O Psychology parlance (and more consistent with the job demands-resources model (Demerouti et al., 2001) and job demands-resources theory (Bakker \& Demerouti, 2017)), the two workers would both be characterized as appraising the speaking opportunity as a job demand, but one would be appraising the demand as a \emph{challenge} while the other would appraise the demand as a \emph{hindrance} (Cavanaugh et al., 2000). According to Cavanaugh et al. (2000), challenge demands promote mastery, personal growth, and future gains. Hindrance demands, in contrast, inhibit growth, learning and goal achievement. Perhaps not surprisingly, challenge demands are typically associated with positive outcomes, whereas hindrance demands are associated with more negative outcomes (e.g., Cavanaugh et al., 2000).
 
-At the most broad level, we can question whether employees actually distinguish between challenges and hindrances as the theory describes. Research suggests that people can and do perceive them differently. For example, Bakker and Sanz-Vergel (2013) found that perceived work pressure can be classified as a hindrance demand, while the requirement to express emotions is a challenge demand. Webster et al. (2011) also considered three common work characteristics including workload, role ambiguity, and role conflict. Interestingly, they found that while each could be identified \emph{primarily} as a challenge or hindrance, employees could also appraise that a characteristic is simultaneously both a challenge and hindrance. However, this list of demands (workload, role ambiguity, and role conflict) is somewhat narrow. Using a very wide range of O*Net job characteristics regarding job context and activities, we explore this question:
-
-The next question focuses on whether challenges (positive stressors per the definition above) might actually be positively related to resources. Per the job demands-resources theory (Bakker \& Demerouti, 2017) resources are defined as physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development (Demerouti et al., 2001). It stands to reason that a challenging demand may be considered a resource.
+At the most broad level, we can question whether employees actually distinguish between challenges and hindrances as the theory describes. Research suggests that people can and do perceive them differently. For example, Bakker and Sanz-Vergel (2013) found that perceived work pressure can be classified as a hindrance demand, while the requirement to express emotions is a challenge demand. Webster et al. (2011) also considered three common work characteristics including workload, role ambiguity, and role conflict. Interestingly, they found that while each could be identified \emph{primarily} as a challenge or hindrance, employees could also appraise that a characteristic is simultaneously both a challenge and hindrance. However, this list of demands (workload, role ambiguity, and role conflict) is somewhat narrow. Using a very wide range of O*NET job characteristics regarding job context and activities, we explore whether challenges (positive stressors per the definition above) might actually be positively related to resources. Per the job demands-resources theory (Bakker \& Demerouti, 2017) resources are defined as physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development (Demerouti et al., 2001). It stands to reason that a challenging demand may be considered a resource.
 
 \emph{RQ1}: Do jobs with many resources also perceived to have many challenges?
 
-Although we argue that the same job characteristic may be perceived as both a challenge and a resource, it is also likely that some characteristics are less likely to be viewed as mutually complementary as others. For example, a physically strenuous job requirement such as ``carrying heavy objects'' would be less likely to be viewed both as a challenge and a resource whereas a structural characteristic such as ``negotiating work schedules'' may very well be viewed (likely in different circumstances) to be both a control-oriented resource as well as a challenge. O*Net has different levels of abstraction with regard to the nature of job characteristics. We will be exploring a mid-level abstraction with seven different characteristic scales.
+Although we argue that the same job characteristic may be perceived as both a challenge and a resource, it is also likely that some characteristics are less likely to be viewed as mutually complementary as others. For example, a physically strenuous job requirement such as ``carrying heavy objects'' would be less likely to be viewed both as a challenge and a resource whereas a structural characteristic such as ``negotiating work schedules'' may very well be viewed (likely in different circumstances) to be both a control-oriented resource as well as a challenge. O*NET has different levels of abstraction with regard to the nature of job characteristics. We will be exploring a mid-level abstraction with seven different characteristic scales.
 
 \emph{RQ2}: Is the association between challenge and resource characteristics moderated by type of characteristic?
 
@@ -233,7 +232,7 @@ We also have ratings of ``\ldots the extent to which this characteristic is pres
 \hypertarget{method}{%
 \section{Method}\label{method}}
 
-We evaluate agreement across perceptions of job characteristics regarding their characterization as resource, challenge, and hindrance (Bakker \& Demerouti, 2017; Bakker et al., 2003; Demerouti et al., 2001). To capture an effectively exhaustive list of characteristics that apply to, theoretically, \emph{every} possible job, we consult the unifying framework of O*Net.
+We evaluate agreement across perceptions of job characteristics regarding their characterization as resource, challenge, and hindrance (Bakker \& Demerouti, 2017; Bakker et al., 2003; Demerouti et al., 2001). To capture an effectively exhaustive list of characteristics that apply to, theoretically, \emph{every} possible job, we consult the unifying framework of O*NET.
 
 \hypertarget{participants}{%
 \subsection{Participants}\label{participants}}
@@ -243,22 +242,19 @@ Eligibility requirements included being 18 or older and holding either a full- o
 \hypertarget{materials}{%
 \subsection{Materials}\label{materials}}
 
-Our survey was informed by 98 statements taken from job characteristic descriptors located within O*Net's classification of ``work activities'': 1) Information Input (5 statements), 2) Interacting with Others (17 statements), 3) Mental Processes (10 statements), and 4) Work Output (9 statements) and ``work context'' groupings: 1) Interpersonal Relationships (14 statements), 2) Physical Work Conditions (30 statements), and 3) Structural Job Characteristics (13 statements).
+Our survey was informed by 98 statements taken from job characteristic descriptors located within O*NET's classification of ``work activities'': 1) Information Input (5 statements), 2) Interacting with Others (17 statements), 3) Mental Processes (10 statements), and 4) Work Output (9 statements) and ``work context'' groupings: 1) Interpersonal Relationships (14 statements), 2) Physical Work Conditions (30 statements), and 3) Structural Job Characteristics (13 statements).
 
-The O*Net descriptors are written in a similar manner to a task statement presented within a job analysis, but the level of abstraction is closer to ``responsibility'' than task. For example, the descriptor for ``level of competition'', which is an element of the ``structural job characteristics'' grouping, is \emph{\ldots to what extent does this job require the worker to compete or to be aware of competitive pressures?} Other than minor grammatical editing (for example, changing ``the worker'' to ``you''), we retained the O*Net wording for our item stems. We also retained O*Net's response scales, several of which were semantically unique across items, but all shared the same 5-point scale. It would likely NOT be considered controversial to referred to these as ``effectively'' Likert-type response scales.
+The O*NET descriptors are written in a similar manner to a task statement presented within a job analysis, but the level of abstraction is closer to ``responsibility'' than task. For example, the descriptor for ``level of competition'', which is an element of the ``structural job characteristics'' grouping, is \emph{How often do you have to perform public speaking in this job??} Other than minor grammatical editing (for example, changing ``the worker'' to ``you'' where applicable), we retained the O*NET wording for our item stems. We also retained O*NET's response scales, several of which were semantically unique across items, but all shared the same 5-point scale. It would likely NOT be considered controversial to referred to these as ``effectively'' Likert-type response scales.
 
 \hypertarget{procedure}{%
 \subsection{Procedure}\label{procedure}}
 
-Following IRB approval, respondents were recruited through Prolific. After providing consent, respondents provided ratings of whether or not each of the 98 O*Net characteristics were relevant for the respondent's work. Subsequently, each respondent who agreed that an element had at least some relevance to their job was then also asked to rate that element in terms of perception of resource, challenge, or hindrance. The total number of items on the survey was less than 392 (98 characteristics x 4 administrations - the first for relevance and the remaining 3 for resources, challenges, and hindrances) because we did not ask for demand and resource evaluations for 14 O*Net characteristics that we projected would have very low frequency of endorsement across respondents (one excluded characteristic, for example, was \emph{\ldots the extent to which the worker is exposed to radiation on the job}). Furthermore, not every respondent indicated that the same characteristics were relevant to them, therefore each respondent had a unique set of responses. Participants were compensated for their participation in this study in the amount of six dollars through Prolific.
+Respondents were recruited through Prolific. After providing consent, respondents provided ratings of whether or not each of the 98 O*NET characteristics were relevant for the respondent's primary work role. Subsequently, each respondent who agreed that an element had at least some relevance to their job was then also asked to rate that element in terms of perception of resource, challenge, and hindrance. The total number of items on the survey was less than 392 (98 characteristics x 4 administrations - the first for relevance and the remaining 3 for resources, challenges, and hindrances) because we did not ask for demand and resource evaluations for 14 O*NET characteristics that we projected would have very low frequency of endorsement across respondents (one excluded characteristic, for example, was \emph{\ldots the extent to which the worker is exposed to radiation on the job}). Furthermore, not every respondent indicated that the same characteristics were relevant to them. Therefore, each respondent had a unique set of administered items. Participants were compensated for their participation in this study in the amount of six dollars through Prolific.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
 
-All analyses are focused on characteristics of work that were rated as being ``relevant'' to the respondents' job. Upon confirming that a work characteristic was relevant, respondents then also rated the extent to which that characteristic was percieved as a resources, challenge, and hindrance.
-
-\hypertarget{resource-challenge-and-hindrance-associations}{%
-\subsection{Resource, Challenge, and Hindrance Associations}\label{resource-challenge-and-hindrance-associations}}
+All analyses are focused on characteristics of work that were rated as being ``relevant'' to the respondents' primary job. Upon confirming that a work characteristic was relevant, respondents then also rated the extent to which that characteristic was perceived as a resources, challenge, and hindrance.
 
 \begin{table}[tbp]
 
@@ -282,13 +278,11 @@ All analyses are focused on characteristics of work that were rated as being ``r
 
 \end{table}
 
-Research Question 1 explored whether jobs with many challenges have many resources? The total number of undifferentiated challenges and resources are positively related. Table \ref{tab:cortab} shows a very high association between resources and challenges (\emph{r} = .86). These associations, however, are only capturing the relationships between these demands and resources in \emph{sheer volume}. That is, table \ref{tab:cortab} operationalized each variable as the sheer number of resources, hindrances, or challenges that a respondent indicated were present within their job. This correlational analysis simply implies that workers who experience more resources also perceive greater challenges. The associations between resources and hindrances (\emph{r} = .23) and challenges and hindrances (\emph{r} = .22) were also significantly positive with moderate magnitude associations, suggesting that some of this ``sheer volume'' may be capturing job complexity (that is, the more complex the job, the more characteristics are relevant, and therefore the more likely it is to have \emph{more} challenges as well as \emph{more} hindrances as well as \emph{more} resources). Although we did not address job complexity as a moderator in the current paper, we do plan to do so in future investigations. Also, take note of the average numbers of resources, challenges, and hindrances cited by our sample, where these respondents generally experienced fewer hindrances in their jobs (\emph{M} = 13.09) than both resources and challenges.
-
+\begin{figure}
+\centering
 \includegraphics{SIOP2024convergence_files/figure-latex/percagree-1.pdf}
-\#\# Convergence (same characteristic)
-
-We next looked for convergence of perception at the level of each individual job characteristic. Here, we calculated the \emph{percent of affirmative correspondence} between individual characteristic perceptions. That is, a respondent needed to agree that \emph{\ldots being in contact with others} was both a resource as well as a challenge in order to be implicated as affirmatively agreeing. We did this for each of the 84 individual characteristics that were rated as a resource, challenge, or demand and then computed an aggregate level of affirmative correspondence for each person. Figure \ref{fig:percagree} presents the results of these correspondences, showing that there was not much mutual agreement regarding characteristics being viewed as both hindrances and resources (\emph{M} = 0.14) or as challenges and hindrances
-(\emph{M} = 0.14). However, when a characteristic was viewed a resource, it was more likely to also be perceived as a challenge (although the correspondence also exhibited quite a bit of variability; \emph{M} = 0.51, \emph{sd} = 0.21).
+\caption{\label{fig:percagree}Percent convergence (characteristic rated consistently as, for example, both a resource and a hindrance).}
+\end{figure}
 
 \begin{figure}
 \centering
@@ -296,18 +290,28 @@ We next looked for convergence of perception at the level of each individual job
 \caption{\label{fig:recchall}Resource and challenge agreement across ONet characteristic groupings (e.g., scales).}
 \end{figure}
 
+\hypertarget{resource-challenge-and-hindrance-associations}{%
+\subsection{Resource, Challenge, and Hindrance Associations}\label{resource-challenge-and-hindrance-associations}}
+
+Research Question 1 explored whether jobs with many challenges have many resources. The total number of undifferentiated challenges and resources are positively related. Table \ref{tab:cortab} shows a very high association between resources and challenges (\emph{r} = .86). These associations, however, are only capturing the relationships between these demands and resources in \emph{sheer volume}. That is, Table \ref{tab:cortab} operationalized each variable as the sheer number of resources, hindrances, or challenges that a respondent indicated were present within their job. This correlational analysis simply implies that workers who experience more resources also perceive greater challenges. The associations between resources and hindrances (\emph{r} = .23) and challenges and hindrances (\emph{r} = .22) were also significantly positive with moderate magnitude associations, suggesting that some of this ``sheer volume'' may be capturing job complexity (that is, the more complex the job, the more characteristics are relevant, and therefore the more likely it is to have \emph{more} challenges as well as \emph{more} hindrances as well as \emph{more} resources). Although we did not address job complexity as a moderator in the current paper, we do plan to do so in future investigations. Also, take note of the average numbers of resources, challenges, and hindrances cited by our sample, where these respondents generally experienced fewer hindrances in their jobs (\emph{M} = 13.09) than both resources and challenges.
+
+\hypertarget{convergence-same-characteristic}{%
+\subsection{Convergence (same characteristic)}\label{convergence-same-characteristic}}
+
+We next looked for convergence of perception at the level of each individual job characteristic. Here, we calculated the \emph{percent of affirmative correspondence} between individual characteristic perceptions. That is, a respondent needed to agree that \emph{\ldots being in contact with others} was both a resource as well as a challenge in order to be implicated as affirmatively agreeing. We did this for each of the 84 individual characteristics that were rated as a resource, challenge, or demand and then computed an aggregate level of affirmative correspondence for each person. Figure \ref{fig:percagree} presents the results of these correspondences, showing that there was not much mutual agreement regarding characteristics being viewed as both hindrances and resources (\emph{M} = 0.14) or as challenges and hindrances (\emph{M} = 0.14). However, when a characteristic was viewed a resource, it was more likely to also be perceived as a challenge (although the correspondence also exhibited quite a bit of variability; \emph{M} = 0.51, \emph{sd} = 0.21).
+
 \hypertarget{moderating-effects}{%
 \subsubsection{Moderating effects}\label{moderating-effects}}
 
-Figure \ref{fig:recchall} explores the possibility of moderation by \emph{type of characteristic rated} for the resource-challenge convergence. Here we categorized each characteristic by its O*Net ``scale'' (one of seven), and the graph shows greater consistency across certain characteristics (for example, \emph{Mental Processes} or \emph{Interacting with Others}) and less convergence across other \emph{types} of job activities (for example, \emph{Physical} characteristics). A repeated-measures ANOVA retaining these scales as 7 different levels of a within-subjects' independent variables yielded a treatment effect of \(F_{(6, 3,402)}\) = 613.5, \emph{p} \textless{} .001 (the subjects' effect was \(F_{(567, 3402)}\) = 6.13, \emph{p} \textless{} .001.
+Figure \ref{fig:recchall} explores the possibility of moderation by \emph{type of characteristic rated} for the resource-challenge convergence. Here we categorized each characteristic by its O*NET ``scale'' (one of seven), and the graph shows greater consistency across certain characteristics (for example, \emph{Mental Processes} or \emph{Interacting with Others}) and less convergence across other \emph{types} of job activities (for example, \emph{Physical} characteristics). A repeated-measures ANOVA retaining these scales as 7 different levels of a within-subjects' independent variables yielded a treatment effect of \(F_{(6, 3,402)}\) = 613.5, \emph{p} \textless{} .001 (the subjects' effect was \(F_{(567, 3402)}\) = 6.13, \emph{p} \textless{} .001.
 
 \begin{figure}
 \centering
 \includegraphics{SIOP2024convergence_files/figure-latex/workcat-1.pdf}
-\caption{\label{fig:workcat}Percent agreement (resource and challenge) across O\emph{Net occupational categories (previous was across 84 O/}Net items - this is across 568 individual workers).}
+\caption{\label{fig:workcat}Percent agreement (resource and challenge) across O\emph{NET occupational categories (previous was across 84 O/}Net items - this is across 568 individual workers).}
 \end{figure}
 
-As can be seen in Figure \ref{fig:workcat}, the moderation seen across O*Net dimension was not paralleled across \emph{job classification}. Here, there was wide variability in convergence, regardless of \emph{type} of job. The omnibus ANOVA did breach statistical significance (\(F_{(7, 560)}\) = 2.06, \emph{p} = 0.05), however, the practical effect was very small (\(\eta^2\) = 0.03). The only contrast approaching statistical significance via Tukey's HSD specification (\emph{p} = .09) was the contrast between Physical Labor (\emph{M} = 0.49) and Business and Financial Operations (\emph{M} = 0.58). Additionally, a Levene's test for homogeneity of variance was non-significant (Levene's = 0.65, \emph{p} = 0.71). {[}should be .6539 and .7112{]}
+As can be seen in Figure \ref{fig:workcat}, the moderation seen across O*NET dimension was not paralleled across \emph{job classification}. Here, there was wide variability in convergence, regardless of \emph{type} of job. The omnibus ANOVA did breach statistical significance (\(F_{(7, 560)}\) = 2.06, \emph{p} = 0.05), however, the practical effect was very small (\(\eta^2\) = 0.03). The only contrast approaching statistical significance via Tukey's HSD specification (\emph{p} = .09) was the contrast between Physical Labor (\emph{M} = 0.49) and Business and Financial Operations (\emph{M} = 0.58). Additionally, a Levene's test for homogeneity of variance was non-significant (Levene's = 0.65, \emph{p} = 0.71). {[}should be .6539 and .7112{]}
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
@@ -342,7 +346,7 @@ Crawford, E. R., LePine, J. A., \& Rich, B. L. (2010). Linking job demands and r
 Demerouti, E., Bakker, A. B., Nachreiner, F., \& Schaufeli, W. B. (2001). The job demands-resources model of burnout. \emph{Journal of Applied Psychology}, \emph{86}(3), 499.
 
 \leavevmode\vadjust pre{\hypertarget{ref-peterson2001understanding}{}}%
-Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., Fleishman, E. A., Levin, K. Y., Campion, M. A., Mayfield, M. S., Morgeson, F. P., Pearlman, K., et al. (2001). Understanding work using the occupational information network (o* NET): Implications for practice and research. \emph{Personnel Psychology}, \emph{54}(2), 451--492.
+Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., Fleishman, E. A., Levin, K. Y., Campion, M. A., Mayfield, M. S., Morgeson, F. P., Pearlman, K.others. (2001). Understanding work using the occupational information network (o* NET): Implications for practice and research. \emph{Personnel Psychology}, \emph{54}(2), 451--492.
 
 \leavevmode\vadjust pre{\hypertarget{ref-podsakoff2007differential}{}}%
 Podsakoff, N. P., LePine, J. A., \& LePine, M. A. (2007). Differential challenge stressor-hindrance stressor relationships with job attitudes, turnover intentions, turnover, and withdrawal behavior: A meta-analysis. \emph{Journal of Applied Psychology}, \emph{92}(2), 438.
