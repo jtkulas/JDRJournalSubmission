@@ -333,7 +333,16 @@ repmeas
 # TukeyHSD(workeraov)  ## Tukeys for temp in paper; biggest contrast p = .099
 # psych::describeBy(dataworker$overall, dataworker$JobFamily) (took means from here because `TukeyHSD` only reports relative difference)
 
-TukeyHSD(repmeas2)
+library(datarium)
+library(tidyverse)
+library(ggpubr)
+library(rstatix)
+
+tukeytest <- analysis %>% 
+  pairwise_t_test(value ~ scale, paired = TRUE, 
+                  p.adjust.method = "bonferroni"
+                  ) 
+#TukeyHSD(repmeas2)
 library(car)
 
 #levenes <- leveneTest(value ~ scale, data=analysis)
