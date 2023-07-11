@@ -342,10 +342,8 @@ tukeytest <- analysis %>%
   pairwise_t_test(value ~ scale, paired = TRUE, 
                   p.adjust.method = "bonferroni"
                   )  
-#TukeyHSD(repmeas2)
-library(car)
-
-#levenes <- leveneTest(value ~ scale, data=analysis)
+write.csv(tukeytest, "pairwisets.csv")
+psych::describe.by(analysis$value, analysis$scale)
 
 ```
 
@@ -359,7 +357,9 @@ We next looked for convergence of perception at the level of each individual job
 
 ### Moderating effects
 
-Figure \@ref(fig:recchall) explores the possibility of moderation by *type of characteristic rated* for the resource-challenge convergence. Here we categorized each characteristic by its O\*NET "scale" (one of seven), and the graph shows greater consistency across certain characteristics (for example, *Mental Processes* or *Interacting with Others*) and less convergence across other *types* of job activities (for example, *Physical* characteristics). A repeated-measures ANOVA retaining these scales as 7 different levels of a within-subjects' independent variables yielded a treatment effect of $F_{(6, 3,402)}$ = 613.5, *p* < .001, $\eta^2_{p}$ = `r round(repmeas$ANOVA[2,9],2)` (the subjects' effect was $F_{(567, 3402)}$ = 6.13, *p* < .001. The only contrast approaching statistical significance via Tukey's HSD specification (*p* = .09) was the contrast between Physical Labor (*M* = 0.49) and Business and Financial Operations (*M* = 0.58). 
+>Note. This is all off because the "scales" have different numbers of items, so it's not appropriate to use sums as scale scores. Maybe revisit with means.
+
+Figure \@ref(fig:recchall) explores the possibility of moderation by *type of characteristic rated* for the resource-challenge convergence. Here we categorized each characteristic by its O\*NET "scale" (one of seven), and the graph shows greater consistency across certain characteristics (for example, *Mental Processes* or *Interacting with Others*) and less convergence across other *types* of job activities (for example, *Physical* characteristics). A repeated-measures ANOVA retaining these scales as 7 different levels of a within-subjects' independent variables yielded a treatment effect of $F_{(6, 3,402)}$ = 613.5, *p* < .001, $\eta^2_{p}$ = `r round(repmeas$ANOVA[2,9],2)` (the subjects' effect was $F_{(567, 3402)}$ = 6.13, *p* < .001. The only contrasts not broaching statistical significance via Bonferonni-corrected pairwise t-tests were Work Output vs. Physical Work Conditions (*t* = -2.31), Interpersonal Relationships vs. Mental Processes (*t* = .18), and Information Input vs. Physical Work Conditions (*t* = 1.64). The largest contrasts were Interacting with Others vs. Work Output (*t* = 36.09) and Information Input vs. Interacting with Others (*t* = -34.38) and Mental Processes (*t* = -34.10) 
 
 ```{r workcat, fig.cap="Percent agreement (resource and challenge) across O*NET occupational categories (previous was across 84 O/*Net items - this is across 568 individual workers).", fig.height=10, eval=FALSE}
 

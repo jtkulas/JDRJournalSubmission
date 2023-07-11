@@ -304,6 +304,38 @@ All analyses are focused on characteristics of work that were rated as being ``r
 ## 2  scale 0.6049886     0         * 0.6093689     0         *
 \end{verbatim}
 
+\begin{verbatim}
+## 
+##  Descriptive statistics by group 
+## group: Information
+##    vars   n mean   sd median trimmed  mad min max range skew kurtosis   se
+## X1    1 568 2.31 1.63      2    2.27 1.48   0   5     5 0.15    -1.07 0.07
+## ------------------------------------------------------------ 
+## group: Interact
+##    vars   n mean   sd median trimmed  mad min max range skew kurtosis   se
+## X1    1 568 7.57 4.21      7     7.5 4.45   0  17    17 0.13    -0.78 0.18
+## ------------------------------------------------------------ 
+## group: Interpersonal
+##    vars   n mean   sd median trimmed  mad min max range  skew kurtosis   se
+## X1    1 568 5.57 2.92      6     5.6 2.97   0  12    12 -0.06    -0.76 0.12
+## ------------------------------------------------------------ 
+## group: Mental
+##    vars   n mean  sd median trimmed  mad min max range  skew kurtosis   se
+## X1    1 568 5.55 2.9      6    5.66 2.97   0  10    10 -0.31    -0.92 0.12
+## ------------------------------------------------------------ 
+## group: Output
+##    vars   n mean   sd median trimmed  mad min max range skew kurtosis   se
+## X1    1 568 1.89 1.85      1     1.6 1.48   0   9     9  1.4     2.11 0.08
+## ------------------------------------------------------------ 
+## group: Physical
+##    vars   n mean   sd median trimmed  mad min max range skew kurtosis   se
+## X1    1 568 2.12 2.79      1    1.56 1.48   0  17    17 1.98     4.68 0.12
+## ------------------------------------------------------------ 
+## group: Structural
+##    vars   n mean   sd median trimmed  mad min max range skew kurtosis   se
+## X1    1 568 4.15 2.15      4    4.11 2.97   0  10    10  0.2    -0.52 0.09
+\end{verbatim}
+
 \hypertarget{resource-challenge-and-hindrance-associations}{%
 \subsection{Resource, Challenge, and Hindrance Associations}\label{resource-challenge-and-hindrance-associations}}
 
@@ -317,7 +349,11 @@ We next looked for convergence of perception at the level of each individual job
 \hypertarget{moderating-effects}{%
 \subsubsection{Moderating effects}\label{moderating-effects}}
 
-Figure \ref{fig:recchall} explores the possibility of moderation by \emph{type of characteristic rated} for the resource-challenge convergence. Here we categorized each characteristic by its O*NET ``scale'' (one of seven), and the graph shows greater consistency across certain characteristics (for example, \emph{Mental Processes} or \emph{Interacting with Others}) and less convergence across other \emph{types} of job activities (for example, \emph{Physical} characteristics). A repeated-measures ANOVA retaining these scales as 7 different levels of a within-subjects' independent variables yielded a treatment effect of \(F_{(6, 3,402)}\) = 613.5, \emph{p} \textless{} .001, \(\eta^2_{p}\) = 0.35 (the subjects' effect was \(F_{(567, 3402)}\) = 6.13, \emph{p} \textless{} .001. The only contrast approaching statistical significance via Tukey's HSD specification (\emph{p} = .09) was the contrast between Physical Labor (\emph{M} = 0.49) and Business and Financial Operations (\emph{M} = 0.58).
+\begin{quote}
+Note. This is all off because the ``scales'' have different numbers of items, so it's not appropriate to use sums as scale scores. Maybe revisit with means.
+\end{quote}
+
+Figure \ref{fig:recchall} explores the possibility of moderation by \emph{type of characteristic rated} for the resource-challenge convergence. Here we categorized each characteristic by its O*NET ``scale'' (one of seven), and the graph shows greater consistency across certain characteristics (for example, \emph{Mental Processes} or \emph{Interacting with Others}) and less convergence across other \emph{types} of job activities (for example, \emph{Physical} characteristics). A repeated-measures ANOVA retaining these scales as 7 different levels of a within-subjects' independent variables yielded a treatment effect of \(F_{(6, 3,402)}\) = 613.5, \emph{p} \textless{} .001, \(\eta^2_{p}\) = 0.35 (the subjects' effect was \(F_{(567, 3402)}\) = 6.13, \emph{p} \textless{} .001. The only contrasts not broaching statistical significance via Bonferonni-corrected pairwise t-tests were Work Output vs.~Physical Work Conditions (\emph{t} = -2.31), Interpersonal Relationships vs.~Mental Processes (\emph{t} = .18), and Information Input vs.~Physical Work Conditions (\emph{t} = 1.64). The largest contrasts were Interacting with Others vs.~Work Output (\emph{t} = 36.09) and Information Input vs.~Interacting with Others (\emph{t} = -34.38) and Mental Processes (\emph{t} = -34.10)
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
