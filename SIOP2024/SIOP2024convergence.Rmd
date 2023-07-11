@@ -341,7 +341,7 @@ library(rstatix)
 tukeytest <- analysis %>% 
   pairwise_t_test(value ~ scale, paired = TRUE, 
                   p.adjust.method = "bonferroni"
-                  ) 
+                  )  
 #TukeyHSD(repmeas2)
 library(car)
 
