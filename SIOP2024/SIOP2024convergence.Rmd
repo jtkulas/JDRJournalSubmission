@@ -262,7 +262,27 @@ papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table,
 
 #cor(data[405:410], use="all.obs")   ## something to be told with resources and challenges
 
+#t-tests comparing resource, challenge, and hindrance proportions - sheer number of these things.
+
+#t comparing the sheer counts of resource and hindrance
+trechind <- t.test(data22$resource, data22$hindrance, paired = TRUE, alternative = "two.sided")
+
+#t comparing the sheer counts of resource and challenge
+trech <- t.test(data22$resource, data22$challenge, paired = TRUE, alternative = "two.sided")
+
+#t comparing the sheer counts of hindrance and challenge
+thich <- t.test(data22$hindrance, data22$challenge, paired = TRUE, alternative = "two.sided")
+
+library(lsr)
+
+drech <- cohensD(data22$resource, data22$challenge)
+dchhi <- cohensD(data22$hindrance, data22$challenge)
+drehi <- cohensD(data22$resource, data22$hindrance)
+
+
 ```
+
+The t-test between mean number of resources and hindrances suggests that respondents experienced more resources than hindrances, *t*(`r trechind$parameter`), = `r trechind$statistic`, *p* < .001, 95% CI = [`r trechind$conf.int[1]`, `r trechind$conf.int[2]`], *d* = `r drehi`. The t-test between mean number of resources and challenges suggests that respondents did not experience more resources than challenges, *t*(`r trech$parameter`), = `r trech$statistic`, *p* = .198, 95% CI = [`r trech$conf.int[1]`, `r trech$conf.int[2]`], *d* = `r drech`. The t-test between mean number of challenges and hindrances suggests that respondents experienced more challenges than hindrances, *t*(`r thich$parameter`), = `r thich$statistic`, *p* < .001, 95% CI = [`r thich$conf.int[1]`, `r thich$conf.int[2]`], *d* = `r dchhi`.
 
 ```{r percagree, fig.cap="Percent convergence (characteristic rated consistently as, for example, both a resource and a hindrance).", fig.height=10}
 
@@ -310,19 +330,23 @@ ggplot(rc, aes(x=mean)) + geom_histogram() + facet_wrap(~scale, nrow=7)
 
 anova <- data[,c(495:578)]
 
-anova$Structural <- rowSums(anova[1:10], na.rm=TRUE)
-anova$Physical <- rowSums(anova[11:30], na.rm=TRUE)
-anova$Interpersonal <- rowSums(anova[31:43], na.rm=TRUE)
-anova$Information <- rowSums(anova[44:48], na.rm=TRUE)
-anova$Mental <- rowSums(anova[49:58], na.rm=TRUE)
-anova$Output <- rowSums(anova[59:67], na.rm=TRUE)
-anova$Interact <- rowSums(anova[68:84], na.rm=TRUE)
+anova$Structural <- rowMeans(anova[1:10], na.rm=TRUE)
+anova$Physical <- rowMeans(anova[11:30], na.rm=TRUE)
+anova$Interpersonal <- rowMeans(anova[31:43], na.rm=TRUE)
+anova$Information <- rowMeans(anova[44:48], na.rm=TRUE)
+anova$Mental <- rowMeans(anova[49:58], na.rm=TRUE)
+anova$Output <- rowMeans(anova[59:67], na.rm=TRUE)
+anova$Interact <- rowMeans(anova[68:84], na.rm=TRUE)
 
 library(tidyr)
 
 anova <- cbind(person = 1:nrow(anova), anova)  ## creating person identifier for ANOVA
 
 analysis <- gather(anova, scale, value, Structural:Interact)
+
+## 36 former "zeroes" got coded as NA when above scales were changed from rowSums to rowMeans - 7/15/23
+analysis$value[analysis$value == "NaN"] <- 0
+descr::freq(analysis$value)
 
 repmeas2 <- aov(value ~ factor(scale) + Error(factor(person)), data=analysis)
 
@@ -359,7 +383,7 @@ We next looked for convergence of perception at the level of each individual job
 
 >Note. This is all off because the "scales" have different numbers of items, so it's not appropriate to use sums as scale scores. Maybe revisit with means.
 
-Figure \@ref(fig:recchall) explores the possibility of moderation by *type of characteristic rated* for the resource-challenge convergence. Here we categorized each characteristic by its O\*NET "scale" (one of seven), and the graph shows greater consistency across certain characteristics (for example, *Mental Processes* or *Interacting with Others*) and less convergence across other *types* of job activities (for example, *Physical* characteristics). A repeated-measures ANOVA retaining these scales as 7 different levels of a within-subjects' independent variables yielded a treatment effect of $F_{(6, 3,402)}$ = 613.5, *p* < .001, $\eta^2_{p}$ = `r round(repmeas$ANOVA[2,9],2)` (the subjects' effect was $F_{(567, 3402)}$ = 6.13, *p* < .001. The only contrasts not broaching statistical significance via Bonferonni-corrected pairwise t-tests were Work Output vs. Physical Work Conditions (*t* = -2.31), Interpersonal Relationships vs. Mental Processes (*t* = .18), and Information Input vs. Physical Work Conditions (*t* = 1.64). The largest contrasts were Interacting with Others vs. Work Output (*t* = 36.09) and Information Input vs. Interacting with Others (*t* = -34.38) and Mental Processes (*t* = -34.10) 
+Figure \@ref(fig:recchall) explores the possibility of moderation by *type of characteristic rated* for the resource-challenge convergence. Here we categorized each characteristic by its O\*NET "scale" (one of seven), and the graph shows greater consistency across certain characteristics (for example, *Mental Processes* or *Interacting with Others*) and less convergence across other *types* of job activities (for example, *Physical* characteristics). A repeated-measures ANOVA retaining these scales as 7 different levels of a within-subjects' independent variables yielded a treatment effect of $F_{(6, 3,402)}$ = 613.5, *p* < .001, $\eta^2_{p}$ = `r round(repmeas$ANOVA[2,9],2)` (the subjects' effect was $F_{(567, 3402)}$ = 6.13, *p* < .001. The only contrast not broaching statistical significance via Bonferonni-corrected pairwise t-tests was Work Output vs. Structural job characteristics (*t* = -1.10). The largest contrasts were Physical work conditions vs. Structural job characteristics (*t* = 25.14), Interpersonal relationships (*t* = -29.25), Mental processes (*t* = -33.84), and Interacting with others (*t* = -35.60) 
 
 ```{r workcat, fig.cap="Percent agreement (resource and challenge) across O*NET occupational categories (previous was across 84 O/*Net items - this is across 568 individual workers).", fig.height=10, eval=FALSE}
 

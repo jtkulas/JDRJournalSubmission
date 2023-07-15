@@ -33,6 +33,16 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Demanding resources: Converging perceptions of challenge and resource characteristics},
+  pdfauthor={John Kulas1, Alicia Stachowski2, \& Renata García Prieto Palacios Roji3},
+  pdflang={en-EN},
+  pdfkeywords={keywords},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -166,16 +176,6 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
-\hypersetup{
-  pdftitle={Demanding resources: Converging perceptions of challenge and resource characteristics},
-  pdfauthor={John Kulas1, Alicia Stachowski2, \& Renata García Prieto Palacios Roji3},
-  pdflang={en-EN},
-  pdfkeywords={keywords},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
 
 \title{Demanding resources: Converging perceptions of challenge and resource characteristics}
 \author{John Kulas\textsuperscript{1}, Alicia Stachowski\textsuperscript{2}, \& Renata García Prieto Palacios Roji\textsuperscript{3}}
@@ -204,6 +204,10 @@ Correspondence concerning this article should be addressed to John Kulas. E-mail
 
 \begin{document}
 \maketitle
+
+\begin{verbatim}
+## Warning: package 'tinylabels' was built under R version 4.1.3
+\end{verbatim}
 
 The Occupational Information Network (O*NET; onetonline.org) contains a reasonably comprehensive description of occupations (Peterson et al., 2001) which subject matter experts inform via surveys. We utilize a set of O*NET job context and activity statements contained in these surveys to explore a series of research questions about how people perceive resources, challenges, and hindrances within their jobs. There are a number of advantage to using this standard set of statements, but the primary one here lies in our ability to consider a wide range of job characteristics, with a focus on individual perceptions of each rather than limiting ourselves to a more generic set of demands or those of a limited scope.
 
@@ -274,6 +278,8 @@ All analyses are focused on characteristics of work that were rated as being ``r
 
 \end{table}
 
+The t-test between mean number of resources and hindrances suggests that respondents experienced more resources than hindrances, \emph{t}(567), = 32.67, \emph{p} \textless{} .001, 95\% CI = {[}21.55, 24.31{]}, \emph{d} = 1.71. The t-test between mean number of resources and challenges suggests that respondents did not experience more resources than challenges, \emph{t}(567), = 1.29, \emph{p} = .198, 95\% CI = {[}-0.20, 0.96{]}, \emph{d} = 0.03. The t-test between mean number of challenges and hindrances suggests that respondents experienced more challenges than hindrances, \emph{t}(567), = -31.58, \emph{p} \textless{} .001, 95\% CI = {[}-23.95, -21.15{]}, \emph{d} = 1.65.
+
 \begin{figure}
 \centering
 \includegraphics{SIOP2024convergence_files/figure-latex/percagree-1.pdf}
@@ -286,54 +292,164 @@ All analyses are focused on characteristics of work that were rated as being ``r
 \caption{\label{fig:recchall}Resource and challenge agreement across ONet characteristic groupings (e.g., scales).}
 \end{figure}
 
+\includegraphics{SIOP2024convergence_files/figure-latex/anova-1.pdf}
+
+\begin{verbatim}
+## analysis$value 
+##                    Frequency   Percent
+## 0                        546  13.73239
+## 0.0526315789473684         1   0.02515
+## 0.0555555555555556         1   0.02515
+## 0.0588235294117647         3   0.07545
+## 0.0625                     1   0.02515
+## 0.0666666666666667         4   0.10060
+## 0.0714285714285714         2   0.05030
+## 0.0769230769230769         7   0.17606
+## 0.0833333333333333        14   0.35211
+## 0.0909090909090909        15   0.37726
+## 0.1                       21   0.52817
+## 0.111111111111111         28   0.70423
+## 0.125                     38   0.95573
+## 0.133333333333333          4   0.10060
+## 0.142857142857143         39   0.98089
+## 0.15                       1   0.02515
+## 0.153846153846154          4   0.10060
+## 0.157894736842105          1   0.02515
+## 0.166666666666667         41   1.03119
+## 0.176470588235294          2   0.05030
+## 0.181818181818182          9   0.22636
+## 0.1875                     3   0.07545
+## 0.2                       94   2.36419
+## 0.214285714285714          3   0.07545
+## 0.222222222222222         40   1.00604
+## 0.230769230769231          2   0.05030
+## 0.25                      84   2.11268
+## 0.266666666666667          2   0.05030
+## 0.272727272727273         13   0.32696
+## 0.277777777777778          1   0.02515
+## 0.285714285714286         45   1.13179
+## 0.294117647058824          2   0.05030
+## 0.3                       38   0.95573
+## 0.3125                     5   0.12575
+## 0.333333333333333        172   4.32596
+## 0.352941176470588          1   0.02515
+## 0.357142857142857          3   0.07545
+## 0.363636363636364         20   0.50302
+## 0.375                     40   1.00604
+## 0.384615384615385          5   0.12575
+## 0.4                      110   2.76660
+## 0.411764705882353          5   0.12575
+## 0.416666666666667         15   0.37726
+## 0.428571428571429         42   1.05634
+## 0.4375                     2   0.05030
+## 0.444444444444444         48   1.20724
+## 0.45                       1   0.02515
+## 0.454545454545455         19   0.47787
+## 0.461538461538462          4   0.10060
+## 0.466666666666667          2   0.05030
+## 0.470588235294118          2   0.05030
+## 0.5                      298   7.49497
+## 0.529411764705882          3   0.07545
+## 0.533333333333333          4   0.10060
+## 0.538461538461538          6   0.15091
+## 0.545454545454545         24   0.60362
+## 0.555555555555556         60   1.50905
+## 0.5625                     2   0.05030
+## 0.571428571428571         41   1.03119
+## 0.583333333333333         14   0.35211
+## 0.588235294117647          2   0.05030
+## 0.6                      117   2.94266
+## 0.611111111111111          2   0.05030
+## 0.615384615384615          5   0.12575
+## 0.625                     59   1.48390
+## 0.631578947368421          1   0.02515
+## 0.636363636363636         21   0.52817
+## 0.642857142857143          4   0.10060
+## 0.647058823529412          5   0.12575
+## 0.666666666666667        202   5.08048
+## 0.6875                     5   0.12575
+## 0.692307692307692          7   0.17606
+## 0.7                       46   1.15694
+## 0.705882352941177          4   0.10060
+## 0.714285714285714         38   0.95573
+## 0.727272727272727         29   0.72938
+## 0.733333333333333          6   0.15091
+## 0.75                     159   3.99899
+## 0.769230769230769         10   0.25151
+## 0.777777777777778         74   1.86117
+## 0.785714285714286          8   0.20121
+## 0.8                      125   3.14386
+## 0.8125                     1   0.02515
+## 0.818181818181818         20   0.50302
+## 0.823529411764706          3   0.07545
+## 0.833333333333333         59   1.48390
+## 0.846153846153846          3   0.07545
+## 0.857142857142857         38   0.95573
+## 0.866666666666667          7   0.17606
+## 0.875                     47   1.18209
+## 0.882352941176471          8   0.20121
+## 0.888888888888889         48   1.20724
+## 0.894736842105263          1   0.02515
+## 0.9                       50   1.25755
+## 0.909090909090909         16   0.40241
+## 0.916666666666667         15   0.37726
+## 0.923076923076923          4   0.10060
+## 0.928571428571429          9   0.22636
+## 0.933333333333333          8   0.20121
+## 0.9375                     5   0.12575
+## 0.941176470588235          8   0.20121
+## 1                        640  16.09658
+## Total                   3976 100.00000
+\end{verbatim}
+
 \begin{verbatim}
 ## $ANOVA
-##        Effect DFn  DFd      SSn      SSd         F             p p<.05
-## 1 (Intercept)   1  567 68955.57 15304.71 2554.6258 3.565678e-212     *
-## 2       scale   6 3402 16058.68 14841.04  613.5199  0.000000e+00     *
+##        Effect DFn  DFd        SSn      SSd         F             p p<.05
+## 1 (Intercept)   1  567 1146.04761 171.5620 3787.6047 3.580669e-253     *
+## 2       scale   6 3402   92.90682 182.9607  287.9206 7.175910e-299     *
 ##         ges
-## 1 0.6958088
-## 2 0.3475572
+## 1 0.7637413
+## 2 0.2076457
 ## 
 ## $`Mauchly's Test for Sphericity`
-##   Effect         W             p p<.05
-## 2  scale 0.1909388 2.735968e-185     *
+##   Effect         W            p p<.05
+## 2  scale 0.4208255 6.425345e-91     *
 ## 
 ## $`Sphericity Corrections`
-##   Effect       GGe p[GG] p[GG]<.05       HFe p[HF] p[HF]<.05
-## 2  scale 0.6049886     0         * 0.6093689     0         *
+##   Effect       GGe         p[GG] p[GG]<.05       HFe         p[HF] p[HF]<.05
+## 2  scale 0.7801204 6.574489e-234         * 0.7874087 4.617424e-236         *
 \end{verbatim}
 
 \begin{verbatim}
 ## 
 ##  Descriptive statistics by group 
 ## group: Information
-##    vars   n mean   sd median trimmed  mad min max range skew kurtosis   se
-## X1    1 568 2.31 1.63      2    2.27 1.48   0   5     5 0.15    -1.07 0.07
+##    vars   n mean   sd median trimmed  mad min max range  skew kurtosis   se
+## X1    1 568 0.62 0.38   0.67    0.65 0.49   0   1     1 -0.46    -1.27 0.02
 ## ------------------------------------------------------------ 
 ## group: Interact
-##    vars   n mean   sd median trimmed  mad min max range skew kurtosis   se
-## X1    1 568 7.57 4.21      7     7.5 4.45   0  17    17 0.13    -0.78 0.18
+##    vars   n mean   sd median trimmed  mad min max range  skew kurtosis   se
+## X1    1 568 0.67 0.27   0.75     0.7 0.26   0   1     1 -0.83    -0.07 0.01
 ## ------------------------------------------------------------ 
 ## group: Interpersonal
 ##    vars   n mean   sd median trimmed  mad min max range  skew kurtosis   se
-## X1    1 568 5.57 2.92      6     5.6 2.97   0  12    12 -0.06    -0.76 0.12
+## X1    1 568 0.57 0.26    0.6    0.58 0.27   0   1     1 -0.36    -0.61 0.01
 ## ------------------------------------------------------------ 
 ## group: Mental
-##    vars   n mean  sd median trimmed  mad min max range  skew kurtosis   se
-## X1    1 568 5.55 2.9      6    5.66 2.97   0  10    10 -0.31    -0.92 0.12
+##    vars   n mean   sd median trimmed  mad min max range  skew kurtosis   se
+## X1    1 568 0.71 0.29   0.78    0.75 0.33   0   1     1 -1.01     0.16 0.01
 ## ------------------------------------------------------------ 
 ## group: Output
 ##    vars   n mean   sd median trimmed  mad min max range skew kurtosis   se
-## X1    1 568 1.89 1.85      1     1.6 1.48   0   9     9  1.4     2.11 0.08
+## X1    1 568 0.48 0.37    0.5    0.48 0.49   0   1     1 0.07    -1.36 0.02
 ## ------------------------------------------------------------ 
 ## group: Physical
 ##    vars   n mean   sd median trimmed  mad min max range skew kurtosis   se
-## X1    1 568 2.12 2.79      1    1.56 1.48   0  17    17 1.98     4.68 0.12
+## X1    1 568 0.21 0.24   0.14    0.17 0.21   0   1     1 1.21     0.92 0.01
 ## ------------------------------------------------------------ 
 ## group: Structural
 ##    vars   n mean   sd median trimmed  mad min max range skew kurtosis   se
-## X1    1 568 4.15 2.15      4    4.11 2.97   0  10    10  0.2    -0.52 0.09
+## X1    1 568  0.5 0.24    0.5     0.5 0.25   0   1     1 0.04    -0.62 0.01
 \end{verbatim}
 
 \hypertarget{resource-challenge-and-hindrance-associations}{%
@@ -353,7 +469,7 @@ We next looked for convergence of perception at the level of each individual job
 Note. This is all off because the ``scales'' have different numbers of items, so it's not appropriate to use sums as scale scores. Maybe revisit with means.
 \end{quote}
 
-Figure \ref{fig:recchall} explores the possibility of moderation by \emph{type of characteristic rated} for the resource-challenge convergence. Here we categorized each characteristic by its O*NET ``scale'' (one of seven), and the graph shows greater consistency across certain characteristics (for example, \emph{Mental Processes} or \emph{Interacting with Others}) and less convergence across other \emph{types} of job activities (for example, \emph{Physical} characteristics). A repeated-measures ANOVA retaining these scales as 7 different levels of a within-subjects' independent variables yielded a treatment effect of \(F_{(6, 3,402)}\) = 613.5, \emph{p} \textless{} .001, \(\eta^2_{p}\) = 0.35 (the subjects' effect was \(F_{(567, 3402)}\) = 6.13, \emph{p} \textless{} .001. The only contrasts not broaching statistical significance via Bonferonni-corrected pairwise t-tests were Work Output vs.~Physical Work Conditions (\emph{t} = -2.31), Interpersonal Relationships vs.~Mental Processes (\emph{t} = .18), and Information Input vs.~Physical Work Conditions (\emph{t} = 1.64). The largest contrasts were Interacting with Others vs.~Work Output (\emph{t} = 36.09) and Information Input vs.~Interacting with Others (\emph{t} = -34.38) and Mental Processes (\emph{t} = -34.10)
+Figure \ref{fig:recchall} explores the possibility of moderation by \emph{type of characteristic rated} for the resource-challenge convergence. Here we categorized each characteristic by its O*NET ``scale'' (one of seven), and the graph shows greater consistency across certain characteristics (for example, \emph{Mental Processes} or \emph{Interacting with Others}) and less convergence across other \emph{types} of job activities (for example, \emph{Physical} characteristics). A repeated-measures ANOVA retaining these scales as 7 different levels of a within-subjects' independent variables yielded a treatment effect of \(F_{(6, 3,402)}\) = 613.5, \emph{p} \textless{} .001, \(\eta^2_{p}\) = 0.21 (the subjects' effect was \(F_{(567, 3402)}\) = 6.13, \emph{p} \textless{} .001. The only contrast not broaching statistical significance via Bonferonni-corrected pairwise t-tests was Work Output vs.~Structural job characteristics (\emph{t} = -1.10). The largest contrasts were Physical work conditions vs.~Structural job characteristics (\emph{t} = 25.14), Interpersonal relationships (\emph{t} = -29.25), Mental processes (\emph{t} = -33.84), and Interacting with others (\emph{t} = -35.60)
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
@@ -388,7 +504,7 @@ Crawford, E. R., LePine, J. A., \& Rich, B. L. (2010). Linking job demands and r
 Demerouti, E., Bakker, A. B., Nachreiner, F., \& Schaufeli, W. B. (2001). The job demands-resources model of burnout. \emph{Journal of Applied Psychology}, \emph{86}(3), 499.
 
 \leavevmode\vadjust pre{\hypertarget{ref-peterson2001understanding}{}}%
-Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., Fleishman, E. A., Levin, K. Y., Campion, M. A., Mayfield, M. S., Morgeson, F. P., Pearlman, K., et al. (2001). Understanding work using the occupational information network (o* NET): Implications for practice and research. \emph{Personnel Psychology}, \emph{54}(2), 451--492.
+Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., Fleishman, E. A., Levin, K. Y., Campion, M. A., Mayfield, M. S., Morgeson, F. P., Pearlman, K.others. (2001). Understanding work using the occupational information network (o* NET): Implications for practice and research. \emph{Personnel Psychology}, \emph{54}(2), 451--492.
 
 \leavevmode\vadjust pre{\hypertarget{ref-podsakoff2007differential}{}}%
 Podsakoff, N. P., LePine, J. A., \& LePine, M. A. (2007). Differential challenge stressor-hindrance stressor relationships with job attitudes, turnover intentions, turnover, and withdrawal behavior: A meta-analysis. \emph{Journal of Applied Psychology}, \emph{92}(2), 438.
