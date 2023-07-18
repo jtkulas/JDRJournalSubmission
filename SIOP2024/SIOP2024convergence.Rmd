@@ -346,14 +346,14 @@ analysis <- gather(anova, scale, value, Structural:Interact)
 
 ## 36 former "zeroes" got coded as NA when above scales were changed from rowSums to rowMeans - 7/15/23
 analysis$value[analysis$value == "NaN"] <- 0
-descr::freq(analysis$value)
+#descr::freq(analysis$value)
 
 repmeas2 <- aov(value ~ factor(scale) + Error(factor(person)), data=analysis)
 
 library(ez)
 
 repmeas <- ezANOVA(data=analysis, dv=value, wid=person, within=.(scale), type=3, detailed=TRUE)
-repmeas
+#repmeas
 # TukeyHSD(workeraov)  ## Tukeys for temp in paper; biggest contrast p = .099
 # psych::describeBy(dataworker$overall, dataworker$JobFamily) (took means from here because `TukeyHSD` only reports relative difference)
 
