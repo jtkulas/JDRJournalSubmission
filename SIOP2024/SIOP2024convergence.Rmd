@@ -367,7 +367,7 @@ tukeytest <- analysis %>%
                   p.adjust.method = "bonferroni"
                   )  
 write.csv(tukeytest, "pairwisets.csv")
-psych::describe.by(analysis$value, analysis$scale)
+#psych::describe.by(analysis$value, analysis$scale)
 
 ```
 

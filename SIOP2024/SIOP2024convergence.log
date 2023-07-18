@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.8)  18 JUL 2023 09:56
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.8)  18 JUL 2023 09:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -903,77 +903,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 (SIOP2024convergence.ttt) [7]
 \openout4 = `SIOP2024convergence.fff'.
 
-(SIOP2024convergence.fff)
-Overfull \hbox (12.28482pt too wide) in paragraph at lines 321--321
-[]\TU/lmtt/m/n/12 ##    vars   n mean   sd median trimmed  mad min max range  skew kurtosis   se[] 
- []
+(SIOP2024convergence.fff) [8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Overfull \hbox (12.21274pt too wide) in paragraph at lines 321--321
-[]\TU/lmtt/m/n/12 ## X1    1 568 0.62 0.38   0.67    0.65 0.49   0   1     1 -0.46    -1.27 0.02[] 
- []
-
-
-Overfull \hbox (12.28482pt too wide) in paragraph at lines 321--321
-[]\TU/lmtt/m/n/12 ##    vars   n mean   sd median trimmed  mad min max range  skew kurtosis   se[] 
- []
-
-
-Overfull \hbox (12.24872pt too wide) in paragraph at lines 321--321
-[]\TU/lmtt/m/n/12 ## X1    1 568 0.67 0.27   0.75     0.7 0.26   0   1     1 -0.83    -0.07 0.01[] 
- []
-
-
-Overfull \hbox (12.28482pt too wide) in paragraph at lines 321--321
-[]\TU/lmtt/m/n/12 ##    vars   n mean   sd median trimmed  mad min max range  skew kurtosis   se[] 
- []
-
-
-Overfull \hbox (12.22472pt too wide) in paragraph at lines 321--321
-[]\TU/lmtt/m/n/12 ## X1    1 568 0.57 0.26    0.6    0.58 0.27   0   1     1 -0.36    -0.61 0.01[] 
- []
-
-
-Overfull \hbox (12.28482pt too wide) in paragraph at lines 321--321
-[]\TU/lmtt/m/n/12 ##    vars   n mean   sd median trimmed  mad min max range  skew kurtosis   se[] 
- []
-
-
-Overfull \hbox (12.24872pt too wide) in paragraph at lines 321--321
-[]\TU/lmtt/m/n/12 ## X1    1 568 0.71 0.29   0.78    0.75 0.33   0   1     1 -1.01     0.16 0.01[] 
- []
-
-
-Overfull \hbox (6.10483pt too wide) in paragraph at lines 321--321
-[]\TU/lmtt/m/n/12 ##    vars   n mean   sd median trimmed  mad min max range skew kurtosis   se[] 
- []
-
-
-Overfull \hbox (6.06873pt too wide) in paragraph at lines 321--321
-[]\TU/lmtt/m/n/12 ## X1    1 568 0.48 0.37    0.5    0.48 0.49   0   1     1 0.07    -1.36 0.02[] 
- []
-
-
-Overfull \hbox (6.10483pt too wide) in paragraph at lines 321--321
-[]\TU/lmtt/m/n/12 ##    vars   n mean   sd median trimmed  mad min max range skew kurtosis   se[] 
- []
-
-
-Overfull \hbox (6.08072pt too wide) in paragraph at lines 321--321
-[]\TU/lmtt/m/n/12 ## X1    1 568 0.21 0.24   0.14    0.17 0.21   0   1     1 1.21     0.92 0.01[] 
- []
-
-[8]
-Overfull \hbox (6.10483pt too wide) in paragraph at lines 321--321
-[]\TU/lmtt/m/n/12 ##    vars   n mean   sd median trimmed  mad min max range skew kurtosis   se[] 
- []
-
-
-Overfull \hbox (6.08072pt too wide) in paragraph at lines 321--321
-[]\TU/lmtt/m/n/12 ## X1    1 568  0.5 0.24    0.5     0.5 0.25   0   1     1 0.04    -0.62 0.01[] 
- []
-
-[9] [10] [11] [12] AED endfloat: Processing end Figures and Tables [13] (./SIOP2024convergence.ttt) [14
+[9] [10] [11] AED endfloat: Processing end Figures and Tables [12] (./SIOP2024convergence.ttt) [13
 
 
 ] (./SIOP2024convergence.fff
@@ -987,19 +920,19 @@ File: SIOP2024convergence_files/figure-latex/recchall-1.pdf Graphic file (type p
 
 LaTeX Warning: Float too large for page by 57.99997pt on input line 14.
 
-) [15] [16] (./SIOP2024convergence.aux)
+) [14] [15] (./SIOP2024convergence.aux)
 Package rerunfilecheck Info: File `SIOP2024convergence.out' has not changed.
 (rerunfilecheck)             Checksum: DF369B1DC4B906BCBC43B4BC7962C227;2304.
  ) 
 Here is how much of TeX's memory you used:
- 21606 strings out of 478641
- 401187 string characters out of 5846211
- 1863382 words of memory out of 5000000
- 41453 multiletter control sequences out of 15000+600000
- 531538 words of font info for 76 fonts, out of 8000000 for 9000
+ 21602 strings out of 478641
+ 401126 string characters out of 5846211
+ 1855382 words of memory out of 5000000
+ 41451 multiletter control sequences out of 15000+600000
+ 531530 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,12n,121p,1623b,624s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on SIOP2024convergence.pdf (16 pages).
+Output written on SIOP2024convergence.pdf (15 pages).
 
 ! Fontconfig error: Cannot load default config file: No such file: (null)
