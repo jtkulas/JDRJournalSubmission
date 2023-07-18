@@ -323,7 +323,7 @@ ggplot(rc, aes(x=mean)) + geom_histogram() + facet_wrap(~scale, nrow=7)
 
 ```
 
-```{r anova}
+```{r anova, warning=FALSE, echo=FALSE}
 
 
 ## Repeated measures ANOVA for resource_challenge
