@@ -83,6 +83,9 @@ At the most broad level, we can question whether employees actually distinguish 
 
 *RQ1 is a good idea for A DIFFERENT PAPER. Do ICC(1,1)*
 *RQ1*: Do people distinguish between challenge and hindrance stressors?
+#### Maybe do third moderator
+
+We also have ratings of "...the extent to which this characteristic is present in your job". Currently we're just taking a binary yes/no approach, but it does make sense to look for moderation based on *the degree to which the characteristic is present*. This is probably a better/more appropriate moderator than either of the above two...
 
 # Method
 
