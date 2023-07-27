@@ -1,0 +1,14 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{SIOP2024_agreement_files/figure-latex/recchall-1.pdf}
+\caption{\label{fig:recchall}Resource and challenge agreement across ONet characteristic groupings (e.g., scales).}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{SIOP2024_agreement_files/figure-latex/workcat-1.pdf}
+\caption{\label{fig:workcat}Percent agreement (resource and challenge) across O\emph{Net occupational categories (previous was across 84 O/}Net items - this is across 568 individual workers).}
+\end{figure*}
