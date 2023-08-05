@@ -43,7 +43,7 @@ tablelist         : no
 footnotelist      : no
 
 csl               : "apa7.csl"
-classoption       : "man"
+classoption       : "jou"
 output            :
   papaja::apa6_pdf:
     latex_engine: xelatex
@@ -90,6 +90,7 @@ Recently, @horan2020review and @lepine2022challenge have both called out the nee
 At the most broad level, we can question whether employees actually distinguish between challenges and hindrances as the theory describes. Research suggests that people can and do perceive them differently. For example, @bakker2013weekly found that perceived work pressure can be classified as a hindrance demand, while the requirement to express emotions is a challenge demand. @webster2011extending also considered three common work characteristics including workload, role ambiguity, and role conflict. Interestingly, they found that while each could be identified *primarily* as a challenge or hindrance, employees could also appraise that a characteristic is simultaneously both a challenge and hindrance. However, this list of demands (workload, role ambiguity, and role conflict) is somewhat narrow. Using a very wide range of O\*NET job characteristics regarding job context and activities, we explore whether challenges (positive stressors per the definition above) might actually be positively related to resources. Per the job demands-resources theory [@bakker2017job] resources are defined as physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development [@demerouti2001job]. It stands to reason that a challenging demand may be considered a resource. 
 
 *RQ1*: Do employees who perceive many resources in their jobs also perceived many challenges?
+*Amend the wording to fit the lead up*
 
 Although we argue that the same job characteristic may be perceived as both a challenge and a resource, it is also likely that some characteristics are less likely to be viewed as mutually complementary as others. For example, a physically strenuous job requirement such as "carrying heavy objects" would be less likely to be viewed both as a challenge and a resource whereas a structural characteristic such as "negotiating work schedules" may very well be viewed (likely in different circumstances) to be both a control-oriented resource as well as a challenge. O\*NET has different levels of abstraction with regard to the nature of job characteristics. We will be exploring a mid-level abstraction with seven different characteristic scales. 
 
