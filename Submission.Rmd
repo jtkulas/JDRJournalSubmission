@@ -1,15 +1,30 @@
 ---
-title             : "Job Demands-Resources Model Components through the Lens of O*NET Classifications"
+title             : "Subjectivity of Job Demands and Resources through the comprehensive framework of O*NET"
 shorttitle        : "O*NET JD-R"
 
 author: 
-  - 
+  - name          : "Alicia Stachowski"
+    affiliation   : "2"
+    corresponding : yes    # Define only one corresponding author
+  - name          : "John Kulas"
+    affiliation   : "1"
+    email         : "jtkulas@ergreports.com"
+  - name          : "Renata García Prieto Palacios Roji"
+    affiliation   : "3"
+
+affiliation:
+  - id            : "1"
+    institution   : "eRg"
+  - id            : "2"
+    institution   : "University of Wisconsin - Stout"
+  - id            : "3"
+    institution   : "PepsiCo"
 
 authornote: |
  Funding: This work was supported by the College of Humanities and Social Sciences, Montclair State University, Montclair, NJ.
 
 abstract: |
-  Much of our understanding of job demands and resources rests on the assumption that some aspects and components of one's job are resources and some are demands. We build on a small but growing literature suggesting that individual differences may matter in our perceptions of characteristics as demands and resources. The primary aims were to explore 1) whether there is variability in subjective ratings of job characteristics with respect to how much they served as resources and demands, and 2) whether or not there was a match between the literature-implicated resources/demands and subjective ratings of these characteristics. O*NET work characteristics were rated by 568 employed respondents in terms of relevance, perception as a demand, and perception as a resource. The results suggest that job characteristics differ in variability/stability regarding subjective worker perceptions, particularly for hindrance demands which showed the most variability. Job characteristics were not uniquely categorized as a resource or demand, and literature-implicated resources were also implicated as being challenge, but not hindrance demands.
+  Much of our understanding of job demands and resources rests on an assumption that some aspects of jobs are resources and some are demands. We build on an oppositional literature positing that *individual differences* matter in our perceptions of characteristics as demands and resources. Our primary aim was to document the degree of variability in subjective ratings of job characteristics with respect to interpretation as resource and demand. Secondarily, we quantify the degree to which perceptions match the literature-implicated resources/demands of job  characteristics. Procedurally, an exhaustive list of O\*NET work characteristics were rated by 568 employed respondents in terms of relevance, perception as a demand, and perception as a resource. Job characteristics were not commonly categorized as solely resource or demand - rather, job resources were also frequently viewed as challenging demands. **sentence about lit-implied demands/resources**. **sentence about implications for job design**.
   
 keywords         : "O*Net, challenge-hindrance framework, job demands-resources, job characteristics"
 wordcount        : "4,942"
@@ -24,10 +39,11 @@ linenumbers       : no
 mask              : yes
 draft             : no
 
-csl               : apa7.csl
-documentclass     : interact
-#classoption       : "man"
-output            : pdf_document
+csl               : "apa7.csl"
+#documentclass     : "apa7" #interact
+classoption       : "jou"
+output            : papaja::apa6_pdf
+
 ---
 
 ```{r setup, include = FALSE}
