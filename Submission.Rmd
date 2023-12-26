@@ -41,7 +41,7 @@ draft             : no
 
 csl               : "apa7.csl"
 #documentclass     : "apa7" #interact
-classoption       : "man"
+classoption       : "jou"
 output            : papaja::apa6_pdf
 
 ---
