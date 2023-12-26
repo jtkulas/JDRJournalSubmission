@@ -2,6 +2,13 @@
 \ifnextchar[{\eatarg}{}
 
 \centering
+\includegraphics{Submission_files/figure-latex/reproduced-1.pdf}
+\caption{\label{fig:reproduced}LePine (2022) revised challenge-stress-appraisal framework.}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
 \includegraphics{Submission_files/figure-latex/combinegraphs-1.pdf}
 \caption{\label{fig:combinegraphs}Characteristics percieved most similarly (lowest standard deviations).}
 \end{figure*}

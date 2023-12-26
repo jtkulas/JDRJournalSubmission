@@ -41,7 +41,7 @@ draft             : no
 
 csl               : "apa7.csl"
 #documentclass     : "apa7" #interact
-classoption       : "jou"
+classoption       : "man"
 output            : papaja::apa6_pdf
 
 ---
@@ -76,7 +76,16 @@ Although there is a tendency to attach a negative connotation to the word “str
 
 The challenge-hindrance stressor framework suggests that the way we understand reactions to stressors requires consideration of how people feel about a given stressor [@cavanaugh2000empirical], in line with @lazarus1984stress. @cavanaugh2000empirical delineated between two forms of demands – that of *challenge* and *hindrance* demands. Challenge demands promote mastery, personal growth, and future gains – these stressors should lead to coping strategies that facilitate achievement. Stressors like time pressure and responsibility are considered challenge stressors/demands. Hindrance demands, in contrast, inhibit growth, learning and goal achievement. Hindrance stressors (e.g., role conflict, role ambiguity, politics) are associated with negative job behaviors and attitudes. This distinction between challenges and hindrances has been of value in determining which demands are related to various outcomes. The original work on this topic suggests that challenge stressors are typically associated with positive outcomes and hindrance stressors are associated with negative outcomes [e.g., @cavanaugh2000empirical]. 
 
-Prior to considering the subsequent empirical work on this topic, it is of value to explore *why* different outcomes are expected with these forms of demands. @lepine2022challenge explain the mechanisms by which demands are related to performance and wellbeing outcomes. Similar to the job-demands resources theory [@bakker2017job], challenge and hindrance demands elicit two different paths or processes. First, challenge stressors typically result in a challenge appraisal, and engagement is likely to happen as a result. Engagement, in turn, is positively related to motivation, performance, growth, and wellbeing. Of note is that this energy may be depleted eventually, leading to strain. Hindrance stressors elicit a different process. Disengagement is likely to result from a hindrance appraisal, which in contrast, negatively impacts motivation, performance, growth and wellbeing. This happens because resources are depleted via frustrations and other affectively negative reactions [@lepine2022challenge]. 
+```{r reproduced, echo=FALSE, fig.cap="LePine (2022) revised challenge-stress-appraisal framework."}
+library(magick)
+library(grid)
+
+figure <- image_read("Reproduced_LepineFigure.png")
+
+grid.raster(figure)
+```
+
+Prior to considering the subsequent empirical work on this topic, it is of value to explore *why* different outcomes are expected with these forms of demands. @lepine2022challenge explain the mechanisms by which demands are related to performance and wellbeing outcomes. Similar to the job-demands resources theory [@bakker2017job], challenge and hindrance demands elicit two different paths or processes. First, challenge stressors typically result in a challenge appraisal, and engagement is likely to happen as a result. Engagement, in turn, is positively related to motivation, performance, growth, and wellbeing. Of note is that this energy may be depleted eventually, leading to strain. Hindrance stressors elicit a different process. Disengagement is likely to result from a hindrance appraisal, which in contrast, negatively impacts motivation, performance, growth and wellbeing. This happens because resources are depleted via frustrations and other affectively negative reactions [@lepine2022challenge]. The theoretical associations that drive the current study's purpose are presented in Figure \@ref(fig:reproduced), which has been reproduced from @lepine2022challenge. 
  	
 We next consider the empirical evidence on this topic. The first question we should ask is whether people distinguish between challenge vs. hindrance demands, or whether all demands are under a larger “demands” category. Evidence suggests the employees do, in fact, differentiate between challenge and hindrance stressors [e.g., @bakker2013weekly; @gerich2017relevance; @webster2011extending]. For example, @bakker2013weekly found that work pressure was perceived as a hindrance demand, and emotional demands as more of a challenge demand. @webster2011extending approached this question with three common workplace demands: workload, role ambiguity, and role conflict. They found while that each could be appraised primarily as a challenge or hindrance demand, they could also simultaneously be perceived as being both a challenge and hindrance demand to different degrees. 
 
