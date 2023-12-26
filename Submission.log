@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.12)  26 DEC 2023 10:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.12)  26 DEC 2023 10:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -733,15 +733,15 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 15849 strings out of 476130
- 261441 string characters out of 5792950
+ 15847 strings out of 476130
+ 261423 string characters out of 5792950
  1946473 words of memory out of 5000000
- 37545 multiletter control sequences out of 15000+600000
- 609280 words of font info for 116 fonts, out of 8000000 for 9000
+ 37544 multiletter control sequences out of 15000+600000
+ 606477 words of font info for 114 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  77i,8n,79p,2232b,505s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/ergadmin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/ergadmin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/ergadmin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/Users/ergadmin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/Users/ergadmin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/ergadmin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/ergadmin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Submission.pdf (9 pages, 341491 bytes).
+Output written on Submission.pdf (9 pages, 340998 bytes).
 PDF statistics:
  227 PDF objects out of 1000 (max. 8388607)
  189 compressed objects within 2 object streams
