@@ -138,13 +138,13 @@
   {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
 \makeatother
 
-% \usepackage{etoolbox}
 \makeatletter
-\patchcmd{\HyOrg@maketitle}
+\usepackage{etoolbox}
+\patchcmd{\maketitle}
   {\section{\normalfont\normalsize\abstractname}}
   {\section*{\normalfont\normalsize\abstractname}}
   {}{\typeout{Failed to patch abstract.}}
-\patchcmd{\HyOrg@maketitle}
+\patchcmd{\maketitle}
   {\section{\protect\normalfont{\@title}}}
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
@@ -170,13 +170,13 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Subjectivity of Job Demands and Resources through the comprehensive framework of O*NET},
+  pdftitle={Subjective Experience of Demands and Resources across O*NET Job Elements},
   pdflang={en-EN},
   pdfkeywords={O*Net, challenge-hindrance framework, job demands-resources, job characteristics},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{Subjectivity of Job Demands and Resources through the comprehensive framework of O*NET}
+\title{Subjective Experience of Demands and Resources across O*NET Job Elements}
 \author{Alicia Stachowski\textsuperscript{2}, John Kulas\textsuperscript{1}, \& Renata García Prieto Palacios Roji\textsuperscript{3}}
 \date{}
 
@@ -192,7 +192,7 @@ Funding: This work was supported by the College of Humanities and Social Science
 \affiliation{\vspace{0.5cm}\textsuperscript{1} eRg\\\textsuperscript{2} University of Wisconsin - Stout\\\textsuperscript{3} PepsiCo}
 
 \abstract{%
-Much of our understanding of job demands and resources rests on an assumption that some aspects of jobs are resources and some are demands. Our primary aim was to document the degree of variability in subjective ratings of job characteristics with respect to interpretation as resource and demand. Secondarily, we quantify the degree to which perceptions match the literature-implicated resources/demands of job characteristics. O*NET work characteristics were rated by 568 employed respondents. Job characteristics were not commonly categorized as solely resource or demand. Rather, job resources were also frequently viewed as challenging demands. These findings have implications for job design.
+Much of our understanding of job demands and resources rests on an assumption that some aspects of jobs are resources and some are demands. Our primary aim was to document the degree of variability in subjective ratings of job characteristics with respect to interpretation as resource and demand. Secondarily, we quantify the degree to which perceptions match the literature-implicated resources/demands of job characteristics. O*NET work characteristics were rated by 568 employed respondents. Job characteristics were not commonly categorized as solely resource or demand. Rather, job resources were also frequently viewed as challenging demands. These findings have implications for job design and administration - resource-laden elements may also be interpreted by workers as demands.
 }
 
 

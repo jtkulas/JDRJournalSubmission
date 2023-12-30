@@ -1,5 +1,5 @@
 ---
-title             : "Subjectivity of Job Demands and Resources through the comprehensive framework of O*NET"
+title             : "Subjective Experience of Demands and Resources across O*NET Job Elements"
 shorttitle        : "O*NET JD-R"
 
 author: 
@@ -24,7 +24,7 @@ authornote: |
  Funding: This work was supported by the College of Humanities and Social Sciences, Montclair State University, Montclair, NJ.
 
 abstract: |
-  Much of our understanding of job demands and resources rests on an assumption that some aspects of jobs are resources and some are demands. Our primary aim was to document the degree of variability in subjective ratings of job characteristics with respect to interpretation as resource and demand. Secondarily, we quantify the degree to which perceptions match the literature-implicated resources/demands of job characteristics. O*NET work characteristics were rated by 568 employed respondents. Job characteristics were not commonly categorized as solely resource or demand. Rather, job resources were also frequently viewed as challenging demands. These findings have implications for job design.
+  Much of our understanding of job demands and resources rests on an assumption that some aspects of jobs are resources and some are demands. Our primary aim was to document the degree of variability in subjective ratings of job characteristics with respect to interpretation as resource and demand. Secondarily, we quantify the degree to which perceptions match the literature-implicated resources/demands of job characteristics. O*NET work characteristics were rated by 568 employed respondents. Job characteristics were not commonly categorized as solely resource or demand. Rather, job resources were also frequently viewed as challenging demands. These findings have implications for job design and administration - resource-laden elements may also be interpreted by workers as demands.
   
 keywords         : "O*Net, challenge-hindrance framework, job demands-resources, job characteristics"
 wordcount        : "4,942"
