@@ -24,7 +24,7 @@ authornote: |
  Funding: This work was supported by the College of Humanities and Social Sciences, Montclair State University, Montclair, NJ.
 
 abstract: |
-  Much of our understanding of job demands and resources rests on an assumption that some aspects of jobs are resources and some are demands. Our primary aim was to document the degree of variability in subjective ratings of job characteristics with respect to interpretation as resource and demand. Secondarily, we quantify the degree to which perceptions match the literature-implicated resources/demands of job characteristics. O*NET work characteristics were rated by 568 employed respondents. Job characteristics were not commonly categorized as solely resource or demand. Rather, job resources were also frequently viewed as challenging demands. These findings have implications for job design and administration - resource-laden elements may also be interpreted by workers as demands.
+  Much of our understanding of job demands and resources rests on an assumption that some aspects of jobs are resources and some are demands. This study documents the degree of variability in subjective ratings of job characteristics with respect to interpretation as resource and demand. Next, we quantify the degree to which perceptions match the literature-implicated resources/demands of job characteristics and also document associations with stress, burnout, and engagement. Job characteristics were not commonly categorized as solely resource or demand. Rather, job resources were also frequently viewed as challenging demands. OUTCOME VARIABLE INFORMATION HERE. These findings have implications for job design and administration - resource-laden elements may also be interpreted by workers as demands.
   
 keywords         : "O*Net, challenge-hindrance framework, job demands-resources, job characteristics"
 wordcount        : "4,942"
@@ -41,7 +41,7 @@ draft             : no
 
 csl               : "apa7.csl"
 #documentclass     : "apa7" #interact
-classoption       : "man"
+classoption       : "jou"
 #output            : "word_document"
 output            : papaja::apa6_pdf
 
@@ -61,23 +61,27 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed, echo=FALSE, warning=FALSE,
 
 ```
 
-Research on the job demands-resources model [@demerouti2001job] and later job demands-resources theory [@bakker2017job] highlights the importance of work characteristics on the experience of motivation and strain, which subsequently have an impact on job performance, among other outcomes. However, much of our existing knowledge regarding the way this model functions is grounded in the assumption that certain job characteristics can generally be considered to be (positive) resources while others can be considered demands. We build on the work of a small, but growing number of researchers who argue that the characteristics of work may be appraised simultaneously as resources and demands [@webster2011extending] or that appraisals may change over time [@rosen2020challenges]. We extend this critical research to that of the subjective distinction between challenge and hindrance demands (and resources) in the workplace, with a primary aims of exploring 1) whether there is variability in subjective ratings of job characteristics with respect to how much they serve as resources and demands, and 2) whether or not there is a match between the literature-implicated resources/demands and subjective ratings of these characteristics. Prior to presenting the current study in detail, we provide a brief overview of the relevant theories and relevant empirical work on this topic. 
+Research on the job demands-resources model [@demerouti2001job] and later job demands-resources theory [@bakker2017job] highlights the importance of work characteristics on the experience of motivation and strain as well as other, more distal outcomes. However, much of our existing knowledge regarding the way these relationships function is grounded in the assumption that certain job characteristics can generally be considered to be (positive) resources while others can be considered demands. We build on the work of a small, but growing number of researchers who argue that the work elements may be appraised simultaneously as resources and demands [@webster2011extending] or that appraisals may change over time [@rosen2020challenges], with primary aims of exploring 1) whether there is variability in subjective ratings of job characteristics with respect to how much they serve as resources and demands, and 2) whether or not there is a match between the literature-implicated resources/demands and subjective ratings of these characteristics. Prior to presenting the current study in detail, we provide a brief overview of the relevant theories and relevant empirical work on this topic. 
 
 ## The Job demands-Resources Theory  
 
-The overarching context for this study is that of the job demands-resources theory, which is an expansion of the well-studied job demands-resources model [@demerouti2001job]. One of the major advantages of the job demands-resources theory is that it allows us to model both work environment and job characteristics via job resources and demands. *Resources* include physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development [@demerouti2001job]. In contrast, demands include components of a job that require sustained effort, and as such, produce psychological or physiological strain (e.g., high work pressure is frequently cited as a common demand; @demerouti2001job). The perception of an element of one’s job as a resource or demand activates one of two distinct processes: either health impairment (resulting from demands) or motivation (resulting from resources; @bakker2014job). Of particular importance here is that it is *the perception* of a characteristic or situation that determines which process an employee will experience despite the *a priori* objective assumption of a characteristic as objectively a "demand" or "resource". We explore this further below.
+*Resources* include physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development [@demerouti2001job]. In contrast, demands include components of a job that require sustained effort, and as such, produce psychological or physiological strain (e.g., high work pressure is commonly cited as a demand; @demerouti2001job). The perception of an element of one’s job as a resource or demand activates one of two distinct processes: either health impairment (resulting from demands) or motivation (resulting from resources; @bakker2014job). Of particular importance here is that it is *the perception* of a characteristic or situation that determines which process an employee will experience despite the *a priori* objective assumption of a characteristic as objectively a "demand" or "resource". We explore this further below.
 
 ## The Essential Role of Appraisal  
 
-Although much of our research on job demands in particular is based on *a priori* classifications [@searle2015merits], the classification of a work characteristic as a demand or resource is largely subjective by nature (e.g., an employee could most certainly perceive public speaking as a resource or as a demand). The stress process speaks to how such individual difference in appraisal is possible. @lazarus1984stress presented the transactional theory of stress and coping, which states that people cognitively appraise stimuli in their environments on a continuous basis. Via this process, meaning is assigned to stimuli based on potential for gain or loss. If appraised as threatening, challenging, or possibly harmful, the resulting emotional distress initiates coping. The cycle of appraisal then continues based on the action to cope with the stressor [@lazarus1984stress]. Coping is considered a secondary appraisal and is the way that someone chooses to manage a stressor. Although not suggested by the names, primary and secondary appraisals can happen simultaneously. For instance, available resources to cope with a stressor may influence an employee’s initial appraisal of a stressor (e.g., amount of time [resource] available to prepare for the speech may influence one’s primary appraisal of this task). 
-  
+Although much of our research on job demands based on a priori classifications [@searle2015merits], the classification of a work characteristic as a demand or resource is largely subjective by nature (e.g., an employee could most certainly perceive public speaking as a resource or as a demand). @lazarus1984stress's transactional theory of stress and coping suggests that people cognitively appraise stimuli in their environments on a continual basis. If a task or situation is appraised as threatening, challenging, or possibly harmful, the resulting emotional distress initiates a coping response. These primary and secondary appraisals can happen simultaneously. For example, perceiving ample resources to cope with a stressor may influence an employee’s initial appraisal of a stressor (e.g., amount of time [resource] available to prepare for the speech may influence one’s primary appraisal of this task).
+
 ## The Challenge-hindrance Stressor Framework  
 
-Although there is a tendency to attach a negative connotation to the word “stress”, @selye1936syndrome defined stress as simple a response to change. We return to the public figure for this next section. Consider two employees be called upon to serve as spokespeople for their organization. One may appraise the circumstance as an opportunity to positively influence others, while the other may feel daunted by the task. 
+Demand --> appraisal (as challenge or hindrance)
 
-The challenge-hindrance stressor framework suggests that the way we understand reactions to stressors requires consideration of how people feel about a given stressor [@cavanaugh2000empirical], in line with @lazarus1984stress. @cavanaugh2000empirical delineated between two forms of demands – that of *challenge* and *hindrance* demands. Challenge demands promote mastery, personal growth, and future gains – these stressors should lead to coping strategies that facilitate achievement. Stressors like time pressure and responsibility are considered challenge stressors/demands. Hindrance demands, in contrast, inhibit growth, learning and goal achievement. Hindrance stressors (e.g., role conflict, role ambiguity, politics) are associated with negative job behaviors and attitudes. This distinction between challenges and hindrances has been of value in determining which demands are related to various outcomes. The original work on this topic suggests that challenge stressors are typically associated with positive outcomes and hindrance stressors are associated with negative outcomes [e.g., @cavanaugh2000empirical]. 
+Demand=Stressor
 
-```{r reproduced, echo=FALSE, fig.cap="LePine's (2022) revised challenge-hindrance stressor framework."}
+Decision (can overcome or not )
+
+@cavanaugh2000empirical delineated between two forms of demands -- *challenges* and *hindrances*. Both are considered stressors [e.g., @cavanaugh2000empirical]. Challenge demands promote mastery, personal growth, and future gains – these stressors should lead to coping strategies that facilitate achievement. Work characteristics consistent with this definition include time pressure and responsibility. Hindrance demands, in contrast, inhibit growth, learning and goal achievement. Hindrance stressors in a work context include role conflict, role ambiguity, and organizational politics. The original work on this topic suggests that challenge stressors are typically associated with positive outcomes and hindrance stressors are associated with negative outcomes [e.g., @cavanaugh2000empirical]. 
+
+```{r reproduced, eval=FALSE, echo=FALSE, fig.cap="Going to put in new comprehensive picture."}
 library(magick)
 library(grid)
 
@@ -87,7 +91,7 @@ grid.raster(figure) # works well with margins/etc
 
 ```
 
-Prior to considering the subsequent empirical work on this topic, it is of value to explore *why* different outcomes are expected with these forms of demands. @lepine2022challenge explain the mechanisms by which demands are related to performance and wellbeing outcomes. Similar to the job-demands resources theory [@bakker2017job], challenge and hindrance demands elicit two different paths or processes. First, challenge stressors typically result in a challenge appraisal, and engagement is likely to happen as a result. Engagement, in turn, is positively related to motivation, performance, growth, and wellbeing. Of note is that this energy may be depleted eventually, leading to strain. Hindrance stressors elicit a different process. Disengagement is likely to result from a hindrance appraisal, which in contrast, negatively impacts motivation, performance, growth and wellbeing. This happens because resources are depleted via frustrations and other affectively negative reactions [@lepine2022challenge]. The theoretical associations that drive the current study's purpose are presented in Figure \@ref(fig:reproduced), which has been reproduced from @lepine2022challenge. 
+@lepine2022challenge explain the mechanisms by which demands are related to performance and wellbeing outcomes. First, stressors appraised as challenges typically result in a challenge appraisal, and engagement is likely to happen as a result. Engagement, in turn, is positively related to motivation, performance, growth, and wellbeing. Of note is that this energy may be depleted eventually, leading to strain. Stressors appraised as hindrances elicit a different process. Disengagement is likely to result from a hindrance appraisal, which in contrast, negatively impacts motivation, performance, growth and wellbeing. This happens because resources are depleted via frustrations and other affectively negative reactions [@lepine2022challenge]. The theoretical associations that drive the current study's purpose are presented in Figure \@ref(fig:reproduced), which has been reproduced from @lepine2022challenge. 
  	
 We next consider the empirical evidence on this topic. The first question we should ask is whether people distinguish between challenge vs. hindrance demands, or whether all demands are under a larger “demands” category. Evidence suggests the employees do, in fact, differentiate between challenge and hindrance stressors [e.g., @bakker2013weekly; @gerich2017relevance; @webster2011extending]. For example, @bakker2013weekly found that work pressure was perceived as a hindrance demand, and emotional demands as more of a challenge demand. @webster2011extending approached this question with three common workplace demands: workload, role ambiguity, and role conflict. They found while that each could be appraised primarily as a challenge or hindrance demand, they could also simultaneously be perceived as being both a challenge and hindrance demand to different degrees. 
 
@@ -99,17 +103,20 @@ We even have sufficient evidence to explore outcomes associated with challenge a
 
 ## Current Study and Hypotheses
 
-The integration of the literature above culminates with two primary hypotheses. The first addresses whether employees generally agree on their appraisals of job characteristics as resources or challenge or hindrance demands. For instance, although challenge stressors tend to be appraised more so as challenges, and hindrance stressors tend to be appraised more as hindrances than challenges, others have reported variability in these appraisals [e.g., @lepine2022challenge]. @lepine2022challenge, in fact, argues that the challenge-hindrance stressor framework acknowledges that these appraisals are not universal. Thus, it is quite possible, given the theoretical and empirical evidence presented above, that there is wide variability in individual appraisal of work activities and context such that some people may rate a given activity as a resource and others a hindrance. 
+The integration of the literature above culminates with two primary hypotheses. The first addresses whether employees generally agree on their appraisals of job characteristics as resources or challenge or hindrance demands. For instance, although challenge stressors tend to be appraised more so as challenges, and hindrance stressors tend to be appraised more as hindrances than challenges, others have reported variability in these appraisals [e.g., @lepine2022challenge]. @lepine2022challenge, in fact, argues that the challenge-hindrance stressor framework acknowledges that these appraisals are not universal. Thus, it is quite possible, given the theoretical and empirical evidence presented above, that there is wide variability in individual appraisal of work activities and context such that some people may rate a given activity as a resource and others a hindrance. COMBINE 1 and 2:
 
 >Hypothesis 1: Job characteristics differ in consistancy regarding subjective worker perception as a demand or resource.
 
 >Hypothesis 2: Job characteristics are not exclusively categorized as a resource or demand, but rather, some job characteristics are viewed as both a resource and a demand.
 
-Two exploratory questions further address whether our *literature-implicated* resources (e.g., autonomy) and demands are consistently rated as our research models suggest across the job-demands resources theory [@bakker2017job] and challenge-hindrance stressor framework [@cavanaugh2000empirical]. 
+>Hyp 3: Are these perceptions aligned with the literature's presentation of job characteristics?
 
->*Research Question 1*: Do literature-implicated resources materialize as perceived resources?
+The second set of analyses focuses on associations. Do demands and resources have implications for work outcomes? 
 
->*Research Question 2*: Do literature-implicated demands materialize as job demands?
+>Hyp 4.a: Job resources are associated with greater engagement, less stress, and less burnout. 
+>Hyp 4.b: More hindrances leads to less engagement, more stress, and greater burnout. 
+
+>Hyp 4.exploratory: More challenges leads to greater satisfaction, engagement, and burnout.
 
 ```{r study1}
 
@@ -347,7 +354,7 @@ topresource <- topresource[tail(names(topresource),3)]
 library(ggplot2)
 
 a <- ggplot(topresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="blue", position=position_dodge()) + theme_bw() +
-  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Most Agreed Upon as a Resource") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,6)) 
+  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Most Consensus as a Resource") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,6)) 
 
 ```
 
@@ -360,7 +367,7 @@ topchallenge <- head(sortchallenge, 8)    ## changed for combined plot (1/28/23)
 topchallenge <- topchallenge[tail(names(topchallenge),3)]        
 
 b <- ggplot(topchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="yellow", position=position_dodge()) + theme_bw() +
-  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Most Agreed Upon as a Challenge") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,6)) 
+  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Most Consensus as a Challenge") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,6)) 
 
 
 ```
@@ -374,7 +381,7 @@ tophindrance <- head(sorthindrance, 8)  ## changed for combined plot (1/28/23)
 tophindrance <- tophindrance[tail(names(tophindrance),3)]        
 
 c <- ggplot(tophindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="red", position=position_dodge()) + theme_bw() +
-  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Most Agreed upon as a Hindrance") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,6))
+  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Most Consensus as a Hindrance") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,6))
 
 ## added 2/7/23 for online supplement materials
 
@@ -406,7 +413,7 @@ bottomresource <- head(sortresource, 8)
 bottomresource <- bottomresource[tail(names(bottomresource),3)]        
 
 d <- ggplot(bottomresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="blue", position=position_dodge()) + theme_bw() +
-  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Least Agreed Upon as a Resource") + 
+  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Lack of Consensus as a Resource") + 
   geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5)) 
 
 ```
@@ -420,7 +427,7 @@ bottomchallenge <- head(sortchallenge, 8)
 bottomchallenge <- bottomchallenge[tail(names(bottomchallenge),3)]        
 
 e <- ggplot(bottomchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="yellow", position=position_dodge()) + theme_bw() +
-  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Least Agreed Upon as a Challenge") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5)) 
+  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Lack of Consensus as a Challenge") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5)) 
 
 
 ```
@@ -435,7 +442,7 @@ bottomhindrance <- head(sorthindrance, 8)
 bottomhindrance <- bottomhindrance[tail(names(bottomhindrance),3)]        
 
 f <- ggplot(bottomhindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="red", position=position_dodge()) + theme_bw() +
-  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Least Agreed upon as a Hindrance") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5))
+  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Lack of Consensus as a Hindrance") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5))
 
 ```
 
@@ -792,13 +799,12 @@ We also retained the literature-derived definitions of resources, challenges, an
 Lastly, there may be some practical utility to pursue training interventions aimed at *how* characteristics are appraised. Perhaps the clinical literature may be informative - for example, within cognitive behavioral therapeutic applications, the way in which situations are appraised can be a mechanism to help battle affective disorders such as depression. Given the current findings, where the same characteristic may be viewed similarly as both a demand and resource, it is possible that framing interventions may ameliorate negative outcomes of demands such as, for example, stress or strain.
 
 In sum, this endeavor explored the job-demands-resources literature from a unique lens from within a universally accessible framework. We showed that there are far more individual differences in how employees perceive demands and resources than much of our current research suggests. While resources and challenges idiosyncratic more similarly experienced, what is experienced as a hindrance tends to be idiosyncratic. 
+
 ```{r}
 
 r_refs("r-references.bib")
 
 ```
-
-\newpage
 
 # References
 
