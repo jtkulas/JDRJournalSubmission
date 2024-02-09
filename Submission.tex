@@ -138,13 +138,13 @@
   {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
 \makeatother
 
+% \usepackage{etoolbox}
 \makeatletter
-\usepackage{etoolbox}
-\patchcmd{\maketitle}
+\patchcmd{\HyOrg@maketitle}
   {\section{\normalfont\normalsize\abstractname}}
   {\section*{\normalfont\normalsize\abstractname}}
   {}{\typeout{Failed to patch abstract.}}
-\patchcmd{\maketitle}
+\patchcmd{\HyOrg@maketitle}
   {\section{\protect\normalfont{\@title}}}
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
@@ -200,6 +200,18 @@ Much of our understanding of job demands and resources rests on an assumption th
 \begin{document}
 \maketitle
 
+Outline:
+Work toward model (picture)
+
+I. Appraisals
+a. JD-R
+b. Challenge-hindrance framework
+1. combine the two (maybe Crawford, LePine \& Rich, 2010)
+II. Antecedents (job elements)
+a. O*Net - comprehensive
+III. Consequences (outcomes)
+a. Moderation
+
 Research on the job demands-resources model (Demerouti et al., 2001) and later job demands-resources theory (Bakker \& Demerouti, 2017) highlights the importance of work characteristics on the experience of motivation and strain as well as other, more distal outcomes. However, much of our existing knowledge regarding the way these relationships function is grounded in the assumption that certain job characteristics can generally be considered to be (positive) resources while others can be considered demands. We build on the work of a small, but growing number of researchers who argue that the work elements may be appraised simultaneously as resources and demands (Webster et al., 2011) or that appraisals may change over time (Rosen et al., 2020), with primary aims of exploring 1) whether there is variability in subjective ratings of job characteristics with respect to how much they serve as resources and demands, and 2) whether or not there is a match between the literature-implicated resources/demands and subjective ratings of these characteristics. Prior to presenting the current study in detail, we provide a brief overview of the relevant theories and relevant empirical work on this topic.
 
 \hypertarget{the-job-demands-resources-theory}{%
@@ -236,7 +248,17 @@ Horan et al. (2020) and M. A. LePine (2022) specifically call out the need for a
 \hypertarget{current-study-and-hypotheses}{%
 \subsection{Current Study and Hypotheses}\label{current-study-and-hypotheses}}
 
-The integration of the literature above culminates with two primary hypotheses. The first addresses whether employees generally agree on their appraisals of job characteristics as resources or challenge or hindrance demands. For instance, although challenge stressors tend to be appraised more so as challenges, and hindrance stressors tend to be appraised more as hindrances than challenges, others have reported variability in these appraisals (e.g., M. A. LePine, 2022). M. A. LePine (2022), in fact, argues that the challenge-hindrance stressor framework acknowledges that these appraisals are not universal. Thus, it is quite possible, given the theoretical and empirical evidence presented above, that there is wide variability in individual appraisal of work activities and context such that some people may rate a given activity as a resource and others a hindrance. COMBINE 1 and 2:
+The integration of the literature above culminates with two primary hypotheses. The first addresses whether employees generally agree on their appraisals of job characteristics as resources or challenge or hindrance demands. For instance, although challenge stressors tend to be appraised more so as challenges, and hindrance stressors tend to be appraised more as hindrances than challenges, others have reported variability in these appraisals (e.g., M. A. LePine, 2022). M. A. LePine (2022), in fact, argues that the challenge-hindrance stressor framework acknowledges that these appraisals are not universal. Thus, it is quite possible, given the theoretical and empirical evidence presented above, that there is wide variability in individual appraisal of work activities and context such that some people may rate a given activity as a resource and others a hindrance.
+
+\begin{figure}
+\centering
+\includegraphics{Submission_files/figure-latex/ourmodel-1.pdf}
+\caption{\label{fig:ourmodel}This is our working model}
+\end{figure}
+
+Our model is represented in Figure \ref{fig:ourmodel}
+
+COMBINE 1 and 2:
 
 \begin{quote}
 Hypothesis 1: Job characteristics differ in consistancy regarding subjective worker perception as a demand or resource.
