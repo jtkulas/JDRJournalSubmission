@@ -818,6 +818,8 @@ Differences in outcomes depending on whether or not an employee perceives a job 
 
 ## Limitations and Future Directions
 
+Cross-sectional
+
 As with all individual studies, this project was limited in scope, and as such, there are a number of avenues for future study worth exploring. First, although we aggregated to both literature-derived as well as O\*Net groupings, essentially we were dealing with single-item scales. Although not ideal psychometrically, this provided a strong linkage to the established O\*Net framework. Related to that, we intentionally worked within the O\*Net database, and in selecting job context and activity items, did not include other types of job characteristics that may be important resources/demands. Therefore, to the extent that O\*Net is not an exhaustive repository, there are existing characteristics that we did not capture. For example, O\*Net also includes styles and values, which we did not sample. Future studies may want to expand to explore these additional aspects of work. 
 
 We also retained the literature-derived definitions of resources, challenges, and hindrances [@demerouti2001job]. Given the high associations observed between ratings of resource and challenge, it is possible that respondents did not distinguish between these definitions as cleanly as we intended. Future investigations may wish to explore the colloquial versus academic phrasing of these questions and how that may impact observed associations between resources and challenges. It would also be prudent to consider work-relevant outcomes associated with similar job characteristic ratings. 
