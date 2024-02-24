@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.21)  24 FEB 2024 12:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.21)  24 FEB 2024 12:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -705,32 +705,32 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 Underfull \vbox (badness 1215) has occurred while \output is active []
 
 [3]
-<Submission_files/figure-latex/combinegraphs-1.pdf, id=55, 469.755pt x 722.7pt>
+<Submission_files/figure-latex/combinegraphs-1.pdf, id=53, 469.755pt x 722.7pt>
 File: Submission_files/figure-latex/combinegraphs-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/combinegraphs-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/combinegraphs-1.pdf  used on input line 356.
+Package pdftex.def Info: Submission_files/figure-latex/combinegraphs-1.pdf  used on input line 353.
 (pdftex.def)             Requested size: 241.74374pt x 371.91345pt.
-<Submission_files/figure-latex/combinegraphs2-1.pdf, id=56, 469.755pt x 722.7pt>
+<Submission_files/figure-latex/combinegraphs2-1.pdf, id=54, 469.755pt x 722.7pt>
 File: Submission_files/figure-latex/combinegraphs2-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/combinegraphs2-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/combinegraphs2-1.pdf  used on input line 362.
+Package pdftex.def Info: Submission_files/figure-latex/combinegraphs2-1.pdf  used on input line 359.
 (pdftex.def)             Requested size: 241.74374pt x 371.91345pt.
-<Submission_files/figure-latex/overallhist-1.pdf, id=57, 469.755pt x 325.215pt>
+<Submission_files/figure-latex/overallhist-1.pdf, id=55, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/overallhist-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/overallhist-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/overallhist-1.pdf  used on input line 368.
+Package pdftex.def Info: Submission_files/figure-latex/overallhist-1.pdf  used on input line 365.
 (pdftex.def)             Requested size: 241.74374pt x 167.36105pt.
 [4] [5 <./Submission_files/figure-latex/combinegraphs-1.pdf> <./Submission_files/figure-latex/combinegraphs2-1.pdf> <./Submission_files/figure-latex/overallhist-1.pdf>]
-<Submission_files/figure-latex/scalelevelgraphs-1.pdf, id=102, 469.755pt x 325.215pt>
+<Submission_files/figure-latex/scalelevelgraphs-1.pdf, id=100, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/scalelevelgraphs-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/scalelevelgraphs-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/scalelevelgraphs-1.pdf  used on input line 382.
+Package pdftex.def Info: Submission_files/figure-latex/scalelevelgraphs-1.pdf  used on input line 379.
 (pdftex.def)             Requested size: 241.74374pt x 167.36105pt.
 
 Underfull \vbox (badness 1215) has occurred while \output is active []
 
 [6 <./Submission_files/figure-latex/scalelevelgraphs-1.pdf>]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 395.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 392.
 (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [7]
@@ -745,18 +745,18 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 15891 strings out of 476140
- 261456 string characters out of 5793653
+ 15887 strings out of 476140
+ 261381 string characters out of 5793653
  1947460 words of memory out of 5000000
- 37568 multiletter control sequences out of 15000+600000
+ 37566 multiletter control sequences out of 15000+600000
  606791 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  77i,8n,79p,3381b,555s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Submission.pdf (9 pages, 284991 bytes).
+Output written on Submission.pdf (9 pages, 284803 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
- 226 compressed objects within 3 object streams
- 76 named destinations out of 1000 (max. 500000)
- 146 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 260 PDF objects out of 1000 (max. 8388607)
+ 221 compressed objects within 3 object streams
+ 74 named destinations out of 1000 (max. 500000)
+ 138 words of extra memory for PDF output out of 10000 (max. 10000000)
 

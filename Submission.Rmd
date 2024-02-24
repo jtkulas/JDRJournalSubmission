@@ -138,8 +138,6 @@ We even have sufficient evidence to explore outcomes associated with challenge a
 
 @horan2020review and @lepine2022challenge specifically call out the need for additional research to incorporate the appraisal process described by @lazarus1984stress into the challenge-hindrance stressor framework, which aligns with other calls to capture subjective ratings of demands and resources into our study of the overarching JD-R model. In fact, @horan2020review state that “…stressors are only challenge or hindrance stressors to the extent that they are perceived as such by employees” (p. 3). They go on to suggest future research continue to move away from *a priori* classifications of stressors, as doing so can be problematic for theoretical and empirical reasons. Theoretically, *a priori* classifications run counter to the original transactional theory of stress on which the challenge-hindrance stressor framework was based for which appraisals are a central component. Empirically, as shown above, we have some evidence suggesting people can appraise a stressor as both a hindrance and challenge at the same time [e.g., @searle2015merits]. 
 
-## Current Study and Hypotheses
-
 >Hyp 3.a: Job resources are associated with greater engagement, less stress, and less burnout. 
 
 >Hyp 3.b: More hindrances leads to less engagement, more stress, and greater burnout. 
