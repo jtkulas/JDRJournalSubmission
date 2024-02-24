@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.21)  24 FEB 2024 12:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.21)  24 FEB 2024 12:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -690,71 +690,70 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 
 
 ]
-
-LaTeX Warning: Reference `fig:reproduced' on page 2 undefined on input line 284.
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 302.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 302.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 302.
-[2]
-Underfull \vbox (badness 1215) has occurred while \output is active []
-
-<Submission_files/figure-latex/ourmodel-1.pdf, id=33, 469.755pt x 325.215pt>
+<Submission_files/figure-latex/ourmodel-1.pdf, id=21, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/ourmodel-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/ourmodel-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/ourmodel-1.pdf  used on input line 317.
+Package pdftex.def Info: Submission_files/figure-latex/ourmodel-1.pdf  used on input line 303.
 (pdftex.def)             Requested size: 241.74374pt x 167.36105pt.
-[3 <./Submission_files/figure-latex/ourmodel-1.pdf>]
-<Submission_files/figure-latex/combinegraphs-1.pdf, id=51, 469.755pt x 722.7pt>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 308.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 308.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 308.
+[2 <./Submission_files/figure-latex/ourmodel-1.pdf>]
+Underfull \vbox (badness 1215) has occurred while \output is active []
+
+[3]
+<Submission_files/figure-latex/combinegraphs-1.pdf, id=55, 469.755pt x 722.7pt>
 File: Submission_files/figure-latex/combinegraphs-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/combinegraphs-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/combinegraphs-1.pdf  used on input line 360.
+Package pdftex.def Info: Submission_files/figure-latex/combinegraphs-1.pdf  used on input line 356.
 (pdftex.def)             Requested size: 241.74374pt x 371.91345pt.
-<Submission_files/figure-latex/combinegraphs2-1.pdf, id=52, 469.755pt x 722.7pt>
+<Submission_files/figure-latex/combinegraphs2-1.pdf, id=56, 469.755pt x 722.7pt>
 File: Submission_files/figure-latex/combinegraphs2-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/combinegraphs2-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/combinegraphs2-1.pdf  used on input line 366.
+Package pdftex.def Info: Submission_files/figure-latex/combinegraphs2-1.pdf  used on input line 362.
 (pdftex.def)             Requested size: 241.74374pt x 371.91345pt.
-<Submission_files/figure-latex/overallhist-1.pdf, id=53, 469.755pt x 325.215pt>
+<Submission_files/figure-latex/overallhist-1.pdf, id=57, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/overallhist-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/overallhist-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/overallhist-1.pdf  used on input line 372.
+Package pdftex.def Info: Submission_files/figure-latex/overallhist-1.pdf  used on input line 368.
 (pdftex.def)             Requested size: 241.74374pt x 167.36105pt.
-[4] [5 <./Submission_files/figure-latex/combinegraphs-1.pdf> <./Submission_files/figure-latex/combinegraphs2-1.pdf>]
-<Submission_files/figure-latex/scalelevelgraphs-1.pdf, id=97, 469.755pt x 325.215pt>
+[4] [5 <./Submission_files/figure-latex/combinegraphs-1.pdf> <./Submission_files/figure-latex/combinegraphs2-1.pdf> <./Submission_files/figure-latex/overallhist-1.pdf>]
+<Submission_files/figure-latex/scalelevelgraphs-1.pdf, id=102, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/scalelevelgraphs-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/scalelevelgraphs-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/scalelevelgraphs-1.pdf  used on input line 386.
+Package pdftex.def Info: Submission_files/figure-latex/scalelevelgraphs-1.pdf  used on input line 382.
 (pdftex.def)             Requested size: 241.74374pt x 167.36105pt.
-[6 <./Submission_files/figure-latex/overallhist-1.pdf> <./Submission_files/figure-latex/scalelevelgraphs-1.pdf>]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 399.
+
+Underfull \vbox (badness 1215) has occurred while \output is active []
+
+[6 <./Submission_files/figure-latex/scalelevelgraphs-1.pdf>]
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 395.
 (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [7] [8]
+) [7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[9] (./Submission.aux)
+[8] [9
+
+] (./Submission.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2020/03/25>
  ***********
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 15892 strings out of 476140
- 261472 string characters out of 5793653
+ 15891 strings out of 476140
+ 261456 string characters out of 5793653
  1947460 words of memory out of 5000000
- 37569 multiletter control sequences out of 15000+600000
+ 37568 multiletter control sequences out of 15000+600000
  606791 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  77i,8n,79p,3381b,555s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Submission.pdf (9 pages, 285637 bytes).
+Output written on Submission.pdf (9 pages, 284991 bytes).
 PDF statistics:
  265 PDF objects out of 1000 (max. 8388607)
  226 compressed objects within 3 object streams
