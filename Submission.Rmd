@@ -64,14 +64,17 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed, echo=FALSE, warning=FALSE,
 Outline:
 Work toward model (picture)
 
-I. Appraisals
-  a. JD-R
-  b. Challenge-hindrance framework
-    1. combine the two (maybe Crawford, LePine & Rich, 2010)
-II. Antecedents (job elements)
++ Challenge-hindrance framework
+  + Cavanaugh (~2000)
+  + Last 20 years' research (variance - look at Pindek et al, 2024)
+  + Appraisals  
+
++ Antecedents (job elements)
   a. O\*Net - comprehensive
 III. Consequences (outcomes)
   a. Moderation
+IV. Contribution
+  a. include resources
 
 Research on the job demands-resources model [@demerouti2001job] and later job demands-resources theory [@bakker2017job] highlights the importance of work characteristics on the experience of motivation and strain as well as other, more distal outcomes. However, much of our existing knowledge regarding the way these relationships function is grounded in the assumption that certain job characteristics can generally be considered to be (positive) resources while others can be considered demands. We build on the work of a small, but growing number of researchers who argue that the work elements may be appraised simultaneously as resources and demands [@webster2011extending] or that appraisals may change over time [@rosen2020challenges], with primary aims of exploring 1) whether there is variability in subjective ratings of job characteristics with respect to how much they serve as resources and demands, and 2) whether or not there is a match between the literature-implicated resources/demands and subjective ratings of these characteristics. Prior to presenting the current study in detail, we provide a brief overview of the relevant theories and relevant empirical work on this topic. 
 
@@ -105,9 +108,21 @@ grid.raster(figure) # works well with margins/etc
 
 @lepine2022challenge explain the mechanisms by which demands are related to performance and wellbeing outcomes. First, stressors appraised as challenges typically result in a challenge appraisal, and engagement is likely to happen as a result. Engagement, in turn, is positively related to motivation, performance, growth, and wellbeing. Of note is that this energy may be depleted eventually, leading to strain. Stressors appraised as hindrances elicit a different process. Disengagement is likely to result from a hindrance appraisal, which in contrast, negatively impacts motivation, performance, growth and wellbeing. This happens because resources are depleted via frustrations and other affectively negative reactions [@lepine2022challenge]. The theoretical associations that drive the current study's purpose are presented in Figure \@ref(fig:reproduced), which has been reproduced from @lepine2022challenge. 
  	
+## ARGUE FOR H1 and H2 (Are perceptions universal?)
+
+Add resources here
+
 We next consider the empirical evidence on this topic. The first question we should ask is whether people distinguish between challenge vs. hindrance demands, or whether all demands are under a larger “demands” category. Evidence suggests the employees do, in fact, differentiate between challenge and hindrance stressors [e.g., @bakker2013weekly; @gerich2017relevance; @webster2011extending]. For example, @bakker2013weekly found that work pressure was perceived as a hindrance demand, and emotional demands as more of a challenge demand. @webster2011extending approached this question with three common workplace demands: workload, role ambiguity, and role conflict. They found while that each could be appraised primarily as a challenge or hindrance demand, they could also simultaneously be perceived as being both a challenge and hindrance demand to different degrees. 
 
-Appraisals are associated with different forms of coping, and subsequently, outcomes. The challenge-hindrance stressor framework has been associated with a wide variety of organizational outcomes ranging from affective variables like job satisfaction, to motivation, performance, and wellbeing. A sampling of variables and relationships are described below to provide a sense of scope of the work that has been on this topic. @kim2020thriving found that appraising a demand (in their study, workload, responsibility, and learning demands were measured) as a challenge was associated with motivational resources (i.e., sense of self-worth and work meaningfulness), which were positively related to flourishing. The opposite occurred when a demand was appraised as a hindrance – in those instances, the appraisal had a negative association with motivational resources. @cavanaugh2000empirical, in a study of managers, found that challenge demands were positively related to job satisfaction and negatively related to job search behaviors, while hindrance demands demonstrated the opposite pattern. @chen2021daily found that daily challenge demands were positively related to cognitive wellbeing and work-family enrichment. Daily hindrance demands were negatively related to these outcomes. In contrast, @abbas2019challenge found that challenge and hindrance stressors were *both* positively related to strain and turnover intentions. We also have some evidence that challenge-hindrance appraisals are related to engagement in the expected direction whereby hindrance appraisals are negatively associated with engagement and challenge appraisals are positively associated with it [@crawford2010linking]. Challenge and hindrance appraisals have also been shown to relate to citizenship and counterproductive performance, although indirectly via emotions like anxiety [@rodell2009can]. Lastly, @gerich2017relevance concluded that employee wellbeing was also, in part, explained by appraised challenge or hindrance demands such that working conditions of time pressure, qualitative demands, responsibility, and interruptions, were partially mediated by challenge and hindrance demands. 
+>Hypothesis 1: Job characteristics differ in consistancy regarding subjective worker perception as a demand or resource.
+
+>Hypothesis 2: Job characteristics are not exclusively categorized as a resource or demand, but rather, some job characteristics are viewed as both a resource and a demand.
+
+## Connecting appraisals to workplace outcomes[^thought]
+
+[^thought]: add a sentence that adds a brief description of working conditions to first paragraph. Whole section needs expansion.
+
+The second set of analyses focuses on associations. Do demands and resources have implications for work outcomes? Appraisals are associated with different forms of coping, and subsequently, outcomes. See Figure 1 for proposed associations. The challenge-hindrance stressor framework has been associated with a wide variety of organizational outcomes ranging from affective variables like job satisfaction, to motivation, performance, and wellbeing. A sampling of variables and relationships are described below to provide a sense of scope of the work that has been on this topic. @kim2020thriving found that appraising a demand (in their study, workload, responsibility, and learning demands were measured) as a challenge was associated with motivational resources (i.e., sense of self-worth and work meaningfulness), which were positively related to flourishing. The opposite occurred when a demand was appraised as a hindrance – in those instances, the appraisal had a negative association with motivational resources. @cavanaugh2000empirical, in a study of managers, found that challenge demands were positively related to job satisfaction and negatively related to job search behaviors, while hindrance demands demonstrated the opposite pattern. @chen2021daily found that daily challenge demands were positively related to cognitive wellbeing and work-family enrichment. Daily hindrance demands were negatively related to these outcomes. In contrast, @abbas2019challenge found that challenge and hindrance stressors were *both* positively related to strain and turnover intentions. We also have some evidence that challenge-hindrance appraisals are related to engagement in the expected direction whereby hindrance appraisals are negatively associated with engagement and challenge appraisals are positively associated with it [@crawford2010linking]. Challenge and hindrance appraisals have also been shown to relate to citizenship and counterproductive performance, although indirectly via emotions like anxiety [@rodell2009can]. Lastly, @gerich2017relevance concluded that employee wellbeing was also, in part, explained by appraised challenge or hindrance demands such that working conditions of time pressure, qualitative demands, responsibility, and interruptions, were partially mediated by challenge and hindrance demands. 
 
 We even have sufficient evidence to explore outcomes associated with challenge and hindrance stressors meta-analytically at this point, and a rich collection of them support differential associations across a variety of organizational outcomes as well. For example, both challenges and hindrances have been shown to positively predict strain [@lepine2005meta; @podsakoff2007differential; @webster2010toward]. Many other outcomes are differentially related to challenges and hindrances, largely in the expected direction. For example, motivation, job satisfaction, commitment, and performance have been shown to positively relate to challenge stressors and negatively relate to hindrance stressors [@lepine2005meta]. Turnover intentions, turnover and withdrawal behaviors are negatively related to hindrance stressors [@podsakoff2007differential]. @kim2020thriving, similarly, found evidence for the differential results via challenge and hindrance appraisals.  
 
@@ -129,20 +144,13 @@ grid.raster(figure2) # works well with margins/etc
 
 Our model is represented in Figure \@ref(fig:ourmodel)
 
-COMBINE 1 and 2:
+>Hyp 3.a: Job resources are associated with greater engagement, less stress, and less burnout. 
 
->Hypothesis 1: Job characteristics differ in consistancy regarding subjective worker perception as a demand or resource.
+>Hyp 3.b: More hindrances leads to less engagement, more stress, and greater burnout. 
 
->Hypothesis 2: Job characteristics are not exclusively categorized as a resource or demand, but rather, some job characteristics are viewed as both a resource and a demand.
+>Hyp 3.exploratory: More challenges leads to greater satisfaction, engagement, and burnout.[^figure]
 
->Hyp 3: Are these perceptions aligned with the literature's presentation of job characteristics?
-
-The second set of analyses focuses on associations. Do demands and resources have implications for work outcomes? 
-
->Hyp 4.a: Job resources are associated with greater engagement, less stress, and less burnout. 
->Hyp 4.b: More hindrances leads to less engagement, more stress, and greater burnout. 
-
->Hyp 4.exploratory: More challenges leads to greater satisfaction, engagement, and burnout.
+[^figure]: These need to be reframed to match Figure 1.
 
 ```{r study1}
 
