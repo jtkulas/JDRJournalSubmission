@@ -76,23 +76,13 @@ III. Consequences (outcomes)
 IV. Contribution
   a. include resources
 
-Research on the job demands-resources model [@demerouti2001job] and later job demands-resources theory [@bakker2017job] highlights the importance of work characteristics on the experience of motivation and strain as well as other, more distal outcomes. However, much of our existing knowledge regarding the way these relationships function is grounded in the assumption that certain job characteristics can generally be considered to be (positive) resources while others can be considered demands. We build on the work of a small, but growing number of researchers who argue that the work elements may be appraised simultaneously as resources and demands [@webster2011extending] or that appraisals may change over time [@rosen2020challenges], with primary aims of exploring 1) whether there is variability in subjective ratings of job characteristics with respect to how much they serve as resources and demands, and 2) whether or not there is a match between the literature-implicated resources/demands and subjective ratings of these characteristics. Prior to presenting the current study in detail, we provide a brief overview of the relevant theories and relevant empirical work on this topic. 
-
-## The Job demands-Resources Theory  
+We build on the work of a small, but growing number of researchers who argue that the work elements may be appraised simultaneously as resources and demands [@webster2011extending] or that appraisals may change over time [@rosen2020challenges], with primary aims of exploring 1) whether there is variability in subjective ratings of job characteristics with respect to how much they serve as resources and demands, and 2) whether or not there is a match between the literature-implicated resources/demands and subjective ratings of these characteristics. Prior to presenting the current study in detail, we provide a brief overview of the relevant theories and relevant empirical work on this topic. 
 
 *Resources* include physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development [@demerouti2001job]. In contrast, demands include components of a job that require sustained effort, and as such, produce psychological or physiological strain (e.g., high work pressure is commonly cited as a demand; @demerouti2001job). The perception of an element of one’s job as a resource or demand activates one of two distinct processes: either health impairment (resulting from demands) or motivation (resulting from resources; @bakker2014job). Of particular importance here is that it is *the perception* of a characteristic or situation that determines which process an employee will experience despite the *a priori* objective assumption of a characteristic as objectively a "demand" or "resource". We explore this further below.
 
-## The Essential Role of Appraisal  
+## The Challenge-hindrance Stressor Framework 
 
 Although much of our research on job demands based on a priori classifications [@searle2015merits], the classification of a work characteristic as a demand or resource is largely subjective by nature (e.g., an employee could most certainly perceive public speaking as a resource or as a demand). @lazarus1984stress's transactional theory of stress and coping suggests that people cognitively appraise stimuli in their environments on a continual basis. If a task or situation is appraised as threatening, challenging, or possibly harmful, the resulting emotional distress initiates a coping response. These primary and secondary appraisals can happen simultaneously. For example, perceiving ample resources to cope with a stressor may influence an employee’s initial appraisal of a stressor (e.g., amount of time [resource] available to prepare for the speech may influence one’s primary appraisal of this task).
-
-## The Challenge-hindrance Stressor Framework  
-
-Demand --> appraisal (as challenge or hindrance)
-
-Demand=Stressor
-
-Decision (can overcome or not )
 
 @cavanaugh2000empirical delineated between two forms of demands -- *challenges* and *hindrances*. Both are considered stressors [e.g., @cavanaugh2000empirical]. Challenge demands promote mastery, personal growth, and future gains – these stressors should lead to coping strategies that facilitate achievement. Work characteristics consistent with this definition include time pressure and responsibility. Hindrance demands, in contrast, inhibit growth, learning and goal achievement. Hindrance stressors in a work context include role conflict, role ambiguity, and organizational politics. The original work on this topic suggests that challenge stressors are typically associated with positive outcomes and hindrance stressors are associated with negative outcomes [e.g., @cavanaugh2000empirical]. 
 
@@ -108,7 +98,7 @@ grid.raster(figure) # works well with margins/etc
 
 @lepine2022challenge explain the mechanisms by which demands are related to performance and wellbeing outcomes. First, stressors appraised as challenges typically result in a challenge appraisal, and engagement is likely to happen as a result. Engagement, in turn, is positively related to motivation, performance, growth, and wellbeing. Of note is that this energy may be depleted eventually, leading to strain. Stressors appraised as hindrances elicit a different process. Disengagement is likely to result from a hindrance appraisal, which in contrast, negatively impacts motivation, performance, growth and wellbeing. This happens because resources are depleted via frustrations and other affectively negative reactions [@lepine2022challenge]. 
  	
-## ARGUE FOR H1 and H2 (Are perceptions universal?)
+## Are Perceptions of Job Resources, Challenge Demands, and Hindrance Demands Universal?
 
 Add resources here
 
