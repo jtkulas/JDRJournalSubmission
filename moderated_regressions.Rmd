@@ -188,9 +188,13 @@ challenge_resource_burnout_anova$`Pr(>F)`
 
 #r squared
 summary(challenge_resource_burnout_model2)
-summary(challenge_resource_burnout_model2)$coefficients[3, 1]
-  
-summary(challenge_resource_burnout_model3) 
+challenge_resource_burnout_model2_r <- summary(challenge_resource_burnout_model2)$r.squared
+summary(challenge_resource_burnout_model3)
+challenge_resource_burnout_model3_r <- summary(challenge_resource_burnout_model3)$r.squared
+
+challenge_resource_burnout_r_square_change <- challenge_resource_burnout_model3_r - challenge_resource_burnout_model2_r
+challenge_resource_burnout_r_square_change
+
 ```
 
 
