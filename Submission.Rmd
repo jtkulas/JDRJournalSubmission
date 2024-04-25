@@ -572,6 +572,9 @@ trial <- data_new[c(405:411, 413:419, 421:427)]
 
 ```
 
+
+
+
 ```{r scalelevelgraphs, fig.cap="Average characteristic rating grouped by literature-implicated categorizations."}
 
 #this is a placeholder for the scale level faceted graph found in plotscript_practice script file. 

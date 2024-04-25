@@ -1,0 +1,196 @@
+---
+title: "moderated_regressions"
+output: html_document
+date: "2024-04-13"
+---
+
+```{r data, include = FALSE}
+data <- read.csv("SIOPcleaned.csv")      ## from "datacleaning.R" script
+
+## Study 2 DVs
+
+data$item387      <- 7- data$item387           ## only reflected engagement item
+
+data$absorption   <- rowMeans(data[c(380:386)], na.rm=TRUE)
+data$vigor        <- rowMeans(data[c(387:392)], na.rm=TRUE) 
+data$dedication   <- rowMeans(data[c(393:399)], na.rm=TRUE) 
+
+data$cognitive    <- rowMeans(data[c(380:382, 387:388, 393:395)], na.rm=TRUE)
+data$affective    <- rowMeans(data[c(383:384, 389:390, 396:397)], na.rm=TRUE) 
+data$behavioral   <- rowMeans(data[c(385:386, 391:392, 398:399)], na.rm=TRUE) 
+
+######################################################
+
+data$burnout      <- rowMeans(data[c(373:376)], na.rm=TRUE)
+data$stress       <- rowMeans(data[c(377:379)], na.rm=TRUE)
+data$engagement   <- rowMeans(data[c(380:399)], na.rm=TRUE)        ## added 10/12 because analyses too wonky with 3 subscales
+
+alpha.abs <- psych::alpha(data[c(380:386)])
+alpha.vig <- psych::alpha(data[c(387:392)])
+alpha.ded <- psych::alpha(data[c(393:399)])
+alpha.eng <- psych::alpha(data[c(380:399)])
+
+alpha.bur <- psych::alpha(data[c(373:376)])
+alpha.str <- psych::alpha(data[c(377:379)])
+
+
+## O*NET categories
+
+data$onet.resource.ii <- rowMeans(data[c(162:166)], na.rm=TRUE)
+data$onet.resource.mp <- rowMeans(data[c(167:176)], na.rm=TRUE)
+data$onet.resource.wo <- rowMeans(data[c(177:185)], na.rm=TRUE)
+data$onet.resource.io <- rowMeans(data[c(186:202)], na.rm=TRUE)
+data$onet.resource.ir <- rowMeans(data[c(149:161)], na.rm=TRUE)
+data$onet.resource.pc <- rowMeans(data[c(128:144,146:148)], na.rm=TRUE)
+data$onet.resource.sc <- rowMeans(data[c(118:127)], na.rm=TRUE)
+
+overall.resource <- rowMeans(data[c(118:144,147:202)], na.rm=TRUE)
+
+data$onet.hindrance.ii <- rowMeans(data[c(246:247,249:252)], na.rm=TRUE)
+data$onet.hindrance.mp <- rowMeans(data[c(252:261)], na.rm=TRUE)
+data$onet.hindrance.wo <- rowMeans(data[c(262:270)], na.rm=TRUE)
+data$onet.hindrance.io <- rowMeans(data[c(271:287)], na.rm=TRUE)
+data$onet.hindrance.ir <- rowMeans(data[c(233:245)], na.rm=TRUE)
+data$onet.hindrance.pc <- rowMeans(data[c(213:232)], na.rm=TRUE)
+data$onet.hindrance.sc <- rowMeans(data[c(203:212)], na.rm=TRUE)
+
+overall.hindrance <- rowMeans(data[c(203:247,249:287)], na.rm=TRUE)
+
+data$onet.challenge.ii <- rowMeans(data[c(332:336)], na.rm=TRUE)
+data$onet.challenge.mp <- rowMeans(data[c(337:346)], na.rm=TRUE)
+data$onet.challenge.wo <- rowMeans(data[c(347:355)], na.rm=TRUE)
+data$onet.challenge.io <- rowMeans(data[c(356:372)], na.rm=TRUE)
+data$onet.challenge.ir <- rowMeans(data[c(319:331)], na.rm=TRUE)
+data$onet.challenge.pc <- rowMeans(data[c(298:307,309:318)], na.rm=TRUE)
+data$onet.challenge.sc <- rowMeans(data[c(288:297)], na.rm=TRUE)
+
+overall.challenge <- rowMeans(data[c(288:307,309:372)], na.rm=TRUE)
+
+```
+
+```{r Analyses with Row Sums}
+overall.resource <- rowSums(data[c(118:144,147:202)], na.rm=TRUE)
+summary(overall.resource) #202.3
+overall.hindrance <- rowSums(data[c(203:247,249:287)], na.rm=TRUE)
+summary(overall.hindrance) #159.2
+overall.challenge <- rowSums(data[c(288:307,309:372)], na.rm=TRUE)
+summary(overall.challenge) #204.2
+
+#centered predictors
+overall.resource_center <- overall.resource - 202.3
+overall.hindrance_center <- overall.hindrance - 159.2
+overall.challenge_center <- overall.challenge - 204.2
+```
+
+```{r Moderated Regression Challenge-Resource Burnout}
+
+challenge_resource_burnout_model1 <- lm(burnout ~ overall.challenge_center, data = data)
+summary(challenge_resource_burnout_model1)
+
+challenge_resource_burnout_model2 <- lm(burnout ~ overall.challenge_center + overall.resource, data = data)
+summary(challenge_resource_burnout_model2)
+
+challenge_resource_burnout_model3 <- lm(burnout ~ overall.challenge_center + overall.resource_center + overall.challenge_center*overall.resource_center, data = data)
+summary(challenge_resource_burnout_model3)
+
+aov_test <- anova(challenge_resource_burnout_model2, challenge_resource_burnout_model3)
+```
+
+```{r Moderated Regression Challenge-Resource Stress}
+
+challenge_resource_stress_model1 <- lm(stress ~ overall.challenge_center, data = data)
+summary(challenge_resource_stress_model1)
+
+challenge_resource_stress_model2 <- lm(stress ~ overall.challenge_center + overall.resource_center, data = data)
+summary(challenge_resource_stress_model2)
+
+challenge_resource_stress_model3 <- lm(stress ~ overall.challenge_center + overall.resource_center + overall.challenge_center*overall.resource_center, data = data)
+summary(challenge_resource_stress_model3)
+
+anova(challenge_resource_stress_model2, challenge_resource_stress_model3)
+```
+
+```{r Moderated Regression Challenge-Resource Engagement}
+
+challenge_resource_engagement_model1 <- lm(engagement ~ overall.challenge_center, data = data)
+summary(challenge_resource_engagement_model1)
+
+challenge_resource_engagement_model2 <- lm(engagement ~ overall.challenge_center + overall.resource_center, data = data)
+summary(challenge_resource_engagement_model2)
+
+challenge_resource_engagement_model3 <- lm(engagement ~ overall.challenge_center + overall.resource_center + overall.challenge_center*overall.resource_center, data = data)
+summary(challenge_resource_engagement_model3)
+
+anova(challenge_resource_engagement_model2, challenge_resource_engagement_model3)
+```
+
+```{r Moderated Regression Hindrance-Resource Burnout}
+
+hindrance_resource_model1 <- lm(burnout ~ overall.hindrance_center, data = data)
+summary(hindrance_resource_model1)
+
+hindrance_resource_burnout_model2 <- lm(burnout ~ overall.hindrance_center + overall.resource_center, data = data)
+summary(hindrance_resource_burnout_model2)
+
+hindrance_resource_burnout_model3 <- lm(burnout ~ overall.hindrance_center + overall.resource_center + overall.hindrance_center*overall.resource_center, data = data)
+summary(hindrance_resource_burnout_model3)
+
+anova(hindrance_resource_burnout_model2, hindrance_resource_burnout_model3)
+```
+
+```{r Moderated Regression Hindrance-Resource Stress}
+
+hindrance_resource_stress_model1 <- lm(stress ~ overall.hindrance_center, data = data)
+summary(hindrance_resource_stress_model1)
+
+hindrance_resource_stress_model2 <- lm(stress ~ overall.hindrance_center + overall.resource_center, data = data)
+summary(hindrance_resource_stress_model2)
+
+hindrance_resource_stress_model3 <- lm(stress ~ overall.hindrance_center + overall.resource_center + overall.hindrance_center*overall.resource_center, data = data)
+summary(hindrance_resource_stress_model3)
+
+anova(hindrance_resource_stress_model2, hindrance_resource_stress_model3)
+```
+
+```{r Moderated Regression Hindrance-Resource Engagement}
+
+hindrance_resource_engagement_model1 <- lm(engagement ~ overall.hindrance_center, data = data)
+summary(hindrance_resource_engagement_model1)
+
+hindrance_resource_engagement_model2 <- lm(engagement ~ overall.hindrance_center + overall.resource_center, data = data)
+summary(hindrance_resource_engagement_model2)
+
+hindrance_resource_engagement_model3 <- lm(engagement ~ overall.hindrance_center + overall.resource_center + overall.hindrance_center*overall.resource_center, data = data)
+summary(hindrance_resource_engagement_model3)
+
+anova(hindrance_resource_engagement_model2, hindrance_resource_engagement_model3)
+```
+
+```{r Numbers for Tables}
+summary(challenge_resource_burnout_model3)$coefficients
+
+#estimates - b weights
+summary(challenge_resource_burnout_model3)$coefficients[1, 1]
+summary(challenge_resource_burnout_model3)$coefficients[1, 2]
+summary(challenge_resource_burnout_model3)$coefficients[1, 3]
+summary(challenge_resource_burnout_model3)$coefficients[1, 4]
+
+# p values
+summary(challenge_resource_burnout_model3)$coefficients[4, 1]
+summary(challenge_resource_burnout_model3)$coefficients[4, 2]
+summary(challenge_resource_burnout_model3)$coefficients[4, 3]
+summary(challenge_resource_burnout_model3)$coefficients[4, 4]
+
+#F values (these are just the change from model 2 with main effects to model 3 that adds the interaction)
+challenge_resource_burnout_anova <- anova(challenge_resource_burnout_model2, challenge_resource_burnout_model3)
+challenge_resource_burnout_anova$F
+challenge_resource_burnout_anova$`Pr(>F)`
+
+#r squared
+summary(challenge_resource_burnout_model2)
+summary(challenge_resource_burnout_model2)$coefficients[3, 1]
+  
+summary(challenge_resource_burnout_model3)
+```
+
+
