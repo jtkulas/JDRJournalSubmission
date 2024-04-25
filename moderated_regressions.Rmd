@@ -190,7 +190,7 @@ challenge_resource_burnout_anova$`Pr(>F)`
 summary(challenge_resource_burnout_model2)
 summary(challenge_resource_burnout_model2)$coefficients[3, 1]
   
-summary(challenge_resource_burnout_model3)
+summary(challenge_resource_burnout_model3) 
 ```
 
 
