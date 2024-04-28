@@ -1,6 +1,6 @@
 ---
 title: "moderated_regressions"
-output: html_document
+output: pdf_document
 date: "2024-04-13"
 ---
 
@@ -167,34 +167,40 @@ anova(hindrance_resource_engagement_model2, hindrance_resource_engagement_model3
 ```
 
 ```{r Numbers for Tables}
-summary(challenge_resource_burnout_model3)$coefficients
 
-#estimates - b weights
-summary(challenge_resource_burnout_model3)$coefficients[1, 1]
-summary(challenge_resource_burnout_model3)$coefficients[1, 2]
-summary(challenge_resource_burnout_model3)$coefficients[1, 3]
-summary(challenge_resource_burnout_model3)$coefficients[1, 4]
+options(scipen=999)  ## Suppresses scientific notation
 
-# p values
-summary(challenge_resource_burnout_model3)$coefficients[4, 1]
-summary(challenge_resource_burnout_model3)$coefficients[4, 2]
-summary(challenge_resource_burnout_model3)$coefficients[4, 3]
-summary(challenge_resource_burnout_model3)$coefficients[4, 4]
+# b weights
+chal.2.burn <- round(summary(challenge_resource_burnout_model2)$coefficients[2, 1],6)
+res.2.burn <- round(summary(challenge_resource_burnout_model2)$coefficients[3, 1],6)
 
-#F values (these are just the change from model 2 with main effects to model 3 that adds the interaction)
-challenge_resource_burnout_anova <- anova(challenge_resource_burnout_model2, challenge_resource_burnout_model3)
-challenge_resource_burnout_anova$F
-challenge_resource_burnout_anova$`Pr(>F)`
+int.3.burn <- round(summary(challenge_resource_burnout_model3)$coefficients[4, 1],6)
 
 #r squared
-summary(challenge_resource_burnout_model2)
-challenge_resource_burnout_model2_r <- summary(challenge_resource_burnout_model2)$r.squared
-summary(challenge_resource_burnout_model3)
-challenge_resource_burnout_model3_r <- summary(challenge_resource_burnout_model3)$r.squared
+challenge_resource_burnout_model2_r <- round(summary(challenge_resource_burnout_model2)$r.squared,4)
+challenge_resource_burnout_model3_r <- round(summary(challenge_resource_burnout_model3)$r.squared,4)
 
-challenge_resource_burnout_r_square_change <- challenge_resource_burnout_model3_r - challenge_resource_burnout_model2_r
-challenge_resource_burnout_r_square_change
+
+## R square change
+challenge_resource_burnout_anova <- anova(challenge_resource_burnout_model2, challenge_resource_burnout_model3)
+challenge_resource_burnout_r_square_change <- round(challenge_resource_burnout_model3_r - challenge_resource_burnout_model2_r,4)
+
 
 ```
 
+```{r, results='asis'}
+
+library(kableExtra)
+
+DV <- c("Burnout","","")
+Step <- c("1", "","2")
+Model <- c("Challenge", "Resource", "Challenge X Resource")
+b <- c(chal.2.burn,res.2.burn,int.3.burn)
+DeltaR <- c("",paste(challenge_resource_burnout_model2_r,"**"),challenge_resource_burnout_r_square_change)
+
+regtable <- cbind(DV, Step, Model, b, DeltaR)
+
+papaja::apa_table(regtable)
+
+```
 
