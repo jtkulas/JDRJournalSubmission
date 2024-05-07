@@ -1,10 +1,22 @@
 ---
 title: "moderated_regressions"
-output: pdf_document
+output: 
+  pdf_document:
+    latex_engine: xelatex
 date: "2024-04-13"
 ---
 
 ```{r data, include = FALSE}
+
+sigfill <- function(x, sigfigs = 3){
+  out <- gsub("\\.$", "",
+              formatC(signif(x, digits = sigfigs),
+                      digits = sigfigs, format = "fg", flag = "#"))
+  out[grepl(".", out, fixed = TRUE)] <- strtrim(out[grepl(".", out, fixed = TRUE)],
+                                                sigfigs + c(1, 2)[grepl("-", out, fixed = TRUE) + 1])
+  return(out)
+}
+
 data <- read.csv("SIOPcleaned.csv")      ## from "datacleaning.R" script
 
 ## Study 2 DVs
@@ -270,12 +282,12 @@ res.2hr.eng <- round(summary(hr_eng_m2)$coefficients[3, 1],2)
 int.hr.3.eng <- round(summary(hr_eng_m3)$coefficients[4, 1],2)
 
 #r squared
-hr_eng_m2_r <- round(summary(hr_eng_m2)$r.squared,2)
-hr_eng_m3_r <- round(summary(hr_eng_m3)$r.squared,2)
+hr_eng_m2_r <- summary(hr_eng_m2)$r.squared
+hr_eng_m3_r <- summary(hr_eng_m3)$r.squared
 
 ## R square change
 hr_eng_anova <- anova(hr_eng_m2, hr_eng_m3)
-hr_eng_r_square_change <- round(hr_eng_m3_r - hr_eng_m2_r,2)
+hr_eng_r_square_change <- sigfill(hr_eng_m3_r - hr_eng_m2_r)
 ```
 
 ```{r, results='asis'}
@@ -316,14 +328,26 @@ library(kableExtra)
 DV <- c("Engagement","","", "Stress","","", "Burnout","","")
 Step <- c("1", "","2", "1", "","2", "1", "","2")
 Model <- c("Hindrance", "Resource", "Hindrance X Resource", "Hindrance", "Resource", "Hindrance X Resource", "Hindrance", "Resource", "Hindrance X Resource")
-Beta <- c(hind.2.eng, res.2hr.eng, int.hr.3.eng, hind.2.stress, res.2hr.stress, int.hr.3.stress, hind.2.burn, res.2hr.burn, int.hr.3.burn)
-R2 <- c("", hr_eng_m2_r, hr_eng_m3_r, "", hr_stress_m2_r, hr_stress_m3_r, "", hr_burn_m2_r, hr_burn_m3_r)
+Beta <- c(paste(hind.2.eng,"**"), paste(res.2hr.eng,"**"), int.hr.3.eng, paste(sigfill(hind.2.stress),"*"), paste(res.2hr.stress,"**"), paste(int.hr.3.stress,"**"), paste(sigfill(hind.2.burn),"*"), paste(res.2hr.burn,"*"), paste(int.hr.3.burn,"**"))
+R2 <- c("", paste(round(hr_eng_m2_r,2),"**"), paste(round(hr_eng_m3_r,2),"**"), "", paste(hr_stress_m2_r,"*"), paste(hr_stress_m3_r, "**"), "", paste(hr_burn_m2_r,"**"), paste(hr_burn_m3_r,"**"))
 #DeltaR <- c("",paste(hr_eng_m2_r,"**"),hr_eng_r_square_change, "",paste(hr_stress_m2_r,"**"),hr_stress_r_square_change, "",paste(hr_burn_m2_r,"**"),hr_burn_r_square_change)
-DeltaR <- c("","",hr_eng_r_square_change, "","",hr_stress_r_square_change, "","",hr_burn_r_square_change)
-regtable <- cbind(DV, Step, Model, Beta, R2, DeltaR)
+DeltaR <- c("","",hr_eng_r_square_change, "","",paste(hr_stress_r_square_change,"**"), "","",paste(hr_burn_r_square_change, "**"))
+regtable <- as.data.frame(cbind(DV, Step, Model, Beta, R2, DeltaR))
 
-papaja::apa_table(regtable)
+colnames(regtable)[4] <- "$\\beta$"
+colnames(regtable)[5] <- "$R^2$"
+colnames(regtable)[6] <- "$\\Delta R^2$"
+
+#kableExtra::kable(regtable,
+#                  format="latex",
+#                  escape=FALSE)
+
+papaja::apa_table(regtable,
+                 escape=FALSE,
+                 note="* = p < .05; ** = p < .01")
 # How to get delta symbol and superscript
 #https://cran.r-project.org/web/packages/reporter/vignettes/reporter-super.html#:~:text=To%20get%20superscripts%20or%20subscripts,to%20the%20desired%20cell%20value.
 
 ```
+ 
+
