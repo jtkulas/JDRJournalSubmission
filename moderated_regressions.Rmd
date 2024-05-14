@@ -362,7 +362,7 @@ library(interactions)
 cr_eng_m3u <- lm(engagement ~ overall.challenge_center + overall.resource_center + overall.challenge_center*overall.resource_center, data = data)
 summary(cr_eng_m3u)
 
-cr_eng_plot <- interact_plot(cr_eng_m3u, pred = overall.challenge_center, modx = overall.resource_center, interval = TRUE,
+cr_eng_plot <- interact_plot(cr_eng_m3u, pred = overall.challenge_center, modx = overall.resource_center, interval = FALSE,
               int.width = 0.8)
 cr_eng_plot
 ```
@@ -375,7 +375,7 @@ library(interactions)
 hr_stress_m3u <- lm(stress ~ overall.hindrance_center + overall.resource_center + overall.hindrance_center*overall.resource_center, data = data)
 summary(hr_stress_m3u)
 
-hr_stress_plot <- interact_plot(hr_stress_m3u, pred = overall.hindrance_center, modx = overall.resource_center, interval = TRUE,
+hr_stress_plot <- interact_plot(hr_stress_m3u, pred = overall.hindrance_center, modx = overall.resource_center, interval = FALSE, 
               int.width = 0.8)
 hr_stress_plot
 ```
@@ -387,7 +387,7 @@ library(interactions)
 hr_burn_m3u <- lm(burnout ~ overall.hindrance_center + overall.resource_center + overall.hindrance_center*overall.resource_center, data = data)
 summary(hr_burn_m3u)
 
-hr_burn_plot <- interact_plot(hr_burn_m3u, pred = overall.hindrance_center, modx = overall.resource_center, interval = TRUE,
+hr_burn_plot <- interact_plot(hr_burn_m3u, pred = overall.hindrance_center, modx = overall.resource_center, interval = FALSE, 
               int.width = 0.8)
 hr_burn_plot
 ```
