@@ -6,7 +6,7 @@ output:
 date: "2024-04-13"
 ---
 
-```{r data, include = FALSE}
+```{r modreg, include = FALSE}
 
 sigfill <- function(x, sigfigs = 3){
   out <- gsub("\\.$", "",
@@ -17,75 +17,75 @@ sigfill <- function(x, sigfigs = 3){
   return(out)
 }
 
-data <- read.csv("SIOPcleaned.csv")      ## from "datacleaning.R" script
+modreg <- read.csv("SIOPcleaned.csv")      ## from "datacleaning.R" script
 
 ## Study 2 DVs
 
-data$item387      <- 7- data$item387           ## only reflected engagement item
+modreg$item387      <- 7- modreg$item387           ## only reflected engagement item
 
-data$absorption   <- rowMeans(data[c(380:386)], na.rm=TRUE)
-data$vigor        <- rowMeans(data[c(387:392)], na.rm=TRUE) 
-data$dedication   <- rowMeans(data[c(393:399)], na.rm=TRUE) 
+modreg$absorption   <- rowMeans(modreg[c(380:386)], na.rm=TRUE)
+modreg$vigor        <- rowMeans(modreg[c(387:392)], na.rm=TRUE) 
+modreg$dedication   <- rowMeans(modreg[c(393:399)], na.rm=TRUE) 
 
-data$cognitive    <- rowMeans(data[c(380:382, 387:388, 393:395)], na.rm=TRUE)
-data$affective    <- rowMeans(data[c(383:384, 389:390, 396:397)], na.rm=TRUE) 
-data$behavioral   <- rowMeans(data[c(385:386, 391:392, 398:399)], na.rm=TRUE) 
+modreg$cognitive    <- rowMeans(modreg[c(380:382, 387:388, 393:395)], na.rm=TRUE)
+modreg$affective    <- rowMeans(modreg[c(383:384, 389:390, 396:397)], na.rm=TRUE) 
+modreg$behavioral   <- rowMeans(modreg[c(385:386, 391:392, 398:399)], na.rm=TRUE) 
 
 ######################################################
 
-data$burnout      <- rowMeans(data[c(373:376)], na.rm=TRUE)
-data$stress       <- rowMeans(data[c(377:379)], na.rm=TRUE)
-data$engagement   <- rowMeans(data[c(380:399)], na.rm=TRUE)        ## added 10/12 because analyses too wonky with 3 subscales
+modreg$burnout      <- rowMeans(modreg[c(373:376)], na.rm=TRUE)
+modreg$stress       <- rowMeans(modreg[c(377:379)], na.rm=TRUE)
+modreg$engagement   <- rowMeans(modreg[c(380:399)], na.rm=TRUE)        ## added 10/12 because analyses too wonky with 3 subscales
 
-alpha.abs <- psych::alpha(data[c(380:386)])
-alpha.vig <- psych::alpha(data[c(387:392)])
-alpha.ded <- psych::alpha(data[c(393:399)])
-alpha.eng <- psych::alpha(data[c(380:399)])
+alpha.abs <- psych::alpha(modreg[c(380:386)])
+alpha.vig <- psych::alpha(modreg[c(387:392)])
+alpha.ded <- psych::alpha(modreg[c(393:399)])
+alpha.eng <- psych::alpha(modreg[c(380:399)])
 
-alpha.bur <- psych::alpha(data[c(373:376)])
-alpha.str <- psych::alpha(data[c(377:379)])
+alpha.bur <- psych::alpha(modreg[c(373:376)])
+alpha.str <- psych::alpha(modreg[c(377:379)])
 
 
 ## O*NET categories
 
-data$onet.resource.ii <- rowMeans(data[c(162:166)], na.rm=TRUE)
-data$onet.resource.mp <- rowMeans(data[c(167:176)], na.rm=TRUE)
-data$onet.resource.wo <- rowMeans(data[c(177:185)], na.rm=TRUE)
-data$onet.resource.io <- rowMeans(data[c(186:202)], na.rm=TRUE)
-data$onet.resource.ir <- rowMeans(data[c(149:161)], na.rm=TRUE)
-data$onet.resource.pc <- rowMeans(data[c(128:144,146:148)], na.rm=TRUE)
-data$onet.resource.sc <- rowMeans(data[c(118:127)], na.rm=TRUE)
+modreg$onet.resource.ii <- rowMeans(modreg[c(162:166)], na.rm=TRUE)
+modreg$onet.resource.mp <- rowMeans(modreg[c(167:176)], na.rm=TRUE)
+modreg$onet.resource.wo <- rowMeans(modreg[c(177:185)], na.rm=TRUE)
+modreg$onet.resource.io <- rowMeans(modreg[c(186:202)], na.rm=TRUE)
+modreg$onet.resource.ir <- rowMeans(modreg[c(149:161)], na.rm=TRUE)
+modreg$onet.resource.pc <- rowMeans(modreg[c(128:144,146:148)], na.rm=TRUE)
+modreg$onet.resource.sc <- rowMeans(modreg[c(118:127)], na.rm=TRUE)
 
-overall.resource <- rowMeans(data[c(118:144,147:202)], na.rm=TRUE)
+overall.resource <- rowMeans(modreg[c(118:144,147:202)], na.rm=TRUE)
 
-data$onet.hindrance.ii <- rowMeans(data[c(246:247,249:252)], na.rm=TRUE)
-data$onet.hindrance.mp <- rowMeans(data[c(252:261)], na.rm=TRUE)
-data$onet.hindrance.wo <- rowMeans(data[c(262:270)], na.rm=TRUE)
-data$onet.hindrance.io <- rowMeans(data[c(271:287)], na.rm=TRUE)
-data$onet.hindrance.ir <- rowMeans(data[c(233:245)], na.rm=TRUE)
-data$onet.hindrance.pc <- rowMeans(data[c(213:232)], na.rm=TRUE)
-data$onet.hindrance.sc <- rowMeans(data[c(203:212)], na.rm=TRUE)
+modreg$onet.hindrance.ii <- rowMeans(modreg[c(246:247,249:252)], na.rm=TRUE)
+modreg$onet.hindrance.mp <- rowMeans(modreg[c(252:261)], na.rm=TRUE)
+modreg$onet.hindrance.wo <- rowMeans(modreg[c(262:270)], na.rm=TRUE)
+modreg$onet.hindrance.io <- rowMeans(modreg[c(271:287)], na.rm=TRUE)
+modreg$onet.hindrance.ir <- rowMeans(modreg[c(233:245)], na.rm=TRUE)
+modreg$onet.hindrance.pc <- rowMeans(modreg[c(213:232)], na.rm=TRUE)
+modreg$onet.hindrance.sc <- rowMeans(modreg[c(203:212)], na.rm=TRUE)
 
-overall.hindrance <- rowMeans(data[c(203:247,249:287)], na.rm=TRUE)
+overall.hindrance <- rowMeans(modreg[c(203:247,249:287)], na.rm=TRUE)
 
-data$onet.challenge.ii <- rowMeans(data[c(332:336)], na.rm=TRUE)
-data$onet.challenge.mp <- rowMeans(data[c(337:346)], na.rm=TRUE)
-data$onet.challenge.wo <- rowMeans(data[c(347:355)], na.rm=TRUE)
-data$onet.challenge.io <- rowMeans(data[c(356:372)], na.rm=TRUE)
-data$onet.challenge.ir <- rowMeans(data[c(319:331)], na.rm=TRUE)
-data$onet.challenge.pc <- rowMeans(data[c(298:307,309:318)], na.rm=TRUE)
-data$onet.challenge.sc <- rowMeans(data[c(288:297)], na.rm=TRUE)
+modreg$onet.challenge.ii <- rowMeans(modreg[c(332:336)], na.rm=TRUE)
+modreg$onet.challenge.mp <- rowMeans(modreg[c(337:346)], na.rm=TRUE)
+modreg$onet.challenge.wo <- rowMeans(modreg[c(347:355)], na.rm=TRUE)
+modreg$onet.challenge.io <- rowMeans(modreg[c(356:372)], na.rm=TRUE)
+modreg$onet.challenge.ir <- rowMeans(modreg[c(319:331)], na.rm=TRUE)
+modreg$onet.challenge.pc <- rowMeans(modreg[c(298:307,309:318)], na.rm=TRUE)
+modreg$onet.challenge.sc <- rowMeans(modreg[c(288:297)], na.rm=TRUE)
 
-overall.challenge <- rowMeans(data[c(288:307,309:372)], na.rm=TRUE)
+overall.challenge <- rowMeans(modreg[c(288:307,309:372)], na.rm=TRUE)
 
 ```
 
 ```{r Analyses with Row Sums}
-overall.resource <- rowSums(data[c(118:144,147:202)], na.rm=TRUE)
+overall.resource <- rowSums(modreg[c(118:144,147:202)], na.rm=TRUE)
 summary(overall.resource) #202.3
-overall.hindrance <- rowSums(data[c(203:247,249:287)], na.rm=TRUE)
+overall.hindrance <- rowSums(modreg[c(203:247,249:287)], na.rm=TRUE)
 summary(overall.hindrance) #159.2
-overall.challenge <- rowSums(data[c(288:307,309:372)], na.rm=TRUE)
+overall.challenge <- rowSums(modreg[c(288:307,309:372)], na.rm=TRUE)
 summary(overall.challenge) #204.2
 
 #centered predictors
@@ -96,13 +96,13 @@ overall.challenge_center <- overall.challenge - 204.2
 
 ```{r Moderated Regression Challenge-Resource Burnout}
 
-cr_burn_m1 <- lm(scale(burnout) ~ scale(overall.challenge_center), data = data)
+cr_burn_m1 <- lm(scale(burnout) ~ scale(overall.challenge_center), modreg)
 summary(cr_burn_m1)
 
-cr_burn_m2 <- lm(scale(burnout) ~ scale(overall.challenge_center) + scale(overall.resource), data = data)
+cr_burn_m2 <- lm(scale(burnout) ~ scale(overall.challenge_center) + scale(overall.resource), modreg)
 summary(cr_burn_m2)
 
-cr_burn_m3 <- lm(scale(burnout) ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), data = data)
+cr_burn_m3 <- lm(scale(burnout) ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), modreg)
 summary(cr_burn_m3)
 
 aov_test <- anova(cr_burn_m2, cr_burn_m3)
@@ -111,13 +111,13 @@ aov_test
 
 ```{r Moderated Regression Challenge-Resource Stress}
 
-cr_stress_m1 <- lm(scale(stress) ~ scale(overall.challenge_center), data = data)
+cr_stress_m1 <- lm(scale(stress) ~ scale(overall.challenge_center), modreg)
 summary(cr_stress_m1)
 
-cr_stress_m2 <- lm(scale(stress) ~ scale(overall.challenge_center) + scale(overall.resource_center), data = data)
+cr_stress_m2 <- lm(scale(stress) ~ scale(overall.challenge_center) + scale(overall.resource_center), modreg)
 summary(cr_stress_m2)
 
-cr_stress_m3 <- lm(scale(stress) ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), data = data)
+cr_stress_m3 <- lm(scale(stress) ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), modreg)
 summary(cr_stress_m3)
 
 cr_stress_anova <- anova(cr_stress_m2, cr_stress_m3)
@@ -126,13 +126,13 @@ cr_stress_anova
 
 ```{r Moderated Regression Challenge-Resource Engagement}
 
-cr_eng_m1 <- lm(scale(engagement) ~ scale(overall.challenge_center), data = data)
+cr_eng_m1 <- lm(scale(engagement) ~ scale(overall.challenge_center), modreg)
 summary(cr_eng_m1)
 
-cr_eng_m2 <- lm(scale(engagement) ~ scale(overall.challenge_center) + scale(overall.resource_center), data = data)
+cr_eng_m2 <- lm(scale(engagement) ~ scale(overall.challenge_center) + scale(overall.resource_center), modreg)
 summary(cr_eng_m2)
 
-cr_eng_m3 <- lm(scale(engagement) ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), data = data)
+cr_eng_m3 <- lm(scale(engagement) ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), modreg)
 summary(cr_eng_m3)
 
 cr_eng_anova <- anova(cr_eng_m2, cr_eng_m3)
@@ -141,13 +141,13 @@ cr_eng_anova
 
 ```{r Moderated Regression Hindrance-Resource Burnout}
 
-hr_burn_m1 <- lm(scale(burnout) ~ scale(overall.hindrance_center), data = data)
+hr_burn_m1 <- lm(scale(burnout) ~ scale(overall.hindrance_center), modreg)
 summary(hr_burn_m1)
 
-hr_burn_m2 <- lm(scale(burnout) ~ scale(overall.hindrance_center) + scale(overall.resource_center), data = data)
+hr_burn_m2 <- lm(scale(burnout) ~ scale(overall.hindrance_center) + scale(overall.resource_center), modreg)
 summary(hr_burn_m2)
 
-hr_burn_m3 <- lm(scale(burnout) ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), data = data)
+hr_burn_m3 <- lm(scale(burnout) ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), modreg)
 summary(hr_burn_m3)
 
 hr_burn_anova <- anova(hr_burn_m2, hr_burn_m3)
@@ -156,13 +156,13 @@ hr_burn_anova
 
 ```{r Moderated Regression Hindrance-Resource Stress}
 
-hr_stress_m1 <- lm(scale(stress) ~ scale(overall.hindrance_center), data = data)
+hr_stress_m1 <- lm(scale(stress) ~ scale(overall.hindrance_center), modreg)
 summary(hr_stress_m1)
 
-hr_stress_m2 <- lm(scale(stress) ~ scale(overall.hindrance_center) + scale(overall.resource_center), data = data)
+hr_stress_m2 <- lm(scale(stress) ~ scale(overall.hindrance_center) + scale(overall.resource_center), modreg)
 summary(hr_stress_m2)
 
-hr_stress_m3 <- lm(scale(stress) ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), data = data)
+hr_stress_m3 <- lm(scale(stress) ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), modreg)
 summary(hr_stress_m3)
 
 hr_stress_anova <- anova(hr_stress_m2, hr_stress_m3)
@@ -171,13 +171,13 @@ hr_stress_anova
 
 ```{r Moderated Regression Hindrance-Resource Engagement}
 
-hr_eng_m1 <- lm(scale(engagement) ~ scale(overall.hindrance_center), data = data)
+hr_eng_m1 <- lm(scale(engagement) ~ scale(overall.hindrance_center), modreg)
 summary(hr_eng_m1)
 
-hr_eng_m2 <- lm(scale(engagement) ~ scale(overall.hindrance_center) + scale(overall.resource_center), data = data)
+hr_eng_m2 <- lm(scale(engagement) ~ scale(overall.hindrance_center) + scale(overall.resource_center), modreg)
 summary(hr_eng_m2)
 
-hr_eng_m3 <- lm(scale(engagement) ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), data = data)
+hr_eng_m3 <- lm(scale(engagement) ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), modreg)
 summary(hr_eng_m3)
 
 hr_eng_anova <- anova(hr_eng_m2, hr_eng_m3)
@@ -359,7 +359,7 @@ papaja::apa_table(regtable,
 library(interactions)
 
 #running it with unstandardized bs here. 
-cr_eng_m3u <- lm(engagement ~ overall.challenge_center + overall.resource_center + overall.challenge_center*overall.resource_center, data = data)
+cr_eng_m3u <- lm(engagement ~ overall.challenge_center + overall.resource_center + overall.challenge_center*overall.resource_center, modreg)
 summary(cr_eng_m3u)
 
 cr_eng_plot <- interact_plot(cr_eng_m3u, pred = overall.challenge_center, modx = overall.resource_center, interval = FALSE,
@@ -372,7 +372,7 @@ cr_eng_plot
 #install.packages("interactions")
 library(interactions)
 
-hr_stress_m3u <- lm(stress ~ overall.hindrance_center + overall.resource_center + overall.hindrance_center*overall.resource_center, data = data)
+hr_stress_m3u <- lm(stress ~ overall.hindrance_center + overall.resource_center + overall.hindrance_center*overall.resource_center, modreg)
 summary(hr_stress_m3u)
 
 hr_stress_plot <- interact_plot(hr_stress_m3u, pred = overall.hindrance_center, modx = overall.resource_center, interval = FALSE, 
@@ -384,7 +384,7 @@ hr_stress_plot
 #install.packages("interactions")
 library(interactions)
 
-hr_burn_m3u <- lm(burnout ~ overall.hindrance_center + overall.resource_center + overall.hindrance_center*overall.resource_center, data = data)
+hr_burn_m3u <- lm(burnout ~ overall.hindrance_center + overall.resource_center + overall.hindrance_center*overall.resource_center, modreg)
 summary(hr_burn_m3u)
 
 hr_burn_plot <- interact_plot(hr_burn_m3u, pred = overall.hindrance_center, modx = overall.resource_center, interval = FALSE, 

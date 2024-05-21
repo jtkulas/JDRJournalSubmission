@@ -144,9 +144,9 @@ In addition to the these direct relationships, we aim to extend work suggesting 
 
 [^dontsaythat]: Is there a different term that can be used here? This is confusing given the more straightforward Resource/Demand terminology from above
 
->Hyp 4.a:Resources moderate the relationship between challenge stressors and the outcomes of strain and burnout such that these relationship become weaker as workers perceive more resources.
+>Hyp 4.a:Resources moderate the relationship between challenge stressors and the outcomes of strain and burnout such that these relationships become weaker as workers perceive more resources.
 
->Hyp 4.b:Resources moderate the relationship between hindrance stressors and the outcomes of strain and burnout such that these relationship become weaker as workers perceive more resources.
+>Hyp 4.b:Resources moderate the relationship between hindrance stressors and the outcomes of strain and burnout such that these relationships become weaker as workers perceive more resources.
 
 
 ```{r study1}
@@ -800,6 +800,412 @@ report8 <- rstatix::anova_test(data=particip,dv=score,wid=subject,within=type, e
 report9 <- rstatix::anova_test(data=teamcohe,dv=score,wid=subject,within=type, effect.size="pes") 
 report10 <- rstatix::anova_test(data=autonomy,dv=score,wid=subject,within=type, effect.size="pes")
 
+```
+
+
+```{r modreg, include = FALSE}
+# This is pasted from this point below (data object = modreg) from the 
+# moderated regression rmd file on 5/21/2024
+
+sigfill <- function(x, sigfigs = 3){
+  out <- gsub("\\.$", "",
+              formatC(signif(x, digits = sigfigs),
+                      digits = sigfigs, format = "fg", flag = "#"))
+  out[grepl(".", out, fixed = TRUE)] <- strtrim(out[grepl(".", out, fixed = TRUE)],
+                                                sigfigs + c(1, 2)[grepl("-", out, fixed = TRUE) + 1])
+  return(out)
+}
+
+modreg <- read.csv("SIOPcleaned.csv")      ## from "datacleaning.R" script
+
+## Study 2 DVs
+
+modreg$item387      <- 7- modreg$item387           ## only reflected engagement item
+
+modreg$absorption   <- rowMeans(modreg[c(380:386)], na.rm=TRUE)
+modreg$vigor        <- rowMeans(modreg[c(387:392)], na.rm=TRUE) 
+modreg$dedication   <- rowMeans(modreg[c(393:399)], na.rm=TRUE) 
+
+modreg$cognitive    <- rowMeans(modreg[c(380:382, 387:388, 393:395)], na.rm=TRUE)
+modreg$affective    <- rowMeans(modreg[c(383:384, 389:390, 396:397)], na.rm=TRUE) 
+modreg$behavioral   <- rowMeans(modreg[c(385:386, 391:392, 398:399)], na.rm=TRUE) 
+
+######################################################
+
+modreg$burnout      <- rowMeans(modreg[c(373:376)], na.rm=TRUE)
+modreg$stress       <- rowMeans(modreg[c(377:379)], na.rm=TRUE)
+modreg$engagement   <- rowMeans(modreg[c(380:399)], na.rm=TRUE)        ## added 10/12 because analyses too wonky with 3 subscales
+
+alpha.abs <- psych::alpha(modreg[c(380:386)])
+alpha.vig <- psych::alpha(modreg[c(387:392)])
+alpha.ded <- psych::alpha(modreg[c(393:399)])
+alpha.eng <- psych::alpha(modreg[c(380:399)])
+
+alpha.bur <- psych::alpha(modreg[c(373:376)])
+alpha.str <- psych::alpha(modreg[c(377:379)])
+
+
+## O*NET categories
+
+modreg$onet.resource.ii <- rowMeans(modreg[c(162:166)], na.rm=TRUE)
+modreg$onet.resource.mp <- rowMeans(modreg[c(167:176)], na.rm=TRUE)
+modreg$onet.resource.wo <- rowMeans(modreg[c(177:185)], na.rm=TRUE)
+modreg$onet.resource.io <- rowMeans(modreg[c(186:202)], na.rm=TRUE)
+modreg$onet.resource.ir <- rowMeans(modreg[c(149:161)], na.rm=TRUE)
+modreg$onet.resource.pc <- rowMeans(modreg[c(128:144,146:148)], na.rm=TRUE)
+modreg$onet.resource.sc <- rowMeans(modreg[c(118:127)], na.rm=TRUE)
+
+overall.resource <- rowMeans(modreg[c(118:144,147:202)], na.rm=TRUE)
+
+modreg$onet.hindrance.ii <- rowMeans(modreg[c(246:247,249:252)], na.rm=TRUE)
+modreg$onet.hindrance.mp <- rowMeans(modreg[c(252:261)], na.rm=TRUE)
+modreg$onet.hindrance.wo <- rowMeans(modreg[c(262:270)], na.rm=TRUE)
+modreg$onet.hindrance.io <- rowMeans(modreg[c(271:287)], na.rm=TRUE)
+modreg$onet.hindrance.ir <- rowMeans(modreg[c(233:245)], na.rm=TRUE)
+modreg$onet.hindrance.pc <- rowMeans(modreg[c(213:232)], na.rm=TRUE)
+modreg$onet.hindrance.sc <- rowMeans(modreg[c(203:212)], na.rm=TRUE)
+
+overall.hindrance <- rowMeans(modreg[c(203:247,249:287)], na.rm=TRUE)
+
+modreg$onet.challenge.ii <- rowMeans(modreg[c(332:336)], na.rm=TRUE)
+modreg$onet.challenge.mp <- rowMeans(modreg[c(337:346)], na.rm=TRUE)
+modreg$onet.challenge.wo <- rowMeans(modreg[c(347:355)], na.rm=TRUE)
+modreg$onet.challenge.io <- rowMeans(modreg[c(356:372)], na.rm=TRUE)
+modreg$onet.challenge.ir <- rowMeans(modreg[c(319:331)], na.rm=TRUE)
+modreg$onet.challenge.pc <- rowMeans(modreg[c(298:307,309:318)], na.rm=TRUE)
+modreg$onet.challenge.sc <- rowMeans(modreg[c(288:297)], na.rm=TRUE)
+
+overall.challenge <- rowMeans(modreg[c(288:307,309:372)], na.rm=TRUE)
+
+```
+We next explored whether there was statistical support for the hypothesis that the relationship between the challenge stressors and outcomes (i.e., engagement, stress, and burnout) were moderated by resources. In order to test for the presence of an interactive effect, a series of hierarchical regressions were conducted with challenge stressors and resources added in step one of the model and an interaction term, challenge stressors*resources, added in step two of the model. 
+
+```{r AnalyseswithRowSums}
+overall.resource <- rowSums(modreg[c(118:144,147:202)], na.rm=TRUE)
+#summary(overall.resource) #202.3
+overall.hindrance <- rowSums(modreg[c(203:247,249:287)], na.rm=TRUE)
+#summary(overall.hindrance) #159.2
+overall.challenge <- rowSums(modreg[c(288:307,309:372)], na.rm=TRUE)
+#summary(overall.challenge) #204.2
+
+#centered predictors
+overall.resource_center <- overall.resource - 202.3
+overall.hindrance_center <- overall.hindrance - 159.2
+overall.challenge_center <- overall.challenge - 204.2
+```
+
+```{r ModeratedRegressionChallenge-ResourceBurnout}
+
+cr_burn_m1 <- lm(scale(burnout) ~ scale(overall.challenge_center), modreg)
+#summary(cr_burn_m1)
+
+cr_burn_m2 <- lm(scale(burnout) ~ scale(overall.challenge_center) + scale(overall.resource), modreg)
+#summary(cr_burn_m2)
+
+cr_burn_m3 <- lm(scale(burnout) ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), modreg)
+#summary(cr_burn_m3)
+
+aov_test <- anova(cr_burn_m2, cr_burn_m3)
+#aov_test
+```
+
+```{r ModeratedRegressionChallenge-ResourceStress}
+
+cr_stress_m1 <- lm(scale(stress) ~ scale(overall.challenge_center), modreg)
+#summary(cr_stress_m1)
+
+cr_stress_m2 <- lm(scale(stress) ~ scale(overall.challenge_center) + scale(overall.resource_center), modreg)
+#summary(cr_stress_m2)
+
+cr_stress_m3 <- lm(scale(stress) ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), modreg)
+#summary(cr_stress_m3)
+
+cr_stress_anova <- anova(cr_stress_m2, cr_stress_m3)
+#cr_stress_anova
+```
+
+```{r Moderated Regression Challenge-ResourceEngagement}
+
+cr_eng_m1 <- lm(scale(engagement) ~ scale(overall.challenge_center), modreg)
+#summary(cr_eng_m1)
+
+cr_eng_m2 <- lm(scale(engagement) ~ scale(overall.challenge_center) + scale(overall.resource_center), modreg)
+#summary(cr_eng_m2)
+
+cr_eng_m3 <- lm(scale(engagement) ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), modreg)
+#summary(cr_eng_m3)
+
+cr_eng_anova <- anova(cr_eng_m2, cr_eng_m3)
+#cr_eng_anova
+```
+
+```{r Moderated Regression Hindrance-Resource Burnout}
+
+hr_burn_m1 <- lm(scale(burnout) ~ scale(overall.hindrance_center), modreg)
+#summary(hr_burn_m1)
+
+hr_burn_m2 <- lm(scale(burnout) ~ scale(overall.hindrance_center) + scale(overall.resource_center), modreg)
+#summary(hr_burn_m2)
+
+hr_burn_m3 <- lm(scale(burnout) ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), modreg)
+#summary(hr_burn_m3)
+
+hr_burn_anova <- anova(hr_burn_m2, hr_burn_m3)
+#hr_burn_anova
+```
+
+```{r ModeratedRegressionHindrance-ResourceStress}
+
+hr_stress_m1 <- lm(scale(stress) ~ scale(overall.hindrance_center), modreg)
+#summary(hr_stress_m1)
+
+hr_stress_m2 <- lm(scale(stress) ~ scale(overall.hindrance_center) + scale(overall.resource_center), modreg)
+#summary(hr_stress_m2)
+
+hr_stress_m3 <- lm(scale(stress) ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), modreg)
+#summary(hr_stress_m3)
+
+hr_stress_anova <- anova(hr_stress_m2, hr_stress_m3)
+#hr_stress_anova
+```
+
+```{r Moderated Regression Hindrance-Resource Engagement}
+
+hr_eng_m1 <- lm(scale(engagement) ~ scale(overall.hindrance_center), modreg)
+#summary(hr_eng_m1)
+
+hr_eng_m2 <- lm(scale(engagement) ~ scale(overall.hindrance_center) + scale(overall.resource_center), modreg)
+#summary(hr_eng_m2)
+
+hr_eng_m3 <- lm(scale(engagement) ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), modreg)
+#summary(hr_eng_m3)
+
+hr_eng_anova <- anova(hr_eng_m2, hr_eng_m3)
+#hr_eng_anova
+```
+
+```{r NumbersforTable1}
+
+options(scipen=999)  ## Suppresses scientific notation
+
+#Challenge-Resource-Burnout
+
+# b weights
+chal.2.burn <- round(summary(cr_burn_m2)$coefficients[2, 1],2)
+res.2.burn <- round(summary(cr_burn_m2)$coefficients[3, 1],2)
+
+int.cr.3.burn <- round(summary(cr_burn_m3)$coefficients[4, 1],2)
+
+#r squared
+cr_burn_m2_r <- summary(cr_burn_m2)$r.squared
+cr_burn_m3_r <- summary(cr_burn_m3)$r.squared
+
+## R square change
+cr_burn_anova <- anova(cr_burn_m2, cr_burn_m3)
+cr_burn_r_square_change <- sigfill(cr_burn_m3_r - cr_burn_m2_r)
+
+#Challenge-Resource-Stress
+
+# b weights
+chal.2.stress <- round(summary(cr_stress_m2)$coefficients[2, 1],2)
+res.2.stress <- round(summary(cr_stress_m2)$coefficients[3, 1],2)
+
+int.cr.3.stress <- round(summary(cr_stress_m3)$coefficients[4, 1],2)
+
+#r squared
+cr_stress_m2_r <- summary(cr_stress_m2)$r.squared
+cr_stress_m3_r <- summary(cr_stress_m3)$r.squared
+
+## R square change
+cr_stress_anova <- anova(cr_stress_m2, cr_stress_m3)
+cr_stress_r_square_change <- sigfill(cr_stress_m3_r - cr_stress_m2_r)
+
+#Challenge-Resource-Engagement
+
+# b weights
+chal.2.eng <- round(summary(cr_eng_m2)$coefficients[2, 1],2)
+res.2.eng <- round(summary(cr_eng_m2)$coefficients[3, 1],2)
+
+int.cr.3.eng <- round(summary(cr_eng_m3)$coefficients[4, 1],2)
+
+#r squared
+cr_eng_m2_r <- round(summary(cr_eng_m2)$r.squared,2)
+cr_eng_m3_r <- round(summary(cr_eng_m3)$r.squared,2)
+
+## R square change
+cr_eng_anova <- anova(cr_eng_m2, cr_eng_m3)
+cr_eng_r_square_change <- round(cr_eng_m3_r - cr_eng_m2_r,2)
+```
+
+```{r NumbersforTable2}
+
+options(scipen=999)  ## Suppresses scientific notation
+
+#Hindrance-Resource-Burnout
+
+# b weights
+hind.2.burn <- round(summary(hr_burn_m2)$coefficients[2, 1],2)
+res.2hr.burn <- round(summary(hr_burn_m2)$coefficients[3, 1],2)
+
+int.hr.3.burn <- round(summary(hr_burn_m3)$coefficients[4, 1],2)
+
+#r squared
+hr_burn_m2_r <- round(summary(hr_burn_m2)$r.squared,2)
+hr_burn_m3_r <- round(summary(hr_burn_m3)$r.squared,2)
+
+## R square change
+hr_burn_anova <- anova(hr_burn_m2, hr_burn_m3)
+hr_burn_r_square_change <- round(hr_burn_m3_r - hr_burn_m2_r,2)
+
+#Hindrance-Resource-Stress
+
+# b weights
+hind.2.stress <- round(summary(hr_stress_m2)$coefficients[2, 1],2)
+res.2hr.stress <- round(summary(hr_stress_m2)$coefficients[3, 1],2)
+
+int.hr.3.stress <- round(summary(hr_stress_m3)$coefficients[4, 1],2)
+
+#r squared
+hr_stress_m2_r <- round(summary(hr_stress_m2)$r.squared,2)
+hr_stress_m3_r <- round(summary(hr_stress_m3)$r.squared,2)
+
+## R square change
+hr_stress_anova <- anova(hr_stress_m2, hr_stress_m3)
+hr_stress_r_square_change <- round(hr_stress_m3_r - hr_stress_m2_r,2)
+
+#Hindrance-Resource-Engagement
+
+# b weights
+hind.2.eng <- round(summary(hr_eng_m2)$coefficients[2, 1],2)
+res.2hr.eng <- round(summary(hr_eng_m2)$coefficients[3, 1],2)
+
+int.hr.3.eng <- round(summary(hr_eng_m3)$coefficients[4, 1],2)
+
+#r squared
+hr_eng_m2_r <- summary(hr_eng_m2)$r.squared
+hr_eng_m3_r <- summary(hr_eng_m3)$r.squared
+
+## R square change
+hr_eng_anova <- anova(hr_eng_m2, hr_eng_m3)
+hr_eng_r_square_change <- sigfill(hr_eng_m3_r - hr_eng_m2_r)
+```
+
+```{r, results='asis', include=FALSE}
+#I'm not touching this script - using it as a model and making two new chunks
+library(kableExtra)
+
+DV <- c("Burnout","","")
+Step <- c("1", "","2")
+Model <- c("Challenge", "Resource", "Challenge X Resource")
+b <- c(chal.2.burn,res.2.burn,int.cr.3.burn)
+DeltaR <- c("",paste(cr_burn_m2_r,"**"),cr_burn_r_square_change)
+
+regtable <- cbind(DV, Step, Model, b, DeltaR)
+
+papaja::apa_table(regtable)
+
+```
+
+```{r chal-resource-table, results='asis'}
+
+library(kableExtra)
+
+DV <- c("Engagement","","", "Stress","","", "Burnout","","")
+Step <- c("1", "","2", "1", "","2", "1", "","2")
+Model <- c("Challenge", "Resource", "Challenge X Resource", "Challenge", "Resource", "Challenge X Resource", "Challenge", "Resource", "Challenge X Resource")
+Beta <- c(sigfill(chal.2.eng), paste(res.2.eng,"**"), paste(int.cr.3.eng,"*"), chal.2.stress, res.2.stress, int.cr.3.stress, paste(chal.2.burn,"**"), res.2.burn, int.cr.3.burn)
+R2 <- c("", paste(cr_eng_m2_r,"**"), paste(cr_eng_m3_r,"**"), "", round(cr_stress_m2_r,2), round(cr_stress_m3_r,2), "", paste(round(cr_burn_m2_r,2),"**"), paste(round(cr_burn_m3_r,2),"**"))
+DeltaR <- c("","", paste(cr_eng_r_square_change,"*"), "","",cr_stress_r_square_change, "","",cr_burn_r_square_change)
+
+regtable <- as.data.frame(cbind(DV, Step, Model, Beta, R2, DeltaR))
+
+colnames(regtable)[4] <- "$\\beta$"
+colnames(regtable)[5] <- "$R^2$"
+colnames(regtable)[6] <- "$\\Delta R^2$"
+
+papaja::apa_table(regtable, 
+                 escape=FALSE,
+                note="* = p < .05; ** = p < .01")
+```
+
+Table \@ref(tab:chal-resource-table) summarizes the results. Sum scores for the predictors were used here, and predictor variables were mean centered prior to running the following regressions. First exploring engagement, challenge stressors and resources explained XX% of the variance in engagement, $R^2$ = .xx. Adj. $R^2$ = .xx, which represents a statistically significant effect, *F*(x, xx) = xx.xx, *p* < xxx. The inclusion of the interaction term in step two of the model contributed a significant addition to the model, $Delta R^2$ = .xx, $Delta F$(xx, xx) = .xx, *p* = xx, and thus provides statistical support for the presence of moderation. The total model explained xx% of the variance in engagement, $R^2$ = .xx. Adj. $R^2$ = .xx, *F*(x, xx) = xx.xx, *p* <.xxx. Figure \@ref(fig:chal-resource-int) illustrates the interaction. With low levels of resources, the relationship between challenges and engagement is relatively flat and engagement is comparatively low. With more resources, the relationship between challenges and engagement is negative, but engagement still remains higher with greater reported challenge when more resources are perceived.
+
+Next, challenge stressors and resources explained XX% of the variance in stress, $R^2$ = .xx. Adj. $R^2$ = .xx, which represents a non-significant effect, *F*(x, xx) = xx.xx, *p* xxx. The inclusion of the interaction term in step two of the model did not add significantly to the model, $Delta R^2$ = .xx, $Delta F$(xx, xx) = .xx, *p* = xxx. The total model explained xx% of the variance in stress, $R^2$ = .xx. Adj. $R^2$ = .xx, *F*(x, xx) = xx.xx, *p* <.xxx. 
+
+Finally, challenge stressors and resources explained XX% of the variance in burnout, $R^2$ = .xx. Adj. $R^2$ = .xx, which represents a statistically significant effect, *F*(x, xx) = xx.xx, *p* xxx. The inclusion of the interaction term in step two of the model did not add significantly to the model, $Delta R^2$ = .xx, $Delta F$(xx, xx) = .xx, *p* = xxx. The total model explained xx% of the variance in stress, $R^2$ = .xx. Adj. $R^2$ = .xx, *F*(x, xx) = xx.xx, *p* <.xxx. In sum, these findings do not provide support for the assertion that resources would moderate the relationships between challenge stressors and the outcomes of strain  and burnout.
+
+
+```{r hind-resource-table, results='asis'}
+
+library(kableExtra)
+
+DV <- c("Engagement","","", "Stress","","", "Burnout","","")
+Step <- c("1", "","2", "1", "","2", "1", "","2")
+Model <- c("Hindrance", "Resource", "Hindrance X Resource", "Hindrance", "Resource", "Hindrance X Resource", "Hindrance", "Resource", "Hindrance X Resource")
+Beta <- c(paste(hind.2.eng,"**"), paste(res.2hr.eng,"**"), int.hr.3.eng, paste(sigfill(hind.2.stress),"*"), paste(res.2hr.stress,"**"), paste(int.hr.3.stress,"**"), paste(sigfill(hind.2.burn),"*"), paste(res.2hr.burn,"*"), paste(int.hr.3.burn,"**"))
+R2 <- c("", paste(round(hr_eng_m2_r,2),"**"), paste(round(hr_eng_m3_r,2),"**"), "", paste(hr_stress_m2_r,"*"), paste(hr_stress_m3_r, "**"), "", paste(hr_burn_m2_r,"**"), paste(hr_burn_m3_r,"**"))
+#DeltaR <- c("",paste(hr_eng_m2_r,"**"),hr_eng_r_square_change, "",paste(hr_stress_m2_r,"**"),hr_stress_r_square_change, "",paste(hr_burn_m2_r,"**"),hr_burn_r_square_change)
+DeltaR <- c("","",hr_eng_r_square_change, "","",paste(hr_stress_r_square_change,"**"), "","",paste(hr_burn_r_square_change, "**"))
+regtable <- as.data.frame(cbind(DV, Step, Model, Beta, R2, DeltaR))
+
+colnames(regtable)[4] <- "$\\beta$"
+colnames(regtable)[5] <- "$R^2$"
+colnames(regtable)[6] <- "$\\Delta R^2$"
+
+#kableExtra::kable(regtable,
+#                  format="latex",
+#                  escape=FALSE)
+
+papaja::apa_table(regtable,
+                 escape=FALSE,
+                 note="* = p < .05; ** = p < .01")
+```
+We also explored whether there was an interaction between hindrance stressors and resources on the outcomes (i.e., engagement, stress, and burnout). A second group of hierarchical regressions were conducted with hindrance stressors and resources added in step one of the model and an interaction term, hindrance stressors*resources, added in step two of the model. See Table \@ref(tab:ind-resource-table).
+
+Sum scores for the predictors were used here, and predictor variables were mean centered prior to running the following regressions. First, hindrance stressors and resources explained XX% of the variance in engagement, $R^2$ = .xx. Adj. $R^2$ = .xx, which represents a statistically significant effect, *F*(x, xx) = xx.xx, *p* xxx. The inclusion of the interaction term in step two of the model did not add significantly to the model, $Delta R^2$ = .xx, $Delta F$(xx, xx) = .xx, *p* = xxx. The total model explained xx% of the variance in engagement, $R^2$ = .xx. Adj. $R^2$ = .xx, *F*(x, xx) = xx.xx, *p* <.xxx.
+
+Next exploring stress, hindrance stressors and resources explained XX% of the variance in stress, $R^2$ = .xx. Adj. $R^2$ = .xx, which represents a statistically significant effect, *F*(x, xx) = xx.xx, *p* xxx. The inclusion of the interaction term in step two of the model contributed a significant addition to the model, $Delta R^2$ = .xx, $Delta F$(xx, xx) = .xx, *p* = xx, and thus provides statistical support for the presence of moderation. The total model explained xx% of the variance in stress, $R^2$ = .xx. Adj. $R^2$ = .xx, *F*(x, xx) = xx.xx, *p* <.xxx. See Figure \@ref(fig:hind-resource-stress-int). As expected, the relationship between hindrance stressors and strain becomes weaker as workers perceive more resources.
+
+Similarly, hindrance stressors and resources explained XX% of the variance in burnout, $R^2$ = .xx. Adj. $R^2$ = .xx, *F*(x, xx) = xx.xx, *p* xxx. The inclusion of the interaction term in step two of the model contributed a significant addition to the model, $Delta R^2$ = .xx, $Delta F$(xx, xx) = .xx, *p* = xx. The total model explained xx% of the variance in burnout,$R^2$ = .xx. Adj. $R^2$ = .xx, *F*(x, xx) = xx.xx, *p* <.xxx. Again, see Figure \@ref(fig:hind-resource-burn-int). As expected, the relationship between hindrance stressors and burnout becomes weaker as workers perceive more resources.
+
+Summatively these findings provide support for the assertion that resources would moderate the relationships between hindrance stressors and the outcomes of strain and burnout.
+
+```{r chal-resource-int, fig.cap="Interaction between Challenge and Resources on Engagement"}
+#install.packages("interactions")
+library(interactions)
+
+#running it with unstandardized bs here. 
+cr_eng_m3u <- lm(engagement ~ overall.challenge_center + overall.resource_center + overall.challenge_center*overall.resource_center, modreg)
+#summary(cr_eng_m3u)
+
+cr_eng_plot <- interact_plot(cr_eng_m3u, pred = overall.challenge_center, modx = overall.resource_center, interval = FALSE,
+              int.width = 0.8)
+cr_eng_plot
+```
+
+
+```{r hind-resource-stress-int, fig.cap="Interaction between Hindrances and Resources on Stress"}
+#install.packages("interactions")
+library(interactions)
+
+hr_stress_m3u <- lm(stress ~ overall.hindrance_center + overall.resource_center + overall.hindrance_center*overall.resource_center, modreg)
+#summary(hr_stress_m3u)
+
+hr_stress_plot <- interact_plot(hr_stress_m3u, pred = overall.hindrance_center, modx = overall.resource_center, interval = FALSE, 
+              int.width = 0.8)
+hr_stress_plot
+```
+
+```{r hind-resource-burn-int, fig.cap="Interaction between Hindrances and Resources on Burnout"}
+#install.packages("interactions")
+library(interactions)
+
+hr_burn_m3u <- lm(burnout ~ overall.hindrance_center + overall.resource_center + overall.hindrance_center*overall.resource_center, modreg)
+#summary(hr_burn_m3u)
+
+hr_burn_plot <- interact_plot(hr_burn_m3u, pred = overall.hindrance_center, modx = overall.resource_center, interval = FALSE, 
+              int.width = 0.8)
+hr_burn_plot
 ```
 
 In addition to the two hypotheses, two related research questions were proposed: 1) do literature-implicated resources materialize as perceived resources and 2) do literature-implicated demands materialize as perceived demands? To answer these questions, authors first categorized O\*Net items into the elements listed in the JD-R literature. For example, autonomy is frequently described as a resource. An O\*Net item is, “How much decision making freedom, without supervision, does your job offer?”. This O\*Net item was retained within the "autonomy" category. Mean ratings of the O\*Net items were then computed by element (e.g., all of the items representing autonomy) to explore whether literature-implicated resources and demands were evaluated as such. 
