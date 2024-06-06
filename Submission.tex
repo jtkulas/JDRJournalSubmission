@@ -62,38 +62,28 @@
   \let\oldsubparagraph\subparagraph
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
-% definitions for citeproc citations
-\NewDocumentCommand\citeproctext{}{}
-\NewDocumentCommand\citeproc{mm}{%
-  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
-\makeatletter
- % allow citations to break across lines
- \let\@cite@ofmt\@firstofone
- % avoid brackets around text for \cite:
- \def\@biblabel#1{}
- \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
-\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
- {\begin{list}{}{%
-  \setlength{\itemindent}{0pt}
-  \setlength{\leftmargin}{0pt}
-  \setlength{\parsep}{0pt}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-   \setlength{\leftmargin}{\cslhangindent}
-   \setlength{\itemindent}{-1\cslhangindent}
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
   \fi
   % set entry spacing
-  \setlength{\itemsep}{#2\baselineskip}}}
- {\end{list}}
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -148,13 +138,13 @@
   {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
 \makeatother
 
+% \usepackage{etoolbox}
 \makeatletter
-\usepackage{etoolbox}
-\patchcmd{\maketitle}
+\patchcmd{\HyOrg@maketitle}
   {\section{\normalfont\normalsize\abstractname}}
   {\section*{\normalfont\normalsize\abstractname}}
   {}{\typeout{Failed to patch abstract.}}
-\patchcmd{\maketitle}
+\patchcmd{\HyOrg@maketitle}
   {\section{\protect\normalfont{\@title}}}
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
@@ -176,7 +166,7 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\usepackage{bookmark}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
@@ -212,7 +202,8 @@ Much of our understanding of job demands and resources rests on an assumption th
 
 While we have accumulated a vast literature on how job demands and resources relate to and influence key organizational outcomes, recent work has called into question some of our basic assumptions regarding the experience of demands in particular. We build on the work of a small, but growing number of researchers who argue that work elements may be appraised simultaneously as resources and demands (Webster et al., 2011) or that appraisals may change over time (Rosen et al., 2020). Our primary aims explore whether: 1) variability exists in subjective ratings of job characteristics with respect to how much they serve as resources and demands, 2) some characteristics are more likely than others to vary across demand and resource, 3) whether subjective appraisals are differentially related to positive and negative outcomes, and lastly, 4) if resources buffer the relationships between stressors (challenge and hindrance) and outcomes. To illuminate these questions, we consult the \href{https://www.onetcenter.org/content.html}{O*Net database}, which provides a rich source of information about occupational requirements (i.e., work activities and context). We retain O*Net terminology of working condition elements throughout this paper (e.g., personal, contextual, or task-related conditions or elements of one's work).
 
-\subsection{The Job Demands-Resources Theory and Challenge-Hindrance Stressor Framework}\label{the-job-demands-resources-theory-and-challenge-hindrance-stressor-framework}
+\hypertarget{the-job-demands-resources-theory-and-challenge-hindrance-stressor-framework}{%
+\subsection{The Job Demands-Resources Theory and Challenge-Hindrance Stressor Framework}\label{the-job-demands-resources-theory-and-challenge-hindrance-stressor-framework}}
 
 Two related theories serve as the foundation for the current study: the job demands-resources theory (e.g., Bakker \& Demerouti, 2014, 2017) and Cavanaugh et al. (2000)'s challenge-hindrance stressor framework. The job demands-resources theory (e.g., Bakker \& Demerouti, 2014, 2017) highlights the importance of demands and resources on the experience of motivation and strain as well as other, more distal outcomes. \emph{Resources} include physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development (e.g., Bakker \& Demerouti, 2014, 2017). In contrast, demands include components of a job that require sustained effort, and as such, produce psychological or physiological strain (high work pressure, for example, is commonly cited as a demand, e.g., Demerouti et al., 2001). The perception of an element of one's job as a resource or demand activates one of two distinct processes: either health impairment (resulting from demands) or motivation (resulting from resources; Bakker and Demerouti (2014)).
 
@@ -224,7 +215,8 @@ M. A. LePine (2022) explain the mechanisms by which demands are related to perfo
 
 Recent work affirms these appraisal processes. Pindek et al. (2024) meta-analyzed diary studies of dynamic stressors (i.e., short-term daily experiences of stressors) and concluded that daily challenge stressors had a positive \emph{direct} association with performance, but a negative \emph{indirect} association with performance through strain (as described by M. A. LePine (2022) above). As expected, hindrance stressors had both direct and indirect (through strain) associations with performance (Pindek et al., 2024).
 
-\subsection{Are Perceptions of Job Resources, Challenge Demands, and Hindrance Demands Universal?}\label{are-perceptions-of-job-resources-challenge-demands-and-hindrance-demands-universal}
+\hypertarget{are-perceptions-of-job-resources-challenge-demands-and-hindrance-demands-universal}{%
+\subsection{Are Perceptions of Job Resources, Challenge Demands, and Hindrance Demands Universal?}\label{are-perceptions-of-job-resources-challenge-demands-and-hindrance-demands-universal}}
 
 Interestingly, much of our existing knowledge regarding the way these relationships between resources/demands and outcomes (e.g., stress, engagement) function is grounded in the assumption that certain job characteristics can generally be considered to be (positive) resources while others can be considered demands. Even Pindek et al. (2024) notes this limitation of a priori classification of characteristics as demands, challenges, or hindrances, as do Horan et al. (2020). In fact, although much of our research on job demands based on a priori classifications (Searle \& Auton, 2015), we contend that the classification of a work characteristic as a demand or resource is largely subjective by nature (e.g., an employee could most certainly perceive public speaking as a resource or as a demand).
 
@@ -240,7 +232,8 @@ Hypothesis 1: Job characteristics differ in consistancy regarding subjective wor
 Hypothesis 2: Job characteristics are not exclusively categorized as a resource or demand, but rather, some job characteristics are viewed as both a resource and a demand.
 \end{quote}
 
-\subsection{Connecting Appraisals to Workplace Outcomes}\label{connecting-appraisals-to-workplace-outcomes}
+\hypertarget{connecting-appraisals-to-workplace-outcomes}{%
+\subsection{Connecting Appraisals to Workplace Outcomes}\label{connecting-appraisals-to-workplace-outcomes}}
 
 The second set of analyses focuses on predicted associations without relevant work-relevant outcomes frequently studied across via job demands-resources- (Bakker \& Demerouti, 2017) and challenge-hindrance stressor-frameworks (Cavanaugh et al., 2000). Here, we specifically explore appraisals of O*Net-derived work characteristics as resources, challenges, and/or hindrances in association with engagement, strain and burnout. As argued above, appraisals are predicted to be associated with different forms of coping, and subsequently, outcomes. See Figure \ref{fig:ourmodel} for proposed associations.
 
@@ -270,23 +263,28 @@ Hyp 4.a:Resources moderate the relationship between challenge stressors and the 
 Hyp 4.b:Resources moderate the relationship between hindrance stressors and the outcomes of strain and burnout such that these relationships become weaker as workers perceive more resources.
 \end{quote}
 
-\section{Method}\label{method}
+\hypertarget{method}{%
+\section{Method}\label{method}}
 
-\subsection{Participants}\label{participants}
+\hypertarget{participants}{%
+\subsection{Participants}\label{participants}}
 
 Of the 785 individuals who initially accessed the survey link, 112 indicated that they were not interested, had more than 200 missing responses, or had 20 or more identical consecutive sequential responses (Yentes \& Wilhelm, 2021). Applying a further screen regarding attention checks (there were four attention checks embedded throughout, asking respondents to indicate a specific answer) resulted in the retention of 568 respondents who constitute the current sample. Regarding tenure, 13.57\% had been in their referent job less than 6 months, 19.20\% between 6 months and a year, 49.12\% between one and five years, 13.27\% between 5 and 10 years, and 4.87\% more than 10 years. Respondent ages ranged from 18 to 65 with an average of 28.18 years old (\emph{SD} = 7.53). The survey offered a free-field gender identity category, although the sample predominantly self-identified as female (52.58\%) or male (46.83\%).
 
-\subsection{Materials}\label{materials}
+\hypertarget{materials}{%
+\subsection{Materials}\label{materials}}
 
 The Occupational Information Network (O*Net) contains a comprehensive description of occupations (Peterson et al., 2001). This widely accessed database houses hundreds of standardized and occupation-specific descriptors of occupations in the US and these descriptions are continually updated. We focused on 98 work \href{https://www.ONETonline.org/find/descriptor/result/4.A.1.b.3}{activity and context statements} which O*Net groups into \emph{activity} categories of information input (e.g., where and how are the information and data gained that are needed to perform this job?), interacting with others (e.g., what interactions with other persons or supervisory activities occur while performing this job?), mental processes (e.g., what processing, planning, problem-solving, decision-making, and innovating activities are performed with job-relevant information?) and work output (e.g., what physical activities are performed, what equipment and vehicles are operated/controlled, and what complex/technical activities are accomplished as job outputs?). Work \emph{context} statements are grouped into interpersonal relationships (e.g., the context of the job in terms of human interaction processes), physical work conditions (e.g., the work context as it relates to the interactions between the worker and the physical job environment), and structural job characteristics (e.g., the relationships or interactions between the worker and the structural characteristics of the job).
 
 O*Net collects information about these categories by periodically asking workers job characteristic questions, which often have \href{https://www.ONETonline.org/find/descriptor/result/4.C.1.c.2}{unique response categories}. For example, ``How responsible is the worker for work outcomes and results of other workers?'' has response options ranging from \emph{no responsibility} to \emph{very high responsibility}, while the question, ``How often do you use electronic mail in this job?'' has options ranging from \emph{never} to \emph{every day}. We retained O*Net's response scales while asking for statement relevance, all of which shared the same 5-point scale regardless of semantic label difference. Other than minor grammatical editing (for example, changing ``the worker'' to ``you''), we also retained the O*Net wording for our item stems.
 
-\subsection{Procedure}\label{procedure}
+\hypertarget{procedure}{%
+\subsection{Procedure}\label{procedure}}
 
 Data were collected through Prolific, an online data collection platform. An email was sent to a random subset of all eligible participants in the Prolific respondent pool, notifying them about their eligibility for the study based on demographic information. Eligibility requirements included being 18 or older and holding either a full-time or part-time job. Participants then voluntarily chose to respond to the online survey after reading an informed consent. Participants were asked to think about their primary job, and the items they were presented with depended on the specific job characteristics they initially specified. Thus, if a respondent indicated that a characteristic was not part of their job, they were not subsequently asked to rate the level of resource (\ldots this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development), challenge (\ldots this aspect of your job is a challenge that can promote mastery, personal growth, or future gains), or hindrance (\ldots this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment) in randomized order. The total number of items on the survey was less than 392 (98 characteristics x 4 repeated measurements) because we did not ask for demand and resource evaluations for 14 O*Net characteristics that we projected would have very low frequency of endorsement across respondents (one excluded characteristic, for example, was \emph{\ldots the extent to which the worker is exposed to radiation on the job}). Participants were compensated for their participation in this study estimated to require 45 minutes' time in the amount of six dollars through Prolific.
 
-\section{Results}\label{results}
+\hypertarget{results}{%
+\section{Results}\label{results}}
 
 \begin{figure}
 \centering
@@ -355,7 +353,11 @@ Burnout & 1 & Challenge & 0.33 ** &  & \\
 
 \end{table*}
 
-Table \ref{tab:chal-resource-table} summarizes the results. Sum scores for the predictors were used here, and predictor variables were mean centered prior to running the following regressions. First exploring engagement, \(R^2\) = 0.15, Adj. \(R^2\) = 0.15 which represents a statistically significant effect, \(F(2, 565) = 10.68\), \(p < .001\). The inclusion of the interaction term in step two of the model contributed a significant addition to the model, \(\Delta R^2\) = 0.00, \(\Delta F\) (1, 564) = 5.82, and thus provides statistical support for the presence of moderation. The total model explained xx\% of the variance in engagement, \(F(3, 564) = 9.49\), \(p < .001\) Figure \ref{fig:chal-resource-int} illustrates the interaction. With low levels of resources, the relationship between challenges and engagement is relatively flat and engagement is comparatively low. With more resources, the relationship between challenges and engagement is negative, but engagement still remains higher with greater reported challenge when more resources are perceived.
+Table \ref{tab:chal-resource-table} summarizes the results. Sum scores for the predictors were used here, and predictor variables were mean centered prior to running the following regressions. First, challenges and resources explained a statistically significant amount of the variability in engagement, \(R^2\) = 0.15, Adj. \(R^2\) = 0.15, \(F(2, 565) = 50.09\), \(p < .001\). The inclusion of the interaction term in step two of the model contributed a significant addition to the model, \(F(3, 564) = 35.62\), \(p < .001\), \(\Delta R^2\) = 0.01, \(\Delta F\) (1, 564) = 5.82, and thus provides statistical support for the presence of moderation. Figure \ref{fig:chal-resource-int} illustrates the interaction. With low levels of resources, the relationship between challenges and engagement is relatively flat and engagement is comparatively low. With more resources, the relationship between challenges and engagement is negative, but engagement still remains higher with greater reported challenge when more resources are perceived.
+
+Next, challenge stressors and resources did not explain a significant amount of the variance in stress, \(R^2\) = 0.01, Adj. \(R^2\) = 0, \(F(2, 565) = 1.67\), \(p = .189\). The inclusion of the interaction term in step two of the model did not contribute a significant addition to the model,\(F(3, 564) = 1.17\), \(p = .320\), \(\Delta R^2\) = 0.00, \(\Delta F\) (1, 564) = 0.17, and thus does not support the presence of moderation.
+
+Finally, challenge stressors and resources explained a statsically significant amount of the variability in burnout, \(R^2\) = 0.04, Adj. \(R^2\) = 0.04, \(F(2, 565) = 1.67\), \(p = .189\). The inclusion of the interaction term in step two of the model did not contribute a significant addition to the model, \(F(3, 564) = 1.17\), \(p = .320\), \(\Delta R^2\) = 0.00, \(\Delta F\) (1, 564) = 2.25, and thus failing to provide statistical support for the presence of moderation. In sum, these findings do not provide support for the assertion that resources would moderate the relationships between challenge stressors and the outcomes of strain and burnout.
 
 \begin{table*}[tbp]
 
@@ -392,15 +394,11 @@ Burnout & 1 & Hindrance & 0.10 * &  & \\
 
 We also explored whether there was an interaction between hindrance stressors and resources on the outcomes (i.e., engagement, stress, and burnout). A second group of hierarchical regressions were conducted with hindrance stressors and resources added in step one of the model and an interaction term, hindrance stressors x resources, added in step two of the model. See Table \ref{tab:hind-resource-table}.
 
-Next, challenge stressors and resources explained XX\% of the variance in stress, \(R^2\) = .xx. Adj. \(R^2\) = .xx, which represents a non-significant effect, \emph{F}(x, xx) = xx.xx, \emph{p} xxx. The inclusion of the interaction term in step two of the model did not add significantly to the model, \(\Delta R^2\) = .xx, \(\Delta F\)(xx, xx) = .xx, \emph{p} = xxx. The total model explained xx\% of the variance in stress, \(R^2\) = .xx. Adj. \(R^2\) = .xx, \emph{F}(x, xx) = xx.xx, \emph{p} \textless.xxx.
+Sum scores for the predictors were used here, and predictor variables were mean centered prior to running the following regressions. First, hindrance stressors and resources explained a statistically significant amount of the variability in engagement, \(R^2\) = 0.17, Adj. \(R^2\) = 0.16, \(F(2, 565) = 55.90\), \(p < .001\). The inclusion of the interaction term in step two of the model did not contribute a significant addition to the model, \(F(3, 564) = 37.25\), \(p < .001\), \(\Delta R^2\) = 0.00, \(\Delta F\) (1, 564) = 0.13. An interaction between hindrances and resources was not found.
 
-Finally, challenge stressors and resources explained XX\% of the variance in burnout, \(R^2\) = .xx. Adj. \(R^2\) = .xx, which represents a statistically significant effect, \emph{F}(x, xx) = xx.xx, \emph{p} xxx. The inclusion of the interaction term in step two of the model did not add significantly to the model, \(\Delta R^2\) = .xx, \(\Delta F\)(xx, xx) = .xx, \emph{p} = xxx. The total model explained xx\% of the variance in stress, \(R^2\) = .xx. Adj. \(R^2\) = .xx, \emph{F}(x, xx) = xx.xx, \emph{p} \textless.xxx. In sum, these findings do not provide support for the assertion that resources would moderate the relationships between challenge stressors and the outcomes of strain and burnout.
+Next exploring stress, hindrance stressors and resources explained a statistically significant amount of the variability in stress, \(R^2\) = 0.01, Adj. \(R^2\) = 0.01, \(F(2, 565) = 3.13\), \(p = .045\). The inclusion of the interaction term in step two of the model contributed a significant addition to the model, \(F(3, 564) = 6.89\), \(p < .001\), \(\Delta R^2\) = 0.03, \(\Delta F\) (1, 564) = 14.28, supporting the presence of a moderated effect. See Figure \ref{fig:hind-resource-stress-int}. As expected, the relationship between hindrance stressors and strain becomes weaker as workers perceive more resources.
 
-Sum scores for the predictors were used here, and predictor variables were mean centered prior to running the following regressions. First, hindrance stressors and resources explained XX\% of the variance in engagement, \(R^2\) = .xx. Adj. \(R^2\) = .xx, which represents a statistically significant effect, \emph{F}(x, xx) = xx.xx, \emph{p} xxx. The inclusion of the interaction term in step two of the model did not add significantly to the model, \(\Delta R^2\) = .xx, \(\Delta F\)(xx, xx) = .xx, \emph{p} = xxx. The total model explained xx\% of the variance in engagement, \(R^2\) = .xx. Adj. \(R^2\) = .xx, \emph{F}(x, xx) = xx.xx, \emph{p} \textless.xxx.
-
-Next exploring stress, hindrance stressors and resources explained XX\% of the variance in stress, \(R^2\) = .xx. Adj. \(R^2\) = .xx, which represents a statistically significant effect, \emph{F}(x, xx) = xx.xx, \emph{p} xxx. The inclusion of the interaction term in step two of the model contributed a significant addition to the model, \(\Delta R^2\) = .xx, \(\Delta F\)(xx, xx) = .xx, \emph{p} = xx, and thus provides statistical support for the presence of moderation. The total model explained xx\% of the variance in stress, \(R^2\) = .xx. Adj. \(R^2\) = .xx, \emph{F}(x, xx) = xx.xx, \emph{p} \textless.xxx. See Figure \ref{fig:hind-resource-stress-int}. As expected, the relationship between hindrance stressors and strain becomes weaker as workers perceive more resources.
-
-Similarly, hindrance stressors and resources explained XX\% of the variance in burnout, \(R^2\) = .xx. Adj. \(R^2\) = .xx, \emph{F}(x, xx) = xx.xx, \emph{p} xxx. The inclusion of the interaction term in step two of the model contributed a significant addition to the model, \(\Delta R^2\) = .xx, \(\Delta F\)(xx, xx) = .xx, \emph{p} = xx. The total model explained xx\% of the variance in burnout,\(R^2\) = .xx. Adj. \(R^2\) = .xx, \emph{F}(x, xx) = xx.xx, \emph{p} \textless.xxx. Again, see Figure \ref{fig:hind-resource-burn-int}. As expected, the relationship between hindrance stressors and burnout becomes weaker as workers perceive more resources.
+Similarly, hindrance stressors and resources explained a statistically significant amount of the variability in burnout, \(R^2\) = 0.04, Adj. \(R^2\) = 0.03, \(F(2, 565) = 10.68\), \(p < .001\). The inclusion of the interaction term in step two of the model contributed a significant addition to the model, \(F(3, 564) = 9.49\), \(p < .001\), \(\Delta R^2\) = 0.01, \(\Delta F\) (1, 564) = 6.89, supporting the presence of a moderated effect. The total model explained xx\% of the variance in burnout,\(R^2\) = .xx. Adj. \(R^2\) = .xx, \emph{F}(x, xx) = xx.xx, \emph{p} \textless.xxx. Again, see Figure \ref{fig:hind-resource-burn-int}. As expected, the relationship between hindrance stressors and burnout becomes weaker as workers perceive more resources.
 
 Summatively these findings provide support for the assertion that resources would moderate the relationships between hindrance stressors and the outcomes of strain and burnout.
 
@@ -434,17 +432,20 @@ The effect for Team Cohesion was \(F_{(2, 1120)}\) = 853.39 (\(\eta^2\) = 0.60).
 Next, repeated-measures ANOVAs were also run for the group of literature-implicated \emph{demands} (see the left hand side of Figure \ref{fig:scalelevelgraphs}). The effect for Overwork was \(F_{(2, 1134)}\) = 17.71 (\(\eta^2\) was 0.03). The effect for Physical Environment was \(F_{(2, 1108)}\) = 112.97 (\(\eta^2\) = 0.17). The effect for \texttt{Time\ Pressure} was \(F_{(2, 1090)}\) = 82.22 (\(\eta^2\) = 0.13). The effect for Emotional Demands was \(F_{(2, 1098)}\) = 393.43 (\(\eta^2\) = 0.42).
 The effect for Recipient Contact was \(F_{(2, 1126)}\) = 1,031.73 (\(\eta^2\) = 0.65). The effect for Work Pressure was \(F_{(2, 1132)}\) = 718.12 (\(\eta^2\) = 0.56). In all cases, statistical significance was less then .001. However, the findings revealed that what the literature implicates as a demand was actually evaluated as a \emph{resource} (all resource means are above the midpoint). This is contrary to the expectation that ratings would match our assumption of what a demand constitutes. Looking at demands, there is a large difference between whether a characteristic is viewed as a challenge or hindrance. See the pattern of white resource bars on the left hand side of Figure \ref{fig:scalelevelgraphs}. In other words, demands are viewed as resources. In sum, these results provide some support for RQ 1 and 2.
 
-\section{Discussion}\label{discussion}
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
 
 The major aim and contribution of this paper was to examine whether there was variability in subjective ratings of job characteristics with respect to how much they serve as resources and demands (both challenge and hindrance), and also whether or not there is a match between the literature-implicated resources/demands and subjective ratings of these characteristics using the comprehensive taxonomy provided by O*Net. The findings broadly revealed that there was relatively more consistency in ratings of resource and challenge characteristics, and far more variability in job characteristics rated as hindrance stressors. This finding lends additional evidence to Horan et al. (2020)'s conclusion that ``\ldots stressors are only challenge or hindrance stressors to the extent that they are perceived as such by employees'' (p.~3). Lastly, we also found support for the hypothesis that job characteristics are not uniquely categorized as a resource or demand, but rather, some job characteristics are rated highly as both a resource and a demand (H2). Specifically, we consistently observed a pattern of job characteristics seen as challenging also being cited as a resource.
 
-\subsection{Implications}\label{implications}
+\hypertarget{implications}{%
+\subsection{Implications}\label{implications}}
 
 The findings presented above have implications for both theory and practice. First, this research is couched within the well-studied job demands-resources theory (Demerouti et al., 2001). We argue that while useful, additional emphasis should be placed on individual differences in perceptions of job characteristics. In fact, our findings support the related literature suggesting that perceptions of resources and demands, broadly, are not universal - there are individual differences in how employees experience the characteristics of their jobs (Webster et al., 2011). This finding aligns quite well with both the transactional theory of stress and coping, and the challenge-hindrance stressor framework, which collectively argue that employees perceive stimuli (i.e., job characteristics) uniquely (Lazarus \& Folkman, 1984), and thus, could appraise them as either a challenge or hindrance to their job performance (Cavanaugh et al., 2000). Further, Cavanaugh et al. (2000) suggests that challenge stressors are typically associated with positive outcomes and hindrance stressors are associated with negative outcomes (e.g., Cavanaugh et al., 2000).
 
 Differences in outcomes depending on whether or not an employee perceives a job characteristic to be a challenge or hindrance has practical implications. Our results suggest that what is generally seen as a resource and challenge tends to be agreed upon moreso that what is seen a hindrance. In fact, hindrance demands are rated more variably and thus, it may be important to have conversations about job characteristics and expectations at multiple time points after hire. For example, having open conversations with employees regarding their subjective perceptions of characteristics that may be unique in limiting their performance or comfort. Such conversations could happen during an annual performance review or more informally. In addition, J. A. LePine et al. (2005) and Podsakoff et al. (2007) encourage organizations to incorporate strain-reducing activities like training and support to offset the negative effects of challenging job demands, which may be associated with increased performance in the short term, but strain when prolonged. The current results suggest that these activities and training sessions would ideally be personalized.
 
-\subsection{Limitations and Future Directions}\label{limitations-and-future-directions}
+\hypertarget{limitations-and-future-directions}{%
+\subsection{Limitations and Future Directions}\label{limitations-and-future-directions}}
 
 Cross-sectional
 
@@ -456,87 +457,88 @@ Lastly, there may be some practical utility to pursue training interventions aim
 
 In sum, this endeavor explored the job-demands-resources literature from a unique lens from within a universally accessible framework. We showed that there are far more individual differences in how employees perceive demands and resources than much of our current research suggests. While resources and challenges idiosyncratic more similarly experienced, what is experienced as a hindrance tends to be idiosyncratic.
 
-\section{References}\label{references}
+\hypertarget{references}{%
+\section{References}\label{references}}
 
 \begingroup
 \setlength{\parindent}{-0.5in}
 \setlength{\leftskip}{0.5in}
 
-\phantomsection\label{refs}
+\hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\bibitem[\citeproctext]{ref-abbas2019challenge}
+\leavevmode\vadjust pre{\hypertarget{ref-abbas2019challenge}{}}%
 Abbas, M., \& Raja, U. (2019). Challenge-hindrance stressors and job outcomes: The moderating role of conscientiousness. \emph{Journal of Business and Psychology}, \emph{34}(2), 189--201.
 
-\bibitem[\citeproctext]{ref-bakker2014job}
+\leavevmode\vadjust pre{\hypertarget{ref-bakker2014job}{}}%
 Bakker, A. B., \& Demerouti, E. (2014). Job demands--resources theory. \emph{Wellbeing: A Complete Reference Guide}, 1--28.
 
-\bibitem[\citeproctext]{ref-bakker2017job}
+\leavevmode\vadjust pre{\hypertarget{ref-bakker2017job}{}}%
 Bakker, A. B., \& Demerouti, E. (2017). Job demands--resources theory: Taking stock and looking forward. \emph{Journal of Occupational Health Psychology}, \emph{22}(3), 273.
 
-\bibitem[\citeproctext]{ref-bakker2005job}
+\leavevmode\vadjust pre{\hypertarget{ref-bakker2005job}{}}%
 Bakker, A. B., Demerouti, E., \& Euwema, M. C. (2005). Job resources buffer the impact of job demands on burnout. \emph{Journal of Occupational Health Psychology}, \emph{10}(2), 170.
 
-\bibitem[\citeproctext]{ref-bakker2013weekly}
+\leavevmode\vadjust pre{\hypertarget{ref-bakker2013weekly}{}}%
 Bakker, A. B., \& Sanz-Vergel, A. I. (2013). Weekly work engagement and flourishing: The role of hindrance and challenge job demands. \emph{Journal of Vocational Behavior}, \emph{83}(3), 397--409.
 
-\bibitem[\citeproctext]{ref-cavanaugh2000empirical}
+\leavevmode\vadjust pre{\hypertarget{ref-cavanaugh2000empirical}{}}%
 Cavanaugh, M. A., Boswell, W. R., Roehling, M. V., \& Boudreau, J. W. (2000). An empirical examination of self-reported work stress among US managers. \emph{Journal of Applied Psychology}, \emph{85}(1), 65.
 
-\bibitem[\citeproctext]{ref-chen2021daily}
+\leavevmode\vadjust pre{\hypertarget{ref-chen2021daily}{}}%
 Chen, H., Wang, H., Yuan, M., \& Xu, S. (2021). Daily challenge/hindrance demands and cognitive wellbeing: A multilevel moderated mediation model. \emph{Frontiers in Psychology}, \emph{12}, 616002.
 
-\bibitem[\citeproctext]{ref-crawford2010linking}
+\leavevmode\vadjust pre{\hypertarget{ref-crawford2010linking}{}}%
 Crawford, E. R., LePine, J. A., \& Rich, B. L. (2010). Linking job demands and resources to employee engagement and burnout: A theoretical extension and meta-analytic test. \emph{Journal of Applied Psychology}, \emph{95}(5), 834.
 
-\bibitem[\citeproctext]{ref-demerouti2001job}
+\leavevmode\vadjust pre{\hypertarget{ref-demerouti2001job}{}}%
 Demerouti, E., Bakker, A. B., Nachreiner, F., \& Schaufeli, W. B. (2001). The job demands-resources model of burnout. \emph{Journal of Applied Psychology}, \emph{86}(3), 499.
 
-\bibitem[\citeproctext]{ref-gerich2017relevance}
+\leavevmode\vadjust pre{\hypertarget{ref-gerich2017relevance}{}}%
 Gerich, J. (2017). The relevance of challenge and hindrance appraisals of working conditions for employees' health. \emph{International Journal of Stress Management}, \emph{24}(3), 270.
 
-\bibitem[\citeproctext]{ref-horan2020review}
+\leavevmode\vadjust pre{\hypertarget{ref-horan2020review}{}}%
 Horan, K. A., Nakahara, W. H., DiStaso, M. J., \& Jex, S. M. (2020). A review of the challenge-hindrance stress model: Recent advances, expanded paradigms, and recommendations for future research. \emph{Frontiers in Psychology}, \emph{11}, 560346.
 
-\bibitem[\citeproctext]{ref-kim2020thriving}
+\leavevmode\vadjust pre{\hypertarget{ref-kim2020thriving}{}}%
 Kim, M., \& Beehr, T. A. (2020). Thriving on demand: Challenging work results in employee flourishing through appraisals and resources. \emph{International Journal of Stress Management}, \emph{27}(2), 111.
 
-\bibitem[\citeproctext]{ref-lazarus1984stress}
+\leavevmode\vadjust pre{\hypertarget{ref-lazarus1984stress}{}}%
 Lazarus, R. S., \& Folkman, S. (1984). \emph{Stress, appraisal, and coping}. Springer publishing company.
 
-\bibitem[\citeproctext]{ref-lepine2005meta}
+\leavevmode\vadjust pre{\hypertarget{ref-lepine2005meta}{}}%
 LePine, J. A., Podsakoff, N. P., \& LePine, M. A. (2005). A meta-analytic test of the challenge stressor--hindrance stressor framework: An explanation for inconsistent relationships among stressors and performance. \emph{Academy of Management Journal}, \emph{48}(5), 764--775.
 
-\bibitem[\citeproctext]{ref-lepine2022challenge}
+\leavevmode\vadjust pre{\hypertarget{ref-lepine2022challenge}{}}%
 LePine, M. A. (2022). The challenge-hindrance stressor framework: An integrative conceptual review and path forward. \emph{Group \& Organization Management}, \emph{47}(2), 223--254.
 
-\bibitem[\citeproctext]{ref-peterson2001understanding}
+\leavevmode\vadjust pre{\hypertarget{ref-peterson2001understanding}{}}%
 Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., Fleishman, E. A., Levin, K. Y., Campion, M. A., Mayfield, M. S., Morgeson, F. P., Pearlman, K., et al. (2001). Understanding work using the occupational information network (o* NET): Implications for practice and research. \emph{Personnel Psychology}, \emph{54}(2), 451--492.
 
-\bibitem[\citeproctext]{ref-pindek2024dynamic}
+\leavevmode\vadjust pre{\hypertarget{ref-pindek2024dynamic}{}}%
 Pindek, S., Meyer, K., Valvo, A., \& Arvan, M. (2024). A dynamic view of the challenge-hindrance stressor framework: A meta-analysis of daily diary studies. \emph{Journal of Business and Psychology}, 1--19.
 
-\bibitem[\citeproctext]{ref-podsakoff2007differential}
+\leavevmode\vadjust pre{\hypertarget{ref-podsakoff2007differential}{}}%
 Podsakoff, N. P., LePine, J. A., \& LePine, M. A. (2007). Differential challenge stressor-hindrance stressor relationships with job attitudes, turnover intentions, turnover, and withdrawal behavior: A meta-analysis. \emph{Journal of Applied Psychology}, \emph{92}(2), 438.
 
-\bibitem[\citeproctext]{ref-rodell2009can}
+\leavevmode\vadjust pre{\hypertarget{ref-rodell2009can}{}}%
 Rodell, J. B., \& Judge, T. A. (2009). Can {``good''} stressors spark {``bad''} behaviors? The mediating role of emotions in links of challenge and hindrance stressors with citizenship and counterproductive behaviors. \emph{Journal of Applied Psychology}, \emph{94}(6), 1438.
 
-\bibitem[\citeproctext]{ref-rosen2020challenges}
+\leavevmode\vadjust pre{\hypertarget{ref-rosen2020challenges}{}}%
 Rosen, C. C., Dimotakis, N., Cole, M. S., Taylor, S. G., Simon, L. S., Smith, T. A., \& Reina, C. S. (2020). When challenges hinder: An investigation of when and how challenge stressors impact employee outcomes. \emph{Journal of Applied Psychology}, \emph{105}(10), 1181.
 
-\bibitem[\citeproctext]{ref-searle2015merits}
+\leavevmode\vadjust pre{\hypertarget{ref-searle2015merits}{}}%
 Searle, B. J., \& Auton, J. C. (2015). The merits of measuring challenge and hindrance appraisals. \emph{Anxiety, Stress, \& Coping}, \emph{28}(2), 121--143.
 
-\bibitem[\citeproctext]{ref-webster2010toward}
+\leavevmode\vadjust pre{\hypertarget{ref-webster2010toward}{}}%
 Webster, J. R., Beehr, T. A., \& Christiansen, N. D. (2010). Toward a better understanding of the effects of hindrance and challenge stressors on work behavior. \emph{Journal of Vocational Behavior}, \emph{76}(1), 68--77.
 
-\bibitem[\citeproctext]{ref-webster2011extending}
+\leavevmode\vadjust pre{\hypertarget{ref-webster2011extending}{}}%
 Webster, J. R., Beehr, T. A., \& Love, K. (2011). Extending the challenge-hindrance model of occupational stress: The role of appraisal. \emph{Journal of Vocational Behavior}, \emph{79}(2), 505--516.
 
-\bibitem[\citeproctext]{ref-xanthopoulou2007job}
+\leavevmode\vadjust pre{\hypertarget{ref-xanthopoulou2007job}{}}%
 Xanthopoulou, D., Bakker, A. B., Dollard, M. F., Demerouti, E., Schaufeli, W. B., Taris, T. W., \& Schreurs, P. J. (2007). When do job demands particularly predict burnout? The moderating role of job resources. \emph{Journal of Managerial Psychology}, \emph{22}(8), 766--786.
 
-\bibitem[\citeproctext]{ref-R-careless}
+\leavevmode\vadjust pre{\hypertarget{ref-R-careless}{}}%
 Yentes, R. D., \& Wilhelm, F. (2021). \emph{Careless: Procedures for computing indices of careless responding}.
 
 \end{CSLReferences}
