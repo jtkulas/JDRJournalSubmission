@@ -115,7 +115,7 @@ Both the job demands-resources model and the challenge-hindrance stressor framew
 
 >Hyp 3.a: Engagement is predicted by resources and challenges.  
 
->Hyp 3.b: Strain and burnout are differentially predicted by challenges and hindrances. 
+>Hyp 3.b: Strain and burnout are differentially predicted by challenges and hindrances. **Take a look at significant difference between slope coefficients (b's) of, for example, challenge-->strain & hindrance-->strain**
 
 In addition to the these direct relationships, we aim to extend work suggesting that resources can act as a buffer between job demands and strain [e.g., @bakker2005job] and burnout [e.g., @xanthopoulou2007job]. BUILD ON THIS - DETAILS OF THESE TWO STUDIES AND MORE - BAKKER 2010
 
@@ -422,7 +422,7 @@ bottomresource <- bottomresource[tail(names(bottomresource),3)]
 
 d <- ggplot(bottomresource, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="blue", position=position_dodge()) + theme_bw() +
   scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Lack of Consensus as a Resource") + 
-  geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5)) 
+  geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,6)) 
 
 ```
 
@@ -435,7 +435,7 @@ bottomchallenge <- head(sortchallenge, 8)
 bottomchallenge <- bottomchallenge[tail(names(bottomchallenge),3)]        
 
 e <- ggplot(bottomchallenge, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="yellow", position=position_dodge()) + theme_bw() +
-  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Lack of Consensus as a Challenge") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5)) 
+  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Lack of Consensus as a Challenge") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,6)) 
 
 
 ```
@@ -450,11 +450,11 @@ bottomhindrance <- head(sorthindrance, 8)
 bottomhindrance <- bottomhindrance[tail(names(bottomhindrance),3)]        
 
 f <- ggplot(bottomhindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar(stat="identity", color="red", position=position_dodge()) + theme_bw() +
-  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Lack of Consensus as a Hindrance") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,5))
+  scale_x_discrete(labels = function(x) lapply(strwrap(x, width = 60, simplify = FALSE), paste, collapse="\n")) + xlab("") + ylab("Lack of Consensus as a Hindrance") + geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.2, position=position_dodge(.9)) + coord_flip(ylim=c(1,6))
 
 ```
 
-```{r combinegraphs2, fig.cap="Characteristics percieved most *DIS*similarly (largest standard deviations).", fig.height=10}
+```{r combinegraphs2, fig.cap="Characteristics percieved most **dissimilarly** (largest standard deviations).", fig.height=10}
 
 library(gridExtra)
 grid.arrange(e, f, d, nrow = 3)
