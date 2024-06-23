@@ -41,7 +41,7 @@ draft             : no
 
 csl               : "apa7.csl"
 documentclass     : "apa7" #interact
-classoption       : "jou"
+classoption       : "man"
 #output            : "word_document"
 output            : papaja::apa6_pdf
 
@@ -101,7 +101,7 @@ As such, the first question we ask is whether people distinguish between resourc
 
 The second set of analyses focuses on predicted associations without relevant work-relevant outcomes frequently studied across via job demands-resources- [@bakker2017job] and challenge-hindrance stressor-frameworks [@cavanaugh2000empirical]. Here, we specifically explore appraisals of O\*Net-derived work characteristics as resources, challenges, and/or hindrances in association with engagement, strain and burnout. As argued above, appraisals are predicted to be associated with different forms of coping, and subsequently, outcomes. See Figure \@ref(fig:ourmodel) for proposed associations. 
 
-```{r ourmodel, eval=TRUE, echo=FALSE, fig.cap="This is our working model"}
+```{r ourmodel, eval=TRUE, echo=FALSE, fig.cap="Focal constructs and associations of interest"}
 library(magick)
 library(grid)
 
@@ -111,15 +111,13 @@ grid.raster(figure2) # works well with margins/etc
 
 ```
 
-Both the job demands-resources model and the challenge-hindrance stressor framework have been associated with a wide variety of organizational outcomes ranging from affective variables like job satisfaction, to motivation, performance, and wellbeing. Beginning with resources ADD JDR STUFF ON RESOURCES AND MOTIVATION HERE. @kim2020thriving found that appraising a demand (in their study, workload, responsibility, and learning demands were measured) as a *challenge* was associated with motivational resources[^dontsaythat] (i.e., sense of self-worth and work meaningfulness), which were positively related to flourishing. The opposite occurred when a demand was appraised as a *hindrance* – in those instances, the appraisal had a negative association with motivational resources. @cavanaugh2000empirical, in a study of managers, found that challenge demands were positively related to job satisfaction and negatively related to job search behaviors, while hindrance demands demonstrated the opposite pattern. @chen2021daily found that daily challenge demands were positively related to cognitive wellbeing and work-family enrichment. Daily hindrance demands were negatively related to these outcomes. In contrast, @abbas2019challenge found that challenge and hindrance stressors were *both* positively related to strain and turnover intentions. We also have some evidence that challenge-hindrance appraisals are related to engagement in the expected direction whereby hindrance appraisals are negatively associated with engagement and challenge appraisals are positively associated with it [@crawford2010linking]. Challenge and hindrance appraisals have also been shown to relate to citizenship and counterproductive performance, although indirectly via emotions like anxiety [@rodell2009can]. Lastly, @gerich2017relevance concluded that employee wellbeing was also, in part, explained by appraised challenge or hindrance demands such that working conditions of time pressure, qualitative demands, responsibility, and interruptions, were partially mediated by challenge and hindrance demands. In addition to the studies above, several meta-analyses also support differential associations across a variety of organizational outcomes as well. For example, both challenges and hindrances have been shown to positively predict strain [@lepine2005meta; @podsakoff2007differential; @webster2010toward]. Many other outcomes are differentially related to challenges and hindrances, largely in the expected direction. For example, motivation, job satisfaction, commitment, and performance have been shown to positively relate to challenge stressors and negatively relate to hindrance stressors [@lepine2005meta]. Turnover intentions, turnover and withdrawal behaviors are negatively related to hindrance stressors [@podsakoff2007differential]. @kim2020thriving, similarly, found evidence for the differential results via challenge and hindrance appraisals.  
+Both the job demands-resources model and the challenge-hindrance stressor framework have been associated with a wide variety of organizational outcomes ranging from affective variables like job satisfaction, to motivation, performance, and wellbeing. Beginning with resources ADD JDR STUFF ON RESOURCES AND MOTIVATION HERE. @kim2020thriving found that appraising a demand (in their study, workload, responsibility, and learning demands were measured) as a *challenge* was associated with sources of motivation (i.e., sense of self-worth and work meaningfulness), which were positively related to flourishing. The opposite occurred when a demand was appraised as a *hindrance* – in those instances, the appraisal had a negative association with motivational resources. @cavanaugh2000empirical, in a study of managers, found that challenge demands were positively related to job satisfaction and negatively related to job search behaviors, while hindrance demands demonstrated the opposite pattern. @chen2021daily found that daily challenge demands were positively related to cognitive wellbeing and work-family enrichment. Daily hindrance demands were negatively related to these outcomes. In contrast, @abbas2019challenge found that challenge and hindrance stressors were *both* positively related to strain and turnover intentions. We also have some evidence that challenge-hindrance appraisals are related to engagement in the expected direction whereby hindrance appraisals are negatively associated with engagement and challenge appraisals are positively associated with it [@crawford2010linking]. Challenge and hindrance appraisals have also been shown to relate to citizenship and counterproductive performance, although indirectly via emotions like anxiety [@rodell2009can]. Lastly, @gerich2017relevance concluded that employee wellbeing was also, in part, explained by appraised challenge or hindrance demands such that working conditions of time pressure, qualitative demands, responsibility, and interruptions, were partially mediated by challenge and hindrance demands. In addition to the studies above, several meta-analyses also support differential associations across a variety of organizational outcomes as well. For example, both challenges and hindrances have been shown to positively predict strain [@lepine2005meta; @podsakoff2007differential; @webster2010toward]. Many other outcomes are differentially related to challenges and hindrances, largely in the expected direction. For example, motivation, job satisfaction, commitment, and performance have been shown to positively relate to challenge stressors and negatively relate to hindrance stressors [@lepine2005meta]. Turnover intentions, turnover and withdrawal behaviors are negatively related to hindrance stressors [@podsakoff2007differential]. @kim2020thriving, similarly, found evidence for the differential results via challenge and hindrance appraisals.  
 
 >Hypothesis 3a: Engagement is predicted by resources and challenges.  
 
 >Hypothesis 3b: Strain and burnout are differentially predicted by challenges and hindrances. **Take a look at significant difference between slope coefficients (b's) of, for example, challenge-->strain & hindrance-->strain**
 
 In addition to the these direct relationships, we aim to extend work suggesting that resources can act as a buffer between job demands and strain [e.g., @bakker2005job] and burnout [e.g., @xanthopoulou2007job]. BUILD ON THIS - DETAILS OF THESE TWO STUDIES AND MORE - BAKKER 2010
-
-[^dontsaythat]: Is there a different term that can be used here? This is confusing given the more straightforward Resource/Demand terminology from above
 
 >Hypothesis 4a:Resources moderate the relationship between challenge stressors and the outcomes of strain and burnout such that these relationships become weaker as workers perceive more resources.
 
@@ -493,7 +491,7 @@ The second hypothesis stated that job characteristics would not be uniquely cate
 
 The mean resource to challenge correlations within the same dimension ranged from .62 to .66 (*M* = .64, *SD* = .02; for example, the association between information input ratings as a resource and as a challenge was .62). The correlations between resources and challenges *across* dimensions (for example, the correlation between mental processes and work output was .42 and .39) ranged from .08 to .50, *M* = .32, *SD* = .12. The resource-hindrance correlations within the same dimension ranged from -.16 to -.30 (*M* = -.24, *SD* = .05), while the correlations between resources and hindrances *across* dimensions ranged from .05 to -.27, *M* = -.14, *SD* = .08. The mean challenge to hindrance correlations within the same dimension ranged from -.04 to -.27 (*M* = -.21, *SD* = .08). The correlations between challenges to hindrances across dimensions ranged from .12 to -.26, *M* = -.11, *SD* = .09.  In summary, correlations were larger when what was being rated was the same type of characteristic. Challenge and hindrance demands demonstrated smaller relationships, but mostly negative. Challenges and resources within the same O\*Net dimensions are strongly and positively related. These results provide support for H2, suggesting that there is overlap in how employees perceive job characteristics - particularly regarding what is perceived as a *resource* being also perceived as a *challenge*. Stated another way, job characteristics are not uniquely categorized as a resource or as a demand.
 
-```{r cortab, results="asis", eval=FALSE}
+```{r cortab, results="asis", eval=TRUE}
 
 data_new <- data
 
@@ -1101,8 +1099,9 @@ colnames(regtable)[5] <- "$R^2$"
 colnames(regtable)[6] <- "$\\Delta R^2$"
 
 papaja::apa_table(regtable, 
-                 escape=FALSE,
-                note="* = p < .05; ** = p < .01")
+              caption = "Moderated regression summary of outcomes regressed on challenges and resources",
+              escape=FALSE,
+              note="* = p < .05; ** = p < .01")
 ```
 
 ```{r}
@@ -1126,7 +1125,7 @@ hr_burn_info3 <- apa_print(hr_burn_m3)
 
 ```
 
-Table \@ref(tab:chal-resource-table) summarizes the results. Sum scores for the predictors were used here, and predictor variables were mean centered prior to running the following regressions. First, challenges and resources explained a statistically significant amount of the variability in engagement, $R^2$ = `r round(summary(cr_eng_m2)$r.squared, 2)`, Adj. $R^2$ =  `r round(summary(cr_eng_m2)$adj.r.squared, 2)`, `r cr_eng_info2$statistic$modelfit$r2`. The inclusion of the interaction term in step two of the model contributed a significant addition to the model, `r cr_eng_info3$statistic$modelfit$r2`, $\Delta R^2$ = `r cr_eng_r_square_change`, $\Delta F$ (`r cr_eng_anova$Df[2]`, `r cr_eng_anova$Res.Df[2]`) = `r cr_eng_anova$F[2]`,  and thus provides statistical support for the presence of moderation. Figure \@ref(fig:chal-resource-int) illustrates the interaction. With low levels of resources, the relationship between challenges and engagement is relatively flat and engagement is comparatively low. With more resources, the relationship between challenges and engagement is negative, but engagement still remains higher with greater reported challenge when more resources are perceived.
+Table \@ref(tab:chal-resource-table) summarizes the results. Sum scores for the predictors were used here, and predictor variables were mean centered prior to running the following regressions. First, challenges and resources explained a statistically significant amount of the variability in engagement, $R^2$ = `r round(summary(cr_eng_m2)$r.squared, 2)`, Adj. $R^2$ =  `r round(summary(cr_eng_m2)$adj.r.squared, 2)`, `r cr_eng_info2$statistic$modelfit$r2`. H3A DESCRIPTION HERE: resource slope is significant, challenge is not significant. The inclusion of the interaction term in step two of the model contributed a significant addition to the model, `r cr_eng_info3$statistic$modelfit$r2`, $\Delta R^2$ = `r cr_eng_r_square_change`, $\Delta F$ (`r cr_eng_anova$Df[2]`, `r cr_eng_anova$Res.Df[2]`) = `r cr_eng_anova$F[2]`,  and thus provides statistical support for the presence of moderation. Figure \@ref(fig:chal-resource-int) illustrates the interaction. With low levels of resources, the relationship between challenges and engagement is relatively flat and engagement is comparatively low. With more resources, the relationship between challenges and engagement is negative, but engagement still remains higher with greater reported challenge when more resources are perceived.
 
 Next, challenge stressors and resources did not explain a significant amount of the variance in stress,  $R^2$ = `r round(summary(cr_stress_m2)$r.squared, 2)`, Adj. $R^2$ =  `r round(summary(cr_stress_m2)$adj.r.squared, 2)`, `r cr_stress_info2$statistic$modelfit$r2`. The inclusion of the interaction term in step two of the model did not contribute a significant addition to the model, `r cr_stress_info3$statistic$modelfit$r2`, $\Delta R^2$ = `r cr_stress_r_square_change`, $\Delta F$ (`r cr_stress_anova$Df[2]`, `r cr_stress_anova$Res.Df[2]`) = `r cr_stress_anova$F[2]`, and thus does not support the presence of moderation.
 
@@ -1154,6 +1153,7 @@ colnames(regtable)[6] <- "$\\Delta R^2$"
 #                  escape=FALSE)
 
 papaja::apa_table(regtable,
+                 caption = "Moderated regression summary of outcomes regressed on hindrances and resources",
                  escape=FALSE,
                  note="* = p < .05; ** = p < .01")
 ```
@@ -1206,7 +1206,7 @@ hr_burn_plot <- interact_plot(hr_burn_m3u, pred = overall.hindrance_center, modx
 hr_burn_plot
 ```
 
-In addition to the two hypotheses, two related research questions were proposed: 1) do literature-implicated resources materialize as perceived resources and 2) do literature-implicated demands materialize as perceived demands? To answer these questions, authors first categorized O\*Net items into the elements listed in the JD-R literature. For example, autonomy is frequently described as a resource. An O\*Net item is, “How much decision making freedom, without supervision, does your job offer?”. This O\*Net item was retained within the "autonomy" category. Mean ratings of the O\*Net items were then computed by element (e.g., all of the items representing autonomy) to explore whether literature-implicated resources and demands were evaluated as such. 
+In addition to the two hypotheses, two sets of exploratory analyses were also pursued: 1) do literature-implicated resources materialize as perceived resources and 2) do literature-implicated demands materialize as perceived demands? To answer these questions, authors first categorized O\*Net items into the elements listed in the JD-R literature. For example, autonomy is frequently described as a resource. An O\*Net item is, “How much decision making freedom, without supervision, does your job offer?”. This O\*Net item was retained within the "autonomy" category. Mean ratings of the O\*Net items were then computed by element (e.g., all of the items representing autonomy) to explore whether literature-implicated resources and demands were evaluated as such. 
 
 Figure \@ref(fig:scalelevelgraphs) presents these comparisons visually, where the bar lengths represent mean ratings within element category (e.g., the white bar represents mean O\*Net resource ratings for a given JD-R element).  First exploring the right side of Figure \@ref(fig:scalelevelgraphs), there is a pattern of the highest level ratings being those of literature-derived resources (e.g., job control). As described above, the left side of Figure \@ref(fig:scalelevelgraphs) shows literature-derived demand categories (e.g., work pressure). However, in contrast, we do not see a clear demarcation of resource and challenge, as would be expected if the job characteristics evidenced consistency (the literature-driven consistency would manifest as "high" gray and black bars and "low" white bars). In alignment with what we observed regarding variability in ratings of hindrance stressors in H1, there is much less consistency in how employees rated what should objectively be "hindrances" at work.
 

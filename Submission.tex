@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  jou,mask]{apa7}
+  man,mask]{apa7}
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
 \ifPDFTeX
@@ -138,13 +138,13 @@
   {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
 \makeatother
 
-% \usepackage{etoolbox}
 \makeatletter
-\patchcmd{\HyOrg@maketitle}
+\usepackage{etoolbox}
+\patchcmd{\maketitle}
   {\section{\normalfont\normalsize\abstractname}}
   {\section*{\normalfont\normalsize\abstractname}}
   {}{\typeout{Failed to patch abstract.}}
-\patchcmd{\HyOrg@maketitle}
+\patchcmd{\maketitle}
   {\section{\protect\normalfont{\@title}}}
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
@@ -159,9 +159,12 @@
   }
 {}{\PatchFailed}
 \keywords{O*Net, challenge-hindrance framework, job demands-resources, job characteristics\newline\indent Word count: 4,942}
-\usepackage{dblfloatfix}
-
-
+\DeclareDelayedFloatFlavor{ThreePartTable}{table}
+\DeclareDelayedFloatFlavor{lltable}{table}
+\DeclareDelayedFloatFlavor*{longtable}{table}
+\makeatletter
+\renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
+\makeatother
 \usepackage{csquotes}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
@@ -240,27 +243,27 @@ The second set of analyses focuses on predicted associations without relevant wo
 \begin{figure}
 \centering
 \includegraphics{Submission_files/figure-latex/ourmodel-1.pdf}
-\caption{\label{fig:ourmodel}This is our working model}
+\caption{\label{fig:ourmodel}Focal constructs and associations of interest}
 \end{figure}
 
-Both the job demands-resources model and the challenge-hindrance stressor framework have been associated with a wide variety of organizational outcomes ranging from affective variables like job satisfaction, to motivation, performance, and wellbeing. Beginning with resources ADD JDR STUFF ON RESOURCES AND MOTIVATION HERE. Kim and Beehr (2020) found that appraising a demand (in their study, workload, responsibility, and learning demands were measured) as a challenge was associated with motivational resources\footnote{Is there a different term that can be used here? This is confusing given the more straightforward Resource/Demand terminology from above} (i.e., sense of self-worth and work meaningfulness), which were positively related to flourishing. The opposite occurred when a demand was appraised as a hindrance -- in those instances, the appraisal had a negative association with motivational resources. Cavanaugh et al. (2000), in a study of managers, found that challenge demands were positively related to job satisfaction and negatively related to job search behaviors, while hindrance demands demonstrated the opposite pattern. Chen et al. (2021) found that daily challenge demands were positively related to cognitive wellbeing and work-family enrichment. Daily hindrance demands were negatively related to these outcomes. In contrast, Abbas and Raja (2019) found that challenge and hindrance stressors were \emph{both} positively related to strain and turnover intentions. We also have some evidence that challenge-hindrance appraisals are related to engagement in the expected direction whereby hindrance appraisals are negatively associated with engagement and challenge appraisals are positively associated with it (Crawford et al., 2010). Challenge and hindrance appraisals have also been shown to relate to citizenship and counterproductive performance, although indirectly via emotions like anxiety (Rodell \& Judge, 2009). Lastly, Gerich (2017) concluded that employee wellbeing was also, in part, explained by appraised challenge or hindrance demands such that working conditions of time pressure, qualitative demands, responsibility, and interruptions, were partially mediated by challenge and hindrance demands. In addition to the studies above, several meta-analyses also support differential associations across a variety of organizational outcomes as well. For example, both challenges and hindrances have been shown to positively predict strain (J. A. LePine et al., 2005; Podsakoff et al., 2007; Webster et al., 2010). Many other outcomes are differentially related to challenges and hindrances, largely in the expected direction. For example, motivation, job satisfaction, commitment, and performance have been shown to positively relate to challenge stressors and negatively relate to hindrance stressors (J. A. LePine et al., 2005). Turnover intentions, turnover and withdrawal behaviors are negatively related to hindrance stressors (Podsakoff et al., 2007). Kim and Beehr (2020), similarly, found evidence for the differential results via challenge and hindrance appraisals.
+Both the job demands-resources model and the challenge-hindrance stressor framework have been associated with a wide variety of organizational outcomes ranging from affective variables like job satisfaction, to motivation, performance, and wellbeing. Beginning with resources ADD JDR STUFF ON RESOURCES AND MOTIVATION HERE. Kim and Beehr (2020) found that appraising a demand (in their study, workload, responsibility, and learning demands were measured) as a \emph{challenge} was associated with sources of motivation (i.e., sense of self-worth and work meaningfulness), which were positively related to flourishing. The opposite occurred when a demand was appraised as a \emph{hindrance} -- in those instances, the appraisal had a negative association with motivational resources. Cavanaugh et al. (2000), in a study of managers, found that challenge demands were positively related to job satisfaction and negatively related to job search behaviors, while hindrance demands demonstrated the opposite pattern. Chen et al. (2021) found that daily challenge demands were positively related to cognitive wellbeing and work-family enrichment. Daily hindrance demands were negatively related to these outcomes. In contrast, Abbas and Raja (2019) found that challenge and hindrance stressors were \emph{both} positively related to strain and turnover intentions. We also have some evidence that challenge-hindrance appraisals are related to engagement in the expected direction whereby hindrance appraisals are negatively associated with engagement and challenge appraisals are positively associated with it (Crawford et al., 2010). Challenge and hindrance appraisals have also been shown to relate to citizenship and counterproductive performance, although indirectly via emotions like anxiety (Rodell \& Judge, 2009). Lastly, Gerich (2017) concluded that employee wellbeing was also, in part, explained by appraised challenge or hindrance demands such that working conditions of time pressure, qualitative demands, responsibility, and interruptions, were partially mediated by challenge and hindrance demands. In addition to the studies above, several meta-analyses also support differential associations across a variety of organizational outcomes as well. For example, both challenges and hindrances have been shown to positively predict strain (J. A. LePine et al., 2005; Podsakoff et al., 2007; Webster et al., 2010). Many other outcomes are differentially related to challenges and hindrances, largely in the expected direction. For example, motivation, job satisfaction, commitment, and performance have been shown to positively relate to challenge stressors and negatively relate to hindrance stressors (J. A. LePine et al., 2005). Turnover intentions, turnover and withdrawal behaviors are negatively related to hindrance stressors (Podsakoff et al., 2007). Kim and Beehr (2020), similarly, found evidence for the differential results via challenge and hindrance appraisals.
 
 \begin{quote}
-Hyp 3.a: Engagement is predicted by resources and challenges.
+Hypothesis 3a: Engagement is predicted by resources and challenges.
 \end{quote}
 
 \begin{quote}
-Hyp 3.b: Strain and burnout are differentially predicted by challenges and hindrances. \textbf{Take a look at significant difference between slope coefficients (b's) of, for example, challenge--\textgreater strain \& hindrance--\textgreater strain}
+Hypothesis 3b: Strain and burnout are differentially predicted by challenges and hindrances. \textbf{Take a look at significant difference between slope coefficients (b's) of, for example, challenge--\textgreater strain \& hindrance--\textgreater strain}
 \end{quote}
 
 In addition to the these direct relationships, we aim to extend work suggesting that resources can act as a buffer between job demands and strain (e.g., Bakker et al., 2005) and burnout (e.g., Xanthopoulou et al., 2007). BUILD ON THIS - DETAILS OF THESE TWO STUDIES AND MORE - BAKKER 2010
 
 \begin{quote}
-Hyp 4.a:Resources moderate the relationship between challenge stressors and the outcomes of strain and burnout such that these relationships become weaker as workers perceive more resources.
+Hypothesis 4a:Resources moderate the relationship between challenge stressors and the outcomes of strain and burnout such that these relationships become weaker as workers perceive more resources.
 \end{quote}
 
 \begin{quote}
-Hyp 4.b:Resources moderate the relationship between hindrance stressors and the outcomes of strain and burnout such that these relationships become weaker as workers perceive more resources.
+Hypothesis 4b:Resources moderate the relationship between hindrance stressors and the outcomes of strain and burnout such that these relationships become weaker as workers perceive more resources.
 \end{quote}
 
 \hypertarget{method}{%
@@ -312,6 +315,55 @@ The second hypothesis stated that job characteristics would not be uniquely cate
 
 The mean resource to challenge correlations within the same dimension ranged from .62 to .66 (\emph{M} = .64, \emph{SD} = .02; for example, the association between information input ratings as a resource and as a challenge was .62). The correlations between resources and challenges \emph{across} dimensions (for example, the correlation between mental processes and work output was .42 and .39) ranged from .08 to .50, \emph{M} = .32, \emph{SD} = .12. The resource-hindrance correlations within the same dimension ranged from -.16 to -.30 (\emph{M} = -.24, \emph{SD} = .05), while the correlations between resources and hindrances \emph{across} dimensions ranged from .05 to -.27, \emph{M} = -.14, \emph{SD} = .08. The mean challenge to hindrance correlations within the same dimension ranged from -.04 to -.27 (\emph{M} = -.21, \emph{SD} = .08). The correlations between challenges to hindrances across dimensions ranged from .12 to -.26, \emph{M} = -.11, \emph{SD} = .09. In summary, correlations were larger when what was being rated was the same type of characteristic. Challenge and hindrance demands demonstrated smaller relationships, but mostly negative. Challenges and resources within the same O*Net dimensions are strongly and positively related. These results provide support for H2, suggesting that there is overlap in how employees perceive job characteristics - particularly regarding what is perceived as a \emph{resource} being also perceived as a \emph{challenge}. Stated another way, job characteristics are not uniquely categorized as a resource or as a demand.
 
+\begin{lltable}
+
+\begin{TableNotes}[para]
+\normalsize{\textit{Note.} The seven O*Net grouping categories represented here are: Information Input (ii), Mental Processes (mp), Work Output (wo), Interacting with Others (io), Interpersonal Relationships (ir), Physical Work Conditions (pc), and Structural Job Characteristics (sc)}
+\end{TableNotes}
+
+\tiny{
+
+\begin{longtable}{lllllllllllllllllllllll}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:cortab}Challenge, hindrance, and resource bivariate correlations.}\\
+\toprule
+ & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} & \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{6} & \multicolumn{1}{c}{7} & \multicolumn{1}{c}{8} & \multicolumn{1}{c}{9} & \multicolumn{1}{c}{10} & \multicolumn{1}{c}{11} & \multicolumn{1}{c}{12} & \multicolumn{1}{c}{13} & \multicolumn{1}{c}{14} & \multicolumn{1}{c}{15} & \multicolumn{1}{c}{16} & \multicolumn{1}{c}{17} & \multicolumn{1}{c}{18} & \multicolumn{1}{c}{19} & \multicolumn{1}{c}{20} & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$SD$}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:cortab} continued}}\\
+\toprule
+ & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} & \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{6} & \multicolumn{1}{c}{7} & \multicolumn{1}{c}{8} & \multicolumn{1}{c}{9} & \multicolumn{1}{c}{10} & \multicolumn{1}{c}{11} & \multicolumn{1}{c}{12} & \multicolumn{1}{c}{13} & \multicolumn{1}{c}{14} & \multicolumn{1}{c}{15} & \multicolumn{1}{c}{16} & \multicolumn{1}{c}{17} & \multicolumn{1}{c}{18} & \multicolumn{1}{c}{19} & \multicolumn{1}{c}{20} & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$SD$}\\
+\midrule
+\endhead
+1. onet.resource.ii & - &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & 3.98 & 0.80\\
+2. onet.resource.mp & .61*** & - &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & 4.19 & 0.60\\
+3. onet.resource.wo & .46*** & .50*** & - &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & 3.79 & 0.84\\
+4. onet.resource.io & .49*** & .64*** & .45*** & - &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & 4.10 & 0.60\\
+5. onet.resource.ir & .46*** & .55*** & .37*** & .60*** & - &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & 3.80 & 0.61\\
+6. onet.resource.pc & .19*** & .15*** & .32*** & .18*** & .37*** & - &  &  &  &  &  &  &  &  &  &  &  &  &  &  & 2.99 & 0.77\\
+7. onet.resource.sc & .43*** & .46*** & .41*** & .45*** & .48*** & .37*** & - &  &  &  &  &  &  &  &  &  &  &  &  &  & 3.65 & 0.61\\
+8. onet.challenge.ii & .62*** & .49*** & .37*** & .41*** & .33*** & .08 & .33*** & - &  &  &  &  &  &  &  &  &  &  &  &  & 3.98 & 0.80\\
+9. onet.challenge.mp & .47*** & .63*** & .42*** & .50*** & .41*** & .09* & .38*** & .65*** & - &  &  &  &  &  &  &  &  &  &  &  & 4.20 & 0.64\\
+10. onet.challenge.wo & .34*** & .39*** & .64*** & .34*** & .30*** & .29*** & .38*** & .45*** & .49*** & - &  &  &  &  &  &  &  &  &  &  & 3.65 & 0.88\\
+11. onet.challenge.io & .34*** & .48*** & .33*** & .65*** & .48*** & .13** & .40*** & .50*** & .68*** & .43*** & - &  &  &  &  &  &  &  &  &  & 4.07 & 0.64\\
+12. onet.challenge.ir & .32*** & .40*** & .26*** & .48*** & .63*** & .23*** & .39*** & .46*** & .60*** & .39*** & .70*** & - &  &  &  &  &  &  &  &  & 3.85 & 0.63\\
+13. onet.challenge.pc & .12** & .08 & .21*** & .13** & .26*** & .66*** & .29*** & .14** & .12** & .33*** & .20*** & .31*** & - &  &  &  &  &  &  &  & 2.85 & 0.79\\
+14. onet.challenge.sc & .27*** & .31*** & .28*** & .38*** & .40*** & .27*** & .62*** & .36*** & .41*** & .38*** & .51*** & .45*** & .40*** & - &  &  &  &  &  &  & 3.66 & 0.59\\
+15. onet.hindrance.ii & -.26*** & -.26*** & -.17*** & -.24*** & -.18*** & -.02 & -.08 & -.27*** & -.26*** & -.10* & -.19*** & -.16*** & .06 & -.10* & - &  &  &  &  &  & 2.15 & 1.01\\
+16. onet.hindrance.mp & -.23*** & -.30*** & -.17*** & -.22*** & -.15*** & .05 & -.07 & -.22*** & -.27*** & -.10* & -.18*** & -.15*** & .12** & -.06 & .86*** & - &  &  &  &  & 2.10 & 1.05\\
+17. onet.hindrance.wo & -.21*** & -.25*** & -.22*** & -.22*** & -.06 & -.02 & -.12** & -.14** & -.21*** & -.23*** & -.15*** & -.09* & .05 & -.10* & .66*** & .69*** & - &  &  &  & 2.31 & 1.02\\
+18. onet.hindrance.io & -.22*** & -.27*** & -.14*** & -.29*** & -.18*** & -.01 & -.10* & -.21*** & -.25*** & -.10* & -.27*** & -.19*** & .07 & -.10* & .79*** & .86*** & .69*** & - &  &  & 2.23 & 1.03\\
+19. onet.hindrance.ir & -.22*** & -.24*** & -.15*** & -.24*** & -.25*** & -.06 & -.11** & -.19*** & -.21*** & -.08* & -.20*** & -.23*** & .04 & -.12** & .79*** & .80*** & .61*** & .82*** & - &  & 2.35 & 0.89\\
+20. onet.hindrance.pc & -.04 & -.08* & -.09* & -.11** & -.10* & -.16*** & -.13** & -.03 & -.04 & -.06 & -.08* & -.10* & -.04 & -.13** & .38*** & .33*** & .47*** & .35*** & .47*** & - & 2.66 & 0.83\\
+21. onet.hindrance.sc & -.13** & -.15*** & -.13** & -.19*** & -.13** & -.09* & -.23*** & -.12** & -.10* & -.05 & -.16*** & -.12** & -.01 & -.17*** & .62*** & .62*** & .56*** & .64*** & .66*** & .45*** & 2.64 & 0.80\\
+\bottomrule
+\addlinespace
+\insertTableNotes
+\end{longtable}
+
+}
+
+\end{lltable}
+
 \begin{figure}
 \centering
 \includegraphics{Submission_files/figure-latex/scalelevelgraphs-1.pdf}
@@ -320,12 +372,12 @@ The mean resource to challenge correlations within the same dimension ranged fro
 
 We next explored whether there was statistical support for the hypothesis that the relationship between the challenge stressors and outcomes (i.e., engagement, stress, and burnout) were moderated by resources. In order to test for the presence of an interactive effect, a series of hierarchical regressions were conducted with challenge stressors and resources added in step one of the model and an interaction term, challenge stressors*resources, added in step two of the model.
 
-\begin{table*}[tbp]
+\begin{table}[tbp]
 
 \begin{center}
 \begin{threeparttable}
 
-\caption{\label{tab:chal-resource-table}}
+\caption{\label{tab:chal-resource-table}Moderated regression summary of outcomes regressed on challenges and resources}
 
 \begin{tabular}{llllll}
 \toprule
@@ -351,20 +403,20 @@ Burnout & 1 & Challenge & 0.33 ** &  & \\
 \end{threeparttable}
 \end{center}
 
-\end{table*}
+\end{table}
 
-Table \ref{tab:chal-resource-table} summarizes the results. Sum scores for the predictors were used here, and predictor variables were mean centered prior to running the following regressions. First, challenges and resources explained a statistically significant amount of the variability in engagement, \(R^2\) = 0.15, Adj. \(R^2\) = 0.15, \(F(2, 565) = 50.09\), \(p < .001\). The inclusion of the interaction term in step two of the model contributed a significant addition to the model, \(F(3, 564) = 35.62\), \(p < .001\), \(\Delta R^2\) = 0.01, \(\Delta F\) (1, 564) = 5.82, and thus provides statistical support for the presence of moderation. Figure \ref{fig:chal-resource-int} illustrates the interaction. With low levels of resources, the relationship between challenges and engagement is relatively flat and engagement is comparatively low. With more resources, the relationship between challenges and engagement is negative, but engagement still remains higher with greater reported challenge when more resources are perceived.
+Table \ref{tab:chal-resource-table} summarizes the results. Sum scores for the predictors were used here, and predictor variables were mean centered prior to running the following regressions. First, challenges and resources explained a statistically significant amount of the variability in engagement, \(R^2\) = 0.15, Adj. \(R^2\) = 0.15, \(F(2, 565) = 50.09\), \(p < .001\). H3A DESCRIPTION HERE: resource slope is significant, challenge is not significant. The inclusion of the interaction term in step two of the model contributed a significant addition to the model, \(F(3, 564) = 35.62\), \(p < .001\), \(\Delta R^2\) = 0.01, \(\Delta F\) (1, 564) = 5.82, and thus provides statistical support for the presence of moderation. Figure \ref{fig:chal-resource-int} illustrates the interaction. With low levels of resources, the relationship between challenges and engagement is relatively flat and engagement is comparatively low. With more resources, the relationship between challenges and engagement is negative, but engagement still remains higher with greater reported challenge when more resources are perceived.
 
 Next, challenge stressors and resources did not explain a significant amount of the variance in stress, \(R^2\) = 0.01, Adj. \(R^2\) = 0, \(F(2, 565) = 1.67\), \(p = .189\). The inclusion of the interaction term in step two of the model did not contribute a significant addition to the model, \(F(3, 564) = 1.17\), \(p = .320\), \(\Delta R^2\) = 0.00, \(\Delta F\) (1, 564) = 0.17, and thus does not support the presence of moderation.
 
 Finally, challenge stressors and resources explained a statsically significant amount of the variability in burnout, \(R^2\) = 0.04, Adj. \(R^2\) = 0.04, \(F(2, 565) = 1.67\), \(p = .189\). The inclusion of the interaction term in step two of the model did not contribute a significant addition to the model, \(F(3, 564) = 1.17\), \(p = .320\), \(\Delta R^2\) = 0.00, \(\Delta F\) (1, 564) = 2.25, and thus failing to provide statistical support for the presence of moderation. In sum, these findings do not provide support for the assertion that resources would moderate the relationships between challenge stressors and the outcomes of strain and burnout.
 
-\begin{table*}[tbp]
+\begin{table}[tbp]
 
 \begin{center}
 \begin{threeparttable}
 
-\caption{\label{tab:hind-resource-table}}
+\caption{\label{tab:hind-resource-table}Moderated regression summary of outcomes regressed on hindrances and resources}
 
 \begin{tabular}{llllll}
 \toprule
@@ -390,7 +442,7 @@ Burnout & 1 & Hindrance & 0.10 * &  & \\
 \end{threeparttable}
 \end{center}
 
-\end{table*}
+\end{table}
 
 We also explored whether there was an interaction between hindrance stressors and resources on the outcomes (i.e., engagement, stress, and burnout). A second group of hierarchical regressions were conducted with hindrance stressors and resources added in step one of the model and an interaction term, hindrance stressors x resources, added in step two of the model. See Table \ref{tab:hind-resource-table}.
 
@@ -420,7 +472,7 @@ Summatively these findings provide support for the assertion that resources woul
 \caption{\label{fig:hind-resource-burn-int}Interaction between Hindrances and Resources on Burnout}
 \end{figure}
 
-In addition to the two hypotheses, two related research questions were proposed: 1) do literature-implicated resources materialize as perceived resources and 2) do literature-implicated demands materialize as perceived demands? To answer these questions, authors first categorized O*Net items into the elements listed in the JD-R literature. For example, autonomy is frequently described as a resource. An O*Net item is, ``How much decision making freedom, without supervision, does your job offer?''. This O*Net item was retained within the ``autonomy'' category. Mean ratings of the O*Net items were then computed by element (e.g., all of the items representing autonomy) to explore whether literature-implicated resources and demands were evaluated as such.
+In addition to the two hypotheses, two sets of exploratory analyses were also pursued: 1) do literature-implicated resources materialize as perceived resources and 2) do literature-implicated demands materialize as perceived demands? To answer these questions, authors first categorized O*Net items into the elements listed in the JD-R literature. For example, autonomy is frequently described as a resource. An O*Net item is, ``How much decision making freedom, without supervision, does your job offer?''. This O*Net item was retained within the ``autonomy'' category. Mean ratings of the O*Net items were then computed by element (e.g., all of the items representing autonomy) to explore whether literature-implicated resources and demands were evaluated as such.
 
 Figure \ref{fig:scalelevelgraphs} presents these comparisons visually, where the bar lengths represent mean ratings within element category (e.g., the white bar represents mean O*Net resource ratings for a given JD-R element). First exploring the right side of Figure \ref{fig:scalelevelgraphs}, there is a pattern of the highest level ratings being those of literature-derived resources (e.g., job control). As described above, the left side of Figure \ref{fig:scalelevelgraphs} shows literature-derived demand categories (e.g., work pressure). However, in contrast, we do not see a clear demarcation of resource and challenge, as would be expected if the job characteristics evidenced consistency (the literature-driven consistency would manifest as ``high'' gray and black bars and ``low'' white bars). In alignment with what we observed regarding variability in ratings of hindrance stressors in H1, there is much less consistency in how employees rated what should objectively be ``hindrances'' at work.
 
