@@ -540,24 +540,25 @@ names(data_new)[names(data_new) == "overall.resource"] <- "Resource"
 
 r <- corx::corx(data_new, x =c("onet.resource.ii", "onet.resource.mp", "onet.resource.wo",  "onet.resource.io", "onet.resource.ir", "onet.resource.pc", "onet.resource.sc", "onet.challenge.ii", "onet.challenge.mp", "onet.challenge.wo",  "onet.challenge.io", "onet.challenge.ir", "onet.challenge.pc", "onet.challenge.sc","onet.hindrance.ii", "onet.hindrance.mp", "onet.hindrance.wo", "onet.hindrance.io", "onet.hindrance.ir", "onet.hindrance.pc", "onet.hindrance.sc"), y =c("onet.resource.ii", "onet.resource.mp", "onet.resource.wo",  "onet.resource.io", "onet.resource.ir", "onet.resource.pc", "onet.resource.sc", "onet.challenge.ii", "onet.challenge.mp", "onet.challenge.wo", "onet.challenge.io", "onet.challenge.ir", "onet.challenge.pc", "onet.challenge.sc","onet.hindrance.ii", "onet.hindrance.mp", "onet.hindrance.wo", "onet.hindrance.io", "onet.hindrance.ir", "onet.hindrance.pc", "onet.hindrance.sc"),            
                 triangle = "lower",
- #               stars = c(0.05, 0.01, 0.001),
-                describe = c(`$M$` = mean, `$SD$` = sd))
+                stars = c(0.05, 0.01)) #, 0.001),
+ #               describe = c(`$M$` = mean, `$SD$` = sd))
 
-papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table,
+#rapa <- as.data.frame(r$apa)       
+
+papaja::apa_table(r$apa, # changed from r$apa list 6/23/24
                   caption = "Challenge, hindrance, and resource bivariate correlations.",
                   escape = FALSE, 
                   font_size = "tiny",  ## "tiny" smallest
                   longtable = TRUE,
                   landscape = TRUE,
 #                  stub_indents = list(a=1:10, b = 11:21),
-                  note = "The seven O*Net grouping categories represented here are: Information Input (ii), Mental Processes (mp), Work Output (wo), Interacting with Others (io), Interpersonal Relationships (ir), Physical Work Conditions (pc), and Structural Job Characteristics (sc)")
+                  align = c("m{2.6cm}", rep("m{.7cm}",21)),
+                  note = "$*$ p < .05, $**$ p < .01; The seven O*Net grouping categories represented here are: Information Input (ii), Mental Processes (mp), Work Output (wo), Interacting with Others (io), Interpersonal Relationships (ir), Physical Work Conditions (pc), and Structural Job Characteristics (sc)")
 trial <- data_new[c(405:411, 413:419, 421:427)]
 #library(apaTables)
 #apa.cor.table(trial, filename = "cor.doc", show.conf.interval = FALSE, landscape = TRUE)
 
 ```
-
-
 
 
 ```{r scalelevelgraphs, fig.cap="Average characteristic rating grouped by literature-implicated categorizations."}
