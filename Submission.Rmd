@@ -891,13 +891,13 @@ overall.challenge_center <- overall.challenge - 204.2
 
 ```{r ModeratedRegressionChallenge-ResourceBurnout}
 
-cr_burn_m1 <- lm(scale(burnout) ~ scale(overall.challenge_center), modreg)
+cr_burn_m1 <- lm(burnout ~ scale(overall.challenge_center), modreg)
 #summary(cr_burn_m1)
 
-cr_burn_m2 <- lm(scale(burnout) ~ scale(overall.challenge_center) + scale(overall.resource), modreg)
+cr_burn_m2 <- lm(burnout ~ scale(overall.challenge_center) + scale(overall.resource), modreg)
 #summary(cr_burn_m2)
 
-cr_burn_m3 <- lm(scale(burnout) ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), modreg)
+cr_burn_m3 <- lm(burnout ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), modreg)
 #summary(cr_burn_m3)
 
 aov_test <- anova(cr_burn_m2, cr_burn_m3)
@@ -906,13 +906,13 @@ aov_test <- anova(cr_burn_m2, cr_burn_m3)
 
 ```{r ModeratedRegressionChallenge-ResourceStress}
 
-cr_stress_m1 <- lm(scale(stress) ~ scale(overall.challenge_center), modreg)
+cr_stress_m1 <- lm(stress ~ scale(overall.challenge_center), modreg)
 #summary(cr_stress_m1)
 
-cr_stress_m2 <- lm(scale(stress) ~ scale(overall.challenge_center) + scale(overall.resource_center), modreg)
+cr_stress_m2 <- lm(stress ~ scale(overall.challenge_center) + scale(overall.resource_center), modreg)
 #summary(cr_stress_m2)
 
-cr_stress_m3 <- lm(scale(stress) ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), modreg)
+cr_stress_m3 <- lm(stress ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), modreg)
 #summary(cr_stress_m3)
 
 cr_stress_anova <- anova(cr_stress_m2, cr_stress_m3)
@@ -921,13 +921,13 @@ cr_stress_anova <- anova(cr_stress_m2, cr_stress_m3)
 
 ```{r Moderated Regression Challenge-ResourceEngagement}
 
-cr_eng_m1 <- lm((engagement) ~ scale(overall.challenge_center), modreg)
+cr_eng_m1 <- lm(engagement ~ scale(overall.challenge_center), modreg)
 #summary(cr_eng_m1)
 
-cr_eng_m2 <- lm((engagement) ~ scale(overall.challenge_center) + scale(overall.resource_center), modreg)
+cr_eng_m2 <- lm(engagement ~ scale(overall.challenge_center) + scale(overall.resource_center), modreg)
 #summary(cr_eng_m2)
 
-cr_eng_m3 <- lm((engagement) ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), modreg)
+cr_eng_m3 <- lm(engagement ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), modreg)
 #summary(cr_eng_m3)
 
 cr_eng_anova <- anova(cr_eng_m2, cr_eng_m3)
@@ -936,13 +936,13 @@ cr_eng_anova <- anova(cr_eng_m2, cr_eng_m3)
 
 ```{r Moderated Regression Hindrance-Resource Burnout}
 
-hr_burn_m1 <- lm((burnout) ~ scale(overall.hindrance_center), modreg)
+hr_burn_m1 <- lm(burnout ~ scale(overall.hindrance_center), modreg)
 #summary(hr_burn_m1)
 
-hr_burn_m2 <- lm((burnout) ~ scale(overall.hindrance_center) + scale(overall.resource_center), modreg)
+hr_burn_m2 <- lm(burnout ~ scale(overall.hindrance_center) + scale(overall.resource_center), modreg)
 #summary(hr_burn_m2)
 
-hr_burn_m3 <- lm((burnout) ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), modreg)
+hr_burn_m3 <- lm(burnout ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), modreg)
 #summary(hr_burn_m3)
 
 hr_burn_anova <- anova(hr_burn_m2, hr_burn_m3)
@@ -951,13 +951,13 @@ hr_burn_anova <- anova(hr_burn_m2, hr_burn_m3)
 
 ```{r ModeratedRegressionHindrance-ResourceStress}
 
-hr_stress_m1 <- lm((stress) ~ scale(overall.hindrance_center), modreg)
+hr_stress_m1 <- lm(stress ~ scale(overall.hindrance_center), modreg)
 #summary(hr_stress_m1)
 
-hr_stress_m2 <- lm((stress) ~ scale(overall.hindrance_center) + scale(overall.resource_center), modreg)
+hr_stress_m2 <- lm(stress ~ scale(overall.hindrance_center) + scale(overall.resource_center), modreg)
 #summary(hr_stress_m2)
 
-hr_stress_m3 <- lm((stress) ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), modreg)
+hr_stress_m3 <- lm(stress ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), modreg)
 #summary(hr_stress_m3)
 
 hr_stress_anova <- anova(hr_stress_m2, hr_stress_m3)
@@ -966,13 +966,13 @@ hr_stress_anova <- anova(hr_stress_m2, hr_stress_m3)
 
 ```{r Moderated Regression Hindrance-Resource Engagement}
 
-hr_eng_m1 <- lm((engagement) ~ scale(overall.hindrance_center), modreg)
+hr_eng_m1 <- lm(engagement ~ scale(overall.hindrance_center), modreg)
 #summary(hr_eng_m1)
 
-hr_eng_m2 <- lm((engagement) ~ scale(overall.hindrance_center) + scale(overall.resource_center), modreg)
+hr_eng_m2 <- lm(engagement ~ scale(overall.hindrance_center) + scale(overall.resource_center), modreg)
 #summary(hr_eng_m2)
 
-hr_eng_m3 <- lm((engagement) ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), modreg)
+hr_eng_m3 <- lm(engagement ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), modreg)
 #summary(hr_eng_m3)
 
 hr_eng_anova <- anova(hr_eng_m2, hr_eng_m3)
@@ -988,7 +988,8 @@ options(scipen=999)  ## Suppresses scientific notation
 # b weights
 chal.2.burn <- round(summary(cr_burn_m2)$coefficients[2, 1],2)
 res.2.burn <- round(summary(cr_burn_m2)$coefficients[3, 1],2)
-
+chal.3.burn <- round(summary(cr_burn_m3)$coefficients[2, 1],2)
+res.3.burn <- round(summary(cr_burn_m3)$coefficients[3, 1],2)
 int.cr.3.burn <- round(summary(cr_burn_m3)$coefficients[4, 1],2)
 
 #r squared
@@ -1005,6 +1006,8 @@ cr_burn_r_square_change <- sigfill(cr_burn_m3_r - cr_burn_m2_r)
 chal.2.stress <- round(summary(cr_stress_m2)$coefficients[2, 1],2)
 res.2.stress <- round(summary(cr_stress_m2)$coefficients[3, 1],2)
 
+chal.3.stress <- round(summary(cr_stress_m3)$coefficients[2, 1],2)
+res.3.stress <- round(summary(cr_stress_m3)$coefficients[3, 1],2)
 int.cr.3.stress <- round(summary(cr_stress_m3)$coefficients[4, 1],2)
 
 #r squared
@@ -1021,6 +1024,8 @@ cr_stress_r_square_change <- sigfill(cr_stress_m3_r - cr_stress_m2_r)
 chal.2.eng <- round(summary(cr_eng_m2)$coefficients[2, 1],2)
 res.2.eng <- round(summary(cr_eng_m2)$coefficients[3, 1],2)
 
+chal.3.eng <- round(summary(cr_eng_m3)$coefficients[2, 1],2)
+res.3.eng <- round(summary(cr_eng_m3)$coefficients[3, 1],2)
 int.cr.3.eng <- round(summary(cr_eng_m3)$coefficients[4, 1],2)
 
 #r squared
@@ -1041,7 +1046,8 @@ options(scipen=999)  ## Suppresses scientific notation
 # b weights
 hind.2.burn <- round(summary(hr_burn_m2)$coefficients[2, 1],2)
 res.2hr.burn <- round(summary(hr_burn_m2)$coefficients[3, 1],2)
-
+hind.3.burn <- round(summary(hr_burn_m3)$coefficients[2, 1],2)
+res.3hr.burn <- round(summary(hr_burn_m3)$coefficients[3, 1],2)
 int.hr.3.burn <- round(summary(hr_burn_m3)$coefficients[4, 1],2)
 
 #r squared
@@ -1058,6 +1064,8 @@ hr_burn_r_square_change <- round(hr_burn_m3_r - hr_burn_m2_r,2)
 hind.2.stress <- round(summary(hr_stress_m2)$coefficients[2, 1],2)
 res.2hr.stress <- round(summary(hr_stress_m2)$coefficients[3, 1],2)
 
+hind.3.stress <- round(summary(hr_stress_m3)$coefficients[2, 1],2)
+res.3hr.stress <- round(summary(hr_stress_m3)$coefficients[3, 1],2)
 int.hr.3.stress <- round(summary(hr_stress_m3)$coefficients[4, 1],2)
 
 #r squared
@@ -1074,6 +1082,8 @@ hr_stress_r_square_change <- round(hr_stress_m3_r - hr_stress_m2_r,2)
 hind.2.eng <- round(summary(hr_eng_m2)$coefficients[2, 1],2)
 res.2hr.eng <- round(summary(hr_eng_m2)$coefficients[3, 1],2)
 
+hind.3.eng <- round(summary(hr_eng_m3)$coefficients[2, 1],2)
+res.3hr.eng <- round(summary(hr_eng_m3)$coefficients[3, 1],2)
 int.hr.3.eng <- round(summary(hr_eng_m3)$coefficients[4, 1],2)
 
 #r squared
@@ -1105,13 +1115,12 @@ papaja::apa_table(regtable)
 
 library(kableExtra)
 
-DV <- c("Engagement","","", "Stress","","", "Burnout","","")
-Step <- c("1", "","2", "1", "","2", "1", "","2")
+DV <- c("Engagement","","","","","Stress","","","","", "Burnout","","","","")
+Step <- c("1", "","2", "", "", "1", "","2", "","", "1", "","2", "","")
 Model <- c("Challenge", "Resource", "Challenge", "Resource", "Challenge X Resource", "Challenge", "Resource", "Challenge", "Resource", "Challenge X Resource", "Challenge", "Resource", "Challenge", "Resource", "Challenge X Resource")
-Beta <- c(sigfill(chal.2.eng), paste(res.2.eng,"**"), paste(int.cr.3.eng,"*"), chal.2.stress, res.2.stress, int.cr.3.stress, paste(chal.2.burn,"**"), res.2.burn, int.cr.3.burn)
-R2 <- c("", paste(cr_eng_m2_r,"**"), paste(cr_eng_m3_r,"**"), "", round(cr_stress_m2_r,2), round(cr_stress_m3_r,2), "", paste(round(cr_burn_m2_r,2),"**"), paste(round(cr_burn_m3_r,2),"**"))
-DeltaR <- c("","", paste(cr_eng_r_square_change,"*"), "","",cr_stress_r_square_change, "","",cr_burn_r_square_change)
-
+Beta <- c(sigfill(chal.2.eng), paste(res.2.eng,"**"), chal.3.eng, paste(res.3.eng,"**"), paste(int.cr.3.eng,"*"), chal.2.stress, res.2.stress, chal.3.stress, res.3.stress, int.cr.3.stress, paste(chal.2.burn,"**"), res.2.burn, paste(chal.3.burn,"**"), res.3.burn, int.cr.3.burn)
+R2 <- c("", paste(cr_eng_m2_r,"**"), "", "", paste(cr_eng_m3_r,"**"), "", round(cr_stress_m2_r,2), "", "", round(cr_stress_m3_r,2), "", paste(round(cr_burn_m2_r,2),"**"), "", "",paste(round(cr_burn_m3_r,2),"**"))
+DeltaR <- c("","","","", paste(cr_eng_r_square_change,"*"), "","","","",cr_stress_r_square_change, "","","","",cr_burn_r_square_change)
 regtable <- as.data.frame(cbind(DV, Step, Model, Beta, R2, DeltaR))
 
 colnames(regtable)[4] <- "$\\beta$"
@@ -1155,13 +1164,13 @@ Finally, challenge stressors and resources explained a statsically significant a
 
 library(kableExtra)
 
-DV <- c("Engagement","","", "Stress","","", "Burnout","","")
-Step <- c("1", "","2", "1", "","2", "1", "","2")
-Model <- c("Hindrance", "Resource", "Hindrance X Resource", "Hindrance", "Resource", "Hindrance X Resource", "Hindrance", "Resource", "Hindrance X Resource")
-Beta <- c(paste(hind.2.eng,"**"), paste(res.2hr.eng,"**"), int.hr.3.eng, paste(sigfill(hind.2.stress),"*"), paste(res.2hr.stress,"**"), paste(int.hr.3.stress,"**"), paste(sigfill(hind.2.burn),"*"), paste(res.2hr.burn,"*"), paste(int.hr.3.burn,"**"))
-R2 <- c("", paste(round(hr_eng_m2_r,2),"**"), paste(round(hr_eng_m3_r,2),"**"), "", paste(hr_stress_m2_r,"*"), paste(hr_stress_m3_r, "**"), "", paste(hr_burn_m2_r,"**"), paste(hr_burn_m3_r,"**"))
+DV <- c("Engagement","","","","","Stress","","","","", "Burnout","","","","")
+Step <- c("1", "","2", "", "", "1", "","2", "","", "1", "","2", "","")
+Model <- c("Hindrance", "Resource", "Hindrance", "Resource", "Hindrance X Resource", "Hindrance", "Resource", "Hindrance", "Resource", "Hindrance X Resource", "Hindrance", "Resource", "Hindrance", "Resource", "Hindrance X Resource")
+Beta <- c(paste(hind.2.eng,"**"), paste(res.2hr.eng,"**"), paste(sigfill(hind.3.eng),"**"), paste(res.3hr.eng,"**"), int.hr.3.eng, paste(sigfill(hind.2.stress),"*"), paste(res.2hr.stress), paste(hind.3.stress, "**"), paste(sigfill(res.3hr.stress)), paste(int.hr.3.stress,"**"), paste(sigfill(hind.2.burn),"*"), paste(sigfill(res.2hr.burn),"*"), paste(sigfill(hind.3.burn),"*"), paste(res.3hr.burn), paste(int.hr.3.burn,"**"))
+R2 <- c("", paste(round(hr_eng_m2_r,2),"**"), "", "", paste(round(hr_eng_m3_r,2),"**"), "", paste(hr_stress_m2_r,"*"), "", "", paste(hr_stress_m3_r, "**"), "", paste(hr_burn_m2_r,"**"), "", "", paste(hr_burn_m3_r,"**"))
 #DeltaR <- c("",paste(hr_eng_m2_r,"**"),hr_eng_r_square_change, "",paste(hr_stress_m2_r,"**"),hr_stress_r_square_change, "",paste(hr_burn_m2_r,"**"),hr_burn_r_square_change)
-DeltaR <- c("","",hr_eng_r_square_change, "","",paste(hr_stress_r_square_change,"**"), "","",paste(hr_burn_r_square_change, "**"))
+DeltaR <- c("","","","",hr_eng_r_square_change, "","","","",paste(hr_stress_r_square_change,"**"), "","","","",paste(hr_burn_r_square_change, "**"))
 regtable <- as.data.frame(cbind(DV, Step, Model, Beta, R2, DeltaR))
 
 colnames(regtable)[4] <- "$\\beta$"

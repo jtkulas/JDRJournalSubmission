@@ -96,19 +96,19 @@ DV & \multicolumn{1}{c}{Step} & \multicolumn{1}{c}{Model} & \multicolumn{1}{c}{$
 \midrule
 Engagement & 1 & Challenge & -0.08 &  & \\
  &  & Resource & 0.37 ** & 0.15 ** & \\
- & 2 & Challenge & -0.07 * & 0.16 ** & 0.01 *\\
-Stress & 1 & Resource & 0.14 &  & \\
- &  & Challenge X Resource & -0.07 & 0.01 & \\
- & 2 & Challenge & 0.02 & 0.01 & 0.00\\
-Burnout & 1 & Resource & 0.33 ** &  & \\
- &  & Challenge & -0.14 & 0.04 ** & \\
- & 2 & Resource & 0.06 & 0.04 ** & 0.00\\
-Engagement & 1 & Challenge X Resource & -0.08 &  & \\
- &  & Challenge & 0.37 ** & 0.15 ** & \\
- & 2 & Resource & -0.07 * & 0.16 ** & 0.01 *\\
-Stress & 1 & Challenge & 0.14 &  & \\
- &  & Resource & -0.07 & 0.01 & \\
- & 2 & Challenge X Resource & 0.02 & 0.01 & 0.00\\
+ & 2 & Challenge & -0.08 &  & \\
+ &  & Resource & 0.37 ** &  & \\
+ &  & Challenge X Resource & -0.07 * & 0.16 ** & 0.01 *\\
+Stress & 1 & Challenge & 0.12 &  & \\
+ &  & Resource & -0.06 & 0.01 & \\
+ & 2 & Challenge & 0.12 &  & \\
+ &  & Resource & -0.06 &  & \\
+ &  & Challenge X Resource & 0.02 & 0.01 & 0.00\\
+Burnout & 1 & Challenge & 0.28 ** &  & \\
+ &  & Resource & -0.12 & 0.04 ** & \\
+ & 2 & Challenge & 0.28 ** &  & \\
+ &  & Resource & -0.12 &  & \\
+ &  & Challenge X Resource & 0.05 & 0.04 ** & 0.00\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -138,13 +138,19 @@ DV & \multicolumn{1}{c}{Step} & \multicolumn{1}{c}{Model} & \multicolumn{1}{c}{$
 \midrule
 Engagement & 1 & Hindrance & -0.11 ** &  & \\
  &  & Resource & 0.35 ** & 0.17 ** & \\
- & 2 & Hindrance X Resource & -0.01 & 0.17 ** & 0.00\\
+ & 2 & Hindrance & -0.10 ** &  & \\
+ &  & Resource & 0.34 ** &  & \\
+ &  & Hindrance X Resource & -0.01 & 0.17 ** & 0.00\\
 Stress & 1 & Hindrance & 0.08 * &  & \\
- &  & Resource & 0.01 ** & 0.01 * & \\
- & 2 & Hindrance X Resource & -0.17 ** & 0.04 ** & 0.03 **\\
+ &  & Resource & 0.01 & 0.01 * & \\
+ & 2 & Hindrance & 0.16 ** &  & \\
+ &  & Resource & -0.10 &  & \\
+ &  & Hindrance X Resource & -0.17 ** & 0.04 ** & 0.03 **\\
 Burnout & 1 & Hindrance & 0.09 * &  & \\
- &  & Resource & 0.1 * & 0.04 ** & \\
- & 2 & Hindrance X Resource & -0.11 ** & 0.05 ** & 0.01 **\\
+ &  & Resource & 0.10 * & 0.04 ** & \\
+ & 2 & Hindrance & 0.13 * &  & \\
+ &  & Resource & 0.03 &  & \\
+ &  & Hindrance X Resource & -0.11 ** & 0.05 ** & 0.01 **\\
 \bottomrule
 \addlinespace
 \end{tabular}

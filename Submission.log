@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.11)  11 JUL 2024 12:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.11)  11 JUL 2024 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -926,7 +926,7 @@ Underfull \vbox (badness 3977) has occurred while \output is active []
 
 
 [16]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 527.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 533.
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1086,7 +1086,7 @@ L3 programming layer <2020/03/25>
 Here is how much of TeX's memory you used:
  26976 strings out of 475500
  508903 string characters out of 5774058
- 2020908 words of memory out of 5000000
+ 2019908 words of memory out of 5000000
  48998 multiletter control sequences out of 15000+600000
  635528 words of font info for 102 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
