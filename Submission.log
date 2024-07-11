@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.4)  10 JUL 2024 16:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.4)  11 JUL 2024 11:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -703,15 +703,33 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2024-05-08 L3 Experimental document command parser
-)) (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty
+)) (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2023/05/20 line numbers on paragraphs v5.3
+\linenopenalty=\count346
+\output=\toks42
+\linenoprevgraf=\count347
+\linenumbersep=\dimen308
+\linenumberwidth=\dimen309
+\c@linenumber=\count348
+\c@pagewiselinenumber=\count349
+\c@LN@truepage=\count350
+\c@internallinenumber=\count351
+\c@internallinenumbers=\count352
+\quotelinenumbersep=\dimen310
+\bframerule=\dimen311
+\bframesep=\dimen312
+\bframebox=\box75
+\linenoamsmath@ams@eqpen=\count353
+LaTeX Info: Redefining \\ on input line 3180.
+) (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
-\csq@reset=\count346
-\csq@gtype=\count347
-\csq@glevel=\count348
-\csq@qlevel=\count349
-\csq@maxlvl=\count350
-\csq@tshold=\count351
-\csq@ltx@everypar=\toks42
+\csq@reset=\count354
+\csq@gtype=\count355
+\csq@glevel=\count356
+\csq@qlevel=\count357
+\csq@maxlvl=\count358
+\csq@tshold=\count359
+\csq@ltx@everypar=\toks43
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
 )
@@ -723,14 +741,14 @@ File: csquotes.cfg
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count352
+\BKM@id=\count360
 ))
-\c@NumberOfAuthors=\count353
-\c@NumberOfSuperscripts=\count354
+\c@NumberOfAuthors=\count361
+\c@NumberOfSuperscripts=\count362
 
-Class apa7 Warning: Deprecated: see documentation for \authorsaffiliations on input line 195.
+Class apa7 Warning: Deprecated: see documentation for \authorsaffiliations on input line 198.
 
-\c@NumberOfAffiliations=\count355
+\c@NumberOfAffiliations=\count363
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -738,24 +756,24 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 (./Submission.aux)
 \openout1 = `Submission.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 206.
+LaTeX Font Info:    ... okay on input line 206.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -796,7 +814,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 203.
+Package hyperref Info: Link coloring OFF on input line 206.
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/apa7/config/APA7english.txt
 File: APA7english.txt 2020/12/02 v1.02 apa7 configuration for non-American English
 )
@@ -806,7 +824,10 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 207.
+(c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 
 [1{c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
 
@@ -841,42 +862,42 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [10]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 314.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 317.
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 314.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 317.
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 314.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 317.
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 314.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 317.
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 314.
+(Font)              <12> on input line 317.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 314.
+(Font)              <8> on input line 317.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 314.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 314.
+(Font)              <6> on input line 317.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 317.
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 314.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 317.
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 314.
+(Font)              <10> on input line 317.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 314.
+(Font)              <7> on input line 317.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 314.
+(Font)              <5> on input line 317.
 
 
 [11]
@@ -905,7 +926,7 @@ Underfull \vbox (badness 3977) has occurred while \output is active []
 
 
 [16]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 488.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 491.
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -969,7 +990,7 @@ Overfull \hbox (73.88411pt too wide) in alignment at lines 19--44
 [26
 
 ] (./Submission.fff
-<Submission_files/figure-latex/ourmodel-1.pdf, id=225, 469.755pt x 325.215pt>
+<Submission_files/figure-latex/ourmodel-1.pdf, id=227, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/ourmodel-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/ourmodel-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/ourmodel-1.pdf  used on input line 5.
@@ -979,7 +1000,7 @@ Package pdftex.def Info: Submission_files/figure-latex/ourmodel-1.pdf  used on i
 [27
 
  <./Submission_files/figure-latex/ourmodel-1.pdf>]
-<Submission_files/figure-latex/combinegraphs-1.pdf, id=234, 469.755pt x 722.7pt>
+<Submission_files/figure-latex/combinegraphs-1.pdf, id=236, 469.755pt x 722.7pt>
 File: Submission_files/figure-latex/combinegraphs-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/combinegraphs-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/combinegraphs-1.pdf  used on input line 14.
@@ -990,7 +1011,7 @@ LaTeX Warning: Float too large for page by 50.4063pt on input line 16.
 
 
 [28 <./Submission_files/figure-latex/combinegraphs-1.pdf>]
-<Submission_files/figure-latex/combinegraphs2-1.pdf, id=244, 469.755pt x 722.7pt>
+<Submission_files/figure-latex/combinegraphs2-1.pdf, id=246, 469.755pt x 722.7pt>
 File: Submission_files/figure-latex/combinegraphs2-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/combinegraphs2-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/combinegraphs2-1.pdf  used on input line 23.
@@ -1001,7 +1022,7 @@ LaTeX Warning: Float too large for page by 50.4063pt on input line 25.
 
 
 [29 <./Submission_files/figure-latex/combinegraphs2-1.pdf>]
-<Submission_files/figure-latex/overallhist-1.pdf, id=255, 469.755pt x 325.215pt>
+<Submission_files/figure-latex/overallhist-1.pdf, id=257, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/overallhist-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/overallhist-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/overallhist-1.pdf  used on input line 32.
@@ -1013,7 +1034,7 @@ Package pdftex.def Info: Submission_files/figure-latex/overallhist-1.pdf  used o
 
 
  <./Submission_files/figure-latex/overallhist-1.pdf>]
-<Submission_files/figure-latex/scalelevelgraphs-1.pdf, id=265, 469.755pt x 325.215pt>
+<Submission_files/figure-latex/scalelevelgraphs-1.pdf, id=267, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/scalelevelgraphs-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/scalelevelgraphs-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/scalelevelgraphs-1.pdf  used on input line 41.
@@ -1023,7 +1044,7 @@ Package pdftex.def Info: Submission_files/figure-latex/scalelevelgraphs-1.pdf  u
 [31
 
  <./Submission_files/figure-latex/scalelevelgraphs-1.pdf>]
-<Submission_files/figure-latex/chal-resource-int-1.pdf, id=277, 469.755pt x 325.215pt>
+<Submission_files/figure-latex/chal-resource-int-1.pdf, id=279, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/chal-resource-int-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/chal-resource-int-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/chal-resource-int-1.pdf  used on input line 50.
@@ -1033,7 +1054,7 @@ Package pdftex.def Info: Submission_files/figure-latex/chal-resource-int-1.pdf  
 [32
 
  <./Submission_files/figure-latex/chal-resource-int-1.pdf>]
-<Submission_files/figure-latex/hind-resource-stress-int-1.pdf, id=288, 469.755pt x 325.215pt>
+<Submission_files/figure-latex/hind-resource-stress-int-1.pdf, id=290, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/hind-resource-stress-int-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/hind-resource-stress-int-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/hind-resource-stress-int-1.pdf  used on input line 59.
@@ -1043,7 +1064,7 @@ Package pdftex.def Info: Submission_files/figure-latex/hind-resource-stress-int-
 [33
 
  <./Submission_files/figure-latex/hind-resource-stress-int-1.pdf>]
-<Submission_files/figure-latex/hind-resource-burn-int-1.pdf, id=299, 469.755pt x 325.215pt>
+<Submission_files/figure-latex/hind-resource-burn-int-1.pdf, id=301, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/hind-resource-burn-int-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/hind-resource-burn-int-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/hind-resource-burn-int-1.pdf  used on input line 68.
@@ -1059,18 +1080,18 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 26675 strings out of 475516
- 503594 string characters out of 5774433
+ 26972 strings out of 475516
+ 508843 string characters out of 5774433
  1999893 words of memory out of 5000000
- 48692 multiletter control sequences out of 15000+600000
- 632757 words of font info for 101 fonts, out of 8000000 for 9000
+ 48981 multiletter control sequences out of 15000+600000
+ 635528 words of font info for 102 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 99i,12n,107p,2081b,651s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Submission.pdf (34 pages, 474453 bytes).
+ 99i,11n,107p,2081b,656s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on Submission.pdf (34 pages, 491733 bytes).
 PDF statistics:
- 429 PDF objects out of 1000 (max. 8388607)
- 345 compressed objects within 4 object streams
+ 435 PDF objects out of 1000 (max. 8388607)
+ 349 compressed objects within 4 object streams
  102 named destinations out of 1000 (max. 500000)
  149 words of extra memory for PDF output out of 10000 (max. 10000000)
 
