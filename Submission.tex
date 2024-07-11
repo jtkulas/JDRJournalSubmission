@@ -371,6 +371,36 @@ The mean resource to challenge correlations within the same dimension ranged fro
 
 \end{lltable}
 
+\begin{table}[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:unnamed-chunk-1}Overall variable bivariate correlations.}
+
+\begin{tabular}{llllllll}
+\toprule
+ & \multicolumn{1}{c}{1} & \multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} & \multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{$M$} & \multicolumn{1}{c}{$SD$}\\
+\midrule
+1. Challenge & - &  &  &  &  & 3.75 & 0.50\\
+2. Hindrance & -.21*** & - &  &  &  & 2.39 & 0.78\\
+3. Resource & .74*** & -.25*** & - &  &  & 3.77 & 0.48\\
+4. Stress & -.03 & .11** & -.08 & - &  & 2.59 & 0.97\\
+5. Burnout & -.05 & .08 & -.08 & .70*** & - & 3.04 & 0.87\\
+6. Engagement & .28*** & -.11** & .33*** & -.24*** & -.30*** & 4.03 & 0.79\\
+\bottomrule
+\addlinespace
+\end{tabular}
+
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} $*$ p < .05, $**$ p < .01, $***$ p < .001}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table}
+
 \begin{figure}
 \centering
 \includegraphics{Submission_files/figure-latex/scalelevelgraphs-1.pdf}
@@ -390,15 +420,21 @@ We next explored whether there was statistical support for the hypothesis that t
 \toprule
 DV & \multicolumn{1}{c}{Step} & \multicolumn{1}{c}{Model} & \multicolumn{1}{c}{$\beta$} & \multicolumn{1}{c}{$R^2$} & \multicolumn{1}{c}{$\Delta R^2$}\\
 \midrule
-Engagement & 1 & Challenge & -0.10 &  & \\
- &  & Resource & 0.48 ** & 0.15 ** & \\
- & 2 & Challenge X Resource & -0.09 * & 0.16 ** & 0.01 *\\
+Engagement & 1 & Challenge & -0.08 &  & \\
+ &  & Resource & 0.37 ** & 0.15 ** & \\
+ & 2 & Challenge & -0.07 * & 0.16 ** & 0.01 *\\
+Stress & 1 & Resource & 0.14 &  & \\
+ &  & Challenge X Resource & -0.07 & 0.01 & \\
+ & 2 & Challenge & 0.02 & 0.01 & 0.00\\
+Burnout & 1 & Resource & 0.33 ** &  & \\
+ &  & Challenge & -0.14 & 0.04 ** & \\
+ & 2 & Resource & 0.06 & 0.04 ** & 0.00\\
+Engagement & 1 & Challenge X Resource & -0.08 &  & \\
+ &  & Challenge & 0.37 ** & 0.15 ** & \\
+ & 2 & Resource & -0.07 * & 0.16 ** & 0.01 *\\
 Stress & 1 & Challenge & 0.14 &  & \\
  &  & Resource & -0.07 & 0.01 & \\
  & 2 & Challenge X Resource & 0.02 & 0.01 & 0.00\\
-Burnout & 1 & Challenge & 0.33 ** &  & \\
- &  & Resource & -0.14 & 0.04 ** & \\
- & 2 & Challenge X Resource & 0.06 & 0.04 ** & 0.00\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -429,15 +465,15 @@ Finally, challenge stressors and resources explained a statsically significant a
 \toprule
 DV & \multicolumn{1}{c}{Step} & \multicolumn{1}{c}{Model} & \multicolumn{1}{c}{$\beta$} & \multicolumn{1}{c}{$R^2$} & \multicolumn{1}{c}{$\Delta R^2$}\\
 \midrule
-Engagement & 1 & Hindrance & -0.14 ** &  & \\
- &  & Resource & 0.46 ** & 0.17 ** & \\
- & 2 & Hindrance X Resource & -0.02 & 0.17 ** & 0.00\\
-Stress & 1 & Hindrance & 0.10 * &  & \\
- &  & Resource & 0.02 ** & 0.01 * & \\
- & 2 & Hindrance X Resource & -0.19 ** & 0.04 ** & 0.03 **\\
-Burnout & 1 & Hindrance & 0.10 * &  & \\
- &  & Resource & 0.12 * & 0.04 ** & \\
- & 2 & Hindrance X Resource & -0.13 ** & 0.05 ** & 0.01 **\\
+Engagement & 1 & Hindrance & -0.11 ** &  & \\
+ &  & Resource & 0.35 ** & 0.17 ** & \\
+ & 2 & Hindrance X Resource & -0.01 & 0.17 ** & 0.00\\
+Stress & 1 & Hindrance & 0.08 * &  & \\
+ &  & Resource & 0.01 ** & 0.01 * & \\
+ & 2 & Hindrance X Resource & -0.17 ** & 0.04 ** & 0.03 **\\
+Burnout & 1 & Hindrance & 0.09 * &  & \\
+ &  & Resource & 0.1 * & 0.04 ** & \\
+ & 2 & Hindrance X Resource & -0.11 ** & 0.05 ** & 0.01 **\\
 \bottomrule
 \addlinespace
 \end{tabular}
