@@ -38,15 +38,6 @@
 \ifnextchar[{\eatarg}{}
 
 \centering
-\includegraphics{Submission_files/figure-latex/scalelevelgraphs-1.pdf}
-\caption{\label{fig:scalelevelgraphs}Average characteristic rating grouped by literature-implicated categorizations.}
-\end{figure*}
-\efloatseparator
- 
-\begin{figure*}[hbt]
-\ifnextchar[{\eatarg}{}
-
-\centering
 \includegraphics{Submission_files/figure-latex/chal-resource-int-1.pdf}
 \caption{\label{fig:chal-resource-int}Interaction between Challenge and Resources on Engagement}
 \end{figure*}
