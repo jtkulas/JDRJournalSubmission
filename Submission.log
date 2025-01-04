@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.30)  30 DEC 2024 10:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.30)  3 JAN 2025 20:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -837,26 +837,20 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [2]
 
 [3]
-Underfull \vbox (badness 3977) has occurred while \output is active []
-
-
 
 [4]
 
 [5]
-Underfull \vbox (badness 5036) has occurred while \output is active []
-
-
 
 [6]
 \openout5 = `Submission.fff'.
 
 (Submission.fff)
-Underfull \vbox (badness 1558) has occurred while \output is active []
-
-
 
 [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [8]
 
@@ -872,48 +866,52 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 [11]
-Underfull \vbox (badness 1681) has occurred while \output is active []
-
-
-
-[12{c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
-
-[13]
-\openout4 = `Submission.ttt'.
-
-(Submission.ttt)
-
-[14]
-
-[15]
-
-[16]
-
-[17]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[18]
+[12{c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+\openout4 = `Submission.ttt'.
+
+(Submission.ttt)
+
+[13]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[16]
 Underfull \vbox (badness 1558) has occurred while \output is active []
 
 
 
+[17]
+
+[18]
+
 [19]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[21]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[21] AED endfloat: Processing end Figures and Tables
 
-
-
-[22] AED endfloat: Processing end Figures and Tables
-
-[23] (./Submission.ttt
+[22] (./Submission.ttt
 Overfull \hbox (36.94206pt too wide) in paragraph at lines 10--10
 [] [] 
  []
@@ -940,35 +938,35 @@ Overfull \hbox (73.88411pt too wide) in alignment at lines 19--44
 
 
 
-[24
+[23
 
 
 
 {c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
 
-[25
+[24
 
 
 ]
 
-[26
+[25
 
 ])
 
-[27
+[26
 
 ] (./Submission.fff
-<Submission_files/figure-latex/ourmodel-1.pdf, id=215, 469.755pt x 325.215pt>
+<Submission_files/figure-latex/ourmodel-1.pdf, id=211, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/ourmodel-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/ourmodel-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/ourmodel-1.pdf  used on input line 5.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
 
-[28
+[27
 
  <./Submission_files/figure-latex/ourmodel-1.pdf>]
-<Submission_files/figure-latex/combinegraphs-1.pdf, id=224, 469.755pt x 722.7pt>
+<Submission_files/figure-latex/combinegraphs-1.pdf, id=220, 469.755pt x 722.7pt>
 File: Submission_files/figure-latex/combinegraphs-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/combinegraphs-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/combinegraphs-1.pdf  used on input line 14.
@@ -978,8 +976,8 @@ LaTeX Warning: Float too large for page by 50.4063pt on input line 16.
 
 
 
-[29 <./Submission_files/figure-latex/combinegraphs-1.pdf>]
-<Submission_files/figure-latex/combinegraphs2-1.pdf, id=234, 469.755pt x 722.7pt>
+[28 <./Submission_files/figure-latex/combinegraphs-1.pdf>]
+<Submission_files/figure-latex/combinegraphs2-1.pdf, id=230, 469.755pt x 722.7pt>
 File: Submission_files/figure-latex/combinegraphs2-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/combinegraphs2-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/combinegraphs2-1.pdf  used on input line 23.
@@ -989,47 +987,47 @@ LaTeX Warning: Float too large for page by 50.4063pt on input line 25.
 
 
 
-[30 <./Submission_files/figure-latex/combinegraphs2-1.pdf>]
-<Submission_files/figure-latex/overallhist-1.pdf, id=244, 469.755pt x 325.215pt>
+[29 <./Submission_files/figure-latex/combinegraphs2-1.pdf>]
+<Submission_files/figure-latex/overallhist-1.pdf, id=240, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/overallhist-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/overallhist-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/overallhist-1.pdf  used on input line 32.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
 
-[31
+[30
 
 
 
  <./Submission_files/figure-latex/overallhist-1.pdf>]
-<Submission_files/figure-latex/chal-resource-int-1.pdf, id=255, 469.755pt x 325.215pt>
+<Submission_files/figure-latex/chal-resource-int-1.pdf, id=250, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/chal-resource-int-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/chal-resource-int-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/chal-resource-int-1.pdf  used on input line 41.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
 
-[32
+[31
 
  <./Submission_files/figure-latex/chal-resource-int-1.pdf>]
-<Submission_files/figure-latex/hind-resource-stress-int-1.pdf, id=266, 469.755pt x 325.215pt>
+<Submission_files/figure-latex/hind-resource-stress-int-1.pdf, id=262, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/hind-resource-stress-int-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/hind-resource-stress-int-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/hind-resource-stress-int-1.pdf  used on input line 50.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
 
-[33
+[32
 
  <./Submission_files/figure-latex/hind-resource-stress-int-1.pdf>]
-<Submission_files/figure-latex/hind-resource-burn-int-1.pdf, id=278, 469.755pt x 325.215pt>
+<Submission_files/figure-latex/hind-resource-burn-int-1.pdf, id=274, 469.755pt x 325.215pt>
 File: Submission_files/figure-latex/hind-resource-burn-int-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/hind-resource-burn-int-1.pdf>
 Package pdftex.def Info: Submission_files/figure-latex/hind-resource-burn-int-1.pdf  used on input line 59.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 )
 
-[34
+[33
 
  <./Submission_files/figure-latex/hind-resource-burn-int-1.pdf>] (./Submission.aux)
  ***********
@@ -1038,18 +1036,18 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 26664 strings out of 475170
- 504001 string characters out of 5763475
- 962468 words of memory out of 5000000
+ 26663 strings out of 475170
+ 503994 string characters out of 5763475
+ 962467 words of memory out of 5000000
  49027 multiletter control sequences out of 15000+600000
  632439 words of font info for 100 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  99i,11n,107p,1969b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Submission.pdf (34 pages, 446950 bytes).
+Output written on Submission.pdf (33 pages, 440715 bytes).
 PDF statistics:
- 408 PDF objects out of 1000 (max. 8388607)
- 330 compressed objects within 4 object streams
- 96 named destinations out of 1000 (max. 500000)
+ 404 PDF objects out of 1000 (max. 8388607)
+ 327 compressed objects within 4 object streams
+ 95 named destinations out of 1000 (max. 500000)
  168 words of extra memory for PDF output out of 10000 (max. 10000000)
 
