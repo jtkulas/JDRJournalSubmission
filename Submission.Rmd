@@ -39,7 +39,7 @@ linenumbers       : no
 mask              : no
 draft             : no
 
-csl               : "elsevier-vancouver.csl"
+csl               : "apa7.csl"
 documentclass     : "apa7" #interact
 classoption       : "man"
 #output            : "word_document"
