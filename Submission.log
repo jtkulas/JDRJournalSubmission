@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.30)  6 JAN 2025 07:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.24)  29 MAR 2025 11:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Submission.tex
 (./Submission.tex
 LaTeX2e <2024-11-01> patch level 1
-L3 programming layer <2024-12-09>
+L3 programming layer <2024-12-25>
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/apa7/apa7.cls
 Document Class: apa7 2022/07/25 v2.16 APA formatting (7th edition)
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
@@ -505,16 +505,22 @@ LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 )
 \c@appendix=\count319
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2024/12/09 v4.5 Extensive control of page headers and footers
+Package: fancyhdr 2025/01/07 v5.1.1 Extensive control of page headers and footers
 \f@nch@headwidth=\skip75
-\f@nch@O@elh=\skip76
-\f@nch@O@erh=\skip77
-\f@nch@O@olh=\skip78
-\f@nch@O@orh=\skip79
-\f@nch@O@elf=\skip80
-\f@nch@O@erf=\skip81
-\f@nch@O@olf=\skip82
-\f@nch@O@orf=\skip83
+\f@nch@offset@elh=\skip76
+\f@nch@offset@erh=\skip77
+\f@nch@offset@olh=\skip78
+\f@nch@offset@orh=\skip79
+\f@nch@offset@elf=\skip80
+\f@nch@offset@erf=\skip81
+\f@nch@offset@olf=\skip82
+\f@nch@offset@orf=\skip83
+\f@nch@height=\skip84
+\f@nch@footalignment=\skip85
+\f@nch@widthL=\skip86
+\f@nch@widthC=\skip87
+\f@nch@widthR=\skip88
+\@temptokenb=\toks31
 ) (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/endfloat/endfloat.sty
 Package: endfloat 2019/04/15 v2.7 LaTeX2e package puts figures and tables at end (jdm)
 \c@posttable=\count320
@@ -525,13 +531,13 @@ Package: endfloat 2019/04/15 v2.7 LaTeX2e package puts figures and tables at end
 \@ef@fffopen=\count323
 )) (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2024/11/05 v2.17t AMS math features
-\@mathmargin=\skip84
+\@mathmargin=\skip89
 For additional information on amsmath, use the `?' option.
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks31
+\@emptytoks=\toks32
 \ex@=\dimen289
 )) (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -570,21 +576,21 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \dotsspace@=\muskip18
 \c@parentequation=\count331
 \dspbrk@lvl=\count332
-\tag@help=\toks32
+\tag@help=\toks33
 \row@=\count333
 \column@=\count334
 \maxfields@=\count335
-\andhelp@=\toks33
+\andhelp@=\toks34
 \eqnshift@=\dimen292
 \alignsep@=\dimen293
 \tagshift@=\dimen294
 \tagwidth@=\dimen295
 \totwidth@=\dimen296
 \lineht@=\dimen297
-\@envbody=\toks34
-\multlinegap=\skip85
-\multlinetaggap=\skip86
-\mathdisplay@stack=\toks35
+\@envbody=\toks35
+\multlinegap=\skip90
+\multlinetaggap=\skip91
+\mathdisplay@stack=\toks36
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 ) (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
@@ -600,15 +606,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
-\inpenc@prehook=\toks36
-\inpenc@posthook=\toks37
+\inpenc@prehook=\toks37
+\inpenc@posthook=\toks38
 ) (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
 )
-\cslhangindent=\skip87
-\csllabelwidth=\skip88
+\cslhangindent=\skip92
+\csllabelwidth=\skip93
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2024/12/21 v24.15 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
+Package: babel 2025/01/01 v25.1 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
 \babel@savecnt=\count336
 \U@D=\dimen298
 \l@unhyphenated=\language7
@@ -618,7 +624,7 @@ Package: babel 2024/12/21 v24.15 The multilingual framework for pdfLaTeX, LuaLaT
 Package babel Info: You haven't specified a language as a class or package
 (babel)             option. I'll load 'nil'. Reported on input line 4184.
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/nil.ldf
-Language: nil 2024/12/21 v24.15 Nil language
+Language: nil 2025/01/01 v25.1 Nil language
 \l@nil=\language8
 )) (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
 Package babel Info: Importing data for english
@@ -631,10 +637,10 @@ LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
 (Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
 ) (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
-\LTleft=\skip89
-\LTright=\skip90
-\LTpre=\skip91
-\LTpost=\skip92
+\LTleft=\skip94
+\LTright=\skip95
+\LTpre=\skip96
+\LTpost=\skip97
 \LTchunksize=\count338
 \LTcapwidth=\dimen299
 \LT@head=\box67
@@ -646,14 +652,14 @@ Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
 \LT@rows=\count340
 \c@LT@tables=\count341
 \c@LT@chunks=\count342
-\LT@p@ftn=\toks38
+\LT@p@ftn=\toks39
 ) (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 ) (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
-\multirow@colwidth=\skip93
+\multirow@colwidth=\skip98
 \multirow@cntb=\count343
-\multirow@dima=\skip94
+\multirow@dima=\skip99
 \bigstrutjot=\dimen300
 ) (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
@@ -662,9 +668,9 @@ Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
 \col@sep=\dimen301
 \ar@mcellbox=\box72
 \extrarowheight=\dimen302
-\NC@list=\toks39
-\extratabsurround=\skip95
-\backup@length=\skip96
+\NC@list=\toks40
+\extratabsurround=\skip100
+\backup@length=\skip101
 \ar@cellbox=\box73
 )
 \TX@col@width=\dimen303
@@ -673,7 +679,7 @@ Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
 \TX@target=\dimen306
 \TX@delta=\dimen307
 \TX@cols=\count344
-\TX@ftn=\toks40
+\TX@ftn=\toks41
 ) (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
 Package: threeparttablex 2013/07/23 v0.3 by daleif
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
@@ -681,13 +687,13 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\TPTL@width=\skip97
+\TPTL@width=\skip102
 )
-\longtablewidth=\skip98
+\longtablewidth=\skip103
 Failed to patch abstract.
 Failed to patch title.
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xpatch/xpatch.sty (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2024-12-09 L3 programming layer (loader) 
+Package: expl3 2024-12-25 L3 programming layer (loader) 
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count345
@@ -704,7 +710,7 @@ Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
 \csq@qlevel=\count349
 \csq@maxlvl=\count350
 \csq@tshold=\count351
-\csq@ltx@everypar=\toks41
+\csq@ltx@everypar=\toks42
 (c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
 )
@@ -842,9 +848,13 @@ Underfull \vbox (badness 3977) has occurred while \output is active []
 
 
 [4]
+Underfull \vbox (badness 3977) has occurred while \output is active []
+
+
 
 [5]
-Underfull \vbox (badness 5036) has occurred while \output is active []
+
+LaTeX Warning: Reference `fig:ourmodel' on page 6 undefined on input line 248.
 
 
 
@@ -852,204 +862,39 @@ Underfull \vbox (badness 5036) has occurred while \output is active []
 \openout5 = `Submission.fff'.
 
 (Submission.fff)
-Underfull \vbox (badness 1558) has occurred while \output is active []
+
+LaTeX Warning: Reference `fig:ourmodel' on page 7 undefined on input line 258.
 
 
 
 [7]
+
+LaTeX Warning: Reference `fig:ourmodel' on page 8 undefined on input line 270.
+
+
 
 [8]
 
 [9]
 
 [10]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 317.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 317.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 317.
 
-
-[11]
-Underfull \vbox (badness 1681) has occurred while \output is active []
-
-
-
-[12{c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
-
-[13]
-\openout4 = `Submission.ttt'.
-
-(Submission.ttt)
-
-[14]
-
-[15]
-
-[16]
-
-[17]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[18]
-Underfull \vbox (badness 1558) has occurred while \output is active []
-
-
-
-[19]
-
-[20]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[21]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[22] AED endfloat: Processing end Figures and Tables
-
-[23] (./Submission.ttt
-Overfull \hbox (36.94206pt too wide) in paragraph at lines 10--10
-[] [] 
- []
-
-
-Overfull \hbox (73.88411pt too wide) in alignment at lines 9--14
- [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (36.94206pt too wide) in paragraph at lines 15--15
-[] [] 
- []
-
-
-Overfull \hbox (73.88411pt too wide) in alignment at lines 14--19
- [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (73.88411pt too wide) in alignment at lines 19--44
- [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-
-
-[24
-
-
-
-{c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-
-[25
-
-
-]
-
-[26
-
-])
-
-[27
-
-] (./Submission.fff
-<Submission_files/figure-latex/ourmodel-1.pdf, id=215, 469.755pt x 325.215pt>
-File: Submission_files/figure-latex/ourmodel-1.pdf Graphic file (type pdf)
-<use Submission_files/figure-latex/ourmodel-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/ourmodel-1.pdf  used on input line 5.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-
-[28
-
- <./Submission_files/figure-latex/ourmodel-1.pdf>]
-<Submission_files/figure-latex/combinegraphs-1.pdf, id=224, 469.755pt x 722.7pt>
-File: Submission_files/figure-latex/combinegraphs-1.pdf Graphic file (type pdf)
-<use Submission_files/figure-latex/combinegraphs-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/combinegraphs-1.pdf  used on input line 14.
-(pdftex.def)             Requested size: 422.78276pt x 650.43501pt.
-
-LaTeX Warning: Float too large for page by 50.4063pt on input line 16.
-
-
-
-[29 <./Submission_files/figure-latex/combinegraphs-1.pdf>]
-<Submission_files/figure-latex/combinegraphs2-1.pdf, id=234, 469.755pt x 722.7pt>
-File: Submission_files/figure-latex/combinegraphs2-1.pdf Graphic file (type pdf)
-<use Submission_files/figure-latex/combinegraphs2-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/combinegraphs2-1.pdf  used on input line 23.
-(pdftex.def)             Requested size: 422.78276pt x 650.43501pt.
-
-LaTeX Warning: Float too large for page by 50.4063pt on input line 25.
-
-
-
-[30 <./Submission_files/figure-latex/combinegraphs2-1.pdf>]
-<Submission_files/figure-latex/overallhist-1.pdf, id=244, 469.755pt x 325.215pt>
-File: Submission_files/figure-latex/overallhist-1.pdf Graphic file (type pdf)
-<use Submission_files/figure-latex/overallhist-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/overallhist-1.pdf  used on input line 32.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-
-[31
-
-
-
- <./Submission_files/figure-latex/overallhist-1.pdf>]
-<Submission_files/figure-latex/chal-resource-int-1.pdf, id=255, 469.755pt x 325.215pt>
-File: Submission_files/figure-latex/chal-resource-int-1.pdf Graphic file (type pdf)
-<use Submission_files/figure-latex/chal-resource-int-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/chal-resource-int-1.pdf  used on input line 41.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-
-[32
-
- <./Submission_files/figure-latex/chal-resource-int-1.pdf>]
-<Submission_files/figure-latex/hind-resource-stress-int-1.pdf, id=266, 469.755pt x 325.215pt>
-File: Submission_files/figure-latex/hind-resource-stress-int-1.pdf Graphic file (type pdf)
-<use Submission_files/figure-latex/hind-resource-stress-int-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/hind-resource-stress-int-1.pdf  used on input line 50.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-
-[33
-
- <./Submission_files/figure-latex/hind-resource-stress-int-1.pdf>]
-<Submission_files/figure-latex/hind-resource-burn-int-1.pdf, id=278, 469.755pt x 325.215pt>
-File: Submission_files/figure-latex/hind-resource-burn-int-1.pdf Graphic file (type pdf)
-<use Submission_files/figure-latex/hind-resource-burn-int-1.pdf>
-Package pdftex.def Info: Submission_files/figure-latex/hind-resource-burn-int-1.pdf  used on input line 59.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-)
-
-[34
-
- <./Submission_files/figure-latex/hind-resource-burn-int-1.pdf>] (./Submission.aux)
- ***********
-LaTeX2e <2024-11-01> patch level 1
-L3 programming layer <2020/03/25>
- ***********
- ) 
+! LaTeX Error: Unicode character 𝛼 (U+1D6FC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.298 ...bscales which yielded current sample 𝛼
+                                                  's of 
 Here is how much of TeX's memory you used:
- 26664 strings out of 475170
- 504001 string characters out of 5763475
- 962467 words of memory out of 5000000
- 49027 multiletter control sequences out of 15000+600000
- 632439 words of font info for 100 fonts, out of 8000000 for 9000
+ 26453 strings out of 475134
+ 498380 string characters out of 5762494
+ 876668 words of memory out of 5000000
+ 48958 multiletter control sequences out of 15000+600000
+ 596297 words of font info for 69 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 99i,11n,107p,1969b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/stachowskia/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Submission.pdf (34 pages, 446949 bytes).
-PDF statistics:
- 408 PDF objects out of 1000 (max. 8388607)
- 330 compressed objects within 4 object streams
- 96 named destinations out of 1000 (max. 500000)
- 168 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 99i,11n,107p,1605b,581s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
+!  ==> Fatal error occurred, no output PDF file produced!
