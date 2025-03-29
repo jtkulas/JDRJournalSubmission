@@ -42,9 +42,9 @@ draft             : no
 csl               : "apa7.csl"
 documentclass     : "apa7" #interact
 classoption       : "man"
-#output            : "word_document"
-output            : papaja::apa6_pdf
-
+output:
+  papaja::apa6_pdf:
+    latex_engine: xelatex 
 ---
 
 ```{r setup, include = FALSE}

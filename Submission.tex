@@ -164,10 +164,11 @@
 \makeatletter
 \xapptocmd\appendix
   {\xapptocmd\section
-    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
+    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi: #1}}
     {}{\InnerPatchFailed}%
   }
 {}{\PatchFailed}
+\makeatother
 \keywords{O*Net, challenge-hindrance framework, job demands-resources, job characteristics\newline\indent Word count: 4,942}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
