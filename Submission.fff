@@ -11,6 +11,15 @@
 \ifnextchar[{\eatarg}{}
 
 \centering
+\includegraphics{Submission_files/figure-latex/onetviz-1.pdf}
+\caption{\label{fig:onetviz}Visual representation of how respondents experienced the survey.}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
 \includegraphics{Submission_files/figure-latex/combinegraphs-1.pdf}
 \caption{\label{fig:combinegraphs}Characteristics percieved most similarly (lowest standard deviations).}
 \end{figure*}

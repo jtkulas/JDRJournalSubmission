@@ -357,7 +357,16 @@ Engagement. The 18-item engagement measure was recently developed (Russell et al
 
 Data were collected through Prolific, an online data collection platform. An email was sent to eligible members of the Prolific respondent pool, notifying them of their opportunity to participate. Eligibility requirements included being 18 or older and holding either a full-time or part-time job. Eligible individuals then voluntarily chose whether or not to respond to the invitation after reading an informed consent.
 
-Participants were asked to think about their primary job, and each administered survey branched content dependent on whether or not the respondent's job could be described as consisting of 98 different O\*Net job characteristics in randomized order. Participants were compensated six USD for their participation (the estimated time commitment pre-administration was 45 minutes).
+Respondents were asked to think about their primary job, and each administered survey branched content dependent on whether or not the respondent's job could be described as consisting of 98 different O\*Net job characteristics in randomized order. Participants were compensated six USD for their participation (the estimated time commitment pre-administration was 45 minutes). See Figure \@ref(fig:onetviz) for a visual representation of the process experienced by respondents. 
+
+```{r onetviz, fig.cap="Visual representation of how respondents experienced the survey."}
+library(magick)
+library(grid)
+
+onetviz <- image_read("current_submission/Methods_visual.png")
+grid.raster(onetviz)
+```
+
 
 # Results  
 

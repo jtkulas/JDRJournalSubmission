@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.4.12)  14 APR 2025 08:54
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.4.12)  14 APR 2025 10:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1128,29 +1128,26 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Missing character: There is no 𝛼 (U+1D6FC) in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no α (U+03B1) in font [lmroman12-regular]:mapping=tex-text;!
 
-Underfull \vbox (badness 1077) has occurred while \output is active []
-
-
 
 [11]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 341.
+(Font)              scaled to size 10.0pt on input line 347.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 341.
+(Font)              scaled to size 7.0pt on input line 347.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 341.
+(Font)              scaled to size 5.0pt on input line 347.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 341.
+(Font)              scaled to size 10.00092pt on input line 347.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 341.
+(Font)              scaled to size 7.00064pt on input line 347.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 341.
+(Font)              scaled to size 5.00046pt on input line 347.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 341.
+(Font)              scaled to size 9.99893pt on input line 347.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 341.
+(Font)              scaled to size 6.99925pt on input line 347.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 341.
+(Font)              scaled to size 4.99947pt on input line 347.
 
 
 [12]
@@ -1247,27 +1244,34 @@ File: Submission_files/figure-latex/ourmodel-1.pdf Graphic file (type pdf)
 [29
 
 ]
+File: Submission_files/figure-latex/onetviz-1.pdf Graphic file (type pdf)
+<use Submission_files/figure-latex/onetviz-1.pdf>
+
+
+[30
+
+]
 File: Submission_files/figure-latex/combinegraphs-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/combinegraphs-1.pdf>
-
-LaTeX Warning: Float too large for page by 50.37381pt on input line 16.
-
-
-
-[30]
-File: Submission_files/figure-latex/combinegraphs2-1.pdf Graphic file (type pdf)
-<use Submission_files/figure-latex/combinegraphs2-1.pdf>
 
 LaTeX Warning: Float too large for page by 50.37381pt on input line 25.
 
 
 
 [31]
+File: Submission_files/figure-latex/combinegraphs2-1.pdf Graphic file (type pdf)
+<use Submission_files/figure-latex/combinegraphs2-1.pdf>
+
+LaTeX Warning: Float too large for page by 50.37381pt on input line 34.
+
+
+
+[32]
 File: Submission_files/figure-latex/overallhist-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/overallhist-1.pdf>
 
 
-[32
+[33
 
 
 
@@ -1276,21 +1280,21 @@ File: Submission_files/figure-latex/chal-resource-int-1.pdf Graphic file (type p
 <use Submission_files/figure-latex/chal-resource-int-1.pdf>
 
 
-[33
+[34
 
 ]
 File: Submission_files/figure-latex/hind-resource-stress-int-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/hind-resource-stress-int-1.pdf>
 
 
-[34
+[35
 
 ]
 File: Submission_files/figure-latex/hind-resource-burn-int-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/hind-resource-burn-int-1.pdf>
 )
 
-[35
+[36
 
 ] (./Submission.aux)
  ***********
@@ -1299,12 +1303,12 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 32293 strings out of 472239
- 641993 string characters out of 5526676
- 1213071 words of memory out of 5000000
- 58254 multiletter control sequences out of 15000+600000
+ 32303 strings out of 472239
+ 642427 string characters out of 5526676
+ 1213166 words of memory out of 5000000
+ 58263 multiletter control sequences out of 15000+600000
  659524 words of font info for 113 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  99i,11n,114p,1975b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Submission.pdf (35 pages).
+Output written on Submission.pdf (36 pages).
