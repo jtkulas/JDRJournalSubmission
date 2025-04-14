@@ -61,11 +61,12 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed, echo=FALSE, warning=FALSE,
 
 ```
 
-While we have accumulated a vast literature on how job demands and resources relate to and influence key organizational outcomes, recent work has called into question some of our basic assumptions regarding the experience of demands in particular. We build on the work of a small, but growing number of researchers who argue that work elements may be appraised simultaneously as resources and demands [@webster2011extending] or that appraisals may change over time [@rosen2020challenges]. Our primary aims explore whether: 1) variability exists in subjective ratings of job characteristics with respect to how much they serve as resources and demands, 2) some characteristics are more likely than others to vary across demand and resource, 3) subjective appraisals are differentially related to positive and negative outcomes, and lastly, 4) if resources buffer the relationships between demands (challenge and hindrance) and negative work outcomes. As an additional contribution, we utilize the [O\*Net database](https://www.onetcenter.org/content.html), which provides a rich and generalizable source of information about occupational requirements (i.e., work activities and context). 
+While we have accumulated a vast literature on how job demands and resources relate to and influence key organizational outcomes, recent work has called into question some of our basic assumptions regarding the experience of demands in particular. We build on a growing number of researchers who argue that work elements may be appraised simultaneously as resources and demands [@webster2011extending] or that appraisals may change over time [@rosen2020challenges]. Our primary aims explore whether: 1) variability exists in subjective ratings of job characteristics with respect to how much they serve as resources and demands, 2) some characteristics are more likely than others to vary across demand and resource, 3) subjective appraisals are differentially related to positive and negative outcomes, and lastly, 4) if resources buffer the relationships between demands (challenge and hindrance) and negative work outcomes. As an additional contribution, we utilize the [O\*Net database](https://www.onetcenter.org/content.html), which provides a rich and generalizable source of information about occupational requirements (i.e., work activities and context). 
 
-## The Challenge-Hindrance Stressor Framework 
+## Theoretical Foundations
 
-@cavanaugh2000empirical's challenge-hindrance stressor framework serves as the theoretical foundation for this work. First, *resources* include physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development [e.g., @bakker2014job; @bakker2017job]. In contrast, demands include components of a job that require sustained effort, and as such, produce psychological or physiological strain [high work pressure, for example, is commonly cited as a demand, e.g., @demerouti2001job]. The perception of an element of one’s job as a resource or demand activates one of two distinct processes: either health impairment (resulting from demands) or motivation (resulting from resources; @bakker2014job). 
+The job demands-resources theory (e.g., Bakker & Demerouti, 2014; 2017) highlights the importance of demands and resources on the experience of motivation and strain as well as other, more distal outcomes. Resources include physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development [e.g., @bakker2014job; @bakker2017job]. In contrast, demands include components of a job that require sustained effort, and as such, produce psychological or physiological strain (high work pressure, for example, is commonly cited as a demand, e.g., Demerouti et al., 2001). Demands include components of a job that require sustained effort, and as such, produce psychological or physiological strain [high work pressure, for example, is commonly cited as a demand, e.g., @demerouti2001job]. The perception of an element of one’s job as a resource or demand activates one of two distinct processes: either health impairment (resulting from demands) or motivation (resulting from resources; @bakker2014job). 
+
 @cavanaugh2000empirical proposed the challenge-hindrance stressor framework distinguishes between *two forms* of demands -- *challenges* and *hindrances*. Challenge demands promote mastery, personal growth, and future gains – these demands should lead to coping strategies that facilitate achievement. Work characteristics consistent with this definition, for example, include time pressure and responsibility [@lepine2022challenge]. Hindrance demands, in contrast, inhibit growth, learning and goal achievement. Example hindrance demands in a work context include role conflict and role ambiguity [@lepine2022challenge].
 
 ```{r reproduced, eval=FALSE, echo=FALSE, fig.cap="Going to put in new comprehensive picture."}
@@ -96,9 +97,7 @@ Given the above, the first question we ask is whether people exclusively categor
 
 ## Connecting Appraisals to Workplace Outcomes
 
-IS THIS TOO CLOSELY TIED TO THE JOB DEMANDS RESOURCES THEORY? CHECK
-
-The second set of predictions focus on associations with theory-relevant outcomes of the challenge-hindrance stressor-frameworks [@cavanaugh2000empirical]. The challenge-hindrance stressor framework has been associated with a wide variety of organizational outcomes ranging from affective variables like job satisfaction, to motivation commitment, and performance [e.g., @lepine2005meta]. We provide only a sampling of associated outcome examples here for context but note that the current project will focus on three outcomes: engagement, strain, and burnout. See Figure \@ref(fig:ourmodel) for proposed associations. Resources by definition include aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development [e.g., @bakker2014job; @bakker2017job], and empirical work suggests that they are associated with positive outcomes. Relevant to the current study, for example, @hakanen2008job found job resources influenced future work engagement. Moreover, in a sample of teachers and dentists, @bakker2007job found that resources were most predictive of engagement when job demands were especially high. Meta analyses have also concluded that there is a positive association with a variety of resource categories and engagement [e.g., @schaufeli2017applying]. 
+he second set of predictions focus on associations with theory-relevant outcomes across via job demands-resources- @bakker2017job and challenge-hindrance stressor-frameworks @cavanaugh2000empirical. Both the job demands-resources model and the challenge-hindrance stressor framework have been associated with a wide variety of organizational outcomes ranging from affective variables like job satisfaction, to motivation commitment, and performance [e.g., @lepine2005meta]. We provide only a sampling of associated outcome examples here for context but note that the current project will focus on three outcomes: engagement, strain, and burnout. See Figure \@ref(fig:ourmodel) for proposed associations. Resources by definition include aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development [e.g., @bakker2014job; @bakker2017job], and empirical work suggests that they are associated with positive outcomes. Relevant to the current study, for example, @hakanen2008job found job resources influenced future work engagement. Moreover, in a sample of teachers and dentists, @bakker2007job found that resources were most predictive of engagement when job demands were especially high. Meta analyses have also concluded that there is a positive association with a variety of resource categories and engagement [e.g., @schaufeli2017applying]. 
 
 ```{r ourmodel, eval=TRUE, echo=FALSE, fig.cap="Focal constructs and associations of interest"}
 library(magick)
@@ -117,8 +116,6 @@ Hindrance demands (appraisals) have been found to be related to job demands-reso
 >Hypothesis 3a: Resources and challenges positively predict engagement.  
 
 >Hypothesis 3b: Both challenge and hindrance demands positively predict stress and burnout. 
-
-AGAIN, CHECK TO SEE IF THIS IS TOO CLOSELY ALIGNED WITH JDR RATHER THAN CHALLENGE-HINDRANCE
 
 In addition to the these direct relationships, we aim to extend work suggesting that resources can act as a buffer between job demands and strain [e.g., @bakker2005job] and burnout [e.g., @xanthopoulou2007job]. Bakker and colleagues (2005) were the first to report empirical evidence to support the idea that job resources could potentially buffer the negative impact of job demands on distal outcomes like burnout. @bakker2005job explored the interaction between 4 demands (e.g., work overload, physical demands) and 4 resources (e.g., social support, feedback) and three dimensions of burnout (exhaustion, cynicism, and professional efficacy), and found some support for the prediction that high demands with low resources predicted greater levels of cynicism and exhaustion among employees in higher education. Similarly, @xanthopoulou2007job also found some support for this interaction (high demands + low resources leads to greater burnout) among home healthcare employees. They concluded that a variety of resources, including autonomy, social support, performance feedback, and opportunities for professional development buttered the connection between demands (i.e., patient harassment, workload, physical and emotional demands) and burnout. We extend the established job demands-resources model buffer proposition to both challenge and hindrance demands as follows (see Figure \@ref(fig:ourmodel)):
 
@@ -366,6 +363,67 @@ Participants were asked to think about their primary job, and each administered 
 
 Of the `r nrow(use)` individuals who initially accessed the survey link, `r nrow(different)` indicated that they were not interested, had more than 200 missing responses, or had 20 or more identical consecutive sequential responses [@R-careless]. Applying a further screen regarding attention checks (there were four attention checks embedded throughout, asking respondents to indicate a specific answer) resulted in the retention of `r nrow(data)` respondents who constitute the current sample. 
 
+```{r workcat, fig.cap="Percent agreement (resource and challenge) across O*Net occupational categories (previous was across 84 O/*Net items - this is across 568 individual workers).", fig.height=10}
+
+## Job classifications
+
+workers <- read.csv("workers.csv")             ## Probably need to revisit our coding - 10/14/22
+
+# ggplot(workers, aes(O.Net.Job.Family.Categories))+
+#   geom_histogram(stat="count") + coord_flip()
+
+
+## Combining categories
+
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Transportation and Material Moving"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Protective Service"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Production"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Personal Care and Service"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Installation Maintenance and Repair"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Food Preparation and Serving Related"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Farming Fishing and Forestry"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Construction and Extraction"] <- "Physical Labor"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Building and Grounds Cleaning and Maintenance"] <- "Physical Labor"
+
+## with Alicia 12/1
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Architecture and Engineering"] <- "Computer & Engineering"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Computer and Mathematical"] <- "Computer & Engineering"
+
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Life Physical and Social Science"] <- "Education, Science & Health"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Educational Instruction and Library"] <- "Education, Science & Health"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Healthcare Practitioner and Technical"] <- "Education, Science & Health"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Community and Social Service"] <- "Education, Science & Health"
+
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Office and Administrative Support"] <- "Admin, Healthcare & Legal"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Legal"] <- "Admin, Healthcare & Legal"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Healthcare Support"] <- "Admin, Healthcare & Legal"
+
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Arts Design Entertainment Sports Media"] <- "Other"
+workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Military Specific"] <- "Other"
+
+
+#3 in plot all categories, combined and standalone 
+
+#ggplot(workers, aes(O.Net.Job.Family.Categories)) +
+#  geom_histogram(stat="count") + coord_flip()
+
+forworkers2 <- anova[,c(2:85)]
+dataworker <- cbind(forworkers2,workers$O.Net.Job.Family.Categories)    ## to repeat O*Net analyses
+                                     ## This gets worker info into convergence file
+
+dataworker$overall <- rowMeans(dataworker[1:84], na.rm=TRUE)
+
+names(dataworker)[names(dataworker) == 'workers$O.Net.Job.Family.Categories'] <- 'JobFamily'
+
+ggplot(dataworker, aes(x=overall)) + geom_histogram() + facet_wrap(~JobFamily, nrow=8)
+
+workeraov <- aov(overall ~ JobFamily, data=dataworker)
+
+library(lsr)  ## for eta squared
+effect.size <- etaSquared(workeraov)
+
+
+
 ```{r resourcesagree, fig.cap="Characteristics most similarly viewed as resources (lowest standard deviations)."}
 
 sortresource <- resource[order(resource$sd),]
@@ -504,7 +562,7 @@ H1 posits that static job characteristics are not necessarily always experienced
 
 In addition to highlighting extremely agreed- or disagreed-upon characteristics, Figure \@ref(fig:overallhist) presents our standard deviation indices across all rated items. Here, discrepancies receive greater context, with the *spread* of difference exhibiting wider distributions of agreement for challenge and resource ratings (and relatively *bunched* levels of disagreement for hindrances; note the spread of the challenge and resource histograms relative to the hindrance histogram). Some characteristics are largely agreed upon as being challenges and resources, while all hindrance perceptions exhibit a relatively higher level of disagreement. This points to *hindrances*, in particular, as being likely amenable to future probing regarding moderating conditions. A Bartlett's test for homogeneity of variance across the challenge, hindrance, and resource ratings confirms this difference ($\chi^2_{`r lookie$df`}$ = `r lookie$statistic[[1]]`, *p* < .01). In sum, these results provide some collective support for H1, and  particularly so for hindrances, which are differently experienced across our raters.
 
-The second hypothesis stated that job characteristics would not be uniquely categorized as a resource or demand. Table 1 provides the correlations among the O\*Net "scale"-level groupings across ratings of resource, challenge, and hindrance. We would expect to see minimal correlations if job characteristics *were* uniquely categorized. First, the average correlation within all resource categories (variables 1 through 7 in Table 1) was .43 (*SD* = .13, range from .15 to .64), and challenge categories exhibited similar associations (ranging from .12 to .70, *M* = .43, *SD* =.16). Hindrance categories, however, had less differentiation across categories, with relatively elevated correlations ranging from .33 to .86, *M* = .62, *SD* = .17. When people perceived hindrances, these seem to be shared across different types of job activities, whereas challenges and resources exhibit greater differentiation. 
+The second hypothesis stated that job characteristics would not be uniquely categorized as a resource or demand. Table 1 provides the correlations among the O\*Net "scale"-level groupings across ratings of resource, challenge, and hindrance (i.e., Information Input (ii), Mental Processes (mp), Work Output (wo), Interacting with Others (io), Interpersonal Relationships (ir), Physical Work Conditions (pc), and Structural Job Characteristics (sc)). We would expect to see minimal correlations if job characteristics *were* uniquely categorized. First, the average correlation within all resource categories (variables 1 through 7 in Table 1) was .43 (*SD* = .13, range from .15 to .64), and challenge categories exhibited similar associations (ranging from .12 to .70, *M* = .43, *SD* =.16). Hindrance categories, however, had less differentiation across categories, with relatively elevated correlations ranging from .33 to .86, *M* = .62, *SD* = .17. When people perceived hindrances, these seem to be shared across different types of job activities, whereas challenges and resources exhibit greater differentiation. 
 
 The mean resource to challenge correlations within the same dimension ranged from .62 to .66 (*M* = .64, *SD* = .02; for example, the association between information input ratings as a resource and as a challenge was .62). The correlations between resources and challenges *across* dimensions (for example, the correlation between mental processes and work output was .42 and .39) ranged from .08 to .50, *M* = .32, *SD* = .12. The resource-hindrance correlations within the same dimension ranged from -.16 to -.30 (*M* = -.24, *SD* = .05), while the correlations between resources and hindrances *across* dimensions ranged from .05 to -.27, *M* = -.14, *SD* = .08. The mean challenge to hindrance correlations within the same dimension ranged from -.04 to -.27 (*M* = -.21, *SD* = .08). The correlations between challenges to hindrances across dimensions ranged from .12 to -.26, *M* = -.11, *SD* = .09.  In summary, correlations were larger when what was being rated was the same type of characteristic. Challenge and hindrance demands demonstrated smaller relationships, but mostly negative. Challenges and resources within the same O\*Net dimensions are strongly and positively related. These results provide support for H2, suggesting that there is overlap in how employees perceive job characteristics - particularly regarding what is perceived as a *resource* being also perceived as a *challenge*. Stated another way, job characteristics are not uniquely categorized as a resource or as a demand.
 
@@ -1145,7 +1203,7 @@ colnames(regtable)[6] <- "$\\Delta R^2$"
 papaja::apa_table(regtable, 
               caption = "Moderated regression summary of outcomes regressed on challenges and resources",
               escape=FALSE,
-              note="* = p < .05; ** = p < .01")
+              note="* = p < .05; ** = p < .01, coefficients are unstandardized and mean-centered")
 ```
 
 ```{r}
@@ -1199,7 +1257,7 @@ colnames(regtable)[6] <- "$\\Delta R^2$"
 papaja::apa_table(regtable,
                  caption = "Moderated regression summary of outcomes regressed on hindrances and resources",
                  escape=FALSE,
-                 note="* = p < .05; ** = p < .01")
+                 note="* = p < .05; ** = p < .01, coefficients are unstandardized and mean-centered")
 ```
 ### Hindrances, Resources, and Outcomes
 
@@ -1214,10 +1272,10 @@ Similarly, hindrance demands and resources explained a statistically significant
 library(interactions)
 
 #running it with unstandardized bs here. 
-cr_eng_m3u <- lm(engagement ~ overall.challenge_center + overall.resource_center + overall.challenge_center*overall.resource_center, modreg)
+cr_eng_m3u <- lm(engagement ~ overall.challenge + overall.resource + overall.challenge*overall.resource, modreg)
 #summary(cr_eng_m3u)
 
-cr_eng_plot <- interact_plot(cr_eng_m3u, pred = overall.challenge_center, modx = overall.resource_center, interval = FALSE,
+cr_eng_plot <- interact_plot(cr_eng_m3u, pred = overall.challenge, modx = overall.resource, interval = FALSE,
               int.width = 0.8, x.label = "Challenge", legend.main = "Resource", y.label = "Engagement")
 cr_eng_plot
 ```
@@ -1227,10 +1285,10 @@ cr_eng_plot
 #install.packages("interactions")
 library(interactions)
 
-hr_stress_m3u <- lm(stress ~ overall.hindrance_center + overall.resource_center + overall.hindrance_center*overall.resource_center, modreg)
+hr_stress_m3u <- lm(stress ~ overall.hindrance + overall.resource + overall.hindrance*overall.resource, modreg)
 #summary(hr_stress_m3u)
 
-hr_stress_plot <- interact_plot(hr_stress_m3u, pred = overall.hindrance_center, modx = overall.resource_center, interval = FALSE, 
+hr_stress_plot <- interact_plot(hr_stress_m3u, pred = overall.hindrance, modx = overall.resource, interval = FALSE, 
               int.width = 0.8, x.label = "Hindrance", legend.main = "Resource", y.label = "Stress")
 hr_stress_plot
 ```
@@ -1239,10 +1297,10 @@ hr_stress_plot
 #install.packages("interactions")
 library(interactions)
 
-hr_burn_m3u <- lm(burnout ~ overall.hindrance_center + overall.resource_center + overall.hindrance_center*overall.resource_center, modreg)
+hr_burn_m3u <- lm(burnout ~ overall.hindrance + overall.resource + overall.hindrance*overall.resource, modreg)
 #summary(hr_burn_m3u)
 
-hr_burn_plot <- interact_plot(hr_burn_m3u, pred = overall.hindrance_center, modx = overall.resource_center, interval = FALSE, 
+hr_burn_plot <- interact_plot(hr_burn_m3u, pred = overall.hindrance, modx = overall.resource, interval = FALSE, 
               int.width = 0.8, x.label = "Hindrance", legend.main = "Resource", y.label = "Burnout")
 hr_burn_plot
 ```
@@ -1251,7 +1309,7 @@ hr_burn_plot
 
 The major aims of this paper were to explore whether: 1) there was variability in subjective ratings of job characteristics as resources and demands, 2) some characteristics were more likely to vary across demand and resource, 3) subjective appraisals were differentially related to positive and negative outcomes, and lastly, 4) if resources buffer the relationships between demands (challenge and hindrance) and outcomes. We found that job characteristics were not uniquely categorized as a resource or demand, but rather, some job characteristics were rated highly as both a resource and a demand (particularly challenge demands). The findings broadly revealed that there was relatively more consistency in ratings of resource and challenge characteristics, and far more variability in job characteristics rated as hindrance demands. This finding lends additional evidence to @horan2020review’s conclusion that “...stressors are only challenge or hindrance stressors to the extent that they are perceived as such by employees” (p. 3). While we did not find support for the prediction that different types of demands would be related to stress and burnout, we did find that resources moderated the challenge-engagement relationship, and further, resources moderated the hindrance-stress, and hindrance-burnout relationships (as predicted). 
 
-In addition to the above findings, this paper made several additional important contributions. We utilized a diverse sample of employees across industries who responded to common O\*Net items. While O\*Net provides detailed information about frequency and importance ratings among employees, we begin the process of expanding what we know of job characteristics to ratings of demands and resources. Further, we provide a repository for other researchers with listing of O\*Net demands and resources across activity and context items for the benefit of all future researchers. We also explored not only context and activity holistically, but at a higher level aggregation, which enhances our knowledge of how employees perceive different categories of resources, challenges, and hindrances within different work dimensions, as well as the relationships among them.
+In addition to the above findings, this paper made several additional important contributions. We utilized a diverse sample of employees across industries who responded to common O\*Net items. While O\*Net provides detailed information about frequency and importance ratings among employees, we begin the process of expanding what we know of job characteristics to ratings of an extensive range of demands and resources. Further, we provide a repository for other researchers with listing of O\*Net demands and resources across activity and context items for the benefit of all future researchers. We also explored not only context and activity holistically, but at a higher level aggregation, which enhances our knowledge of how employees perceive different categories of resources, challenges, and hindrances within different work dimensions, as well as the relationships among them.
 
 ## Implications
 
@@ -1266,6 +1324,8 @@ Resources did predict engagement, and did moderate several of the challenge-outc
 As with all individual studies, this project was limited in scope, and as such, there are a number of avenues for future study worth exploring. First, although we aggregated to O\*Net groupings, we were also dealing with single-item measures for much our operationalization. Although not ideal psychometrically, this provided a strong linkage to the established O\*Net framework. Related to that, we intentionally worked within the O\*Net database, and in selecting job context and activity items, did not include other types of job characteristics that may be important resources and demands. Therefore, to the extent that O\*Net is not an exhaustive repository, there are existing characteristics that we did not capture. For example, O\*Net also includes styles and values, which we did not sample. Future studies may want to expand to explore these additional aspects of work. 
 
 We also retained the literature-derived definitions of resources, challenges, and hindrances [@demerouti2001job]. Given the high associations observed between ratings of resource and challenge, it is possible that respondents did not distinguish between these definitions as cleanly as we intended. Future investigations may wish to explore the colloquial versus academic phrasing of these questions and how that may impact observed associations between resources and challenges. We also note that effect sizes were small and thus it is important to consider the practical significance when thinking about potential interventions. We encourage future thought on how consideration of resource and demand perceptions might be combined with moderators to reduce employee stress and burnout, as well as enhance engagement. 
+
+Another interesting avenue for future research is to explore these patterns by job type. @kubicek2023all, for instance, found that employee workload was positively related to strain, and that this relationship was stronger for care and social workers compared to other types of employees. This finding suggests that job type may be an important moderator, and worthy of exploration moving forward.
 
 Lastly, there may be some practical utility to pursue training interventions aimed at *how* characteristics are appraised. Perhaps the clinical literature may be informative - for example, within cognitive behavioral therapeutic applications, the way in which situations are appraised can be a mechanism to help battle affective disorders such as depression. Given the current findings, where the same characteristic may be viewed similarly as both a demand and resource, it is possible that framing interventions may ameliorate negative outcomes of demands such as, for example, stress or strain.
 

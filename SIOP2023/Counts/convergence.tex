@@ -5,16 +5,19 @@
 \documentclass[
   man]{apa6}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -51,36 +54,60 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Make \paragraph and \subparagraph free-standing
+\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -135,13 +162,13 @@
   {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
 \makeatother
 
-% \usepackage{etoolbox}
 \makeatletter
-\patchcmd{\HyOrg@maketitle}
+\usepackage{etoolbox}
+\patchcmd{\maketitle}
   {\section{\normalfont\normalsize\abstractname}}
   {\section*{\normalfont\normalsize\abstractname}}
   {}{\typeout{Failed to patch abstract.}}
-\patchcmd{\HyOrg@maketitle}
+\patchcmd{\maketitle}
   {\section{\protect\normalfont{\@title}}}
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
@@ -151,10 +178,11 @@
 \makeatletter
 \xapptocmd\appendix
   {\xapptocmd\section
-    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
+    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi: #1}}
     {}{\InnerPatchFailed}%
   }
 {}{\PatchFailed}
+\makeatother
 \keywords{keywords\newline\indent Word count: X}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
@@ -166,9 +194,9 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={Demanding resources: Converging characteristics of challenge and resource},
   pdfauthor={John Kulas1 \& Alicia Stachowski2},
@@ -207,8 +235,7 @@ Correspondence concerning this article should be addressed to John Kulas. E-mail
 
 An abundance of research applying the job demands-resources model (Demerouti et al., 2001) and job demands-resources theory (Bakker \& Demerouti, 2017) underscores the importance of job characteristics on the experience of work. Resources are defined as physical, psychological, social, or organizational aspects of the job that may help an employee achieve work goals, reduce job demands, or promote personal growth and development (Demerouti et al., 2001). Demands, on the other hand, include components of a job that require sustained effort, and as such, produce psychological or physiological strain (e.g., high work pressure, Demerouti et al., 2001). These two categories of outcomes (e.g., ``good'' and ``bad'') are thought to occur via one of two different mechanisms: motivational (resulting from resources) or health impairment (resulting from demands, Bakker \& Demerouti, 2014). Much of our existing research on the JD-R assumes that certain characteristics (for example, autonomy) are resources and others (for example, time constraints) are generally considered demands. This study searches instead for circumstances that provide exception to this mutually exclusive dichotomy of job characteristics.
 
-\hypertarget{could-a-work-demand-be-appraised-positively-the-challenge-hindrance-framework}{%
-\subsection{Could a Work Demand be Appraised ``Positively''?: The Challenge-Hindrance Framework}\label{could-a-work-demand-be-appraised-positively-the-challenge-hindrance-framework}}
+\subsection{Could a Work Demand be Appraised ``Positively''?: The Challenge-Hindrance Framework}\label{could-a-work-demand-be-appraised-positively-the-challenge-hindrance-framework}
 
 Although the word ``stress'' often carries a negative connotation, the ``father'' of the current concept, Selye (1936), conceptualized stress much less perjoratively - rather thinking of it as a \emph{response to change}. For instance, consider the different reactions two different employees may have to being nominated to give a speech at an upcoming company event. One may appraise the nomination as a negative stressor. However, another employee may appraise the nomination to do so as an opportunity to share their experiences with more of their coworkers, or one in which they may receive recognition they have desired. Selye the physician would likely have labeled the two responses as subjective manifestations of ``Distress'', and ``Eustress'' (Selye, 1974). In modern I-O Psychology parlance (and more consistent with the JD-R framework), the two workers would both be characterized as appraising the speaking opportunity as a job demand, but one would be appraising the demand as a \emph{challenge} while the other would appraise the demand as a \emph{hindrance} (Cavanaugh et al., 2000). According to Cavanaugh et al. (2000), challenge demands promote mastery, personal growth, and future gains. Hindrance demands, in contrast, inhibit growth, learning and goal achievement. Perhaps not surprisingly, challenge demands are typically associated with positive outcomes, whereas hindrance demands are associated with more negative outcomes (e.g., Cavanaugh et al., 2000).
 
@@ -216,13 +243,11 @@ Prior to proposing specific predictions regarding the current SIOP presentation,
 
 Although it is cleaner to be able to categorize job characteristics as \emph{either} a demand or a resource, the above research suggests that an individual's (perhaps unique) appraisal is at least occasionally an important consideration. It is quite possible that one person experiences high work pressure (commonly cited as a demand in the literature) as a hindrance stressor and thus experiences strain, and another thrives in a fast-paced pressured role and would thus find the environment motivating.
 
-\hypertarget{current-study-and-hypotheses}{%
-\subsection{Current Study and Hypotheses}\label{current-study-and-hypotheses}}
+\subsection{Current Study and Hypotheses}\label{current-study-and-hypotheses}
 
 We explored the extent to which perceptions of job characteristics converge upon being uniquely or concurrently experienced as resources and demands (in the form of challenges and hindrances). Our supposition is that respondents may consider the same objective job characteristic to be both challenging and resourceful - if not at the same moment, at least at different points in time or under differing circumstances.
 
-\hypertarget{value-of-consulting-onet.}{%
-\subsubsection{Value of consulting O*Net.}\label{value-of-consulting-onet.}}
+\subsubsection{Value of consulting O*Net.}\label{value-of-consulting-onet.}
 
 The Occupational Information Network (O*NET; onetonline.org) contains a fairly comprehensive description of occupations (Peterson et al., 2001). This widely accessed database houses hundreds of standardized and occupation-specific descriptors for the majority of occupations within the United States, and these descriptions are frequently updated. These data, and the tools provided for public consumption on the website (e.g., Career Exploration Tools, ``My Next Move'', Toolkit for Business) are frequently used by counselors, students, human resources departments, and researchers to assist interested or curious job-seekers discover the nature of work as well as skills and training typically required for different occupations. It is also often useful to employers by providing them with information that may be helpful in a job analysis context.
 
@@ -234,13 +259,11 @@ Although the same job characteristic may be percieved as both a challenge and a 
 
 \emph{Hypothesis 2}: The association between challenging and resourceful characteristics is moderated by type of characteristic.
 
-\hypertarget{method}{%
-\section{Method}\label{method}}
+\section{Method}\label{method}
 
 We evaluate agreement across perceptions of job characteristics regarding their characterization as resource, challenge, and hindrance (Bakker \& Demerouti, 2017; Bakker et al., 2003; Demerouti et al., 2001). To capture an effectively exhaustive list of characteristics that apply to, theoretically, \emph{every} possible job, we consult the unifying framework of O*Net.
 
-\hypertarget{materials}{%
-\subsection{Materials}\label{materials}}
+\subsection{Materials}\label{materials}
 
 Our survey was informed by 98 statements taken from job characteristic descriptors located within O*Net's classification of ``work activities'': 1) Information Input (5 statements), 2) Interacting with Others (17 statements), 3) Mental Processes (10 statements), and 4) Work Output (9 statements) and ``work context'' groupings: 1) Interpersonal Relationships (14 statements), 2) Physical Work Conditions (30 statements), and 3) Structural Job Characteristics (13 statements).
 
@@ -249,18 +272,15 @@ The O*Net descriptors are written in a similar manner to a task statement presen
 Subsequent to providing ratings of whether or not each of the 98 O*Net characteristics were relevant for the respondent's work, each respondent who agreed that an element had at least some relevance to their job was then also asked to rate that element in terms of, 1) . . . this aspect of your job is a resource that can be functional in achieving work goals, reduce job demands, or stimulate personal growth/development, 2) . . . this aspect of your job is a challenge that can promote mastery, personal growth, or future gains, and 3) . . . this aspect of your job is a hindrance that can inhibit personal growth, learning, and work goal attainment.
 The total number of items on the survey was less than 392 (98 characteristics x 4 administrations) because we did not ask for demand and resource evaluations for 14 O*Net characteristics that we projected would have very low frequency of endorsement across respondents (one excluded characteristic, for example, was \emph{\ldots the extent to which the worker is exposed to radiation on the job}).
 
-\hypertarget{participants}{%
-\subsection{Participants}\label{participants}}
+\subsection{Participants}\label{participants}
 
 Eligibility requirements included being 18 or older and holding either a full- or part-time job. Participants were asked to think about their primary job while answering the survey. We sampled from a Prolific panel, resulting in 785 individuals who initially accessed the survey link. Of those, 112 indicated that they were not interested, had more than 200 missing responses, or had 20 or more identical consecutive sequential responses (Yentes \& Wilhelm, 2021). Additional screening using four embedded attention checks resulted in the retention of 568 respondents. A total of 13.57\% had been in their job less than 6 months, 19.20\% between 6 months and a year, 49.12\% between one and five years, 13.27\% between 5 and 10 years, and 4.87\% more than 10 years. Reported ages ranged from 18 to 65 with an average of 28.18 years old (SD = 7.53). Gender was captured via a free-field gender identity category, although the sample predominantly self-identified as female (52.6\%) or male (46.8\%). Participants were compensated for their participation in this study in the amount of six dollars through Prolific.
 
-\hypertarget{results}{%
-\section{Results}\label{results}}
+\section{Results}\label{results}
 
 All analyses are focused on characteristics of work that were rated as being ``relevant'' to the respondents' job. Upon confirming that a work characteristic was relevant, respondents then also rated the extent to which that characteristic was percieved as a resources, challenge, and hindrance.
 
-\hypertarget{resource-challenge-and-hindrance-associations}{%
-\subsection{Resource, Challenge, and Hindrance Associations}\label{resource-challenge-and-hindrance-associations}}
+\subsection{Resource, Challenge, and Hindrance Associations}\label{resource-challenge-and-hindrance-associations}
 
 \begin{table}[tbp]
 
@@ -292,8 +312,7 @@ Hypothesis 1 predicted a positive association between total resources and total 
 \caption{\label{fig:percagree}Percent convergence (characteristic rated consistently as, for example, both a resource and a hindrance).}
 \end{figure}
 
-\hypertarget{convergence-same-characteristic.}{%
-\subsubsection{Convergence (same characteristic).}\label{convergence-same-characteristic.}}
+\subsubsection{Convergence (same characteristic).}\label{convergence-same-characteristic.}
 
 We next looked for convergence of perception at the level of each individual job characteristic. Here, we calculated the \emph{percent of affirmative correspondence} between individual characteristic perceptions. That is, a respondent needed to agree that \emph{\ldots being in contact with others} was both a resource as well as a challenge in order to be implicated as affirmatively agreeing. We did this for each of the 84 individual characteristics that were rated as a resource, challenge, or demand and then computed an aggregate level of affirmative correspondence for each person. Figure \ref{fig:percagree} presents the results of these correspondences, showing that there was not much mutual agreement regarding characteristics being viewed as both hindrances and resources (\emph{M} = 0.14) or as challenges and hindrances
 (\emph{M} = 0.14). However, when a characteristic was viewed a resource, it was more likely to also be percieved as a challenge (although the correspondence also exhibited quite a bit of variability; \emph{M} = 0.51, \emph{sd} = 0.21).
@@ -306,50 +325,48 @@ We next looked for convergence of perception at the level of each individual job
 
 Figure \ref{fig:recchall} explores the possibility of moderation by \emph{type of characteristic rated} for the resource-challenge convergence. Here we categorized each characteristic by its O*Net ``scale'' (one of seven), and the graph shows greater consistency across certain characteristics (for example, \emph{Mental Processes} or \emph{Interacting with Others}) and less convergence across other \emph{types} of job activities (for example, \emph{Physical} characteristics). A repeated-measures ANOVA retaining these scales as 7 different levels of a within-subjects' independent variables yielded a treatment effect of \(F_{(6, 3,402)}\) = 613.5, \emph{p} \textless{} .001 (the subjects' effect was \(F_{(567, 3402)}\) = 6.13, \emph{p} \textless{} .001.
 
-\hypertarget{discussion}{%
-\section{Discussion}\label{discussion}}
+\section{Discussion}\label{discussion}
 
 The major goal of this paper was to further explore the relationships among perceptions of job characteristics as challenge demands, hindrance demands, and resources. Our findings perhaps most noteably highlight the importance of dissociating the \emph{nature} of job demands. Similar to the eustress/distress distinction (e.g., Selye, 1974), it would seem as though demands should perhaps be thought of in a valenced manner (e.g., is it a ``good'' demand or a ``bad'' demand). We did not probe for dependent variable associations, however, Cavanaugh et al. (2000) found that challenge demands were positively related to job satisfaction and negatively related to job search behaviors, while hindrance demands demonstrated the opposite patterns in a sample of managers. We also have some evidence that challenge-hindrance appraisals are related to engagement in the expected direction whereby hindrance appraisals are negatively associated with engagement and challenge appraisals are positively associated with engagement (Crawford et al. (2010)). Podsakoff et al. (2007)'s meta-analysis also found that challenge demands were positively related to job satisfaction and organizational commitment and negatively related to both turnover intentions and actual turnover, while hindrance demands again produced the opposite patterns of relationship. Although we did not probe for outcome associations, the current study does suggest that hindrance demands also operate in a manner different than challenge demands with regard to their association with resource appraisals.
 
 In terms of convergence of resource and challenge appraisals, there was quite a bit of variability (e.g., Figure \ref{fig:percagree}), but that variability was partially explained by the nature of the characteristic being evaluated (e.g., Figure \ref{fig:recchall}). Physical job characteristics such as, for example, the amount of ``time spent bending or twisting the body'' may be much more likely to be appraised as a challenging demand (but not a resource). Other \emph{types} of job requirements, however, such as a mental process like, ``scheduling work and activities'' might reasonably be expected to exhibit greater convergence. We suspect that there are other moderators that help explain this association/ disassociation between challenges and resources, and would like to incorporate variables such as a respondents' personality in future investigations.
 
-\hypertarget{references}{%
-\section*{References}\label{references}}
+\section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
 
-\hypertarget{refs}{}
+\phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2014job}{}}%
+\bibitem[\citeproctext]{ref-bakker2014job}
 Bakker, A. B., \& Demerouti, E. (2014). Job demands--resources theory. \emph{Wellbeing: A Complete Reference Guide}, 1--28.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2017job}{}}%
+\bibitem[\citeproctext]{ref-bakker2017job}
 Bakker, A. B., \& Demerouti, E. (2017). Job demands--resources theory: Taking stock and looking forward. \emph{Journal of Occupational Health Psychology}, \emph{22}(3), 273.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bakker2013weekly}{}}%
+\bibitem[\citeproctext]{ref-bakker2013weekly}
 Bakker, A. B., \& Sanz-Vergel, A. I. (2013). Weekly work engagement and flourishing: The role of hindrance and challenge job demands. \emph{Journal of Vocational Behavior}, \emph{83}(3), 397--409.
 
-\leavevmode\vadjust pre{\hypertarget{ref-cavanaugh2000empirical}{}}%
+\bibitem[\citeproctext]{ref-cavanaugh2000empirical}
 Cavanaugh, M. A., Boswell, W. R., Roehling, M. V., \& Boudreau, J. W. (2000). An empirical examination of self-reported work stress among US managers. \emph{Journal of Applied Psychology}, \emph{85}(1), 65.
 
-\leavevmode\vadjust pre{\hypertarget{ref-crawford2010linking}{}}%
+\bibitem[\citeproctext]{ref-crawford2010linking}
 Crawford, E. R., LePine, J. A., \& Rich, B. L. (2010). Linking job demands and resources to employee engagement and burnout: A theoretical extension and meta-analytic test. \emph{Journal of Applied Psychology}, \emph{95}(5), 834.
 
-\leavevmode\vadjust pre{\hypertarget{ref-demerouti2001job}{}}%
+\bibitem[\citeproctext]{ref-demerouti2001job}
 Demerouti, E., Bakker, A. B., Nachreiner, F., \& Schaufeli, W. B. (2001). The job demands-resources model of burnout. \emph{Journal of Applied Psychology}, \emph{86}(3), 499.
 
-\leavevmode\vadjust pre{\hypertarget{ref-peterson2001understanding}{}}%
+\bibitem[\citeproctext]{ref-peterson2001understanding}
 Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., Fleishman, E. A., Levin, K. Y., Campion, M. A., Mayfield, M. S., Morgeson, F. P., Pearlman, K., et al. (2001). Understanding work using the occupational information network (o* NET): Implications for practice and research. \emph{Personnel Psychology}, \emph{54}(2), 451--492.
 
-\leavevmode\vadjust pre{\hypertarget{ref-podsakoff2007differential}{}}%
+\bibitem[\citeproctext]{ref-podsakoff2007differential}
 Podsakoff, N. P., LePine, J. A., \& LePine, M. A. (2007). Differential challenge stressor-hindrance stressor relationships with job attitudes, turnover intentions, turnover, and withdrawal behavior: A meta-analysis. \emph{Journal of Applied Psychology}, \emph{92}(2), 438.
 
-\leavevmode\vadjust pre{\hypertarget{ref-selye1936syndrome}{}}%
+\bibitem[\citeproctext]{ref-selye1936syndrome}
 Selye, H. (1936). A syndrome produced by diverse nocuous agents. \emph{Nature}, \emph{138}(3479), 32--32.
 
-\leavevmode\vadjust pre{\hypertarget{ref-selye1974stress}{}}%
+\bibitem[\citeproctext]{ref-selye1974stress}
 Selye, H. (1974). \emph{Stress without distress}. Lippincott Williams \& Wilkins.
 
-\leavevmode\vadjust pre{\hypertarget{ref-webster2011extending}{}}%
+\bibitem[\citeproctext]{ref-webster2011extending}
 Webster, J. R., Beehr, T. A., \& Love, K. (2011). Extending the challenge-hindrance model of occupational stress: The role of appraisal. \emph{Journal of Vocational Behavior}, \emph{79}(2), 505--516.
 
 \end{CSLReferences}

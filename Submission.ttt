@@ -114,7 +114,7 @@ Burnout & 1 & Challenge & 0.28 ** &  & \\
 \end{tabular}
 
 \begin{tablenotes}[para]
-\normalsize{\textit{Note.} * = p < .05; ** = p < .01}
+\normalsize{\textit{Note.} * = p < .05; ** = p < .01, coefficients are unstandardized and mean-centered}
 \end{tablenotes}
 
 \end{threeparttable}
@@ -156,7 +156,7 @@ Burnout & 1 & Hindrance & 0.09 * &  & \\
 \end{tabular}
 
 \begin{tablenotes}[para]
-\normalsize{\textit{Note.} * = p < .05; ** = p < .01}
+\normalsize{\textit{Note.} * = p < .05; ** = p < .01, coefficients are unstandardized and mean-centered}
 \end{tablenotes}
 
 \end{threeparttable}
