@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.4.12)  12 APR 2025 12:15
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.4.12)  14 APR 2025 08:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1182,18 +1182,20 @@ Underfull \vbox (badness 1558) has occurred while \output is active []
 [19]
 
 [20]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [21]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[22] AED endfloat: Processing end Figures and Tables
+[22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[23] (./Submission.ttt
+
+
+[23] AED endfloat: Processing end Figures and Tables
+
+[24] (./Submission.ttt
 Overfull \hbox (36.94206pt too wide) in paragraph at lines 10--10
 [] [] 
  []
@@ -1220,29 +1222,29 @@ Overfull \hbox (73.88411pt too wide) in alignment at lines 19--44
 
 
 
-[24
-
-
-
-]
-
 [25
+
 
 
 ]
 
 [26
 
-])
+
+]
 
 [27
+
+])
+
+[28
 
 ] (./Submission.fff
 File: Submission_files/figure-latex/ourmodel-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/ourmodel-1.pdf>
 
 
-[28
+[29
 
 ]
 File: Submission_files/figure-latex/combinegraphs-1.pdf Graphic file (type pdf)
@@ -1252,7 +1254,7 @@ LaTeX Warning: Float too large for page by 50.37381pt on input line 16.
 
 
 
-[29]
+[30]
 File: Submission_files/figure-latex/combinegraphs2-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/combinegraphs2-1.pdf>
 
@@ -1260,12 +1262,12 @@ LaTeX Warning: Float too large for page by 50.37381pt on input line 25.
 
 
 
-[30]
+[31]
 File: Submission_files/figure-latex/overallhist-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/overallhist-1.pdf>
 
 
-[31
+[32
 
 
 
@@ -1274,21 +1276,21 @@ File: Submission_files/figure-latex/chal-resource-int-1.pdf Graphic file (type p
 <use Submission_files/figure-latex/chal-resource-int-1.pdf>
 
 
-[32
+[33
 
 ]
 File: Submission_files/figure-latex/hind-resource-stress-int-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/hind-resource-stress-int-1.pdf>
 
 
-[33
+[34
 
 ]
 File: Submission_files/figure-latex/hind-resource-burn-int-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/hind-resource-burn-int-1.pdf>
 )
 
-[34
+[35
 
 ] (./Submission.aux)
  ***********
@@ -1305,4 +1307,4 @@ Here is how much of TeX's memory you used:
  36 hyphenation exceptions out of 8191
  99i,11n,114p,1975b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Submission.pdf (34 pages).
+Output written on Submission.pdf (35 pages).

@@ -363,67 +363,6 @@ Participants were asked to think about their primary job, and each administered 
 
 Of the `r nrow(use)` individuals who initially accessed the survey link, `r nrow(different)` indicated that they were not interested, had more than 200 missing responses, or had 20 or more identical consecutive sequential responses [@R-careless]. Applying a further screen regarding attention checks (there were four attention checks embedded throughout, asking respondents to indicate a specific answer) resulted in the retention of `r nrow(data)` respondents who constitute the current sample. 
 
-```{r workcat, fig.cap="Percent agreement (resource and challenge) across O*Net occupational categories (previous was across 84 O/*Net items - this is across 568 individual workers).", fig.height=10}
-
-## Job classifications
-
-workers <- read.csv("workers.csv")             ## Probably need to revisit our coding - 10/14/22
-
-# ggplot(workers, aes(O.Net.Job.Family.Categories))+
-#   geom_histogram(stat="count") + coord_flip()
-
-
-## Combining categories
-
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Transportation and Material Moving"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Protective Service"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Production"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Personal Care and Service"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Installation Maintenance and Repair"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Food Preparation and Serving Related"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Farming Fishing and Forestry"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Construction and Extraction"] <- "Physical Labor"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Building and Grounds Cleaning and Maintenance"] <- "Physical Labor"
-
-## with Alicia 12/1
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Architecture and Engineering"] <- "Computer & Engineering"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Computer and Mathematical"] <- "Computer & Engineering"
-
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Life Physical and Social Science"] <- "Education, Science & Health"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Educational Instruction and Library"] <- "Education, Science & Health"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Healthcare Practitioner and Technical"] <- "Education, Science & Health"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Community and Social Service"] <- "Education, Science & Health"
-
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Office and Administrative Support"] <- "Admin, Healthcare & Legal"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Legal"] <- "Admin, Healthcare & Legal"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Healthcare Support"] <- "Admin, Healthcare & Legal"
-
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Arts Design Entertainment Sports Media"] <- "Other"
-workers$O.Net.Job.Family.Categories[workers$O.Net.Job.Family.Categories == "Military Specific"] <- "Other"
-
-
-#3 in plot all categories, combined and standalone 
-
-#ggplot(workers, aes(O.Net.Job.Family.Categories)) +
-#  geom_histogram(stat="count") + coord_flip()
-
-forworkers2 <- anova[,c(2:85)]
-dataworker <- cbind(forworkers2,workers$O.Net.Job.Family.Categories)    ## to repeat O*Net analyses
-                                     ## This gets worker info into convergence file
-
-dataworker$overall <- rowMeans(dataworker[1:84], na.rm=TRUE)
-
-names(dataworker)[names(dataworker) == 'workers$O.Net.Job.Family.Categories'] <- 'JobFamily'
-
-ggplot(dataworker, aes(x=overall)) + geom_histogram() + facet_wrap(~JobFamily, nrow=8)
-
-workeraov <- aov(overall ~ JobFamily, data=dataworker)
-
-library(lsr)  ## for eta squared
-effect.size <- etaSquared(workeraov)
-
-
-
 ```{r resourcesagree, fig.cap="Characteristics most similarly viewed as resources (lowest standard deviations)."}
 
 sortresource <- resource[order(resource$sd),]
