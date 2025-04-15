@@ -912,13 +912,13 @@ overall.challenge_center <- overall.challenge - 204.2
 
 ```{r ModeratedRegressionChallenge-ResourceBurnout}
 
-cr_burn_m1 <- lm(burnout ~ scale(overall.challenge_center), modreg)
+cr_burn_m1 <- lm(burnout ~ scale(overall.challenge), modreg)
 #summary(cr_burn_m1)
 
-cr_burn_m2 <- lm(burnout ~ scale(overall.challenge_center) + scale(overall.resource), modreg)
+cr_burn_m2 <- lm(burnout ~ scale(overall.challenge) + scale(overall.resource), modreg)
 #summary(cr_burn_m2)
 
-cr_burn_m3 <- lm(burnout ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), modreg)
+cr_burn_m3 <- lm(burnout ~ scale(overall.challenge) + scale(overall.resource) + scale(overall.challenge*overall.resource), modreg)
 #summary(cr_burn_m3)
 
 aov_test <- anova(cr_burn_m2, cr_burn_m3)
@@ -927,13 +927,13 @@ aov_test <- anova(cr_burn_m2, cr_burn_m3)
 
 ```{r ModeratedRegressionChallenge-ResourceStress}
 
-cr_stress_m1 <- lm(stress ~ scale(overall.challenge_center), modreg)
+cr_stress_m1 <- lm(stress ~ scale(overall.challenge), modreg)
 #summary(cr_stress_m1)
 
-cr_stress_m2 <- lm(stress ~ scale(overall.challenge_center) + scale(overall.resource_center), modreg)
+cr_stress_m2 <- lm(stress ~ scale(overall.challenge) + scale(overall.resource), modreg)
 #summary(cr_stress_m2)
 
-cr_stress_m3 <- lm(stress ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), modreg)
+cr_stress_m3 <- lm(stress ~ scale(overall.challenge) + scale(overall.resource) + scale(overall.challenge*overall.resource), modreg)
 #summary(cr_stress_m3)
 
 cr_stress_anova <- anova(cr_stress_m2, cr_stress_m3)
@@ -942,13 +942,13 @@ cr_stress_anova <- anova(cr_stress_m2, cr_stress_m3)
 
 ```{r Moderated Regression Challenge-ResourceEngagement}
 
-cr_eng_m1 <- lm(engagement ~ scale(overall.challenge_center), modreg)
+cr_eng_m1 <- lm(engagement ~ scale(overall.challenge), modreg)
 #summary(cr_eng_m1)
 
-cr_eng_m2 <- lm(engagement ~ scale(overall.challenge_center) + scale(overall.resource_center), modreg)
+cr_eng_m2 <- lm(engagement ~ scale(overall.challenge) + scale(overall.resource), modreg)
 #summary(cr_eng_m2)
 
-cr_eng_m3 <- lm(engagement ~ scale(overall.challenge_center) + scale(overall.resource_center) + scale(overall.challenge_center*overall.resource_center), modreg)
+cr_eng_m3 <- lm(engagement ~ scale(overall.challenge) + scale(overall.resource) + scale(overall.challenge*overall.resource), modreg)
 #summary(cr_eng_m3)
 
 cr_eng_anova <- anova(cr_eng_m2, cr_eng_m3)
@@ -957,13 +957,13 @@ cr_eng_anova <- anova(cr_eng_m2, cr_eng_m3)
 
 ```{r Moderated Regression Hindrance-Resource Burnout}
 
-hr_burn_m1 <- lm(burnout ~ scale(overall.hindrance_center), modreg)
+hr_burn_m1 <- lm(burnout ~ scale(overall.hindrance), modreg)
 #summary(hr_burn_m1)
 
-hr_burn_m2 <- lm(burnout ~ scale(overall.hindrance_center) + scale(overall.resource_center), modreg)
+hr_burn_m2 <- lm(burnout ~ scale(overall.hindrance) + scale(overall.resource), modreg)
 #summary(hr_burn_m2)
 
-hr_burn_m3 <- lm(burnout ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), modreg)
+hr_burn_m3 <- lm(burnout ~ scale(overall.hindrance) + scale(overall.resource) + scale(overall.hindrance*overall.resource), modreg)
 #summary(hr_burn_m3)
 
 hr_burn_anova <- anova(hr_burn_m2, hr_burn_m3)
@@ -972,13 +972,13 @@ hr_burn_anova <- anova(hr_burn_m2, hr_burn_m3)
 
 ```{r ModeratedRegressionHindrance-ResourceStress}
 
-hr_stress_m1 <- lm(stress ~ scale(overall.hindrance_center), modreg)
+hr_stress_m1 <- lm(stress ~ scale(overall.hindrance), modreg)
 #summary(hr_stress_m1)
 
-hr_stress_m2 <- lm(stress ~ scale(overall.hindrance_center) + scale(overall.resource_center), modreg)
+hr_stress_m2 <- lm(stress ~ scale(overall.hindrance) + scale(overall.resource), modreg)
 #summary(hr_stress_m2)
 
-hr_stress_m3 <- lm(stress ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), modreg)
+hr_stress_m3 <- lm(stress ~ scale(overall.hindrance) + scale(overall.resource) + scale(overall.hindrance*overall.resource), modreg)
 #summary(hr_stress_m3)
 
 hr_stress_anova <- anova(hr_stress_m2, hr_stress_m3)
@@ -987,13 +987,13 @@ hr_stress_anova <- anova(hr_stress_m2, hr_stress_m3)
 
 ```{r Moderated Regression Hindrance-Resource Engagement}
 
-hr_eng_m1 <- lm(engagement ~ scale(overall.hindrance_center), modreg)
+hr_eng_m1 <- lm(engagement ~ scale(overall.hindrance), modreg)
 #summary(hr_eng_m1)
 
-hr_eng_m2 <- lm(engagement ~ scale(overall.hindrance_center) + scale(overall.resource_center), modreg)
+hr_eng_m2 <- lm(engagement ~ scale(overall.hindrance) + scale(overall.resource), modreg)
 #summary(hr_eng_m2)
 
-hr_eng_m3 <- lm(engagement ~ scale(overall.hindrance_center) + scale(overall.resource_center) + scale(overall.hindrance_center*overall.resource_center), modreg)
+hr_eng_m3 <- lm(engagement ~ scale(overall.hindrance) + scale(overall.resource) + scale(overall.hindrance*overall.resource), modreg)
 #summary(hr_eng_m3)
 
 hr_eng_anova <- anova(hr_eng_m2, hr_eng_m3)
@@ -1151,7 +1151,7 @@ colnames(regtable)[6] <- "$\\Delta R^2$"
 papaja::apa_table(regtable, 
               caption = "Moderated regression summary of outcomes regressed on challenges and resources",
               escape=FALSE,
-              note="* = p < .05; ** = p < .01, coefficients are unstandardized and mean-centered")
+              note="* = p < .05; ** = p < .01, coefficients are unstandardized")
 ```
 
 ```{r}
@@ -1175,7 +1175,7 @@ hr_burn_info3 <- apa_print(hr_burn_m3)
 
 ```
 
-H3a predicted that both resources and challenges would predict engagement. Table \@ref(tab:chal-resource-table) summarizes the results for engagement (as well as stress and burnout). Sum scores for the predictors were used here such that the overall amount of resource or demand is recognized, and these predictor variables were mean centered prior to running the regressions. First, challenges and resources explained a statistically significant amount of the variability in engagement, $R^2$ = `r round(summary(cr_eng_m2)$r.squared, 2)`, Adj. $R^2$ =  `r round(summary(cr_eng_m2)$adj.r.squared, 2)`, `r cr_eng_info2$statistic$modelfit$r2`.  Here, the resource slope is significant, wheras the challenge slope is not significant (providing partial support for H3a). The inclusion of the interaction term in step two of the model contributed a significant addition to the model, `r cr_eng_info3$statistic$modelfit$r2`, $\Delta R^2$ = `r cr_eng_r_square_change`, $\Delta F$ (`r cr_eng_anova$Df[2]`, `r cr_eng_anova$Res.Df[2]`) = `r cr_eng_anova$F[2]`,  and thus provides statistical support for the presence of moderation (Hypothesis 4a). Figure \@ref(fig:chal-resource-int) illustrates the interaction. With low levels of resources, the relationship between challenges and engagement is relatively flat and engagement is comparatively low. With more resources, the relationship between challenges and engagement is negative, but engagement still remains higher with greater reported challenge when more resources are perceived.
+H3a predicted that both resources and challenges would predict engagement. Table \@ref(tab:chal-resource-table) summarizes the results for engagement (as well as stress and burnout). Sum scores for the predictors were used here such that the overall amount of resource or demand is recognized. First, challenges and resources explained a statistically significant amount of the variability in engagement, $R^2$ = `r round(summary(cr_eng_m2)$r.squared, 2)`, Adj. $R^2$ =  `r round(summary(cr_eng_m2)$adj.r.squared, 2)`, `r cr_eng_info2$statistic$modelfit$r2`.  Here, the resource slope is significant, wheras the challenge slope is not significant (providing partial support for H3a). The inclusion of the interaction term in step two of the model contributed a significant addition to the model, `r cr_eng_info3$statistic$modelfit$r2`, $\Delta R^2$ = `r cr_eng_r_square_change`, $\Delta F$ (`r cr_eng_anova$Df[2]`, `r cr_eng_anova$Res.Df[2]`) = `r cr_eng_anova$F[2]`,  and thus provides statistical support for the presence of moderation (Hypothesis 4a). Figure \@ref(fig:chal-resource-int) illustrates the interaction. With low levels of resources, the relationship between challenges and engagement is relatively flat and engagement is comparatively low. With more resources, the relationship between challenges and engagement is negative, but engagement still remains higher with greater reported challenge when more resources are perceived.
 
 Next, challenge demands and resources did not explain a significant amount of the variance in stress,  $R^2$ = `r round(summary(cr_stress_m2)$r.squared, 2)`, Adj. $R^2$ =  `r round(summary(cr_stress_m2)$adj.r.squared, 2)`, `r cr_stress_info2$statistic$modelfit$r2`, failing to provide support for Hypothesis 3b. The inclusion of the interaction term in step two of the model did not contribute a significant addition to the model, `r cr_stress_info3$statistic$modelfit$r2`, $\Delta R^2$ = `r cr_stress_r_square_change`, $\Delta F$ (`r cr_stress_anova$Df[2]`, `r cr_stress_anova$Res.Df[2]`) = `r cr_stress_anova$F[2]`, and thus does not support the presence of moderation.
 
@@ -1205,11 +1205,11 @@ colnames(regtable)[6] <- "$\\Delta R^2$"
 papaja::apa_table(regtable,
                  caption = "Moderated regression summary of outcomes regressed on hindrances and resources",
                  escape=FALSE,
-                 note="* = p < .05; ** = p < .01, coefficients are unstandardized and mean-centered")
+                 note="* = p < .05; ** = p < .01, coefficients are unstandardized")
 ```
 ### Hindrances, Resources, and Outcomes
 
-We also explored whether there was an interaction between hindrance demands and resources on the outcome variables. Sum scores for the predictors were used here again, and predictor variables were mean centered prior to running the regressions. First, hindrance demands and resources explained a statistically significant amount of the variability in engagement, $R^2$ = `r round(summary(hr_eng_m2)$r.squared, 2)`, Adj. $R^2$ =  `r round(summary(hr_eng_m2)$adj.r.squared, 2)`, `r hr_eng_info2$statistic$modelfit$r2` [see Table \@ref(tab:hind-resource-table)]. The inclusion of the interaction term in step two of the model did not contribute a significant addition to the model, `r hr_eng_info3$statistic$modelfit$r2`, $\Delta R^2$ = `r hr_eng_r_square_change`, $\Delta F$ (`r hr_eng_anova$Df[2]`, `r hr_eng_anova$Res.Df[2]`) = `r hr_eng_anova$F[2]`. An interaction between hindrances and resources was not found.
+We also explored whether there was an interaction between hindrance demands and resources on the outcome variables. Sum scores for the predictors were used here again. First, hindrance demands and resources explained a statistically significant amount of the variability in engagement, $R^2$ = `r round(summary(hr_eng_m2)$r.squared, 2)`, Adj. $R^2$ =  `r round(summary(hr_eng_m2)$adj.r.squared, 2)`, `r hr_eng_info2$statistic$modelfit$r2` [see Table \@ref(tab:hind-resource-table)]. The inclusion of the interaction term in step two of the model did not contribute a significant addition to the model, `r hr_eng_info3$statistic$modelfit$r2`, $\Delta R^2$ = `r hr_eng_r_square_change`, $\Delta F$ (`r hr_eng_anova$Df[2]`, `r hr_eng_anova$Res.Df[2]`) = `r hr_eng_anova$F[2]`. An interaction between hindrances and resources was not found.
 
 Next exploring stress, hindrance demands and resources explained a statistically significant amount of the variability in stress, $R^2$ = `r round(summary(hr_stress_m2)$r.squared, 2)`, Adj. $R^2$ =  `r round(summary(hr_stress_m2)$adj.r.squared, 2)`, `r hr_stress_info2$statistic$modelfit$r2`. The inclusion of the interaction term in step two of the model contributed a significant addition to the model, `r hr_stress_info3$statistic$modelfit$r2`, $\Delta R^2$ = `r hr_stress_r_square_change`, $\Delta F$ (`r hr_stress_anova$Df[2]`, `r hr_stress_anova$Res.Df[2]`) = `r hr_stress_anova$F[2]`, supporting the presence of a moderated effect.  See Figure \@ref(fig:hind-resource-stress-int). As expected, the relationship between hindrance demands and strain becomes weaker as workers perceive more resources.
 
