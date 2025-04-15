@@ -1,5 +1,5 @@
 ---
-title             : "Non-exclusive Characterizations of Demands and Resources across O*NET Job Elements"
+title             : "Shared Characterizations of Demands and Resources across O*NET Job Elements"
 shorttitle        : "O*NET JD-R"
 
 author: 
@@ -24,7 +24,7 @@ authornote: |
  Funding: This work was supported by the College of Humanities and Social Sciences, Montclair State University, Montclair, NJ.
 
 abstract: |
-  Much of our understanding of job demands and resources rests on an assumption that some job characteristics are resources and some are demands. This study documents variability in subjective ratings of O\*Net job characteristics with respect to interpretation as resource and demand (defined as challenge/hindrance), and further predicts the form of demand will be differentially related to work-relevant outcomes. We lastly explore the moderating role of resources on these relationships. We found that job characteristics were not uniquely categorized as a resource or demand, but rather, some job characteristics were rated highly as both a resource and a challenge. While we did not find support for the prediction that demands were related to stress and burnout, we did find that resources moderated the challenge-engagement relationship, and further, resources moderated the hindrance-stress, and hindrance-burnout relationships. These findings broadly reveal that there is relatively more consistency in ratings of resource and challenge characteristics, and far more variability in job characteristics rated as hindrance demands. These findings have implications for job design and management particularly with regard to resource-laden elements that may also be experienced as demanding.
+  Much of our understanding of job demands and resources rests on an assumption that some job characteristics are resources and some are demands. This study documents variability in subjective ratings of O\*Net job characteristics with respect to interpretation as resource and demand (defined as challenge/hindrance), and further predicts the form of demand will be differentially related to work--related outcomes. We lastly explore the moderating role of resources on these relationships. We found that job characteristics were not uniquely categorized as a resource or demand, but rather, some job characteristics were rated highly as both a resource and a challenge. Resources moderated the challenge-engagement relationship, and further, also moderated the hindrance-stress, and hindrance-burnout relationships. These findings broadly suggest that challenging demands may also be interpreted as job resources, and hindrance demands exhibit considerable variability. These findings have implications for job design and management particularly with regard to demanding elements that may also be experienced as resources.
   
 keywords         : "O*Net, challenge-hindrance framework, job demands-resources, job characteristics"
 wordcount        : "4,942"
