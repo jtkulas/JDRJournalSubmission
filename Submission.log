@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.27)  26 APR 2025 10:18
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.27)  5 JUN 2025 11:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1095,55 +1095,52 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [2]
 
 [3]
-
-[4]
 Underfull \vbox (badness 3977) has occurred while \output is active []
 
 
 
-[5]
+[4]
 
-[6]
+[5]
 \openout5 = `Submission.fff'.
 
 (Submission.fff)
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
+[6]
 
 [7]
 
 [8]
 
 [9]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[10]
 Missing character: There is no 𝛼 (U+1D6FC) in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no α (U+03B1) in font [lmroman12-regular]:mapping=tex-text;!
 
 
+[10]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 327.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 327.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 327.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00092pt on input line 327.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.00064pt on input line 327.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00046pt on input line 327.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line 327.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 327.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 327.
+
+
 [11]
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 329.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 329.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 329.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 329.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 329.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 329.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 329.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 329.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 329.
+Underfull \vbox (badness 1867) has occurred while \output is active []
+
 
 
 [12]
@@ -1160,8 +1157,14 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 [16]
 
 [17]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [18]
+Underfull \vbox (badness 1558) has occurred while \output is active []
+
+
 
 [19]
 
@@ -1175,14 +1178,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[22]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[22] AED endfloat: Processing end Figures and Tables
 
-
-
-[23] AED endfloat: Processing end Figures and Tables
-
-[24] (./Submission.ttt
+[23] (./Submission.ttt
 Overfull \hbox (36.94206pt too wide) in paragraph at lines 10--10
 [] [] 
  []
@@ -1209,36 +1207,36 @@ Overfull \hbox (73.88411pt too wide) in alignment at lines 19--44
 
 
 
-[25
+[24
 
+
+
+]
+
+[25
 
 
 ]
 
 [26
 
-
-]
-
-[27
-
 ])
 
-[28
+[27
 
 ] (./Submission.fff
 File: Submission_files/figure-latex/ourmodel-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/ourmodel-1.pdf>
 
 
-[29
+[28
 
 ]
 File: Submission_files/figure-latex/onetviz-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/onetviz-1.pdf>
 
 
-[30
+[29
 
 ]
 File: Submission_files/figure-latex/combinegraphs-1.pdf Graphic file (type pdf)
@@ -1248,7 +1246,7 @@ LaTeX Warning: Float too large for page by 50.37381pt on input line 25.
 
 
 
-[31]
+[30]
 File: Submission_files/figure-latex/combinegraphs2-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/combinegraphs2-1.pdf>
 
@@ -1256,12 +1254,12 @@ LaTeX Warning: Float too large for page by 50.37381pt on input line 34.
 
 
 
-[32]
+[31]
 File: Submission_files/figure-latex/overallhist-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/overallhist-1.pdf>
 
 
-[33
+[32
 
 
 
@@ -1270,21 +1268,21 @@ File: Submission_files/figure-latex/chal-resource-int-1.pdf Graphic file (type p
 <use Submission_files/figure-latex/chal-resource-int-1.pdf>
 
 
-[34
+[33
 
 ]
 File: Submission_files/figure-latex/hind-resource-stress-int-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/hind-resource-stress-int-1.pdf>
 
 
-[35
+[34
 
 ]
 File: Submission_files/figure-latex/hind-resource-burn-int-1.pdf Graphic file (type pdf)
 <use Submission_files/figure-latex/hind-resource-burn-int-1.pdf>
 )
 
-[36
+[35
 
 ] (./Submission.aux)
  ***********
@@ -1295,10 +1293,10 @@ L3 programming layer <2020/03/25>
 Here is how much of TeX's memory you used:
  32103 strings out of 475919
  635600 string characters out of 5774734
- 1217893 words of memory out of 5000000
+ 1217929 words of memory out of 5000000
  54383 multiletter control sequences out of 15000+600000
  590768 words of font info for 109 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  99i,12n,123p,1975b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Submission.pdf (36 pages).
+Output written on Submission.pdf (35 pages).
