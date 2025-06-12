@@ -21,10 +21,10 @@ affiliation:
     institution   : "PepsiCo"
 
 authornote: |
- Funding: This work was supported by the College of Humanities and Social Sciences, Montclair State University, Montclair, NJ.
+ Funding: This work was supported by the College of Humanities and Social Sciences, Montclair State University, Montclair, NJ. 
 
 abstract: |
-  Many discussions of job demands and resources include a tacit characterization that job elements are either resources or demands. This study documents variability in ratings of O\*Net job characteristics with respect to subjective interpretation of job characteristics and predicts the form of demand (challenge or hindrance) will exhibit differential association with work--related outcomes. We additionally explore the potential moderating role of resources on these relationships. The results support the perspective that job characteristics are not uniquely categorized as a resource or demand, but rather, challenging elements tend to also be experienced as job resources. Furthermore, greater experienced resources moderated the challenge-engagement relationship as well as the hindrance-stress and hindrance-burnout relationships. These findings broadly suggest that challenging demands may also provide opportunity in the form of job resources, and what is viewed as a *hindrance* exhibits considerable variability. These findings have implications for job design and management particularly with regard to opportunity with *some* demanding elements: these may be candidates for growth opportunity.
+  Discussions of job characteristics often include a (tacit) characterization that these job elements are either resources or demands. The current study documents variability in ratings of O\*Net specifications with respect to subjective interpretation of job characteristics and predicts the form of demand (challenge or hindrance) will exhibit differential association with work--related outcomes. We additionally explore the potential moderating role of resources on these relationships. Results support the perspective that job characteristics are not uniquely categorized as a resource or demand, but rather, challenging elements tend to *also* be interpreted as job resources. Furthermore, greater experienced resources moderate the challenge--engagement relationship as well as the hindrance-stress and hindrance--burnout relationships. These findings broadly suggest that challenging demands may also provide opportunity in the form of job resources, and what is viewed as a *hindrance* exhibits considerable variability. 
   
 keywords         : "O*Net, challenge-hindrance framework, job demands-resources, job characteristics"
 wordcount        : "4,942"
@@ -39,7 +39,7 @@ linenumbers       : no
 mask              : no
 draft             : no
 
-csl               : "apa7.csl"
+csl               : "sage-harvard.csl"
 documentclass     : "apa7" #interact
 classoption       : "man"
 output:
@@ -60,6 +60,12 @@ set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed, echo=FALSE, warning=FALSE, message=FALSE)
 
 ```
+
+8,000 words inclusive of everything, references, etc
+
+Abstract = 150 words
+
+preference for Word document
 
 While we have accumulated a vast literature on how job demands and resources relate to and influence key organizational outcomes, recent work has called into question some of our basic assumptions regarding the experience of demands in particular. We build on a growing number of researchers who argue that work elements may be appraised simultaneously as resources and demands [@webster2011extending] or that appraisals may change over time [@rosen2020challenges]. Our primary aims explore whether: 1) variability exists in subjective ratings of job characteristics with respect to perception as resource and/or demand, 2) some characteristics are more likely than others to vary across demand and resource, 3) subjective appraisals are differentially related to positive and negative outcomes, and lastly, 4) resources buffer the relationships between demands and negative work outcomes. We investigate these associations via the lens of [O\*Net job specifications](https://www.onetcenter.org/content.html), which provides a broad framework of specification regarding generalizable job characteristics. 
 
@@ -333,7 +339,7 @@ summarized$RD <- factor(summarized$RD, levels = c("Resource", "Challenge", "Hind
 
 ## Participants
 
-The final usable sample consisted of `r nrow(data)`. Regarding tenure, `r round(a[1,3],2)`% had been in their referent job less than 6 months, `r round(a[2,3],1)`% between 6 months and a year, `r round(a[3,3],2)`% between one and five years, `r round(a[4,3],2)`% between 5 and 10 years, and `r round(a[5,3],2)`% more than 10 years. Respondent ages ranged from 18 to 65 with an average of `r round(mean(data[,403], na.rm=TRUE),2)` years old (*SD* = `r round(sd(data[,403], na.rm=TRUE),2)`). The survey offered a free-field gender identity category, although the sample predominantly self-identified as female (`r round(b[2,3],2)`%) or male (`r round(b[5,3],2)`%). 
+The Montclair State University Institutional Review Board approved the project and respondents provided consent after reviewing a project description but before starting the survey. Written consent was obtained via The final screened sample consisted of `r nrow(data)`. Regarding tenure, `r round(a[1,3],2)`% had been in their referent job less than 6 months, `r round(a[2,3],1)`% between 6 months and a year, `r round(a[3,3],2)`% between one and five years, `r round(a[4,3],2)`% between 5 and 10 years, and `r round(a[5,3],2)`% more than 10 years. Respondent ages ranged from 18 to 65 with an average of `r round(mean(data[,403], na.rm=TRUE),2)` years old (*SD* = `r round(sd(data[,403], na.rm=TRUE),2)`). The survey offered a free-field gender identity category, although the sample predominantly self-identified as female (`r round(b[2,3],2)`%) or male (`r round(b[5,3],2)`%). 
 
 ## Materials
 
