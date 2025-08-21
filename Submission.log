@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.27)  19 JUL 2025 14:27
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.27)  5 AUG 2025 11:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1135,9 +1135,6 @@ Underfull \vbox (badness 3977) has occurred while \output is active []
 [8]
 
 [9]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [10]
 
@@ -1301,10 +1298,10 @@ L3 programming layer <2020/03/25>
 Here is how much of TeX's memory you used:
  32111 strings out of 475919
  635720 string characters out of 5774734
- 1218149 words of memory out of 5000000
+ 1218152 words of memory out of 5000000
  54391 multiletter control sequences out of 15000+600000
  590768 words of font info for 109 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 99i,12n,123p,1766b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,123p,1672b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on Submission.pdf (36 pages).
