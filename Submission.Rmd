@@ -95,9 +95,9 @@ Aligned with this relativistic perspective on the experience of work, @horan2020
 
 Given the above, the first question we pose is whether workers exclusively experience job elements as resources, challenges, or hindrances, or whether a given job characteristic might be mutually considered as more than one of these (e.g., both a challenge and a resource). Evidence suggests that employees do, at least, differentiate between challenge and hindrance demands [e.g., @bakker2013weekly; @gerich2017relevance; @webster2011extending]. For example, @bakker2013weekly found that work pressure was perceived as a hindrance, and emotional demands as more of a challenge. @webster2011extending approached this question with three commonly implicated workplace demands: workload, role ambiguity, and role conflict. They found while that each could be appraised primarily as a challenge or hindrance, they could also simultaneously be perceived as being both a challenge and hindrance to different degrees. We aim to both replicate the above findings and extend them to include resources.
 
->Hypothesis 1: Job characteristics vary regarding subjective worker perception as challenge, hindrance, or resource
+>**Hypothesis 1**: Job characteristics vary regarding subjective worker perception as challenge, hindrance, or resource
 
->Hypothesis 2: Job characteristics are not exclusively categorized as a resource or demand, but rather, some job characteristics are viewed as both resourceful and demanding
+>**Hypothesis 2**: Job characteristics are not exclusively categorized as a resource or demand, but rather, some job characteristics are viewed as both resourceful and demanding
 
 ## Connecting Appraisals to Workplace Outcomes
 
@@ -115,15 +115,15 @@ grid.raster(figure2) # works well with margins/etc
 
 The findings regarding demands are more complex. When a demand is appraised as a hindrance, it is negatively associated with motivational resources [@kim2020thriving], engagement [@crawford2010linking], job search behaviors, and job satisfaction [@cavanaugh2000empirical]. @chen2021daily further found that daily hindrance demands were negatively associated with cognitive wellbeing and work family enrichment. Turnover intentions, actual turnover and withdrawal behaviors have also been associated with hindrance demands [@podsakoff2007differential]. Appraising a demand as a *challenge*, however, has been positively associated with sources of motivation (i.e., sense of self-worth and meaningful work, @chen2021daily, engagement, @crawford2010linking, and strain and turnover intentions, e.g., @abbas2019challenge). Challenge appraisals have also been found to ehave negative associations with job search behaviors [e.g., @cavanaugh2000empirical]. Interestingly, both challenges and hindrances have been shown to positively predict strain [@abbas2019challenge; @lepine2005meta; @podsakoff2007differential; @webster2010toward], which further highlights the complex association between characteristic appraisals and important work outcomes. Given the differential relationships described above, and a focus on three outcomes (engagement, strain, and burnout) we make the following predictions (see Figure \@ref(fig:ourmodel)):
 
->Hypothesis 3a: Resources and challenges positively predict engagement.  
+>**Hypothesis 3a**: Resources and challenges positively predict engagement.  
 
->Hypothesis 3b: Both challenge and hindrance demands positively predict stress and burnout. 
+>**Hypothesis 3b**: Both challenge and hindrance demands positively predict stress and burnout. 
 
 In addition to the these direct relationships, we aim to extend work suggesting that resources can act as a buffer between job demands and strain [e.g., @bakker2005job] and burnout [e.g., @xanthopoulou2007job]. Bakker and colleagues (2005) were the first to report empirical evidence to support the idea that job resources could potentially buffer the negative impact of job demands on distal outcomes like burnout. @bakker2005job explored the interaction between 4 demands (e.g., work overload, physical demands) and 4 resources (e.g., social support, feedback) and three dimensions of burnout (exhaustion, cynicism, and professional efficacy), and found some support for the prediction that high demands with low resources predicted greater levels of cynicism and exhaustion among employees in higher education. Similarly, @xanthopoulou2007job also found some support for this interaction (high demands + low resources leads to greater burnout) among home healthcare employees. They concluded that a variety of resources, including autonomy, social support, performance feedback, and opportunities for professional development buttered the connection between demands (i.e., patient harassment, workload, physical and emotional demands) and burnout. We extend the established job demands-resources model buffer proposition to both challenge and hindrance demands as follows (see Figure \@ref(fig:ourmodel)):
 
->Hypothesis 4a:Resources moderate the relationship between challenge demands and the outcomes of strain and burnout such that these relationships become weaker as workers perceive more resources.
+>**Hypothesis 4a**: Resources moderate the relationship between challenge demands and the outcomes of strain and burnout such that these relationships become weaker as workers perceive more resources.
 
->Hypothesis 4b:Resources moderate the relationship between hindrance demands and the outcomes of strain and burnout such that these relationships become weaker as workers perceive more resources.
+>**Hypothesis 4b**: Resources moderate the relationship between hindrance demands and the outcomes of strain and burnout such that these relationships become weaker as workers perceive more resources.
 
 
 ```{r study1}
