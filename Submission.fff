@@ -20,6 +20,15 @@
 \ifnextchar[{\eatarg}{}
 
 \centering
+\includegraphics{Submission_files/figure-latex/overallhist-1.pdf}
+\caption{\label{fig:overallhist}Frequency distributions of standard deviations across characteristics rated as resources, challenges, and demands.}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
 \includegraphics{Submission_files/figure-latex/combinegraphs-1.pdf}
 \caption{\label{fig:combinegraphs}Characteristics percieved most similarly (lowest standard deviations).}
 \end{figure*}
@@ -31,15 +40,6 @@
 \centering
 \includegraphics{Submission_files/figure-latex/combinegraphs2-1.pdf}
 \caption{\label{fig:combinegraphs2}Characteristics percieved most \textbf{dissimilarly} (largest standard deviations).}
-\end{figure*}
-\efloatseparator
- 
-\begin{figure*}[hbt]
-\ifnextchar[{\eatarg}{}
-
-\centering
-\includegraphics{Submission_files/figure-latex/overallhist-1.pdf}
-\caption{\label{fig:overallhist}Frequency distributions of standard deviations across characteristics rated as resources, challenges, and demands.}
 \end{figure*}
 \efloatseparator
  

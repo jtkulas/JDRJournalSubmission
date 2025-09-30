@@ -373,10 +373,32 @@ onetviz <- image_read("current_submission/Methods_visual.png")
 grid.raster(onetviz)
 ```
 
-
 # Results  
 
 Of the `r nrow(use)` individuals who initially accessed the survey link, `r nrow(different)` indicated that they were not interested, had more than 200 missing responses, or had 20 or more identical consecutive sequential responses [@R-careless]. Applying a further screen regarding attention checks (there were four attention checks embedded throughout, asking respondents to indicate a specific answer) resulted in the retention of `r nrow(data)` respondents who constitute the current sample. 
+
+```{r overallhist, fig.cap="Frequency distributions of standard deviations across characteristics rated as resources, challenges, and demands."}
+
+## Moved up from lower location 9/30 because of Figure numbering within paper
+## resource$sd
+
+toplotresource <- resource
+toplotchallenge <- challenge
+toplothindrance <- hindrance
+
+toplotresource$RD <- "Resource"
+toplotchallenge$RD <- "Challenge"
+toplothindrance$RD <- "Hindrance"
+
+toplottogether <- rbind(toplotresource,toplotchallenge,toplothindrance)
+
+library(ggplot2)
+#ggplot(resource, aes(x=sd)) + geom_histogram()
+ggplot(toplottogether, aes(x=sd)) + geom_histogram() + facet_grid(RD ~ .) + labs(x = "Standard Deviation")
+
+lookie <- stats::bartlett.test(sd ~ RD, toplottogether)
+
+```
 
 ```{r resourcesagree, fig.cap="Characteristics most similarly viewed as resources (lowest standard deviations)."}
 
@@ -485,28 +507,6 @@ f <- ggplot(bottomhindrance, aes(x=reorder(description,-sd), y=mean)) + geom_bar
 
 library(gridExtra)
 grid.arrange(e, f, d, nrow = 3)
-
-```
-
-```{r overallhist, fig.cap="Frequency distributions of standard deviations across characteristics rated as resources, challenges, and demands."}
-
-## resource$sd
-
-toplotresource <- resource
-toplotchallenge <- challenge
-toplothindrance <- hindrance
-
-toplotresource$RD <- "Resource"
-toplotchallenge$RD <- "Challenge"
-toplothindrance$RD <- "Hindrance"
-
-toplottogether <- rbind(toplotresource,toplotchallenge,toplothindrance)
-
-library(ggplot2)
-#ggplot(resource, aes(x=sd)) + geom_histogram()
-ggplot(toplottogether, aes(x=sd)) + geom_histogram() + facet_grid(RD ~ .) + labs(x = "Standard Deviation")
-
-lookie <- stats::bartlett.test(sd ~ RD, toplottogether)
 
 ```
 
