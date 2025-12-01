@@ -55,7 +55,7 @@
 \begin{center}
 \begin{threeparttable}
 
-\caption{\label{tab:unnamed-chunk-1}Overall variable bivariate correlations.}
+\caption{\label{tab:unnamed-chunk-1}Outcome variable bivariate correlations.}
 
 \begin{tabular}{llllllll}
 \toprule
