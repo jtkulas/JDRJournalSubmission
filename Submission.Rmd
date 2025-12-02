@@ -39,7 +39,7 @@ linenumbers       : no
 mask              : no
 draft             : no
 
-csl               : "sage-harvard.csl"
+csl               : "apa7.csl"
 documentclass     : "apa7" #interact
 classoption       : "man"
 output: 
@@ -161,7 +161,7 @@ numvalid <- nrow(data)
 
 ```
 
-```{r demos}
+```{r demos, eval=FALSE}
 
 a <- descr::freq(use$item401, plot=FALSE)
 
@@ -179,7 +179,7 @@ library(labourR)
 #ISCO = International Standard Classification of Occupations
 
 attention$id <- 1:nrow(attention) #adds unique identifier to satisfy inane requirement of classify_occupation()
-
+R.version
 ISCO <- classify_occupation(attention, text_col = 'item400', isco_level = 1) 
 
 m3 <-merge(attention, ISCO, by.x = "id", by.y = "id", all.x = TRUE)
