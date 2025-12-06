@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.27)  6 DEC 2025 11:33
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.27)  6 DEC 2025 11:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -461,7 +461,11 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 ) (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box64
+) (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/substr/substr.sty
+Package: substr 2009/10/20 v1.2 Handle substrings
+\c@su@anzahl=\count315
 )
+\c@maskedRefs=\count316
 \b@level@one@skip=\skip62
 \e@level@one@skip=\skip63
 \b@level@two@skip=\skip64
@@ -486,12 +490,12 @@ Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@hangindent=\dimen288
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count315
-\c@continuedfloat=\count316
+\c@caption@flags=\count317
+\c@continuedfloat=\count318
 Package caption Info: hyperref package is loaded.
 Package caption Info: threeparttable package is loaded.
 )
-\c@APAenum=\count317
+\c@APAenum=\count319
 \@text@par@indent=\skip72
 \gr@box=\box65
 \gr@boxwidth=\skip73
@@ -504,7 +508,7 @@ Package: bm 2023/12/19 v1.2f Bold Symbol Support (DPC/FMi)
 Package bm Info: No bold for \OMX/lmex/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 )
-\c@appendix=\count318
+\c@appendix=\count320
 (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2024/11/20 v4.4 Extensive control of page headers and footers
 \f@nch@headwidth=\skip75
@@ -518,12 +522,12 @@ Package: fancyhdr 2024/11/20 v4.4 Extensive control of page headers and footers
 \f@nch@O@orf=\skip83
 ) (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/endfloat/endfloat.sty
 Package: endfloat 2019/04/15 v2.7 LaTeX2e package puts figures and tables at end (jdm)
-\c@posttable=\count319
+\c@posttable=\count321
 \efloat@postttt=\write4
-\@ef@tttopen=\count320
-\c@postfigure=\count321
+\@ef@tttopen=\count322
+\c@postfigure=\count323
 \efloat@postfff=\write5
-\@ef@fffopen=\count322
+\@ef@fffopen=\count324
 )) (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2024/11/05 v2.17t AMS math features
 \@mathmargin=\skip84
@@ -541,14 +545,14 @@ LaTeX Info: Redefining \boldsymbol on input line 28.
 ) (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count323
+\inf@bad=\count325
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count324
-\leftroot@=\count325
+\uproot@=\count326
+\leftroot@=\count327
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count326
-\DOTSCASE@=\count327
+\classnum@=\count328
+\DOTSCASE@=\count329
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -561,20 +565,20 @@ LaTeX Info: Redefining \Bigg on input line 724.
 \big@size=\dimen291
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count328
+\macc@depth=\count330
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count329
+\c@MaxMatrixCols=\count331
 \dotsspace@=\muskip18
-\c@parentequation=\count330
-\dspbrk@lvl=\count331
+\c@parentequation=\count332
+\dspbrk@lvl=\count333
 \tag@help=\toks32
-\row@=\count332
-\column@=\count333
-\maxfields@=\count334
+\row@=\count334
+\column@=\count335
+\maxfields@=\count336
 \andhelp@=\toks33
 \eqnshift@=\dimen292
 \alignsep@=\dimen293
@@ -601,10 +605,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 Package: expl3 2024-11-02 L3 programming layer (loader) 
 (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2024-05-08 L3 backend support: XeTeX
-\g__graphics_track_int=\count335
+\g__graphics_track_int=\count337
 \l__pdf_internal_box=\box68
-\g__pdf_backend_annotation_int=\count336
-\g__pdf_backend_link_int=\count337
+\g__pdf_backend_annotation_int=\count338
+\g__pdf_backend_link_int=\count339
 ))
 Package: unicode-math 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
 (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty
@@ -617,17 +621,17 @@ Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
 Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
 (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
-\l__fontspec_script_int=\count338
-\l__fontspec_language_int=\count339
-\l__fontspec_strnum_int=\count340
-\l__fontspec_tmp_int=\count341
-\l__fontspec_tmpa_int=\count342
-\l__fontspec_tmpb_int=\count343
-\l__fontspec_tmpc_int=\count344
-\l__fontspec_em_int=\count345
-\l__fontspec_emdef_int=\count346
-\l__fontspec_strong_int=\count347
-\l__fontspec_strongdef_int=\count348
+\l__fontspec_script_int=\count340
+\l__fontspec_language_int=\count341
+\l__fontspec_strnum_int=\count342
+\l__fontspec_tmp_int=\count343
+\l__fontspec_tmpa_int=\count344
+\l__fontspec_tmpb_int=\count345
+\l__fontspec_tmpc_int=\count346
+\l__fontspec_em_int=\count347
+\l__fontspec_emdef_int=\count348
+\l__fontspec_strong_int=\count349
+\l__fontspec_strongdef_int=\count350
 \l__fontspec_tmpa_dim=\dimen298
 \l__fontspec_tmpb_dim=\dimen299
 \l__fontspec_tmpc_dim=\dimen300
@@ -639,9 +643,9 @@ Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 ))
-\g__um_fam_int=\count349
-\g__um_fonts_used_int=\count350
-\l__um_primecount_int=\count351
+\g__um_fam_int=\count351
+\g__um_fonts_used_int=\count352
+\l__um_primecount_int=\count353
 \g__um_primekern_muskip=\muskip19
 (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
 \cslhangindent=\skip87
@@ -649,12 +653,12 @@ LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 \cslentryspacingunit=\skip89
 (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2024/11/08 v24.13 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
-\babel@savecnt=\count352
+\babel@savecnt=\count354
 \U@D=\dimen301
 \l@unhyphenated=\language7
 (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/xebabel.def)
 \bbl@readstream=\read3
-\bbl@dirlevel=\count353
+\bbl@dirlevel=\count355
 Package babel Info: You haven't specified a language as a class or package
 (babel)             option. I'll load 'nil'. Reported on input line 4185.
 (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/nil.ldf
@@ -675,24 +679,24 @@ Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
 \LTright=\skip91
 \LTpre=\skip92
 \LTpost=\skip93
-\LTchunksize=\count354
+\LTchunksize=\count356
 \LTcapwidth=\dimen302
 \LT@head=\box69
 \LT@firsthead=\box70
 \LT@foot=\box71
 \LT@lastfoot=\box72
 \LT@gbox=\box73
-\LT@cols=\count355
-\LT@rows=\count356
-\c@LT@tables=\count357
-\c@LT@chunks=\count358
+\LT@cols=\count357
+\LT@rows=\count358
+\c@LT@tables=\count359
+\c@LT@chunks=\count360
 \LT@p@ftn=\toks36
 ) (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 ) (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip94
-\multirow@cntb=\count359
+\multirow@cntb=\count361
 \multirow@dima=\skip95
 \bigstrutjot=\dimen303
 ) (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
@@ -712,7 +716,7 @@ Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
 \TX@old@col=\dimen308
 \TX@target=\dimen309
 \TX@delta=\dimen310
-\TX@cols=\count360
+\TX@cols=\count362
 \TX@ftn=\toks38
 ) (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
 Package: threeparttablex 2013/07/23 v0.3 by daleif
@@ -730,12 +734,12 @@ Failed to patch title.
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 ) (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
-\csq@reset=\count361
-\csq@gtype=\count362
-\csq@glevel=\count363
-\csq@qlevel=\count364
-\csq@maxlvl=\count365
-\csq@tshold=\count366
+\csq@reset=\count363
+\csq@gtype=\count364
+\csq@glevel=\count365
+\csq@qlevel=\count366
+\csq@maxlvl=\count367
+\csq@tshold=\count368
 \csq@ltx@everypar=\toks39
 (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
@@ -748,14 +752,14 @@ File: csquotes.cfg
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-dvipdfm.def
 File: bkm-dvipdfm.def 2023-12-10 v1.31 bookmark driver for dvipdfm (HO)
-\BKM@id=\count367
+\BKM@id=\count369
 ))
-\c@NumberOfAuthors=\count368
-\c@NumberOfSuperscripts=\count369
+\c@NumberOfAuthors=\count370
+\c@NumberOfSuperscripts=\count371
 
-Class apa7 Warning: Deprecated: see documentation for \authorsaffiliations on input line 196.
+Class apa7 Warning: Deprecated: see documentation for \authorsaffiliations on input line 195.
 
-\c@NumberOfAffiliations=\count370
+\c@NumberOfAffiliations=\count372
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -763,26 +767,26 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 (./Submission.aux)
 \openout1 = `Submission.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -817,7 +821,7 @@ LaTeX Font Info:    ... okay on input line 204.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 204.
+Package hyperref Info: Link coloring OFF on input line 203.
 (c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/apa7/config/APA7english.txt
 File: APA7english.txt 2020/12/02 v1.02 apa7 configuration for non-American English
 )
@@ -828,19 +832,19 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 204.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 203.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 204.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 203.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 204.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 203.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 204.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 203.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 204.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 203.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 204.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 203.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 204.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 203.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999970497384594.
@@ -868,7 +872,7 @@ Package fontspec Info:
 (fontspec)             <->s*[0.9999970497384594]"[latinmodern-math.otf]/OT:script=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 204.
+(Font)              scaled to size 12.0pt on input line 203.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999970497384594.
@@ -904,15 +908,15 @@ Package fontspec Info:
 (fontspec)             <->s*[0.9999970497384594]"[latinmodern-math.otf]/OT:script=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 204.
+(Font)              scaled to size 12.0pt on input line 203.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 204.
+(Font)              `operators' in the math version `normal' on input line 203.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 204.
+(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 203.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 204.
+(Font)              `operators' in the math version `bold' on input line 203.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 204.
+(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 203.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999970497384594.
@@ -978,13 +982,13 @@ Package fontspec Info:
 (fontspec)             <->s*[1.000097049443433]"[latinmodern-math.otf]/OT:script=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 204.
+(Font)              `symbols' in the math version `normal' on input line 203.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 204.
+(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 203.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 204.
+(Font)              `symbols' in the math version `bold' on input line 203.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 204.
+(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 203.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999970497384594.
@@ -1044,49 +1048,14 @@ Package fontspec Info:
 (fontspec)             <->s*[0.9998970500334856]"[latinmodern-math.otf]/OT:script=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 204.
+(Font)              `largesymbols' in the math version `normal' on input line 203.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 204.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 203.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 204.
+(Font)              `largesymbols' in the math version `bold' on input line 203.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 204.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.4pt on input line 205.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 205.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 205.
-(c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.0011pt on input line 205.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.40076pt on input line 205.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 205.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 205.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.3991pt on input line 205.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 205.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 205.
-(c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 205.
-(c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 205.
-(c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 205.
-(c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 203.
+
 
 [1
 
@@ -1094,23 +1063,59 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [2]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 207.
+(Font)              scaled to size 8.4pt on input line 206.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 207.
+(Font)              scaled to size 6.0pt on input line 206.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 206.
+(c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 12.0011pt on input line 206.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 8.40076pt on input line 206.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 6.00055pt on input line 206.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 11.99872pt on input line 206.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 8.3991pt on input line 206.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 5.99936pt on input line 206.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 206.
+(c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 206.
+(c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 206.
+(c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 206.
+(c:/Users/jtkul/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 207.
+(Font)              scaled to size 10.0pt on input line 206.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 206.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 206.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 207.
+(Font)              scaled to size 10.00092pt on input line 206.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 207.
+(Font)              scaled to size 7.00064pt on input line 206.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 207.
+(Font)              scaled to size 5.00046pt on input line 206.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 207.
+(Font)              scaled to size 9.99893pt on input line 206.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 207.
+(Font)              scaled to size 6.99925pt on input line 206.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 207.
+(Font)              scaled to size 4.99947pt on input line 206.
 
 
 [3]
@@ -1284,10 +1289,10 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 32117 strings out of 475919
- 635857 string characters out of 5774734
- 1218976 words of memory out of 5000000
- 54395 multiletter control sequences out of 15000+600000
+ 32169 strings out of 475919
+ 636947 string characters out of 5774734
+ 1221218 words of memory out of 5000000
+ 54443 multiletter control sequences out of 15000+600000
  590776 words of font info for 110 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  99i,12n,123p,1870b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s

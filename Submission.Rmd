@@ -26,7 +26,7 @@ authornote: |
 abstract: |
  **Purpose**: Discussions of job characteristics often include a tacit characterization that these job elements are either resources or demands. The purpose of this paper was to examine 1) variability in subjective ratings of job characteristics with respect to perception as resource and/or demand, 2) differential association with positive and negative outcomes, and 3) the potential buffering effect of resources on the relationships between demands and negative work outcomes. **Design/methodology/approach**: A sample of 568 respondents recruited from Prolific completed an online survey. They were asked to think only about their primary job, and each administered survey branched content dependent on whether this job could be described as consisting of the different O\*NET job characteristics. They subsequently rated level of resource, challenge, or hindrance. **Findings**: Results support the perspective that job characteristics are not uniquely categorized as a resource or demand, but rather, what is viewed as challenging is also commonly interpreted as resourceful. Furthermore, greater experienced resources moderate the challenge–engagement relationship as well as the hindrance-stress and hindrance–burnout relationships. **Originality/value**: We utilized a diverse sample of employees across industries who responded to items derived from O*NET specifications. O*NET provides a rich and fairly exhaustive repository of job characteristics that also provides some consistency across investigations. We also explored characteristics at a higher level of aggregation (retaining O*NET category groupings), which again expands our collective knowledge of how employees perceive different categories of resources, challenges, and hindrances within different work domains, as well as the relationships among them. 
 keywords         : "O*NET, challenge-hindrance framework, job demands-resources, job characteristics"
-wordcount        : "4,942"
+#wordcount        : "4,942"
 
 bibliography     : ["r-references.bib", "jdr.bib", "jobdemands_resources_bibtex.bib"]
 
@@ -35,7 +35,7 @@ figurelist        : no
 tablelist         : no
 footnotelist      : no
 linenumbers       : no
-mask              : no
+mask              : yes
 draft             : no
 
 csl               : "apa7.csl"
